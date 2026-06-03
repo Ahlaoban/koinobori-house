@@ -1,0 +1,20 @@
+internal_id,wp_post_id,product_type,parent_sku,sku,model_name_fr,model_name_en,collection,eds_subcategory,size_cm,price_eur,stock_qty,attr_taille_values,attr_taille_default,short_desc_fr,short_desc_en,long_desc_fr,long_desc_en,main_image_path,gallery_paths,status,supplier_internal_name,bcdg_notes,export_to_wc
+1,,variable,,KH-DEMO-001,Modèle Démo Fictif,Demo Fictitious Model,demo,,,,,"50 cm, 75 cm, 100 cm",,Exemple fictif documentation — ne jamais reprendre.,Documentation example — do not reuse.,"Ligne de démonstration uniquement, illustre la structure d'un produit variable (parent + variations). Aucun lien avec un modèle BCDG réel.
+
+Bloc signature/édition placeholder : à remplacer par la variante série appropriée dans une vraie fiche (cf README §Wording).
+
+Bloc transparence placeholder : à remplacer par la formulation standard dans une vraie fiche (cf README §Wording).","Documentation row only, illustrates the structure of a variable product (parent + variations). No link to any real BCDG model.
+
+Signature/edition placeholder block: replace with the appropriate series variant in a real product (see README §Wording).
+
+Transparency placeholder block: replace with the standard formulation in a real product (see README §Wording).",images/demo/main.jpg,images/demo/g1.jpg|images/demo/g2.jpg,draft,,EXEMPLE FICTIF PLACEHOLDER — ne jamais reprendre dans master.csv,yes
+2,,variation,KH-DEMO-001,KH-DEMO-001-075,Modèle Démo Fictif,Demo Fictitious Model,demo,,75,89.00,12,,,,,,,images/demo/main.jpg,,draft,,EXEMPLE FICTIF PLACEHOLDER — ne jamais reprendre dans master.csv,yes
+3,,simple,,KH-EDS-001-100,Stars & Stripes Koinobori — by BCDG,Stars & Stripes Koinobori — by BCDG,eds,americana,100,189.00,50,,,"Édition spéciale Americana, série test 50 pièces, taille 100 cm.","Special Americana edition, test series of 50 pieces, 100 cm size.","Stars & Stripes Koinobori — by BCDG est une édition spéciale de 100 cm qui transpose l'imaginaire graphique du drapeau américain dans la forme traditionnelle du koinobori. Le modèle associe 50 étoiles et 13 bandes dans une composition décorative pensée pour l'extérieur, les événements, les fêtes nationales, les espaces privés ou les installations visuelles.
+
+Design original BCDG, signé et édité en série test de 50 pièces.
+
+Produit par un atelier partenaire selon les fichiers et spécifications BCDG.","Stars & Stripes Koinobori — by BCDG is a 100 cm special edition that brings the graphic language of the American flag into the traditional koinobori form. The design combines 50 stars and 13 stripes in a decorative composition created for outdoor display, events, national celebrations, private spaces or visual installations.
+
+Original BCDG design, signed and released as a test series of 50 pieces.
+
+Produced by a partner workshop according to BCDG files and specifications.",images/eds/stars-stripes/main.jpg,images/eds/stars-stripes/g1.jpg|images/eds/stars-stripes/g2.jpg,draft,US FLAG,Série fermée 50 pièces — pas extension tailles,yes

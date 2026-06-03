@@ -1,0 +1,90 @@
+# ============================================================
+# Koinobori House — .gitignore
+# Règle absolue : NO SECRETS IN REPO.
+# Aucun credential, fichier fournisseur confidentiel, ni
+# fichier impression HD ne doit jamais être commité.
+# ============================================================
+
+# --- Secrets / credentials / KYC ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+credentials*
+*password*
+*secret*
+*api-key*
+*api_key*
+*backup_code*
+*token*
+secrets/
+
+# Fournisseurs paiement / email — fichiers credentials.
+# NOTE: globs larges. Si un DOC propre porte ces mots mais ne
+# contient AUCUN secret réel, le ré-inclure explicitement via
+# une ligne de négation (exemple KH-005 ci-dessous).
+*smtp*
+*stripe*
+*paypal*
+*brevo*
+
+# Fichier sensible connu (redondant avec *stripe* / *backup_code*)
+stripe_backup_code.txt
+
+# Docs vérifiés sans secret réel — ré-inclus volontairement
+!docs/lot0/KH-005-brevo-smtp.md
+
+# --- WordPress (futur Lot 1+) ---
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/debug.log
+wp-content/upgrade/
+wp-content/backup-db/
+
+# --- Fournisseur / production impression (JAMAIS commit) ---
+supplier/
+production/print-files/
+exports/private/
+*.ai
+*.psd
+*.eps
+
+# --- Dépendances ---
+node_modules/
+vendor/
+npm-debug.log*
+yarn-debug.log*
+
+# --- Archives / dumps / base de données ---
+*.sql
+*.zip
+*.tar
+*.gz
+*.bak
+*.backup
+*.old
+
+# --- Captures / écrans / médias privés ---
+captures/
+screenshots/
+memory/
+
+# --- Outils / IDE / agent ---
+.claude/
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Build / logs ---
+dist/
+build/
+*.log

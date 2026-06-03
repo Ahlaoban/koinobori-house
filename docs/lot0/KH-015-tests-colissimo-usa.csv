@@ -1,0 +1,4 @@
+test_id,panier,composition,product_value_eur,parcel_total_weight_g,carrier_cost_eur,laposte_management_fees_eur,us_duties_taxes_eur,packaging_handling_cost_eur,delai_indicatif,suivi_inclus_yn,assurance,cout_total_avant_marge_eur,international_overhead_rate,displayed_shipping_USA_eur,source_url,source_checked_at,remarques
+T1,1×Kaïro 75 cm,1×KH-KAI-001-075,35,77,,,,,,,,,0.06,,https://www.laposte.fr/,,
+T2,1×Stars & Stripes 100 cm,1×KH-EDS-001-100,49,92,,,,,,,,,0.06,,https://www.laposte.fr/,,
+T3,3×Kaïro 75 cm,3×KH-KAI-{001+002+003}-075,105,137,,,,,,,,,0.06,,https://www.laposte.fr/,,
