@@ -7,6 +7,41 @@ Document de reprise destiné à un agent **Codex** (ou tout contributeur) repren
 
 ---
 
+## 0. Reprise rapide (TL;DR — lire en premier)
+
+**Repo** : `Ahlaoban/koinobori-house` — https://github.com/Ahlaoban/koinobori-house — **PRIVATE**, branche `main`. Commit initial `d4ddae7`.
+
+Résumé de reprise (20 lignes max) :
+1. Koinobori House = site e-commerce WordPress/WooCommerce (o2switch), bilingue FR/EN.
+2. Vend des koinobori originaux signés BCDG. BCDG = signature créative, pas la maison.
+3. B2C transactionnel (panier + paiement natif WC). B2B/B2G = captation par pages + formulaires (pas de transaction).
+4. État : **Lot 0 avancé**, aucun code WP/WC encore écrit.
+5. Le repo couvre **tout le projet**, pas que Lot 0 (accueillera le futur code opérationnel).
+6. Tickets fermés : KH-001, 002, 003 (Stripe provisoire), 004, 005, 011, 017.
+7. KH-010 (catalogue/SKU) = **en cours** : 5 SKUs pilotes dans `catalog/master.csv`.
+8. KH-012 shipping = décision verrouillée ; KH-015 USA = checkout auto non activé.
+9. Secrets (Stripe/PayPal/Brevo) vivent **hors repo** (gestionnaire de mots de passe).
+10. **Règle d'or** : proposer un plan avant toute modification ; aucun secret dans le repo.
+11. Ne jamais mentionner la Chine publiquement (production/atelier/fournisseur/fabrication).
+12. Formulation production autorisée : « Produit par un atelier partenaire selon les fichiers et spécifications BCDG ».
+13. Jamais de mention de stock global ; stock par SKU uniquement.
+14. « US Flag » = nom fournisseur interne ; public = « Stars & Stripes Koinobori — by BCDG ».
+15. EUR only, pas de multi-devise au MVP.
+16. Stack figée : WordPress, WooCommerce, Kadence, Polylang, Stripe/PayPal, FluentSMTP+Brevo, LiteSpeed, RankMath.
+17. i18n : `/fr/` + `/en/`, racine `/` en 302, jamais 301 sur `/`.
+18. Prochaine tâche : finaliser KH-010 (images + stock + test impression), puis `export_to_wc=yes` par SKU.
+19. Lot 1 (WordPress) = **pas sans GO Alain** ; quand GO, commencer par KH-104b (test Polylang for WC).
+20. Doctrine complète et prioritaire : `CLAUDE.md`.
+
+**Lire en premier, dans l'ordre** :
+1. `README.md` (vue d'ensemble + stack + statut)
+2. `docs/handoff/CODEX-HANDOFF.md` (ce fichier, en entier)
+3. `CLAUDE.md` (doctrine verrouillée — source de vérité)
+4. `catalog/README.md` puis `catalog/master.csv` (catalogue / SKU)
+5. `docs/lot0/` (cadrages tickets, au besoin selon la tâche)
+
+---
+
 ## 1. Nature du projet
 
 - **Koinobori House** = site / maison e-commerce / canal commercial propriétaire.
