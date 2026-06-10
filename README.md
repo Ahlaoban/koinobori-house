@@ -73,9 +73,14 @@ Doctrine complète : `CLAUDE.md`.
 ├── CLAUDE.md                 # Contexte projet + doctrine verrouillée
 ├── README.md                 # Ce fichier
 ├── .gitignore                # Règle no-secrets
+├── brand/                    # Identité marque (logos site, hors produits)
+│   └── koinoborihouse/
+│       ├── logo-color.png    # Logo principal couleur (PNG transparent 1172×213)
+│       └── favicon-200.png   # Favicon tampon rouge 鯉のぼり (PNG transparent 200×200)
 ├── catalog/                  # Catalogue produits (voir catalog/README.md)
 │   ├── master.csv            # Source de vérité SKU MVP
 │   ├── examples.csv
+│   ├── images/               # Visuels produits e-commerce uniquement
 │   └── README.md
 └── docs/
     ├── lot0/                 # Cadrages Lot 0 (tickets KH-xxx)

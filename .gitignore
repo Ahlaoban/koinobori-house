@@ -36,6 +36,10 @@ stripe_backup_code.txt
 # Docs vérifiés sans secret réel — ré-inclus volontairement
 !docs/lot0/KH-005-brevo-smtp.md
 
+# Catalogue produits — visuels web légitimes (faux positif sur "stripe(s)")
+!catalog/images/eds/001-stars-stripes/
+!catalog/images/eds/001-stars-stripes/**
+
 # --- WordPress (futur Lot 1+) ---
 wp-config.php
 wp-content/uploads/

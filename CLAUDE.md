@@ -76,6 +76,16 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 **Boutons** : radius 8px, padding vertical 12px. Achat = corail fond ivoire. Secondaire = indigo bordure. **Jamais or pour boutons/panier/liens/fonds massifs.**
 
+## Identité marque
+
+- **Logo Koinobori House** = identité marque maison / canal e-commerce. **Distinct de la signature BCDG.**
+- **Signature BCDG** = signature créative apposée *sur les produits* (`— by BCDG` dans le nom modèle + mention long_desc bloc 2 fiches produits). Ne remplace **jamais** le logo Koinobori House comme identité du site.
+- **Fichier logo principal** : `brand/koinoborihouse/logo-color.png` — PNG 1172×213 px, canal alpha (transparence OK), calligraphie noire « Koinobori House » + tampon rouge 鯉のぼり (hiragana japonais, aucun risque doctrine Chine).
+- **Favicon** : `brand/koinoborihouse/favicon-200.png` — PNG 200×200 px transparent, motif tampon rouge 鯉のぼり extrait du logo principal. Sera décliné en 16/32/48/180/192 px par WP Lot 1.
+- Usage cible : header, footer, og:image, Schema.org Organization, emails Brevo, mentions légales.
+- Compléments non requis MVP : SVG vectoriel (logo IA-généré, pas de fichier source vectoriel, vectorisation auto déconseillée pour la calligraphie — décision Alain 2026-06-10), variantes monochromes (post-launch si besoin).
+- Ticket Lot 0 associé : **KH-009 Identité marque** (logo principal couleur + favicon déposés 2026-06-10).
+
 ## Doctrine éditoriale impérative
 
 - ❌ **JAMAIS** mentionner Chine publiquement **dans tout contexte production / fournisseur / atelier / origine de fabrication / logistique interne / sourcing / formulation produit / fiches produits / transparence production**
@@ -105,9 +115,9 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 ## Catalogue MVP
 
 - ~50 modèles MVP au lancement, structure extensible
-- 5 collections : Kaïro · La Mer · OKUSAI · Bretagne · Éditions spéciales (Americana, Nations, Saisons, Événements, Collaborations, Séries limitées)
+- 6 collections : Kaïro · La Mer · OKUSAI · Bretagne · Éditions spéciales (Americana, Nations, Saisons, Événements, Collaborations, Séries limitées) · Hanami
 - Tailles variables : attribut global `Taille` (50/75/100 cm extensible)
-- Produit spécial validé : **Stars & Stripes Koinobori — by BCDG** (Éditions spéciales · Americana · 100 cm · série 50 pièces)
+- Produit spécial validé : **Stars & Stripes Koinobori — by BCDG** (Éditions spéciales · Americana · 100 cm · série 25 pièces)
 - Nom interne fournisseur "US FLAG" jamais public
 
 ## Périmètre MVP — bilingue commercial complet

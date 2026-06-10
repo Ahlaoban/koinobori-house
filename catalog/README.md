@@ -26,6 +26,7 @@ Pattern fixe : `KH-{COL}-{SEQ}-{SIZE}`
   - `OKU` OKUSAI
   - `BRE` Bretagne
   - `EDS` Éditions spéciales
+  - `HAN` Hanami
 - `SEQ` — 3 chiffres, séquence interne collection, jamais réattribué
 - `SIZE` — 3 chiffres taille cm : `050`, `075`, `100`
 
@@ -37,7 +38,7 @@ Variantes par `product_type` :
 | `variation` | 4 segments | `KH-DEMO-001-075` (doc placeholder) |
 | `simple` | 4 segments | `KH-EDS-001-100` (réel Stars & Stripes) |
 
-`DEMO` = préfixe collection réservé documentation uniquement, jamais utilisé en master.csv. Les collections réelles utilisent `KAI`, `MER`, `OKU`, `BRE`, `EDS`.
+`DEMO` = préfixe collection réservé documentation uniquement, jamais utilisé en master.csv. Les collections réelles utilisent `KAI`, `MER`, `OKU`, `BRE`, `EDS`, `HAN`.
 
 Règles dures :
 - SEQ jamais réutilisé même produit retiré
@@ -107,7 +108,7 @@ Filtrage appliqué par script export master → CSV WC à venir.
 
 **Pattern repo-relative** : `images/{collection}/{seq3}-{slug}/{filename}`
 
-- `collection` : code 5 collections (`kairo`, `mer`, `okusai`, `bretagne`, `eds`) — matches `collection` enum master.csv
+- `collection` : code 6 collections (`kairo`, `mer`, `okusai`, `bretagne`, `eds`, `hanami`) — matches `collection` enum master.csv
 - `seq3` : SEQ du SKU à 3 chiffres (`001`, `002`, …) — synchronise avec SKU
 - `slug` : nom court kebab-case ASCII, sans accents, sans apostrophes
 - `filename` :
@@ -272,11 +273,12 @@ Audit pré-publish (KH-208-213 + KH-707) : grep `short_desc_fr` / `short_desc_en
 
 | SKU | price_eur | Note |
 |-----|-----------|------|
-| KH-EDS-001-100 | 49 € | Stars & Stripes 100 cm, série test 50 pièces |
+| KH-EDS-001-100 | 49 € | Stars & Stripes 100 cm, série test 25 pièces |
 | KH-KAI-001-075 | 35 € | Kaïro épisode 1, 75 cm |
 | KH-KAI-002-075 | 35 € | Kaïro épisode 2, 75 cm |
 | KH-KAI-003-075 | 35 € | Kaïro épisode 3, 75 cm (test impression fond noir requis) |
 | KH-KAI-004-075 | 35 € | Kaïro épisode 4, 75 cm |
+| KH-HAN-001-075 | 29 € | Hanami Sakura Rouge 75 cm, ouverture collection Hanami |
 
 Tarifs **modifiables après test marché** (ajustement possible avant scale).
 
