@@ -4,13 +4,13 @@ Last updated: [DD/MM/YYYY]
 
 This English version is provided for international visitors. The French version shall prevail in case of discrepancy.
 
-Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
+Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
 
 SIREN / RCS : 945 241 545 R.C.S. Quimper
 
-SIRET (siège) : 945 241 545 00017
+SIRET (registered office): 945 241 545 00017
 
-Adresse : 1 rue du marais, 29730 Treffiagat
+Address: 1 rue du marais, 29730 Treffiagat, France
 
 TVA non applicable, art. 293 B du CGI.
 
@@ -34,7 +34,7 @@ Website: www.o2switch.fr
 
 ## Website Activity
 
-Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
+Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
 
 B2C sales are processed online through WooCommerce. B2B and public-sector inquiries are handled through contact or quote request forms.
 

@@ -80,7 +80,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 - **Logo Koinobori House** = identité marque maison / canal e-commerce. **Distinct de la signature BCDG.**
 - **Signature BCDG** = signature créative apposée *sur les produits* (`— by BCDG` dans le nom modèle + mention long_desc bloc 2 fiches produits). Ne remplace **jamais** le logo Koinobori House comme identité du site.
-- **Fichier logo principal** : `brand/koinoborihouse/logo-color.png` — PNG 1172×213 px, canal alpha (transparence OK), calligraphie noire « Koinobori House » + tampon rouge 鯉のぼり (hiragana japonais, aucun risque doctrine Chine).
+- **Fichier logo principal** : `brand/koinoborihouse/logo-color.png` — PNG 1172×213 px, canal alpha (transparence OK), calligraphie noire « Koinobori House » + tampon rouge 鯉のぼり (écriture japonaise : kanji 鯉 « carpe » + hiragana のぼり, mot japonais courant, aucun risque doctrine Chine).
 - **Favicon** : `brand/koinoborihouse/favicon-200.png` — PNG 200×200 px transparent, motif tampon rouge 鯉のぼり extrait du logo principal. Sera décliné en 16/32/48/180/192 px par WP Lot 1.
 - Usage cible : header, footer, og:image, Schema.org Organization, emails Brevo, mentions légales.
 - Compléments non requis MVP : SVG vectoriel (logo IA-généré, pas de fichier source vectoriel, vectorisation auto déconseillée pour la calligraphie — décision Alain 2026-06-10), variantes monochromes (post-launch si besoin).
@@ -322,7 +322,7 @@ Audit pré-publish KH-707 : grep `Stripe` / `PayPal` / `commission` / `droits de
 
 ## Session memory
 
-Persistent memory : `C:\Users\herbi\.claude\projects\C--dev-Koinobori\memory\MEMORY.md` (auto-injectée).
+Persistent memory : fichiers du dossier mémoire de la session Claude Code (`MEMORY.md` + notes, auto-injectés). Hors repo, machine locale.
 
 ## Liens projets associés
 

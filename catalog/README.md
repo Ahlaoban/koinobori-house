@@ -284,7 +284,7 @@ Tarifs **modifiables après test marché** (ajustement possible avant scale).
 
 ### Livraison
 
-- **France métropolitaine** : livraison **gratuite** (traitement plugin WC Shipping côté Lot 1+, hors `price_eur`).
+- **France métropolitaine** : **livraison offerte à partir de 55 € d'achat** (sous le seuil, frais réels affichés ; traitement plugin WC Shipping côté Lot 1+, hors `price_eur`). DROM-COM hors gratuité.
 - **International** (UE / hors UE) : frais réels + droits de douane / taxes d'importation **hors `price_eur`**, traitement KH-012 et KH-015 Lot 0.
 - Aucune incorporation duties dans `price_eur`. Approche DDP/upfront décidée séparément (cf CLAUDE.md USA / douanes critique).
 

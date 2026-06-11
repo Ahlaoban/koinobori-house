@@ -15,7 +15,7 @@ Document de cadrage Lot 0. **Aucune décision opérationnelle prise ici** ne se 
 - Etsy = marketplace découverte (reste actif).
 - Koinobori House = canal propriétaire (marque, collection, histoire, confiance, relation BCDG).
 - Devise MVP : **EUR uniquement**, pas multi-devise.
-- Livraison France gratuite déjà actée.
+- Livraison France métropolitaine offerte à partir de 55 € d'achat (décision verrouillée 2026-05-30 ; sous le seuil, frais réels).
 - Prix produit `price_eur` **hors** livraison internationale et **hors** droits/taxes import.
 
 ## 1bis. Réserve douanière (verrouillée)
@@ -121,14 +121,14 @@ Cette formulation reste **compatible §1bis garde-fou général** (pas de pource
 
 | Zone | Statut MVP | Raison |
 |------|------------|--------|
-| France métropolitaine | **Actif J0**, livraison **gratuite** | Décision tarification figée |
+| France métropolitaine | **Actif J0**, livraison **offerte dès 55 € d'achat** (sous le seuil : frais réels) | Décision tarification verrouillée 2026-05-30 |
 | France DROM-COM | **À statuer** (surcoût postal îles) | Décision Alain requise — proposer "frais réels" ou différé |
 | Union européenne (UE 27) | **Actif J0**, frais réels | Marché secondaire significatif, complexité TVA absorbée par franchise base (art. 293 B CGI) |
 | Royaume-Uni | **À statuer** | Post-Brexit : TVA UK + customs (seuil 135 GBP). Si activé : DAP avec mention claire. Recommandation : différé Lot 2+ sauf demande client volume |
-| États-Unis | **Actif J0 obligatoire**, traitement renforcé KH-015 | Marché clé 25 % CA Etsy actuel |
+| États-Unis | **Mode « nous contacter » par défaut MVP** (zone désactivée WC) ; bascule « USA actif » conditionnée tests Colissimo USA en ligne KH-015 (différés) | Marché clé 25 % CA Etsy actuel |
 | Reste du monde (Canada, Australie, Japon, Suisse, etc.) | **Désactivé MVP**, formulaire contact pour devis manuel | Évite complexité douanière + opérationnelle au lancement. Réactivable post-test marché |
 
-**Recommandation MVP** : ouvrir **France + UE 27 + USA** dès J0. UK et reste du monde différés ou via contact manuel.
+**Recommandation MVP** : ouvrir **France + UE 27** dès J0. **USA en mode « nous contacter »** (zone désactivée WC) jusqu'aux tests Colissimo USA en ligne KH-015. UK et reste du monde différés ou via contact manuel.
 
 ## 3. Données à collecter (à compléter par Alain — aucune invention)
 
@@ -260,7 +260,7 @@ Poids total colis = poids koinobori × n + poids enveloppe.
 
 | Zone | Coût indicatif (à confirmer) | Modèle |
 |------|------------------------------|--------|
-| France | 0 € (offert) | Gratuit verrouillé |
+| France | 0 € si commande ≥ 55 €, sinon frais réels | Offert dès 55 € (verrouillé 2026-05-30) |
 | UE | **à fournir** | Forfait par tranche poids/épaisseur ou réel transporteur |
 | USA | **à fournir** ⚠️ cf §1ter Colissimo USA suspendu, alternatives à arbitrer | Forfait par tranche poids/épaisseur ou réel transporteur |
 | UK | **à fournir** si activé | Forfait par tranche poids/épaisseur |
@@ -737,7 +737,7 @@ Aucune action engagée hors collecte. Aucun plugin installé. Aucun code écrit.
 ## 11. Liens / dépendances
 
 - [[project_koinobori_house_mvp_2026-05-27]] cadrage général
-- [[project_koinobori_tarification_tva_mvp]] tarifs + TVA + livraison France gratuite
+- [[project_koinobori_tarification_tva_mvp]] tarifs + TVA + livraison France offerte dès 55 €
 - [[project_koinobori_i18n_mvp_scope]] i18n FR+EN fallback EN
 - [[feedback_wording_fiche_produit]] règle 3 blocs description
 - CLAUDE.md §USA / douanes critique

@@ -10,19 +10,19 @@ Business, institutional, public-sector, school, event or custom-project requests
 
 ## 1. Seller
 
-Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
+Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
 
 SIREN / RCS : 945 241 545 R.C.S. Quimper
 
-SIRET (siège) : 945 241 545 00017
+SIRET (registered office): 945 241 545 00017
 
-Adresse : 1 rue du marais, 29730 Treffiagat
+Address: 1 rue du marais, 29730 Treffiagat, France
 
 Customer service email: contact@koinoborihouse.com
 
 ## 2. Products
 
-Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
+Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
 
 The essential characteristics of each product are displayed on the relevant product page: model, collection, dimensions, visuals, price, availability, delivery conditions and, when available, material, use, care or installation information.
 

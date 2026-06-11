@@ -13,7 +13,7 @@ Identification vendeur acquise — formulation obligatoire intégrée dans tous 
 
 Restant :
 
-- [x] Adresse de retour produits : communiquée au client par BCDG après réception de la demande de rétractation (deux adresses internes possibles, choix au cas par cas, ni publiées ni listées). Politique intégrée CGV §8.2.
+- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV §8.2** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV §8.2.
 - [x] Téléphone public : pas de numéro de téléphone, uniquement contact@koinoborihouse.com.
 
 ## B. CM2C
@@ -42,7 +42,7 @@ Coordonnées intégrées :
 ## D. Rétractation et retours
 
 - [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV §8.2 et §8.6 (international).
-- [x] Adresse de retour : communiquée au client par BCDG après réception de la demande de rétractation (deux adresses internes possibles, ni publiées ni listées).
+- [x] Adresse de retour : **deux adresses listées publiquement CGV §8.2** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
 - [x] Mode de demande de rétractation : déclaration par email à contact@koinoborihouse.com, formulaire type fourni CGV §8.1.
 - [ ] À partir du 19/06/2026 : prévoir une fonctionnalité en ligne permettant l'exercice du droit de rétractation directement en ligne si le site conclut des contrats à distance via interface en ligne.
 - [x] Exclusion produits personnalisés / sur mesure : intégrée CGV §8.4 avec mention « indiquée clairement avant la validation de toute commande personnalisée ».

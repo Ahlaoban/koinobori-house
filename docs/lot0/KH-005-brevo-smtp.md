@@ -169,7 +169,9 @@ Liste à exécuter avant publication site (KH-707 audit) :
 - [ ] Score `mail-tester.com` ≥ 8/10
 - [ ] Test simulation parcours commande WC (Lot 4+) : `New order`, `Order completed`, `Customer invoice` reçus correctement
 
-## 9. Checklist actions Alain
+## 9. Checklist actions Alain (HISTORIQUE — toutes résolues 2026-05-29)
+
+> ⚠️ **Section historique.** Toutes les actions ci-dessous ont été **réalisées et validées** (cf §Validation fermeture KH-005 en tête de fiche). Les statuts « ❌ à faire » conservés ci-dessous documentent le cadrage initial et **ne reflètent pas l'état réel** : compte Brevo, 2FA, plan, expéditeur, DNS SPF/DKIM/DMARC et stockage hors-repo de la clé SMTP sont **acquis**.
 
 | # | Action | Owner | Statut |
 |---|--------|-------|--------|
@@ -186,9 +188,11 @@ Liste à exécuter avant publication site (KH-707 audit) :
 | 11 | Validation domaine côté Brevo dashboard (bouton "Verify") | Alain | ❌ post-propagation |
 | 12 | Stocker credentials Brevo (login + API key) dans **gestionnaire mots de passe sécurisé hors repo** | Alain | ❌ obligatoire |
 
-## 10. Informations DNS à collecter post-Brevo
+## 10. Informations DNS à collecter post-Brevo (HISTORIQUE — collecte effectuée)
 
-Pour reporting Alain dans cette fiche (compléter au moment config) :
+> ⚠️ **Section historique.** Les enregistrements SPF + DKIM 1 + DKIM 2 + DMARC ont été **posés et validés** dans la zone DNS o2switch (2026-05-29). Le tableau ci-dessous, avec ses « ❌ à collecter », documente le cadrage initial ; les valeurs réelles vivent côté dashboard Brevo + zone DNS o2switch, **hors repo**.
+
+Pour mémoire (cadrage initial) :
 
 | Record | Type | Hôte / Selector | Valeur Brevo | Statut |
 |--------|------|-----------------|--------------|--------|
@@ -215,7 +219,7 @@ Pour reporting Alain dans cette fiche (compléter au moment config) :
 - Domaine `koinoborihouse.com` **acquis**
 - Accès o2switch / cPanel **opérationnel** → ajout DNS Brevo possible immédiatement
 
-**À faire côté Alain** :
+**Actions Alain — réalisées 2026-05-29** (historique, conservé pour traçabilité ; état réel = §Validation fermeture en tête) :
 1. Créer ou vérifier compte Brevo
 2. Activer 2FA TOTP
 3. Configurer expéditeur `contact@koinoborihouse.com`
@@ -237,4 +241,4 @@ Pour reporting Alain dans cette fiche (compléter au moment config) :
 ## 13. Liens
 
 - CLAUDE.md §Stack technique verrouillée (SMTP : FluentSMTP + Brevo)
-- [project_koinobori_kh004_paypal_done.md](C:\Users\herbi\.claude\projects\C--dev-Koinobori\memory\project_koinobori_kh004_paypal_done.md) — modèle 2FA app authentificateur cohérent
+- Note mémoire `project_koinobori_kh004_paypal_done` (mémoire de session Claude Code, hors repo) — modèle 2FA app authentificateur cohérent

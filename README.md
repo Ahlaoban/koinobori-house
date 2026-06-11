@@ -23,7 +23,7 @@ Construire un site e-commerce bilingue **FR / EN** hébergé sur **o2switch** :
 | Email | FluentSMTP + Brevo |
 | Cache | LiteSpeed Cache (o2switch) |
 | SEO | RankMath Free |
-| Analytics | Plausible (RGPD-light) — à confirmer plus tard |
+| Analytics | Plausible Analytics (sans cookies, RGPD-friendly) |
 
 Stack verrouillée détaillée : voir `CLAUDE.md`.
 
@@ -41,7 +41,7 @@ Stack verrouillée détaillée : voir `CLAUDE.md`.
 | KH-010 | Catalogue / SKU | 🔄 en cours avancé |
 | KH-011 | Médiateur CM2C | ✅ fermé |
 | KH-012 | Shipping / incentives | 🔒 décision verrouillée |
-| KH-015 | USA shipping | ✅ tests faits, checkout USA auto non activé |
+| KH-015 | USA shipping | ⏸ différé — tests Colissimo USA non réalisés, checkout USA non activé, mode « nous contacter » |
 | KH-017 | Documents légaux FR/EN | ✅ fermé (ne pas recréer) |
 
 ## Règle de sécurité — NO SECRETS IN REPO

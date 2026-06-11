@@ -28,7 +28,7 @@ Périmètre : site e-commerce WordPress + WooCommerce, bilingue FR/EN, B2C trans
   > Email : contact@koinoborihouse.com
 - Directrice de la publication : Else Smakalova
 - TVA au lancement : franchise en base, mention `TVA non applicable, art. 293 B du CGI`.
-- CM2C intégré clause officielle mot pour mot dans mentions légales + CGV §14.
+- CM2C intégré clause officielle mot pour mot dans mentions légales + CGV §13.
 
 ## Points bloquants avant publication
 

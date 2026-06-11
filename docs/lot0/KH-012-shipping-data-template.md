@@ -19,7 +19,7 @@ Companion document pour `KH-012-shipping-data-template.csv`. Structure 18 colonn
 | 11 | `us_duties_taxes_eur` | decimal € | ❌ Alain (droits + taxes US payés upfront expéditeur — uniquement USA Colissimo en ligne ou fallback DDP, 0 sinon) |
 | 12 | `packaging_handling_cost_eur` | decimal € | ❌ Alain (coût enveloppe + ruban + temps préparation) |
 | 13 | `international_overhead_rate` | decimal | ✅ pré-rempli `0` (France) ou `0.06` (international) |
-| 14 | `displayed_shipping_price_eur` | decimal € | ❌ calculé via formule §3 (France = 0 gratuit) |
+| 14 | `displayed_shipping_price_eur` | decimal € | ❌ calculé via formule §3 (France = 0 si commande ≥ 55 €, sinon frais réels) |
 | 15 | `source_url` | URL | ✅ source officielle ou agrégateur tarif |
 | 16 | `source_checked_at` | date YYYY-MM-DD | ✅ `2026-05-29` |
 | 17 | `tracking_yn` | enum | ✅ `oui` / `oui partiel` |
@@ -43,7 +43,7 @@ Multi-unité / multi-format = cas additionnels à ajouter en lignes supplémenta
 
 ### France
 
-**Livraison gratuite.** `displayed_shipping_price_eur = 0`. Marge absorbée par marge produit. `international_overhead_rate = 0`.
+**Livraison offerte à partir de 55 € d'achat** (France métropolitaine). Au-delà du seuil : `displayed_shipping_price_eur = 0`, marge absorbée par marge produit. Sous le seuil : frais réels transporteur affichés. `international_overhead_rate = 0`. DROM-COM hors gratuité (frais réels).
 
 ### International UE (formule générale)
 
@@ -138,10 +138,10 @@ Toutes valeurs USA = **à obtenir test réel Alain**. Illustration formule uniqu
 
 Audit pré-publish KH-707 : grep `Stripe` / `PayPal` / `commission` dans textes shipping public → fail si présent.
 
-## 6. France livraison gratuite — rappel
+## 6. France livraison — rappel
 
-- France métropolitaine : **gratuite** au client, marge produit absorbe coût transporteur réel
-- France DROM-COM : **à statuer** (frais réels possibles ou différé)
+- France métropolitaine : **livraison offerte à partir de 55 € d'achat**, marge produit absorbe le coût transporteur réel au-delà du seuil. Sous 55 € : frais réels affichés au client.
+- France DROM-COM : **hors gratuité**, frais réels affichés (devis Colissimo Outre-Mer à fournir)
 - Aucune marge 6 % appliquée à France
 
 ## 7. Tarifs sources publiques 2026 — référence

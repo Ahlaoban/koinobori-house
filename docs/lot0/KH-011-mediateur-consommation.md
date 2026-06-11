@@ -131,5 +131,5 @@ Tous éléments KH-011 acquis :
 ## 10. Liens
 
 - CLAUDE.md §Cadrage stratégique + §Doctrine éditoriale
-- [project_koinobori_lot0_status_snapshot.md](C:\Users\herbi\.claude\projects\C--dev-Koinobori\memory\project_koinobori_lot0_status_snapshot.md)
+- Note mémoire `project_koinobori_lot0_status_snapshot` (mémoire de session Claude Code, hors repo)
 - Site CM2C : https://www.cm2c.net/declarer-un-litige.php

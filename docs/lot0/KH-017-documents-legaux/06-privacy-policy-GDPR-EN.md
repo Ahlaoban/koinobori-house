@@ -8,13 +8,13 @@ This policy explains how Koinobori House collects and processes personal data fr
 
 ## 1. Data Controller
 
-Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
+Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
 
 SIREN / RCS : 945 241 545 R.C.S. Quimper
 
-SIRET (siège) : 945 241 545 00017
+SIRET (registered office): 945 241 545 00017
 
-Adresse : 1 rue du marais, 29730 Treffiagat
+Address: 1 rue du marais, 29730 Treffiagat, France
 
 Data protection contact email: contact@koinoborihouse.com
 

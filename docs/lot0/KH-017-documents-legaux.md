@@ -16,7 +16,7 @@ Fiche synthèse du chantier documentaire légal Koinobori House.
 | 0 | `00-README-KH-017.md` | ✅ pack info + doctrine |
 | 1 | `01-mentions-legales-FR.md` | 🟡 brouillon + placeholders, clause CM2C officielle intégrée |
 | 2 | `02-legal-notice-EN.md` | 🟡 brouillon EN informatif, mention FR fait foi |
-| 3 | `03-CGV-B2C-FR.md` | 🟡 brouillon + placeholders, clause CM2C officielle intégrée §14 |
+| 3 | `03-CGV-B2C-FR.md` | 🟡 brouillon + placeholders, clause CM2C officielle intégrée §13 |
 | 4 | `04-terms-conditions-B2C-EN.md` | 🟡 brouillon EN informatif, mention FR fait foi |
 | 5 | `05-politique-confidentialite-RGPD-FR.md` | 🟡 brouillon + plugins/durées à valider |
 | 6 | `06-privacy-policy-GDPR-EN.md` | 🟡 brouillon EN informatif, mention FR fait foi |
@@ -46,7 +46,7 @@ Cette formulation **remplace toutes les occurrences antérieures** d'identificat
 - ⚠️ Note interne : surveiller bascule documentaire prévue au **01/09/2026** vers référence CIBS (`art. L. 223 et s. du code des impositions sur les biens et services`)
 
 ### Médiation consommation (CM2C)
-- **Clause officielle CM2C intégrée mot pour mot** dans `01-mentions-legales-FR.md` §Médiation + `03-CGV-B2C-FR.md` §14
+- **Clause officielle CM2C intégrée mot pour mot** dans `01-mentions-legales-FR.md` §Médiation + `03-CGV-B2C-FR.md` §13
 - Coordonnées : CM2C, 49 rue de Ponthieu, 75008 Paris, 01 89 47 00 14, litiges@cm2c.net, https://www.cm2c.net/declarer-un-litige.php
 - Validité adhésion : **29/05/2029**
 - Note "internal" supprimée FR (clause officielle posée). EN versions marquées informatives, FR fait foi.
