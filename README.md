@@ -76,15 +76,20 @@ Doctrine complète : `CLAUDE.md`.
 ├── brand/                    # Identité marque (logos site, hors produits)
 │   └── koinoborihouse/
 │       ├── logo-color.png    # Logo principal couleur (PNG transparent 1172×213)
-│       └── favicon-200.png   # Favicon tampon rouge 鯉のぼり (PNG transparent 200×200)
+│       ├── favicon-200.png   # Favicon tampon rouge 鯉のぼり (PNG transparent 200×200)
+│       └── favicon-512.png   # Favicon 512×512 (icône de site WordPress, upscale du 200)
 ├── catalog/                  # Catalogue produits (voir catalog/README.md)
 │   ├── master.csv            # Source de vérité SKU MVP
 │   ├── examples.csv
 │   ├── images/               # Visuels produits e-commerce uniquement
 │   └── README.md
+├── wp/                       # Code WordPress versionné (déployé manuellement)
+│   └── themes/
+│       └── koinobori-child/  # Thème enfant Kadence (KH-103)
 └── docs/
     ├── lot0/                 # Cadrages Lot 0 (tickets KH-xxx)
     │   └── KH-017-documents-legaux/   # Légaux FR/EN (publics)
+    ├── lot1/                 # Docs d'exécution Lot 1 (KH-102+)
     └── handoff/
         └── CODEX-HANDOFF.md  # Reprise future par Codex
 ```
