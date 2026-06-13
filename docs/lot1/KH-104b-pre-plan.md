@@ -142,11 +142,12 @@ Stocker hors repo (contiennent l'URL staging + parfois l'en-tête d'auth) — do
 
 | # | Risque | Mitigation |
 |---|---|---|
-| R1 | Polylang gagne la course ⇒ double redirection / mauvaise langue (E1) | mu-plugin hook `init` prio 1 (avant `template_redirect` Polylang). Si échec : monter plus tôt (`setup_theme`) ou confirmer « Détecter langue navigateur » bien OFF (KH-104 §3) |
-| R2 | Basic auth staging bloque curl | `--user "StagingKH:****"` dans le script |
+| R1 | Polylang gagne la course ⇒ `/` redirigé par Polylang, pas par nous (run 1/2 réels) | **résolu v1.1.0** : redirection exécutée au chargement du mu-plugin (avant Polylang). Vérif : `X-Redirect-By: koino-lang-redirect` doit être présent sur la 302 de `/` |
+| R2 | Basic auth staging bloque curl | `--user "<user>:<mdp>"` dans le script — ⚠️ mettre le **vrai** mdp (pas le placeholder), sinon 401 partout |
 | R3 | Cert auto-signé staging | `curl -k` (déjà dans le script) |
-| R4 | Cookie non posé (« headers already sent ») | mu-plugin agit sur `init` (aucune sortie avant) ; vérifier aucun espace/BOM avant `<?php`, aucun notice PHP |
-| R5 | LiteSpeed sert une 302 en cache avec mauvaise langue | racine exclue du cache (doctrine) + `nocache_headers` + `Vary` ; au besoin purger le cache LiteSpeed avant test |
+| R4 | Cookie non posé (« headers already sent ») | mu-plugin agit au chargement (aucune sortie avant) ; vérifier aucun espace/BOM avant `<?php`, aucun notice PHP |
+| R5 | LiteSpeed sert une 302 en cache avec mauvaise langue | racine exclue du cache (doctrine) + `nocache_headers` (`no-store, no-cache, private`) ⇒ 302 non-cacheable. NB : LiteSpeed **strippe le `Vary`** (cf exception A11) mais c'est moot grâce au `no-store` |
+| R8 | v1.1.0 pas réellement déployée (ancien fichier sur staging) | vérifier dans cPanel `Version: 1.1.0` + dernière ligne `koino_root_lang_redirect();` ; confirmer `X-Redirect-By: koino-lang-redirect` |
 | R6 | noindex actif ⇒ indexabilité réelle non testable | attendu ; pré teste le routage, pas l'indexation. Indexation = prod post-launch |
 | R7 | Cookie résiduel fausse A6/A7/A8 | vider cookies entre cas (script envoie un `Cookie:` explicite par requête, isolé) |
 
@@ -175,12 +176,31 @@ Stocker hors repo (contiennent l'URL staging + parfois l'en-tête d'auth) — do
 
 **Correctif** : mu-plugin **v1.1.0** — redirection exécutée **au chargement du mu-plugin** (avant Polylang), `header()` natif + en-tête signature `X-Redirect-By: koino-lang-redirect`. Code only, staging only, pas de merge.
 
-### Run 2 — à exécuter (après redéploiement v1.1.0)
+### Run 2 — 2026-06-13 — invalide (artefacts)
 
-Re-déployer le `.php` v1.1.0 sur staging, re-lancer le script complet. Attendu : A et C passent, `X-Redirect-By: koino-lang-redirect` présent sur la 302 de `/`. B/D/E restent PASS.
+Deux tentatives non concluantes, **pas des résultats code** : (a) placeholder mot de passe laissé → 401 partout (PASS=4) ; (b) après auth OK, `PASS=19 FAIL=8` identique au run 1 — car la **v1.1.0 n'avait pas été déployée** (staging tournait encore v1.0.0, vérifié via `X-Redirect-By: Polylang` + en-tête `Version: 1.0.0` dans cPanel).
 
-## 11. Suite
+### Run 3 — 2026-06-13 — 🟢 GO (avec exception A11)
 
-1. Re-déployer v1.1.0 + re-run (run 2).
-2. Si **pré PASS** : consigner run 2 ici, puis décider de l'achat licence Polylang for WC pour KH-104b-**full** (10 URLs WC) + KH-109 (RankMath → hreflang/canonical/sitemaps).
-3. Si nouveau FAIL : diagnostiquer (priorité : `X-Redirect-By` présent ? sinon mu-plugin pas exécuté ; cache LiteSpeed à purger).
+`PASS=26 FAIL=1` (`KH-104b-pre-20260613-125214.log`), après déploiement réel de la v1.1.0. Spot-check : `X-Redirect-By: koino-lang-redirect` + `Location: …/en/` + `Set-Cookie: koino_lang_pref=en; Max-Age=7776000; path=/; secure; SameSite=Lax` + `Cache-Control: no-cache, no-store, must-revalidate, max-age=0, private`.
+
+| Groupe | Verdict | Détail |
+|---|---|---|
+| A racine `/` | 🟡 13/14 | seul **A11 (Vary)** FAIL |
+| B `/fr/` `/en/` | ✅ PASS | 4/4 |
+| C Googlebot | ✅ PASS | 3/3 |
+| D admin/REST/login | ✅ PASS | 3/3 |
+| E intégrité Polylang | ✅ PASS | saut unique, pas de boucle |
+
+**Aucun HARD FAIL** (pas de 301, pas de croisement `/fr/↔/en/`, pas de double saut).
+
+#### Exception A11 (Vary) — non bloquante, documentée (décision Alain 2026-06-13)
+
+L'en-tête `Vary: Cookie, Accept-Language` émis par le mu-plugin **n'apparaît pas** dans la réponse : **strippé au niveau serveur LiteSpeed** (o2switch gère le Vary), pas un défaut de notre code (les autres en-têtes maison passent). **Impact réel nul** : A11 vise à éviter qu'un cache serve la mauvaise langue sur `/` ; or A12 (PASS) envoie `no-store, no-cache, private` → la 302 est **non-cacheable**, donc Vary est redondant. Doctrine racine satisfaite par A12 + exclusion LiteSpeed de `/`. → A11 = exception connue, ne bloque pas le GO.
+
+## 11. Verdict & suite
+
+- **KH-104b-pré = 🟢 GO** (run 3, 26/27, exception A11 documentée). KH-107 (groupe A) validé sur staging.
+- **Rappel** : GO pré **ne débloque PAS** les Lots 2-8. Déblocage = **KH-104b-full PASS** (10 URLs WC), bloqué par la licence Polylang for WooCommerce (KH-106) + RankMath (KH-109 → hreflang/canonical/sitemaps, groupe F).
+- **Pas de prod, pas de merge** à ce stade (décision Alain). PR #1 reste ouverte ; déploiement prod groupé plus tard.
+- Hors scope ici (ne pas ouvrir maintenant) : KH-106, KH-104b-full.

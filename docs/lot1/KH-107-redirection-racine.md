@@ -3,7 +3,7 @@
 - **Ticket** : KH-107
 - **Lot** : 1
 - **Date exécution** : 2026-06-13
-- **Statut** : 🟡 **Code prêt** (versionné repo) — déploiement staging + vérif à faire par Alain
+- **Statut** : ✅ **Validé sur staging** (v1.1.0, 2026-06-13) via le gate KH-104b-pré run 3 (groupe A : 13/14, seul A11/Vary en exception non bloquante). Pas de prod, pas de merge à ce stade.
 - **Cadre** : ⚠️ **KH-107 n'est plus un ticket isolé — c'est une composante du gate [KH-104b-pré](KH-104b-pre-plan.md)** (décision Alain 2026-06-13). Sa validation = groupe A (+ contributions C/D/E) du plan KH-104b-pré.
 - **Dépend de** : KH-104 (Polylang Free, `/fr/` + `/en/` actifs)
 - **Environnement cible** : **staging uniquement** (`staging.koinoborihouse.com`). **Pas de prod** tant que KH-104b non validé.
