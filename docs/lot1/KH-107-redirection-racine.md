@@ -19,18 +19,23 @@ Redirection de la racine `/` vers la bonne langue, **sans** dépendre du détect
 
 ## 2. Code versionné — `wp/mu-plugins/koino-lang-redirect.php`
 
-mu-plugin (chargé automatiquement, **avant** les plugins normaux → passe avant la redirection racine native de Polylang qui s'exécute sur `template_redirect`).
+mu-plugin (chargé automatiquement, **avant** les plugins normaux → passe avant la redirection racine native de Polylang).
+
+> ⚠️ **v1.1.0 (2026-06-13)** — correctif après run 1 du gate KH-104b-pré.
+> v1.0.0 utilisait le hook `init` priorité 1, en supposant que Polylang redirige `/` sur `template_redirect` (après `init`). **Faux** : Polylang redirige `/` vers la langue par défaut (toujours `/fr/`) **avant `init`** (phase de choix de langue). Résultat run 1 : notre logique ne tournait jamais sur `/` (A2/A3/A4/A6/C1 + cookie/Vary/Cache-Control en échec, tout partait vers `/fr/`). **Correctif** : exécution **au chargement du mu-plugin** (les mu-plugins sont chargés avant les extensions → on gagne la course de façon déterministe). À ce stade `pluggable.php` n'est pas chargé → redirection en `header()` natif au lieu de `wp_redirect()`.
 
 Choix techniques :
 
 | Point | Décision | Raison |
 |---|---|---|
-| Hook | `init` priorité 1 | `pluggable.php` chargé (`wp_redirect` dispo) **et** avant le `template_redirect` de Polylang |
-| Périmètre requête | racine exacte uniquement, via comparaison `home_url` path vs `REQUEST_URI` path | gère sous-dossier ; exclut nativement `/fr/`, `/en/`, `/wp-json/`, `/wp-admin/`, etc. |
+| Déclenchement | **exécution directe au chargement du mu-plugin** (pas de hook) | s'exécute avant l'inclusion de Polylang → gagne la course sur `/`, indépendamment de l'ordre des hooks |
+| Redirection | `header( 'Location: …', true, 302 )` natif + `exit` | `wp_redirect()` indisponible si tôt (pluggable.php pas chargé) |
+| Signature | en-tête `X-Redirect-By: koino-lang-redirect` | preuve dans les tests que c'est nous, pas Polylang |
+| Périmètre requête | racine exacte uniquement, via comparaison `home_url` path vs `REQUEST_URI` path | `home_url()` non filtré à ce stade (Polylang pas chargé) ; exclut nativement `/fr/`, `/en/`, `/wp-json/`, `/wp-admin/`, etc. |
 | Garde-fous | `is_admin` / cron / ajax / `REST_REQUEST` / `WP_CLI` / `XMLRPC_REQUEST` + GET/HEAD seulement | ne jamais perturber admin, API, cron, POST de formulaires |
 | Langue | cookie `koino_lang_pref` (`fr`/`en`) sinon parse `Accept-Language` (tri par `q`, fallback EN) | doctrine choix manuel > navigateur, défaut EN |
 | Cookie | 90 j glissants, `path=/`, `Secure` si HTTPS, `HttpOnly=false`, `SameSite=Lax` | lisible par le sélecteur JS (KH-115) |
-| Statut | `wp_redirect( $target, 302 )` | jamais 301 |
+| Statut | 302 | jamais 301 sur la racine |
 | Cache | `nocache_headers()` + `Vary: Cookie, Accept-Language` | racine non cacheable (cf exclusion LiteSpeed), pas de mauvaise langue servie par un cache/CDN |
 | Query string | préservée (UTM, etc.) | `/?utm=x` → `/fr/?utm=x` |
 

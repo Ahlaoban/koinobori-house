@@ -157,8 +157,30 @@ Stocker hors repo (contiennent l'URL staging + parfois l'en-tête d'auth) — do
 - **Git** : branche `feat/kh-107-root-redirect` (PR #1) **non mergée sur `main`** → `main` intact. Rollback = fermer la PR sans merge.
 - **Production** : **non concernée** (aucun déploiement prod à ce stade).
 
-## 10. Suite
+## 10. Résultats
 
-1. Alain déploie sur staging (§2) + exécute (§3-4).
-2. Si **pré PASS** : reporter résultats ici (section « Résultats » à ajouter), puis décider de l'achat licence Polylang for WC pour KH-104b-**full** (10 URLs WC) + KH-109 (RankMath → hreflang/canonical/sitemaps).
-3. Si **HARD FAIL** : bloquer, diagnostiquer (R1 en priorité), corriger le mu-plugin, re-tester.
+### Run 1 — 2026-06-13 — 🔴 NO-GO
+
+`PASS=19 FAIL=8` (script `KH-104b-pre-20260613-120848.log`).
+
+| Groupe | Verdict | Détail |
+|---|---|---|
+| A racine `/` | ❌ FAIL | A2, A3, A4, A6, A10, A11, A12 |
+| B `/fr/` `/en/` | ✅ PASS | 4/4 |
+| C Googlebot | ❌ FAIL | C1 (→/fr/ au lieu de /en/) |
+| D admin/REST/login | ✅ PASS | 3/3 |
+| E intégrité Polylang | ✅ PASS | saut unique, pas de boucle |
+
+**Cause racine unique** : le mu-plugin v1.0.0 (hook `init` prio 1) n'exécutait **jamais** sa logique sur `/`. Polylang redirige la racine vers la langue par défaut (toujours `/fr/`) **avant `init`** → tout partait vers `/fr/` (PASS fr coïncidents), aucun en-tête maison (Set-Cookie/Vary/Cache-Control absents). **Aucun HARD FAIL structurel** (pas de 301, pas de croisement `/fr/↔/en/`, pas de boucle) → fondation Polylang saine.
+
+**Correctif** : mu-plugin **v1.1.0** — redirection exécutée **au chargement du mu-plugin** (avant Polylang), `header()` natif + en-tête signature `X-Redirect-By: koino-lang-redirect`. Code only, staging only, pas de merge.
+
+### Run 2 — à exécuter (après redéploiement v1.1.0)
+
+Re-déployer le `.php` v1.1.0 sur staging, re-lancer le script complet. Attendu : A et C passent, `X-Redirect-By: koino-lang-redirect` présent sur la 302 de `/`. B/D/E restent PASS.
+
+## 11. Suite
+
+1. Re-déployer v1.1.0 + re-run (run 2).
+2. Si **pré PASS** : consigner run 2 ici, puis décider de l'achat licence Polylang for WC pour KH-104b-**full** (10 URLs WC) + KH-109 (RankMath → hreflang/canonical/sitemaps).
+3. Si nouveau FAIL : diagnostiquer (priorité : `X-Redirect-By` présent ? sinon mu-plugin pas exécuté ; cache LiteSpeed à purger).

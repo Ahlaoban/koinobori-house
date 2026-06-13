@@ -2,11 +2,20 @@
 /**
  * Plugin Name: Koinobori — redirection racine i18n
  * Description: 302 sur la racine "/" vers /fr/ ou /en/ selon le cookie koino_lang_pref puis Accept-Language. Ne touche jamais /fr/ ni /en/. Jamais 301.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Koinobori House
  *
- * KH-107 (Lot 1). mu-plugin versionné — chargé avant Polylang, donc il gagne
- * la course sur la redirection native de la racine (cf KH-104 §4).
+ * KH-107 (Lot 1), composante du gate KH-104b-pré.
+ *
+ * IMPORTANT (v1.1.0) — la redirection s'exécute AU CHARGEMENT du mu-plugin,
+ * donc AVANT que Polylang (extension normale) ne soit inclus.
+ * v1.0.0 utilisait le hook `init` : trop tard. Polylang redirige la racine "/"
+ * vers la langue par défaut (toujours /fr/) AVANT `init` (phase de choix de
+ * langue), si bien que notre logique (cookie, Accept-Language, en-têtes) ne
+ * tournait jamais sur "/" (gate KH-104b-pré run 1 : A2/A3/A4/A6/C1 + cookie/Vary/
+ * Cache-Control en échec). Les mu-plugins étant chargés avant les extensions,
+ * exécuter ici garantit qu'on gagne la course. À ce stade pluggable.php n'est
+ * pas chargé (pas de wp_redirect) : on émet la redirection avec header() natif.
  *
  * Doctrine i18n (CLAUDE.md) :
  *  - racine "/"  → 302 temporaire vers /fr/ si Accept-Language fr*, sinon /en/ (fallback EN)
@@ -67,8 +76,9 @@ function koino_lang_from_accept_language( $header ) {
 }
 
 /**
- * Redirige la racine "/" vers /fr/ ou /en/. Accroché tôt sur init pour passer
- * avant la redirection native de Polylang (template_redirect).
+ * Redirige la racine "/" vers /fr/ ou /en/. Exécutée au chargement du mu-plugin
+ * (avant Polylang) — voir l'en-tête du fichier. Émet la redirection en header()
+ * natif car wp_redirect() n'est pas encore disponible à ce stade.
  */
 function koino_root_lang_redirect() {
 	// Hors front-end : ne rien faire.
@@ -139,8 +149,14 @@ function koino_root_lang_redirect() {
 	// servir la mauvaise langue derrière un cache/CDN.
 	nocache_headers();
 	header( 'Vary: Cookie, Accept-Language', false );
+	header( 'X-Redirect-By: koino-lang-redirect' ); // signature : prouve que c'est nous (pas Polylang).
 
-	wp_redirect( $target, 302 ); // 302 temporaire — JAMAIS 301 sur la racine.
+	// 302 temporaire — JAMAIS 301 sur la racine. header() natif car pluggable.php
+	// (wp_redirect) n'est pas encore chargé au moment où ce mu-plugin s'exécute.
+	header( 'Location: ' . $target, true, 302 );
 	exit;
 }
-add_action( 'init', 'koino_root_lang_redirect', 1 );
+
+// Exécution immédiate, au chargement du mu-plugin, AVANT Polylang.
+// (Pas de hook : `init` arriverait après la redirection racine de Polylang.)
+koino_root_lang_redirect();
