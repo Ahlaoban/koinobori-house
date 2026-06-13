@@ -4,8 +4,9 @@
 - **Lot** : 1
 - **Date exécution** : 2026-06-13
 - **Statut** : 🟡 **Code prêt** (versionné repo) — déploiement staging + vérif à faire par Alain
+- **Cadre** : ⚠️ **KH-107 n'est plus un ticket isolé — c'est une composante du gate [KH-104b-pré](KH-104b-pre-plan.md)** (décision Alain 2026-06-13). Sa validation = groupe A (+ contributions C/D/E) du plan KH-104b-pré.
 - **Dépend de** : KH-104 (Polylang Free, `/fr/` + `/en/` actifs)
-- **Environnement cible** : **staging** d'abord (`staging.koinoborihouse.com`), puis prod après KH-104b
+- **Environnement cible** : **staging uniquement** (`staging.koinoborihouse.com`). **Pas de prod** tant que KH-104b non validé.
 
 ## 1. Objectif
 
@@ -62,4 +63,4 @@ Pas de boucle possible : `/fr/` et `/en/` ont un `req_path` ≠ racine → jamai
 
 ## 6. Suite
 
-Une fois vérifié staging → reporter dans KH-104b-pré (le test racine `/` 302 Accept-Language + Googlebot fait partie du gate). Déploiement prod groupé après validation KH-104b.
+Le déploiement staging + les vérifs (§3-4) s'exécutent **dans le cadre du gate** [KH-104b-pré](KH-104b-pre-plan.md) — voir ce plan pour la matrice complète (PASS/FAIL, captures, risques, rollback) et le script automatique `KH-104b-pre-tests.sh`. La checklist §4 ci-dessous = vue détaillée du groupe A du gate. **Pas de déploiement prod** avant validation KH-104b (pré puis full).
