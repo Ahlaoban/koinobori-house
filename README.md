@@ -22,7 +22,7 @@ Construire un site e-commerce bilingue **FR / EN** hébergé sur **o2switch** :
 | Paiement | WooCommerce Stripe + PayPal (officiels) |
 | Email | FluentSMTP + Brevo |
 | Cache | LiteSpeed Cache (o2switch) |
-| SEO | RankMath Free |
+| SEO | SEOPress Free |
 | Analytics | Plausible Analytics (sans cookies, RGPD-friendly) |
 
 Stack verrouillée détaillée : voir `CLAUDE.md`.

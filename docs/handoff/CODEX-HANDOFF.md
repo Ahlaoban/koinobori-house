@@ -27,7 +27,7 @@ Résumé de reprise (20 lignes max) :
 13. Jamais de mention de stock global ; stock par SKU uniquement.
 14. « US Flag » = nom fournisseur interne ; public = « Stars & Stripes Koinobori — by BCDG ».
 15. EUR only, pas de multi-devise au MVP.
-16. Stack figée : WordPress, WooCommerce, Kadence, Polylang, Stripe/PayPal, FluentSMTP+Brevo, LiteSpeed, RankMath.
+16. Stack figée : WordPress, WooCommerce, Kadence, Polylang, Stripe/PayPal, FluentSMTP+Brevo, LiteSpeed, **SEOPress** (remplace RankMath — incompat Polylang, décision 2026-06-13).
 17. i18n : `/fr/` + `/en/`, racine `/` en 302, jamais 301 sur `/`.
 18. Prochaine tâche : GO Lot 1 après review Codex + achat licence Polylang for WC ; premier ticket KH-104b.
 19. Lot 1 (WordPress) = **pas sans GO Alain** ; quand GO, commencer par KH-104b (test Polylang for WC).

@@ -76,6 +76,9 @@ captures/
 screenshots/
 memory/
 
+# --- Sorties de tests staging (contiennent l'URL staging — garder local) ---
+docs/lot1/resultat-*.txt
+
 # --- Outils / IDE / agent ---
 .claude/
 .vscode/

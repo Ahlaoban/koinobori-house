@@ -31,7 +31,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 | Thème | Kadence Free + thème enfant |
 | Cache | LiteSpeed Cache (natif o2switch, exclure racine `/`) |
 | Multilingue | **Polylang Free + Polylang for WooCommerce (payant)** |
-| SEO | RankMath Free (inclut redirections + schemas) |
+| SEO | **SEOPress Free** (sitemaps i18n par langue + hreflang + schemas). Remplace RankMath — incompatible Polylang, décision data-driven 2026-06-13 (KH-109). ⚠️ gestionnaire de redirections = SEOPress Pro/.htaccess si besoin (non requis MVP). |
 | SMTP | FluentSMTP + Brevo |
 | Sécurité | Wordfence Free + 2FA admin |
 | Sauvegardes | UpdraftPlus + Google Drive (+ Cpanel o2switch natif) |
@@ -56,7 +56,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - Polylang setting "Hide URL language for default" = **OFF**
 - Hreflang : `fr-FR` + `en` + `x-default`
 - Canonical par langue, jamais cross-lang
-- Sitemaps RankMath séparés `/fr/sitemap.xml` + `/en/sitemap.xml`
+- Sitemaps SEOPress séparés `/fr/sitemap.xml` + `/en/sitemap.xml` (SEOPress génère des sitemaps par langue avec Polylang)
 - LiteSpeed Cache exclut racine `/`
 - Sélecteur langue header + footer
 - Choix manuel utilisateur prime sur Accept-Language
