@@ -3,7 +3,7 @@
 - **Ticket** : KH-106
 - **Lot** : 1
 - **Date ouverture** : 2026-06-13
-- **Statut** : 🔴 **BLOQUÉ — NO-GO install** (licence non achetée + WooCommerce core absent)
+- **Statut** : 🟡 **Étape 0 (WooCommerce core) = GO** (2026-06-13). Suite (add-on Polylang for WC) **BLOQUÉE** sur achat licence.
 - **Environnement cible** : **staging uniquement** (pas de prod)
 - **Bloque** : KH-104b-**full** → déblocage Lots 2-8
 
@@ -16,7 +16,7 @@ Installer et valider **Polylang for WooCommerce** sur staging pour préparer KH-
 | Prérequis | Statut | Conséquence |
 |---|---|---|
 | **Licence Polylang for WooCommerce** (payant) | ❌ **pas achetée** | impossible de télécharger/activer le plugin → KH-106 ne peut pas démarrer |
-| **WooCommerce core** (gratuit) | ❌ pas installé · ✅ **install autorisée maintenant** (étape 0, indépendante de la licence) | de-risque les conflits ; add-on inopérant sans lui |
+| **WooCommerce core** (gratuit) | ✅ **installé 2026-06-13 (v10.8.1)** — étape 0 GO | France/EUR, coming-soon OFF, 4 pages WC créées, KH-107 non régressé |
 
 ## 3. Spec d'achat (vérifiée source officielle polylang.pro, juin 2026)
 
@@ -38,6 +38,25 @@ Sources : [pricing](https://polylang.pro/pricing/) · [produit WC](https://polyl
 2. **Config traduction** : activer traduction produits / catégories produits / attributs / variations.
 3. **1 produit test variable minimal** (≠ import catalogue) : ex. attribut global `Taille` (50/75), 2 variations, stock par variation → valider la sync stock/variations conforme au modèle KH-010 (parent variable + variations, cf `catalog/master.csv` structure Hanami).
 4. **Validation** (critères §5) + captures.
+
+## 4bis. Résultats étape 0 — WooCommerce core (2026-06-13)
+
+🟢 **GO étape 0.** Install par Alain (WP admin staging), assistant guidé sauté, France/EUR, mode « Bientôt disponible » désactivé → « En ligne ».
+
+| Vérif | Résultat |
+|---|---|
+| Version WooCommerce | **10.8.1** (WP 7.0 / PHP 8.3) |
+| Warnings PHP critiques | aucun |
+| 4 pages WC créées (FR) | Boutique · Panier · **Validation de la commande** (= Commande/Checkout) · Mon compte — Publiées, traduction EN en attente (add-on) |
+| Site Health | **« Bien »**, 0 anomalie critique. 5 recommandations bénignes : noindex (voulu staging), extensions inactives (Wordfence-OFF — **ne pas supprimer**), évènement planifié échoué (= wp-cron loopback bloqué par basic auth staging), cache objet/page (perf, LiteSpeed gère en prod) |
+| Conflits Kadence / Wordfence(off) / UpdraftPlus / Polylang Free | aucun |
+| **Non-régression KH-107** | re-run `KH-104b-pre-tests.sh` post-WC = **PASS=25 FAIL=2** (`KH-104b-pre-20260613-150305.log`). Cœur i18n intact : A (sauf A11), B, C, E **tous verts**. |
+
+**2 FAIL = hors périmètre KH-107, environnementaux, non bloquants** :
+- **A11 (Vary)** : exception connue (LiteSpeed strippe `Vary`, moot car `Cache-Control: no-store`). Cf KH-104b-pré §10.
+- **D2 (`/wp-login.php` → 503)** : **protection anti-bruteforce serveur o2switch/LiteSpeed** qui throttle les hits curl répétés sur l'endpoint login. **Login réel OK** (Alain connecté à wp-admin au même moment). Pas WordPress en maintenance (`/` répond 302), pas WC, pas KH-107 (le mu-plugin ne touche pas `/wp-login.php`). NB : le test D2 du script tape un endpoint protégé par l'hôte → faux négatif environnemental.
+
+**Conclusion** : WooCommerce core n'introduit **aucune régression** sur la fondation i18n (KH-107) ni aucun conflit. Étape 0 close.
 
 ## 5. Critères de réussite (GO) — à valider en exécution
 
