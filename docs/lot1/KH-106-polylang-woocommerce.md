@@ -3,7 +3,7 @@
 - **Ticket** : KH-106
 - **Lot** : 1
 - **Date ouverture** : 2026-06-13
-- **Statut** : 🟡 **Étape 0 (WooCommerce core) = GO** (2026-06-13). Suite (add-on Polylang for WC) **BLOQUÉE** sur achat licence.
+- **Statut** : 🟢 **GO** (2026-06-13) — WooCommerce core + add-on Polylang for WooCommerce installés et validés sur staging. Licence achetée. Suite = KH-104b-full (bloqué uniquement par traduction slugs WC + RankMath KH-109).
 - **Environnement cible** : **staging uniquement** (pas de prod)
 - **Bloque** : KH-104b-**full** → déblocage Lots 2-8
 
@@ -57,6 +57,33 @@ Sources : [pricing](https://polylang.pro/pricing/) · [produit WC](https://polyl
 - **D2 (`/wp-login.php` → 503)** : **protection anti-bruteforce serveur o2switch/LiteSpeed** qui throttle les hits curl répétés sur l'endpoint login. **Login réel OK** (Alain connecté à wp-admin au même moment). Pas WordPress en maintenance (`/` répond 302), pas WC, pas KH-107 (le mu-plugin ne touche pas `/wp-login.php`). NB : le test D2 du script tape un endpoint protégé par l'hôte → faux négatif environnemental.
 
 **Conclusion** : WooCommerce core n'introduit **aucune régression** sur la fondation i18n (KH-107) ni aucun conflit. Étape 0 close.
+
+## 4ter. Résultats add-on Polylang for WooCommerce (2026-06-13) — 🟢 GO
+
+- **Versions** : Polylang Free **3.8.4** + Polylang for WooCommerce **2.2.2**. Licence achetée (« Polylang for WooCommerce » standalone, 1 site, 99 € HT / 118,80 € TTC) et **saisie/active**.
+- **Install** : zip `polylang-wc.zip` téléversé + activé. Assistant Polylang exécuté (Licences → Langues → Média → WooCommerce → Prêt) :
+  - Langues FR/EN déjà OK (KH-104), rien changé.
+  - **Média** : traduction des médias **non activée** (doctrine 1 bibliothèque).
+  - **Étape WooCommerce** : création automatique des **traductions EN des 4 pages WC** (Shop/Cart/Checkout/My account) + install de la traduction FR du plugin.
+
+**Validation fonctionnelle** (produit jetable `TEST KH-106 Variable`, attribut Taille 50/75/100, stock 10/5/3, prix) :
+
+| Critère | Résultat |
+|---|---|
+| WooCommerce détecté par l'add-on | ✅ (étape WC du wizard, pages créées) |
+| Traduction produits | ✅ FR→EN créée et liée (`/en/produit/…`) |
+| Traduction attributs + variations | ✅ produit EN hérite **auto** du type variable + 3 variations |
+| **Sync stock/variations (KH-010)** | ✅ **passive** (stocks 10/5/3 hérités sans re-saisie) + **active** (modif FR variation 50 : 10→**99** → EN affiche **99** dans les 2 langues) |
+| Conflits / warnings | ✅ Site Health « Bien », 0 critique (Kadence/Wordfence-off/UpdraftPlus/PLL Free) |
+| Non-régression KH-107 | ✅ re-run post-add-on = **25/27** (`KH-104b-pre-20260613-152937.log`), cœur i18n intact (A sauf Vary, B, C, E verts) |
+
+**Exceptions inchangées, hors scope KH-107** : A11 (Vary strippé LiteSpeed), D2 (`/wp-login.php` 503 anti-bruteforce hôte). Cf §4bis.
+
+**Nettoyage** : produit test FR+EN supprimé après validation. Les 4 pages WC EN (réelles) **conservées**.
+
+**Suivi pour KH-104b-full (hors KH-106)** : traduire les **slugs de base WC** (`produit→product`, `boutique→shop`, `panier→cart`, `commande→checkout`, `mon-compte→my-account`) via réglages Polylang for WC — actuellement EN sous `/en/produit/…`. Plus RankMath KH-109 (hreflang/canonical/sitemaps).
+
+**Verdict KH-106 = 🟢 GO.**
 
 ## 5. Critères de réussite (GO) — à valider en exécution
 
