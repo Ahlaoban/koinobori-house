@@ -3,7 +3,7 @@
 - **Ticket** : KH-106b (suite de KH-106, prépare KH-104b-full)
 - **Lot** : 1
 - **Date plan** : 2026-06-13
-- **Statut** : 🟢 **décision prise (skip Pro)** — exécution des 4 slugs de page en Free. Audit lecture seule d'abord, puis modif staging.
+- **Statut** : ✅ **GO (2026-06-13)** — slugs WC bilingues alignés sur staging (1 correctif `commander→commande`). Base produit `/en/produit/` acceptée (skip Pro). KH-107 non régressé.
 - **Environnement** : **staging uniquement** · pas de prod · pas de merge · KH-107 non touché
 - **Hors scope strict** : KH-109, KH-104b-full, RankMath, robots, sitemap, canonical, hreflang, mu-plugin KH-107, production
 
@@ -140,3 +140,30 @@ EN (cibles) :
 2. Je confirme le finding §1 (Free vs Pro) sur la réalité staging.
 3. Décision §8 (Alain) pour `produit`.
 4. Exécution §4 (4 pages + base produit conditionnelle) → vérif §5 + re-run KH-107 → verdict §9.
+
+## 12. Résultats (2026-06-13) — 🟢 GO
+
+**Audit §2** : l'assistant Polylang for WC avait déjà créé les **slugs EN en anglais**. État relevé (codes HTTP) :
+
+| Langue | shop/cart/checkout/my-account · boutique/panier/commande/mon-compte |
+|---|---|
+| EN | shop 200 · cart 200 · checkout **302** (→ /en/cart/, panier vide = WC normal) · my-account 200 |
+| FR | boutique 200 · panier 200 · **commande 301 → /fr/commander/** ❌ · mon-compte 200 |
+
+→ **7/8 déjà bons.** Seule anomalie : la page checkout FR avait le slug **`commander`** (≠ doctrine `/fr/commande/`).
+
+**Correctif unique** (page `Validation de la commande` FR, ID 76) : slug **`commander` → `commande`** + flush permaliens. EN intact. mu-plugin KH-107 non touché.
+
+**Vérifs post-correctif** :
+- `/fr/commande/` → **302** (→ /fr/panier/, panier vide) — plus de 301 vers `commander` ✅
+- Tous les autres slugs inchangés et corrects
+- **Non-régression KH-107** : re-run `KH-104b-pre-tests.sh` = **25/27** (`resultat-pre-postslug.txt`), cœur i18n intact (A sauf Vary, B, C, E verts ; A11+D2 exceptions connues) ✅
+
+**Limite acceptée** (décision §1) : base produit **single** reste `/en/produit/…` (traduisible seulement avec Polylang Pro). Réouverture conditionnée à une preuve au KH-104b-full.
+
+**Slugs finaux** : `/fr/boutique/ · /fr/panier/ · /fr/commande/ · /fr/mon-compte/ · /fr/produit/…` ↔ `/en/shop/ · /en/cart/ · /en/checkout/ · /en/my-account/ · /en/produit/…`
+
+**Verdict KH-106b = 🟢 GO.** Rollback dispo (slug d'origine `commander`).
+
+## 13. Suite
+**KH-109 RankMath** (hreflang/canonical/sitemaps) → puis **KH-104b-full** (10 URLs). Si KH-104b-full démontre `/en/product/` indispensable (données) → rouvrir Polylang Pro.
