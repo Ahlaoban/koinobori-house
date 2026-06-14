@@ -3,7 +3,7 @@
 - **Ticket** : KH-109
 - **Lot** : 1
 - **Date plan** : 2026-06-13
-- **Statut** : 🟡 **plan + diagnostic — AUCUNE action staging avant GO Alain**
+- **Statut** : ✅ **GO FERME (2026-06-14)** — SEOPress Free installé + configuré + validé sur staging. V1-V14 = 12/12 · V15 = 26/27 (seul A11 Vary, exception connue) · V16 Santé du site = « Bien », 0 critique. Détail §12. **Ouvre KH-104b-full.** Staging only, pas de prod, PR #1 non mergée.
 - **Environnement** : **staging uniquement** · pas de prod · pas de merge PR #1 · pas de Polylang Pro · mu-plugin KH-107 non touché · pas d'import catalogue réel
 - **Bloque** : KH-104b-full (ne pas ouvrir avant verdict KH-109)
 
@@ -112,3 +112,26 @@ Installer + configurer **SEOPress Free** sur staging et **valider le SEO i18n** 
 3. Ajuster réglages SEOPress si V7/V8/V9/V13 imparfaits → re-vérifier.
 4. **Verdict GO/NO-GO §9**.
 5. Si GO → ouvrir **KH-104b-full** (10 URLs) → déblocage Lots 2-8.
+
+## 12. Résultats (2026-06-14)
+
+**Install** : SEOPress – On-site SEO (Benjamin Denis) installé + activé sur staging. Assistant sauté. XML Sitemap **ON** (Articles + Pages + Produits ; média OFF). Sitemap images ON. noindex WP laissé ON. Permaliens ré-enregistrés (flush). LiteSpeed Cache : plugin non présent dans l'admin staging → purge sans objet (requêtes basic auth non cachées).
+
+**Run auto `KH-109-seo-tests.ps1` (log `KH-109-seo-20260614-215614`)** : **12/12 PASS, 0 FAIL, 2 SKIP**.
+
+| Test | Résultat |
+|---|---|
+| V1-V4 (`/fr/` `/en/` `/fr/boutique/` `/en/shop/`) | 200 ✅ |
+| V5/V6 fiches produit | **SKIP** — aucun produit publié (conforme doctrine « pas d'import catalogue ») |
+| V7/V8 canonical | **self par langue** (`/fr/boutique/`→/fr/, `/en/shop/`→/en/), aucun cross-lang ✅ |
+| V9 hreflang | `fr` + `en` + `x-default`, **série unique, 0 doublon** ✅ (le risque #1 SEOPress+Polylang écarté) |
+| V10-V13 sitemaps | index `/sitemaps.xml` valide, pages + produits, **FR + EN** (5+5 URLs) ✅ |
+| V14 racine KH-107 | 302 `x-redirect-by: koino-lang-redirect` intact ✅ |
+
+**URL sitemap confirmée** : `/sitemaps.xml` (SEOPress, pluriel). C'est l'avantage attendu vs RankMath (sitemaps par langue natifs).
+
+**V15 — non-régression KH-107** (`KH-104b-pre-tests.ps1`, log `KH-104b-pre-ps-20260614-221353`) : **26/27**. Seul FAIL = **A11 Vary** (exception connue : LiteSpeed strippe Vary, moot car Cache-Control no-store). **D2 wp-login = PASS** (mieux que le baseline 25/27). → KH-107 intact post-SEOPress, **aucune régression**.
+
+**V16 — Santé du site** : note globale **« Bien »**, **0 problème critique**. 5 « améliorations recommandées » non bloquantes : noindex actif (VOULU staging), Action Scheduler WC (préexistant), cache objet/page (LiteSpeed absent), extensions inactives. Aucune imputable à SEOPress.
+
+**Verdict** : ✅ **GO FERME KH-109** (2026-06-14). Tous critères §9 réunis : V1-V14 = 12/12, V15 = 26/27 (A11 exception), V16 = 0 critique. SEOPress retenu, RankMath abandonné, Polylang Pro non retenu. **Ouvre KH-104b-full** (plan `docs/lot1/KH-104b-full-plan.md` + scripts `KH-104b-full-tests.ps1` / `KH-104b-pre-tests.ps1`). Staging only, pas de prod, PR #1 non mergée, SEOPress non reconfiguré.
