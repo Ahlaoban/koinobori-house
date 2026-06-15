@@ -19,6 +19,13 @@ Format par entrée :
 
 ## Entrées
 
+### [UX-Header-001] ⭐ PRIORITAIRE — Header interactif "Shoji" (battants coulissants)
+**Observation** : concept validé en principe (header dont 2 panneaux shoji s'écartent au survol pour révéler un menu iconique central, logo KOINOBORI HOUSE qui se scinde Koinobori←/House→ et reste cliquable, fond intérieur indigo non-noir). Prototype vanilla exploré (`koinobori-house-images/header-shoji.html`) — **mécanique fonctionnelle mais rendu pas encore au niveau voulu par Alain**. Réf. d'interaction = header maijinn.com (`C:\dev\maijinn-saas` `PublicLayout.tsx` : split logo + reveal menu, mots s'arrêtent juste après le menu). Direction visuelle alimentée par Manus + mockup ChatGPT (cartouche → shoji, indigo, icônes or).
+**Pourquoi c'est important** : signature d'entrée du site, forte différenciation premium ; demande explicite Alain.
+**Impact** : header global, identité, navigation, sélecteur langue (recoupe [[UX-001]]), portage WP/Kadence (vanilla HTML/CSS/JS, pas React).
+**Décision requise plus tard** : rendu final des battants (idée « doubles battants qui se replient »), easing/vitesse, écartement, fond indigo/or exact, intégration logo+cartouche fixes, version mobile. Possible reprise via Codex/Manus.
+**Statut** : ⏸️ en attente — **à reprendre Lot 6 (AD) → Lot 7 (implémentation thème)**. Ne pas figer avant.
+
 ### [UX-001] Emplacement + visibilité du sélecteur de langue
 **Observation** : Polylang fournit un sélecteur fonctionnel ; emplacement par défaut non arbitré (header ? footer ? les deux ?).
 **Pourquoi c'est important** : 1ère décision du visiteur (FR/EN), affecte conversion + perception premium ; CLAUDE.md prévoit header + footer.
