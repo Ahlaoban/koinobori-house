@@ -19,7 +19,8 @@
 param(
   [string]$Base = $(if ($env:BASE) { $env:BASE } else { "https://staging.koinoborihouse.com" }),
   [string]$Auth = $env:AUTH,
-  [string]$Slug = $(if ($env:SLUG) { $env:SLUG } else { "test" })
+  [string]$Slug = $(if ($env:SLUG) { $env:SLUG } else { "test" }),
+  [string]$SlugEn = $(if ($env:SLUG_EN) { $env:SLUG_EN } else { $Slug })
 )
 
 $ErrorActionPreference = "Stop"
@@ -69,26 +70,30 @@ function LogH { param($t, $c) Add-Content -Path $Log -Value "`n===== $t =====`n$
 
 function Test-Hreflang {
   param($Name, $Body)
+  $links = ([regex]::Matches($Body, '(?i)<link[^>]*rel="?alternate"?[^>]*hreflang=[^>]*>') | ForEach-Object { $_.Value }) -join "`n"
+  LogH "hreflang $Name" $links
   $hFr = ([regex]::Matches($Body, '(?i)hreflang="fr(-FR)?"')).Count
   $hEn = ([regex]::Matches($Body, '(?i)hreflang="en(-US|-GB)?"')).Count
   $hXd = ([regex]::Matches($Body, '(?i)hreflang="x-default"')).Count
-  if ($hFr -ge 1 -and $hEn -ge 1 -and $hXd -ge 1 -and $hFr -le 1 -and $hEn -le 1 -and $hXd -le 1) {
-    Ok "$Name hreflang serie unique (fr=$hFr en=$hEn xd=$hXd)"
-  } elseif ($hFr -gt 1 -or $hEn -gt 1 -or $hXd -gt 1) {
-    Ko "$Name DOUBLON hreflang (fr=$hFr en=$hEn xd=$hXd)"
+  # Doublon = HARD FAIL (SEOPress + Polylang en double)
+  if ($hFr -gt 1 -or $hEn -gt 1 -or $hXd -gt 1) { Ko "$Name DOUBLON hreflang (fr=$hFr en=$hEn xd=$hXd)"; return }
+  # Paire fr+en reciproque = critique
+  if ($hFr -ge 1 -and $hEn -ge 1) {
+    if ($hXd -ge 1) { Ok "$Name hreflang fr+en+x-default (fr=$hFr en=$hEn xd=$hXd)" }
+    else { Wn "$Name hreflang fr+en OK, x-default absent (Polylang Free pose x-default sur la home ; optionnel Google) (xd=0)" }
   } else {
-    Ko "$Name hreflang incomplet (fr=$hFr en=$hEn xd=$hXd)"
+    Ko "$Name hreflang paire fr/en incomplete (fr=$hFr en=$hEn)"
   }
 }
 
-Write-Host "BASE=$Base   slug=$Slug   log=$Log`n"
+Write-Host "BASE=$Base   slug FR=$Slug   slug EN=$SlugEn   log=$Log`n"
 Write-Host "--- Matrice 10 URLs WC (statut + langue + croisement + canonical + hreflang) ---`n"
 
 $urls = @(
   @{ lang = "fr"; path = "/fr/boutique/";        kind = "page" },
   @{ lang = "en"; path = "/en/shop/";            kind = "page" },
-  @{ lang = "fr"; path = "/fr/produit/$Slug/";   kind = "product" },
-  @{ lang = "en"; path = "/en/produit/$Slug/";   kind = "product" },
+  @{ lang = "fr"; path = "/fr/produit/$Slug/";    kind = "product" },
+  @{ lang = "en"; path = "/en/produit/$SlugEn/";  kind = "product" },
   @{ lang = "fr"; path = "/fr/panier/";          kind = "page" },
   @{ lang = "en"; path = "/en/cart/";            kind = "page" },
   @{ lang = "fr"; path = "/fr/commande/";        kind = "checkout" },
@@ -122,7 +127,7 @@ foreach ($u in $urls) {
         else { Ko "  canonical inattendu : $href" }
       } else { Ko "  aucun canonical" }
       # hreflang
-      Test-Hreflang "  " $r.Body
+      Test-Hreflang $u.path $r.Body
     }
     302 {
       if ($u.kind -eq "checkout" -or $u.kind -eq "account") {
@@ -138,8 +143,23 @@ foreach ($u in $urls) {
   Write-Host ""
 }
 
+# --- Homepage hreflang : x-default CRITIQUE sur la home (decision doctrine) ---
+Write-Host "--- Homepage hreflang (x-default CRITIQUE) ---"
+foreach ($h in @("/fr/", "/en/")) {
+  $rb = Invoke-Raw "$Base$h"
+  $body = $rb.Body
+  $links = ([regex]::Matches($body, '(?i)<link[^>]*rel="?alternate"?[^>]*hreflang=[^>]*>') | ForEach-Object { $_.Value }) -join "`n"
+  LogH "home-hreflang $h" $links
+  $hFr = ([regex]::Matches($body, '(?i)hreflang="fr(-FR)?"')).Count
+  $hEn = ([regex]::Matches($body, '(?i)hreflang="en(-US|-GB)?"')).Count
+  $hXd = ([regex]::Matches($body, '(?i)hreflang="x-default"')).Count
+  if ($hFr -gt 1 -or $hEn -gt 1 -or $hXd -gt 1) { Ko "home $h DOUBLON hreflang (fr=$hFr en=$hEn xd=$hXd)" }
+  elseif ($hFr -ge 1 -and $hEn -ge 1 -and $hXd -ge 1) { Ok "home $h hreflang fr+en+x-default (critique OK)" }
+  else { Ko "home $h hreflang CRITIQUE incomplet (fr=$hFr en=$hEn xd=$hXd) - x-default obligatoire sur home" }
+}
+
 # --- Racine : 302 par Accept-Language + cookie (rappel KH-107) ---
-Write-Host "--- Racine / (rappel KH-107) ---"
+Write-Host "`n--- Racine / (rappel KH-107) ---"
 $r = Invoke-Raw "$Base/" "GET" @{ "Accept-Language" = "fr-FR,fr;q=0.9" }
 LogH "racine-fr" "Status=$($r.Status)  Location=$($r.Location)  Set-Cookie=$($r.SetCookie)  x-redirect-by=$($r.XRedirectBy)"
 if ($r.Status -eq 302 -and $r.Location -match "(?i)/fr/" -and $r.Status -ne 301) { Ok "racine AL=fr -> 302 /fr/" } else { Ko "racine AL=fr -> attendu 302 /fr/ (statut=$($r.Status))" }

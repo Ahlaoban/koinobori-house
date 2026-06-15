@@ -3,7 +3,7 @@
 - **Ticket** : KH-104b-full (gate bloquant Lots 2-8)
 - **Lot** : 1
 - **Date plan** : 2026-06-14
-- **Statut** : 🟡 **prêt — ouvre dès GO KH-109 ferme (V15 25/27 + V16 Santé OK)**
+- **Statut** : ✅ **GO (2026-06-15)** — gate 10 URLs = PASS 33 / FAIL 0 / WARN 10. « Zéro conflit Polylang for WC » prouvé. Détail §11. **Débloque la décomposition Lots 2-8** (décomposition, pas exécution).
 - **Pré-requis amont** : KH-104 (Polylang) PASS · KH-106 (Polylang for WC) GO · KH-106b (slugs) GO · KH-107 (racine) PASS · **KH-109 (SEOPress) GO**
 - **Environnement** : **staging uniquement** · pas de prod · pas de merge PR #1 · **pas d'import catalogue réel** · KH-107 non touché · SEOPress non reconfiguré · Lots 2-8 non ouverts
 
@@ -49,7 +49,8 @@ Le gate exige des URLs produit vivantes. **Un seul produit test** (≠ import ca
 | **Langue servie** | `<html lang="fr...">` sur `/fr/*`, `lang="en...">` sur `/en/*` | Polylang |
 | **Pas de croisement** | aucune `Location:` `/fr/*`→`/en/*` ni l'inverse | Polylang + KH-107 |
 | **Canonical self** | chaque URL → canonical de **sa propre** langue, jamais cross-lang | SEOPress |
-| **hreflang** | `fr-FR` + `en`(/`en-US`) + `x-default`, **série unique** | Polylang |
+| **hreflang fr↔en** | `fr-FR` + `en`(/`en-US`) réciproques, **série unique**, sur **toutes** les pages | Polylang |
+| **hreflang x-default** | **CRITIQUE sur la home** (`/fr/` `/en/`) ; **WARN** (recommandé, non bloquant) sur pages internes | Polylang (Free = home seulement) |
 | **Sitemaps par langue** | `/sitemaps.xml` couvre FR **et** EN | SEOPress (KH-109) |
 | **Cookie** | `/` pose `koino_lang_pref` (SameSite=Lax, Secure, 90j) | KH-107 |
 | **Racine 302** | `/` → 302 selon Accept-Language/cookie, **jamais 301** | KH-107 |
@@ -77,15 +78,22 @@ Le gate exige des URLs produit vivantes. **Un seul produit test** (≠ import ca
 2. **Croisement `/fr/`↔`/en/`** (redirection d'une langue vers l'autre)
 3. **Mauvaise langue servie** (ex. `/en/shop/` rend du FR)
 4. **Canonical cross-lang** (`/fr/*` pointe `/en/*` ou inverse)
-5. **Doublon hreflang** (SEOPress + Polylang émettent 2 séries)
-6. **404** sur une des 10 URLs
-7. **Double saut** sur `/` (>1 redirect = conflit Polylang for WC / mu-plugin)
-8. Anomalie **critique** Site Health imputable à Polylang for WC
+5. **Absence hreflang FR ou EN** sur une page (paire fr↔en incomplète)
+6. **hreflang non réciproques** (fr ne pointe pas /fr/, en ne pointe pas /en/)
+7. **Doublon hreflang** (SEOPress + Polylang émettent 2 séries)
+8. **x-default absent sur la HOME** (`/fr/` ou `/en/`)
+9. **404** sur une des 10 URLs
+10. **Produit FR sans traduction EN** (ou EN sans FR)
+11. **Double saut** sur `/` (>1 redirect = conflit Polylang for WC / mu-plugin)
+12. Anomalie **critique** Site Health imputable à Polylang for WC
+
+> **NON hard fail** : x-default absent sur pages internes (= WARN, décision doctrine 2026-06-14, triangulée). Ne pas promouvoir un WARN en FAIL sans justification technique démontrée.
 
 ## 7. Exceptions acceptables (≠ fail)
 
 | Exception | Raison |
 |---|---|
+| **x-default absent sur pages internes** | WARN, non bloquant. fr↔en réciproques présents partout (exigence SEO critique remplie) ; x-default sur la home ; x-default = optionnel (Google). Polylang Free pose x-default sur la home seulement. Décision doctrine 2026-06-14 (triangulée). |
 | `/en/produit/test` (base `produit` au lieu de `product`) | limitation §1, Pro skip option B |
 | checkout/mon-compte → **302 same-lang** (panier vide / login) | comportement WooCommerce normal |
 | `en-US` au lieu de `en` dans hreflang | écart mineur doctrine, noter |
@@ -121,3 +129,27 @@ Le gate complet = re-run des 3 (ou des parties pertinentes) + preuves visuelles 
 - **GO** = « zéro conflit Polylang for WC » prouvé → décomposition Lots 2-8 autorisée.
 - **NO-GO** = un hard fail §6 → Lots 2-8 restent bloqués, ajustement ciblé puis re-run.
 - Reste interdit dans tous les cas : prod, merge PR #1, catalogue réel, modif KH-107, reconfig SEOPress.
+
+## 11. Résultats (2026-06-15) — ✅ GO
+
+**Produit test bilingue** créé : FR `Test` slug `test` (`/fr/produit/test/`) ↔ EN `Test` slug `test-2` (`/en/produit/test-2/`), tous deux variables (Taille 75, 29 €), publiés, liés par Polylang. Slug EN = `test-2` car WP force l'unicité du slug produit (quirk Polylang Free, sans impact gate). Script adapté (`-Slug` / `-SlugEn`).
+
+**Run `KH-104b-full-tests.ps1 -Slug test -SlugEn test-2`** (log `KH-104b-full-20260615-112215`) : **PASS=33 · FAIL=0 · WARN=10**.
+
+| Contrôle | Résultat |
+|---|---|
+| 10 URLs statut | 8 pages 200 + 2 checkout 302 same-lang (WARN, WC normal) ✅ |
+| Produit FR + EN | 200 / 200, traduction réciproque ✅ |
+| Langue servie | correcte sur les 8 pages 200 ✅ |
+| Croisement /fr/↔/en/ | **aucun** ✅ |
+| Canonical self | toutes pages, jamais cross-lang ✅ |
+| hreflang fr↔en | réciproques partout, **série unique 0 doublon** ✅ |
+| **x-default home** | `/fr/` + `/en/` = présent (critique OK) ✅ |
+| x-default pages internes | absent = **WARN ×8, non bloquant** (doctrine) |
+| Racine 302 + cookie + Googlebot | PASS ✅ |
+
+**Couches complémentaires (cette session)** : V15 `KH-104b-pre-tests.ps1` = 26/27 (A11 Vary exception) · KH-109-F = 12/12 · V16 Santé du site = « Bien », 0 critique. Racine/cookie/Googlebot re-confirmés dans le run full post-produit.
+
+**Verdict : ✅ GO KH-104b-full.** « Zéro conflit Polylang for WooCommerce » prouvé. → **Débloque la décomposition des Lots 2-8** (décomposition, PAS exécution).
+
+**Reste (cleanup)** : supprimer le produit test après archivage des preuves (action Alain). Limitation `/en/produit/` (≠ `/en/product/`) confirmée acceptable — `/en/product/` non démontré indispensable → **Polylang Pro non rouvert**.
