@@ -1,7 +1,7 @@
 # KH-203 — Gabarit fiche produit FR/EN (Lot 2)
 
 - **Date** : 2026-06-15
-- **Statut** : 🟢 **gabarit VALIDÉ (Alain, 2026-06-15)** — bloc 1 enrichi (caractéristiques physiques : vent, eau/UV, bouche renforcée, émerillon inox, cordelette ; pas de diamètre public), signature nom = `- by BCDG` (tiret simple, plus aucun tiret cadratin dans les fiches), inspiration japonaise, pilote 75 cm. Aucune implémentation / aucun produit créé.
+- **Statut** : 🟢 **gabarit VALIDÉ (Alain, 2026-06-15)** — bloc 1 enrichi (caractéristiques physiques : vent, eau/UV, bouche renforcée, émerillon inox, cordelette ; pas de diamètre public), signature nom = `- by BCDG` (tiret simple, plus aucun tiret cadratin dans les fiches), inspiration japonaise, pilote 75 cm. **Rév. 2026-06-18 : suppression du bloc transparence atelier (FR+EN) → structure 2 blocs.** Aucune implémentation.
 - **Pilote** : Sakura Rouge (Hanami). Gabarit **généralisable** aux ~50 produits.
 - **Contraintes** : contenu seulement · pas de visuel · pas de rendu final · compatible évolutions UX Manus · doctrine stricte.
 
@@ -17,7 +17,7 @@
 | **Prix** | EUR only | par variation, pas de multi-devise |
 | **Stock** | par produit/variation | **jamais** de volume global (doctrine stock) |
 | **Description courte** | commerciale, désirable | **AUCUNE** mention atelier partenaire / partner workshop |
-| **Description longue** | 3 blocs Gutenberg séparés | bloc1 design/usage · bloc2 signature BCDG · bloc3 transparence (bas) |
+| **Description longue** | **2 blocs** Gutenberg séparés | bloc1 design/usage · bloc2 signature BCDG (plus de bloc transparence atelier) |
 | **Collection (catégorie)** | rangement | 1 des 6 collections, bilingue |
 | **Attribut Taille** | variations | 50/75/100 (extensible) |
 | **Métadonnées SEO** | SEOPress | meta title, meta desc, slug, canonical auto, hreflang auto |
@@ -33,7 +33,7 @@
 **Description courte (FR)** — *commerciale, sans atelier* :
 > Une carpe volante semée de pétales de sakura, rouge profond sur fond clair. Pièce décorative inspirée du hanami, à suspendre en intérieur comme au jardin pour une touche poétique d'inspiration japonaise.
 
-**Description longue (FR) — 3 blocs** :
+**Description longue (FR) — 2 blocs** :
 
 *Bloc 1 — Design / usage / atmosphère*
 > Le Sakura Rouge reprend le motif des cerisiers en fleur sur la silhouette traditionnelle du koinobori. Suspendu dans un jardin, sur une terrasse, un balcon ou dans un espace de vie, il s'anime au moindre souffle d'air et installe une présence visuelle inspirée du hanami, la tradition japonaise de contemplation des fleurs.
@@ -42,9 +42,6 @@
 
 *Bloc 2 — Signature BCDG + série*
 > Design original BCDG, signé et édité en petite série.
-
-*Bloc 3 — Transparence production (bas de fiche)*
-> Produit par un atelier partenaire selon les fichiers et spécifications BCDG.
 
 **Métadonnées SEO (FR)** :
 - Meta title : `Sakura Rouge Koinobori - by BCDG | Koinobori House`
@@ -65,7 +62,7 @@
 **Short description (EN)** — *commercial, no workshop mention* :
 > A flying carp scattered with sakura petals, deep red on a soft ground. A decorative piece inspired by hanami, to hang indoors or in the garden for a Japanese-inspired poetic touch.
 
-**Long description (EN) — 3 blocks** :
+**Long description (EN) — 2 blocks** :
 
 *Block 1 — Design / use / atmosphere*
 > Sakura Rouge brings the cherry-blossom motif to the traditional koinobori silhouette. Hung in a garden, on a terrace, a balcony or in a living space, it comes alive with the faintest breeze and brings a visual presence inspired by hanami, the Japanese tradition of contemplating blossoms.
@@ -74,9 +71,6 @@
 
 *Block 2 — BCDG signature + series*
 > An original BCDG design, signed and released in a small series.
-
-*Block 3 — Production transparency (bottom)*
-> Produced by a partner workshop according to BCDG files and specifications.
 
 **SEO metadata (EN)** :
 - Meta title : `Sakura Rouge Koinobori - by BCDG | Koinobori House`
@@ -99,10 +93,9 @@
 
 | Décision | Respectée ? | Comment |
 |---|---|---|
-| **BCDG** signature | ✅ | `— by BCDG` dans le nom + bloc 2 |
+| **BCDG** signature | ✅ | `- by BCDG` dans le nom + bloc 2 |
 | **Koinobori House** ≠ BCDG | ✅ | marque = site ; BCDG = signature produit (pas confondus) |
-| **Atelier partenaire** (placement) | ✅ | uniquement bloc 3 (bas), **absent** du short_desc |
-| **Wording transparence FR/EN** | ✅ | formulations privilégiées CLAUDE.md exactes |
+| **Aucune mention atelier/production** | ✅ | « atelier partenaire » / « partner workshop » **supprimée** FR+EN (décision Alain 2026-06-18) → structure **2 blocs** |
 | **Jamais Chine / origine / fabrication** | ✅ | aucune mention |
 | **Jamais stock global** | ✅ | stock par variation uniquement |
 | **Jamais « fabriqué en France »** | ✅ | aucune mention |

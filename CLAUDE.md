@@ -92,20 +92,18 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - ✅ **Exception bornée — B2G culturel uniquement** : mention de la Chine autorisée **comme pays / culture** dans contexte B2G institutionnel (coopération culturelle, jumelages, projets éducatifs ou patrimoniaux). Périmètre strict : pages `/fr/collectivites/` + `/en/institutions/` et formulaire B2G associé. Voir §Doctrine B2C / B2B / B2G.
 - ⚠️ **Garde-fou absolu** : la Chine peut être mentionnée uniquement comme pays/culture dans un contexte B2G culturel ou institutionnel. **Jamais** comme lieu de production, d'atelier, de fournisseur ou de fabrication, dans aucun contexte, B2C, B2B ou B2G.
 - ❌ **JAMAIS** écrire "atelier chinois"
-- ✅ Toujours "atelier partenaire" ou "atelier confidentiel"
+- ❌ **Aucune mention d'atelier / de production sur les fiches produits** (FR + EN) — décision Alain 2026-06-18. Si une référence à l'atelier devait apparaître ailleurs : jamais "atelier chinois", utiliser "atelier partenaire" / "atelier confidentiel".
 - ❌ **JAMAIS** "fabriqué en France"
 - ❌ **JAMAIS** prétendre à une fabrication interne
 - ❌ **JAMAIS** référence volume global stock — stock par produit / variation uniquement
-- ✅ **Wording fiche produit — règle 3 blocs (remplace ancienne "phrase produit obligatoire")** :
-  - **Description courte** : commerciale, claire, désirable. **Aucune mention atelier partenaire / partner workshop.**
-  - **Description longue** : structure 3 blocs (paragraphes séparés Gutenberg) :
+- ✅ **Wording fiche produit — règle 2 blocs (rév. 2026-06-18 ; remplace l'ancienne règle 3 blocs)** :
+  - **Description courte** : commerciale, claire, désirable. **Aucune mention atelier / production.**
+  - **Description longue** : structure **2 blocs** (paragraphes séparés Gutenberg) :
     1. Design / usage / contexte d'installation / atmosphère
     2. Signature BCDG + série (ex : *"Design original BCDG, signé et édité en petite série."* ou variante édition spéciale)
-    3. Transparence production en bas de fiche
-  - **Formulation transparence privilégiée FR** : *"Produit par un atelier partenaire selon les fichiers et spécifications BCDG."*
-  - **Formulation transparence privilégiée EN** : *"Produced by a partner workshop according to BCDG files and specifications."*
+  - ❌ **Plus de bloc « transparence production »** : la phrase « atelier partenaire » / « partner workshop » est **supprimée des fiches** (FR + EN), décision Alain 2026-06-18. Aucune mention d'atelier/production sur les fiches.
   - ❌ **Jamais de tiret cadratin (—) dans les fiches produits** (FR + EN) : ponctuation classique (virgule, point, trait d'union simple). Signature dans le nom = `- by BCDG`. (Décision Alain 2026-06-15.)
-- ✅ Audit grep pre-publish sur tous contenus (KH-208-213 + KH-505 + KH-307) + audit final KH-707 — vérifier short_desc FR/EN exempte de "atelier partenaire" / "partner workshop"
+- ✅ Audit grep pre-publish sur tous contenus (KH-208-213 + KH-505 + KH-307) + audit final KH-707 — vérifier **absence totale** de "atelier partenaire" / "partner workshop" (short_desc ET long_desc, FR/EN)
 - ⚠️ **Doctrine éditoriale publique ne dispense PAS de conformité douanière** : documents douaniers exacts (origine, valeur, description, HS/HTS code)
 
 ## Doctrine stock

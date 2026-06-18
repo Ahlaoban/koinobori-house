@@ -1,7 +1,7 @@
 # KH-204 — Schéma CSV bilingue WooCommerce / Polylang (Lot 2)
 
 - **Date** : 2026-06-15
-- **Statut** : 🟡 **schéma proposé — à valider + à tester sur le pilote**. Aucun import.
+- **Statut** : ✅ **WORKFLOW VALIDÉ sur pilote (2026-06-18)** — voir §G. FR par CSV + EN par « + traduire » (même SKU, variation/prix/stock synchronisés). Prêt pour industrialisation après pré-requis (attributs globaux + collections EN).
 - **But** : préparer le workflow d'import du catalogue sans saisir les ~50 produits. Le **pilote Sakura Rouge** sert de banc d'essai du workflow complet.
 
 ---
@@ -86,3 +86,33 @@ WooCommerce **impose des SKU uniques**. Deux posts (FR + EN) avec le même SKU `
 6. **Doctrine à l'échelle** : audit grep KH-214 obligatoire sur les 50 (FR+EN).
 7. **Slugs EN** non maîtrisés (`-2`) — impact SEO mineur (staging noindex).
 8. **Images absentes** : vérifier que les fiches sans visuel restent publiables/indexables proprement.
+
+---
+
+## G. Résultats du pilote (2026-06-18) — ✅ WORKFLOW VALIDÉ
+
+Pilote **Sakura Rouge** : FR importé par CSV, EN créé par Polylang « + traduire ». Verdict : **méthode validée**.
+
+| Point | Résultat |
+|---|---|
+| Import FR (CSV) | ✅ produit variable, nom (tiret simple), 4 paragraphes, short_desc, catégorie Hanami, langue FR, SKU `KH-HAN-001-075` |
+| 🔴 Liaison traduction FR↔EN | ✅ **fonctionne** via « + traduire » Polylang (FR et EN reliés) |
+| 🟠 Même SKU FR/EN | ✅ **accepté** (Polylang for WC translation-aware) → **pas de suffixe `-EN`, même SKU partout** |
+| **Sync variation/prix/stock EN** | ✅ **automatique** depuis le FR (Polylang for WC, KH-010) → l'EN n'a eu **aucune ressaisie** de variation/prix/stock |
+| Affichage front FR + EN | ✅ les deux fiches s'affichent, bascule langue OK |
+
+**Findings confirmés (à intégrer au process des 50)** :
+1. **Pré-créer les attributs globaux** (Taille + termes 50/75/100) **avant** l'import — sinon la variation ne se génère pas.
+2. **Variation via CSV** : l'import attache l'attribut mais ne coche pas « utilisé pour les variations » → étape manuelle « cocher + générer » par produit, **ou** ajuster la colonne `Parent` (ex. `id:`) — **à retester** avec l'attribut global pré-créé.
+3. **Traduire les 6 collections en EN** (Polylang) avant de catégoriser les produits EN.
+4. **Slug** = auto depuis le nom (gardé, riche en mots-clés).
+5. **Titre SEO** : corriger le modèle SEOPress produit (tiret orphelin) — fix global.
+
+**Coût EN par produit (allégé)** : « + traduire » → variation/prix/stock **synchronisés** → **coller uniquement les textes** (nom, descriptions, meta) → publier. Pas de ressaisie commerciale.
+
+**Méthode industrialisation retenue** :
+1. Pré-créer attributs globaux (Taille) + traduire les 6 collections en EN.
+2. Importer les produits FR par CSV (lots par collection).
+3. Régler les variations FR (selon retest finding 2).
+4. EN par « + traduire » + coller textes EN + publier.
+5. Audit doctrine KH-214 (FR+EN) + indexabilité KH-215.
