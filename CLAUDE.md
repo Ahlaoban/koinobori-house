@@ -79,7 +79,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 ## Identité marque
 
 - **Logo Koinobori House** = identité marque maison / canal e-commerce. **Distinct de la signature BCDG.**
-- **Signature BCDG** = signature créative apposée *sur les produits* (`— by BCDG` dans le nom modèle + mention long_desc bloc 2 fiches produits). Ne remplace **jamais** le logo Koinobori House comme identité du site.
+- **Signature BCDG** = signature créative apposée *sur les produits* (`- by BCDG` dans le nom modèle, trait d'union simple + mention long_desc bloc 2 fiches produits). Ne remplace **jamais** le logo Koinobori House comme identité du site.
 - **Fichier logo principal** : `brand/koinoborihouse/logo-color.png` — PNG 1172×213 px, canal alpha (transparence OK), calligraphie noire « Koinobori House » + tampon rouge 鯉のぼり (écriture japonaise : kanji 鯉 « carpe » + hiragana のぼり, mot japonais courant, aucun risque doctrine Chine).
 - **Favicon** : `brand/koinoborihouse/favicon-200.png` — PNG 200×200 px transparent, motif tampon rouge 鯉のぼり extrait du logo principal. Sera décliné en 16/32/48/180/192 px par WP Lot 1.
 - Usage cible : header, footer, og:image, Schema.org Organization, emails Brevo, mentions légales.
@@ -104,6 +104,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
     3. Transparence production en bas de fiche
   - **Formulation transparence privilégiée FR** : *"Produit par un atelier partenaire selon les fichiers et spécifications BCDG."*
   - **Formulation transparence privilégiée EN** : *"Produced by a partner workshop according to BCDG files and specifications."*
+  - ❌ **Jamais de tiret cadratin (—) dans les fiches produits** (FR + EN) : ponctuation classique (virgule, point, trait d'union simple). Signature dans le nom = `- by BCDG`. (Décision Alain 2026-06-15.)
 - ✅ Audit grep pre-publish sur tous contenus (KH-208-213 + KH-505 + KH-307) + audit final KH-707 — vérifier short_desc FR/EN exempte de "atelier partenaire" / "partner workshop"
 - ⚠️ **Doctrine éditoriale publique ne dispense PAS de conformité douanière** : documents douaniers exacts (origine, valeur, description, HS/HTS code)
 
@@ -117,7 +118,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - ~50 modèles MVP au lancement, structure extensible
 - 6 collections : Kaïro · La Mer · OKUSAI · Bretagne · Éditions spéciales (Americana, Nations, Saisons, Événements, Collaborations, Séries limitées) · Hanami
 - Tailles variables : attribut global `Taille` (50/75/100 cm extensible)
-- Produit spécial validé : **Stars & Stripes Koinobori — by BCDG** (Éditions spéciales · Americana · 100 cm · série 25 pièces)
+- Produit spécial validé : **Stars & Stripes Koinobori - by BCDG** (Éditions spéciales · Americana · 100 cm · série 25 pièces)
 - Nom interne fournisseur "US FLAG" jamais public
 
 ## Périmètre MVP — bilingue commercial complet
