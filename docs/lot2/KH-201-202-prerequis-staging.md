@@ -23,11 +23,11 @@
 |---|---|---|---|
 | Mer | Sea | MER | 6 koi mer (50/75) |
 | Motifs | Patterns | MOT | 3 koi (ex-divers) (50/75) |
-| Floral | Floral | FLO | Sakura Rouge (75) |
+| Hanami | Hanami | HAN | Sakura Rouge (75) |
 | Kaïro | Kaïro | KAI | 4 koi (75, à venir) |
 | Territoires | Lands | TER | Stars & Stripes (100) + 2 Bretons (50/75) |
 
-*(La catégorie « Floral » remplace « Hanami » ; reclasser le produit pilote Sakura — voir SKU ci-dessous.)*
+*(Collection « Hanami » conservée — le produit pilote Sakura y reste, SKU `KH-HAN-001-075` inchangé.)*
 
 → Plus de sous-catégories. « Territoires » regroupe régions/drapeaux (USA, Bretagne). « Série limitée » = mention bloc 2 BCDG, pas une collection.
 

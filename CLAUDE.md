@@ -113,8 +113,8 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 ## Catalogue MVP
 
-- ~17 produits au lancement (composition réelle relevée 2026-06-18 : Mer 6, Motifs 3, Floral 1, Kaïro 4, Territoires 3), structure extensible
-- **5 collections (taxonomie figée 2026-06-18)** FR/EN : Mer/Sea · Motifs/Patterns · Floral/Floral · Kaïro/Kaïro · Territoires/Lands. Codes SKU : MER · MOT · FLO · KAI · TER. « Territoires » regroupe régions + drapeaux (USA, Bretagne). **Pas de sous-catégories** ; thèmes transverses = tags ; « série limitée » = mention bloc 2 BCDG, pas une collection. (Remplace l'ancienne structure 6 collections Kaïro/La Mer/OKUSAI/Bretagne/Éditions spéciales/Hanami.)
+- ~17 produits au lancement (composition réelle relevée 2026-06-18 : Mer 6, Motifs 3, Hanami 1, Kaïro 4, Territoires 3), structure extensible
+- **5 collections (taxonomie figée 2026-06-18)** FR/EN : Mer/Sea · Motifs/Patterns · Hanami/Hanami · Kaïro/Kaïro · Territoires/Lands. Codes SKU : MER · MOT · HAN · KAI · TER. « Territoires » regroupe régions + drapeaux (USA, Bretagne). **Pas de sous-catégories** ; thèmes transverses = tags ; « série limitée » = mention bloc 2 BCDG, pas une collection. (Remplace l'ancienne structure 6 collections Kaïro/La Mer/OKUSAI/Bretagne/Éditions spéciales/Hanami.)
 - Tailles variables : attribut global `Taille` (50/75/100 cm extensible)
 - Produit spécial validé : **Stars & Stripes Koinobori - by BCDG** (Territoires/Lands · USA · 100 cm · série limitée · SKU `KH-TER-001-100`)
 - Nom interne fournisseur "US FLAG" jamais public

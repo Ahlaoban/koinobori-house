@@ -28,7 +28,7 @@
 ## B. Pilote rempli — **Sakura Rouge** (FR)
 
 **Nom** : Sakura Rouge Koinobori - by BCDG
-**SKU** : `KH-FLO-001-075` · **Type** : variable · **Taille** : 75 cm *(pilote : 1 seule variation)* · **Prix** : 29 € · **Stock** : par variation (ex. 50) · **Collection** : Floral
+**SKU** : `KH-HAN-001-075` · **Type** : variable · **Taille** : 75 cm *(pilote : 1 seule variation)* · **Prix** : 29 € · **Stock** : par variation (ex. 50) · **Collection** : Hanami
 
 **Description courte (FR)** — *commerciale, sans atelier* :
 > Une carpe volante semée de pétales de sakura, rouge profond sur fond clair. Pièce décorative inspirée du hanami, à suspendre en intérieur comme au jardin pour une touche poétique d'inspiration japonaise.
@@ -57,7 +57,7 @@
 > Adaptation **naturelle**, pas de traduction mot-à-mot. Nom de l'œuvre « Sakura Rouge » **conservé en FR et EN** (nom propre de la pièce) — validé Alain.
 
 **Name** : Sakura Rouge Koinobori - by BCDG
-**SKU** : `KH-FLO-001-075` (même SKU — voir §risques) · **Size** : 75 cm · **Price** : 29 € · **Collection** : Floral
+**SKU** : `KH-HAN-001-075` (même SKU — voir §risques) · **Size** : 75 cm · **Price** : 29 € · **Collection** : Hanami
 
 **Short description (EN)** — *commercial, no workshop mention* :
 > A flying carp scattered with sakura petals, deep red on a soft ground. A decorative piece inspired by hanami, to hang indoors or in the garden for a Japanese-inspired poetic touch.
@@ -82,10 +82,10 @@
 ## D. Convention SKU (généralisable)
 `KH-<COLL>-<NNN>-<TAILLE>`
 - `KH` = Koinobori House
-- `<COLL>` : MER (Mer) · MOT (Motifs) · FLO (Floral) · KAI (Kaïro) · TER (Territoires) — taxonomie figée 2026-06-18
+- `<COLL>` : MER (Mer) · MOT (Motifs) · HAN (Hanami) · KAI (Kaïro) · TER (Territoires) — taxonomie figée 2026-06-18
 - `<NNN>` : numéro modèle dans la collection (001…)
 - `<TAILLE>` : 050 / 075 / 100
-- Ex. `KH-FLO-001-075` (Sakura Rouge) · `KH-TER-001-100` (Stars & Stripes) · `KH-MER-001-075`
+- Ex. `KH-HAN-001-075` (Sakura Rouge) · `KH-TER-001-100` (Stars & Stripes) · `KH-MER-001-075`
 
 ---
 
