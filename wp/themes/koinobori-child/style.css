@@ -1,10 +1,10 @@
 /*
 Theme Name: Koinobori House
 Theme URI: https://koinoborihouse.com
-Description: Thème enfant Kadence pour Koinobori House — koinobori originaux signés BCDG. Porte les surcharges CSS de la charte (palette ivoire/encre/indigo/corail, Fraunces + Inter). Les réglages globaux (couleurs, typo, boutons) vivent dans le Customizer Kadence ; ce fichier ne contient que les ajustements impossibles via l'interface.
+Description: Thème enfant Kadence pour Koinobori House — koinobori originaux signés BCDG. Implémente le Design System KH-000 v1.2 « Ma (間) » (palette washi/encre/vermillon/or, typo Cormorant·Shippori·Lora·DM Sans·Noto Serif JP). Les fondations vivent en code (assets/css/kh-foundations.css), versionnées Git — pas dans le Customizer.
 Author: Koinobori House
 Template: kadence
-Version: 1.0.1
+Version: 1.1.0
 Requires at least: 6.6
 Requires PHP: 8.0
 License: GNU General Public License v2 or later
@@ -12,32 +12,6 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: koinobori-child
 */
 
-/*
-Charte (référence CLAUDE.md) :
-- Ivoire chaud  #FDF8F0   - Noir encre   #1A1A1A
-- Indigo        #1E3A5F   - Corail       #E05A5A
-- Rouge sourd   #B84C4C   - Or doux      #C6A15B (jamais boutons/liens/fonds)
-- Gris pierre   #E5DED2
-Typo : Fraunces (titres 400-600) · Inter (body 400-500) · 16px min mobile.
-*/
-
-/* Boutons — charte CLAUDE.md : radius 8px, padding vertical 12px, texte ivoire.
-   (Pas de section Boutons dans le Customizer Kadence Free → imposé ici.) */
-button,
-.button,
-.wp-block-button__link,
-.wp-element-button,
-.kb-button,
-input[type="submit"],
-input[type="button"] {
-	border-radius: 8px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-}
-
-/* Texte ivoire sur les boutons pleins (accent corail hérité de la palette). */
-.wp-block-button__link,
-.wp-element-button,
-input[type="submit"] {
-	color: #FDF8F0;
-}
+/* Les styles du thème sont chargés depuis assets/css/kh-foundations.css (enqueue dans functions.php).
+   Référence design : docs/charte-graphique/KH-000 — Koinobori House Design System.md
+   Ce fichier ne contient que l'en-tête requis par WordPress. */
