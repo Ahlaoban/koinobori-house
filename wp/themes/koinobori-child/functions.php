@@ -65,29 +65,78 @@ add_action(
 );
 
 /**
- * Palette éditeur = couleurs KH-000 uniquement ; bloque les couleurs/dégradés libres.
- * Le rendu front reste piloté par les variables --kh-* (kh-foundations.css).
+ * Palette éditeur = couleurs KH-000 uniquement.
+ * La palette + le blocage des couleurs/dégradés libres sont déclarés dans theme.json
+ * (settings.color : palette KH, custom=false, defaultPalette=false) — theme.json du
+ * thème enfant a priorité sur celui de Kadence, ce qui neutralise sa palette.
+ * Ici on ne garde que le chargement des fondations dans l'éditeur Gutenberg.
  */
 add_action(
 	'after_setup_theme',
 	function () {
-		add_theme_support(
-			'editor-color-palette',
-			array(
-				array( 'name' => __( 'Washi', 'koinobori-child' ),     'slug' => 'kh-washi',     'color' => '#F7F3EC' ),
-				array( 'name' => __( 'Sumi', 'koinobori-child' ),      'slug' => 'kh-sumi',      'color' => '#1A1410' ),
-				array( 'name' => __( 'Vermillon', 'koinobori-child' ), 'slug' => 'kh-vermillon', 'color' => '#C8311A' ),
-				array( 'name' => __( 'Or', 'koinobori-child' ),        'slug' => 'kh-or',        'color' => '#C9A96E' ),
-				array( 'name' => __( 'Brume', 'koinobori-child' ),     'slug' => 'kh-brume',     'color' => '#E8E4DC' ),
-				array( 'name' => __( 'Indigo', 'koinobori-child' ),    'slug' => 'kh-indigo',    'color' => '#1B2B5E' ),
-				array( 'name' => __( 'Sakura', 'koinobori-child' ),    'slug' => 'kh-sakura',    'color' => '#F2C4CE' ),
-				array( 'name' => __( 'Forêt', 'koinobori-child' ),     'slug' => 'kh-foret',     'color' => '#3D5A3E' ),
-			)
-		);
-		add_theme_support( 'disable-custom-colors' );
-		add_theme_support( 'disable-custom-gradients' );
-
-		// Éditeur Gutenberg = mêmes fondations que le front.
 		add_editor_style( 'assets/css/kh-foundations.css' );
 	}
+);
+
+/**
+ * Force la palette de l'éditeur de blocs sur les 8 couleurs KH-000, APRÈS Kadence.
+ * theme.json ne suffit pas : Kadence réinjecte sa propre palette. Ce filtre
+ * (priorité 100) écrase le résultat final pour les blocs cœur.
+ */
+add_filter(
+	'block_editor_settings_all',
+	function ( $settings ) {
+		$settings['colors'] = array(
+			array( 'slug' => 'kh-washi',     'name' => 'Washi',     'color' => '#F7F3EC' ),
+			array( 'slug' => 'kh-sumi',      'name' => 'Sumi',      'color' => '#1A1410' ),
+			array( 'slug' => 'kh-vermillon', 'name' => 'Vermillon', 'color' => '#C8311A' ),
+			array( 'slug' => 'kh-or',        'name' => 'Or',        'color' => '#C9A96E' ),
+			array( 'slug' => 'kh-brume',     'name' => 'Brume',     'color' => '#E8E4DC' ),
+			array( 'slug' => 'kh-indigo',    'name' => 'Indigo',    'color' => '#1B2B5E' ),
+			array( 'slug' => 'kh-sakura',    'name' => 'Sakura',    'color' => '#F2C4CE' ),
+			array( 'slug' => 'kh-foret',     'name' => 'Forêt',     'color' => '#3D5A3E' ),
+		);
+		$settings['disableCustomColors']    = true;
+		$settings['gradients']              = array();
+		$settings['disableCustomGradients'] = true;
+		return $settings;
+	},
+	100
+);
+
+/**
+ * Palette KH-000 dans la couche theme.json elle-même, APRÈS Kadence.
+ * C'est le mécanisme que l'éditeur moderne lit réellement : Kadence injecte sa
+ * palette via wp_theme_json_data_theme ; on repasse derrière (priorité 20) pour
+ * imposer les 8 couleurs KH et couper défauts/dégradés/couleurs libres.
+ */
+add_filter(
+	'wp_theme_json_data_theme',
+	function ( $theme_json ) {
+		return $theme_json->update_with(
+			array(
+				'version'  => 3,
+				'settings' => array(
+					'color' => array(
+						'defaultPalette'   => false,
+						'defaultGradients' => false,
+						'custom'           => false,
+						'customGradient'   => false,
+						'gradients'        => array(),
+						'palette'          => array(
+							array( 'slug' => 'kh-washi',     'name' => 'Washi',     'color' => '#F7F3EC' ),
+							array( 'slug' => 'kh-sumi',      'name' => 'Sumi',      'color' => '#1A1410' ),
+							array( 'slug' => 'kh-vermillon', 'name' => 'Vermillon', 'color' => '#C8311A' ),
+							array( 'slug' => 'kh-or',        'name' => 'Or',        'color' => '#C9A96E' ),
+							array( 'slug' => 'kh-brume',     'name' => 'Brume',     'color' => '#E8E4DC' ),
+							array( 'slug' => 'kh-indigo',    'name' => 'Indigo',    'color' => '#1B2B5E' ),
+							array( 'slug' => 'kh-sakura',    'name' => 'Sakura',    'color' => '#F2C4CE' ),
+							array( 'slug' => 'kh-foret',     'name' => 'Forêt',     'color' => '#3D5A3E' ),
+						),
+					),
+				),
+			)
+		);
+	},
+	20
 );

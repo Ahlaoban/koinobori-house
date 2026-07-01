@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"custom": false,
+			"customGradient": false,
+			"palette": [
+				{ "slug": "kh-washi",     "name": "Washi",     "color": "#F7F3EC" },
+				{ "slug": "kh-sumi",      "name": "Sumi",      "color": "#1A1410" },
+				{ "slug": "kh-vermillon", "name": "Vermillon", "color": "#C8311A" },
+				{ "slug": "kh-or",        "name": "Or",        "color": "#C9A96E" },
+				{ "slug": "kh-brume",     "name": "Brume",     "color": "#E8E4DC" },
+				{ "slug": "kh-indigo",    "name": "Indigo",    "color": "#1B2B5E" },
+				{ "slug": "kh-sakura",    "name": "Sakura",    "color": "#F2C4CE" },
+				{ "slug": "kh-foret",     "name": "Forêt",     "color": "#3D5A3E" }
+			]
+		}
+	}
+}
