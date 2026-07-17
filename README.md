@@ -22,7 +22,7 @@ Construire un site e-commerce bilingue **FR / EN** hébergé sur **o2switch** :
 | Paiement | WooCommerce Stripe + PayPal (officiels) |
 | Email | FluentSMTP + Brevo |
 | Cache | LiteSpeed Cache (o2switch) |
-| SEO | RankMath Free |
+| SEO | SEOPress Free |
 | Analytics | Plausible Analytics (sans cookies, RGPD-friendly) |
 
 Stack verrouillée détaillée : voir `CLAUDE.md`.
@@ -61,7 +61,7 @@ Voir `.gitignore`. Les credentials vivent dans un gestionnaire de mots de passe 
 
 - **Koinobori House** = maison / canal e-commerce. **BCDG** = signature créative des produits.
 - Ne **jamais** mentionner publiquement la Chine comme production, atelier, fournisseur, sourcing ou fabrication.
-- Formulation production autorisée (bas de fiche) : *« Produit par un atelier partenaire selon les fichiers et spécifications BCDG. »*
+- **Aucune mention d'atelier/production sur les fiches** (FR+EN, rév. 2026-06-18). Une référence atelier ne peut apparaître qu'*ailleurs* que sur les fiches : « atelier partenaire » / « atelier confidentiel », jamais « atelier chinois ».
 - Jamais de mention de stock global public.
 
 Doctrine complète : `CLAUDE.md`.

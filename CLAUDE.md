@@ -31,7 +31,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 | Thème | Kadence Free + thème enfant |
 | Cache | LiteSpeed Cache (natif o2switch, exclure racine `/`) |
 | Multilingue | **Polylang Free + Polylang for WooCommerce (payant)** |
-| SEO | RankMath Free (inclut redirections + schemas) |
+| SEO | **SEOPress Free** (sitemaps i18n par langue + hreflang + schemas). Remplace RankMath — incompatible Polylang, décision data-driven 2026-06-13 (KH-109). ⚠️ gestionnaire de redirections = SEOPress Pro/.htaccess si besoin (non requis MVP). |
 | SMTP | FluentSMTP + Brevo |
 | Sécurité | Wordfence Free + 2FA admin |
 | Sauvegardes | UpdraftPlus + Google Drive (+ Cpanel o2switch natif) |
@@ -56,7 +56,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - Polylang setting "Hide URL language for default" = **OFF**
 - Hreflang : `fr-FR` + `en` + `x-default`
 - Canonical par langue, jamais cross-lang
-- Sitemaps RankMath séparés `/fr/sitemap.xml` + `/en/sitemap.xml`
+- Sitemaps SEOPress séparés `/fr/sitemap.xml` + `/en/sitemap.xml` (SEOPress génère des sitemaps par langue avec Polylang)
 - LiteSpeed Cache exclut racine `/`
 - Sélecteur langue header + footer
 - Choix manuel utilisateur prime sur Accept-Language
@@ -79,7 +79,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 ## Identité marque
 
 - **Logo Koinobori House** = identité marque maison / canal e-commerce. **Distinct de la signature BCDG.**
-- **Signature BCDG** = signature créative apposée *sur les produits* (`— by BCDG` dans le nom modèle + mention long_desc bloc 2 fiches produits). Ne remplace **jamais** le logo Koinobori House comme identité du site.
+- **Signature BCDG** = signature créative apposée *sur les produits* (`- by BCDG` dans le nom modèle, trait d'union simple + mention long_desc bloc 2 fiches produits). Ne remplace **jamais** le logo Koinobori House comme identité du site.
 - **Fichier logo principal** : `brand/koinoborihouse/logo-color.png` — PNG 1172×213 px, canal alpha (transparence OK), calligraphie noire « Koinobori House » + tampon rouge 鯉のぼり (écriture japonaise : kanji 鯉 « carpe » + hiragana のぼり, mot japonais courant, aucun risque doctrine Chine).
 - **Favicon** : `brand/koinoborihouse/favicon-200.png` — PNG 200×200 px transparent, motif tampon rouge 鯉のぼり extrait du logo principal. Sera décliné en 16/32/48/180/192 px par WP Lot 1.
 - Usage cible : header, footer, og:image, Schema.org Organization, emails Brevo, mentions légales.
@@ -92,19 +92,18 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - ✅ **Exception bornée — B2G culturel uniquement** : mention de la Chine autorisée **comme pays / culture** dans contexte B2G institutionnel (coopération culturelle, jumelages, projets éducatifs ou patrimoniaux). Périmètre strict : pages `/fr/collectivites/` + `/en/institutions/` et formulaire B2G associé. Voir §Doctrine B2C / B2B / B2G.
 - ⚠️ **Garde-fou absolu** : la Chine peut être mentionnée uniquement comme pays/culture dans un contexte B2G culturel ou institutionnel. **Jamais** comme lieu de production, d'atelier, de fournisseur ou de fabrication, dans aucun contexte, B2C, B2B ou B2G.
 - ❌ **JAMAIS** écrire "atelier chinois"
-- ✅ Toujours "atelier partenaire" ou "atelier confidentiel"
+- ❌ **Aucune mention d'atelier / de production sur les fiches produits** (FR + EN) — décision Alain 2026-06-18. Si une référence à l'atelier devait apparaître ailleurs : jamais "atelier chinois", utiliser "atelier partenaire" / "atelier confidentiel".
 - ❌ **JAMAIS** "fabriqué en France"
 - ❌ **JAMAIS** prétendre à une fabrication interne
 - ❌ **JAMAIS** référence volume global stock — stock par produit / variation uniquement
-- ✅ **Wording fiche produit — règle 3 blocs (remplace ancienne "phrase produit obligatoire")** :
-  - **Description courte** : commerciale, claire, désirable. **Aucune mention atelier partenaire / partner workshop.**
-  - **Description longue** : structure 3 blocs (paragraphes séparés Gutenberg) :
+- ✅ **Wording fiche produit — règle 2 blocs (rév. 2026-06-18 ; remplace l'ancienne règle 3 blocs)** :
+  - **Description courte** : commerciale, claire, désirable. **Aucune mention atelier / production.**
+  - **Description longue** : structure **2 blocs** (paragraphes séparés Gutenberg) :
     1. Design / usage / contexte d'installation / atmosphère
     2. Signature BCDG + série (ex : *"Design original BCDG, signé et édité en petite série."* ou variante édition spéciale)
-    3. Transparence production en bas de fiche
-  - **Formulation transparence privilégiée FR** : *"Produit par un atelier partenaire selon les fichiers et spécifications BCDG."*
-  - **Formulation transparence privilégiée EN** : *"Produced by a partner workshop according to BCDG files and specifications."*
-- ✅ Audit grep pre-publish sur tous contenus (KH-208-213 + KH-505 + KH-307) + audit final KH-707 — vérifier short_desc FR/EN exempte de "atelier partenaire" / "partner workshop"
+  - ❌ **Plus de bloc « transparence production »** : la phrase « atelier partenaire » / « partner workshop » est **supprimée des fiches** (FR + EN), décision Alain 2026-06-18. Aucune mention d'atelier/production sur les fiches.
+  - ❌ **Jamais de tiret cadratin (—) dans les fiches produits** (FR + EN) : ponctuation classique (virgule, point, trait d'union simple). Signature dans le nom = `- by BCDG`. (Décision Alain 2026-06-15.)
+- ✅ Audit grep pre-publish sur tous contenus (KH-208-213 + KH-505 + KH-307) + audit final KH-707 — vérifier **absence totale** de "atelier partenaire" / "partner workshop" (short_desc ET long_desc, FR/EN)
 - ⚠️ **Doctrine éditoriale publique ne dispense PAS de conformité douanière** : documents douaniers exacts (origine, valeur, description, HS/HTS code)
 
 ## Doctrine stock
@@ -114,10 +113,10 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 ## Catalogue MVP
 
-- ~50 modèles MVP au lancement, structure extensible
-- 6 collections : Kaïro · La Mer · OKUSAI · Bretagne · Éditions spéciales (Americana, Nations, Saisons, Événements, Collaborations, Séries limitées) · Hanami
+- ~17 produits au lancement (composition réelle relevée 2026-06-18 : Mer 6, Motifs 3, Hanami 1, Kaïro 4, Territoires 3), structure extensible
+- **5 collections (taxonomie figée 2026-06-18)** FR/EN : Mer/Sea · Motifs/Patterns · Hanami/Hanami · Kaïro/Kaïro · Territoires/Lands. Codes SKU : MER · MOT · HAN · KAI · TER. « Territoires » regroupe régions + drapeaux (USA, Bretagne). **Pas de sous-catégories** ; thèmes transverses = tags ; « série limitée » = mention bloc 2 BCDG, pas une collection. (Remplace l'ancienne structure 6 collections Kaïro/La Mer/OKUSAI/Bretagne/Éditions spéciales/Hanami.)
 - Tailles variables : attribut global `Taille` (50/75/100 cm extensible)
-- Produit spécial validé : **Stars & Stripes Koinobori — by BCDG** (Éditions spéciales · Americana · 100 cm · série 25 pièces)
+- Produit spécial validé : **Stars & Stripes Koinobori - by BCDG** (Territoires/Lands · USA · 100 cm · série limitée · SKU `KH-TER-001-100`)
 - Nom interne fournisseur "US FLAG" jamais public
 
 ## Périmètre MVP — bilingue commercial complet
