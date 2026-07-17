@@ -24,7 +24,7 @@ Format par entrée :
 **Pourquoi c'est important** : signature d'entrée du site, forte différenciation premium ; demande explicite Alain.
 **Impact** : header global, identité, navigation, sélecteur langue (recoupe [[UX-001]]), portage WP/Kadence (vanilla HTML/CSS/JS, pas React).
 **Décision requise plus tard** : rendu final des battants (idée « doubles battants qui se replient »), easing/vitesse, écartement, fond indigo/or exact, intégration logo+cartouche fixes, version mobile. Possible reprise via Codex/Manus.
-**Statut** : ⏸️ en attente — **à reprendre Lot 6 (AD) → Lot 7 (implémentation thème)**. Ne pas figer avant.
+**Statut** : ✅ **VALIDÉ (prototype provisoire) — 2026-06-29**. Mécanisme = **glissement** (battants washi coulissants), prototype `header-shoji-koino-v1.html` (vanilla HTML/CSS/JS autonome ; anim CSS, JS = déclencheurs). Spec : slide **1 s** ; scroll down → header **masqué** (revient scroll up / souris < 70px haut) ; **split logo** réel (coupe 56,6 %) ; **grille carrée continue** (`--cell = --header-h/2`) ; centre **texture II claire** (`shoji-center-texture-II.png`) en **tuile** (⚠️ 399 Ko → compresser) ; icônes **marron `#463E32`** placeholders + **tooltip instantané** ; bouton **corail** ; hauteur **responsive** `clamp(110px,13vw,185px)`. **Reste** : vrais rubriques → icônes + labels, compression texture, portage thème (Lot 7). **Revisitable selon la charte/esthétique globale (nouvelle session).**
 
 ### [UX-001] Emplacement + visibilité du sélecteur de langue
 **Observation** : Polylang fournit un sélecteur fonctionnel ; emplacement par défaut non arbitré (header ? footer ? les deux ?).
@@ -40,11 +40,11 @@ Format par entrée :
 **Décision requise plus tard** : narration, hero, ordre des sections, immersion vs sobriété.
 **Statut** : en attente Manus
 
-### [UX-003] Présentation des collections (6)
+### [UX-003] Présentation des collections (5)
 **Observation** : grille produits Kadence par défaut au Lot 2.
 **Pourquoi c'est important** : navigation « collection-first » / gallery-like envisagée (brief Manus) vs grille e-commerce générique.
 **Impact** : pages collections, navigation.
-**Décision requise plus tard** : hiérarchie des 6 collections, traitement éditorial vs catalogue.
+**Décision requise plus tard** : hiérarchie des 5 collections (Mer · Motifs · Hanami · Kaïro · Territoires), traitement éditorial vs catalogue.
 **Statut** : en attente Manus
 
 ### [UX-004] Mise en avant de Kaïro + récit « The Nameless Ship »
@@ -55,16 +55,16 @@ Format par entrée :
 **Statut** : en attente Manus
 
 ### [UX-005] Place du storytelling BCDG
-**Observation** : texte signature BCDG présent en bas de fiche (doctrine 3 blocs) ; pas de dispositif marque dédié.
+**Observation** : texte signature BCDG présent en bloc 2 de fiche (doctrine 2 blocs) ; pas de dispositif marque dédié.
 **Pourquoi c'est important** : différenciation « maison de marque » vs Etsy/Amazon ; distinction logo Koinobori House (site) ≠ signature BCDG (produits).
 **Impact** : fiches produits, à-propos, homepage.
 **Décision requise plus tard** : ampleur et emplacement du storytelling sans confondre les deux identités.
 **Statut** : en attente Manus
 
 ### [UX-006] Structure visuelle des pages produits
-**Observation** : 3 blocs doctrine (design/usage → BCDG → transparence) + galerie standard.
-**Pourquoi c'est important** : perception premium / poétique vs fiche WC générique ; wording atelier en bas (doctrine).
-**Impact** : ~50 fiches produits.
+**Observation** : 2 blocs doctrine (design/usage → signature BCDG) + galerie standard.
+**Pourquoi c'est important** : perception premium / poétique vs fiche WC générique. (Plus de bloc atelier/transparence : supprimé doctrine 2026-06-18.)
+**Impact** : ~17 fiches produits.
 **Décision requise plus tard** : mise en page, typographie, immersion, traitement images.
 **Statut** : en attente Manus
 

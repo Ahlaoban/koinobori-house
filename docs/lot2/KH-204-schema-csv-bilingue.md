@@ -2,7 +2,7 @@
 
 - **Date** : 2026-06-15
 - **Statut** : ✅ **WORKFLOW VALIDÉ sur pilote (2026-06-18)** — voir §G. FR par CSV + EN par « + traduire » (même SKU, variation/prix/stock synchronisés). Prêt pour industrialisation après pré-requis (attributs globaux + collections EN).
-- **But** : préparer le workflow d'import du catalogue sans saisir les ~50 produits. Le **pilote Sakura Rouge** sert de banc d'essai du workflow complet.
+- **But** : préparer le workflow d'import du catalogue sans saisir les ~17 produits. Le **pilote Sakura Rouge** sert de banc d'essai du workflow complet.
 
 ---
 
@@ -14,12 +14,12 @@ Pour un **produit variable + variation Taille** = **2 lignes** (1 parent + 1 var
 |---|---|---|
 | `Type` | `variable` | `variation` |
 | `SKU` | `KH-HAN-001-075` | `KH-HAN-001-075-T75` |
-| `Name` | `Sakura Rouge Koinobori — by BCDG` | *(vide / hérite)* |
+| `Name` | `Sakura Rouge Koinobori - by BCDG` | *(vide / hérite)* |
 | `Published` | `1` | `1` |
 | `Is featured?` | `0` | |
 | `Visibility in catalog` | `visible` | |
 | `Short description` | *(short_desc FR — §KH-203)* | |
-| `Description` | *(long_desc 3 blocs, HTML Gutenberg)* | |
+| `Description` | *(long_desc 2 blocs, HTML Gutenberg)* | |
 | `In stock?` | `1` | `1` |
 | `Stock` | | `50` |
 | `Regular price` | | `29` |
@@ -42,7 +42,7 @@ Pour un **produit variable + variation Taille** = **2 lignes** (1 parent + 1 var
 
 | Option | Principe | Risque |
 |---|---|---|
-| **A. FR par CSV + EN par « + traduire »** | Importer le FR par CSV ; créer l'EN via le bouton Polylang « + » (comme le produit test) | EN manuel → pas scalable pour 50 |
+| **A. FR par CSV + EN par « + traduire »** | Importer le FR par CSV ; créer l'EN via le bouton Polylang « + » (comme le produit test) | EN manuel → pas scalable pour ~17 |
 | **B. 2 CSV (FR puis EN) + liaison** | Importer CSV FR (langue par défaut) puis CSV EN ; **lier** les traductions (manuel admin, ou outil Polylang bulk) | la liaison de masse via CSV = à vérifier (peut-être non dispo en Free) |
 | **C. Colonne langue custom** | Ajouter `meta:_lang`/colonne via hook ou plugin d'import compatible Polylang | dépend d'un plugin (stack verrouillé → à éviter) |
 
@@ -61,7 +61,7 @@ WooCommerce **impose des SKU uniques**. Deux posts (FR + EN) avec le même SKU `
 
 ## D. Autres points workflow
 - **Slug EN** : WP force l'unicité → `…/produit/sakura-rouge/` FR vs possible `sakura-rouge-2`/autre EN (cf produit test `test`→`test-2`). Acceptable, à constater.
-- **Descriptions longues 3 blocs** : en CSV, le champ `Description` = HTML. Reproduire les 3 blocs Gutenberg via `<!-- wp:paragraph -->` ou simples `<p>` séparés. À valider visuellement (rendu neutre).
+- **Descriptions longues 2 blocs** : en CSV, le champ `Description` = HTML. Reproduire les 2 blocs Gutenberg via `<!-- wp:paragraph -->` ou simples `<p>` séparés. À valider visuellement (rendu neutre).
 - **Catégories bilingues** : la catégorie `Hanami` doit exister + être traduite (Polylang) avant import, sinon créée en langue par défaut.
 - **Images** : colonne `Images` laissée **vide** (visuels hors scope) → import sans visuel, ajout ultérieur.
 - **Encodage** : CSV **UTF-8** (accents FR + éventuels caractères JP).
@@ -72,15 +72,15 @@ WooCommerce **impose des SKU uniques**. Deux posts (FR + EN) avec le même SKU `
 1. Je fournis le **CSV FR** Sakura (parent + variation) — données KH-203.
 2. Tu importes (WC → Produits → Importer) sur **staging**.
 3. On teste la **création EN** (option A/B) + **liaison Polylang** + **unicité SKU**.
-4. On vérifie : 2 URLs produit 200, traduction liée, stock/variation OK, 3 blocs rendus, doctrine (KH-214 mini), sitemap/hreflang (KH-215 mini).
-5. **Méthode retenue figée** → industrialisation des 50.
+4. On vérifie : 2 URLs produit 200, traduction liée, stock/variation OK, 2 blocs rendus, doctrine (KH-214 mini), sitemap/hreflang (KH-215 mini).
+5. **Méthode retenue figée** → industrialisation des ~17.
 
 ---
 
 ## F. Risques avant industrialisation (synthèse)
-1. **Liaison traduction Polylang via CSV** (§B) — le plus structurant. Si non automatisable → EN semi-manuel pour 50 produits (coût à anticiper).
+1. **Liaison traduction Polylang via CSV** (§B) — le plus structurant. Si non automatisable → EN semi-manuel pour ~17 produits (coût à anticiper).
 2. **Unicité SKU FR/EN** (§C).
-3. **Rendu 3 blocs** via CSV HTML (§D).
+3. **Rendu 2 blocs** via CSV HTML (§D).
 4. **Catégories/attributs** à créer + traduire avant import.
 5. **Variations** (parent/enfant SKU) bien importées + stock/prix sur variation (KH-010).
 6. **Doctrine à l'échelle** : audit grep KH-214 obligatoire sur les 50 (FR+EN).
@@ -104,14 +104,14 @@ Pilote **Sakura Rouge** : FR importé par CSV, EN créé par Polylang « + tradu
 **Findings confirmés (à intégrer au process des 50)** :
 1. **Pré-créer les attributs globaux** (Taille + termes 50/75/100) **avant** l'import — sinon la variation ne se génère pas.
 2. **Variation via CSV** : l'import attache l'attribut mais ne coche pas « utilisé pour les variations » → étape manuelle « cocher + générer » par produit, **ou** ajuster la colonne `Parent` (ex. `id:`) — **à retester** avec l'attribut global pré-créé.
-3. **Traduire les 6 collections en EN** (Polylang) avant de catégoriser les produits EN.
+3. **Traduire les 5 collections en EN** (Polylang) avant de catégoriser les produits EN.
 4. **Slug** = auto depuis le nom (gardé, riche en mots-clés).
 5. **Titre SEO** : corriger le modèle SEOPress produit (tiret orphelin) — fix global.
 
 **Coût EN par produit (allégé)** : « + traduire » → variation/prix/stock **synchronisés** → **coller uniquement les textes** (nom, descriptions, meta) → publier. Pas de ressaisie commerciale.
 
 **Méthode industrialisation retenue** :
-1. Pré-créer attributs globaux (Taille) + traduire les 6 collections en EN.
+1. Pré-créer attributs globaux (Taille) + traduire les 5 collections en EN.
 2. Importer les produits FR par CSV (lots par collection).
 3. Régler les variations FR (selon retest finding 2).
 4. EN par « + traduire » + coller textes EN + publier.

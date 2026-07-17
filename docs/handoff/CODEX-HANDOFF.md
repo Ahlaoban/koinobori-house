@@ -23,7 +23,7 @@ Résumé de reprise (20 lignes max) :
 9. Secrets (Stripe/PayPal/Brevo) vivent **hors repo** (gestionnaire de mots de passe).
 10. **Règle d'or** : proposer un plan avant toute modification ; aucun secret dans le repo.
 11. Ne jamais mentionner la Chine publiquement (production/atelier/fournisseur/fabrication).
-12. Formulation production autorisée : « Produit par un atelier partenaire selon les fichiers et spécifications BCDG ».
+12. **Aucune mention atelier/production sur les fiches** (FR+EN, rév. 2026-06-18). « atelier partenaire » autorisé seulement *hors fiches* ; jamais « atelier chinois ».
 13. Jamais de mention de stock global ; stock par SKU uniquement.
 14. « US Flag » = nom fournisseur interne ; public = « Stars & Stripes Koinobori — by BCDG ».
 15. EUR only, pas de multi-devise au MVP.
@@ -100,12 +100,10 @@ Résumé de reprise (20 lignes max) :
 - ❌ **Jamais** mentionner la Chine publiquement comme production / atelier / fournisseur / sourcing / fabrication / logistique interne.
   - Exception bornée : Chine comme **pays / culture** uniquement, contexte **B2G culturel** (pages `/fr/collectivites/` + `/en/institutions/`). Jamais comme lieu de production.
 - ❌ Jamais « atelier chinois », « fabriqué en France », fabrication interne prétendue.
-- ✅ Formulation production autorisée (bas de fiche) :
-  - FR : *« Produit par un atelier partenaire selon les fichiers et spécifications BCDG. »*
-  - EN : *« Produced by a partner workshop according to BCDG files and specifications. »*
+- ❌ **Aucune mention d'atelier/production sur les fiches** (FR + EN, rév. 2026-06-18 ; remplace l'ancienne formule « atelier partenaire » bas de fiche). « atelier partenaire » / « atelier confidentiel » autorisé *uniquement hors fiches* ; jamais « atelier chinois ».
 - ❌ Jamais de mention de **volume global de stock** (stock par SKU uniquement).
 - ❌ « US Flag » = nom fournisseur **interne** seulement, jamais public (produit public = « Stars & Stripes Koinobori — by BCDG »).
-- ✅ Wording fiche produit : description courte SANS mention atelier partenaire ; description longue en 3 blocs (design/usage → signature BCDG → transparence production en bas).
+- ✅ Wording fiche produit : description courte SANS mention atelier ; description longue en **2 blocs** (design/usage → signature BCDG). **Plus de bloc transparence/atelier** (supprimé 2026-06-18).
 
 ## 6. Règles de sécurité (no secrets in repo)
 

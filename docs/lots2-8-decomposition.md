@@ -37,10 +37,10 @@
 ---
 
 ## Lot 2 — Catalogue & fiches produits *(KH-2xx)*
-**Périmètre** : taxonomie 6 collections bilingues + slugs · attribut global Taille (50/75/100) · modèle produit (variable+variations, SKU, prix EUR, **stock par produit**) · **~50 produits MVP bilingues FR+EN** (nom `— by BCDG`, short_desc **sans atelier**, long_desc **3 blocs**, images, prix, stock) · traductions Polylang + sync stock/variations (KH-010 ✓) · **fiche = structure NEUTRE** (visuel réservé).
+**Périmètre** : taxonomie **5 collections** bilingues + slugs · attribut global Taille (50/75/100) · modèle produit (variable+variations, SKU, prix EUR, **stock par produit**) · **~17 produits MVP bilingues FR+EN** (nom `- by BCDG`, short_desc **sans atelier**, long_desc **2 blocs**, images, prix, stock) · traductions Polylang + sync stock/variations (KH-010 ✓) · **fiche = structure NEUTRE** (visuel réservé).
 **Dépendances** : Lot 1 (✓).
-**Risques** : wording doctrine × 50 · images produits pas prêtes · volume.
-**Critères de sortie** : 50 produits publiés bilingues · catalogue indexable · **audit grep doctrine PASS (KH-208-213)** (0 Chine/origine, 0 stock global, short_desc sans « atelier partenaire »).
+**Risques** : wording doctrine × ~17 · images produits pas prêtes · volume.
+**Critères de sortie** : ~17 produits publiés bilingues · catalogue indexable · **audit grep doctrine PASS (KH-208-213)** (0 Chine/origine, 0 stock global, **aucune mention atelier** short_desc ET long_desc FR+EN).
 **Blocages** : images produits · textes FR/EN.
 
 ## Lot 3 — Pages éditoriales, confiance, B2B/B2G, légales *(KH-3xx)*
@@ -147,7 +147,7 @@ Lot 1 (✓)
 | Homepage | sections en blocs natifs empilés | narration, hero, ordre, ambiance |
 | Footer | liens essentiels + légales | structure, colonnes, éditorial |
 | Collections | grille Kadence par défaut | gallery/editorial, hiérarchie |
-| Pages produits | 3 blocs doctrine + galerie standard | mise en page, immersion, typo |
+| Pages produits | 2 blocs doctrine + galerie standard | mise en page, immersion, typo |
 | Kaïro | collection + produits | dispositif narratif « The Nameless Ship » |
 | Storytelling BCDG | texte présent (bas/neutre) | emplacement, poids, dispositif |
 | Images d'ambiance | **aucune** | tout |

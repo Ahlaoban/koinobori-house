@@ -33,14 +33,14 @@
 
 ## KH-205 — Vérif post-setup
 - Attribut Taille global présent + termes 50/75/100 + traduits EN.
-- 6 collections présentes FR + liées EN.
+- 5 collections présentes FR + liées EN.
 - Catégorie de base produit `/produit/` inchangée (limitation Pro skip OK).
 
 ---
 
 ## Séquence d'industrialisation (rappel)
 1. **Prérequis ci-dessus** (attributs + collections EN). ← *on est ici*
-2. Alain fournit la **liste des ~50 produits** (nom, collection, taille(s), prix, stock).
+2. Alain fournit la **liste des ~17 produits** (nom, collection, taille(s), prix, stock).
 3. Je génère les **CSV FR par collection** (gabarit KH-203, 2 blocs).
 4. Import FR → vérif variations.
 5. EN par « + traduire » + coller textes EN (je les rédige).

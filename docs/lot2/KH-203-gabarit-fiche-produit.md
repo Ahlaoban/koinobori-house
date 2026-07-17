@@ -2,7 +2,7 @@
 
 - **Date** : 2026-06-15
 - **Statut** : 🟢 **gabarit VALIDÉ (Alain, 2026-06-15)** — bloc 1 enrichi (caractéristiques physiques : vent, eau/UV, bouche renforcée, émerillon inox, cordelette ; pas de diamètre public), signature nom = `- by BCDG` (tiret simple, plus aucun tiret cadratin dans les fiches), inspiration japonaise, pilote 75 cm. **Rév. 2026-06-18 : suppression du bloc transparence atelier (FR+EN) → structure 2 blocs.** Aucune implémentation.
-- **Pilote** : Sakura Rouge (Hanami). Gabarit **généralisable** aux ~50 produits.
+- **Pilote** : Sakura Rouge (Hanami). Gabarit **généralisable** aux ~17 produits.
 - **Contraintes** : contenu seulement · pas de visuel · pas de rendu final · compatible évolutions UX Manus · doctrine stricte.
 
 ---
@@ -18,7 +18,7 @@
 | **Stock** | par produit/variation | **jamais** de volume global (doctrine stock) |
 | **Description courte** | commerciale, désirable | **AUCUNE** mention atelier partenaire / partner workshop |
 | **Description longue** | **2 blocs** Gutenberg séparés | bloc1 design/usage · bloc2 signature BCDG (plus de bloc transparence atelier) |
-| **Collection (catégorie)** | rangement | 1 des 6 collections, bilingue |
+| **Collection (catégorie)** | rangement | 1 des 5 collections, bilingue |
 | **Attribut Taille** | variations | 50/75/100 (extensible) |
 | **Métadonnées SEO** | SEOPress | meta title, meta desc, slug, canonical auto, hreflang auto |
 | **Visuels** | **emplacements réservés** | image principale + galerie = **placeholders** (contenu à venir, hors scope) |
