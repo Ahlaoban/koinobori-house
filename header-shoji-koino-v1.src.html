@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koinobori House — Header Shoji (prototype v1)</title>
+<!--
+  PROTOTYPE UX-Header-001 — mécanisme conceptuel + interactionnel (PAS l'AD finale).
+  Réglages rapides : variables CSS ci-dessous (--spread, --logo-shift, --duration, couleurs).
+  Logo réel injecté en base64 (fichier autonome). Icônes = placeholders maïjinn (à remplacer).
+-->
+<style>
+:root{
+  --header-h: clamp(130px, 16vw, 230px); /* B ample : nuit/lune mises en valeur, reste responsive (mince en etroit) */
+  --duration: 1000ms;                 /* glissement : 1 s ouverture ET fermeture (inchange) */
+  --ease: cubic-bezier(.65,0,.35,1);   /* ease-in-out regulier : glissement etale (pas front-loaded) */
+  --spread: 405px;                     /* PX FIXE (pas %) : battants s'ouvrent juste autour du menu -> nuit collee au menu a TOUTE largeur. ~= demi-menu + ~27px (un peu plus d'air qu'avant) */
+  --logo-w: calc(var(--header-h) * 2.55); /* logo gold-II (ratio 7) AGRANDI + cartouche deja plus gros. N'affecte PAS le split (= 0.5 - shift_factor). > ~1440px ok ; plus etroit "Koinobori" frole le bord */
+  --logo-shift: calc(var(--logo-w) * -0.0738); /* coupe au gap "Koinobori|House" detecte par alpha = 57.38% du logo-III-cart (cartouche bas + agrandi) */
+  --panel-opacity: 1;                  /* battants opaques (nuit pleine au repos) */
+  --washi: #F4EEE2;
+  --nuit: #122852;                     /* indigo = couleur du ciel de l'image (blend invisible si bord visible) */
+  --center: #6E645B;                   /* taupe : fallback sous texture-II (centre clair revele) */
+  --ink:#1A1A1A;
+  --icon:#463E32;                      /* icônes marron/taupe fonce (essai fond clair II) */
+  --label:#1E3A5F;                     /* labels sous icones : bleu indigo, fond transparent */
+  --accent:#E05A5A;                    /* corail (essai bouton Mon compte) */
+}
+*{box-sizing:border-box;}
+html,body{margin:0;}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:#FDF8F0;
+  padding-top:var(--header-h);
+}
+
+/* ---------- HEADER ---------- */
+.shoji{
+  position:fixed; top:0; left:0; width:100%; height:var(--header-h);
+  overflow:hidden; z-index:50;
+  transition:transform .4s ease;            /* masquage au scroll (slide vertical) */
+}
+.shoji.hidden{transform:translateY(-100%);}         /* scroll down -> header masque (revient au scroll up / souris en haut) */
+
+/* ---------- CENTRE sombre moucheté (révélé à l'ouverture) ---------- */
+.center{
+  position:absolute; inset:0; z-index:1;
+  display:flex; align-items:center; justify-content:center;
+  background-color:var(--center);
+  background-image:url("brand/koinoborihouse/shoji-center-texture-II.webp");
+  background-repeat:repeat;
+  background-position:center;
+}
+.menu{display:flex; align-items:center; gap:clamp(24px,3.4vw,46px);} /* icones bien ecartees */
+.menu a{display:flex; align-items:center; justify-content:center; text-decoration:none; position:relative;}
+.menu a[data-label]::after{content:attr(data-label); position:absolute; top:calc(100% + 8px); left:50%; transform:translateX(-50%);
+  font-size:15px; line-height:1; white-space:nowrap; color:var(--label); font-weight:500;
+  background:transparent; padding:2px 4px;
+  opacity:0; pointer-events:none; transition:opacity .08s;}
+.menu a[data-label]:hover::after{opacity:1;}
+/* selecteur langue FR / EN (texte, dans la rangee revelee) */
+.lang{display:flex; align-items:center; gap:4px; font-size:15px; font-weight:600; letter-spacing:.04em;}
+.lang a{color:var(--icon); opacity:.45; text-decoration:none; padding:2px 4px;
+  filter:drop-shadow(0 0 1.5px rgba(255,255,255,.7)); transition:opacity .2s;}
+.lang a.on{opacity:1; text-decoration:underline; text-underline-offset:3px;}
+.lang a:hover{opacity:1;}
+.menu .ico{width:52px; height:52px; fill:none; stroke:var(--icon); stroke-width:1.7;
+  stroke-linecap:round; stroke-linejoin:round; opacity:.95;
+  filter:drop-shadow(0 0 1.5px rgba(255,255,255,.7)); /* halo clair : detache les icones foncees du fond clair */
+  transition:opacity .2s, transform .2s;}
+.menu a:hover .ico{opacity:1; transform:translateY(-3px);}
+.menu .enter{width:64px; height:64px; border-radius:50%; background:var(--accent);
+  box-shadow:0 4px 14px rgba(0,0,0,.25);}
+.menu .enter .ico{stroke:#fff; filter:none; width:32px; height:32px;}
+
+/* ---------- BATTANTS shoji ---------- */
+.panel{
+  position:absolute; top:0; height:100%; width:50%; z-index:3;
+  overflow:hidden; opacity:var(--panel-opacity); display:block;
+  background-color:var(--nuit);
+  transition:transform var(--duration) var(--ease);
+  cursor:pointer;
+}
+.panel.left{left:0;}
+.panel.right{right:0;}
+/* nuit indigo + lune doree (texture-IV) : span 200% = pleine largeur viewport,
+   les 2 battants montrent la MEME image alignee a l'ecran -> nuit continue au repos,
+   se fend au centre quand les battants s'ecartent (lune ~68% part avec le battant droit). */
+.panel .night{position:absolute; top:0; height:100%; width:200%; pointer-events:none;
+  background-image:url("brand/koinoborihouse/blue-night-texture-III.webp"); /* texture-III : lune realiste ~75%, bien decollee du haut */
+  background-repeat:no-repeat; background-size:cover; background-position:center;} /* cover = aspect preserve -> lune ronde (pas d'ecrasement) */
+.panel.left  .night{left:0;}
+.panel.right .night{right:0;}
+.panel .logo{
+  position:absolute; top:0; height:100%; width:200%;
+  background-image:url("brand/koinoborihouse/logo-color-gold-III-cart.png"); background-repeat:no-repeat;
+  background-position:calc(50% + var(--logo-shift)) center;
+  background-size:var(--logo-w) auto;
+  pointer-events:none;
+}
+.panel.left  .logo{left:0;}
+.panel.right .logo{right:0;}
+.shoji.open .panel.left { transform:translateX(calc(-1 * var(--spread))); }
+.shoji.open .panel.right{ transform:translateX(var(--spread)); }
+
+@media (prefers-reduced-motion: reduce){
+  .panel{transition-duration:1ms;}
+}
+
+/* ---------- contenu factice (pour tester le scroll) ---------- */
+main{max-width:760px; margin:0 auto; padding:48px 24px 200px;}
+main h1{font-family:Georgia,serif; font-weight:600; font-size:30px;}
+main p{line-height:1.7; color:#3a3a3a;}
+.spacer{height:120vh;}
+.hint{position:fixed; bottom:14px; left:50%; transform:translateX(-50%);
+  background:#1A1A1A; color:#F4EEE2; font-size:12px; padding:7px 14px; border-radius:20px;
+  opacity:.85; z-index:60; pointer-events:none;}
+</style>
+</head>
+<body>
+
+<header class="shoji" id="shoji" aria-label="En-tête Koinobori House">
+
+  <!-- centre sombre + menu iconique (révélé entre les battants) -->
+  <div class="center">
+    <nav class="menu" aria-label="Menu principal">
+      <a href="#" aria-label="Boutique" data-label="Boutique"><svg class="ico" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7-7a2 2 0 0 1-.6-1.4V5a2 2 0 0 1 2-2h7.2a2 2 0 0 1 1.4.6l7 7a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg></a>
+      <a href="#" aria-label="Découvrir" data-label="Découvrir"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11l4.5-2.5Z"/></svg></a>
+      <a href="#" aria-label="Collections" data-label="Collections"><svg class="ico" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/></svg></a>
+      <a href="#" aria-label="Professionnels" data-label="Professionnels"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5.5"/><path d="M17.5 14a6 6 0 0 1 3.5 6"/></svg></a>
+      <a href="#" aria-label="Aide" data-label="Aide"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.2 9.2a2.8 2.8 0 0 1 5.4 1c0 1.8-2.6 2.2-2.6 3.8"/><circle cx="12" cy="17" r=".6"/></svg></a>
+      <a href="#" class="enter" aria-label="Mon compte" data-label="Mon compte"><svg class="ico" viewBox="0 0 24 24"><path d="M5 12h12"/><path d="m13 7 5 5-5 5"/></svg></a>
+      <a href="#" aria-label="Panier" data-label="Panier"><svg class="ico" viewBox="0 0 24 24"><path d="M6.5 9h11v9.5a1.8 1.8 0 0 1-1.8 1.8H8.3a1.8 1.8 0 0 1-1.8-1.8V9Z"/><path d="M9.2 9V7.2a2.8 2.8 0 0 1 5.6 0V9"/></svg></a>
+      <span class="lang" aria-label="Langue"><a href="#" class="on" aria-label="Francais">FR</a><a href="#" aria-label="English">EN</a></span>
+    </nav>
+  </div>
+
+  <!-- battants : chaque battant porte sa moitié de logo et est cliquable (= accueil) -->
+  <a class="panel left"  href="#home" data-home aria-label="Accueil"><span class="night"></span><span class="logo"></span></a>
+  <a class="panel right" href="#home" data-home aria-label="Accueil"><span class="night"></span><span class="logo"></span></a>
+
+</header>
+
+<main>
+  <h1>Contenu de test</h1>
+  <p>Survole l'en-tête : les deux battants shoji s'écartent en ~2&nbsp;s pour révéler le menu. Retire la souris : ils se referment en ~2&nbsp;s. À l'arrivée sur la page, ils jouent une ouverture d'accueil puis se referment.</p>
+  <p>Fais défiler vers le bas : l'en-tête se rétracte (comme maïjinn.com). Remonte : il réapparaît. Clique un battant (le logo) : retour accueil + rejoue l'ouverture.</p>
+  <div class="spacer"></div>
+  <p>Bas de page — remonte pour voir l'en-tête réapparaître.</p>
+</main>
+
+<div class="hint" id="hint">survole l'en-tête • scrolle pour le rétracter</div>
+
+<script>
+(function(){
+  var shoji = document.getElementById('shoji');
+  var hint  = document.getElementById('hint');
+  var onboardTimer;
+
+  function open(){ shoji.classList.add('open'); }
+  function close(){ shoji.classList.remove('open'); }
+
+  // Ouverture d'accueil (chaque chargement / retour accueil) : ouvre puis referme.
+  function onboarding(){
+    open();
+    clearTimeout(onboardTimer);
+    onboardTimer = setTimeout(close, 2600);
+  }
+
+  // Survol : ouvre ; sortie : ferme (desktop).
+  shoji.addEventListener('mouseenter', function(){ clearTimeout(onboardTimer); open(); });
+  shoji.addEventListener('mouseleave', function(){ close(); });
+
+  // Tactile / clic : tap ouvre, tap ferme ; clic battant quand ouvert = accueil.
+  shoji.addEventListener('click', function(e){
+    var home = e.target.closest('[data-home]');
+    if(!shoji.classList.contains('open')){ e.preventDefault(); clearTimeout(onboardTimer); open(); return; }
+    if(home){ e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}); onboarding(); return; }
+    if(!e.target.closest('a')){ close(); }
+  });
+
+  // Rétractation au scroll down (réapparait au scroll up).
+  var lastY = window.scrollY;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y > lastY && y > 90){ shoji.classList.add('hidden'); }
+    else if(y < lastY){ shoji.classList.remove('hidden'); }
+    lastY = y;
+  }, {passive:true});
+
+  window.addEventListener('mousemove', function(e){ if(e.clientY < 70){ shoji.classList.remove('hidden'); } }, {passive:true});
+
+  // Masque l'indice après un moment.
+  setTimeout(function(){ if(hint) hint.style.opacity = 0; }, 6000);
+
+  window.addEventListener('load', onboarding);
+})();
+</script>
+</body>
+</html>
