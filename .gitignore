@@ -99,3 +99,9 @@ build/
 # --- Assets de travail design (Manus / prototypes header) — hors repo doc ---
 koinobori-house-images/
 header-shoji-prototype.html
+
+# Outils image (dependances node)
+tools/node_modules/
+
+# Backups locaux prototypes (source = .src.html, autonome = .html)
+header-shoji-koino-v1.bak.html

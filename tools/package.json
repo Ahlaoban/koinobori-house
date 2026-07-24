@@ -1,0 +1,9 @@
+{
+  "name": "koino-img-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Outils image Koinobori House (conversion PNG -> WebP)",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}
