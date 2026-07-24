@@ -86,9 +86,12 @@ Le client doit vérifier l'état du colis et des produits à la réception. En c
 
 ### 8.1 Droit de rétractation
 
-Pour les commandes de produits standards passées sur le site Koinobori House, le client consommateur dispose d'un délai de 14 jours à compter du lendemain de la réception de sa commande pour exercer son droit de rétractation, sans avoir à justifier sa décision.
+Conformément aux dispositions applicables, le consommateur dispose d'un délai de quatorze jours pour exercer son droit de rétractation, sans avoir à motiver sa décision ni à supporter d'autres coûts que ceux prévus par la réglementation. Ce délai court à compter du lendemain de la réception de la commande. Lorsque le contrat a été conclu par voie électronique via une interface en ligne, le professionnel met à disposition du consommateur une fonctionnalité permettant l'exercice du droit de rétractation directement en ligne, facilement accessible, gratuite et fonctionnelle.
 
-Pour exercer ce droit, le client doit informer BCDG de sa décision par une déclaration claire, par exemple par email à : contact@koinoborihouse.com.
+Pour exercer ce droit, le client peut :
+
+- utiliser le formulaire de rétractation en ligne accessible depuis la page Retours et rétractation du site ;
+- ou informer BCDG de sa décision par une déclaration claire, par exemple par email à : contact@koinoborihouse.com.
 
 Le simple renvoi du produit sans déclaration préalable ne suffit pas à exercer le droit de rétractation.
 

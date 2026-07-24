@@ -25,14 +25,9 @@ These cookies are necessary for the website to function and cannot be disabled t
 
 ## 3. Audience Measurement
 
-Koinobori House plans to use a privacy-friendly analytics solution, for example Plausible if confirmed in Lot 1.
+Koinobori House uses Plausible Analytics, a privacy-friendly analytics solution: it works without cookies, without individual identifiers and without cross-use with other processing operations. Data is aggregated and hosted in the European Union. In this configuration, audience measurement does not require prior consent.
 
-Two cases are possible:
-
-1. if the tool is configured without cookies or under conditions allowing a consent exemption, it will be described in this policy;
-2. if the tool places non-exempt cookies or trackers, prior consent will be requested.
-
-**To be verified in Lot 1:** actual Plausible or selected tool configuration, presence or absence of cookies, retention periods, processing location, and absence of cross-use with other processing operations.
+If the configuration were to change and involve non-exempt cookies or trackers, prior consent would be requested and this policy updated.
 
 ## 4. Marketing Cookies
 
@@ -46,21 +41,23 @@ Some providers, including Stripe, PayPal or security tools, may use trackers nec
 
 ## 6. Managing Preferences
 
-Users can manage their choices through the cookie settings panel: [LINK / BUTTON TO BE COMPLETED AFTER PLUGIN SELECTION].
+Users can manage their choices through the cookie settings panel (Complianz), available via the "Manage cookies" link in the website footer.
 
 Users may also configure their browser to block or delete certain cookies. Blocking necessary cookies may impair or prevent certain website functions, including the cart or payment process.
 
 ## 7. Cookie Table
 
-To be completed after a technical audit of the actual WordPress/WooCommerce site.
+Table based on the selected tools; the exact list will be confirmed by a technical audit before publication.
 
 | Cookie name | Purpose | Duration | Publisher | Necessary / consent |
 |---|---|---:|---|---|
-| [TO BE COMPLETED] | WooCommerce cart | [TO BE COMPLETED] | Koinobori House / WooCommerce | Necessary |
-| [TO BE COMPLETED] | Language / Polylang | [TO BE COMPLETED] | Koinobori House / Polylang | Necessary or preference depending on configuration |
-| [TO BE COMPLETED] | Cookie consent | [TO BE COMPLETED] | Koinobori House / cookie plugin | Necessary |
-| [TO BE COMPLETED] | Audience measurement | [TO BE COMPLETED] | [Plausible or other] | To qualify |
-| [TO BE COMPLETED] | Payment / anti-fraud | [TO BE COMPLETED] | Stripe / PayPal | Necessary or to qualify |
+| `koino_lang_pref` | Remembering the chosen language (homepage redirect) | 90 days | Koinobori House | Necessary |
+| `pll_language` | Browsing language (Polylang) | 1 year | Koinobori House / Polylang | Necessary |
+| `woocommerce_cart_hash`, `woocommerce_items_in_cart` | Cart | Session | Koinobori House / WooCommerce | Necessary |
+| `wp_woocommerce_session_*` | Shopping session | 2 days | Koinobori House / WooCommerce | Necessary |
+| `cmplz_*` | Storing consent preferences | 365 days | Koinobori House / Complianz | Necessary |
+| Audience measurement | Plausible Analytics: no cookies placed | — | Plausible | Exempt |
+| `__stripe_mid`, `__stripe_sid` | Payment and fraud prevention (payment pages) | 1 year / 30 min | Stripe | Necessary |
 
 ## 8. Changes
 

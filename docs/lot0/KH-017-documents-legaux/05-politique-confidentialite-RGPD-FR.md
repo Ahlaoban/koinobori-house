@@ -30,7 +30,6 @@ Selon l’usage du site, les données suivantes peuvent être collectées :
 - données de paiement : statut du paiement, identifiant de transaction, prestataire utilisé ; les données complètes de carte bancaire sont traitées par Stripe ou PayPal et ne sont pas conservées par Koinobori House ;
 - données de compte client si un compte est créé ;
 - messages envoyés via les formulaires de contact, devis B2B/B2G ou service client ;
-- données liées aux avis clients, si la fonctionnalité est activée ;
 - données newsletter et consentements ;
 - données techniques : adresse IP, logs de sécurité, navigateur, langue, cookies nécessaires, préférences de langue ou de consentement.
 
@@ -41,13 +40,12 @@ Selon l’usage du site, les données suivantes peuvent être collectées :
 | Gestion des commandes, paiements, livraisons, retours et service client | Exécution du contrat |
 | Facturation, comptabilité, obligations fiscales et légales | Obligation légale |
 | Gestion des demandes de contact, devis B2B/B2G, demandes collectivités | Mesures précontractuelles ou intérêt légitime selon le cas |
-| Création et gestion du compte client | Exécution du contrat ou consentement selon le paramétrage |
+| Création et gestion du compte client | Exécution du contrat (création facultative lors de la commande) |
 | Sécurité du site, prévention de la fraude, logs techniques | Intérêt légitime |
 | Envoi de newsletter | Consentement |
 | Relances commerciales sur produits analogues auprès de clients existants | Intérêt légitime, avec droit d’opposition simple et gratuit |
 | Prospection vers prospects non clients | Consentement lorsque requis |
-| Avis clients | Consentement ou intérêt légitime selon le dispositif retenu |
-| Mesure d’audience | Consentement ou exemption si l’outil est configuré conformément aux conditions applicables |
+| Mesure d’audience | Exemption de consentement : outil Plausible Analytics configuré sans cookies ni suivi individuel |
 
 ## 4. Newsletter et prospection
 
@@ -61,22 +59,21 @@ Aucune donnée personnelle n’est vendue à des tiers.
 
 Les données peuvent être transmises uniquement lorsque cela est nécessaire :
 
-- hébergeur : o2switch ;
-- solution WordPress / WooCommerce et plugins strictement nécessaires ;
-- prestataires de paiement : Stripe, PayPal ;
-- prestataire email / SMTP / newsletter : Brevo si activé ;
-- transporteurs : La Poste, Colissimo, Mondial Relay si activé ;
-- outil de mesure d’audience : Plausible si activé ;
+- hébergeur : o2switch (France) ;
+- socle logiciel : WordPress, WooCommerce, thème Kadence, et les extensions suivantes : Polylang et Polylang for WooCommerce (site bilingue), SEOPress (référencement), LiteSpeed Cache (performance), Fluent Forms (formulaires), FluentSMTP (acheminement des emails), Complianz (gestion du consentement cookies), Wordfence (sécurité), UpdraftPlus (sauvegardes), ShortPixel ou Imagify (optimisation des images), YITH WooCommerce Wishlist (liste d'envies) ;
+- prestataires de paiement : Stripe (extension WooCommerce Stripe Gateway) et PayPal (extension WooCommerce PayPal Payments) ;
+- prestataire email / SMTP / newsletter : Brevo ;
+- transporteurs : La Poste / Colissimo ; Mondial Relay (France et pays européens desservis) ;
+- outil de mesure d'audience : Plausible Analytics (sans cookies, sans suivi individuel) ;
+- stockage externalisé des sauvegardes : Google Drive (via UpdraftPlus) ;
 - prestataires techniques nécessaires à la maintenance, sécurité ou fonctionnement du site ;
-- autorités administratives ou judiciaires si la loi l’exige.
+- autorités administratives ou judiciaires si la loi l'exige.
 
-**À compléter avant publication :** liste réelle des plugins WooCommerce, outil d’avis clients, outil d’abandoned cart, outil de consentement cookies, outil Merchant Center/feed, prestataires logistiques réellement activés.
+Aucun outil d'avis clients ni de relance de panier abandonné n'est utilisé au lancement. En cas d'évolution, la présente politique sera mise à jour.
 
 ## 6. Transferts hors Union européenne
 
-Certains prestataires techniques ou de paiement peuvent impliquer des traitements ou accès depuis des pays situés hors Union européenne. Le cas échéant, Koinobori House veille à ce que des garanties appropriées soient prévues par les prestataires concernés, notamment clauses contractuelles types, décisions d’adéquation ou mesures complémentaires lorsque nécessaires.
-
-**À vérifier avant publication :** documents de traitement des données de Stripe, PayPal, Brevo, Plausible et plugins effectivement retenus.
+Certains prestataires techniques ou de paiement peuvent impliquer des traitements ou accès depuis des pays situés hors Union européenne (notamment Stripe, PayPal et Google). Le cas échéant, Koinobori House veille à ce que des garanties appropriées soient prévues par les prestataires concernés, notamment clauses contractuelles types, décisions d'adéquation ou mesures complémentaires lorsque nécessaires. Brevo (France) et Plausible (Union européenne) hébergent leurs traitements dans l'Union européenne.
 
 ## 7. Durées de conservation
 
@@ -85,7 +82,7 @@ Les durées ci-dessous sont proposées pour le MVP et doivent être validées av
 | Données | Durée indicative |
 |---|---|
 | Commandes, factures, documents comptables | 10 ans |
-| Comptes clients | Durée d’utilisation du compte, puis suppression ou anonymisation après inactivité à définir |
+| Comptes clients | Durée d’utilisation du compte, puis suppression ou anonymisation après 3 ans d’inactivité |
 | Demandes de contact simples | 3 ans après le dernier échange, sauf obligation ou litige |
 | Devis B2B/B2G non suivis | 3 ans après le dernier contact, sauf obligation ou litige |
 | Données de prospection clients | Durée de la relation commerciale puis 3 ans après le dernier contact actif |
@@ -106,9 +103,9 @@ La personne concernée peut également introduire une réclamation auprès de la
 
 ## 9. Sécurité
 
-Koinobori House met en œuvre des mesures raisonnables de sécurité : hébergement sécurisé, accès restreints, mots de passe robustes, authentification renforcée lorsque disponible, mises à jour WordPress/WooCommerce/plugins, sauvegardes et limitation des accès aux données.
+Koinobori House met en œuvre des mesures raisonnables de sécurité : hébergement sécurisé, accès restreints, mots de passe robustes, authentification à deux facteurs sur les comptes administrateurs, extension de sécurité dédiée, mises à jour régulières de WordPress, WooCommerce et des extensions, sauvegardes régulières (hébergeur et sauvegardes externalisées) et limitation des accès aux données.
 
-**À compléter Lot 1 :** politique de sauvegarde, comptes administrateurs, 2FA WordPress, fréquence de mises à jour, plugins de sécurité, procédure incident.
+En cas de violation de données personnelles susceptible d'engendrer un risque pour les droits et libertés des personnes, Koinobori House notifiera la CNIL dans les conditions et délais prévus par la réglementation et informera les personnes concernées lorsque cela est requis.
 
 ## 10. Mineurs
 
