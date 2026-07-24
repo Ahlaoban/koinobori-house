@@ -44,7 +44,7 @@ Coordonnées intégrées :
 - [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV §8.2 et §8.6 (international).
 - [x] Adresse de retour : **deux adresses listées publiquement CGV §8.2** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
 - [x] Mode de demande de rétractation : déclaration par email à contact@koinoborihouse.com, formulaire type fourni CGV §8.1.
-- [ ] À partir du 19/06/2026 : prévoir une fonctionnalité en ligne permettant l'exercice du droit de rétractation directement en ligne si le site conclut des contrats à distance via interface en ligne.
+- [x] À partir du 19/06/2026 : fonctionnalité de rétractation en ligne. **Clause intégrée CGV §8.1 FR+EN (texte validé Alain 2026-07-24)** ; le formulaire en ligne lui-même (Fluent Forms, page Retours et rétractation) = **P0 Lot 5 avant lancement**.
 - [x] Exclusion produits personnalisés / sur mesure : intégrée CGV §8.4 avec mention « indiquée clairement avant la validation de toute commande personnalisée ».
 
 ## E. Livraison
@@ -58,23 +58,23 @@ Coordonnées intégrées :
 
 ## F. Données personnelles / RGPD
 
-- [ ] Liste réelle des plugins WordPress/WooCommerce.
-- [ ] Plugin de paiement Stripe exact.
-- [ ] Plugin PayPal exact.
-- [ ] Plugin newsletter / Brevo exact.
-- [ ] Plugin abandoned cart exact — vérifier base légale et mécanisme d’opposition/consentement.
-- [ ] Plugin avis clients exact.
-- [ ] Plugin cookies/consentement exact.
-- [ ] Activation ou non de compte client WooCommerce.
-- [ ] Durée de conservation des comptes inactifs.
-- [ ] Politique de sauvegarde o2switch / WordPress.
-- [ ] Procédure incident données personnelles.
+- [x] Liste réelle des plugins WordPress/WooCommerce : **intégrée politique §5 FR+EN (2026-07-24, stack verrouillée CLAUDE.md)**.
+- [x] Plugin de paiement Stripe : WooCommerce Stripe Gateway (officiel).
+- [x] Plugin PayPal : WooCommerce PayPal Payments (officiel).
+- [x] Plugin newsletter / Brevo : FluentSMTP + Brevo.
+- [x] Abandoned cart : **aucun outil au lancement** (décision Alain 2026-07-24) — mention intégrée §5.
+- [x] Avis clients : **aucun outil au lancement** (décision Alain 2026-07-24) — mentions retirées des politiques.
+- [x] Plugin cookies/consentement : Complianz — intégré politiques cookies FR+EN.
+- [x] Compte client WooCommerce : **activé, création facultative au checkout** (décision Alain 2026-07-24).
+- [x] Durée de conservation des comptes inactifs : **3 ans** (décision Alain 2026-07-24) — intégrée §7.
+- [x] Politique de sauvegarde : o2switch + UpdraftPlus/Google Drive — intégrée §9.
+- [x] Procédure incident données personnelles : clause notification CNIL intégrée §9 FR+EN.
 
 ## G. Cookies
 
-- [ ] Audit cookies réel après installation WordPress/WooCommerce/Polylang/Stripe/PayPal/Brevo/Plausible.
-- [ ] Compléter tableau cookies avec noms, durées, finalités, éditeurs.
-- [ ] Vérifier si Plausible est configuré sans cookie / exempté ; sinon bannière consentement.
+- [ ] Audit cookies réel après installation complète (Bloc 2 du backlog) — confirme le tableau prérempli.
+- [x] Tableau cookies prérempli (noms, durées, finalités, éditeurs) sur la base de la stack retenue — 2026-07-24. Confirmation finale = audit ci-dessus.
+- [x] Plausible : configuré sans cookie, exempté de consentement — intégré politiques FR+EN.
 - [ ] Ne pas activer pixel publicitaire ou retargeting sans consentement préalable.
 
 ## H. REP / IDU — point réglementaire à ouvrir séparément

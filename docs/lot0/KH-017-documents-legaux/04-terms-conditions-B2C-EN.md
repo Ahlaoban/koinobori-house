@@ -88,9 +88,12 @@ Customers should check the package and products upon receipt. If the package is 
 
 ### 8.1 Right of Withdrawal
 
-For orders of standard products placed on the Koinobori House website, consumer customers have 14 days from the day after receipt of their order to exercise their right of withdrawal, without having to justify their decision.
+In accordance with applicable law, consumers have a period of fourteen days to exercise their right of withdrawal, without having to give any reason and without incurring costs other than those provided for by the regulations. This period runs from the day after receipt of the order. Where the contract was concluded electronically through an online interface, an online withdrawal feature is made available to consumers, easily accessible, free of charge and functional.
 
-To exercise this right, customers must inform BCDG of their decision by a clear statement, for example by email to: contact@koinoborihouse.com.
+To exercise this right, customers may:
+
+- use the online withdrawal form available from the Returns and Withdrawal page of the website;
+- or inform BCDG of their decision by a clear statement, for example by email to: contact@koinoborihouse.com.
 
 Simply returning the product without prior notice is not sufficient to exercise the right of withdrawal.
 
