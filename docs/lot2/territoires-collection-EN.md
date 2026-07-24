@@ -30,10 +30,10 @@ Note interne (jamais public) : stock réel Breton/Bigouden abondant ; 100/variat
 ## KH-TER-002 — Breton Koinobori - by BCDG
 
 **Short description (EN)**
-> A flying carp in the colours of Brittany, black and white. A graphic tribute to the Breton country, to hang indoors or outdoors.
+> A flying carp in the colours of Brittany: ermines and black and white stripes inspired by the Breton flag. A graphic tribute to the Breton country, to hang indoors or outdoors.
 
 **Long description (EN)**
-> The Breton dresses the traditional koinobori silhouette in the colours of Brittany: bold, graphic black and white. Two maritime cultures meet, the Japanese carp and the Breton country. Hung in a garden, on a terrace, a balcony or in a living space, by the sea or in town, it comes alive with the faintest breeze and wears its character proudly.
+> The Breton dresses the traditional koinobori silhouette with the motif of the Breton flag: the ermine canton and the black and white stripes, in a bold graphic contrast. Two maritime cultures meet, the Japanese carp and the Breton country. Hung in a garden, on a terrace, a balcony or in a living space, by the sea or in town, it comes alive with the faintest breeze and wears its character proudly.
 >
 > Designed for decorative use both indoors and outdoors, it is made from a water and UV resistant fabric. Its mouth is held open by a reinforced frame. A hanging cord is included, finished with a stainless steel rotating swivel that lets it turn freely in the wind.
 >
@@ -44,10 +44,10 @@ Note interne (jamais public) : stock réel Breton/Bigouden abondant ; 100/variat
 ## KH-TER-003 — Bigouden Koinobori - by BCDG
 
 **Short description (EN)**
-> A flying carp in red and white, a tribute to the Bigouden country at the far tip of Brittany. A decorative piece to hang indoors or outdoors.
+> A flying carp in red and yellow, with ermines and stripes inspired by the Breton flag in vivid colours. A tribute to the Bigouden country at the far tip of Brittany, to hang indoors or outdoors.
 
 **Long description (EN)**
-> The Bigouden carries red and white on the traditional koinobori silhouette, as a tribute to the Bigouden country, a land of character at the far end of Brittany. Two maritime traditions echo each other: the Japanese carp and southern Finistère. Hung in a garden, on a terrace, a balcony or in a living space, it comes alive with the faintest breeze and wears its roots with pride.
+> The Bigouden reinterprets the motif of the Breton flag in red and yellow: the ermine canton and the contrasting stripes, carried by the traditional koinobori silhouette. A vibrant tribute to the Bigouden country, a land of character at the far end of Brittany, where two maritime traditions echo each other: the Japanese carp and southern Finistère. Hung in a garden, on a terrace, a balcony or in a living space, it comes alive with the faintest breeze and wears its roots with pride.
 >
 > Designed for decorative use both indoors and outdoors, it is made from a water and UV resistant fabric. Its mouth is held open by a reinforced frame. A hanging cord is included, finished with a stainless steel rotating swivel that lets it turn freely in the wind.
 >
