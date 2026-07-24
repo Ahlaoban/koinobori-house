@@ -76,6 +76,9 @@ captures/
 screenshots/
 memory/
 
+# --- Sorties de tests staging (contiennent l'URL staging — garder local) ---
+docs/lot1/resultat-*.txt
+
 # --- Outils / IDE / agent ---
 .claude/
 .vscode/
@@ -92,3 +95,7 @@ desktop.ini
 dist/
 build/
 *.log
+
+# --- Assets de travail design (Manus / prototypes header) — hors repo doc ---
+koinobori-house-images/
+header-shoji-prototype.html

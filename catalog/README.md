@@ -200,7 +200,7 @@ Pour chaque produit FR créé :
 3. Polylang duplique automatiquement variations + synchronise SKU + stock + prix
 4. Pas besoin de re-saisir variations EN : héritage automatique du parent traduit
 
-**Coût temps estimé** : ~5-10 min par produit pour traduction manuelle interface. ~50 produits MVP ≈ 4-8h supplémentaires hors import CSV initial.
+**Coût temps estimé** : ~5-10 min par produit pour traduction manuelle interface. ~17 produits MVP ≈ 2-3h supplémentaires hors import CSV initial.
 
 **Méthode 2 semi-auto** (WP-CLI ou plugin import dédié) à évaluer à l'usage, hors gel KH-010.
 
@@ -217,20 +217,17 @@ Pour chaque produit FR créé :
 
 **Description courte** (`short_desc_fr` / `short_desc_en`) : commerciale, claire, désirable. **Jamais** mention atelier partenaire / partner workshop.
 
-**Description longue** (`long_desc_fr` / `long_desc_en`) : structure 3 blocs ordonnés (séparés par double saut de ligne dans la cellule CSV → paragraphes Gutenberg distincts) :
+**Description longue** (`long_desc_fr` / `long_desc_en`) : structure **2 blocs** ordonnés (séparés par double saut de ligne dans la cellule CSV → paragraphes Gutenberg distincts) :
 
 1. **Bloc principal** — design, usage, contexte d'installation, atmosphère
 2. **Bloc signature / édition** :
    - Petite série standard : `Design original BCDG, signé et édité en petite série.`
    - Édition spéciale série test : `Design original BCDG, signé et édité en série test de N pièces.`
    - Édition spéciale série limitée numérotée : `Design original BCDG, signé et édité en série limitée numérotée de N pièces.`
-3. **Bloc fabrication** (bas de fiche) :
-   - FR : `Produit par un atelier partenaire selon les fichiers et spécifications BCDG.`
-   - EN : `Produced by a partner workshop according to BCDG files and specifications.`
 
-Bloc 3 idéalement rendu visuellement séparé côté thème WP (sous-titre "Détails / Fabrication" ou bloc accordéon). Pas un argument commercial : transparence factuelle uniquement.
+❌ **Plus de bloc « fabrication » / « transparence »** : la phrase « atelier partenaire » / « partner workshop » est **supprimée des fiches** (FR + EN), décision Alain 2026-06-18. Aucune mention d'atelier/production sur les fiches (short_desc ET long_desc).
 
-Audit pré-publish (KH-208-213 + KH-707) : grep `short_desc_fr` / `short_desc_en` pour "atelier partenaire" ou "partner workshop" → fail si présent.
+Audit pré-publish (KH-208-213 + KH-707) : grep `short_desc_fr` / `short_desc_en` **et** `long_desc_fr` / `long_desc_en` pour "atelier partenaire" / "partner workshop" → fail si présent.
 
 ## Collection Kaïro — doctrine narrative
 
@@ -247,7 +244,7 @@ Audit pré-publish (KH-208-213 + KH-707) : grep `short_desc_fr` / `short_desc_en
 - ❌ **Jamais** réutiliser le placeholder *« Koi Kaïro Aurore »* (présent uniquement comme exemple historique dans `examples.csv`, désormais renommé `KH-DEMO-001` pour éviter toute confusion).
 - ✅ SKU épisode Kaïro = `KH-KAI-{SEQ}-{SIZE}` où SEQ est unique cross-aventures (épisode 1 première aventure = `001`, épisode 15 = `015`, épisode 1 deuxième aventure = `016`, etc.).
 - ✅ `bcdg_notes` doit documenter : numéro épisode `N/M`, titre aventure, couleur fond + hex, émotion, mentions impression spécifiques.
-- ✅ Description longue épisode = règle 3 blocs standard, §1 mentionne explicitement `Épisode N/M du cycle [titre aventure]`.
+- ✅ Description longue épisode = règle 2 blocs standard, §1 (bloc principal) mentionne explicitement `Épisode N/M du cycle [titre aventure]`.
 
 ### Mapping aventure → SEQ (en cours)
 

@@ -1,0 +1,3 @@
+# Force LF pour les scripts shell : évite les CRLF Windows qui cassent
+# l'exécution bash (erreur "bash\r" / shebang invalide) côté staging/SSH.
+*.sh text eol=lf

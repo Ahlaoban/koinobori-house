@@ -624,10 +624,10 @@ Les deux **coexistent**, ne se cannibalisent pas frontalement.
 
 Chaque fiche Koinobori House doit articuler 7 dimensions différenciantes vs Etsy :
 
-1. **Collection** — appartenance à Kaïro / Mer / OKUSAI / Bretagne / Éditions spéciales
+1. **Collection** — appartenance à Mer / Motifs / Hanami / Kaïro / Territoires
 2. **Histoire** — narratif marque, personnage Kaïro (cf doctrine Kaïro README catalog), origine BCDG
 3. **Usage** — contexte décoratif détaillé (jardin, intérieur, événement, installation)
-4. **Confiance** — signature BCDG, série / édition, transparence production (3 blocs wording)
+4. **Confiance** — signature BCDG, série / édition (2 blocs wording ; plus de bloc transparence/atelier)
 5. **BCDG** — créateur, démarche artistique, processus
 6. **Contexte décoratif** — atmosphère, émotion, esthétique
 7. **Livraison + retours** — clarté absolue, transparence US notamment
@@ -641,7 +641,7 @@ Vérifications à faire lors implémentation RankMath + WC (Lot 1+) :
 - `sku` — SKU master.csv
 - `brand` — Koinobori House + créateur BCDG (Person schema imbriqué)
 - `image` — main_image_path + gallery_paths
-- `description` — long_desc_fr / long_desc_en (3 blocs)
+- `description` — long_desc_fr / long_desc_en (2 blocs)
 - `offers` :
   - `price` — price_eur
   - `priceCurrency` — `EUR`
@@ -739,7 +739,7 @@ Aucune action engagée hors collecte. Aucun plugin installé. Aucun code écrit.
 - [[project_koinobori_house_mvp_2026-05-27]] cadrage général
 - [[project_koinobori_tarification_tva_mvp]] tarifs + TVA + livraison France offerte dès 55 €
 - [[project_koinobori_i18n_mvp_scope]] i18n FR+EN fallback EN
-- [[feedback_wording_fiche_produit]] règle 3 blocs description
+- [[feedback_wording_fiche_produit]] règle 2 blocs description
 - CLAUDE.md §USA / douanes critique
 - CLAUDE.md §Doctrine éditoriale impérative
 - [catalog/README.md](../../catalog/README.md) §Tarification et TVA
