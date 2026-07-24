@@ -31,35 +31,35 @@ Format par entrée :
 **Pourquoi c'est important** : 1ère décision du visiteur (FR/EN), affecte conversion + perception premium ; CLAUDE.md prévoit header + footer.
 **Impact** : header, footer, toutes pages.
 **Décision requise plus tard** : forme (drapeaux / texte / FR-EN), position, comportement mobile.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — FR/EN texte sans drapeau, dans la rangée révélée du header V2 (desktop) + visible dès l'overlay mobile + footer. Cf [ux-architecture.md](ux-architecture.md).
 
 ### [UX-002] Structure de la homepage
 **Observation** : construite en blocs natifs empilés (neutre) au Lot 3.
 **Pourquoi c'est important** : porte la promesse « j'ai découvert quelque chose d'unique » (objectif design Manus).
 **Impact** : homepage FR + EN.
 **Décision requise plus tard** : narration, hero, ordre des sections, immersion vs sobriété.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — ordre immersion : hero (CTA → Collections) → 5 Mondes (grille asym) → Kaïro flagship → sélection produits → manifeste/teaser BCDG → newsletter → journal → confiance → footer. Cf [ux-architecture.md](ux-architecture.md) §4.
 
 ### [UX-003] Présentation des collections (5)
 **Observation** : grille produits Kadence par défaut au Lot 2.
 **Pourquoi c'est important** : navigation « collection-first » / gallery-like envisagée (brief Manus) vs grille e-commerce générique.
 **Impact** : pages collections, navigation.
 **Décision requise plus tard** : hiérarchie des 5 collections (Mer · Motifs · Hanami · Kaïro · Territoires), traitement éditorial vs catalogue.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — navigation collection-first : label public « Collections », mega-panel sous le header (5 cartes Mondes), pages Mondes éditoriales à palette propre, Boutique = filet transactionnel. Territoires = Monde-collection seul. Cf [ux-architecture.md](ux-architecture.md) §2-3.
 
 ### [UX-004] Mise en avant de Kaïro + récit « The Nameless Ship »
 **Observation** : Kaïro = collection + produits (Lot 2), sans dispositif narratif.
 **Pourquoi c'est important** : héros original BCDG, univers extensible ; ne doit PAS virer boutique de merch manga.
 **Impact** : collection Kaïro, homepage, storytelling.
 **Décision requise plus tard** : dispositif narratif, place dans la hiérarchie, équilibre avec les autres collections.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — Kaïro = flagship dédié : slot menu propre + section homepage S3 (récit « The Nameless Ship »), asymétrie assumée vis-à-vis des 4 autres Mondes, sans dérive merch. Cf [ux-architecture.md](ux-architecture.md).
 
 ### [UX-005] Place du storytelling BCDG
 **Observation** : texte signature BCDG présent en bloc 2 de fiche (doctrine 2 blocs) ; pas de dispositif marque dédié.
 **Pourquoi c'est important** : différenciation « maison de marque » vs Etsy/Amazon ; distinction logo Koinobori House (site) ≠ signature BCDG (produits).
 **Impact** : fiches produits, à-propos, homepage.
 **Décision requise plus tard** : ampleur et emplacement du storytelling sans confondre les deux identités.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — teaser court sur la homepage (manifeste + mention signature), récit complet porté par la page Univers. Cf [ux-architecture.md](ux-architecture.md).
 
 ### [UX-006] Structure visuelle des pages produits
 **Observation** : 2 blocs doctrine (design/usage → signature BCDG) + galerie standard.
@@ -73,25 +73,25 @@ Format par entrée :
 **Pourquoi c'est important** : curseur minimalisme ↔ richesse = décision esthétique majeure, difficile à inverser si baked-in.
 **Impact** : tout le site.
 **Décision requise plus tard** : usage d'arrière-plans, ambiances, densité visuelle.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — sobre + accents : fond washi dominant, images d'ambiance limitées au hero homepage + heros des pages Mondes, signatures discrètes (kanji fond opacity .04, divider pinceau). Cf [ux-architecture.md](ux-architecture.md).
 
 ### [UX-008] Header & footer définitifs
 **Observation** : header (logo + cartouche) et footer (liens essentiels + légales) en structure minimale.
 **Pourquoi c'est important** : cadre permanent de toutes les pages.
 **Impact** : global.
 **Décision requise plus tard** : layout, contenu éditorial, sticky, colonnes footer.
-**Statut** : en attente Manus
+**Statut** : 🔶 **partiellement arbitré 2026-07-24** — header : clos (V2 verrouillé + rubriques arbitrées A-1/A-6, cf [ux-architecture.md](ux-architecture.md) §3). Footer : structure colonnes proposée (§4/S9), **à confirmer au build**.
 
 ### [UX-009] Palette & typographie finales
 **Observation** : libérées par Alain (sauf logo + cartouche 鯉のぼり fixes) → Manus explore librement ; défauts neutres en attendant.
 **Pourquoi c'est important** : identité visuelle ; doivent coexister avec le tampon rouge fixe.
 **Impact** : design tokens, tout le thème (Lot 6).
 **Décision requise plus tard** : tokens définitifs (hex, font families/weights, spacing) issus de Manus.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-06-29** — réglé par l'adoption de KH-000 Design System v1.2 « Ma » (washi/sumi/vermillon CTA/or détails + 5 polices self-host). Cf [lot6/KH-000-integration-plan.md](lot6/KH-000-integration-plan.md).
 
 ### [UX-010] Parcours utilisateur global
 **Observation** : parcours WooCommerce standard (browse → cart → checkout) fonctionnel.
 **Pourquoi c'est important** : le brief Manus invite à challenger les conventions e-commerce.
 **Impact** : navigation, tunnel, B2C vs captation B2B/B2G.
 **Décision requise plus tard** : réagencements proposés par Manus, dans la limite buildabilité WP/WC/Kadence.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-24** — parcours principal découverte (home → Collections → Monde → fiche → panier) + parcours alternatif transactionnel (home → Boutique → filtres → fiche) + captation B2B/B2G hors tunnel. Cf [ux-architecture.md](ux-architecture.md) §6.

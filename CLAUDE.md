@@ -4,11 +4,11 @@ Project context for Claude Code sessions on Koinobori House MVP.
 
 ## Projet
 
-E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. Lancement cible fin juillet 2026.
+E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : 15 août 2026** (repoussé depuis fin juillet, décision Alain 2026-07-24 — « le temps de faire les choses parfaitement »).
 
 - **Démarrage** : 2026-05-27 (J1 Lot 0 — mercredi)
-- **Soft launch S7** : ~15 juillet 2026 (catalogue indexable, checkout off si juridique pas prêt)
-- **Hard launch S9** : ~29 juillet 2026 (vente publique après avocat CGV)
+- **Soft launch** : à recaler (ex ~15 juillet 2026 ; catalogue indexable, checkout off si juridique pas prêt)
+- **Lancement (hard launch)** : **15 août 2026** (vente publique après avocat CGV ; remplace ~29 juillet)
 - **Durée** : 9 semaines × 6 jours/semaine × ~6h/jour = ~340h capacité
 - **Repo git** : à créer (suggestion `Ahlaoban/koinobori-house`)
 - **Domaine principal** : `koinoborihouse.com` (canonique)
@@ -17,7 +17,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 ## Cadrage stratégique
 
 - **Priorité absolue Koinobori jusqu'à J+63**. Bootstrap solo Alain.
-- **MaïJinn** peut glisser d'1 mois si nécessaire. Reprise focus principal post-29 juillet.
+- **MaïJinn** peut glisser d'1 mois si nécessaire. Reprise focus principal post-lancement (15 août 2026).
 - **Pas de scope creep**. Aucune fonctionnalité phase 2 dans MVP sans validation explicite.
 - **Pas de multi-devise**. EUR only au MVP.
 - **Source de vérité ventes** : WooCommerce Orders (pas de webhook Stripe custom).
