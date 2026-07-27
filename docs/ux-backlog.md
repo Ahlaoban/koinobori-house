@@ -84,7 +84,7 @@ Format par entrée :
 **Pourquoi c'est important** : cadre permanent de toutes les pages.
 **Impact** : global.
 **Décision requise plus tard** : layout, contenu éditorial, sticky, colonnes footer.
-**Statut** : 🔶 **partiellement arbitré, révisé 2026-07-27** — header : clos (V2 verrouillé, confirmé par C5 comme réalisation du principe Fusuma v2.0 §6 ; rubriques = nav v2.0 à plat, A-1 annulé). Footer : **structure colonnes abandonnée**, remplacée par le footer « ligne d'horizon » v2.0 §11 (fond washi, trait fin, 72-96 px, 3 zones sur une ligne desktop, newsletter séparée, ❌ aucun bloc sombre ni méga-menu). **Bloqué par les points ouverts O-1 et O-2** : où logent Livraison / Retours / Livraison USA, et les 2 liens directs Entreprises / Collectivités d'A-6, dans un footer à 4 liens centraux. Cf [ux-architecture.md](ux-architecture.md) §8.
+**Statut** : ✅ **CLOS 2026-07-27** — header : V2 verrouillé, confirmé par C5 comme réalisation du principe Fusuma v2.0 §6 ; rubriques = nav v2.0 à plat, **7 entrées**, sans slot Kaïro (A-1 et A-4 annulés, critère §14 respecté). Footer : structure colonnes abandonnée, remplacée par **deux étages** — une bande services en groupes courts (Navigation · Informations · Professionnels) au-dessus d'une **ligne d'horizon stricte** §11 (fond washi, trait fin, 72-96 px, 3 zones sur une ligne desktop, 4 liens légaux au centre, newsletter au mouvement 10, ❌ aucun bloc sombre ni méga-menu). O-1 et O-2 résolus. Cf [ux-architecture.md](ux-architecture.md) §8.
 
 ### [UX-009] Palette & typographie finales
 **Observation** : libérées par Alain (sauf logo + cartouche 鯉のぼり fixes) → Manus explore librement ; défauts neutres en attendant.

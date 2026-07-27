@@ -146,25 +146,63 @@ Bouton panier : **angles droits**, fond vermillon, typo DM Sans. Prix visible sa
 
 ⚠️ Ces 4 mouvements sont la **mise en page** de la fiche. Ils ne remplacent pas la **règle des 2 blocs** de `long_desc` (design/usage, puis signature BCDG) : celle-ci régit le *contenu rédigé*, saisi dans WooCommerce. Les deux coexistent.
 
-## 8. Points ouverts créés par la v2.0
+## 8. Footer — structure arbitrée (O-1 et O-2, 2026-07-27)
+
+Deux étages distincts. C'est la réconciliation entre l'exigence d'accessibilité (Livraison, Retours, Entreprises, Collectivités joignables directement) et le footer « ligne d'horizon » de la charte, qui impose 72-96 px sur une seule ligne et interdit le méga-menu.
+
+### 8.1 Bande services
+
+Au-dessus de la ligne d'horizon, discrète, en groupes **courts et identifiés**. Aucun groupe ne devient une liste exhaustive ni une répétition du header.
+
+| Groupe | Liens |
+|---|---|
+| **Navigation** | Boutique · Arts de vivre · L'Atelier · Lifestyle & Koi |
+| **Informations** | Livraison · Retours · Contact |
+| **Professionnels** | Entreprises · Collectivités |
+
+### 8.2 Ligne d'horizon (charte §11, strict)
+
+Fond washi, trait fin, **72-96 px desktop, une seule ligne**, trois zones. ❌ Aucun bloc sombre, aucun logo géant, aucune liste de catégories, aucun formulaire.
+
+| Zone gauche | Zone centrale | Zone droite |
+|---|---|---|
+| `© 2026 Koinobori House · Créations BCDG` | Mentions légales · CGV · Politique de confidentialité · Gestion des cookies | Instagram · Pinterest · retour en haut |
+
+La zone centrale conserve les **4 liens légaux** du §11.1, conformément à la charte. « Contact » migre dans le groupe Informations de la bande services, où il est mieux placé.
+
+La newsletter reste au **mouvement 10**, jamais dans le footer (§11.2).
+
+### 8.3 Règles portées par cette structure
+
+- **Livraison** est une page unique couvrant la France, l'international **et** la situation de la zone USA.
+- **Livraison USA** n'est **ni dans la navigation principale ni dans le footer** tant que la zone USA n'est pas activée. Si la page existe ou doit être conservée techniquement, elle est **reliée depuis la page Livraison**. L'activation dépend des tests Colissimo USA (KH-015) et **ne bloque pas le lancement France**.
+- **Retours** reste une page distincte, joignable directement.
+- Le **bandeau confiance** peut pointer vers Livraison et Retours, mais **jamais en être le seul chemin d'accès**.
+- Les liens **Entreprises** et **Collectivités** ne sont **pas comptés** parmi les liens de la ligne d'horizon. La page « Professionnels » du header reste une **page d'aiguillage** vers ces deux parcours. **Aucune fusion** des pages ni des formulaires (A-6).
+- Mobile : la bande services se replie en colonnes empilées, la ligne d'horizon en 2-3 lignes. Zones tactiles suffisantes, lisible à 360 px.
+
+> ⚠️ Une inférence à confirmer au build : le groupe **Navigation** de la bande services est le seul emplacement restant pour les 4 liens de nav corrigés, la zone centrale de la ligne d'horizon étant réservée aux légales par le §11.1. Si tu préfères un footer sans groupe Navigation du tout, il suffit de le retirer — le reste de la structure tient.
+
+## 9. Points ouverts créés par la v2.0
 
 | # | Point | Nature |
 |---|---|---|
-| O-1 | **Accès aux pages Livraison, Retours, Livraison USA.** Absentes de la nav v2.0 (7 entrées) comme du footer §11.1 (4 liens : Mentions légales · CGV · Confidentialité · Contact), alors que §15 interdit le footer méga-menu et que le bandeau confiance S8 est supprimé des 11 mouvements | **Arbitrage Alain requis** — ces pages sont obligatoires au MVP |
-| O-2 | **Les 2 liens footer directs Entreprises / Collectivités d'A-6** ne tiennent pas dans un footer à 4 liens centraux | **Arbitrage Alain requis** — A-6 est confirmé, le footer v2.0 est verrouillé, il faut un troisième chemin |
+| ~~O-1~~ | ~~Accès aux pages Livraison, Retours, Livraison USA~~ | ✅ **RÉSOLU 2026-07-27** — cf §8.1 et §8.3 |
+| ~~O-2~~ | ~~Les 2 liens footer directs Entreprises / Collectivités d'A-6~~ | ✅ **RÉSOLU 2026-07-27** — groupe Professionnels dédié dans la bande services, hors comptage de la ligne d'horizon. Cf §8.1 et §8.3 |
 | O-3 | **4 familles typographiques** (Cormorant Garamond, Lora, DM Sans, Noto Serif JP) contre 2 en v1 | Risque perf sur G4 (juge de paix). Mitigation : self-host, `font-display: swap`, graisses strictement nécessaires |
 | O-4 | **`atelier_alain_catherine.png`** : illustration du pack destinée à la page L'Atelier | À valider par Alain **et** Catherine avant publication. Ne pas présenter une illustration générée comme un portrait de personnes réelles |
 | O-5 | **Instagram · Pinterest** au footer §11.1 | Ne pas poser de lien mort : à confirmer que les comptes existent |
 | O-6 | **Fallback hero** : `README_assets` §5 propose `#f3ebdd`, la palette v2.0 `--kh-washi` vaut `#F8F4EE` | Résolu sans arbitrage : retenir `--kh-washi` |
 | O-7 | **Slug EN de « L'Atelier »**. `workshop` se lit *atelier de production* et heurte frontalement la doctrine. Pistes sans risque : `/en/the-house/`, `/en/our-story/`, `/en/about/` | **Arbitrage Alain requis** avant création de la page. Aucune page éditoriale n'existe encore sur staging, donc aucune migration de slug à craindre |
 | O-8 | **Renommage de la page « Univers » en « L'Atelier »** : les docs v1.2 (`KH-000`, `KH-001-Image-Map`, plan d'intégration) référencent encore `/univers` et l'asset `apropos-hero.png` | Sans gravité, ces docs sont superseded pour les couches visuelles. À rectifier au moment de créer la page, pas avant |
-| O-9 | **Place du récit Kaïro sur la homepage.** A-4 lui donnait une section propre (ex-S3), supprimée avec le slot nav. Les 11 mouvements v2.0 n'ont pas de section Kaïro : le candidat naturel est le mouvement 4 « Créations BCDG », mais la spec ne le dit pas | **Arbitrage Alain requis** — UX = son arbitrage exclusif, je ne présume pas le placement |
+| O-9 | **Place du récit Kaïro sur la homepage.** Resserré 2026-07-27 : Alain confirme que **Kaïro conserve une présence spécifique sur la homepage**, et qu'il n'est **pas** repris dans les liens de la bande services, restant joignable par la Boutique et les autres parcours. Reste à préciser **dans quel mouvement** cette présence s'insère — le candidat est le 4 « Créations BCDG », la spec ne le dit pas | **Arbitrage Alain requis** au moment de bâtir la homepage. Confirmé au passage : pas d'entrée Kaïro dans le header, la nav reste à 7 entrées (critère §14) |
+| O-10 | **Libellés et slugs EN des 7 entrées de nav.** La v2.0 §3 ne donne que le FR. Acquis : Boutique → `/en/shop/`, Contact, Lifestyle. À définir : Accueil, **Arts de vivre**, **L'Atelier** (cf O-7), **Professionnels**. ⚠️ Collision : `/en/business/` est déjà attribué à la page **Entreprises**, la page d'aiguillage « Professionnels » a donc besoin d'un autre libellé et d'un autre slug EN | **Arbitrage Alain requis** avant création des pages. Le site est bilingue dès J0 (CLAUDE.md §Périmètre MVP), la nav en fait partie |
 
-## 9. Reste à produire
+## 10. Reste à produire
 
 1. ~~Spec mega-panel~~ — **retiré**, A-1 annulé.
 2. **Wireframes des 5 pages Mondes** (hero + ambiance + kanji fond + produits, palette propre).
-3. **Footer ligne d'horizon** : CSS de base fourni v2.0 §11.4, à adapter aux classes réelles du thème enfant. Bloqué par O-1 et O-2.
+3. **Footer** : structure arbitrée en §8, **débloqué**. CSS de base fourni v2.0 §11.4, à adapter aux classes réelles du thème enfant.
 4. **Modèles éditoriaux Lifestyle & Koi** : archive magazine + gabarit d'article, distincts du blog Kadence par défaut (v2.0 §8).
 5. **Page L'Atelier** : composition v2.0 §7.3, texte d'ouverture à valider.
 6. Migration des tokens KH-000 déployés vers la palette et les typos v2.0.

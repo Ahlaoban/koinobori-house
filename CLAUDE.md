@@ -111,6 +111,10 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 
 **A-6 reste en vigueur** : l'entrée « Professionnels » est une **page d'aiguillage** vers `/fr/entreprises/` et `/fr/collectivites/`, qui conservent leurs formulaires distincts (doctrine B2B/B2G). Jamais de fusion des deux.
 
+**Pas d'entrée Kaïro dans le header** : la nav reste à 7 entrées (critère de sortie v2.0 §14). Kaïro conserve une présence spécifique sur la homepage et sa page Monde ; il est joignable par la Boutique et les autres parcours.
+
+**Footer, 2 étages** (arbitrages O-1 et O-2, 2026-07-27) : une **bande services** en groupes courts — Navigation (Boutique · Arts de vivre · L'Atelier · Lifestyle & Koi) · Informations (Livraison · Retours · Contact) · Professionnels (Entreprises · Collectivités) — au-dessus d'une **ligne d'horizon stricte** §11 : fond washi, trait fin, 72-96 px, une seule ligne desktop, `© 2026 Koinobori House · Créations BCDG` à gauche, les 4 liens légaux au centre, réseaux et retour en haut à droite. Newsletter au mouvement 10, **jamais dans le footer**. Détail : [docs/ux-architecture.md](docs/ux-architecture.md) §8.
+
 **Homepage = 11 mouvements** (v2.0 §4) : Header Fusuma · Hero · Les cinq mondes · Créations BCDG · L'Atelier · Lifestyle & Koi · Arts de vivre · Le Manifeste · Professionnels · Newsletter · Footer ligne d'horizon.
 
 **Renommages publics** : « Journal » → « **Lifestyle & Koi** ». Le label « Collections » disparaît de la nav (A-2 annulé) ; les 5 collections WooCommerce restent inchangées et sont présentées comme « **les cinq mondes** ».
@@ -189,8 +193,11 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 
 | Page | Slug FR | Slug EN | Cible |
 |------|---------|---------|-------|
-| Professionnels | `/fr/entreprises/` | `/en/business/` | B2B (entreprises, revendeurs, hôtellerie, événementiel privé) |
+| **Professionnels** (aiguillage) | à définir | à définir | **Entrée de nav v2.0.** Ne porte aucun formulaire : oriente vers les deux pages ci-dessous (A-6) |
+| Entreprises | `/fr/entreprises/` | `/en/business/` | B2B (entreprises, revendeurs, hôtellerie, événementiel privé) |
 | Collectivités | `/fr/collectivites/` | `/en/institutions/` | B2G (collectivités, écoles, médiathèques, festivals, institutions culturelles) |
+
+⚠️ Correction 2026-07-27 : la première ligne s'appelait « Professionnels » et désignait la page **B2B**. Depuis A-6 et la nav v2.0, « Professionnels » est la **page d'aiguillage** et la page B2B s'appelle « Entreprises ». Le libellé et le slug EN de la page d'aiguillage restent à définir — `/en/business/` est déjà pris par Entreprises. Cf point ouvert O-10.
 
 Slugs Polylang : créer pages en FR puis traduire via Polylang pour slug EN dédié.
 
@@ -270,6 +277,7 @@ Avant tout Lots 2-8 : tester 10 URLs FR+EN (`/fr/boutique`, `/en/shop`, `/fr/pro
 - **Mode par défaut MVP** : **USA "nous contacter"** (zone USA désactivée WC + formulaire contact dédié) tant que tests pas réalisés
 - **Bascule USA actif** = uniquement après réalisation 3 tests Colissimo USA en ligne par Alain (T1 1×Kaïro 35€ / T2 1×Stars & Stripes 49€ / T3 3×Kaïro 105€) stables/acceptables
 - **Conséquence** : tests USA bloquent uniquement bascule "USA actif", pas avancement Lot 0 général. Page Livraison USA peut être draftée immédiatement avec wording "nous contacter"
+- **Exposition publique de « Livraison USA » (arbitrage O-1, 2026-07-27)** : la page **Livraison** est unique et couvre France, international **et** situation de la zone USA. « Livraison USA » n'apparaît **ni dans la navigation principale ni dans le footer** tant que la zone USA n'est pas activée ; si la page existe ou doit être conservée techniquement, elle est **reliée depuis la page Livraison**. L'activation ne bloque pas le lancement France. Cf [docs/ux-architecture.md](docs/ux-architecture.md) §8.3.
 - Modèle expédition USA = **DDP partiel** (droits payés upfront) → wording public adapté : *"frais d'expédition peuvent inclure les formalités, droits ou frais exigés avant l'entrée sur le territoire américain"* (cf §1bis-USA doc shipping)
 - Zonos DDP plugin → phase 2 uniquement
 
