@@ -104,6 +104,15 @@ build/
 koinobori-house-images/
 header-shoji-prototype.html
 
+# Pack d'assets charte v2.0 (Manus 2026-07-25) — masters sur disque local seulement.
+# Volume binaire important. Les 2 specs + le README du pack SONT commités dans
+# docs/charte-graphique/ ; seuls les binaires restent hors suivi.
+# Contient 99_archive_ne_pas_utiliser/ (ancien slide Shopify) : ne jamais publier.
+Koinobori_House_Assets_Claude/
+
+# Présentations charte (Charte-graphique-KH.pptx ~31 Mo)
+*.pptx
+
 # Outils image (dependances node)
 tools/node_modules/
 

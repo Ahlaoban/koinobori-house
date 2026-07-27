@@ -21,7 +21,7 @@
 | **C** | Plugins | Ignorer Yoast (→ **SEOPress** verrouillé) et WP Rocket (→ **LiteSpeed**). Stack inchangé. |
 | **D** | Fonts | **Self-host** les 5 polices (PAS Google Fonts CDN → RGPD/CNIL + perf). |
 | **E** | Cartes produit | **Pas de blanc pur** (`#FFFFFF`) — blanc cassé/washi légèrement plus clair que le fond. |
-| **F** | Rubriques header | **À arbitrer plus tard** (charte §9 : Boutique·Collections·Kaïro·Univers·Journal·Contact vs header actuel). Reconciliation au portage Lot 7. |
+| **F** | Rubriques header | ✅ **ARBITRÉ 2026-07-27 (C4)** : `Accueil · Boutique · Arts de vivre · Lifestyle · L'Atelier · Professionnels · Contact` (charte v2.0 §3). Annule la proposition `Boutique·Collections·Kaïro·Univers·Journal·Contact` et le mega-panel A-1. Reconciliation au portage Lot 7. |
 | **G** | Wording « cousu à la main » | À vérifier vs doctrine production (jamais fabrication interne/origine) lors de la rédaction. |
 | + | Asset header | Header validé utilise `blue-night-texture-III` + `logo-color-gold-III-cart` ; la charte cite `blue-night-texture-II` / `logo-color-gold-III`. **Le header validé prime.** Note de naming à réconcilier docs. |
 

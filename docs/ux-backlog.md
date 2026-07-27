@@ -4,6 +4,8 @@ But : **capturer** les observations / opportunités / arbitrages UX rencontrés 
 
 **Règle** : on **logue**, on ne **fige** pas. Toute entrée = ouverte, jamais « décidée ». Direction artistique = arbitrage exclusif Alain (cf gouvernance UX 2026-06-15). Manus peut alimenter / trancher ces points.
 
+> ⚠️ **Révision 2026-07-27** — adoption de la charte v2.0 « Ma, L'Intervalle enchanté » (arbitrages C1-C6). A-1, A-2 et A-4 annulés. Les statuts ci-dessous ont été rectifiés en conséquence. Référence : [charte-graphique/README.md](charte-graphique/README.md) et [ux-architecture.md](ux-architecture.md).
+
 Format par entrée :
 
 ```
@@ -24,7 +26,9 @@ Format par entrée :
 **Pourquoi c'est important** : signature d'entrée du site, forte différenciation premium ; demande explicite Alain.
 **Impact** : header global, identité, navigation, sélecteur langue (recoupe [[UX-001]]), portage WP/Kadence (vanilla HTML/CSS/JS, pas React).
 **Décision requise plus tard** : rendu final des battants (idée « doubles battants qui se replient »), easing/vitesse, écartement, fond indigo/or exact, intégration logo+cartouche fixes, version mobile. Possible reprise via Codex/Manus.
-**Statut** : ✅ **VALIDÉ (prototype provisoire) — 2026-06-29**. Mécanisme = **glissement** (battants washi coulissants), prototype `header-shoji-koino-v1.html` (vanilla HTML/CSS/JS autonome ; anim CSS, JS = déclencheurs). Spec : slide **1 s** ; scroll down → header **masqué** (revient scroll up / souris < 70px haut) ; **split logo** réel (coupe 56,6 %) ; **grille carrée continue** (`--cell = --header-h/2`) ; centre **texture II claire** (`shoji-center-texture-II.png`) en **tuile** (⚠️ 399 Ko → compresser) ; icônes **marron `#463E32`** placeholders + **tooltip instantané** ; bouton **corail** ; hauteur **responsive** `clamp(110px,13vw,185px)`. **Reste** : vrais rubriques → icônes + labels, compression texture, portage thème (Lot 7). **Revisitable selon la charte/esthétique globale (nouvelle session).**
+**Statut** : ✅ **VALIDÉ (prototype provisoire) — 2026-06-29**. Mécanisme = **glissement** (battants washi coulissants), prototype `header-shoji-koino-v1.html` (vanilla HTML/CSS/JS autonome ; anim CSS, JS = déclencheurs). Spec : slide **1 s** ; scroll down → header **masqué** (revient scroll up / souris < 70px haut) ; **split logo** réel (coupe 56,6 %) ; **grille carrée continue** (`--cell = --header-h/2`) ; centre **texture II claire** (`shoji-center-texture-II.png`) en **tuile** (⚠️ 399 Ko → compresser) ; icônes **marron `#463E32`** placeholders + **tooltip instantané** ; bouton **corail** ; hauteur **responsive** `clamp(110px,13vw,185px)`. **Reste** : vrais rubriques → icônes + labels, compression texture, portage thème (Lot 7).
+
+**Mise à jour 2026-07-27 (C5)** : le header Shoji V2 est **verrouillé définitivement** — il est reconnu comme la réalisation du principe Fusuma de la charte v2.0 §6. Il n'est plus « revisitable ». Enrichissements exigés au portage Lot 7, sans rouvrir le design : (a) navigation au **clavier**, (b) forme **simplifiée d'emblée sur mobile** et sous `prefers-reduced-motion`, (c) version sans animation pleinement fonctionnelle, la nav jamais durablement masquée, (d) rubriques = **nav v2.0 à plat, 7 entrées** (le mega-panel A-1 est annulé), (e) bouton « Mon compte » corail `#E05A5A` → **vermillon `#C8311A`**.
 
 ### [UX-001] Emplacement + visibilité du sélecteur de langue
 **Observation** : Polylang fournit un sélecteur fonctionnel ; emplacement par défaut non arbitré (header ? footer ? les deux ?).
@@ -38,35 +42,35 @@ Format par entrée :
 **Pourquoi c'est important** : porte la promesse « j'ai découvert quelque chose d'unique » (objectif design Manus).
 **Impact** : homepage FR + EN.
 **Décision requise plus tard** : narration, hero, ordre des sections, immersion vs sobriété.
-**Statut** : ✅ **arbitré 2026-07-24** — ordre immersion : hero (CTA → Collections) → 5 Mondes (grille asym) → Kaïro flagship → sélection produits → manifeste/teaser BCDG → newsletter → journal → confiance → footer. Cf [ux-architecture.md](ux-architecture.md) §4.
+**Statut** : ✅ **ré-arbitré 2026-07-27** — remplacé par les **11 mouvements** de la charte v2.0 §4 : Header Fusuma → Hero → les cinq mondes → Créations BCDG → L'Atelier → Lifestyle & Koi → Arts de vivre → Manifeste → Professionnels → Newsletter → Footer ligne d'horizon. Annule l'ordre S0-S9 du 2026-07-24 (A-8). Le bandeau confiance disparaît des mouvements → point ouvert O-1. Cf [ux-architecture.md](ux-architecture.md) §4.
 
 ### [UX-003] Présentation des collections (5)
 **Observation** : grille produits Kadence par défaut au Lot 2.
 **Pourquoi c'est important** : navigation « collection-first » / gallery-like envisagée (brief Manus) vs grille e-commerce générique.
 **Impact** : pages collections, navigation.
 **Décision requise plus tard** : hiérarchie des 5 collections (Mer · Motifs · Hanami · Kaïro · Territoires), traitement éditorial vs catalogue.
-**Statut** : ✅ **arbitré 2026-07-24** — navigation collection-first : label public « Collections », mega-panel sous le header (5 cartes Mondes), pages Mondes éditoriales à palette propre, Boutique = filet transactionnel. Territoires = Monde-collection seul. Cf [ux-architecture.md](ux-architecture.md) §2-3.
+**Statut** : ✅ **ré-arbitré 2026-07-27** — **le mega-panel et le label « Collections » sont supprimés** (A-1 et A-2 annulés par C4). Nav v2.0 à plat, 7 entrées. Les 5 collections WooCommerce sont inchangées et présentées comme « **les cinq mondes** », atteintes par la homepage (mouvement 3) et par la Boutique. Pages Mondes éditoriales à palette propre conservées. Territoires = Monde-collection seul (A-3, toujours en vigueur). Cf [ux-architecture.md](ux-architecture.md) §2-3.
 
 ### [UX-004] Mise en avant de Kaïro + récit « The Nameless Ship »
 **Observation** : Kaïro = collection + produits (Lot 2), sans dispositif narratif.
 **Pourquoi c'est important** : héros original BCDG, univers extensible ; ne doit PAS virer boutique de merch manga.
 **Impact** : collection Kaïro, homepage, storytelling.
 **Décision requise plus tard** : dispositif narratif, place dans la hiérarchie, équilibre avec les autres collections.
-**Statut** : ✅ **arbitré 2026-07-24** — Kaïro = flagship dédié : slot menu propre + section homepage S3 (récit « The Nameless Ship »), asymétrie assumée vis-à-vis des 4 autres Mondes, sans dérive merch. Cf [ux-architecture.md](ux-architecture.md).
+**Statut** : ✅ **ré-arbitré 2026-07-27** — **le slot menu Kaïro est supprimé** (A-4 annulé par C4). Le récit « The Nameless Ship » survit **hors navigation** : page Monde Kaïro + présence dans le mouvement 4 « Créations BCDG » de la homepage. Asymétrie assumée conservée, sans dérive merch. Cf [ux-architecture.md](ux-architecture.md).
 
 ### [UX-005] Place du storytelling BCDG
 **Observation** : texte signature BCDG présent en bloc 2 de fiche (doctrine 2 blocs) ; pas de dispositif marque dédié.
 **Pourquoi c'est important** : différenciation « maison de marque » vs Etsy/Amazon ; distinction logo Koinobori House (site) ≠ signature BCDG (produits).
 **Impact** : fiches produits, à-propos, homepage.
 **Décision requise plus tard** : ampleur et emplacement du storytelling sans confondre les deux identités.
-**Statut** : ✅ **arbitré 2026-07-24** — teaser court sur la homepage (manifeste + mention signature), récit complet porté par la page Univers. Cf [ux-architecture.md](ux-architecture.md).
+**Statut** : ✅ **arbitré 2026-07-24, support renommé 2026-07-27** — teaser court sur la homepage (mouvement 8 « Le Manifeste » + mention signature), récit complet porté par la page « **L'Atelier** » (C2), qui remplace l'ancienne page « Univers ». Cf [ux-architecture.md](ux-architecture.md).
 
 ### [UX-006] Structure visuelle des pages produits
 **Observation** : 2 blocs doctrine (design/usage → signature BCDG) + galerie standard.
 **Pourquoi c'est important** : perception premium / poétique vs fiche WC générique. (Plus de bloc atelier/transparence : supprimé doctrine 2026-06-18.)
 **Impact** : ~17 fiches produits.
 **Décision requise plus tard** : mise en page, typographie, immersion, traitement images.
-**Statut** : en attente Manus
+**Statut** : ✅ **arbitré 2026-07-27** — charte v2.0 §10.2 : 2 colonnes desktop (galerie généreuse à gauche, infos à droite), puis **4 mouvements éditoriaux** — L'histoire de la pièce · **Détails et matières** (C1, jamais « fabrication ») · Dimensions et installation · Livraison et entretien — puis 2-3 pièces du même monde. Bouton panier angles droits, fond vermillon, DM Sans. La règle des 2 blocs de `long_desc` reste en vigueur pour le contenu rédigé : les deux coexistent. Cf [ux-architecture.md](ux-architecture.md) §7.
 
 ### [UX-007] Niveau de richesse visuelle / images d'ambiance
 **Observation** : **aucune** image d'ambiance / arrière-plan posée (choix réversibilité).
@@ -80,18 +84,18 @@ Format par entrée :
 **Pourquoi c'est important** : cadre permanent de toutes les pages.
 **Impact** : global.
 **Décision requise plus tard** : layout, contenu éditorial, sticky, colonnes footer.
-**Statut** : 🔶 **partiellement arbitré 2026-07-24** — header : clos (V2 verrouillé + rubriques arbitrées A-1/A-6, cf [ux-architecture.md](ux-architecture.md) §3). Footer : structure colonnes proposée (§4/S9), **à confirmer au build**.
+**Statut** : 🔶 **partiellement arbitré, révisé 2026-07-27** — header : clos (V2 verrouillé, confirmé par C5 comme réalisation du principe Fusuma v2.0 §6 ; rubriques = nav v2.0 à plat, A-1 annulé). Footer : **structure colonnes abandonnée**, remplacée par le footer « ligne d'horizon » v2.0 §11 (fond washi, trait fin, 72-96 px, 3 zones sur une ligne desktop, newsletter séparée, ❌ aucun bloc sombre ni méga-menu). **Bloqué par les points ouverts O-1 et O-2** : où logent Livraison / Retours / Livraison USA, et les 2 liens directs Entreprises / Collectivités d'A-6, dans un footer à 4 liens centraux. Cf [ux-architecture.md](ux-architecture.md) §8.
 
 ### [UX-009] Palette & typographie finales
 **Observation** : libérées par Alain (sauf logo + cartouche 鯉のぼり fixes) → Manus explore librement ; défauts neutres en attendant.
 **Pourquoi c'est important** : identité visuelle ; doivent coexister avec le tampon rouge fixe.
 **Impact** : design tokens, tout le thème (Lot 6).
 **Décision requise plus tard** : tokens définitifs (hex, font families/weights, spacing) issus de Manus.
-**Statut** : ✅ **arbitré 2026-06-29** — réglé par l'adoption de KH-000 Design System v1.2 « Ma » (washi/sumi/vermillon CTA/or détails + 5 polices self-host). Cf [lot6/KH-000-integration-plan.md](lot6/KH-000-integration-plan.md).
+**Statut** : ✅ **ré-arbitré 2026-07-27** — tokens définitifs = **charte v2.0 §5.1 et §5.2**. Palette : washi `#F8F4EE` · sumi `#1A1410` · vermillon `#C8311A` · or `#B8860B` · indigo `#2B3A6B` · blanc cartes `#FFFDFC`. Typos : Cormorant Garamond (titres) · Lora (corps) · DM Sans (interface) · Noto Serif JP (kanji). Annule la palette et les typos de KH-000 v1.2, ainsi que l'or `#C9A96E`. Le principe « vermillon = action, or = détails précieux et citations » est inchangé depuis l'arbitrage A du 2026-06-29 : l'or reste interdit sur boutons, panier, liens et aplats massifs. Point ouvert O-3 : 4 familles typographiques = risque perf à instrumenter avant G4. Cf [charte-graphique/README.md](charte-graphique/README.md).
 
 ### [UX-010] Parcours utilisateur global
 **Observation** : parcours WooCommerce standard (browse → cart → checkout) fonctionnel.
 **Pourquoi c'est important** : le brief Manus invite à challenger les conventions e-commerce.
 **Impact** : navigation, tunnel, B2C vs captation B2B/B2G.
 **Décision requise plus tard** : réagencements proposés par Manus, dans la limite buildabilité WP/WC/Kadence.
-**Statut** : ✅ **arbitré 2026-07-24** — parcours principal découverte (home → Collections → Monde → fiche → panier) + parcours alternatif transactionnel (home → Boutique → filtres → fiche) + captation B2B/B2G hors tunnel. Cf [ux-architecture.md](ux-architecture.md) §6.
+**Statut** : ✅ **arbitré 2026-07-24, chemin d'entrée révisé 2026-07-27** — parcours principal découverte (home → **les cinq mondes, mouvement 3** → page Monde → fiche → panier) + parcours alternatif transactionnel (home → Boutique → filtres → fiche) + captation B2B/B2G hors tunnel via la page d'aiguillage Professionnels (A-6). Le mega-panel n'est plus un point d'entrée (A-1 annulé). Cf [ux-architecture.md](ux-architecture.md) §6.

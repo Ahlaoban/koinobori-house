@@ -1,6 +1,20 @@
-# Lot 3 — Homepage v1 FR/EN (contenus par section, structure arbitrée 2026-07-24)
+# Lot 3 — Homepage v1 FR/EN (SUPERSÉDÉ)
 
-> Statut : rédigé 2026-07-24, à valider Alain avant saisie staging.
+> 🛑 **SUPERSÉDÉ le 2026-07-27** par les **11 mouvements** de la charte v2.0 « Ma, L'Intervalle enchanté » (§4). **Ne pas saisir la structure S0-S9 de ce document.**
+>
+> **Ce qui est mort ici** : l'ordre S0-S9, le titre de section « Collections » (A-2 annulé), la carte Kaïro en case large 1.3fr comme marque de flagship (A-4 annulé), la section « Journal » sous ce nom, le bandeau confiance S8, la structure footer en colonnes.
+>
+> **Ce qui reste vivant et doit être réutilisé tel quel** : les **textes rédigés** FR/EN (hero, manifeste, newsletter, accroches des 5 mondes, teaser BCDG). Ils sont valides, seulement à recouler dans la nouvelle structure.
+>
+> **Ce qui doit être écrit en plus** : les blocs des mouvements v2.0 sans équivalent ici — **L'Atelier** (mouvement 5), **Arts de vivre** (mouvement 7), **Professionnels** (mouvement 9).
+>
+> **Renommages à répercuter partout** : « Journal » → « **Lifestyle & Koi** » ; « Collections » (label public) → « **les cinq mondes** » ; page « Univers » → « **L'Atelier** ».
+>
+> Structure cible : [docs/charte-graphique/KH-000b-charte-v2-Ma-Intervalle-enchante-WORDPRESS.md](../charte-graphique/KH-000b-charte-v2-Ma-Intervalle-enchante-WORDPRESS.md) §4 et [docs/ux-architecture.md](../ux-architecture.md) §4.
+
+---
+
+> Historique. Statut d'origine : rédigé 2026-07-24, à valider Alain avant saisie staging.
 > Structure = [docs/ux-architecture.md](../ux-architecture.md) §4, ordre immersion S0-S9.
 > Blocs Kadence natifs, respiration « Ma » (padding sections ≥ 80-120 px), aucune image d'ambiance figée hors hero (arbitrage A-10 sobre + accents).
 > Doctrine : aucune mention atelier/production/origine, pas de tiret cadratin, vermillon = CTA uniquement.
