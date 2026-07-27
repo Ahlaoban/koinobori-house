@@ -9,6 +9,7 @@
 | `KH-000b-charte-v2-Ma-Intervalle-enchante-WORDPRESS.md` | v2.0 (Manus, 2026-07-25) | ✅ **RÉFÉRENCE UNIQUE** pour les couches visuelles |
 | `KH-000b-charte-v2-Ma-Intervalle-enchante-CREATIVE.md` | v2.0 (Manus, 2026-07-25) | Archive. Identique à la version WORDPRESS **moins** le §4.1 (asset Hero) |
 | `KH-000b-pack-assets-v3.1-README.md` | v3.1 (Manus, 2026-07-25) | Inventaire du pack d'images : 20 slides, fonds, illustrations, ornements |
+| `assets-manifest.md` | 2026-07-27 | **Manifeste d'intégrité** des 103 fichiers du pack : nom, taille, SHA-256, rôle, statut. Contrepartie de l'exclusion git |
 | `KH-000 — Koinobori House Design System.md` | v1.2 « Ma (間) » | 🔶 **Superseded pour les couches visuelles** par la v2.0. Reste la base des fondations déployées (G1 PASS) |
 | `KH-000-Design-System.pdf` | v1.2 | Idem, rendu PDF |
 | `KH-001-Image-Map.md` / `.pdf` | — | Cartographie des images, toujours valide |
@@ -27,7 +28,9 @@ Les fichiers maîtres du pack Manus sont sur disque local uniquement :
 C:\dev\Koinobori\Koinobori_House_Assets_Claude\Koinobori_House_charte_graphique\
 ```
 
-Ce dossier est **volontairement hors suivi git** (`.gitignore`) : volume binaire important, et `Charte-graphique-KH.pptx` pèse à lui seul ~31 Mo. Conséquence assumée : **pas de versionnement des masters**, la médiathèque WordPress et le disque local sont les deux seules copies.
+Ce dossier est **volontairement hors suivi git** (`.gitignore`) : 103 fichiers, 317 Mo, et `Charte-graphique-KH.pptx` pèse à lui seul ~31 Mo. Conséquence assumée : **pas de versionnement des masters**.
+
+Le risque de perte est atténué par [assets-manifest.md](assets-manifest.md), qui enregistre l'empreinte SHA-256 de chaque fichier. Il permet de vérifier qu'un fichier retrouvé est l'original et de constater une altération — **il ne restaure rien**. ⚠️ Une sauvegarde externe au dépôt **et** au disque de travail doit être conservée par Alain.
 
 ⚠️ `99_archive_ne_pas_utiliser/` contient l'ancien slide 10 « recommandation Shopify » : archive documentaire, **ne jamais publier ni intégrer**.
 
