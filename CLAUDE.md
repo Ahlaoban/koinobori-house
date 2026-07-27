@@ -61,20 +61,65 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - Sélecteur langue header + footer
 - Choix manuel utilisateur prime sur Accept-Language
 
-## Charte graphique (Maison du vent / Atelier BCDG)
+## Charte graphique — v2.0 « Ma, L'Intervalle enchanté »
 
-**Palette hex** :
-- Ivoire chaud : `#FDF8F0`
-- Noir encre : `#1A1A1A`
-- Indigo profond : `#1E3A5F`
-- Corail principal : `#E05A5A`
-- Rouge sourd : `#B84C4C`
-- Or doux : `#C6A15B`
-- Gris pierre : `#E5DED2`
+**Référence unique** : [docs/charte-graphique/KH-000b-charte-v2-Ma-Intervalle-enchante-WORDPRESS.md](docs/charte-graphique/KH-000b-charte-v2-Ma-Intervalle-enchante-WORDPRESS.md) (Manus, 2026-07-25). Index et préséance : [docs/charte-graphique/README.md](docs/charte-graphique/README.md).
 
-**Typo** : Fraunces (titres 400-600) + Inter (body 400-500). Mobile min 16px.
+Adoptée par Alain le **2026-07-27** (arbitrages C1-C6). Elle **supersède l'application de KH-000 v1.2 pour toutes les couches visuelles** ; les fondations KH-000 déployées (G1 PASS) restent la base technique, seuls les tokens sont réajustés.
 
-**Boutons** : radius 8px, padding vertical 12px. Achat = corail fond ivoire. Secondaire = indigo bordure. **Jamais or pour boutons/panier/liens/fonds massifs.**
+**Palette hex (v2.0 §5.1)** :
+
+| Jeton | Valeur | Usage |
+|---|---|---|
+| `--kh-washi` | `#F8F4EE` | Fond principal, zones de respiration |
+| `--kh-sumi` | `#1A1410` | Texte, navigation, traits structurants |
+| `--kh-vermillon` | `#C8311A` | Actions principales, cartouches, accents |
+| `--kh-gold` | `#B8860B` | Détails précieux et citations |
+| `--kh-indigo` | `#2B3A6B` | Profondeur, Arts de vivre, univers nocturnes |
+| `--kh-white` | `#FFFDFC` | Cartes produits et surfaces très claires |
+
+Le vermillon reste **rare** : il porte l'action prioritaire, jamais la décoration.
+
+**Typo (v2.0 §5.2)** : Cormorant Garamond (titres narratifs, 400, souvent italique) + Lora (corps éditorial, 400) + DM Sans (navigation/interface, 300-400) + Noto Serif JP (japonais/kanji, 400, ponctuel). `clamp()` sur les grandes tailles. Mobile min 16px.
+
+**Grille (v2.0 §5.3)** : largeur max ~1280 px, texte éditorial ≤ ~65 caractères/ligne, cartes produits 4 max par rangée desktop / 2 tablette / 1-2 mobile.
+
+**Boutons** : angles **droits** (v2.0 §10.2 — annule le radius 8px), fond vermillon, typo DM Sans. **Jamais or pour boutons/panier/liens/aplats massifs** — l'or v2.0 `#B8860B` est réservé aux détails précieux et aux citations, ce qui est compatible avec cette interdiction (arbitrage A du 2026-06-29, reconfirmé 2026-07-27).
+
+**Interdictions créatives** : v2.0 §15 — pas de dégradés « luxe », d'angles arrondis systématiques, de cartes vitrées, d'ombres épaisses, de blocs noirs massifs, de boutons multiples par section, d'icônes remplies, de fausses calligraphies, de motifs japonais décoratifs sans fonction, de footer méga-menu, ni de newsletter en gros pavé final.
+
+**Critères d'acceptation** : v2.0 §14. **Accessibilité** : v2.0 §13 (clavier, focus visibles, `prefers-reduced-motion`, lisible à 360 px).
+
+### Palette v1 — ABANDONNÉE (2026-07-27)
+
+Ne plus utiliser : ivoire `#FDF8F0`, noir encre `#1A1A1A`, indigo `#1E3A5F`, corail `#E05A5A`, rouge sourd `#B84C4C`, or doux `#C6A15B`, gris pierre `#E5DED2`, or `#C9A96E`. Typo v1 abandonnée : Fraunces + Inter.
+
+Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon compte » → passe vermillon `#C8311A` au portage Lot 7. Le design du header n'est pas rouvert pour autant.
+
+## Arbitrages charte v2.0 (C1-C6, Alain 2026-07-27)
+
+| # | Objet | Verdict |
+|---|---|---|
+| C1 | 2ᵉ mouvement éditorial fiche produit | « **Détails et matières** » — remplace « Détails et fabrication » (v2.0 §10.2). Doctrine : jamais *fabrication* |
+| C2 | Rubrique éditoriale | « **L'Atelier** ». Garde-fou : son contenu ne parle jamais de production, fabrication ni origine |
+| C3 | Palette | Valeurs v2.0 §5.1 partout, tokens déployés migrés |
+| C4 | Navigation | v2.0 §3 confirmée. **Annule A-1, A-2, A-4** de [docs/ux-architecture.md](docs/ux-architecture.md) |
+| C5 | Header | Shoji V2 verrouillé = réalisation du principe Fusuma (v2.0 §6) + exigences clavier / mobile simplifié / `prefers-reduced-motion` |
+| C6 | Arts de vivre | Page « manifeste / bientôt » au MVP. **Aucune 6ᵉ catégorie WooCommerce** |
+
+**Navigation MVP (7 entrées)** : Accueil · Boutique · Arts de vivre · Lifestyle · L'Atelier · Professionnels · Contact. Compte / recherche / panier regroupés à droite en icônes au trait fin. Libellés et slugs EN : [docs/ux-architecture.md](docs/ux-architecture.md) §3.1 — Home · Shop · **Art de Vivre** · Lifestyle · **The House** · **For Professionals** · Contact.
+
+**Défauts posés le 2026-07-27** (révisables, GO Alain « il faut avancer ») : 4 polices self-host avec mesure perf à G4 · **portrait Alain-Catherine non publié** tant que Catherine n'a pas validé · **pas de liens sociaux** au lancement · Kaïro dans le mouvement 4 « Créations BCDG ». Détail et porte de sortie de chacun : [docs/ux-architecture.md](docs/ux-architecture.md) §9.
+
+**A-6 reste en vigueur** : l'entrée « Professionnels » est une **page d'aiguillage** vers `/fr/entreprises/` et `/fr/collectivites/`, qui conservent leurs formulaires distincts (doctrine B2B/B2G). Jamais de fusion des deux.
+
+**Pas d'entrée Kaïro dans le header** : la nav reste à 7 entrées (critère de sortie v2.0 §14). Kaïro conserve une présence spécifique sur la homepage et sa page Monde ; il est joignable par la Boutique et les autres parcours.
+
+**Footer, 2 étages** (arbitrages O-1 et O-2, 2026-07-27) : une **bande services** en groupes courts — Navigation (Boutique · Arts de vivre · L'Atelier · Lifestyle & Koi) · Informations (Livraison · Retours · Contact) · Professionnels (Entreprises · Collectivités) — au-dessus d'une **ligne d'horizon stricte** §11 : fond washi, trait fin, 72-96 px, une seule ligne desktop, `© 2026 Koinobori House · Créations BCDG` à gauche, les 4 liens légaux au centre, réseaux et retour en haut à droite. Newsletter au mouvement 10, **jamais dans le footer**. Détail : [docs/ux-architecture.md](docs/ux-architecture.md) §8.
+
+**Homepage = 11 mouvements** (v2.0 §4) : Header Fusuma · Hero · Les cinq mondes · Créations BCDG · L'Atelier · Lifestyle & Koi · Arts de vivre · Le Manifeste · Professionnels · Newsletter · Footer ligne d'horizon.
+
+**Renommages publics** : « Journal » → « **Lifestyle & Koi** ». Le label « Collections » disparaît de la nav (A-2 annulé) ; les 5 collections WooCommerce restent inchangées et sont présentées comme « **les cinq mondes** ».
 
 ## Identité marque
 
@@ -115,6 +160,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 - ~17 produits au lancement (composition réelle relevée 2026-06-18 : Mer 6, Motifs 3, Hanami 1, Kaïro 4, Territoires 3), structure extensible
 - **5 collections (taxonomie figée 2026-06-18)** FR/EN : Mer/Sea · Motifs/Patterns · Hanami/Hanami · Kaïro/Kaïro · Territoires/Lands. Codes SKU : MER · MOT · HAN · KAI · TER. « Territoires » regroupe régions + drapeaux (USA, Bretagne). **Pas de sous-catégories** ; thèmes transverses = tags ; « série limitée » = mention bloc 2 BCDG, pas une collection. (Remplace l'ancienne structure 6 collections Kaïro/La Mer/OKUSAI/Bretagne/Éditions spéciales/Hanami.)
+- **« Arts de vivre » n'est PAS une 6ᵉ collection** (arbitrage C6, 2026-07-27) : c'est une **page éditoriale** « manifeste / bientôt » + une entrée de navigation. Aucune catégorie WooCommerce créée au MVP, la taxonomie reste figée à 5.
 - Tailles variables : attribut global `Taille` (50/75/100 cm extensible)
 - Produit spécial validé : **Stars & Stripes Koinobori - by BCDG** (Territoires/Lands · USA · 100 cm · série limitée · SKU `KH-TER-001-100`)
 - Nom interne fournisseur "US FLAG" jamais public
@@ -149,8 +195,11 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 | Page | Slug FR | Slug EN | Cible |
 |------|---------|---------|-------|
-| Professionnels | `/fr/entreprises/` | `/en/business/` | B2B (entreprises, revendeurs, hôtellerie, événementiel privé) |
+| **Professionnels** (aiguillage) | `/fr/professionnels/` | `/en/professionals/` | **Entrée de nav v2.0.** Ne porte aucun formulaire : oriente vers les deux pages ci-dessous (A-6) |
+| Entreprises | `/fr/entreprises/` | `/en/business/` | B2B (entreprises, revendeurs, hôtellerie, événementiel privé) |
 | Collectivités | `/fr/collectivites/` | `/en/institutions/` | B2G (collectivités, écoles, médiathèques, festivals, institutions culturelles) |
+
+⚠️ Correction 2026-07-27 : la première ligne s'appelait « Professionnels » et désignait la page **B2B**. Depuis A-6 et la nav v2.0, « Professionnels » est la **page d'aiguillage** et la page B2B s'appelle « Entreprises ». Ne jamais confondre `/en/professionals/` (aiguillage) et `/en/business/` (B2B).
 
 Slugs Polylang : créer pages en FR puis traduire via Polylang pour slug EN dédié.
 
@@ -230,6 +279,7 @@ Avant tout Lots 2-8 : tester 10 URLs FR+EN (`/fr/boutique`, `/en/shop`, `/fr/pro
 - **Mode par défaut MVP** : **USA "nous contacter"** (zone USA désactivée WC + formulaire contact dédié) tant que tests pas réalisés
 - **Bascule USA actif** = uniquement après réalisation 3 tests Colissimo USA en ligne par Alain (T1 1×Kaïro 35€ / T2 1×Stars & Stripes 49€ / T3 3×Kaïro 105€) stables/acceptables
 - **Conséquence** : tests USA bloquent uniquement bascule "USA actif", pas avancement Lot 0 général. Page Livraison USA peut être draftée immédiatement avec wording "nous contacter"
+- **Exposition publique de « Livraison USA » (arbitrage O-1, 2026-07-27)** : la page **Livraison** est unique et couvre France, international **et** situation de la zone USA. « Livraison USA » n'apparaît **ni dans la navigation principale ni dans le footer** tant que la zone USA n'est pas activée ; si la page existe ou doit être conservée techniquement, elle est **reliée depuis la page Livraison**. L'activation ne bloque pas le lancement France. Cf [docs/ux-architecture.md](docs/ux-architecture.md) §8.3.
 - Modèle expédition USA = **DDP partiel** (droits payés upfront) → wording public adapté : *"frais d'expédition peuvent inclure les formalités, droits ou frais exigés avant l'entrée sur le territoire américain"* (cf §1bis-USA doc shipping)
 - Zonos DDP plugin → phase 2 uniquement
 
@@ -289,21 +339,24 @@ Audit pré-publish KH-707 : grep `Stripe` / `PayPal` / `commission` / `droits de
 - ✅ SEO cible queries marque + lifestyle + long-tail unique (pas exact-match Etsy)
 - Doctrine détaillée : [docs/lot0/KH-012-KH-015-shipping-usa-seo.md](docs/lot0/KH-012-KH-015-shipping-usa-seo.md) §7
 
-## Skills addyosmani / anthropic-skills à activer
+## Skills à activer
 
-- `anthropic-skills:kickoff` à chaque démarrage session
-- `anthropic-skills:source-driven-development` pour tout code framework (WP/WC/plugin)
-- `anthropic-skills:doubt-driven-development` avant décisions structurantes
-- `anthropic-skills:security-and-hardening` Lot 4 + Lot 7
-- `anthropic-skills:shipping-and-launch` Lot 7
-- `anthropic-skills:triangulate` matrice triangulation décisions critiques
+Noms corrigés 2026-07-27 : les skills sont installés sous le préfixe `addyosmani-`, pas `anthropic-skills:`.
+
+- `kickoff` à chaque démarrage session
+- `addyosmani-source-driven-development` pour tout code framework (WP/WC/plugin)
+- `addyosmani-doubt-driven-development` avant décisions structurantes
+- `addyosmani-security-and-hardening` Lot 4 + Lot 7
+- `addyosmani-shipping-and-launch` Lot 7
+- `triangulate` matrice triangulation décisions critiques
+- `/code-review` avant chaque merge (exigence Alain)
 
 ## Conventions PR / Git
 
-- Repo à créer : `Ahlaoban/koinobori-house` (à confirmer avec user)
+- Repo : `Ahlaoban/koinobori-house` (créé)
 - Branches courtes (1-3 jours), trunk-based development
 - Squash merge, format commit : `type(scope): subject (#N)`
-- Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+- Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
 - **Jamais push direct main**, toujours via PR
 - `.gitignore` obligatoire avant tout commit (exclure `stripe_backup_code.txt`, `.env`, `wp-config.php` si présent, etc.)
 
