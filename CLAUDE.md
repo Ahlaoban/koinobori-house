@@ -107,7 +107,9 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 | C5 | Header | Shoji V2 verrouillé = réalisation du principe Fusuma (v2.0 §6) + exigences clavier / mobile simplifié / `prefers-reduced-motion` |
 | C6 | Arts de vivre | Page « manifeste / bientôt » au MVP. **Aucune 6ᵉ catégorie WooCommerce** |
 
-**Navigation MVP (7 entrées)** : Accueil · Boutique · Arts de vivre · Lifestyle · L'Atelier · Professionnels · Contact. Compte / recherche / panier regroupés à droite en icônes au trait fin.
+**Navigation MVP (7 entrées)** : Accueil · Boutique · Arts de vivre · Lifestyle · L'Atelier · Professionnels · Contact. Compte / recherche / panier regroupés à droite en icônes au trait fin. Libellés et slugs EN : [docs/ux-architecture.md](docs/ux-architecture.md) §3.1 — Home · Shop · **Art de Vivre** · Lifestyle · **The House** · **For Professionals** · Contact.
+
+**Défauts posés le 2026-07-27** (révisables, GO Alain « il faut avancer ») : 4 polices self-host avec mesure perf à G4 · **portrait Alain-Catherine non publié** tant que Catherine n'a pas validé · **pas de liens sociaux** au lancement · Kaïro dans le mouvement 4 « Créations BCDG ». Détail et porte de sortie de chacun : [docs/ux-architecture.md](docs/ux-architecture.md) §9.
 
 **A-6 reste en vigueur** : l'entrée « Professionnels » est une **page d'aiguillage** vers `/fr/entreprises/` et `/fr/collectivites/`, qui conservent leurs formulaires distincts (doctrine B2B/B2G). Jamais de fusion des deux.
 
@@ -193,11 +195,11 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 
 | Page | Slug FR | Slug EN | Cible |
 |------|---------|---------|-------|
-| **Professionnels** (aiguillage) | à définir | à définir | **Entrée de nav v2.0.** Ne porte aucun formulaire : oriente vers les deux pages ci-dessous (A-6) |
+| **Professionnels** (aiguillage) | `/fr/professionnels/` | `/en/professionals/` | **Entrée de nav v2.0.** Ne porte aucun formulaire : oriente vers les deux pages ci-dessous (A-6) |
 | Entreprises | `/fr/entreprises/` | `/en/business/` | B2B (entreprises, revendeurs, hôtellerie, événementiel privé) |
 | Collectivités | `/fr/collectivites/` | `/en/institutions/` | B2G (collectivités, écoles, médiathèques, festivals, institutions culturelles) |
 
-⚠️ Correction 2026-07-27 : la première ligne s'appelait « Professionnels » et désignait la page **B2B**. Depuis A-6 et la nav v2.0, « Professionnels » est la **page d'aiguillage** et la page B2B s'appelle « Entreprises ». Le libellé et le slug EN de la page d'aiguillage restent à définir — `/en/business/` est déjà pris par Entreprises. Cf point ouvert O-10.
+⚠️ Correction 2026-07-27 : la première ligne s'appelait « Professionnels » et désignait la page **B2B**. Depuis A-6 et la nav v2.0, « Professionnels » est la **page d'aiguillage** et la page B2B s'appelle « Entreprises ». Ne jamais confondre `/en/professionals/` (aiguillage) et `/en/business/` (B2B).
 
 Slugs Polylang : créer pages en FR puis traduire via Polylang pour slug EN dédié.
 
