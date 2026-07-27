@@ -14,7 +14,7 @@
 |---|---|---|
 | ~~A-1~~ | ~~Menu B + mega-panel `Boutique · Collections ▾ · Kaïro · Univers · Journal`~~ | **Nav v2.0 à plat, 7 entrées** (§3). Plus de mega-panel, plus de panneau *sibling* |
 | ~~A-2~~ | ~~Label « Collections » partout~~ | Le label disparaît de la nav. Les 5 collections WooCommerce sont inchangées et présentées comme « **les cinq mondes** » |
-| ~~A-4~~ | ~~Kaïro flagship avec slot menu propre~~ | Plus de slot menu Kaïro. Le récit « The Nameless Ship » survit **hors nav** : section homepage et page Monde Kaïro |
+| ~~A-4~~ | ~~Kaïro flagship avec slot menu propre~~ | Plus de slot menu Kaïro. Le récit « The Nameless Ship » survit **hors nav**, sur la page Monde Kaïro. Sa présence sur la homepage est un **point ouvert** (O-9) |
 
 Corollaires mécaniques, sans nouvel arbitrage :
 - **A-11 devient sans objet** : le problème de faisabilité du sous-menu shoji disparaît avec le mega-panel.
@@ -29,7 +29,7 @@ Corollaires mécaniques, sans nouvel arbitrage :
 | A-5 | Lifestyle & Koi MVP | **Inclus** : entrée nav + section homepage conditionnelle (ex-« Journal ») |
 | A-6 | Accès B2B/B2G | ✅ **NON ANNULÉ** (confirmé explicitement 2026-07-27). **1 entrée nav « Professionnels »** = page d'aiguillage → `/fr/entreprises/` + `/fr/collectivites/`, formulaires distincts, **jamais fusionnés** (doctrine). Les 2 liens footer directs sont à réconcilier avec le footer minimaliste v2.0 §11.1 — cf §8 |
 | A-7 | CTA hero | **Vers les cinq mondes** (pas la Boutique) |
-| A-8 | Ordre homepage | Remplacé par les **11 mouvements** v2.0 §4 — cf §4 |
+| A-8 | Ordre homepage | **Principe conservé**, liste de sections remplacée. « Immersion d'abord » reste vrai : les 11 mouvements v2.0 §4 sont eux-mêmes immersion-first. Seul l'énuméré S0-S9 est superseded — cf §4 |
 | A-9 | Storytelling BCDG home | **Teaser court**, récit complet sur la page dédiée |
 | A-10 | Richesse visuelle | **Sobre + accents** : washi dominant, ambiance limitée au hero + heros des pages Mondes |
 | Mobile | Navigation mobile | **Overlay accordéon** (voir §5) |
@@ -91,7 +91,7 @@ L'ordre v2.0 remplace l'ordre S0-S9 du 2026-07-24 (A-8). La succession doit êtr
 | 10 | Newsletter | Proposer une relation durable | S'inscrire | titre court + phrase + champ souligné + flèche vermillon. **Jamais dans le footer** (v2.0 §11.2) |
 | 11 | Footer ligne d'horizon | Clore sans alourdir | Accéder aux liens de service | fond washi, trait fin, 72-96 px desktop. ❌ aucun bloc sombre, aucun méga-menu |
 
-**Le bandeau confiance S8 disparaît** des mouvements v2.0. Son contenu (livraison France offerte ≥ 55 €, retours, contact USA) doit être replacé — cf §8. Wording : ❌ Stripe / PayPal / commission / droits de douane offerts (KH-707).
+**Le bandeau confiance S8 n'a plus de mouvement dédié** dans la v2.0 : la spec est silencieuse à son sujet, elle ne le supprime pas explicitement. Son contenu (livraison France offerte ≥ 55 €, retours, contact USA) reste à replacer — cf O-1 en §8. Wording : ❌ Stripe / PayPal / commission / droits de douane offerts (KH-707).
 
 Respiration « Ma » : grands espacements verticaux entre mouvements (≥ 80-120 px), largeur max ~1280 px, texte éditorial ≤ ~65 caractères/ligne.
 
@@ -158,6 +158,7 @@ Bouton panier : **angles droits**, fond vermillon, typo DM Sans. Prix visible sa
 | O-6 | **Fallback hero** : `README_assets` §5 propose `#f3ebdd`, la palette v2.0 `--kh-washi` vaut `#F8F4EE` | Résolu sans arbitrage : retenir `--kh-washi` |
 | O-7 | **Slug EN de « L'Atelier »**. `workshop` se lit *atelier de production* et heurte frontalement la doctrine. Pistes sans risque : `/en/the-house/`, `/en/our-story/`, `/en/about/` | **Arbitrage Alain requis** avant création de la page. Aucune page éditoriale n'existe encore sur staging, donc aucune migration de slug à craindre |
 | O-8 | **Renommage de la page « Univers » en « L'Atelier »** : les docs v1.2 (`KH-000`, `KH-001-Image-Map`, plan d'intégration) référencent encore `/univers` et l'asset `apropos-hero.png` | Sans gravité, ces docs sont superseded pour les couches visuelles. À rectifier au moment de créer la page, pas avant |
+| O-9 | **Place du récit Kaïro sur la homepage.** A-4 lui donnait une section propre (ex-S3), supprimée avec le slot nav. Les 11 mouvements v2.0 n'ont pas de section Kaïro : le candidat naturel est le mouvement 4 « Créations BCDG », mais la spec ne le dit pas | **Arbitrage Alain requis** — UX = son arbitrage exclusif, je ne présume pas le placement |
 
 ## 9. Reste à produire
 

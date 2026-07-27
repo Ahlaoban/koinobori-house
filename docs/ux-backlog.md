@@ -42,7 +42,7 @@ Format par entrée :
 **Pourquoi c'est important** : porte la promesse « j'ai découvert quelque chose d'unique » (objectif design Manus).
 **Impact** : homepage FR + EN.
 **Décision requise plus tard** : narration, hero, ordre des sections, immersion vs sobriété.
-**Statut** : ✅ **ré-arbitré 2026-07-27** — remplacé par les **11 mouvements** de la charte v2.0 §4 : Header Fusuma → Hero → les cinq mondes → Créations BCDG → L'Atelier → Lifestyle & Koi → Arts de vivre → Manifeste → Professionnels → Newsletter → Footer ligne d'horizon. Annule l'ordre S0-S9 du 2026-07-24 (A-8). Le bandeau confiance disparaît des mouvements → point ouvert O-1. Cf [ux-architecture.md](ux-architecture.md) §4.
+**Statut** : ✅ **ré-arbitré 2026-07-27** — remplacé par les **11 mouvements** de la charte v2.0 §4 : Header Fusuma → Hero → les cinq mondes → Créations BCDG → L'Atelier → Lifestyle & Koi → Arts de vivre → Manifeste → Professionnels → Newsletter → Footer ligne d'horizon. Supersède l'énuméré S0-S9 du 2026-07-24 ; le principe « immersion d'abord » d'A-8 reste vrai, les 11 mouvements l'étant eux-mêmes. Le bandeau confiance n'a plus de mouvement dédié → point ouvert O-1. Cf [ux-architecture.md](ux-architecture.md) §4.
 
 ### [UX-003] Présentation des collections (5)
 **Observation** : grille produits Kadence par défaut au Lot 2.
@@ -56,7 +56,7 @@ Format par entrée :
 **Pourquoi c'est important** : héros original BCDG, univers extensible ; ne doit PAS virer boutique de merch manga.
 **Impact** : collection Kaïro, homepage, storytelling.
 **Décision requise plus tard** : dispositif narratif, place dans la hiérarchie, équilibre avec les autres collections.
-**Statut** : ✅ **ré-arbitré 2026-07-27** — **le slot menu Kaïro est supprimé** (A-4 annulé par C4). Le récit « The Nameless Ship » survit **hors navigation** : page Monde Kaïro + présence dans le mouvement 4 « Créations BCDG » de la homepage. Asymétrie assumée conservée, sans dérive merch. Cf [ux-architecture.md](ux-architecture.md).
+**Statut** : 🔶 **partiellement ré-arbitré 2026-07-27** — **le slot menu Kaïro est supprimé** (A-4 annulé par C4). Le récit « The Nameless Ship » survit **hors navigation**, porté par la page Monde Kaïro. Asymétrie assumée conservée, sans dérive merch. **Reste ouvert** : sa place sur la homepage, l'ancienne section S3 ayant disparu avec les 11 mouvements → point ouvert O-9, arbitrage Alain. Cf [ux-architecture.md](ux-architecture.md) §8.
 
 ### [UX-005] Place du storytelling BCDG
 **Observation** : texte signature BCDG présent en bloc 2 de fiche (doctrine 2 blocs) ; pas de dispositif marque dédié.
