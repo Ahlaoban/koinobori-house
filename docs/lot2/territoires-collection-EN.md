@@ -19,9 +19,9 @@ Note interne (jamais public) : stock réel Breton/Bigouden abondant ; 100/variat
 > A flying carp in the colours of the American flag, 50 stars and 13 stripes, in a large 100 cm format. Test series of 25 pieces. A decorative piece to hang indoors or outdoors.
 
 **Long description (EN)**
-> The Stars & Stripes brings the graphic language of the American flag, its 50 stars and 13 stripes, into the traditional koinobori silhouette, in a large 100 cm format. Hung on a porch, in a garden, on a terrace or in a living space, it comes alive with the faintest breeze and sets a graphic, festive presence, somewhere between Americana and Japanese tradition.
+> The Stars & Stripes brings the graphic language of the American flag, its 50 stars and 13 stripes, into the traditional koinobori silhouette, in a large 100 cm format. Hung on a porch, in a garden, on a terrace or in a living space, it comes alive with the faintest breeze and sets a graphic, festive presence, somewhere between Americana and Japanese tradition. A traditional symbol of courage and perseverance, the koinobori also celebrates Kodomo no Hi, Children's Day in Japan.
 >
-> Designed for decorative use both indoors and outdoors, it is made from a water and UV resistant fabric. Its mouth is held open by a reinforced frame. A hanging cord is included, finished with a stainless steel rotating swivel that lets it turn freely in the wind.
+> Designed for decorative use both indoors and outdoors, it is made from high-quality nylon, waterproof and UV resistant, made to fly outside season after season. Its rounded mouth, 12 to 15 cm in diameter depending on size, is held open by a reinforced frame. A hanging cord runs from the mouth and ends with a weatherproof stainless steel rotating swivel that lets it turn freely in the wind.
 >
 > An original BCDG design, signed and released in a test series of 25 pieces.
 
@@ -33,9 +33,9 @@ Note interne (jamais public) : stock réel Breton/Bigouden abondant ; 100/variat
 > A flying carp in the colours of Brittany: ermines and black and white stripes inspired by the Breton flag. A graphic tribute to the Breton country, to hang indoors or outdoors.
 
 **Long description (EN)**
-> The Breton dresses the traditional koinobori silhouette with the motif of the Breton flag: the ermine canton and the black and white stripes, in a bold graphic contrast. Two maritime cultures meet, the Japanese carp and the Breton country. Hung in a garden, on a terrace, a balcony or in a living space, by the sea or in town, it comes alive with the faintest breeze and wears its character proudly.
+> The Breton dresses the traditional koinobori silhouette with the motif of the Breton flag: the ermine canton and the black and white stripes, in a bold graphic contrast. Two maritime cultures meet, the Japanese carp and the Breton country. Hung in a garden, on a terrace, a balcony or in a living space, by the sea or in town, it comes alive with the faintest breeze and wears its character proudly. A traditional symbol of courage and perseverance, the koinobori also celebrates Kodomo no Hi, Children's Day in Japan.
 >
-> Designed for decorative use both indoors and outdoors, it is made from a water and UV resistant fabric. Its mouth is held open by a reinforced frame. A hanging cord is included, finished with a stainless steel rotating swivel that lets it turn freely in the wind.
+> Designed for decorative use both indoors and outdoors, it is made from high-quality nylon, waterproof and UV resistant, made to fly outside season after season. Its rounded mouth, 12 to 15 cm in diameter depending on size, is held open by a reinforced frame. A hanging cord runs from the mouth and ends with a weatherproof stainless steel rotating swivel that lets it turn freely in the wind.
 >
 > An original BCDG design, signed and released in a small series.
 
@@ -47,8 +47,8 @@ Note interne (jamais public) : stock réel Breton/Bigouden abondant ; 100/variat
 > A flying carp in red and yellow, with ermines and stripes inspired by the Breton flag in vivid colours. A tribute to the Bigouden country at the far tip of Brittany, to hang indoors or outdoors.
 
 **Long description (EN)**
-> The Bigouden reinterprets the motif of the Breton flag in red and yellow: the ermine canton and the contrasting stripes, carried by the traditional koinobori silhouette. A vibrant tribute to the Bigouden country, a land of character at the far end of Brittany, where two maritime traditions echo each other: the Japanese carp and southern Finistère. Hung in a garden, on a terrace, a balcony or in a living space, it comes alive with the faintest breeze and wears its roots with pride.
+> The Bigouden reinterprets the motif of the Breton flag in red and yellow: the ermine canton and the contrasting stripes, carried by the traditional koinobori silhouette. A vibrant tribute to the Bigouden country, a land of character at the far end of Brittany, where two maritime traditions echo each other: the Japanese carp and southern Finistère. Hung in a garden, on a terrace, a balcony or in a living space, it comes alive with the faintest breeze and wears its roots with pride. A traditional symbol of courage and perseverance, the koinobori also celebrates Kodomo no Hi, Children's Day in Japan.
 >
-> Designed for decorative use both indoors and outdoors, it is made from a water and UV resistant fabric. Its mouth is held open by a reinforced frame. A hanging cord is included, finished with a stainless steel rotating swivel that lets it turn freely in the wind.
+> Designed for decorative use both indoors and outdoors, it is made from high-quality nylon, waterproof and UV resistant, made to fly outside season after season. Its rounded mouth, 12 to 15 cm in diameter depending on size, is held open by a reinforced frame. A hanging cord runs from the mouth and ends with a weatherproof stainless steel rotating swivel that lets it turn freely in the wind.
 >
 > An original BCDG design, signed and released in a small series.

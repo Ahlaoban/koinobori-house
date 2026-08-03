@@ -1,7 +1,28 @@
 # Lot 2 — Catalogue & fiches produits (plan d'ouverture)
 
+> ## État au 2026-07-27 — catalogue bilingue complet sur staging
+>
+> **34 produits publiés : 17 FR + 17 EN.** Les 17 paires FR↔EN sont liées dans Polylang.
+>
+> Travail réalisé ce jour :
+> - **7 traductions EN créées** (ID 220-226) pour les produits qui n'en avaient pas : Kaïro ép. 1-4, Stars & Stripes, Breton, Bigouden.
+> - **10 traductions EN enrichies** (113, 119, 142, 145, 148, 151, 154, 167, 170, 175) : paragraphe matières remplacé, phrase Kodomo no Hi ajoutée.
+> - **Markup normalisé** : les 17 fiches EN sont désormais en blocs `wp:paragraph`, comme les FR. Trois formats coexistaient — blocs, texte brut, et `<div>` imbriqués avec des `<div></div>` vides issus d'un collage. Les `<div>` ont été supprimés.
+>
+> Conventions relevées sur le publié, à respecter pour toute fiche future :
+> - **FR et EN partagent le même SKU** (ex. 116 et 119 = `KH-MER-001`). Ce n'est pas un doublon à corriger.
+> - Le **nom d'œuvre reste en français** dans le titre EN, avec un gloss anglais entre parenthèses au premier paragraphe.
+> - La **phrase symbolique se place à la fin du paragraphe 1**, dans le même paragraphe, jamais en paragraphe séparé.
+> - **Polylang for WooCommerce synchronise seul** le type de produit, les catégories, les attributs, le prix, le stock et les variations. Breton et Bigouden ont récupéré leurs 2 variations 20/25 € sans intervention.
+>
+> Audit final : **zéro anomalie** sur les 17 fiches EN — aucun mot interdit par la doctrine, aucun tiret cadratin, aucun `<div>` résiduel, aucun ancien paragraphe matières, aucun « bestseller ».
+>
+> ⚠️ **Deux points ouverts, arbitrage Alain** :
+> 1. **Incohérence d'accord en FR** : 116 La Vague Bleue est au féminin (« Suspendue… elle s'anime »), 127 La Vague Brune au masculin (« Suspendu… il s'anime »), sur une phrase structurellement identique. 116 est seule contre 16.
+> 2. **Brouillon 200** « Écailles Bleues et Oranges (Copier) », en anglais : c'était la base conservée pour traduire le Breton. Le Breton EN existe désormais proprement (225), ce brouillon est devenu inutile. Non supprimé.
+
 - **Date** : 2026-06-15
-- **Statut** : 🟡 **OUVERT — plan à valider (Alain)**. Aucune implémentation avant GO.
+- **Statut** : 🟢 **Catalogue bilingue livré sur staging** (cf. encadré ci-dessus). Le plan ci-dessous reste la référence de décomposition.
 - **Amont** : Lot 1 GO (WP/WC/Polylang/SEOPress, KH-104b-full). Produit test supprimé.
 - **Environnement** : **staging uniquement** · pas de prod · PR #1 non mergée.
 - **Gouvernance** : structure + contenu seulement. **Présentation fiche = NEUTRE** (visuel réservé Alain/Manus → `ux-backlog.md`). Conventions WC/Kadence = défauts réversibles.
