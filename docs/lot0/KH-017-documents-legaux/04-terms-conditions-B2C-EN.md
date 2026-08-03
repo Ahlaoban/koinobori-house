@@ -189,7 +189,7 @@ Dispute submission page: www.cm2c.net/declarer-un-litige.php
 
 Membership validity communicated: 29/05/2029.
 
-**English version informative only — the French official CM2C wording prevails. See French B2C Terms (§13) for the official CM2C clause integrated 2026-05-29.**
+**English version informative only — the French official CM2C wording prevails. See the French B2C Terms (§13) for the official CM2C clause.**
 
 ## 14. Force Majeure
 

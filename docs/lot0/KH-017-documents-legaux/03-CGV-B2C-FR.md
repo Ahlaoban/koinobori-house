@@ -177,7 +177,7 @@ Les données personnelles collectées lors de la commande sont traitées conform
 
 En cas de litige, le client doit d'abord adresser une réclamation écrite au service client : contact@koinoborihouse.com.
 
-Si aucune solution amiable n'est trouvée, clause officielle CM2C (intégrée 2026-05-29 — source dashboard pro CM2C, cf KH-011) :
+Si aucune solution amiable n'est trouvée, clause officielle CM2C :
 
 > Conformément aux dispositions du Code de la consommation concernant « le processus de médiation des litiges de la consommation », après nous avoir sollicités et à défaut de réponse vous satisfaisant, vous avez la possibilité de recourir gratuitement à une procédure de médiation de la consommation auprès de :
 >
