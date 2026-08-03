@@ -79,7 +79,7 @@ Some technical or payment providers may involve processing or access from countr
 
 ## 7. Retention Periods
 
-The following retention periods are proposed for the MVP and must be validated before publication:
+Data is retained for the following periods, after which it is deleted or anonymised, unless a longer statutory retention obligation applies or a dispute is ongoing:
 
 | Data | Indicative retention period |
 |---|---|
@@ -90,7 +90,7 @@ The following retention periods are proposed for the MVP and must be validated b
 | Customer marketing data | Duration of the commercial relationship, then 3 years after last active contact |
 | Prospect newsletter data | 3 years after last active contact or until consent is withdrawn |
 | Proof of objection to marketing | As long as necessary to manage the objection; internal recommendation: at least 3 years |
-| Security logs | Short proportionate period to define; MVP recommendation: 6 to 12 months |
+| Security logs | 12 months |
 | Exempted audience measurement cookies, if applicable | Recommended maximum lifetime: 13 months; associated data: maximum 25 months |
 
 ## 8. Individual Rights

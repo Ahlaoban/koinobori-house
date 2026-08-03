@@ -31,7 +31,7 @@ If the configuration were to change and involve non-exempt cookies or trackers, 
 
 ## 4. Marketing Cookies
 
-No advertising or retargeting cookie should be enabled in the MVP without an explicit decision and a prior consent mechanism.
+No advertising or retargeting cookie is set on this site.
 
 If marketing tools, pixels, social network trackers, advertising tracking or retargeting are added later, this policy must be updated and a compliant consent banner must be enabled.
 

@@ -30,6 +30,14 @@ Images and visual presentations are prepared with care. Slight differences may o
 
 Koinobori are decorative objects. Unless explicitly stated otherwise, they are not toys, protective equipment, safety devices or food-contact products.
 
+### 2.1 Digital content
+
+Koinobori House also offers digital content supplied without a physical medium, made available for download after payment.
+
+This content is delivered in PDF format. It can be read on computer, tablet and phone, with any application able to open a PDF file, without proprietary software or subscription. No technical protection measure restricts reading the file on the customer's devices.
+
+For each digital item, the product page states its format, page count and approximate file size.
+
 ## 3. Prices
 
 Prices are displayed in euros.
@@ -66,7 +74,9 @@ If a product becomes unavailable after an order has been placed, the customer wi
 
 Delivery zones, carriers, costs and indicative delivery times are displayed before order confirmation when available.
 
-Carriers considered for the MVP: La Poste, Colissimo where required, and Mondial Relay if enabled.
+Carriers: La Poste, Colissimo where required, and Mondial Relay if enabled.
+
+The digital content referred to in article 2.1 is not shipped and carries no delivery cost. It is made available for download under the conditions set out in article 8.4 bis.
 
 Delivery times shown are **estimated transit times after shipment**. They may vary depending on the destination, peak periods, customs formalities, carrier disruptions or any event external to BCDG.
 
@@ -136,6 +146,27 @@ Custom products, made on request or adapted to the customer's specific requireme
 This exclusion concerns in particular custom creations, orders with logo, text, specific graphic adaptation or particular request approved by the customer.
 
 The exclusion is clearly indicated before any personalized order is confirmed.
+
+### 8.4 bis Downloadable Digital Content
+
+Under article L221-28, 13° of the French Consumer Code, the right of withdrawal cannot be exercised for the supply of digital content not supplied on a physical medium where performance has begun after the consumer's prior express consent and express waiver of the right of withdrawal.
+
+Accordingly, before confirming an order for digital content, the customer must:
+
+- give **express consent** for the download to be made available immediately, that is, before the fourteen-day period expires;
+- **expressly acknowledge** that they thereby lose their right of withdrawal on that content.
+
+Both confirmations are collected through two separate, non-pre-ticked checkboxes at the order confirmation step. The customer receives confirmation of them on the durable medium accompanying the order.
+
+Without these confirmations, the file is made available only after the fourteen-day withdrawal period has expired.
+
+This exclusion removes no legal guarantee: a corrupted or unreadable file, or one that does not match its description, gives rise to the remedies set out in articles 8.5 and 9.
+
+### 8.4 ter Use of Digital Content
+
+The file is intended for the customer's personal and private use. Its purchase confers no right of reproduction, distribution, public sharing, resale, lending, adaptation or commercial exploitation, in accordance with article 11.
+
+The download link is personal and attached to the customer's order.
 
 ### 8.5 Defective or Non-Conforming Product
 

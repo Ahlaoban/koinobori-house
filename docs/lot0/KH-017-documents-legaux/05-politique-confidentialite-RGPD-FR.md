@@ -77,9 +77,9 @@ Certains prestataires techniques ou de paiement peuvent impliquer des traitement
 
 ## 7. Durées de conservation
 
-Les durées ci-dessous sont proposées pour le MVP et doivent être validées avant publication :
+Les données sont conservées pour les durées suivantes, au-delà desquelles elles sont supprimées ou anonymisées, sauf obligation légale de conservation plus longue ou litige en cours :
 
-| Données | Durée indicative |
+| Données | Durée de conservation |
 |---|---|
 | Commandes, factures, documents comptables | 10 ans |
 | Comptes clients | Durée d’utilisation du compte, puis suppression ou anonymisation après 3 ans d’inactivité |
@@ -87,8 +87,8 @@ Les durées ci-dessous sont proposées pour le MVP et doivent être validées av
 | Devis B2B/B2G non suivis | 3 ans après le dernier contact, sauf obligation ou litige |
 | Données de prospection clients | Durée de la relation commerciale puis 3 ans après le dernier contact actif |
 | Données de prospects newsletter | 3 ans après le dernier contact actif ou jusqu’au retrait du consentement |
-| Preuve d’opposition à la prospection | Durée nécessaire à la gestion de l’opposition, recommandation interne : au moins 3 ans |
-| Logs de sécurité | Durée courte proportionnée à définir, recommandation MVP : 6 à 12 mois |
+| Preuve d’opposition à la prospection | Durée nécessaire à la gestion de l’opposition, au minimum 3 ans |
+| Logs de sécurité | 12 mois |
 | Cookies de mesure d’audience exemptés si applicables | Durée de vie maximale recommandée : 13 mois ; données associées : 25 mois maximum |
 
 ## 8. Droits des personnes

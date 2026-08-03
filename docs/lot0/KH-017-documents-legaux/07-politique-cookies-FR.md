@@ -29,7 +29,7 @@ Si la configuration venait à évoluer vers un dépôt de cookies ou traceurs no
 
 ## 4. Cookies marketing
 
-Aucun cookie publicitaire ou de retargeting ne doit être activé au MVP sans décision explicite et sans mécanisme de consentement préalable.
+Aucun cookie publicitaire ou de retargeting n'est déposé sur le site.
 
 Si des outils marketing, pixels, réseaux sociaux, suivi publicitaire ou retargeting sont ajoutés ultérieurement, la présente politique devra être mise à jour et un bandeau de consentement conforme devra être activé.
 
