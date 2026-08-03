@@ -45,7 +45,7 @@ Il peut également configurer son navigateur pour bloquer ou supprimer certains 
 
 ## 7. Tableau des cookies
 
-Tableau établi sur la base des outils retenus ; liste exacte confirmée par audit technique avant publication.
+Ce tableau est établi d'après les outils utilisés par le site. Il est vérifié et mis à jour à chaque évolution de la configuration.
 
 | Nom du cookie | Finalité | Durée | Éditeur | Nécessaire / consentement |
 |---|---|---:|---|---|

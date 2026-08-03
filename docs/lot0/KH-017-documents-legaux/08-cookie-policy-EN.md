@@ -47,7 +47,7 @@ Users may also configure their browser to block or delete certain cookies. Block
 
 ## 7. Cookie Table
 
-Table based on the selected tools; the exact list will be confirmed by a technical audit before publication.
+This table is based on the tools used by the website. It is checked and updated whenever the configuration changes.
 
 | Cookie name | Purpose | Duration | Publisher | Necessary / consent |
 |---|---|---:|---|---|
