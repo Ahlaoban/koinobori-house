@@ -54,7 +54,7 @@ Les cookies et traceurs utilisés par le site sont décrits dans la Politique co
 
 ## Médiation de la consommation
 
-Clause officielle CM2C (intégrée 2026-05-29 — source dashboard pro CM2C, cf KH-011) :
+Clause officielle CM2C :
 
 > Conformément aux dispositions du Code de la consommation concernant « le processus de médiation des litiges de la consommation », après nous avoir sollicités et à défaut de réponse vous satisfaisant, vous avez la possibilité de recourir gratuitement à une procédure de médiation de la consommation auprès de :
 >
