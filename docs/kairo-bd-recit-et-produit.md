@@ -33,8 +33,11 @@ Le maillage depuis les fiches produits convertit mieux qu'une entrée de menu : 
 
 | # | Point | Nature |
 |---|---|---|
-| **B-1** | **Physique ou numérique ?** Détermine tout le reste : type de produit WooCommerce, frais de port, et surtout le régime de rétractation | **Bloquant** pour la fiche produit et pour les CGV |
-| **B-2** | **Clause « contenu numérique » absente des CGV.** Si la BD est téléchargeable, le droit de rétractation tombe dès le début du téléchargement, avec accord préalable exprès et renoncement du consommateur. Les CGV §8.4 n'excluent aujourd'hui que les produits personnalisés | **Bloquant** avant toute vente numérique |
+| ~~B-1~~ | ~~Physique ou numérique ?~~ | ✅ **Tranché 2026-07-27 : numérique téléchargeable**, format PDF, lisible sur téléphone, PC, Mac et iPad. Produit WooCommerce **virtuel + téléchargeable**, aucun frais de port |
+| ~~B-2~~ | ~~Clause « contenu numérique » absente des CGV~~ | ✅ **Rédigée 2026-07-27** — CGV FR §2.1, §7, §8.4 bis et §8.4 ter, et équivalents dans les Terms EN. Base : art. L221-28, 13° du code de la consommation, plus l'obligation d'information sur la fonctionnalité et l'interopérabilité du contenu numérique. **À relire par Alain** |
+| **B-7** | **Deux cases à cocher au checkout.** Les CGV engagent désormais le site à recueillir, avant validation, l'accord exprès à la mise à disposition immédiate **et** le renoncement exprès au droit de rétractation, par deux cases distinctes non précochées. WooCommerce ne le fait pas nativement | **Bloquant** avant la première vente numérique. À implémenter dans le thème enfant ou via extension |
+| **B-8** | **Livraison du fichier sans SMTP.** WooCommerce envoie le lien de téléchargement par email, et aucun plugin SMTP n'est installé : l'email ne partirait pas. Le client verrait toutefois ses téléchargements sur la page de confirmation et dans son compte | **Bloquant** avant la première vente numérique |
+| **B-9** | **Le PDF circulera.** Aucune protection technique n'est prévue, et les CGV l'annoncent (c'est un choix assumé, favorable au client). Un tatouage discret à l'email de l'acheteur reste possible si tu veux dissuader le partage | Arbitrage Alain, non bloquant |
 | **B-3** | **Où ranger la BD dans le catalogue ?** La taxonomie est figée à 5 collections depuis le 2026-06-18, toutes des koinobori. Une BD n'en est pas un. Piste : la ranger dans **Kaïro** sans toucher la taxonomie | Arbitrage Alain |
 | **B-4** | **Wording des 11 épisodes non commercialisés.** Le récit les montre, la boutique ne les vend pas. Ne jamais annoncer de date ni promettre une sortie : présenter des chapitres, pas un catalogue à venir | Doctrine |
 | **B-5** | **Prix** non déterminé | Alain |

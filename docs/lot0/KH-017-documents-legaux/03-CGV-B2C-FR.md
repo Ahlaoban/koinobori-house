@@ -28,6 +28,14 @@ Les photographies, images et mises en scène sont présentées avec le plus gran
 
 Les koinobori sont des objets décoratifs. Sauf indication contraire explicite, ils ne sont pas des jouets, équipements de protection, dispositifs de sécurité ou produits destinés à un usage alimentaire.
 
+### 2.1 Contenus numériques
+
+Koinobori House propose également des contenus numériques fournis sans support matériel, mis à disposition par téléchargement après paiement.
+
+Ces contenus sont diffusés au format PDF. Ils sont lisibles sur ordinateur, tablette et téléphone, avec toute application capable d'ouvrir un fichier PDF, sans logiciel propriétaire ni abonnement. Aucune mesure technique de protection ne restreint la lecture du fichier sur les appareils du client.
+
+La fiche produit précise, pour chaque contenu numérique, son format, son nombre de pages et sa taille approximative.
+
 ## 3. Prix
 
 Les prix sont indiqués en euros.
@@ -64,7 +72,9 @@ En cas d’indisponibilité après commande, le client sera informé dans les me
 
 Les zones, transporteurs, frais et délais indicatifs de livraison sont affichés avant validation de la commande lorsqu'ils sont disponibles.
 
-Transporteurs envisagés au MVP : La Poste, Colissimo lorsque nécessaire, Mondial Relay si activé.
+Transporteurs : La Poste, Colissimo lorsque nécessaire, Mondial Relay si activé.
+
+Les contenus numériques mentionnés à l'article 2.1 ne font l'objet d'aucune expédition ni d'aucuns frais de livraison. Ils sont mis à disposition par téléchargement dans les conditions prévues à l'article 8.4 bis.
 
 Les délais de livraison indiqués sont des **délais estimés d'acheminement après expédition**. Ils peuvent varier selon la destination, les périodes de forte activité, les formalités douanières, les perturbations transporteur ou tout événement extérieur à BCDG.
 
@@ -134,6 +144,27 @@ Les produits personnalisés, réalisés sur demande ou adaptés aux spécificati
 Cette exclusion concerne notamment les créations sur mesure, les commandes avec logo, texte, adaptation graphique spécifique ou demande particulière validée par le client.
 
 L'exclusion est indiquée clairement avant la validation de toute commande personnalisée.
+
+### 8.4 bis Contenus numériques téléchargeables
+
+Conformément à l'article L221-28, 13° du code de la consommation, le droit de rétractation ne peut pas être exercé pour la fourniture d'un contenu numérique non fourni sur un support matériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement exprès à son droit de rétractation.
+
+En conséquence, avant la validation de sa commande portant sur un contenu numérique, le client doit :
+
+- donner son **accord exprès** pour que le téléchargement soit mis à disposition immédiatement, c'est-à-dire avant l'expiration du délai de quatorze jours ;
+- **reconnaître expressément** qu'il perd, de ce fait, son droit de rétractation sur ce contenu.
+
+Ces deux confirmations sont recueillies par deux cases à cocher distinctes, non précochées, à l'étape de validation de la commande. Le client en reçoit confirmation sur le support durable qui accompagne sa commande.
+
+À défaut de ces confirmations, la mise à disposition du fichier est différée jusqu'à l'expiration du délai de rétractation de quatorze jours.
+
+Cette exclusion ne prive le client d'aucune garantie légale : un fichier corrompu, illisible ou non conforme à sa description ouvre droit aux recours prévus à l'article 8.5 et à l'article 9.
+
+### 8.4 ter Usage des contenus numériques
+
+Le fichier est destiné à l'usage personnel et privé du client. Son achat ne confère aucun droit de reproduction, de diffusion, de partage public, de revente, de prêt, d'adaptation ni d'exploitation commerciale, conformément à l'article 11.
+
+Le lien de téléchargement est personnel et rattaché à la commande du client.
 
 ### 8.5 Produit défectueux ou non conforme
 
