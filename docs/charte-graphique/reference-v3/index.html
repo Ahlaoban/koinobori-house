@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Page d’accueil de référence HTML/CSS pour la charte Koinobori House."
+    />
+    <title>Koinobori House — Référence HTML/CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="kh-page">
+    <!--
+      DIRECTION DE RÉFÉRENCE : « Ma — L’Intervalle enchanté ».
+      Cette page encode en HTML/CSS pur la charte adoptée : washi ivoire,
+      encre sumi, vermillon rare, compositions asymétriques et vide structurel.
+      Aucun framework, aucun CDN et aucun JavaScript ne sont requis.
+    -->
+    <a class="kh-skip-link" href="#kh-main">Aller au contenu</a>
+
+    <!-- Mouvement 01 : Header Shoji V2, présenté dans son état ouvert et utilisable. -->
+    <header class="kh-header" data-movement="01">
+      <div class="kh-container kh-header__inner">
+        <a class="kh-brand" href="#accueil" aria-label="Koinobori House, accueil">
+          <span class="kh-brand__wordmark">Koinobori House</span>
+          <span class="kh-brand__cartouche" lang="ja">鯉幟</span>
+        </a>
+
+        <nav class="kh-nav kh-nav--desktop" aria-label="Navigation principale">
+          <a class="kh-nav__link kh-nav__link--active" href="#accueil">Accueil</a>
+          <a class="kh-nav__link" href="#boutique">Boutique</a>
+          <a class="kh-nav__link" href="#arts-de-vivre">Arts de vivre</a>
+          <a class="kh-nav__link" href="#lifestyle">Lifestyle</a>
+          <a class="kh-nav__link" href="#atelier">L’Atelier</a>
+          <a class="kh-nav__link" href="#professionnels">Professionnels</a>
+          <a class="kh-nav__link" href="#contact">Contact</a>
+        </nav>
+
+        <a class="kh-account" href="#contact">Mon compte</a>
+
+        <details class="kh-mobile-menu">
+          <summary class="kh-mobile-menu__trigger">Menu</summary>
+          <nav class="kh-mobile-menu__panel" aria-label="Navigation mobile">
+            <a class="kh-nav__link" href="#accueil">Accueil</a>
+            <a class="kh-nav__link" href="#boutique">Boutique</a>
+            <a class="kh-nav__link" href="#arts-de-vivre">Arts de vivre</a>
+            <a class="kh-nav__link" href="#lifestyle">Lifestyle</a>
+            <a class="kh-nav__link" href="#atelier">L’Atelier</a>
+            <a class="kh-nav__link" href="#professionnels">Professionnels</a>
+            <a class="kh-nav__link" href="#contact">Contact</a>
+            <a class="kh-nav__link kh-nav__link--account" href="#contact">Mon compte</a>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <main id="kh-main">
+      <!-- Mouvement 02 : Hero. -->
+      <section class="kh-hero" id="accueil" data-movement="02">
+        <div class="kh-hero__veil"></div>
+        <div class="kh-container kh-hero__inner">
+          <div class="kh-hero__content">
+            <p class="kh-eyebrow">Koinobori House · Maison d’imaginaires</p>
+            <h1 class="kh-display">L’art de faire<br /><em>flotter le temps.</em></h1>
+            <p class="kh-lead kh-hero__lead">
+              Des koinobori choisis comme des paysages intérieurs. Des objets qui donnent au vent,
+              à la couleur et au silence une place dans la maison.
+            </p>
+            <div class="kh-actions">
+              <a class="kh-button kh-button--primary" href="#mondes">Entrer dans les cinq mondes</a>
+              <a class="kh-text-link" href="#manifeste">Lire le manifeste <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="kh-hero__kanji" aria-hidden="true">
+            <span lang="ja">間</span>
+            <small>Ma</small>
+          </div>
+        </div>
+        <p class="kh-hero__scroll">Poursuivre le voyage <span aria-hidden="true">↓</span></p>
+      </section>
+
+      <!-- Mouvement 03 : Les cinq mondes. -->
+      <section class="kh-movement kh-worlds" id="mondes" data-movement="03">
+        <div class="kh-container">
+          <div class="kh-section-heading kh-section-heading--split">
+            <div>
+              <p class="kh-eyebrow">01 · Cartographie sensible</p>
+              <h2 class="kh-title">Les cinq mondes</h2>
+            </div>
+            <p class="kh-lead kh-section-heading__copy">
+              Cinq portes pour choisir une atmosphère avant de choisir un objet. Chaque monde
+              associe couleur, mouvement et imaginaire.
+            </p>
+          </div>
+
+          <div class="kh-world-grid">
+            <a class="kh-world kh-world--feature" href="#boutique">
+              <span class="kh-world__number">01</span>
+              <span class="kh-world__kanji" lang="ja">海</span>
+              <strong class="kh-world__name">Mer</strong>
+              <span class="kh-world__note">Bleus profonds, écume et grands souffles.</span>
+            </a>
+            <a class="kh-world" href="#boutique">
+              <span class="kh-world__number">02</span>
+              <span class="kh-world__kanji" lang="ja">界</span>
+              <strong class="kh-world__name">Kaïro</strong>
+              <span class="kh-world__note">Horizons nocturnes et lumière intérieure.</span>
+            </a>
+            <a class="kh-world" href="#boutique">
+              <span class="kh-world__number">03</span>
+              <span class="kh-world__kanji" lang="ja">花</span>
+              <strong class="kh-world__name">Hanami</strong>
+              <span class="kh-world__note">Floraisons, légèreté et saisons qui passent.</span>
+            </a>
+            <a class="kh-world" href="#boutique">
+              <span class="kh-world__number">04</span>
+              <span class="kh-world__kanji" lang="ja">紋</span>
+              <strong class="kh-world__name">Motifs</strong>
+              <span class="kh-world__note">Rythmes géométriques et signes protecteurs.</span>
+            </a>
+            <a class="kh-world kh-world--indigo" href="#arts-de-vivre">
+              <span class="kh-world__number">05</span>
+              <span class="kh-world__kanji" lang="ja">暮</span>
+              <strong class="kh-world__name">Arts de vivre</strong>
+              <span class="kh-world__note">Matières choisies pour le quotidien.</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mouvement 04 : Créations BCDG et carte produit de référence. -->
+      <section class="kh-movement kh-products" id="boutique" data-movement="04">
+        <div class="kh-container">
+          <div class="kh-section-heading kh-section-heading--baseline">
+            <div>
+              <p class="kh-eyebrow">02 · Sélection</p>
+              <h2 class="kh-title"><em>Créations</em> BCDG</h2>
+              <img
+                class="kh-brush"
+                src="assets/trait-vermillon.png"
+                alt=""
+              />
+            </div>
+            <a class="kh-text-link" href="#boutique">Voir toute la boutique <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="kh-product-grid">
+            <article class="kh-product-card">
+              <div class="kh-product-card__image-wrap">
+                <img
+                  class="kh-product-card__image"
+                  src="assets/produit-mer-okusai.png"
+                  alt="Koinobori bleu aux motifs de vague et de mont Fuji"
+                />
+              </div>
+              <div class="kh-product-card__body">
+                <p class="kh-product-card__world">Monde Mer</p>
+                <h3 class="kh-product-card__title">Mer Ōkusai <small>- by BCDG</small></h3>
+                <div class="kh-product-card__purchase">
+                  <span class="kh-product-card__price">285 €</span>
+                  <a class="kh-button kh-button--small" href="#contact">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="kh-product-card kh-product-card--raised">
+              <div class="kh-product-card__image-wrap">
+                <img
+                  class="kh-product-card__image"
+                  src="assets/produit-kairo-horizon.png"
+                  alt="Koinobori noir aux motifs de lune et de paysage"
+                />
+              </div>
+              <div class="kh-product-card__body">
+                <p class="kh-product-card__world">Monde Kaïro</p>
+                <h3 class="kh-product-card__title">Kaïro Horizon <small>- by BCDG</small></h3>
+                <div class="kh-product-card__purchase">
+                  <span class="kh-product-card__price">320 €</span>
+                  <a class="kh-button kh-button--small" href="#contact">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="kh-product-card">
+              <div class="kh-product-card__image-wrap">
+                <img
+                  class="kh-product-card__image"
+                  src="assets/produit-hanami-sakura.png"
+                  alt="Koinobori rose aux motifs de fleurs de cerisier"
+                />
+              </div>
+              <div class="kh-product-card__body">
+                <p class="kh-product-card__world">Monde Hanami</p>
+                <h3 class="kh-product-card__title">Hanami Sakura <small>- by BCDG</small></h3>
+                <div class="kh-product-card__purchase">
+                  <span class="kh-product-card__price">245 €</span>
+                  <a class="kh-button kh-button--small" href="#contact">Ajouter au panier</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mouvement 05 : Alain & Catherine. -->
+      <section class="kh-movement kh-about" id="atelier" data-movement="05">
+        <div class="kh-container kh-about__grid">
+          <figure class="kh-about__visual">
+            <img
+              class="kh-about__image"
+              src="assets/atelier-alain-catherine.png"
+              alt="Portrait éditorial d’Alain et Catherine dans un intérieur inspiré du Japon"
+            />
+            <figcaption class="kh-caption">Deux regards, une même exigence de sélection.</figcaption>
+          </figure>
+
+          <div class="kh-about__copy">
+            <p class="kh-eyebrow">03 · La maison</p>
+            <h2 class="kh-title">Alain &amp;<br /><em>Catherine</em></h2>
+            <p class="kh-lead">
+              Koinobori House est née d’un regard partagé sur les objets qui changent doucement
+              l’atmosphère d’un lieu. Catherine apporte sa sensibilité aux couleurs et aux matières.
+              Alain construit les récits, les collections et les rencontres.
+            </p>
+            <p class="kh-body-copy">
+              Ensemble, ils composent une maison curieuse et sélective, attentive à la beauté
+              d’usage comme à l’émotion première.
+            </p>
+            <a class="kh-text-link" href="#contact">Nous découvrir <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mouvement 06 : Lifestyle & Koi. -->
+      <section class="kh-movement kh-lifestyle" id="lifestyle" data-movement="06">
+        <div class="kh-container">
+          <div class="kh-lifestyle__hero">
+            <div class="kh-lifestyle__copy">
+              <p class="kh-eyebrow">04 · Magazine</p>
+              <h2 class="kh-title">Lifestyle<br /><em>&amp; Koi</em></h2>
+              <p class="kh-lead">
+                Un rendez-vous régulier pour regarder les koi, les motifs, les intérieurs et les
+                tendances décoratives à travers une sensibilité japonaise.
+              </p>
+              <a class="kh-button kh-button--outline" href="#contact">Lire le magazine</a>
+            </div>
+            <img
+              class="kh-lifestyle__image"
+              src="assets/lifestyle-koi.png"
+              alt="Composition éditoriale mêlant koi, papier et intérieur japonais"
+            />
+          </div>
+
+          <div class="kh-article-list">
+            <article class="kh-article-row">
+              <span class="kh-article-row__number">01</span>
+              <div>
+                <p class="kh-article-row__meta">Culture koi · 8 min</p>
+                <h3 class="kh-subtitle">Le koi comme motif vivant</h3>
+              </div>
+              <span class="kh-article-row__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="kh-article-row">
+              <span class="kh-article-row__number">02</span>
+              <div>
+                <p class="kh-article-row__meta">Décoration · 6 min</p>
+                <h3 class="kh-subtitle">Le vermillon dans un intérieur calme</h3>
+              </div>
+              <span class="kh-article-row__arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="kh-article-row">
+              <span class="kh-article-row__number">03</span>
+              <div>
+                <p class="kh-article-row__meta">Matières · 5 min</p>
+                <h3 class="kh-subtitle">Lire les nuances du papier washi</h3>
+              </div>
+              <span class="kh-article-row__arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mouvement 07 : Arts de vivre. -->
+      <section class="kh-movement kh-living" id="arts-de-vivre" data-movement="07">
+        <div class="kh-container">
+          <div class="kh-section-heading kh-section-heading--split">
+            <div>
+              <p class="kh-eyebrow kh-eyebrow--light">05 · Bientôt</p>
+              <h2 class="kh-title kh-title--light">Arts de vivre</h2>
+            </div>
+            <p class="kh-lead kh-lead--light kh-section-heading__copy">
+              Une sélection appelée à grandir : objets de table, lumière et textiles pour prolonger
+              la présence japonaise dans la maison.
+            </p>
+          </div>
+
+          <div class="kh-living-grid">
+            <article class="kh-living-card kh-living-card--tall">
+              <img
+                class="kh-living-card__image"
+                src="assets/arts-ceramique.png"
+                alt="Céramique japonaise dans une composition éditoriale"
+              />
+              <div class="kh-living-card__caption">
+                <span lang="ja">器</span>
+                <h3>Céramique</h3>
+                <p>Objets de table et gestes quotidiens.</p>
+              </div>
+            </article>
+            <article class="kh-living-card">
+              <img
+                class="kh-living-card__image"
+                src="assets/arts-textile.png"
+                alt="Textiles japonais aux motifs sobres"
+              />
+              <div class="kh-living-card__caption">
+                <span lang="ja">布</span>
+                <h3>Textile</h3>
+                <p>Trames, motifs et surfaces souples.</p>
+              </div>
+            </article>
+            <article class="kh-living-card kh-living-card--offset">
+              <img
+                class="kh-living-card__image"
+                src="assets/arts-lampe.png"
+                alt="Luminaire inspiré du papier japonais"
+              />
+              <div class="kh-living-card__caption">
+                <span lang="ja">灯</span>
+                <h3>Lumière</h3>
+                <p>Éclairer sans effacer les ombres.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mouvement 08 : Manifeste. -->
+      <section class="kh-movement kh-manifesto" id="manifeste" data-movement="08">
+        <div class="kh-container kh-manifesto__grid">
+          <div class="kh-manifesto__title-wrap">
+            <p class="kh-eyebrow">06 · Le manifeste</p>
+            <h2 class="kh-title">Ce que nous<br /><em>voulons préserver</em></h2>
+            <img
+              class="kh-manifesto__seal"
+              src="assets/sceau-bcdg.png"
+              alt=""
+            />
+          </div>
+
+          <ol class="kh-principles">
+            <li class="kh-principle">
+              <span>01</span>
+              <div>
+                <h3>Le regard avant l’accumulation</h3>
+                <p>Moins d’objets, mais une raison sensible de les faire entrer chez soi.</p>
+              </div>
+            </li>
+            <li class="kh-principle">
+              <span>02</span>
+              <div>
+                <h3>La matière avant l’effet</h3>
+                <p>Des textures, des couleurs et des proportions qui supportent le temps.</p>
+              </div>
+            </li>
+            <li class="kh-principle">
+              <span>03</span>
+              <div>
+                <h3>Le récit avant le réflexe marchand</h3>
+                <p>Comprendre un motif ou une atmosphère avant de choisir.</p>
+              </div>
+            </li>
+            <li class="kh-principle">
+              <span>04</span>
+              <div>
+                <h3>L’espace avant le remplissage</h3>
+                <p>Laisser à chaque objet la place de respirer et de transformer le lieu.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Mouvement 09 : Professionnels. -->
+      <section class="kh-movement kh-professionals" id="professionnels" data-movement="09">
+        <div class="kh-container kh-professionals__grid">
+          <div>
+            <p class="kh-eyebrow">07 · B2B &amp; B2G</p>
+            <h2 class="kh-title">Des projets<br /><em>à votre mesure</em></h2>
+          </div>
+
+          <div class="kh-professionals__content">
+            <p class="kh-lead">
+              Hôtels, restaurants, boutiques, lieux culturels et collectivités peuvent nous
+              transmettre un besoin particulier, un univers souhaité et une quantité minimale.
+            </p>
+            <div class="kh-professional-options">
+              <div class="kh-professional-option">
+                <span>01</span>
+                <h3>Espaces &amp; hospitalité</h3>
+                <p>Sélections coordonnées pour un lieu, une saison ou une mise en scène.</p>
+              </div>
+              <div class="kh-professional-option">
+                <span>02</span>
+                <h3>Demandes particulières</h3>
+                <p>Étude d’un motif, d’une palette et d’un volume de commande.</p>
+              </div>
+            </div>
+            <a class="kh-button kh-button--primary" href="#contact">Décrire un projet</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mouvement 10 : Newsletter. -->
+      <section class="kh-newsletter" id="contact" data-movement="10">
+        <div class="kh-container kh-newsletter__inner">
+          <div class="kh-newsletter__heading">
+            <span class="kh-newsletter__kanji" lang="ja">便り</span>
+            <div>
+              <p class="kh-eyebrow">Le courrier de la maison</p>
+              <h2 class="kh-subtitle">Recevoir les prochains voyages</h2>
+            </div>
+          </div>
+          <form class="kh-newsletter__form" action="#" method="post">
+            <label class="kh-visually-hidden" for="kh-email">Votre adresse e-mail</label>
+            <input
+              class="kh-newsletter__input"
+              id="kh-email"
+              name="email"
+              type="email"
+              placeholder="votre@email.fr"
+              autocomplete="email"
+            />
+            <button class="kh-button kh-button--primary" type="submit">S’inscrire</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Mouvement 11 : Footer minimaliste en deux étages. -->
+    <footer class="kh-footer" data-movement="11">
+      <div class="kh-services">
+        <div class="kh-container kh-services__grid">
+          <p><strong>Livraison suivie</strong><span>France et Europe</span></p>
+          <p><strong>Paiement sécurisé</strong><span>Transactions protégées</span></p>
+          <p><strong>Conseil personnalisé</strong><span>Une réponse attentive</span></p>
+          <p><strong>Projets professionnels</strong><span>B2B et B2G</span></p>
+        </div>
+      </div>
+      <div class="kh-horizon">
+        <div class="kh-container kh-horizon__inner">
+          <a class="kh-horizon__brand" href="#accueil">Koinobori House <span lang="ja">鯉幟</span></a>
+          <nav class="kh-horizon__links" aria-label="Liens de pied de page">
+            <a href="#contact">Contact</a>
+            <a href="#contact">Livraison</a>
+            <a href="#contact">Mentions légales</a>
+            <a href="#contact">Confidentialité</a>
+            <a href="#contact">Instagram</a>
+          </nav>
+          <p class="kh-horizon__copyright">© 2026 Koinobori House</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

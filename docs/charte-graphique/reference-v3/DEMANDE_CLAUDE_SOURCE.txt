@@ -1,0 +1,21 @@
+Pour que le résultat soit fidèle à votre intention, j'ai besoin d'une seule chose de votre part.
+
+Une page de référence, livrée en HTML et CSS. La page d'accueil, footer compris. Pas de slides supplémentaires — une page de code.
+
+Pourquoi ce format. Votre spécification contient, après comptage, 1 bloc CSS, 6 valeurs hexadécimales et 11 valeurs numériques en px ou rem, sur 32 sections. La direction artistique y est limpide, mais l'échelle typographique et le rythme d'espacement n'y figurent nulle part. Quiconque implémente doit donc les inventer ou les mesurer à l'œil sur des PNG — et c'est exactement là que votre univers visuel se perd. Ces nombres sont votre signature ; personne ne peut les deviner à votre place. Une page en code les contient tous, et le système entier s'en déduit.
+
+Ce que la page doit exposer. L'échelle typographique déclarée en variables CSS, pas en valeurs dispersées : tailles, graisses, interlignages, interlettrages, pour chaque niveau. Le rythme d'espacement — c'est le « Ma » de votre charte, et c'est ce qui ne se devine pas. Les 11 mouvements au moins en structure et proportions. Le footer ligne d'horizon, 72 à 96 px, une seule ligne desktop. Une carte produit avec ses rembourrages. Le comportement à 1280, 768 et 360 px.
+
+Ce qui existe déjà et qu'il ne faut pas recréer. Les 4 familles sont auto-hébergées en woff2, sous-ensembles latin et latin-ext, unicode-ranges corrects : Cormorant Garamond 300/400/600 normal et italique, Lora, DM Sans 300/400, Noto Serif JP, Shippori Mincho. Les jetons existent sous les noms --kh-font-display|body|ui|kanji et --kh-washi|sumi|vermillon|or|indigo. Conservez-les.
+
+Trois valeurs déployées sont encore celles de la v1 et doivent passer en v2.0 dans votre livraison : --kh-washi #F7F3EC → #F8F4EE, --kh-or #C9A96E → #B8860B, --kh-indigo #1B2B5E → #2B3A6B. Ajouter --kh-white #FFFDFC.
+
+Contraintes. HTML et CSS purs, aucun framework, aucune compilation, aucun CDN externe. Les polices étant déjà auto-hébergées, référencez-les par leur nom sans recharger depuis Google Fonts. Le site tourne sous Kadence : écrivez vos sélecteurs sur des classes préfixées kh- plutôt que sur des balises nues — reprendre la cascade est mon travail, mais des classes propres me la rendent possible.
+
+À ne pas rouvrir. Navigation à 7 entrées, sans mega-panel ni entrée Kaïro. Footer en 2 étages, bande services au-dessus de la ligne d'horizon, newsletter au mouvement 10. Boutons à angles droits. L'or réservé aux détails précieux, jamais un bouton ni un aplat. Le vermillon rare. Header Shoji V2 verrouillé, seul « Mon compte » passe en vermillon.
+
+Doctrine. Si vous écrivez du texte d'exemple : jamais d'atelier, de production, de fabrication ni d'origine. Jamais de tiret cadratin dans un contenu produit — la signature s'écrit - by BCDG. Jamais « bestsellers ». Préférez de vrais textes du catalogue au faux-texte, ils révèlent les longueurs réelles.
+
+Ce dont je n'ai pas besoin, pour ne pas vous faire travailler pour rien : pas de nouvelles slides, pas de JavaScript sauf si une interaction est indissociable du design, pas de pages secondaires — l'accueil suffit —, et pas de nouvelles images, le pack du 25/07 est complet.
+
+Merci.
