@@ -37,6 +37,18 @@ add_action(
 			array( 'koinobori-child' ),
 			file_exists( $foundations ) ? filemtime( $foundations ) : '1.1.0'
 		);
+
+		// Charte v3.0 « Ma, L'Intervalle enchanté » — référence Manus du 2026-07-27.
+		// Chargée APRÈS les fondations : son :root redéfinit --kh-washi, --kh-or et
+		// --kh-indigo aux valeurs v2.0 (arbitrage C3), et le mapping Kadence des
+		// fondations hérite automatiquement des nouvelles valeurs via var().
+		$charte = "$dir/assets/css/kh-charte-v3.css";
+		wp_enqueue_style(
+			'kh-charte-v3',
+			"$uri/assets/css/kh-charte-v3.css",
+			array( 'kh-foundations' ),
+			file_exists( $charte ) ? filemtime( $charte ) : '3.0.0'
+		);
 	},
 	20
 );
@@ -75,6 +87,7 @@ add_action(
 	'after_setup_theme',
 	function () {
 		add_editor_style( 'assets/css/kh-foundations.css' );
+		add_editor_style( 'assets/css/kh-charte-v3.css' );
 	}
 );
 
