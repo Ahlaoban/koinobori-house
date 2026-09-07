@@ -54,7 +54,7 @@ Ce tableau est établi d'après les outils utilisés par le site. Il est vérifi
 | `woocommerce_cart_hash`, `woocommerce_items_in_cart` | Panier | Session | Koinobori House / WooCommerce | Nécessaire |
 | `wp_woocommerce_session_*` | Session d’achat | 2 jours | Koinobori House / WooCommerce | Nécessaire |
 | `cmplz_*` | Enregistrement des préférences de consentement | 365 jours | Koinobori House / Complianz | Nécessaire |
-| Mesure d’audience | Plausible Analytics : aucun cookie déposé | — | Plausible | Exempté |
+| Mesure d’audience | Plausible Analytics : aucun cookie déposé | aucun | Plausible | Exempté |
 | `__stripe_mid`, `__stripe_sid` | Paiement et prévention de la fraude (pages de paiement) | 1 an / 30 min | Stripe | Nécessaire |
 
 ## 8. Modification

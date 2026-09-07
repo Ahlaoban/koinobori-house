@@ -65,7 +65,6 @@ Clause officielle CM2C :
 > Site internet : https://www.cm2c.net/declarer-un-litige.php
 > Mail : declarer-un-litige@cm2c.net
 
-Validité de l'adhésion communiquée : 29/05/2029.
 
 ## Droit applicable
 
