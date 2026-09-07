@@ -23,7 +23,7 @@ Coordonnées intégrées :
 - CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice
 - 49 rue de Ponthieu, 75008 Paris
 - Tél. : 01 89 47 00 14
-- Email : declarer-un-litige@cm2c.net (adresse publiée sur cm2c.net/comment-nous-saisir.php, vérifiée 2026-09-07 ; remplace declarer-un-litige@cm2c.net dans tous les documents)
+- Email : declarer-un-litige@cm2c.net (adresse publiée sur cm2c.net/comment-nous-saisir.php, vérifiée 2026-09-07 ; l'ancienne adresse « litiges@ » a été remplacée dans tous les documents)
 - Site de saisine : www.cm2c.net/declarer-un-litige.php
 - Validité : 29/05/2029 (donnée interne, ne figure plus dans les CGV publiques)
 
