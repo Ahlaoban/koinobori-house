@@ -63,7 +63,7 @@ Appointed mediator:
 **CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice**  
 49 rue de Ponthieu, 75008 Paris, France  
 Phone: +33 1 89 47 00 14  
-Email: litiges@cm2c.net  
+Email: declarer-un-litige@cm2c.net  
 Dispute submission page: www.cm2c.net/declarer-un-litige.php
 
 Membership validity communicated: 29/05/2029.

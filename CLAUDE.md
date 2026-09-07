@@ -4,11 +4,12 @@ Project context for Claude Code sessions on Koinobori House MVP.
 
 ## Projet
 
-E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : 15 août 2026** (repoussé depuis fin juillet, décision Alain 2026-07-24 — « le temps de faire les choses parfaitement »).
+E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : site opérationnel fin septembre 2026** (décision Alain 2026-09-07 ; le 15 août n'a pas été tenu, la prod est restée un WordPress nu).
 
 - **Démarrage** : 2026-05-27 (J1 Lot 0 — mercredi)
-- **Soft launch** : à recaler (ex ~15 juillet 2026 ; catalogue indexable, checkout off si juridique pas prêt)
-- **Lancement (hard launch)** : **15 août 2026** (remplace ~29 juillet)
+- **Reprise** : 2026-09-07, après un mois de détour (ChatGPT, mauvais répertoire). La liste de référence du reste à faire est [docs/handoff/PASSATION-2026-07-27.md](docs/handoff/PASSATION-2026-07-27.md) §3/§9 : rien n'y avait été coché. État mesuré ce jour : staging = WC 11.1 + PayPal, sans Stripe / SMTP / formulaires / cookies / cache / Wordfence, homepage vide, 0 menu, 20 fiches sans image ; prod = WordPress nu.
+- **Lancement (site opérationnel)** : **30 septembre 2026**. Chemin critique = socle transactionnel avant la charte.
+- **Arbitrages 2026-09-07** : **BD Kaïro = automne 2026, date à préciser, hors lancement** (clauses CGV mises de côté dans `docs/lot0/KH-017-documents-legaux/10-clauses-contenu-numerique-BD.md`) · **USA = « nous contacter »** au lancement.
 - ⚠️ **Pas de gate avocat** (confirmé Alain 2026-07-27, déjà tranché auparavant) : la validation des CGV par un avocat est un **contrôle complémentaire recommandé, non bloquant** pour la vente publique. Cette ligne portait auparavant « vente publique après avocat CGV », ce qui contredisait [docs/lots2-8-decomposition.md](docs/lots2-8-decomposition.md) §Juridique. La contradiction est levée en faveur de ce dernier.
 - **Durée** : 9 semaines × 6 jours/semaine × ~6h/jour = ~340h capacité
 - **Repo git** : à créer (suggestion `Ahlaoban/koinobori-house`)
@@ -18,7 +19,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 ## Cadrage stratégique
 
 - **Priorité absolue Koinobori jusqu'à J+63**. Bootstrap solo Alain.
-- **MaïJinn** peut glisser d'1 mois si nécessaire. Reprise focus principal post-lancement (15 août 2026).
+- **MaïJinn** peut glisser d'1 mois si nécessaire. Reprise focus principal post-lancement (fin septembre 2026).
 - **Pas de scope creep**. Aucune fonctionnalité phase 2 dans MVP sans validation explicite.
 - **Pas de multi-devise**. EUR only au MVP.
 - **Source de vérité ventes** : WooCommerce Orders (pas de webhook Stripe custom).

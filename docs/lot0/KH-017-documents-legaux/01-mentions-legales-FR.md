@@ -63,7 +63,7 @@ Clause officielle CM2C :
 > 75 008 PARIS
 > Tel : 01 89 47 00 14
 > Site internet : https://www.cm2c.net/declarer-un-litige.php
-> Mail : litiges@cm2c.net
+> Mail : declarer-un-litige@cm2c.net
 
 Validité de l'adhésion communiquée : 29/05/2029.
 

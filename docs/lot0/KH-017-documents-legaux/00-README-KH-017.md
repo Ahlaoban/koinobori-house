@@ -15,6 +15,7 @@ Périmètre : site e-commerce WordPress + WooCommerce, bilingue FR/EN, B2C trans
 7. `07-politique-cookies-FR.md`
 8. `08-cookie-policy-EN.md`
 9. `09-donnees-manquantes-et-checklist.md`
+10. `10-clauses-contenu-numerique-BD.md` : clauses contenu numérique mises de côté jusqu'à la sortie de la BD Kaïro (automne 2026)
 
 ## Doctrine appliquée
 
@@ -28,7 +29,7 @@ Périmètre : site e-commerce WordPress + WooCommerce, bilingue FR/EN, B2C trans
   > Email : contact@koinoborihouse.com
 - Directrice de la publication : Else Smakalova
 - TVA au lancement : franchise en base, mention `TVA non applicable, art. 293 B du CGI`.
-- CM2C intégré clause officielle mot pour mot dans mentions légales + CGV §13.
+- CM2C intégré dans les mentions légales et à l'article 23 des CGV (version du 7 septembre 2026).
 
 ## Points bloquants avant publication
 

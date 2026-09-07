@@ -47,7 +47,7 @@ Cette formulation **remplace toutes les occurrences antérieures** d'identificat
 
 ### Médiation consommation (CM2C)
 - **Clause officielle CM2C intégrée mot pour mot** dans `01-mentions-legales-FR.md` §Médiation + `03-CGV-B2C-FR.md` §13
-- Coordonnées : CM2C, 49 rue de Ponthieu, 75008 Paris, 01 89 47 00 14, litiges@cm2c.net, https://www.cm2c.net/declarer-un-litige.php
+- Coordonnées : CM2C, 49 rue de Ponthieu, 75008 Paris, 01 89 47 00 14, declarer-un-litige@cm2c.net, https://www.cm2c.net/declarer-un-litige.php
 - Validité adhésion : **29/05/2029**
 - Note "internal" supprimée FR (clause officielle posée). EN versions marquées informatives, FR fait foi.
 
