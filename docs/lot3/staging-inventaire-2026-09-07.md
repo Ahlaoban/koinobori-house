@@ -82,3 +82,37 @@ Le mu-plugin réécrit la seule occurrence fautive après coup, en priorité 20 
 Choix d'un mu-plugin plutôt que `functions.php` : le thème enfant est en cours de réécriture par Manus (PR #12, 65 lignes de `functions.php` modifiées), isoler évite le conflit.
 
 ⚠️ **Non déployé, non vérifié sur staging** : la session du 2026-09-08 a perdu l'authentification HTTP du staging avant de pouvoir téléverser le fichier et contrôler le rendu. À faire à la reprise : déposer le fichier dans `wp-content/mu-plugins/`, puis vérifier qu'un titre de fiche affiche bien `- by BCDG` en FR et en EN.
+
+---
+
+## Ajouts du 2026-09-08, seconde session
+
+### Image Sakura Rouge
+
+Média **317** (`hanami-001-sakura-rouge`), téléversé depuis `catalog/images/hanami/001-sakura-rouge/main.jpg`, texte alternatif renseigné, posé comme image principale sur les produits **111 (FR)** et **113 (EN)**. Il reste **20 produits sans image** : Mer 6 et Motifs 3, en FR et en EN, soit les 9 photos attendues d'Alain.
+
+### Page d'accueil
+
+| Page | FR | EN |
+|---|---|---|
+| Accueil | 318 `accueil` — « Des carpes de vent originales, signées BCDG » | 319 `home` — « Original wind carps, signed by BCDG » |
+
+Contenu conforme à [homepage-v2-11-mouvements-FR-EN.md](homepage-v2-11-mouvements-FR-EN.md) : mouvements 2, 3, 4, 5, 7, 8 et 9. Le mouvement 6 (Lifestyle & Koi) est omis tant qu'aucun article n'est publié, le mouvement 10 (newsletter) tant que Brevo n'est pas connecté. Métadonnées SEO posées sur les deux. Les deux pages sont liées dans Polylang. `show_on_front = page` et `page_on_front = 318`.
+
+### 🔴 Anomalie non résolue : `/fr/` et `/en/` rendent toujours l'index de blog
+
+**Ce qui est vérifié bon** : le contenu et le routage par identifiant. `/?page_id=318` rend `body class="home page page-id-318"` avec les six titres de section attendus, et `/?page_id=319` fait de même en anglais. Les réglages sont corrects, contrôlés côté REST **et** côté formulaire : `show_on_front = page`, `page_on_front = 318`. La langue des deux pages est correcte dans la liste des pages, et la paire est liée.
+
+**Ce qui échoue** : les URL propres. `/fr/` et `/en/` rendent `body class="home blog"`, c'est-à-dire l'index de blog vide. WordPress connaît pourtant la page d'accueil, puisque `/fr/accueil/` est redirigé en canonique vers `/fr/`. La réécriture de `/fr/` ne produit donc pas `page_id=318`.
+
+**Écarté par le test** : le cache (aucun en-tête `x-litespeed-cache`, purge effectuée, rendu identique en session connectée), les réglages (justes des deux côtés), la langue des pages (correcte), et la détection de langue du navigateur de Polylang, qui est **déjà désactivée** conformément à la doctrine, KH-107 possédant la racine.
+
+**Tenté sans effet** : vidage des permaliens à deux reprises, aller-retour complet du réglage de lecture par le formulaire (articles récents, enregistrer, page statique, enregistrer) pour forcer le déclenchement des hooks `update_option`.
+
+**Pistes pour la reprise, par ordre de vraisemblance** :
+
+1. **Le mu-plugin KH-107 s'exécute avant Polylang** et appelle `home_url()` à ce moment-là. Son gate KH-104b a été validé alors que `show_on_front` valait `posts` : sa cohabitation avec une page d'accueil statique n'a **jamais** été testée. Le renommer temporairement en `.php.off` par FTP et recharger `/fr/` tranche la question en une minute.
+2. Un `home.php` ou `front-page.php` résiduel dans le zip du thème enfant déployé, qui ne figure pas dans le dépôt.
+3. Un conflit de règles de réécriture avec Polylang for WooCommerce sur la langue racine.
+
+En attendant, **aucune régression** : la page d'accueil affichait déjà l'index de blog avant cette session. Le contenu est prêt et n'attend que la résolution du routage.
