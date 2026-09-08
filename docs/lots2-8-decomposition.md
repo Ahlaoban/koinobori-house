@@ -46,7 +46,7 @@
 ## Lot 3 — Pages éditoriales, confiance, B2B/B2G, légales *(KH-3xx)*
 **Périmètre** : homepage (structure neutre) · à-propos/histoire · storytelling BCDG (placement réservé) · Lifestyle (3 articles EN allégé) · confiance (livraison/retours/FAQ/contact/sur-mesure) · shipping USA (« nous contacter ») · **B2B** (`/fr/entreprises/`+`/en/business/`) · **B2G** (`/fr/collectivites/`+`/en/institutions/`) wording validé · légales (mentions/CGV/confidentialité/cookies, corpus KH-017) · SEO metadata.
 **Dépendances** : Lot 2 (collections) · Lot 0 légal (KH-017).
-**Risques** : doctrine (Chine sauf exception B2G) · cohérence EN allégé.
+**Risques** : doctrine (Chine jamais citée, aucune exception depuis le 2026-09-08) · cohérence EN allégé.
 **Critères de sortie** : pages MVP publiées bilingues · audit doctrine (KH-307) · légales cohérentes · emplacements forms en placeholder.
 **Blocages** : rédaction.
 

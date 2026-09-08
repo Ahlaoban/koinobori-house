@@ -29,7 +29,7 @@ Slugs EN `contact-us` et `privacy-policy` : WordPress impose l'unicité des slug
 | Collectivités / Institutions (B2G) | 9 | 10 | idem, à poser sur `/fr/collectivites/` et `/en/institutions/` |
 | Rétractation / Withdrawal | 11 (page 249) | 12 (page 263) | interne + accusé de réception valant support durable (art. 10.3 CGV) |
 
-Champs conformes à CLAUDE.md §Champs formulaires. Chaque formulaire porte une case de consentement RGPD liée à la politique de confidentialité. Bouton vermillon `#C8311A`. Les emails partent via `wp_mail` tant que FluentSMTP n'est pas connecté à Brevo.
+Champs conformes à CLAUDE.md §Champs formulaires. **Correction du 2026-09-08** : suite à l'arbitrage « la Chine n'est jamais citée », le champ des formulaires 9 et 10 est passé de « Lien culturel avec le Japon, la Chine ou l'Asie » à « Lien culturel avec le Japon ou l'Asie » (EN : « Cultural link with Japan or Asia, if relevant »). Enregistré et vérifié après rechargement. Chaque formulaire porte une case de consentement RGPD liée à la politique de confidentialité. Bouton vermillon `#C8311A`. Les emails partent via `wp_mail` tant que FluentSMTP n'est pas connecté à Brevo.
 
 ## Extensions activées ce jour
 

@@ -134,7 +134,7 @@ Il n'y a **aucune échelle typographique chiffrée ni rythme d'espacement**. Qui
 
 Détail complet dans `CLAUDE.md`. L'essentiel :
 
-- ❌ **Jamais** de mention de la Chine en contexte production, atelier, origine, fournisseur, fabrication. Exception bornée : la Chine comme pays ou culture, uniquement sur les pages B2G culturelles.
+- ❌ **Jamais de mention de la Chine, dans aucun contexte, sans exception** (arbitrage Alain 2026-09-08). ⚠️ Cette ligne portait auparavant une exception bornée autorisant la Chine comme pays ou culture sur les pages B2G ; **cette exception est levée**. Référent culturel unique = le Japon.
 - ❌ **Jamais** « atelier chinois », « fabriqué en France », ni aucune mention d'atelier ou de production sur les fiches produits.
 - ❌ **Jamais** de référence au volume global de stock. Stock par produit uniquement.
 - ❌ **Jamais** de tiret cadratin dans les fiches produits. La signature s'écrit `- by BCDG`, trait d'union simple.

@@ -135,9 +135,9 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 
 ## Doctrine éditoriale impérative
 
-- ❌ **JAMAIS** mentionner Chine publiquement **dans tout contexte production / fournisseur / atelier / origine de fabrication / logistique interne / sourcing / formulation produit / fiches produits / transparence production**
-- ✅ **Exception bornée — B2G culturel uniquement** : mention de la Chine autorisée **comme pays / culture** dans contexte B2G institutionnel (coopération culturelle, jumelages, projets éducatifs ou patrimoniaux). Périmètre strict : pages `/fr/collectivites/` + `/en/institutions/` et formulaire B2G associé. Voir §Doctrine B2C / B2B / B2G.
-- ⚠️ **Garde-fou absolu** : la Chine peut être mentionnée uniquement comme pays/culture dans un contexte B2G culturel ou institutionnel. **Jamais** comme lieu de production, d'atelier, de fournisseur ou de fabrication, dans aucun contexte, B2C, B2B ou B2G.
+- ❌ **JAMAIS mentionner la Chine publiquement, dans aucun contexte, sans aucune exception** (arbitrage Alain 2026-09-08). Ni comme lieu de production, fournisseur, atelier, origine de fabrication, sourcing ou logistique interne ; ni comme pays ou culture, B2C, B2B et B2G compris.
+- ⚠️ **L'exception bornée « B2G culturel » du 2026-05-28 est LEVÉE.** Elle autorisait la Chine comme pays/culture sur `/fr/collectivites/` + `/en/institutions/` et leur formulaire. Elle ne s'applique plus nulle part. Tout texte qui s'en réclame est caduc.
+- ✅ **Référent culturel unique : le Japon.** C'est au Japon que la coutume du koinobori s'est popularisée, autour de la fête du 5 mai (Kodomo no Hi, héritière de la fête des garçons). Les projets de jumelage ou de coopération se formulent « avec le Japon, ou plus largement avec l'Asie ».
 - ❌ **JAMAIS** écrire "atelier chinois"
 - ❌ **Aucune mention d'atelier / de production sur les fiches produits** (FR + EN) — décision Alain 2026-06-18. Si une référence à l'atelier devait apparaître ailleurs : jamais "atelier chinois", utiliser "atelier partenaire" / "atelier confidentiel".
 - ❌ **JAMAIS** "fabriqué en France"
@@ -207,13 +207,13 @@ Slugs Polylang : créer pages en FR puis traduire via Polylang pour slug EN déd
 
 ### Wording B2G validé (corpus public)
 
-Wordings autorisés au titre de l'**exception bornée B2G culturel** (cf §Doctrine éditoriale impérative — garde-fou absolu) :
+Wordings autorisés, **sans mention de la Chine** (cf §Doctrine éditoriale impérative) :
 
 > *"Koinobori House accompagne les collectivités, écoles, médiathèques, festivals et institutions culturelles dans leurs projets visuels autour du Japon et de l'Asie : jumelages, semaines culturelles, événements pédagogiques, décorations urbaines ou installations temporaires."*
 
-> *"Collectivités engagées dans des jumelages ou coopérations culturelles avec le Japon, la Chine ou plus largement l'Asie."*
+> *"Collectivités engagées dans des jumelages ou coopérations culturelles avec le Japon, ou plus largement avec l'Asie."*
 
-Statut : arbitrage Alain rendu 2026-05-28, **option (a) retenue avec exception bornée**. Mention Chine = pays / culture uniquement, contexte B2G institutionnel. Jamais comme lieu de production / atelier / fournisseur / fabrication.
+Statut : arbitrage Alain 2026-05-28, option (a) retenue, **révisé le 2026-09-08**. La seconde citation portait « avec le Japon, la Chine ou plus largement l'Asie » : la mention de la Chine en est retirée. L'exception bornée B2G culturel qui la justifiait est levée, la Chine n'est plus citable dans aucun contexte.
 
 ### Champs formulaires (minimum MVP)
 
@@ -233,7 +233,7 @@ Statut : arbitrage Alain rendu 2026-05-28, **option (a) retenue avec exception b
 - Collectivité / institution
 - Pays / ville
 - Type de projet (select multi ou enum) : jumelage, école, médiathèque, festival, événement culturel, décoration urbaine, autre
-- Lien culturel avec le Japon, la Chine ou l'Asie, si pertinent *(exception bornée B2G culturel — cf §Doctrine éditoriale impérative garde-fou absolu)*
+- Lien culturel avec le Japon ou l'Asie, si pertinent *(rév. 2026-09-08 : mention de la Chine retirée du libellé, cf §Doctrine éditoriale impérative. ✅ Champ corrigé le même jour dans Fluent Forms 9 (FR) et 10 (EN) sur staging.)*
 - Quantité envisagée
 - Date souhaitée
 - Besoin de devis (oui/non)
