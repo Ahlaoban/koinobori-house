@@ -1,6 +1,6 @@
 # Lot 3 — Professionnels, Entreprises, Collectivités, Arts de vivre (FR/EN)
 
-> Statut : rédigé 2026-09-08, à valider Alain avant saisie staging.
+> Statut : rédigé 2026-09-08, **posé sur staging le même jour**. Les 12 pages, les 2 menus et les 12 jeux de métadonnées SEO sont en ligne, cf [staging-inventaire-2026-09-07.md](staging-inventaire-2026-09-07.md) §Ajouts du 2026-09-08. ⚠️ Slug EN de Lifestyle = `lifestyle-koi` (unicité WP sous Polylang Free), pas `lifestyle`.
 > Complète [pages-confiance-FR-EN.md](pages-confiance-FR-EN.md), qui couvrait Livraison, Retours, Contact, Sur-mesure et les légales.
 > Slugs : créer la page FR puis traduire via Polylang (slug EN dédié).
 > Wording verrouillé : jamais « frais Stripe/PayPal », « commission », « droits de douane offerts ». Jamais atelier, production, fabrication ni origine de fabrication. Ponctuation classique, pas de tiret cadratin. Aucune référence au volume global de stock.

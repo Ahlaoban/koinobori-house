@@ -34,3 +34,41 @@ Champs conformes à CLAUDE.md §Champs formulaires. **Correction du 2026-09-08**
 ## Extensions activées ce jour
 
 Stripe Gateway (compte à connecter en mode test par Alain), FluentSMTP (clé Brevo à saisir par Alain), Fluent Forms, Complianz (assistant à dérouler), LiteSpeed Cache (cache ON, racine `^/$` exclue, mobile ON), Wordfence (licence gratuite à enregistrer par Alain). Réglages : page CGV WooCommerce = 238 (case d'acceptation au checkout), page de confidentialité WordPress = 252 (Polylang sert 272 en EN).
+
+---
+
+## Ajouts du 2026-09-08
+
+Source des textes : [pages-professionnels-arts-de-vivre-FR-EN.md](pages-professionnels-arts-de-vivre-FR-EN.md). Toutes les paires sont liées dans Polylang, hreflang vérifié dans les deux sens.
+
+### Pages
+
+| Page | FR (id, slug) | EN (id, slug) | Formulaire |
+|---|---|---|---|
+| Professionnels (aiguillage) | 279 `/fr/professionnels/` | 285 `/en/professionals/` | aucun (A-6) |
+| Entreprises / Business | 280 `/fr/entreprises/` | 287 `/en/business/` | Fluent Forms 7 / 8 |
+| Collectivités et institutions | 281 `/fr/collectivites/` | 289 `/en/institutions/` | Fluent Forms 9 / 10 |
+| Arts de vivre | 282 `/fr/arts-de-vivre/` | 291 `/en/art-de-vivre/` | aucun |
+| L'Atelier / The House | 283 `/fr/atelier/` | 293 `/en/the-house/` | aucun |
+| Lifestyle & Koi | 284 `/fr/lifestyle/` | 295 `/en/lifestyle-koi/` | aucun |
+
+⚠️ Le slug EN de Lifestyle est `lifestyle-koi` et non `lifestyle` : WordPress impose l'unicité des slugs entre langues sous Polylang Free, le slug FR occupait déjà `lifestyle`. Même cause que `contact-us`. [ux-architecture.md](../ux-architecture.md) §3.1 a été corrigé en conséquence.
+
+### Menus
+
+| Menu | id | Emplacements Polylang | Entrées |
+|---|---|---|---|
+| Principal FR | 144 | Principal Français + Mobile Français | Accueil · Boutique · Arts de vivre · Lifestyle · L'Atelier · Professionnels · Contact |
+| Principal EN | 145 | Principal English + Mobile English | Home · Shop · Art de Vivre · Lifestyle · The House · For Professionals · Contact |
+
+Accueil et Home sont des liens personnalisés vers `/fr/` et `/en/`, la page d'accueil restant à construire. Rendu public vérifié : les deux navigations affichent bien 7 entrées dans la bonne langue. Le footer à 2 étages n'est pas posé, il relève du thème enfant (Manus).
+
+### Métadonnées SEO
+
+Les 12 pages portent un `_seopress_titles_title` et un `_seopress_titles_desc`, écrits par REST et vérifiés dans le rendu public (`<title>` et `<meta name="description">` présents sur les 12 URLs).
+
+### Audit doctrine sur les pages en ligne
+
+Balayage des 12 URLs sur le contenu rendu : 0 mention de fabrication, production, atelier partenaire ou « fabriqué en France » ; 0 mention de frais Stripe, PayPal, commission ou droits de douane offerts ; 0 référence au volume global de stock.
+
+⚠️ **Une exception à connaître pour l'audit KH-707** : `/fr/entreprises/` et `/en/business/` contiennent le mot « Chine » / « China », uniquement parce que le champ **Pays** du formulaire B2B est une liste déroulante ISO qui énumère tous les pays du monde (`<option value='CN'>Chine`). Ce n'est pas du contenu éditorial. Deux options si tu veux un grep parfaitement propre : restreindre la liste des pays du formulaire, ou exclure les balises `<option>` du grep d'audit. Les pages B2G ne sont pas concernées, leur champ « Pays / ville » est un champ texte libre.
