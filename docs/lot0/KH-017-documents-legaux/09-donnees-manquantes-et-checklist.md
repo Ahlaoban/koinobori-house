@@ -35,7 +35,9 @@ Coordonnées intégrées :
 ## C. TVA / facturation
 
 - [x] Mention actuelle intégrée : `TVA non applicable, art. 293 B du CGI`.
-- [ ] Surveiller la bascule documentaire prévue à partir du 01/09/2026 vers la nouvelle référence CIBS : `TVA non applicable, art. L. 223 et s. du code des impositions sur les biens et services (CIBS)`.
+- [x] **Bascule CIBS reportée, aucune action avant 2027. Vérifié à la source le 2026-09-08.** La recodification de la TVA du CGI vers le CIBS devait entrer en vigueur le 01/09/2026 (ordonnance n° 2025-1247 du 17 décembre 2025). L'**ordonnance n° 2026-671 du 27 juillet 2026** l'a reportée au **1ᵉʳ janvier 2027** pour ne pas la faire coïncider avec la première échéance de la facturation électronique, et a repoussé la fin de la tolérance sur les anciennes références du CGI du 31/12/2027 au **30/06/2028**. Source : [Rapport au Président de la République, JORFTEXT000054497139](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054497139).
+  - **Conséquence pour le lancement** : `TVA non applicable, art. 293 B du CGI` reste la mention correcte aujourd'hui et le restera au 30/09/2026. Rien à modifier sur les mentions légales, les CGV ni les factures.
+  - ⚠️ **À rouvrir fin 2026** : le numéro d'article CIBS applicable au 01/01/2027 n'est pas stable dans les sources secondaires (`L. 223-3` contre `L. 233-3`). Ne pas retenir de numéro sans vérification Légifrance à ce moment-là, idéalement confirmée par l'expert-comptable.
 - [ ] Vérifier modèles de facture WooCommerce PDF si plugin utilisé.
 - [ ] Vérifier les mentions de facture B2B/B2G si devis/commandes hors checkout.
 
