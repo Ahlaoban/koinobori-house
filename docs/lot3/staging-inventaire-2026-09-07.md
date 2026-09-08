@@ -72,3 +72,13 @@ Les 12 pages portent un `_seopress_titles_title` et un `_seopress_titles_desc`, 
 Balayage des 12 URLs sur le contenu rendu : 0 mention de fabrication, production, atelier partenaire ou « fabriqué en France » ; 0 mention de frais Stripe, PayPal, commission ou droits de douane offerts ; 0 référence au volume global de stock.
 
 ⚠️ **Une exception à connaître pour l'audit KH-707** : `/fr/entreprises/` et `/en/business/` contiennent le mot « Chine » / « China », uniquement parce que le champ **Pays** du formulaire B2B est une liste déroulante ISO qui énumère tous les pays du monde (`<option value='CN'>Chine`). Ce n'est pas du contenu éditorial. Deux options si tu veux un grep parfaitement propre : restreindre la liste des pays du formulaire, ou exclure les balises `<option>` du grep d'audit. Les pages B2G ne sont pas concernées, leur champ « Pays / ville » est un champ texte libre.
+
+### À déployer sur staging (fichier, pas réglage)
+
+`wp/mu-plugins/koino-bcdg-hyphen.php` (nouveau, 2026-09-08) corrige la signature des fiches produits. WordPress applique `wptexturize()` aux titres, et cette fonction convertit « espace tiret espace » en tiret demi-cadratin. Les 34 fiches saisies « … Koinobori - by BCDG » s'affichent donc « … – by BCDG », ce qui contredit la décision Alain du 2026-06-15 (trait d'union simple, jamais de tiret cadratin dans les fiches).
+
+Le mu-plugin réécrit la seule occurrence fautive après coup, en priorité 20 sur `the_title`, `single_post_title` et `document_title_parts`. Il ne désactive pas `wptexturize`, dont le filtre officiel `run_wptexturize` est global et ferait perdre apostrophes typographiques et guillemets français sur tout le site. Il ne touche à aucun autre tiret.
+
+Choix d'un mu-plugin plutôt que `functions.php` : le thème enfant est en cours de réécriture par Manus (PR #12, 65 lignes de `functions.php` modifiées), isoler évite le conflit.
+
+⚠️ **Non déployé, non vérifié sur staging** : la session du 2026-09-08 a perdu l'authentification HTTP du staging avant de pouvoir téléverser le fichier et contrôler le rendu. À faire à la reprise : déposer le fichier dans `wp-content/mu-plugins/`, puis vérifier qu'un titre de fiche affiche bien `- by BCDG` en FR et en EN.
