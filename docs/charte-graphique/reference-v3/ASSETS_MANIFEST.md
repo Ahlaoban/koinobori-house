@@ -6,7 +6,7 @@ Les quatorze fichiers ci-dessous proviennent exclusivement du pack de charte dé
 |---|---:|---|
 | `fond-washi.png` | 2560 × 1440 | Texture globale du site et voile de matière dans la section indigo. |
 | `hero-koinobori.png` | 2560 × 1440 | Fond plein écran du mouvement 02 ; le texte et le cartouche restent en HTML. |
-| `atelier-alain-catherine.png` | 1632 × 2176 | Visuel vertical du mouvement 05. |
+| `atelier-alain-catherine.png` | 1632 × 2176 | 🔴 **NE PAS PUBLIER** (O-4, CLAUDE.md 2026-07-27) : Catherine n'a rien validé. Fichier volontairement non versionné. Le mouvement 05 ouvre avec `apropos-hero.png` du pack v1. |
 | `lifestyle-koi.png` | 2176 × 1632 | Visuel éditorial du mouvement 06. |
 | `arts-ceramique.png` | 2176 × 1632 | Famille Céramique du mouvement 07. |
 | `arts-textile.png` | 2176 × 1632 | Famille Textile du mouvement 07. |

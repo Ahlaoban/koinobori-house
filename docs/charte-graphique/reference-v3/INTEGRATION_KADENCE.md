@@ -8,13 +8,15 @@ Ce document traduit la page de référence en unités directement reconstructibl
 | 02 | `.kh-hero` | Row Layout pleine largeur avec contenu aligné à gauche et image de fond en couverture. | `hero-koinobori.png` |
 | 03 | `.kh-worlds` | Section avec en-tête scindé puis grille de cinq liens/catégories. | Aucun asset obligatoire. |
 | 04 | `.kh-products` | Query Loop WooCommerce ou grille de produits ; chaque carte reçoit `.kh-product-card`. | Trois recadrages produits de référence et `trait-vermillon.png`. |
-| 05 | `.kh-about` | Row Layout deux colonnes, image à gauche et texte à droite. | `atelier-alain-catherine.png` |
+| 05 | `.kh-about` | Row Layout deux colonnes, image à gauche et texte à droite. | 🔴 **NE PAS publier `atelier-alain-catherine.png`** (O-4, cf. note sous le tableau). Utiliser `apropos-hero.png` du pack v1. |
 | 06 | `.kh-lifestyle` | Bloc éditorial deux colonnes suivi d’une liste d’articles. | `lifestyle-koi.png` |
 | 07 | `.kh-living` | Section indigo avec grille de trois familles et voile washi. | `arts-ceramique.png`, `arts-textile.png`, `arts-lampe.png` |
 | 08 | `.kh-manifesto` | Intro éditoriale à gauche, quatre principes numérotés à droite. | `sceau-bcdg.png` |
 | 09 | `.kh-professionals` | Intro puis deux offres : espaces/hospitalité et demandes particulières. | Aucun asset obligatoire. |
 | 10 | `.kh-newsletter` | Formulaire compact sur une ligne ; empilement sur mobile. | Aucun asset obligatoire. |
 | 11 | `.kh-footer` | Footer en deux étages, quatre colonnes légères puis baseline et liens légaux. | Aucun asset obligatoire. |
+
+> 🔴 **Portrait Alain-Catherine, mouvement 05 — interdiction de publication.** CLAUDE.md, défauts posés le 2026-07-27 : « portrait Alain-Catherine non publié tant que Catherine n'a pas validé ». Le fichier n'est versionné nulle part, volontairement. La page L'Atelier ouvre **sans portrait**, avec `apropos-hero.png` du pack v1 (O-8). C'est le seul point de cette référence qui engage une personne réelle n'ayant rien validé. Garde-fou ajouté ici le 2026-09-09 : il n'existait que dans `NOTES-INTEGRATION-CLAUDE.md`, que l'intégrateur n'ouvre pas forcément.
 
 ## Paramétrage des blocs
 
@@ -32,7 +34,14 @@ La référence montre directement l’état ouvert et utilisable : les sept entr
 
 ## Footer Ligne d’horizon V2
 
-Le footer ne doit pas être converti en bloc sombre massif. Le premier étage regroupe quatre colonnes très légères. Le second étage ajoute la baseline « Le Japon à votre horizon », la ligne `© 2026 Koinobori House · Koinobori-house · SIREN 838 329 271` et les liens « CGV · Politique de confidentialité ». La ligne basse doit rester perceptible mais discrète, sans fond coloré plein.
+Le footer ne doit pas être converti en bloc sombre massif. Le premier étage regroupe quatre colonnes très légères. Le second étage porte, à gauche, la ligne `© 2026 Koinobori House · Créations BCDG`, et au centre les **quatre** liens légaux : Mentions légales · CGV · Politique de confidentialité · Gestion des cookies. La ligne basse doit rester perceptible mais discrète, sans fond coloré plein.
+
+> ⚠️ **Corrigé le 2026-09-09 après revue de code.** Cette ligne prescrivait `© 2026 Koinobori House · Koinobori-house · SIREN 838 329 271`, la baseline « Le Japon à votre horizon » et deux liens légaux seulement. Trois erreurs, dont une réglementaire :
+> - Le SIREN **838 329 271 est faux**. Le vrai est **945 241 545, R.C.S. Quimper** ([KH-017](../../lot0/KH-017-documents-legaux/01-mentions-legales-FR.md)). Publier un numéro d'immatriculation erroné sur un site marchand français n'est pas une coquille de maquette.
+> - L'entité s'écrit **Koinobori House**, jamais « Koinobori-house ».
+> - L'arbitrage O-2 impose **quatre** liens légaux au centre, pas deux.
+>
+> La baseline « Le Japon à votre horizon » n'est arbitrée nulle part : elle est retirée ici, à rouvrir avec Alain si elle est voulue.
 
 ## Responsive
 

@@ -120,11 +120,22 @@
               <strong class="kh-world__name">Motifs</strong>
               <span class="kh-world__note">Rythmes géométriques et signes protecteurs.</span>
             </a>
-            <a class="kh-world kh-world--indigo" href="#arts-de-vivre">
+            <!--
+              Corrigé le 2026-09-09 après revue de code. Ce cinquième monde portait
+              « Arts de vivre », en modificateur indigo, ce qui en faisait une sixième
+              collection et faisait disparaître Territoires. Deux règles verrouillées :
+              la taxonomie est figée à 5 collections depuis le 2026-06-18 (Mer · Motifs ·
+              Hanami · Kaïro · Territoires), et l'arbitrage C6 fait d'Arts de vivre une
+              page éditoriale « manifeste / bientôt », sans aucune catégorie WooCommerce.
+              Arts de vivre garde son mouvement propre, le 07.
+              À confirmer par Manus : le kanji 地 (terre, territoire) et la suppression du
+              modificateur indigo, l'indigo étant réservé à Arts de vivre par la charte.
+            -->
+            <a class="kh-world" href="#boutique">
               <span class="kh-world__number">05</span>
-              <span class="kh-world__kanji" lang="ja">暮</span>
-              <strong class="kh-world__name">Arts de vivre</strong>
-              <span class="kh-world__note">Matières choisies pour le quotidien.</span>
+              <span class="kh-world__kanji" lang="ja">地</span>
+              <strong class="kh-world__name">Territoires</strong>
+              <span class="kh-world__note">Régions et drapeaux revisités.</span>
             </a>
           </div>
         </div>
@@ -207,6 +218,14 @@
       <!-- Mouvement 05 : Alain & Catherine. -->
       <section class="kh-movement kh-about" id="atelier" data-movement="05">
         <div class="kh-container kh-about__grid">
+          <!--
+            🔴 NE PAS PUBLIER ce portrait. CLAUDE.md, défauts posés le 2026-07-27 :
+            « portrait Alain-Catherine non publié tant que Catherine n'a pas validé ».
+            Le fichier n'est versionné nulle part, volontairement, et la page L'Atelier
+            ouvre sans portrait, avec apropos-hero.png du pack v1 (O-8).
+            Avertissement ajouté le 2026-09-09 : il n'existait que dans
+            NOTES-INTEGRATION-CLAUDE.md, hors du fichier qu'on lit en premier.
+          -->
           <figure class="kh-about__visual">
             <img
               class="kh-about__image"
@@ -452,14 +471,20 @@
       <div class="kh-horizon">
         <div class="kh-container kh-horizon__inner">
           <a class="kh-horizon__brand" href="#accueil">Koinobori House <span lang="ja">鯉幟</span></a>
-          <nav class="kh-horizon__links" aria-label="Liens de pied de page">
-            <a href="#contact">Contact</a>
-            <a href="#contact">Livraison</a>
+          <!--
+            Corrigé le 2026-09-09 après revue de code. Trois écarts sur la ligne d'horizon :
+            un lien Instagram, alors qu'O-5 exclut tout réseau social au lancement tant que
+            les comptes n'existent pas ; Contact et Livraison au centre, qui appartiennent
+            à la bande services et laissaient la zone centrale à 5 liens mêlés au lieu des
+            4 liens légaux exigés par O-2 ; et un copyright amputé de « Créations BCDG ».
+          -->
+          <nav class="kh-horizon__links" aria-label="Liens légaux">
             <a href="#contact">Mentions légales</a>
-            <a href="#contact">Confidentialité</a>
-            <a href="#contact">Instagram</a>
+            <a href="#contact">CGV</a>
+            <a href="#contact">Politique de confidentialité</a>
+            <a href="#contact">Gestion des cookies</a>
           </nav>
-          <p class="kh-horizon__copyright">© 2026 Koinobori House</p>
+          <p class="kh-horizon__copyright">© 2026 Koinobori House · Créations BCDG</p>
         </div>
       </div>
     </footer>
