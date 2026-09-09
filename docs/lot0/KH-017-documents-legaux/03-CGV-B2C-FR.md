@@ -19,7 +19,6 @@ France
 SIREN : **945 241 545** (RCS Quimper)  
 SIRET : **945 241 545 00017**
 
-Téléphone : **+33 6 07 79 33 03**  
 Email : **contact@koinoborihouse.com**
 
 **TVA non applicable, article 293 B du Code général des impôts.**
@@ -274,7 +273,6 @@ France
 
 Email : **contact@koinoborihouse.com**
 
-Téléphone : **+33 6 07 79 33 03**
 
 Le simple renvoi du produit, sans déclaration préalable exprimant clairement la volonté de se rétracter, ne suffit pas à exercer le droit de rétractation.
 
@@ -432,7 +430,6 @@ Le professionnel répondant de cette garantie est :
 29730 Treffiagat  
 France
 
-Téléphone : **+33 6 07 79 33 03**  
 Email : **contact@koinoborihouse.com**
 
 ### Encadré légal obligatoire
@@ -595,7 +592,6 @@ Pour toute question ou réclamation relative à un produit ou à une commande, l
 29730 Treffiagat  
 France
 
-Téléphone : **+33 6 07 79 33 03**
 
 Email : **contact@koinoborihouse.com**
 

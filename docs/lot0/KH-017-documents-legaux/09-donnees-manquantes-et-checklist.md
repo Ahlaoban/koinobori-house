@@ -14,8 +14,7 @@ Identification vendeur acquise — formulation obligatoire intégrée dans tous 
 Restant :
 
 - [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV art. 11** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV art. 11.
-- [ ] 🔴 Téléphone public : la décision du 2026-07-24 était « pas de numéro ». La CGV v2026-09-07 (rédigée avec ChatGPT, adoptée par Alain) publie **+33 6 07 79 33 03** aux articles 1, 10, 15, 22. **Alain confirme ou retire** ; les mentions légales restent sans téléphone tant que non tranché.
-  ⚠️ **Devenu urgent le 2026-09-07** : les pages 238 et 276 sont en ligne sur staging avec ce numéro. Les deux documents légaux publics donnent donc des canaux de contact différents pour le même vendeur, et un numéro personnel devient indexable. C'est le seul point du corpus qui publie une donnée personnelle avant que son arbitrage ne soit fermé. À trancher dans un sens ou dans l'autre **avant la mise en production**, pas après.
+- [x] ✅ **Téléphone public : tranché le 2026-09-09, aucun numéro publié.** Alain confirme la décision du 2026-07-24 : « on ne garde que l'email dans les CGV comme partout ailleurs ». Les quatre occurrences de **+33 6 07 79 33 03** introduites par la CGV v2026-09-07 sont retirées des articles 1, 10.2, 15 et 22, en FR comme en EN. Le corpus légal est de nouveau homogène : `contact@koinoborihouse.com` est le seul canal publié, dans les CGV comme dans les mentions légales.
 
 ## B. CM2C
 

@@ -21,7 +21,6 @@ France
 SIREN: **945 241 545** (RCS Quimper)  
 SIRET: **945 241 545 00017**
 
-Telephone: **+33 6 07 79 33 03**  
 Email: **contact@koinoborihouse.com**
 
 **VAT not applicable, Article 293 B of the French General Tax Code.**
@@ -276,7 +275,6 @@ France
 
 Email: **contact@koinoborihouse.com**
 
-Telephone: **+33 6 07 79 33 03**
 
 Simply returning the product, without a prior statement clearly expressing the wish to withdraw, is not sufficient to exercise the right of withdrawal.
 
@@ -434,7 +432,6 @@ The trader liable under this guarantee is:
 29730 Treffiagat  
 France
 
-Telephone: **+33 6 07 79 33 03**  
 Email: **contact@koinoborihouse.com**
 
 ### Mandatory legal notice box
@@ -597,7 +594,6 @@ For any question or complaint relating to a product or an order, the Customer ma
 29730 Treffiagat  
 France
 
-Telephone: **+33 6 07 79 33 03**
 
 Email: **contact@koinoborihouse.com**
 
