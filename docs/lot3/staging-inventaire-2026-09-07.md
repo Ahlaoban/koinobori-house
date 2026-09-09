@@ -109,11 +109,37 @@ Contenu conforme à [homepage-v2-11-mouvements-FR-EN.md](homepage-v2-11-mouvemen
 
 **Tenté sans effet** : vidage des permaliens à deux reprises, aller-retour complet du réglage de lecture par le formulaire (articles récents, enregistrer, page statique, enregistrer) pour forcer le déclenchement des hooks `update_option`.
 
-**Pistes pour la reprise, par ordre de vraisemblance** :
+> 🔄 **Diagnostic révisé le 2026-09-09. La piste ci-dessous était fausse, je la laisse barrée pour que personne ne la reprenne.**
+>
+> ~~1. Le mu-plugin KH-107 s'exécute avant Polylang et appelle `home_url()`. Le renommer en `.php.off` par FTP tranche en une minute.~~
+>
+> **Réfuté par lecture du fichier**, qui était sur le disque depuis le début : `wp/mu-plugins/koino-lang-redirect.php` n'enregistre **aucun hook** (0 `add_filter`, 0 `add_action`) et sort immédiatement dès que le chemin demandé diffère de la racine. Il ne peut pas influencer la réécriture de `/fr/`. Le test par FTP aurait coûté une récupération d'accès pour une réponse déjà disponible.
 
-1. **Le mu-plugin KH-107 s'exécute avant Polylang** et appelle `home_url()` à ce moment-là. Son gate KH-104b a été validé alors que `show_on_front` valait `posts` : sa cohabitation avec une page d'accueil statique n'a **jamais** été testée. Le renommer temporairement en `.php.off` par FTP et recharger `/fr/` tranche la question en une minute.
-2. Un `home.php` ou `front-page.php` résiduel dans le zip du thème enfant déployé, qui ne figure pas dans le dépôt.
-3. Un conflit de règles de réécriture avec Polylang for WooCommerce sur la langue racine.
+**Ce que la preuve dit réellement**
+
+Le corps des pages `/fr/` et `/en/` porte `class="home blog"`. Le cœur de WordPress n'émet ces deux classes ensemble que dans un cas : `is_front_page()` et `is_home()` vrais simultanément, ce qui n'arrive que par la première branche de `is_front_page()`, celle qui teste `'posts' === get_option( 'show_on_front' )`.
+
+Autrement dit, **à l'exécution sur ces URL, `show_on_front` vaut `posts`**, alors que la base de données et le formulaire d'administration disent tous deux `page` avec `page_on_front = 318`. L'écart entre la valeur stockée et la valeur lue à l'exécution ne peut venir que d'un filtre sur l'option.
+
+**Piste n°1 révisée : la couche pages statiques de Polylang**
+
+`PLL_Static_Pages` filtre `option_show_on_front` et renvoie `posts` lorsqu'il n'arrive pas à résoudre la page d'accueil **pour la langue courante**. Le symptôme correspond exactement. Polylang porte `page_on_front` sur ses objets langue, construits puis mis en cache.
+
+Or le réglage a d'abord été posé **par REST**, hors contexte d'administration : la classe `PLL_Admin_Static_Pages`, qui nettoie ce cache quand l'option change, n'était pas chargée. Le formulaire a ensuite été enregistré avec la même valeur, donc `update_option` n'a rien changé et le hook n'a pas tiré non plus.
+
+**Contre-indice à lever en premier** : `/fr/accueil/` semblait rediriger vers `/fr/`, ce que Polylang ne ferait pas s'il ignorait la page d'accueil. Cette observation vient de la barre d'adresse, elle n'a jamais été vérifiée proprement. À trancher par un `fetch` avec `redirect: 'manual'` avant tout le reste.
+
+**Actions à tenter, dans cet ordre, toutes depuis wp-admin, aucune par FTP**
+
+1. Vérifier la redirection de `/fr/accueil/` en lecture seule, statut et en-tête `Location`.
+2. Réglages → Lecture : choisir **une autre page** comme page d'accueil, enregistrer, puis revenir à 318 et enregistrer. Contrairement à l'aller-retour articles/page déjà tenté, cela change réellement la **valeur** de `page_on_front` et déclenche le nettoyage du cache des langues côté Polylang.
+3. Si cela ne suffit pas, forcer la reconstruction du cache des langues : Langues → survoler la ligne Français → Modifier → enregistrer sans rien changer.
+4. En dernier recours seulement, supprimer le transient `pll_languages_list`, ce qui demande un accès base ou WP-CLI.
+
+**Pistes secondaires, si la précédente tombe**
+
+- Un `home.php` ou `front-page.php` résiduel dans le zip du thème enfant déployé, absent du dépôt.
+- Un conflit de règles de réécriture avec Polylang for WooCommerce sur la langue racine.
 
 En attendant, **aucune régression** : la page d'accueil affichait déjà l'index de blog avant cette session. Le contenu est prêt et n'attend que la résolution du routage.
 
@@ -169,3 +195,20 @@ Pages **238** `/fr/conditions-generales-de-vente/` et **276** `/en/terms-and-con
 | `/en/terms-and-conditions/` | **1** | 27 | 16 | 0 | ✅ | ✅ | ✅ |
 
 ⚠️ **Correction d'un constat de la revue.** La revue avait relevé 28 titres de niveau 1 et prédit qu'un collage vers Gutenberg produirait 28 balises `h1` par page. Vérification faite en base : les pages ne portaient **aucun** `h1`, le collage du 2026-09-07 ayant déjà rétrogradé les niveaux. Le défaut était réel dans le fichier markdown, corrigé lui aussi, mais il n'avait jamais atteint les pages. L'unique `h1` visible est celui que le thème émet pour le titre de la page, ce qui est le comportement attendu.
+
+---
+
+## Session du 2026-09-09, tentative de résolution de l'anomalie
+
+Investigation interrompue : l'**authentification HTTP de staging est retombée** en cours de session, pour la deuxième fois de la journée. Symptôme constant : le corps de la page revient vide et `fetch` échoue, alors que le serveur répond bien un 401 et que la production charge normalement. Seul Alain peut ressaisir ce mot de passe.
+
+**Ce qui a été établi avant la coupure**, et qui n'est pas à refaire :
+
+- La langue par défaut est bien le **français** (« Langue par défaut » sur la ligne FR, l'anglais proposant « Choisir English comme langue par défaut »). Conforme à la doctrine.
+- Le module **« Détecter la langue du navigateur » de Polylang est désactivé**, ce qui est conforme : la redirection de la racine appartient au mu-plugin KH-107. Ce n'est donc pas la cause.
+- La piste KH-107 est **réfutée**, cf. la section précédente.
+- Le diagnostic est resserré sur la couche pages statiques de Polylang, avec un contre-indice à lever d'abord.
+
+**Ce qui n'a pas pu être tenté** : l'aller-retour sur la valeur de `page_on_front` et la reconstruction du cache des langues, faute d'accès.
+
+⚠️ Deux impasses d'interface relevées au passage, pour ne pas les refaire : cliquer le nom de la langue dans la liste ouvre la fiche et non le formulaire d'édition, et l'URL `admin.php?page=mlang&pll_action=edit&lang=5` ne charge pas le formulaire attendu. Le bon chemin est le lien **Modifier** qui apparaît au survol de la ligne. Attention aussi à ne pas confondre ce formulaire avec celui d'ajout d'une langue, qui occupe la même colonne.
