@@ -147,3 +147,25 @@ Une sauvegarde protège staging ; elle ne transporte rien vers la prod. Restent 
 - un relevé de ce qui est réellement déployé où, personne ne pouvant dire aujourd'hui si KH-107 tourne en production.
 
 ⚠️ Ces exports produisent des fichiers téléchargés, ce qu'une session Claude ne fait pas sans ton accord explicite. À lancer par toi depuis `Outils → Exporter` et `Fluent Forms → Outils → Export`, ou à me demander en donnant le feu vert.
+
+---
+
+## CGV recollées sur staging le 2026-09-09
+
+Pages **238** `/fr/conditions-generales-de-vente/` et **276** `/en/terms-and-conditions/` mises à jour depuis les fichiers corrigés, par modification chirurgicale plutôt que par recollage intégral : les pages avaient été montées depuis ces mêmes sources, l'écart se limitait donc à quatre points.
+
+| Changement | FR | EN |
+|---|---|---|
+| Téléphone retiré (arbitrage Alain du 2026-09-09, email seul canal) | 4 occurrences | 4 occurrences |
+| Clause d'exclusion de remboursement des droits de douane, article 13 | ajoutée | ajoutée |
+| Article 14.1, validation visuelle et bon à tirer | ajouté | ajouté |
+| Délais de livraison chiffrés et renvoi à L. 216-1, article 8.4 | ajoutés | ajoutés |
+
+**Contrôle du rendu public, après purge LiteSpeed**, identique dans les deux langues :
+
+| | h1 | h2 | h3 | téléphone | douane | bon à tirer | délais |
+|---|---:|---:|---:|---:|---|---|---|
+| `/fr/conditions-generales-de-vente/` | **1** | 27 | 16 | 0 | ✅ | ✅ | ✅ |
+| `/en/terms-and-conditions/` | **1** | 27 | 16 | 0 | ✅ | ✅ | ✅ |
+
+⚠️ **Correction d'un constat de la revue.** La revue avait relevé 28 titres de niveau 1 et prédit qu'un collage vers Gutenberg produirait 28 balises `h1` par page. Vérification faite en base : les pages ne portaient **aucun** `h1`, le collage du 2026-09-07 ayant déjà rétrogradé les niveaux. Le défaut était réel dans le fichier markdown, corrigé lui aussi, mais il n'avait jamais atteint les pages. L'unique `h1` visible est celui que le thème émet pour le titre de la page, ce qui est le comportement attendu.
