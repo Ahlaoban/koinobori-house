@@ -299,3 +299,25 @@ FR + EN uniquement. Pas `/de/`, `/es/`, `/it/` au MVP. Racine `/` fallback `/en/
 ## Statut document
 
 Schéma KH-010 gelé 2026-05-28. Toute modification structure (colonnes, convention SKU, règles product_type, workflow Polylang) requiert nouveau ticket de revue avant import production.
+
+## Balayage doctrine du 2026-09-09 (revue de code PR #13)
+
+`master.csv` n'avait jamais été balayé après les décisions de juin. Quatre corrections appliquées :
+
+| Violation | Occurrences | Correction |
+|---|---:|---|
+| Bloc « Produit par un atelier partenaire selon les fichiers et spécifications BCDG. » en `long_desc_fr` | 7 | Bloc supprimé. La règle 2 blocs du 2026-06-18 a retiré ce bloc de transparence production partout ailleurs, jamais ici |
+| Bloc « Produced by a partner workshop according to BCDG files and specifications. » en `long_desc_en` | 7 | Idem |
+| Signature `— by BCDG` au tiret cadratin | 6 | Passée au trait d'union simple `- by BCDG` (décision Alain 2026-06-15) |
+| Cadratin dans les noms d'épisodes Kaïro, FR et EN | 8 | Passé aux deux-points : `Kaïro des Vents Rouges : La Promesse de la Mer` |
+
+⚠️ **Pourquoi les deux-points et non un trait d'union pour Kaïro.** Remplacer `—` par ` - ` aurait recréé le défaut : `wptexturize()` reconvertit tout « espace tiret espace » en tiret demi-cadratin à l'affichage. Le mu-plugin `koino-bcdg-hyphen.php` ne rattrape que la signature BCDG, pas les titres d'épisodes. Les deux-points ne subissent aucune transformation. Le choix du caractère reste éditorial : à rouvrir avec Alain s'il préfère une virgule.
+
+### État de ce fichier par rapport au catalogue en ligne
+
+`master.csv` est **en retard** sur la base WordPress, et sur deux plans :
+
+- il porte encore les anciens codes SKU `EDS`, `OKU`, `BRE`, alors que la taxonomie figée le 2026-06-18 impose `MER`, `MOT`, `HAN`, `KAI`, `TER` (conflit connu, ticket de recodage jamais ouvert) ;
+- ses noms d'épisodes Kaïro portaient des cadratins que la base n'a pas : vérification du 2026-09-09, **0 produit sur 35 en base** ne contient de cadratin ni de demi-cadratin dans son nom.
+
+Autrement dit, les fiches en ligne sont propres et ce fichier ne l'était pas. Le risque n'était donc pas l'affichage actuel, mais une **réimportation** qui aurait réintroduit la mention d'atelier et les cadratins d'un seul coup.
