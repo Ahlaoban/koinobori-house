@@ -116,3 +116,34 @@ Contenu conforme à [homepage-v2-11-mouvements-FR-EN.md](homepage-v2-11-mouvemen
 3. Un conflit de règles de réécriture avec Polylang for WooCommerce sur la langue racine.
 
 En attendant, **aucune régression** : la page d'accueil affichait déjà l'index de blog avant cette session. Le contenu est prêt et n'attend que la résolution du routage.
+
+---
+
+## Sauvegarde de staging — vérifiée et renforcée le 2026-09-09
+
+`docs/lot1/KH-102-sauvegardes.md` affirmait que staging n'était **pas couvert** par UpdraftPlus, décision du 2026-06-12 quand l'environnement était vide. La revue de code du 2026-09-09 en avait tiré son constat le plus grave : le Lot 3 vivrait sans filet. **Vérification faite sur le site, c'est faux.**
+
+État réel de l'écran UpdraftPlus de staging, toutes les archives portant l'icône Google Drive :
+
+| Date | Contenu |
+|---|---|
+| 09/09 17h57 | **Complète** : base, extensions, thèmes, téléversements, mu-plugins, autres. Déclenchée manuellement, **rétention manuelle** activée |
+| 09/09, 08/09, 07/09, 06/09, 04/09 à 9h30 | Base de données |
+| 05/09 9h30, 03/09 17h04, 29/08 9h30 | Complètes |
+
+Planification active : base le jeudi, fichiers le samedi. Le travail du Lot 3 des 07 et 08 septembre était donc déjà couvert par les sauvegardes quotidiennes de base.
+
+**Ce qui reste vrai du constat, et qui compte** : staging n'est plus un environnement jetable. Il détient l'unique copie des 26 pages, des 8 formulaires, des 2 menus, des métadonnées SEO et des appariements Polylang. Le clonage **prod vers staging**, exécuté deux fois en juin et documenté comme la procédure normale, effacerait tout. Ne plus le lancer par réflexe.
+
+La sauvegarde du 09/09 17h57 est le **point de restauration de référence** de l'état Lot 3, protégée de la rotation.
+
+### Ce qui n'est toujours pas rejouable en production
+
+Une sauvegarde protège staging ; elle ne transporte rien vers la prod. Restent à produire, et ce n'est pas fait :
+
+- un export WXR des pages et des menus, ou un script de recréation ;
+- l'export JSON des 8 formulaires Fluent Forms, dont les définitions de champs n'existent nulle part dans le dépôt ;
+- une procédure de déploiement de `wp/mu-plugins/` et `wp/themes/`, aujourd'hui éclatée dans deux tickets du Lot 1 et jamais généralisée ;
+- un relevé de ce qui est réellement déployé où, personne ne pouvant dire aujourd'hui si KH-107 tourne en production.
+
+⚠️ Ces exports produisent des fichiers téléchargés, ce qu'une session Claude ne fait pas sans ton accord explicite. À lancer par toi depuis `Outils → Exporter` et `Fluent Forms → Outils → Export`, ou à me demander en donnant le feu vert.
