@@ -22,7 +22,7 @@ Résumé de reprise (20 lignes max) :
 8. KH-012 shipping = décision verrouillée ; KH-015 USA = checkout auto non activé.
 9. Secrets (Stripe/PayPal/Brevo) vivent **hors repo** (gestionnaire de mots de passe).
 10. **Règle d'or** : proposer un plan avant toute modification ; aucun secret dans le repo.
-11. Ne jamais mentionner la Chine publiquement (production/atelier/fournisseur/fabrication).
+11. Ne **jamais** mentionner la Chine publiquement, **dans aucun contexte, sans aucune exception** (arbitrage Alain 2026-09-08). Ni production, atelier, fournisseur ou fabrication, ni pays ou culture. Référent culturel unique : le Japon.
 12. **Aucune mention atelier/production sur les fiches** (FR+EN, rév. 2026-06-18). « atelier partenaire » autorisé seulement *hors fiches* ; jamais « atelier chinois ».
 13. Jamais de mention de stock global ; stock par SKU uniquement.
 14. « US Flag » = nom fournisseur interne ; public = « Stars & Stripes Koinobori — by BCDG ».

@@ -143,7 +143,7 @@ Exprimer origine du projet, réinvention et exception. Fond washi, cartouche 鯉
 
 > Un koinobori est une carpe de vent : suspendue, elle prend vie au moindre souffle. Koinobori House édite des designs originaux, signés BCDG et tirés en petites séries. Entre tradition japonaise et création contemporaine, chaque pièce est pensée pour vivre dehors comme dedans, au vent du jardin ou dans la lumière d'un salon.
 >
-> Koinobori House est la maison d'édition de ces carpes ; BCDG, l'entreprise créative créée par Alain Herbinière, en est la signature.
+> Koinobori House est la maison d'édition de ces carpes ; BCDG, la signature créative d'Alain Herbinière, en est le regard.
 
 - **Lien discret** : L'univers de la maison → `/fr/atelier/`
 
@@ -151,7 +151,7 @@ Exprimer origine du projet, réinvention et exception. Fond washi, cartouche 鯉
 
 > A koinobori is a wind carp: once hung, it comes alive with the faintest breeze. Koinobori House publishes original designs, signed by BCDG and released in small series. Between Japanese tradition and contemporary creation, each piece is designed to live outdoors and indoors alike, in the wind of a garden or the light of a living room.
 >
-> Koinobori House is the house that publishes these carps; BCDG, the creative company founded by Alain Herbinière, is their signature.
+> Koinobori House is the house that publishes these carps; BCDG, the creative signature of Alain Herbinière, is the eye behind them.
 
 - **Discreet link**: The world of the house → `/en/the-house/`
 
@@ -209,7 +209,7 @@ La v2.0 ne lui en donne aucun. Son contenu se répartit ainsi (O-1) : Livraison,
 
 | FR | EN |
 |---|---|
-| Livraison offerte en France dès 55 € | Free delivery in France over 55 € |
+| Livraison offerte en France métropolitaine dès 55 € | Free delivery in metropolitan France from 55 € |
 | Retours sous 14 jours | 14-day returns |
 | Petites séries signées BCDG | Small series signed by BCDG |
 | Une question ? contact@koinoborihouse.com | A question? contact@koinoborihouse.com |
@@ -235,3 +235,5 @@ Les descriptions v1 mentionnaient « Livraison offerte en France dès 55 € ».
 2. **Mouvement 10** : newsletter tenue hors ligne tant que Brevo n'est pas connecté. Confirmer qu'on la pose seulement après.
 3. **Footer** : divergence entre la bande de réassurance à 4 colonnes de Manus et la bande de 3 groupes de liens d'O-1.
 4. **Mouvement 8** : le manifeste nomme Alain Herbinière. C'était déjà le cas en v1, mais cela n'a jamais été explicitement validé pour publication.
+5. 🔴 **Contradiction sur l'identité de BCDG dans le corpus public, à trancher.** Le manifeste disait « BCDG, **l'entreprise créative** créée par Alain Herbinière », pendant que les CGV article 1 disent « BCDG **ne constitue pas une entité juridique distincte** du vendeur ». Corrigé ici le 2026-09-09 en « la signature créative d'Alain Herbinière », conforme à CLAUDE.md §Identité marque, qui ne définit BCDG que comme une signature apposée sur les produits.
+   ⚠️ **Mais la même formulation subsiste dans les mentions légales** (`01-mentions-legales-FR.md`, lignes 5 et 35), où la checklist KH-017 §A la qualifie de « formulation obligatoire ». Je ne l'ai pas touchée : c'est un texte légal validé à la clôture de KH-017, et le corriger relève de ton arbitrage, pas d'une revue de code. Les deux formulations ne peuvent pas rester côte à côte en public.

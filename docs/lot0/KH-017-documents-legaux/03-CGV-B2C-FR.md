@@ -7,7 +7,7 @@ Les présentes Conditions générales de vente régissent les ventes réalisées
 
 ---
 
-# Article 1 - Identité du vendeur
+## Article 1 - Identité du vendeur
 
 Le site **koinoborihouse.com**, ci-après dénommé « le Site », est exploité sous le nom commercial **Koinobori House** par :
 
@@ -30,7 +30,7 @@ Koinobori House est la maison de vente et l'identité commerciale du Site.
 
 ---
 
-# Article 2 - Objet et champ d'application
+## Article 2 - Objet et champ d'application
 
 Les présentes Conditions générales de vente, ci-après « CGV », définissent les droits et obligations de Koinobori House et de ses clients consommateurs dans le cadre de la vente à distance de produits proposés sur le Site.
 
@@ -44,7 +44,7 @@ Le Client reconnaît en avoir pris connaissance avant la validation de sa comman
 
 La version applicable est celle en vigueur au moment de la commande.
 
-## Clients professionnels
+### Clients professionnels
 
 Les demandes effectuées par des entreprises, collectivités, institutions ou autres professionnels par l'intermédiaire des pages Entreprises ou Collectivités ne constituent pas automatiquement des commandes soumises aux présentes CGV B2C.
 
@@ -52,7 +52,7 @@ Les créations spécifiques, séries personnalisées et projets professionnels f
 
 ---
 
-# Article 3 - Produits
+## Article 3 - Produits
 
 Les caractéristiques essentielles des produits sont présentées sur leurs fiches respectives.
 
@@ -79,7 +79,7 @@ Les produits identifiés par la mention **« by BCDG »** sont des créations ou
 
 ---
 
-# Article 4 - Disponibilité
+## Article 4 - Disponibilité
 
 Les produits sont proposés dans la limite des stocks disponibles.
 
@@ -99,7 +99,7 @@ Aucun produit de remplacement ne sera imposé au Client.
 
 ---
 
-# Article 5 - Prix
+## Article 5 - Prix
 
 Les prix sont indiqués en **euros**.
 
@@ -121,7 +121,7 @@ Pour certaines livraisons en dehors de l'Union européenne, des droits de douane
 
 ---
 
-# Article 6 - Processus de commande
+## Article 6 - Processus de commande
 
 Le Client sélectionne les produits qu'il souhaite acheter et les ajoute à son panier.
 
@@ -150,7 +150,7 @@ Le Client est invité à conserver cette confirmation.
 
 ---
 
-# Article 7 - Paiement
+## Article 7 - Paiement
 
 Le paiement est exigible au moment de la commande, sauf condition particulière expressément proposée sur le Site.
 
@@ -173,9 +173,9 @@ En cas de refus ou d'échec du paiement, la commande ne pourra pas être finalis
 
 ---
 
-# Article 8 - Livraison
+## Article 8 - Livraison
 
-## 8.1 Destinations
+### 8.1 Destinations
 
 Les destinations vers lesquelles une commande peut être passée directement sont celles proposées au Client lors du checkout.
 
@@ -183,39 +183,45 @@ Certaines destinations peuvent nécessiter une demande préalable à Koinobori H
 
 Les informations actualisées relatives aux zones desservies et aux modes d'expédition figurent sur la page **Livraison** du Site.
 
-## 8.2 Modes de livraison
+### 8.2 Modes de livraison
 
 Selon la destination, le format du produit et les options disponibles, différents services de transport peuvent être proposés.
 
 Le mode de livraison effectivement choisi et son coût sont indiqués avant la validation définitive de la commande.
 
-## 8.3 Adresse de livraison
+### 8.3 Adresse de livraison
 
 Le Client doit fournir une adresse complète et exacte.
 
 En cas d'erreur d'adresse imputable au Client entraînant le retour ou la réexpédition d'un colis, les frais supplémentaires réellement occasionnés peuvent lui être facturés avant une nouvelle expédition.
 
-## 8.4 Délais
+### 8.4 Délais
 
-Le délai ou la date de livraison applicable est indiqué au Client avant la conclusion de la commande lorsqu'il peut être déterminé.
+Le délai ou la date de livraison applicable est indiqué au Client avant la conclusion de la commande.
+
+Les délais indicatifs, comptés en jours ouvrés à compter de l'expédition et hors délai de préparation de la commande, sont les suivants :
+
+- France métropolitaine : 2 jours ouvrables ;
+- Union européenne : 3 à 8 jours ouvrés selon le pays ;
+- États-Unis : 5 à 10 jours ouvrés, hors durée de traitement douanier.
 
 Les délais annoncés par les transporteurs après expédition sont des estimations lorsqu'ils ne dépendent pas directement de Koinobori House.
 
-À défaut de date ou de délai convenu, Koinobori House livre la commande sans retard injustifié et au plus tard dans le délai légal applicable.
+À défaut de date ou de délai convenu, Koinobori House livre la commande sans retard injustifié et au plus tard trente jours après la conclusion du contrat, conformément à l'article L. 216-1 du Code de la consommation.
 
-## 8.5 Retard de livraison
+### 8.5 Retard de livraison
 
 En cas de retard significatif, le Client est invité à contacter Koinobori House.
 
 Les droits du consommateur en cas de retard ou d'absence de livraison restent ceux prévus par le Code de la consommation.
 
-## 8.6 Transfert des risques
+### 8.6 Transfert des risques
 
 Le risque de perte ou d'endommagement du produit est transféré au consommateur lorsqu'il prend physiquement possession du bien, ou lorsqu'un tiers qu'il a désigné, autre que le transporteur, en prend possession.
 
 ---
 
-# Article 9 - Réception de la commande
+## Article 9 - Réception de la commande
 
 Le Client est invité à contrôler l'état de son colis et des produits dès leur réception.
 
@@ -240,9 +246,9 @@ L'absence de réserves formulées auprès du transporteur lors de la réception 
 
 ---
 
-# Article 10 - Droit de rétractation
+## Article 10 - Droit de rétractation
 
-## 10.1 Principe
+### 10.1 Principe
 
 Sous réserve des exceptions prévues par la loi, le consommateur dispose d'un délai de **14 jours** pour exercer son droit de rétractation sans avoir à motiver sa décision.
 
@@ -250,7 +256,7 @@ Pour un contrat de vente de biens, ce délai court à compter du jour où le Cli
 
 Lorsque plusieurs biens d'une même commande sont livrés séparément, le délai applicable est déterminé conformément aux règles prévues par le Code de la consommation.
 
-## 10.2 Comment exercer le droit de rétractation
+### 10.2 Comment exercer le droit de rétractation
 
 Le Client peut notifier sa décision de se rétracter :
 
@@ -272,7 +278,7 @@ Téléphone : **+33 6 07 79 33 03**
 
 Le simple renvoi du produit, sans déclaration préalable exprimant clairement la volonté de se rétracter, ne suffit pas à exercer le droit de rétractation.
 
-## 10.3 Fonctionnalité de rétractation en ligne
+### 10.3 Fonctionnalité de rétractation en ligne
 
 Pour les commandes conclues en ligne et bénéficiant du droit de rétractation, le Site met à disposition une fonctionnalité gratuite, visible et facilement accessible permettant d'exercer ce droit directement en ligne.
 
@@ -289,7 +295,7 @@ Après son envoi, Koinobori House transmet sans délai au Client un accusé de r
 
 ---
 
-# Article 11 - Retour après rétractation
+## Article 11 - Retour après rétractation
 
 Après avoir notifié sa décision de rétractation, le Client dispose de **14 jours** pour renvoyer le produit.
 
@@ -297,14 +303,14 @@ Afin d'assurer le bon traitement du retour, Koinobori House communique au Client
 
 Selon les circonstances, les retours sont traités à l'une des deux adresses suivantes :
 
-### Adresse de retour possible 1
+#### Adresse de retour possible 1
 
 **Koinobori House**  
 1 rue du Marais  
 29730 Treffiagat  
 France
 
-### Adresse de retour possible 2
+#### Adresse de retour possible 2
 
 **Koinobori House**  
 46 ruelle de l'Église  
@@ -329,7 +335,7 @@ Le Client doit emballer le produit de manière adaptée afin de permettre son tr
 
 ---
 
-# Article 12 - État des produits retournés
+## Article 12 - État des produits retournés
 
 Le droit de rétractation permet au consommateur d'examiner le produit dans une mesure comparable à ce qui serait raisonnablement nécessaire pour en établir la nature, les caractéristiques et le bon fonctionnement.
 
@@ -348,7 +354,7 @@ L'absence de l'emballage d'origine ne peut, à elle seule, supprimer un droit de
 
 ---
 
-# Article 13 - Remboursement après rétractation
+## Article 13 - Remboursement après rétractation
 
 Lorsque le droit de rétractation est valablement exercé, Koinobori House rembourse les sommes dues au Client dans les conditions prévues par la loi.
 
@@ -367,9 +373,11 @@ la première de ces dates étant retenue.
 
 Le remboursement est effectué en utilisant le même moyen de paiement que celui utilisé lors de la commande, sauf accord exprès du Client pour un autre moyen ne lui occasionnant aucun frais supplémentaire.
 
+Les droits de douane, taxes d'importation ou frais administratifs éventuellement facturés par les autorités locales ou les transporteurs pour les livraisons hors Union européenne ne sont pas remboursés par Koinobori House, sauf lorsque ces frais résultent d'une erreur qui lui est imputable. Lorsque ces droits et taxes ont été acquittés par avance par Koinobori House et refacturés au Client au sein des frais d'expédition, ils ne constituent pas des frais de livraison remboursables au sens du présent article, car ils ne sont pas récupérables auprès des autorités concernées.
+
 ---
 
-# Article 14 - Exceptions au droit de rétractation
+## Article 14 - Exceptions au droit de rétractation
 
 Le droit de rétractation ne s'applique pas dans les cas prévus par le Code de la consommation.
 
@@ -391,9 +399,21 @@ En revanche, le fait qu'un produit standard soit préparé ou réalisé après r
 
 Lorsqu'un produit est effectivement exclu du droit de rétractation en raison de sa personnalisation, cette information est indiquée clairement au Client avant qu'il ne confirme sa commande.
 
+### 14.1 Validation visuelle des produits personnalisés
+
+Une commande personnalisée fait l'objet d'un échange préalable. Koinobori House adresse au Client un devis et, lorsque le projet le justifie, une ou plusieurs propositions visuelles.
+
+Le périmètre de la commande est défini par le devis accepté et par la dernière proposition visuelle validée par écrit par le Client, ci-après le bon à tirer.
+
+La réalisation du produit ne commence qu'après confirmation écrite du bon à tirer par le Client. Cette confirmation vaut acceptation du visuel, des dimensions, des couleurs et des mentions qui y figurent.
+
+Toute modification demandée après confirmation du bon à tirer peut donner lieu à un nouveau devis et à un nouveau délai.
+
+C'est à compter de la confirmation du bon à tirer que le produit est réputé nettement personnalisé au sens de l'article 14, et donc exclu du droit de rétractation. Cette conséquence est rappelée au Client au moment où il confirme.
+
 ---
 
-# Article 15 - Garantie légale de conformité
+## Article 15 - Garantie légale de conformité
 
 Koinobori House répond des défauts de conformité des produits dans les conditions prévues par les articles L.217-3 et suivants du Code de la consommation.
 
@@ -415,7 +435,7 @@ France
 Téléphone : **+33 6 07 79 33 03**  
 Email : **contact@koinoborihouse.com**
 
-## Encadré légal obligatoire
+### Encadré légal obligatoire
 
 *Encadré prévu par l'article D. 211-2 du Code de la consommation, reproduit ci-dessous conformément au modèle figurant en annexe à cet article, dans sa version en vigueur depuis le 1er octobre 2022. À afficher dans un cadre distinct sur la page.*
 
@@ -457,7 +477,7 @@ Cet encadré réglementaire fait partie intégrante des présentes CGV.
 
 ---
 
-# Article 16 - Garantie des vices cachés
+## Article 16 - Garantie des vices cachés
 
 Indépendamment de la garantie légale de conformité, le Client bénéficie de la garantie légale des vices cachés prévue par les articles 1641 et suivants du Code civil.
 
@@ -473,7 +493,7 @@ Pour toute demande :
 
 ---
 
-# Article 17 - Utilisation des produits
+## Article 17 - Utilisation des produits
 
 Les koinobori sont des objets conçus pour être suspendus et, selon les modèles et usages indiqués, exposés au mouvement de l'air.
 
@@ -499,7 +519,7 @@ Aucune disposition du présent article ne limite les garanties légales du conso
 
 ---
 
-# Article 18 - Responsabilité
+## Article 18 - Responsabilité
 
 Koinobori House est responsable de la bonne exécution de ses obligations conformément aux dispositions légales applicables.
 
@@ -513,7 +533,7 @@ Aucune clause des présentes CGV n'a pour effet d'exclure ou de limiter les droi
 
 ---
 
-# Article 19 - Force majeure
+## Article 19 - Force majeure
 
 La responsabilité d'une partie ne peut être engagée lorsque l'inexécution de son obligation résulte d'un événement répondant aux critères légaux de la force majeure.
 
@@ -521,7 +541,7 @@ Lorsque l'empêchement est temporaire, l'exécution de l'obligation peut être s
 
 ---
 
-# Article 20 - Propriété intellectuelle
+## Article 20 - Propriété intellectuelle
 
 Le Site, sa direction artistique, ses textes, photographies, illustrations, dessins, graphismes, logos, créations visuelles et autres éléments protégés restent soumis aux droits de propriété intellectuelle de leurs titulaires respectifs.
 
@@ -540,7 +560,7 @@ Les utilisations autorisées par la loi restent naturellement réservées.
 
 ---
 
-# Article 21 - Données personnelles
+## Article 21 - Données personnelles
 
 Les données personnelles collectées lors d'une commande sont utilisées notamment pour :
 
@@ -566,7 +586,7 @@ Les prestataires de paiement, de livraison ou techniques ne reçoivent que les i
 
 ---
 
-# Article 22 - Réclamations
+## Article 22 - Réclamations
 
 Pour toute question ou réclamation relative à un produit ou à une commande, le Client peut contacter Koinobori House :
 
@@ -583,7 +603,7 @@ Koinobori House s'efforcera de rechercher une solution amiable.
 
 ---
 
-# Article 23 - Médiation de la consommation
+## Article 23 - Médiation de la consommation
 
 En cas de litige, le consommateur doit d'abord adresser une réclamation à Koinobori House afin de tenter de résoudre le différend directement.
 
@@ -607,7 +627,7 @@ Le recours à la médiation est gratuit pour le consommateur dans les conditions
 
 ---
 
-# Article 24 - Droit applicable et litiges
+## Article 24 - Droit applicable et litiges
 
 Les présentes CGV sont régies par le droit français.
 
@@ -623,7 +643,7 @@ Aucune disposition des présentes CGV n'impose au consommateur de saisir exclusi
 
 ---
 
-# Article 25 - Langue
+## Article 25 - Langue
 
 Le Site est disponible en français et en anglais.
 
@@ -635,7 +655,7 @@ Cette règle ne saurait toutefois priver un consommateur résidant dans un autre
 
 ---
 
-# Article 26 - Modification des CGV
+## Article 26 - Modification des CGV
 
 Koinobori House peut modifier les présentes CGV afin de tenir compte notamment :
 
@@ -652,13 +672,13 @@ Chaque version publiée est datée.
 
 ---
 
-# ANNEXE 1 - FORMULAIRE TYPE DE RÉTRACTATION
+## ANNEXE 1 - FORMULAIRE TYPE DE RÉTRACTATION
 
 Ce formulaire peut être utilisé pour exercer le droit de rétractation lorsqu'il est applicable.
 
 Il n'est pas obligatoire d'utiliser ce formulaire : toute déclaration claire exprimant sans ambiguïté la volonté de se rétracter peut également être utilisée.
 
-## Destinataire
+### Destinataire
 
 **Koinobori House**  
 Alain Herbinière EI  
@@ -716,7 +736,7 @@ Signature uniquement si le présent formulaire est adressé sur papier.
 
 ---
 
-## Retour physique du produit
+### Retour physique du produit
 
 Après réception de la demande de rétractation, Koinobori House communique au Client **l'adresse de retour à utiliser pour la commande concernée**.
 

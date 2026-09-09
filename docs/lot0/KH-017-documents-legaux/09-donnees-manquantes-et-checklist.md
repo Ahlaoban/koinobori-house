@@ -13,8 +13,9 @@ Identification vendeur acquise — formulation obligatoire intégrée dans tous 
 
 Restant :
 
-- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV §8.2** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV §8.2.
-- [ ] Téléphone public : la décision du 2026-07-24 était « pas de numéro ». La CGV v2026-09-07 (rédigée avec ChatGPT, adoptée par Alain) publie **+33 6 07 79 33 03** aux articles 1, 10, 15, 22. **Alain confirme ou retire** ; les mentions légales restent sans téléphone tant que non tranché.
+- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV art. 11** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV art. 11.
+- [ ] 🔴 Téléphone public : la décision du 2026-07-24 était « pas de numéro ». La CGV v2026-09-07 (rédigée avec ChatGPT, adoptée par Alain) publie **+33 6 07 79 33 03** aux articles 1, 10, 15, 22. **Alain confirme ou retire** ; les mentions légales restent sans téléphone tant que non tranché.
+  ⚠️ **Devenu urgent le 2026-09-07** : les pages 238 et 276 sont en ligne sur staging avec ce numéro. Les deux documents légaux publics donnent donc des canaux de contact différents pour le même vendeur, et un numéro personnel devient indexable. C'est le seul point du corpus qui publie une donnée personnelle avant que son arbitrage ne soit fermé. À trancher dans un sens ou dans l'autre **avant la mise en production**, pas après.
 
 ## B. CM2C
 
@@ -43,10 +44,18 @@ Coordonnées intégrées :
 
 ## D. Rétractation et retours
 
-- [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV §8.2 et §8.6 (international).
-- [x] Adresse de retour : **deux adresses listées publiquement CGV §8.2** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
+- [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV art. 11 et 13 (international).
+- [x] Adresse de retour : **deux adresses listées publiquement CGV art. 11** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
 - [x] Mode de demande de rétractation : fonctionnalité en ligne, formulaire type en annexe 1, ou déclaration claire (CGV v2026-09-07 art. 10.2).
-- [ ] **Fonction de rétractation en ligne (obligatoire pour les contrats conclus depuis le 19/06/2026, art. L. 221-21 C. conso.)** : décrite à l'article 10.3 des CGV. À construire = **P0 avant lancement** : page « Retours et rétractation » avec formulaire Fluent Forms (identité, n° de commande, produits, décision), lien visible et accessible pendant tout le délai avec un libellé sans ambiguïté du type « Renoncer au contrat ici », étape de confirmation explicite, accusé de réception automatique par email (support durable). Lien depuis le compte client, la confirmation de commande et le footer.
+- [~] **Fonction de rétractation en ligne (obligatoire pour les contrats conclus depuis le 19/06/2026, art. L. 221-21 C. conso.)** : décrite à l'article 10.3 des CGV, qui l'affirment **au présent**. Les formulaires Fluent Forms **11 (FR) et 12 (EN) existent** et les pages 249 `/fr/retours/` et 263 `/en/returns/` sont en ligne depuis le 2026-09-07. La case n'est donc plus « à construire », mais elle n'est pas cochée pour autant : la conformité au **décret d'application, article D. 221-5**, n'est pas vérifiée. Ce texte exige davantage que ce que décrivent les CGV, et chaque point est à contrôler sur le formulaire réel :
+  - [ ] un libellé « **renoncer au contrat ici** » ou une formule analogue sans ambiguïté, clairement lisible ;
+  - [ ] la fonctionnalité **disponible pendant tout le délai** de rétractation ;
+  - [ ] des champs permettant de fournir **nom et prénom** ;
+  - [ ] des **coordonnées électroniques** pour recevoir l'accusé de réception ;
+  - [ ] un contrôle de confirmation « **confirmer la rétractation** » ou analogue ;
+  - [ ] un accusé de réception mentionnant le **contenu de la déclaration, la date et l'heure** de sa soumission.
+
+  ⚠️ Tant que ces six points ne sont pas vérifiés, l'article 10.3 des CGV affirme publiquement une conformité qui n'est pas établie. Source : article D. 221-5, en vigueur depuis le 19/06/2026, créé par le décret n° 2026-3 du 5 janvier 2026.
 - [x] Exclusion produits personnalisés / sur mesure : CGV art. 14, information avant confirmation de commande.
 
 ## E. Livraison
@@ -126,8 +135,8 @@ Propositions **non intégrées**, à trancher par Alain, une phrase chacune :
 
 À faire :
 
-- [ ] **Version EN** `04-terms-conditions-B2C-EN.md` à réaligner sur les 26 articles (traduction informative, le FR fait foi, art. 25).
-- [ ] Publier sur staging la page 238 avec le texte définitif FR, créer la page EN liée.
+- [x] **Version EN** `04-terms-conditions-B2C-EN.md` réalignée sur les 26 articles + annexe (commit `2f10e36`, 2026-09-07). Traduction informative, le FR fait foi, art. 25.
+- [x] Page 238 `/fr/conditions-generales-de-vente/` et page EN liée 276 `/en/terms-and-conditions/` en ligne sur staging, appariées Polylang (2026-09-07).
 - [ ] Contrôle avocat = complémentaire, non bloquant (décision Alain 2026-07-27).
 
 ## K. Verdict KH-017

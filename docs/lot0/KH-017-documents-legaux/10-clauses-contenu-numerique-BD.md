@@ -40,3 +40,30 @@ Le lien de téléchargement est personnel et rattaché à la commande du Client.
 - **B-7** : deux cases à cocher distinctes, non précochées, au checkout (logique = Claude, habillage = Manus).
 - **B-8** : SMTP opérationnel (FluentSMTP + Brevo) pour l'envoi du lien de téléchargement.
 - Version EN des clauses à produire en même temps.
+
+---
+
+## Réserves relevées par la revue de code du 2026-09-09
+
+Trois points à traiter **avant** de réinsérer ces clauses au lancement de la BD Kaïro. Aucun ne bloque le lancement du 30 septembre, puisque la BD est hors périmètre.
+
+### 1. 🔴 La version EN a été supprimée, pas parquée
+
+129 lignes sont sorties de `04-terms-conditions-B2C-EN.md` lors de la réécriture, dont les clauses de contenu numérique et de renoncement. Seule la moitié FR a atterri ici. La ligne « Version EN des clauses à produire en même temps » est un reste-à-faire non assigné, pas un texte préservé.
+
+Conséquence : au lancement de la BD, les clauses FR se recollent en quelques minutes pendant que les clauses EN doivent être réécrites et recontrôlées depuis zéro, ou retrouvées par archéologie dans l'historique antérieur au commit `8050e68`, ce que personne ne pensera à faire. La boutique anglaise risque alors de vendre un PDF téléchargeable sans exclusion de rétractation valable.
+
+**À faire** : récupérer le texte EN supprimé (`git show 8050e68^:docs/lot0/KH-017-documents-legaux/04-terms-conditions-B2C-EN.md`) et le parquer ici à côté du FR.
+
+### 2. La rédaction de l'exclusion L. 221-28 13° est antérieure à mai 2022
+
+Le numéro d'article est bon, mais le texte reproduit est la version d'avant l'ordonnance n° 2021-1734 du 22 décembre 2021. La version en vigueur ajoute une **troisième condition** que la clause ne mentionne pas : le professionnel doit avoir fourni une **confirmation de l'accord du consommateur** conformément au deuxième alinéa de l'article L. 221-13.
+
+Présentée avec deux cases à cocher seulement, l'exclusion pourrait être jugée inopposable. Source vérifiée : Légifrance, article L221-28, version en vigueur au 09/09/2026.
+
+### 3. Mauvais régime de garantie, et un encadré obligatoire manquant
+
+- Le renvoi « les recours prévus aux articles 15 et 16 » pointe vers la garantie légale de conformité **des biens**. Un PDF fourni sans support matériel relève de la garantie de conformité **des contenus et services numériques**, articles **L. 224-25-12 à L. 224-25-26**, dont la présomption est de **1 an** à compter de la fourniture, pas 2 ans.
+- Il manque un prérequis : l'article **D. 211-3** impose un **second encadré obligatoire**, distinct de celui de D. 211-2 déjà présent dans les CGV, conforme à l'annexe de cet article, avec la durée contractuelle de fourniture en lieu et place du « X ». Son absence est un manquement constatable sur simple lecture du document.
+
+**À ajouter aux prérequis techniques** : encadré D. 211-3 rédigé et inséré.

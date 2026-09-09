@@ -60,7 +60,7 @@ Voir `.gitignore`. Les credentials vivent dans un gestionnaire de mots de passe 
 ## Doctrine (rappel court)
 
 - **Koinobori House** = maison / canal e-commerce. **BCDG** = signature créative des produits.
-- Ne **jamais** mentionner publiquement la Chine comme production, atelier, fournisseur, sourcing ou fabrication.
+- Ne **jamais** mentionner publiquement la Chine, **dans aucun contexte, sans aucune exception** (arbitrage Alain 2026-09-08) : ni comme production, atelier, fournisseur, sourcing ou fabrication, ni comme pays ou culture. Référent culturel unique : le Japon.
 - **Aucune mention d'atelier/production sur les fiches** (FR+EN, rév. 2026-06-18). Une référence atelier ne peut apparaître qu'*ailleurs* que sur les fiches : « atelier partenaire » / « atelier confidentiel », jamais « atelier chinois ».
 - Jamais de mention de stock global public.
 

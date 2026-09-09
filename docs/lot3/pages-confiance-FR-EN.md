@@ -139,7 +139,7 @@ Les produits personnalisés ou réalisés sur mesure sont exclus du droit de ré
 
 [EMPLACEMENT FORMULAIRE FLUENT FORMS — rétractation en ligne : n° de commande, date de réception, nom, email, produit concerné, message. Accessible, gratuit, fonctionnel.]
 
-Le détail complet figure dans nos [Conditions générales de vente], article 8.
+Le détail complet figure dans nos [Conditions générales de vente], articles 10 à 13.
 
 ### EN
 
@@ -160,11 +160,11 @@ Personalised or made-to-order products are excluded from the right of withdrawal
 
 [FLUENT FORMS PLACEHOLDER — online withdrawal form: order number, date of receipt, name, email, product, message. Accessible, free of charge, functional.]
 
-Full details are available in our [Terms and Conditions], section 8.
+Full details are available in our [Terms and Conditions], Articles 10 to 13.
 
 ---
 
-## 4. Contact — `/fr/contact/` · EN `/en/contact/`
+## 4. Contact — `/fr/contact/` · EN `/en/contact-us/`
 
 ### FR
 

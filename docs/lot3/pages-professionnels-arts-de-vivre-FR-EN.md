@@ -8,7 +8,7 @@
 
 ---
 
-## 0. Récapitulatif des 4 pages
+## 0. Récapitulatif des 6 pages
 
 | Page | FR | EN | Formulaire | Entrée nav |
 |---|---|---|---|---|
@@ -343,7 +343,7 @@ Every creation carries the BCDG signature. It is the mark of a way of looking, n
 
 This page will grow. We wanted the house to exist first, before telling you who keeps it.
 
-### 4 bis.2 Lifestyle & Koi — `/fr/lifestyle/` · EN `/en/lifestyle/`
+### 4 bis.2 Lifestyle & Koi — `/fr/lifestyle/` · EN `/en/lifestyle-koi/`
 
 Libellé court « Lifestyle » dans la nav, titre long « Lifestyle & Koi » sur la page et dans le footer. Archive magazine à construire ensuite (v2.0 §8), 3 articles FR au MVP, EN condensé.
 
@@ -396,12 +396,12 @@ Structure Claude, style Manus. Menu WordPress à créer en FR puis dupliquer en 
 
 | # | FR | Cible FR | EN | Cible EN | État de la cible |
 |---:|---|---|---|---|---|
-| 1 | Accueil | `/fr/` | Home | `/en/` | 🔴 homepage vide, 11 mouvements à construire |
+| 1 | Accueil | `/fr/` | Home | `/en/` | 🟠 pages 318 et 319 en ligne, mais `/fr/` rend encore l’index de blog (anomalie ouverte, cf. inventaire) |
 | 2 | Boutique | `/fr/boutique/` | Shop | `/en/shop/` | 🟢 page WooCommerce, slugs validés KH-106b |
-| 3 | Arts de vivre | `/fr/arts-de-vivre/` | Art de Vivre | `/en/art-de-vivre/` | 🟠 texte prêt §4, page à créer |
-| 4 | Lifestyle | `/fr/lifestyle/` | Lifestyle | `/en/lifestyle/` | 🟠 texte minimal prêt §4 bis.2, page à créer ; archive + 3 articles ensuite |
-| 5 | L'Atelier | `/fr/atelier/` | The House | `/en/the-house/` | 🟠 texte minimal prêt §4 bis.1, page à créer ; sans portrait (O-4) |
-| 6 | Professionnels | `/fr/professionnels/` | For Professionals | `/en/professionals/` | 🟠 texte prêt §1, page à créer |
+| 3 | Arts de vivre | `/fr/arts-de-vivre/` | Art de Vivre | `/en/art-de-vivre/` | 🟢 pages 282 et 291 en ligne |
+| 4 | Lifestyle | `/fr/lifestyle/` | Lifestyle | `/en/lifestyle-koi/` | 🟢 pages 284 et 295 en ligne ; archive + 3 articles restent à produire |
+| 5 | L'Atelier | `/fr/atelier/` | The House | `/en/the-house/` | 🟢 pages 283 et 293 en ligne, sans portrait (O-4) |
+| 6 | Professionnels | `/fr/professionnels/` | For Professionals | `/en/professionals/` | 🟢 pages 279 et 285 en ligne |
 | 7 | Contact | `/fr/contact/` | Contact | `/en/contact-us/` | 🟢 pages 250 et 266 en ligne |
 
 ⚠️ **Écart relevé** : [ux-architecture.md](../ux-architecture.md) §3.1 annonce `/en/contact/` pour l'entrée Contact. Le slug réellement posé est `/en/contact-us/`, WordPress imposant l'unicité des slugs entre langues sous Polylang Free. Le menu doit pointer vers l'existant. Corriger §3.1 plutôt que renommer la page en ligne.
@@ -449,5 +449,9 @@ Ligne d'horizon en dessous, §8.2 : `© 2026 Koinobori House · Créations BCDG`
 2. **Titre public de la page B2G** : « Collectivités et institutions » retenu ici, alors que le footer et la nav disent « Collectivités ». Titre long en H1, libellé court dans les liens : à confirmer.
 3. ✅ **Mention de TVA : rien à faire, vérifié à la source le 2026-09-08.** Elle reste volontairement absente de la page Collectivités, où elle n'a pas sa place, et figure aux mentions légales et aux CGV. La bascule CIBS attendue au 01/09/2026 a été **reportée au 1ᵉʳ janvier 2027** par l'ordonnance n° 2026-671 du 27 juillet 2026, avec tolérance sur les anciennes références du CGI jusqu'au 30/06/2028. `TVA non applicable, art. 293 B du CGI` reste donc correct au lancement. Détail et source dans [09-donnees-manquantes-et-checklist.md](../lot0/KH-017-documents-legaux/09-donnees-manquantes-et-checklist.md) §C.
 4. **Kodomo no Hi** cité page Collectivités comme support de médiation, rattaché au 5 mai japonais comme tu l'as rappelé le 2026-09-08. Conservé sauf avis contraire.
-5. ✅ **Corpus repris le 2026-09-08**, sur ton GO. L'exception bornée « B2G culturel » a été levée dans 5 fichiers : `CLAUDE.md` (§Doctrine éditoriale impérative, §Wording B2G validé, §Champs formulaires), `docs/handoff/CODEX-HANDOFF.md`, `docs/handoff/PASSATION-2026-07-27.md`, `docs/lot0/KH-012-KH-015-shipping-usa-seo.md`, `docs/lots2-8-decomposition.md`. Grep de contrôle : plus aucune exception résiduelle.
+5. ✅ **Corpus repris le 2026-09-08, complété le 2026-09-09.** L'exception bornée « B2G culturel » a été levée dans 5 fichiers : `CLAUDE.md` (§Doctrine éditoriale impérative, §Wording B2G validé, §Champs formulaires), `docs/handoff/CODEX-HANDOFF.md`, `docs/handoff/PASSATION-2026-07-27.md`, `docs/lot0/KH-012-KH-015-shipping-usa-seo.md`, `docs/lots2-8-decomposition.md`.
+
+   ⚠️ **Ma phrase « plus aucune exception résiduelle » était fausse.** La revue de code du 2026-09-09 a trouvé **6 fichiers de plus** qui portaient encore la formulation étroite « Chine production / fournisseur / atelier », laquelle laisse croire qu'une mention de la Chine comme pays ou culture reste permise : `README.md`, `docs/handoff/CODEX-HANDOFF.md` (ligne 25, dans le résumé de tête, à l'intérieur même d'un fichier que j'avais édité), `docs/handoff/REPRISE-charte-graphique.md`, `docs/lot0/KH-017-documents-legaux.md` (deux fois), `docs/lot2/lot2-catalogue-plan.md`, `docs/lot6/KH-000-integration-plan.md`.
+
+   Corrigés le 2026-09-09, mais **pas en ajoutant une septième copie de la règle** : chaque énoncé renvoie désormais à CLAUDE.md §Doctrine éditoriale impérative comme source canonique. La leçon vaut au-delà de ce point : propager une règle par copie l'a déjà fait dériver une fois, et une PR entière consacrée à la propagation a quand même manqué une copie dans un fichier qu'elle modifiait.
 6. ✅ **Formulaires B2G corrigés sur staging le 2026-09-08.** Le champ citait bien la Chine, vérification faite dans Fluent Forms. Libellés désormais : formulaire 9 (FR) « Lien culturel avec le Japon ou l'Asie, si pertinent », formulaire 10 (EN) « Cultural link with Japan or Asia, if relevant ». Les deux formulaires ont été enregistrés puis rechargés pour contrôle.

@@ -89,7 +89,7 @@ Choix d'un mu-plugin plutôt que `functions.php` : le thème enfant est en cours
 
 ### Image Sakura Rouge
 
-Média **317** (`hanami-001-sakura-rouge`), téléversé depuis `catalog/images/hanami/001-sakura-rouge/main.jpg`, texte alternatif renseigné, posé comme image principale sur les produits **111 (FR)** et **113 (EN)**. Il reste **20 produits sans image** : Mer 6 et Motifs 3, en FR et en EN, soit les 9 photos attendues d'Alain.
+Média **317** (`hanami-001-sakura-rouge`), téléversé depuis `catalog/images/hanami/001-sakura-rouge/main.jpg`, texte alternatif renseigné, posé comme image principale sur les produits **111 (FR)** et **113 (EN)**. Il reste **18 fiches sans image**, soit 9 produits (Mer 6, Motifs 3) dans les deux langues : ce sont les 9 photos attendues d'Alain. Le chiffre de 20 relevé le 2026-09-07 incluait Sakura FR et EN, désormais illustrés.
 
 ### Page d'accueil
 

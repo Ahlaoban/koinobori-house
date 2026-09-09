@@ -42,7 +42,7 @@ Cette formulation **remplace toutes les occurrences antérieures** d'identificat
 - o2switch, SAS 100 000 €, SIRET 510 909 807 00032, RCS Clermont-Ferrand, Chemin des Pardiaux, 63000 Clermont-Ferrand, 04 44 44 60 40
 
 ### TVA
-- Mention **TVA non applicable, art. 293 B du CGI** intégrée dans mentions légales + CGV §3
+- Mention **TVA non applicable, art. 293 B du CGI** intégrée dans mentions légales + CGV art. 5
 - ⚠️ Note interne : surveiller bascule documentaire prévue au **01/09/2026** vers référence CIBS (`art. L. 223 et s. du code des impositions sur les biens et services`)
 
 ### Médiation consommation (CM2C)
@@ -52,55 +52,55 @@ Cette formulation **remplace toutes les occurrences antérieures** d'identificat
 - Note "internal" supprimée FR (clause officielle posée). EN versions marquées informatives, FR fait foi.
 
 ### Paiement
-- Stripe + PayPal mentionnés CGV §5 + RGPD §5 (cohérent KH-003/KH-004)
-- Pas de stockage carte côté Koinobori House (CGV §5)
+- Stripe + PayPal mentionnés CGV art. 7 + RGPD §5 (cohérent KH-003/KH-004)
+- Pas de stockage carte côté Koinobori House (CGV art. 7)
 
 ### Email transactionnel
 - Brevo mentionné RGPD §5 prestataire SMTP/newsletter si activé (cohérent KH-005)
 
 ### Transporteurs
-- La Poste / Colissimo / Mondial Relay mentionnés CGV §7 + RGPD §5 (cohérent KH-012 doctrine)
+- La Poste / Colissimo / Mondial Relay mentionnés CGV art. 8 + RGPD §5 (cohérent KH-012 doctrine)
 - ❌ DHL/UPS/FedEx/Chronopost NON mentionnés (cohérent doctrine MVP B2C)
 
 ### USA shipping
-- CGV §3 : « destinations non activées… contact service client » → couvre mode "nous contacter" actuel
-- CGV §3 : « hors UE… droits/taxes peuvent être dus… restent à charge client sauf mention contraire explicite » → formulation prudente cohérente §1bis doc KH-015
+- CGV art. 5 : « destinations non activées… contact service client » → couvre mode "nous contacter" actuel
+- CGV art. 5 : « hors UE… droits/taxes peuvent être dus… restent à charge client sauf mention contraire explicite » → formulation prudente cohérente §1bis doc KH-015
 - ❌ Pas de mention HTSUS ni pourcentage public (conforme doctrine)
 
 ### Doctrine éditoriale
-- ✅ Aucune mention Chine production / fournisseur / atelier
+- ✅ Aucune mention de la Chine, **dans aucun contexte** (règle canonique : CLAUDE.md §Doctrine éditoriale impérative, portée élargie le 2026-09-08 ; la formulation antérieure ne couvrait que production, fournisseur et atelier)
 - ✅ Aucune mention pays de fabrication
 - ✅ BCDG positionné comme signature/marque création (pas claim fabrication)
-- ✅ « koinobori = objets décoratifs » (CGV §2) cohérent
+- ✅ « koinobori = objets décoratifs » (CGV art. 3) cohérent
 
-### Retours et rétractation — politique validée 2026-05-29 (CGV §8)
+### Retours et rétractation — politique validée 2026-05-29 (CGV art. 10 à 13)
 - 14 jours rétractation à compter du lendemain réception
 - Déclaration claire par email à contact@koinoborihouse.com (simple renvoi sans déclaration ≠ rétractation)
-- Formulaire type "À l'attention de BCDG — Koinobori House" (CGV §8.1)
-- Conditions retour : email préalable obligatoire à contact@koinoborihouse.com pour recevoir instructions + adresse de retour applicable. Les **deux adresses possibles sont listées publiquement CGV §8.2** : (a) 1 rue du Marais 29730 Treffiagat ou (b) 46 ruelle de l'Église 69620 Ternand. Choix par BCDG au cas par cas. Produit remis-en-vente compatible, 14 j post-demande.
+- Formulaire type "À l'attention de BCDG — Koinobori House" (CGV art. 10.2 + annexe 1)
+- Conditions retour : email préalable obligatoire à contact@koinoborihouse.com pour recevoir instructions + adresse de retour applicable. Les **deux adresses possibles sont listées publiquement CGV art. 11** : (a) 1 rue du Marais 29730 Treffiagat ou (b) 46 ruelle de l'Église 69620 Ternand. Choix par BCDG au cas par cas. Produit remis-en-vente compatible, 14 j post-demande.
 - Frais retour à charge client, sauf erreur BCDG / défaut / non-conformité
 - Remboursement : moyen original, 14 j max, différable jusqu'à réception ou preuve expédition
-- Exclusion produits personnalisés / sur mesure (CGV §8.4)
-- Défaut/non-conformité : contact BCDG avec photos, solution adaptée (CGV §8.5)
-- Retours internationaux : frais retour à charge client sauf erreur BCDG ; droits/taxes non remboursés sauf erreur BCDG (CGV §8.6)
+- Exclusion produits personnalisés / sur mesure (CGV art. 14)
+- Défaut/non-conformité : contact BCDG avec photos, solution adaptée (CGV art. 15 et 16)
+- Retours internationaux : frais retour à charge client sauf erreur BCDG ; droits/taxes non remboursés sauf erreur BCDG (CGV art. 11 et 13)
 - Doctrine nommage : "Koinobori House" = site, "BCDG" = interlocuteur post-commande (rétractation, retour, remboursement, défaut, remplacement)
 - ⚠️ Note future : à partir **19/06/2026** prévoir fonctionnalité rétractation en ligne directe si contrat conclu via interface en ligne
 
 ### Garanties légales
-- Conformité 2 ans + vices cachés mentionnés CGV §10
+- Conformité 2 ans + vices cachés mentionnés CGV art. 15 et 16
 
 ### Propriété intellectuelle
-- BCDG créations protégées, achat ≠ droit reproduction/exploitation (CGV §12 + mentions §IP)
+- BCDG créations protégées, achat ≠ droit reproduction/exploitation (CGV art. 20 + mentions §IP)
 
 ## 3. Données encore manquantes (placeholders)
 
 Acquis :
 - Identification vendeur (formulation obligatoire) + SIREN/RCS 945 241 545 R.C.S. Quimper + SIRET siège 945 241 545 00017 + adresse siège 1 rue du marais 29730 Treffiagat + email contact@koinoborihouse.com + Directrice publication Else Smakalova
-- Politique retours/rétractation validée (CGV §8 réécrit, BCDG = interlocuteur post-commande)
-- 2 adresses retour listées publiquement CGV §8.2 (Treffiagat ou Ternand), email préalable obligatoire
+- Politique retours/rétractation validée (CGV art. 10 à 13 réécrit, BCDG = interlocuteur post-commande)
+- 2 adresses retour listées publiquement CGV art. 11 (Treffiagat ou Ternand), email préalable obligatoire
 - Téléphone : pas de téléphone public, contact@koinoborihouse.com uniquement
 - CM2C clause officielle intégrée
-- **Délais livraison estimés intégrés CGV §7** : France 2 j ouvrables / UE 3-8 j ouvrés / USA 5-10 j ouvrés hors douane. Formulation prudente "délais estimés d'acheminement après expédition", pas de garantie.
+- **Délais livraison estimés intégrés CGV art. 8** : France 2 j ouvrables / UE 3-8 j ouvrés / USA 5-10 j ouvrés hors douane. Formulation prudente "délais estimés d'acheminement après expédition", pas de garantie.
 
 Restant :
 
@@ -157,7 +157,7 @@ Actions ouvertes (cf 09 §H) :
 - Aucune allégation environnementale non justifiée
 
 ### 4.8 Doctrine éditoriale
-- ❌ Aucune mention Chine production / fournisseur / atelier dans 9 documents ✅ vérifié
+- ❌ Aucune mention de la Chine, **dans aucun contexte**, dans les 9 documents ✅ vérifié (portée élargie le 2026-09-08, cf. CLAUDE.md §Doctrine éditoriale impérative)
 - ❌ Aucune mention « fabriqué en France » ✅
 - ❌ Aucune référence volume global stock ✅
 - ❌ Aucun nom fournisseur interne ✅

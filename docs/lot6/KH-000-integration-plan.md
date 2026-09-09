@@ -106,7 +106,7 @@ Tout sur **staging**. Aucune prod, aucun commit avant GO explicite.
 
 ## 4. Garde-fous maintenus (pas de conflit)
 
-washi pas blanc pur ✓ · radius 0 ✓ · 5 collections = 5 Mondes (Mer·Kaïro·Hanami·Motifs·Territoires) ✓ · fiche **2 blocs** ✓ · marque fixe (Koinobori House ≠ signature BCDG ; cartouche 鯉のぼり) ✓ · vermillon parcimonie (CTA) ✓ · jamais Chine/atelier ✓ · jamais or en aplat de fond massif ✓ · Polylang FR+EN ✓ · sélecteur FR/EN sans drapeau ✓ · socle WC/Polylang/SEOPress intouché ✓.
+washi pas blanc pur ✓ · radius 0 ✓ · 5 collections = 5 Mondes (Mer·Kaïro·Hanami·Motifs·Territoires) ✓ · fiche **2 blocs** ✓ · marque fixe (Koinobori House ≠ signature BCDG ; cartouche 鯉のぼり) ✓ · vermillon parcimonie (CTA) ✓ · **jamais la Chine, aucun contexte** (cf. CLAUDE.md §Doctrine éditoriale impérative) ✓ · jamais atelier ✓ · jamais or en aplat de fond massif ✓ · Polylang FR+EN ✓ · sélecteur FR/EN sans drapeau ✓ · socle WC/Polylang/SEOPress intouché ✓.
 
 ## 5. Points ouverts
 

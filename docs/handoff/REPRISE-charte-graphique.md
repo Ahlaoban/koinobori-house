@@ -27,7 +27,7 @@ Nouvelle session : poursuite du site **koinoborihouse.com** (WordPress / WooComm
 - **Socle inchangé** : WooCommerce, **Polylang** (FR+EN), **SEOPress**.
 - **Aucune migration** React / Shopify / headless. Reste **WordPress/WooCommerce/Kadence Free + thème enfant**. Pas d'Elementor, pas de WP Rocket.
 - **Staging d'abord**. Jamais de push direct sur `main` — toujours via PR.
-- Doctrine éditoriale : jamais Chine / atelier / origine ; fiche produit **2 blocs** ; taxo **5 collections** ; marque fixe (logo Koinobori House ≠ signature BCDG ; cartouche 鯉のぼり).
+- Doctrine éditoriale : **jamais la Chine, dans aucun contexte** (règle canonique : CLAUDE.md §Doctrine éditoriale impérative) ; jamais atelier ni origine ; fiche produit **2 blocs** ; taxo **5 collections** ; marque fixe (logo Koinobori House ≠ signature BCDG ; cartouche 鯉のぼり).
 
 ## ⚠️ DÉPÔT EN DÉSORDRE — à trancher en premier
 - **PR #1** (`feat/kh-107-root-redirect`) : **ouverte depuis le 13 juin, jamais mergée**, + **11 commits non poussés**. Elle a absorbé tout le Lot 2 (docs catalogue) → sortie de son périmètre.
