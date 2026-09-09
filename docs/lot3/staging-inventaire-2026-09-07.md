@@ -212,3 +212,52 @@ Investigation interrompue : l'**authentification HTTP de staging est retombée**
 **Ce qui n'a pas pu être tenté** : l'aller-retour sur la valeur de `page_on_front` et la reconstruction du cache des langues, faute d'accès.
 
 ⚠️ Deux impasses d'interface relevées au passage, pour ne pas les refaire : cliquer le nom de la langue dans la liste ouvre la fiche et non le formulaire d'édition, et l'URL `admin.php?page=mlang&pll_action=edit&lang=5` ne charge pas le formulaire attendu. Le bon chemin est le lien **Modifier** qui apparaît au survol de la ligne. Attention aussi à ne pas confondre ce formulaire avec celui d'ajout d'une langue, qui occupe la même colonne.
+
+---
+
+## Anomalie de page d'accueil — session du 2026-09-09, second passage
+
+Toutes les hypothèses testables depuis l'interface ont été épuisées. Le diagnostic est désormais précis, mais la dernière étape demande de voir l'état PHP.
+
+### Le contre-indice est levé
+
+`/fr/accueil/` renvoie **200 sans redirection**, vérifié par `fetch` avec `redirect: 'manual'`. L'observation d'hier venait de la barre d'adresse restée sur la navigation précédente. L'hypothèse Polylang n'a donc plus de contradicteur.
+
+### La preuve décisive
+
+`page_for_posts` a été positionné sur 284. Résultat : `/fr/lifestyle/` a continué de rendre `page page-id-284` au lieu de l'index de blog, **et la valeur n'a même pas persisté**. Les deux options de page statique sont donc ignorées ensemble, ce qui n'arrive que si `show_on_front` ne vaut pas `page` au moment où `WP_Query` décide.
+
+Quelque chose filtre donc `option_show_on_front` sur le front. Polylang le fait dans `PLL_Static_Pages`, en renvoyant `posts` lorsqu'il n'arrive pas à résoudre la page d'accueil pour la langue courante. Reste à savoir pourquoi il n'y arrive pas.
+
+### Éliminé, à ne pas re-tester
+
+| Piste | Comment elle a été écartée |
+|---|---|
+| Mu-plugin KH-107 | Aucun hook enregistré, sortie immédiate hors racine |
+| Réglages faux | `page` / 318 vérifiés côté REST **et** côté formulaire |
+| Langue des pages | 318 apparaît sous le filtre `lang=fr`, 319 sous `lang=en` |
+| Liaison des traductions | Paire liée, hreflang vérifié dans les deux sens |
+| Cache de pages | Purgé plusieurs fois, aucun en-tête `x-litespeed-cache` |
+| Cache des langues Polylang | Nettoyé par trois chemins : aller-retour articles/page, changement réel 318 → 282 → 318, enregistrement du formulaire « Modifications des URL » |
+| Cache objet persistant | **Inexistant** : aucun drop-in listé dans Santé du site |
+| Filtre de langue de l'admin | Il était sur English, ce qui faisait afficher 319 dans le formulaire. Remis sur « toutes les langues » puis réenregistré, sans effet |
+| Détection de langue Polylang | Module désactivé, conforme à la doctrine |
+| Thème enfant | Éditeur de fichiers désactivé, mais un `front-page.php` ne provoquerait pas `is_home()`, et la classe `hfeed` confirme une requête d'archive |
+| Réglages d'URL Polylang | Langue par répertoire, pas de masquage pour la langue par défaut, conformes |
+
+### Non testable depuis l'interface
+
+**Polylang for WooCommerce n'expose aucun lien de désactivation**, contrairement à toutes les autres extensions du site. C'est la seule hypothèse restante qui n'a pas pu être écartée.
+
+### Ce qu'il faut faire maintenant
+
+Un mu-plugin de diagnostic est livré : `wp/mu-plugins/koino-diag-frontpage.php`. Il n'écrit rien et ne s'affiche que pour un administrateur connecté ajoutant `?koino_diag=1` à une URL du front.
+
+1. Déposer le fichier dans `wp-content/mu-plugins/`.
+2. Ouvrir `https://staging.koinoborihouse.com/fr/?koino_diag=1` en étant connecté.
+3. Coller le bloc affiché dans la session.
+4. **Supprimer le fichier** une fois le diagnostic posé.
+
+Il donne d'un coup : les valeurs brutes en base sans filtres, les valeurs après filtres, **la liste nommée des callbacks accrochés à `option_show_on_front`**, les variables de requête, et ce que Polylang a résolu comme page d'accueil pour chaque langue. La ligne des callbacks désignera le coupable sans ambiguïté.
+
+⚠️ Aucune régression pendant ce temps : la page d'accueil affichait déjà l'index de blog avant tout ceci, et les contenus 318 et 319 sont prêts et corrects.
