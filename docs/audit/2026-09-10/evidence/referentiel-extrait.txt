@@ -1,0 +1,1515 @@
+=== PAGE 1 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+1 / 33
+Koinobori House 2027
+Business Model Canvas et cahier des charges directeur
+Référence : KH2027-REF • Version 3.0 • 10 septembre 2026
+Destinataires : Alain et la direction Koinobori House, équipe de développement, partenaires créatifs et
+prestataires concernés.
+Propriétaire du référentiel : Alain / Koinobori House. Horizon de réalisation : fin 2026 et année 2027,
+selon les jalons de validation.
+Koinobori House est une maison de création contemporaine autour du koinobori et du vent. Son
+développement articule cinq collections originales, l’univers narratif Kaïro, une offre Custom et un service
+Projects permettant d’imaginer une composition dans le lieu du client. Une seule plateforme Web
+responsive dessert les particuliers, les professionnels et les collectivités.
+Ce document fixe le modèle économique et les exigences du projet. Il sert à arbitrer, développer, tester et
+réceptionner la reprise de l’existant. La première intervention de GPT-6 sur le développement doit
+impérativement être un audit profond du dépôt, du site et du travail de Claude, suivi de la matrice KEEP /
+IMPROVE / REFACTOR / REPLACE / REMOVE / BUILD, avant toute transformation structurelle.
+Statut : référentiel directeur consolidé. Les orientations métier explicitement décidées sont fermes. Les
+modalités techniques proposées deviennent la base de travail à confronter à l’audit. Ce document ne
+constitue ni un audit du code, ni un devis de développement, ni une preuve de conformité du site actuel.
+La version 3.0 remplace, pour le périmètre directeur, les formulations antérieures incompatibles avec les
+dernières décisions. En particulier : KH ne réalise aucune installation ; la fabrication japonaise n’est pas
+imposée ; l’application native reste facultative ; la réalité augmentée est hors MVP.
+Règles de lecture
+• Décision : choix métier fixé par la demande et les décisions consolidées.
+ 
+• Exigence cible : comportement à obtenir et à tester, sans présumer de sa présence dans le code.
+ 
+• Proposition : valeur de pilotage ou modalité à confirmer au jalon concerné.
+ 
+• À auditer : constat technique impossible à établir sans accès et vérification de l’existant.
+ 
+• Option : développement conditionnel, exclu des engagements du MVP.
+ 
+Les identifiants d’exigences restent stables entre versions. P0 signifie préalable ou blocage de mise en
+service ; P1 signifie nécessaire au MVP complet ; P2 signifie évolution après validation ; P3 signifie option
+ou recherche. Une phase ne change pas la criticité d’une exigence de sécurité.
+
+=== PAGE 2 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+2 / 33
+Sommaire
+Partie A • Business Model Canvas définitif et phasage
+1. Positionnement et décisions structurantes · page 3
+2. Business Model Canvas en neuf blocs · page 4
+3. Architecture de l’offre et doctrine produit · page 6
+4. Économie et pilotage commercial · page 7
+5. Phasage et portes de décision · page 8
+Partie B • Cahier des charges directeur
+6. Audit profond obligatoire et reprise de l’existant · page 9
+7. Matrice de reprise et gouvernance technique · page 10
+8. Architecture fonctionnelle et expérience mobile · page 11
+9. Catalogue et cinq collections · page 12
+10. Kaïro et les futures aventures · page 13
+11. Compte unique et organisations · page 14
+12. Custom et règles de quantité · page 15
+13. Projects et visualisation environnementale · page 16
+14. Devis et validation du BAT · page 17
+15. Commande et production · page 18
+16. Suivi commercial personnalisé · page 19
+17. Back-office et responsabilités · page 20
+18. Architecture technique cible et interfaces · page 21
+19. Modèle de données et versions · page 22
+20. Sécurité et protection des fichiers · page 23
+21. RGPD et cycle de vie des données · page 24
+22. SEO et international · page 25
+23. Analytics et indicateurs · page 26
+24. Qualité de service et exploitation · page 27
+25. Passport et World Gallery · page 28
+26. Extensions produit et kits DIY · page 29
+27. Recette et critères de lancement · page 30
+28. Livrables et décisions restant à instruire · page 31
+Annexes
+A. Registre des décisions et traçabilité · page 32
+B. Sources et vocabulaire · page 33
+
+=== PAGE 3 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+3 / 33
+Partie A Business Model Canvas définitif et
+phasage
+1 Positionnement et décisions structurantes
+Décision. Koinobori House crée des univers graphiques originaux et les matérialise par le koinobori et des
+objets cohérents avec le vent, le textile, la maison et le récit. Le koinobori demeure le produit fondateur et
+l’icône de la marque.
+Les cinq collections sont des univers créatifs, dont Kaïro. Elles ne sont pas cinq simples regroupements de
+tailles. Le parcours de découverte privilégie l’univers, le design et son histoire, puis la mise en situation, la
+taille et l’achat. Alain et son épouse sont identifiés comme les créateurs des collections originales, selon les
+crédits validés par KH.
+Doctrine produit. Alain/KH recherche d’abord un produit cohérent et distinctif. Si l’offre existante n’est pas
+suffisamment excitante, Alain/KH le dessine puis le source ou le fait fabriquer principalement en Chine. Un
+produit existant remarquable peut être sélectionné ; les composants fonctionnels peuvent être sourcés.
+Une adaptation de matériau, de dimensions ou de finition peut faire l’objet d’un développement hybride
+avec un fabricant. Il n’existe aucune contrainte de fabrication japonaise.
+La référence culturelle japonaise et l’origine effective de fabrication doivent être présentées avec
+exactitude. Les affirmations « design original KH », « sélection KH » ou « adaptation KH » correspondent
+au travail réellement effectué. Les droits sur les créations et les fichiers industriels sont documentés.
+Trois marchés et quatre portes commerciales
+Marché
+Besoin dominant
+Parcours adapté
+B2C
+Décoration, cadeau, collection, mariage ou fête privée
+Collection, Kaïro, achat direct ou
+Custom et Projects
+B2B
+Identité de lieu, décoration commerciale, événement,
+prescription
+Inspiration, composition, devis et
+documents professionnels
+B2G
+Manifestation culturelle et projet de collectivité ou
+institution
+Projet, devis, validation
+administrative et bon de
+commande
+COLLECTIONS, KAÏRO, CUSTOM et PROJECTS sont les quatre portes d’entrée. Elles partagent clients,
+catalogue, documents et commandes. Les familles de catalogue KOINOBORI / FLY / HOME / TEXTILE /
+STORIES & ART constituent un autre axe de classement ; elles ne remplacent pas les collections.
+Frontières fermes
+KH vend des créations, des produits et un accompagnement créatif/commercial. KH ne réalise aucune
+installation, quel que soit le client. Le client organise la pose lui-même ou mandate un professionnel. Une
+visualisation n’est ni un plan structurel ni une validation de sécurité. Les obligations propres aux produits
+vendus subsistent.
+Custom impose 50 unités minimum en B2C et 150 en B2B/B2G, pour chaque couple design/taille.
+Aucun BAT n’est remplacé par une simulation. Aucune application iOS/Android n’est obligatoire en 2027 et
+l’AR reste hors MVP.
+
+=== PAGE 4 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+4 / 33
+2 Business Model Canvas en neuf blocs
+1 Segments de clientèle
+Particuliers sensibles au design, au vent, au Japon, à la décoration et au cadeau ; amateurs de collections
+et lecteurs de Kaïro ; organisateurs de mariages et de fêtes privées. Professionnels : hôtels, restaurants,
+commerces, agences événementielles, architectes, décorateurs, lieux culturels et entreprises. Collectivités
+et institutions : communes, établissements publics, offices de tourisme et organisateurs publics de
+manifestations. Les prescripteurs constituent un relais commercial, avec un rôle distinct de l’acheteur final.
+2 Propositions de valeur
+Cinq collections originales reconnaissables, conçues par KH ; objet vivant présenté en mouvement ; Kaïro
+reliant manga, chapitres et créations physiques ; Custom à partir d’un fichier client, d’une adaptation ou
+d’une création KH ; Projects pour comparer une composition dans son environnement, y compris sur
+téléphone. L’accompagnement personnel des créateurs sécurise le choix esthétique et le passage au
+devis. Les accessoires sélectionnés et les futures extensions facilitent l’usage et multiplient les occasions
+d’achat. La différenciation repose sur les créations, les histoires, la qualité et le service, avec la technologie
+à leur service.
+3 Canaux
+KoinoboriHouse.com est le centre commercial et relationnel. Le référencement naturel et les images,
+Instagram, Pinterest, vidéos courtes, presse et créateurs de contenu alimentent la découverte. Etsy est une
+piste de distribution et d’acquisition à organiser sans contourner ses règles. Le manga et ses QR créent
+une passerelle vers KH ; Amazon ou un autre distributeur reste à sélectionner pour l’édition. Prospection
+ciblée et prescripteurs alimentent B2B/B2G. Newsletter et contacts autorisés favorisent le réachat. Chaque
+canal est évalué sur sa contribution nette, pas seulement son trafic.
+4 Relations clients
+Achat catalogue simple, contenus soignés et service après-vente. Découverte de Custom/Projects sans
+compte imposé ; compte requis pour conserver ou transmettre un projet. Pour les leads qualifiés,
+interlocuteur nommé, échanges tracés, vidéo personnelle WhatsApp si le canal est accepté, devis et BAT
+accessibles au même endroit. Le suivi B2G respecte le circuit administratif du client. Nouvelles créations et
+aventures entretiennent la relation ; Passport et World Gallery sont des pistes ultérieures, avec
+participation volontaire.
+5 Sources de revenus
+Vente des collections, tailles et compositions ; commandes de volume ; Custom B2C et B2B/B2G aux
+seuils fixés ; honoraires distincts d’adaptation ou de création originale ; manga Kaïro avec prix cible de 6,90
+€ à valider économiquement ; futures aventures ; accessoires fonctionnels ; extensions sélectionnées
+HOME, TEXTILE et STORIES & ART. Des kits DIY ne deviennent une source de revenus qu’après
+validation. Les simulations sont d’abord un outil de conversion : aucun abonnement ni tarif de simulation
+n’est réputé décidé. Aucun revenu de prestation d’installation KH n’est prévu.
+
+=== PAGE 5 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+5 / 33
+2 Business Model Canvas suite
+6 Ressources clés
+Marque KH, cinq univers créatifs, dessins et fichiers de production, savoir-faire des créateurs, propriété
+narrative Kaïro, relations fournisseurs et échantillons de référence. Plateforme Web, comptes et historique
+commercial, contenus photo/vidéo, documentation qualité, capacité de préparation et d’expédition. Le
+travail logiciel existant est une ressource à évaluer par l’audit, sans préjuger de sa qualité. Les données
+clients sont utilisées uniquement pour les finalités définies, et ne sont pas un actif librement revendable.
+7 Activités clés
+Créer et sélectionner les produits ; développer les collections et Kaïro ; sourcer, prototyper, contrôler et
+importer ; maintenir le catalogue et traiter les commandes ; acquérir une audience ; qualifier les leads ;
+conduire brief, design, visualisation, devis et BAT ; piloter fabrication et livraison ; assurer le service
+après-vente ; exploiter et sécuriser la plateforme ; mesurer marge, conversion, qualité et réachat. Le temps
+humain consacré aux Custom est une ressource limitée à planifier.
+8 Partenaires clés
+Fabricants principalement chinois, fournisseurs d’accessoires, contrôle qualité et laboratoires selon les
+produits, logistique et transport, prestataires de paiement, hébergement et services numériques.
+Imprimeur/distributeur capable de respecter le manga Kaïro ; traducteurs et contributeurs créatifs selon les
+besoins ; prescripteurs et partenaires éditoriaux. Experts juridiques, comptables et sécurité produit pour les
+validations relevant de leur compétence. Les installateurs sont choisis et mandatés directement par le
+client ; leur intervention ne devient pas une prestation KH implicite.
+9 Structure de coûts
+Création, prototypage, fabrication, contrôle qualité, fret, importation, stockage, emballage, préparation,
+transport, retours et défauts. Frais de paiement et commissions des canaux ; acquisition et contenus ;
+édition et traduction du manga. Développement, tests, hébergement, sécurité, sauvegardes, maintenance,
+licences et calcul/stockage des visualisations. Temps commercial et créatif, BAT et échantillons ; protection
+des droits et conformité ; recherche des futurs kits. Aucun budget d’équipe d’installation KH, aucune app
+native obligatoire. Le travail aidé par IA conserve des coûts de revue, de test et d’exploitation.
+Cohérence du modèle
+Le premier achat peut venir d’une création, d’une histoire, d’une demande de personnalisation ou d’un lieu
+à décorer. Les quatre parcours convergent vers une relation KH unique. Le réachat résulte des nouvelles
+créations, des aventures et d’objets complémentaires désirables. Les volumes Custom contribuent au
+chiffre d’affaires mais mobilisent davantage de service et de trésorerie : leur rentabilité doit être calculée
+projet par projet.
+Les avantages recherchés sont la propriété créative, la qualité de l’offre, les contenus et le lien personnel.
+Aucun avantage concurrentiel exclusif, niveau de vente ou taux de conversion n’est présenté comme déjà
+acquis.
+
+=== PAGE 6 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+6 / 33
+3 Architecture de l’offre et doctrine produit
+Famille
+Périmètre
+Ordre de développement
+KOINOBORI
+Cinq collections, Kaïro, tailles, compositions et
+Custom
+Cœur du lancement
+FLY
+Attaches, émerillons, lignes, rangement, supports et
+éventuels kits
+Sélection progressive ; validation
+adaptée avant vente
+HOME
+Noren, mini-koinobori, mobiles et suspensions
+Petite série pilote après
+validation produit
+TEXTILE
+Furoshiki, tenugui, bannières et autres adaptations
+graphiques
+Extension contrôlée après
+apprentissage
+STORIES & ART
+Manga Kaïro, prints, cartes et éditions narratives
+Manga au socle ; dérivés selon
+demande
+Les produits cités hors cœur sont des pistes de gamme, pas une obligation de tout lancer. Une manche à
+air, un cerf-volant ou un carillon revisité peut être étudié selon sa cohérence, sa qualité, ses risques et son
+économie. Une simple possibilité de sourcing ne suffit pas à justifier une référence.
+Processus produit obligatoire
+Recherche et benchmark visuel → décision SOURCE / DESIGN KH / HYBRIDE → dossier produit →
+consultation fournisseurs → prototype → corrections → échantillon de référence → validation qualité et
+usage → petite série → mesure → maintien, amélioration ou retrait.
+Le dossier comporte design et droits, matériau, dimensions et tolérances, impression et couleurs, finitions,
+conditionnement, usages prévus, entretien, restrictions, traçabilité fournisseur/lot, contrôles, coût rendu et
+conditions d’approvisionnement. Les performances au vent, la tenue UV et la résistance sont établies par
+essais adaptés ; elles ne sont pas déduites d’une image ou d’un descriptif fournisseur.
+Règle de sélection
+Le produit doit rester désirable, reconnaissable ou particulièrement bien conçu si l’on retire le logo KH. Les
+extensions exploitent les univers graphiques sans transformer chaque design en déclinaison automatique
+sur tous les supports. Aucun assortiment généraliste japonais n’est imposé.
+Proposition de pilotage. Limiter chaque expérimentation à un petit nombre de références et à un stock
+plafonné par Alain. Autoriser la montée en volume après examen de la contribution nette, des retours, du
+taux de défaut et de la charge de service. Les minimums fournisseurs pour ces extensions sont distincts
+des seuils Custom commerciaux.
+Contenus requis avant commercialisation
+Une fiche fiable, des images représentatives, le prix et les conditions de livraison, les caractéristiques
+vérifiées, l’origine indiquée lorsque nécessaire, les précautions applicables et la disponibilité réelle. Une
+famille peut exister dans le modèle de données sans être affichée vide dans la navigation.
+
+=== PAGE 7 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+7 / 33
+4 Économie et pilotage commercial
+Exigence de gestion. Aucun objectif de chiffre d’affaires, marge, budget technique ou volume n’est présenté
+comme validé en l’absence de données. Le lancement est conditionné à une fiche économique par canal et par
+type d’offre. Le prix de 6,90 € pour Kaïro est une cible éditoriale, pas une garantie de marge ou de faisabilité
+d’impression.
+Calculs communs
+• Coût rendu unitaire = achat/fabrication + part de fret/importation + contrôle qualité + pertes attendues +
+ emballage, sans double comptage.
+• Contribution commande = CA net hors taxes et remboursements − coût produits − paiement/commission −
+ préparation et transport supportés − coût variable de service et de simulation − acquisition attribuable.
+• Contribution Custom = contribution commande − temps de création/adaptation non déjà facturé −
+ échantillons spécifiques − reprises prévues.
+• Seuil de couverture = charges fixes de période / taux de contribution pondéré, si ce taux est positif et
+ calculé sur un mix réaliste.
+• Besoin de trésorerie projet = sorties cumulées avant encaissement client − encaissements déjà sécurisés ;
+ suivre acompte fournisseur, solde, fret, taxes et délais client séparément.
+Politique commerciale cible
+Le devis distingue les quantités, prix unitaires, honoraires de design, accessoires, transport, fiscalité, éventuels
+échantillons, échéances et durée de validité. Le nombre de corrections incluses et le traitement des
+changements après BAT sont définis avant la vente. Le temps de vidéo et de suivi est intégré à la rentabilité
+des leads qualifiés.
+Les acomptes, tarifs de création, grilles de volume, remises et règles de paiement B2G restent à fixer par KH.
+Le système doit les supporter sans les inventer. Un bon de commande public et une condition de règlement
+approuvée peuvent remplacer l’acompte selon le dossier ; cela n’élimine jamais le BAT requis pour Custom.
+Tableau de direction proposé
+Indicateur
+Lecture et décision
+CA et contribution par
+famille/canal/segment
+Réallouer assortiment et acquisition
+Panier moyen, conversion et réachat
+à 12 mois
+Vérifier désirabilité et fidélisation
+Leads qualifiés, devis acceptés et
+marge Custom
+Ajuster qualification, prix et capacité
+Temps de traitement et reprises BAT
+Détecter les tâches qui saturent l’équipe
+Coût de visualisation par projet et
+commande gagnée
+Fixer quotas et automatisation utile
+Stocks, défauts, retours et retards
+Ajuster fournisseurs et approvisionnements
+Manga vendu, visites QR et ventes
+associées
+Décider de la prochaine aventure et des dérivés
+Proposition. Revue commerciale mensuelle, suivi hebdomadaire des dossiers ouverts et des échéances. Les
+scénarios prudent, central et haut utilisent les mêmes formules ; leurs valeurs sont renseignées après audit des
+ventes, coûts et capacité. L’expansion internationale suit la capacité réelle à livrer, informer et traiter les
+retours.
+
+=== PAGE 8 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+8 / 33
+5 Phasage et portes de décision
+Le calendrier ci-dessous est une proposition d’enchaînement, pas une estimation de charge. Les dates,
+moyens et budgets sont arrêtés après l’audit. Le MVP complet comprend le socle marchand et le pilote
+Custom/Projects opérationnel ; un socle marchand peut être livré avant lui.
+Phase
+Résultat attendu
+Porte de sortie
+F0 fin 2026
+Audit profond, sauvegarde restaurée, état de
+référence, matrice de reprise
+G0 : preuves et décisions de
+reprise validées
+F1 fin 2026 à début
+2027
+Socle Web FR/EN, cinq univers, catalogue fiable,
+compte et commerce
+G1 : achat mobile et exploitation
+maîtrisés
+F2 premier semestre
+2027
+Custom 2D, Projects photo, devis/BAT, production,
+suivi humain
+G2 : pilote complet accepté sur
+les trois segments
+F3 second semestre
+2027
+Optimisation du tunnel, Kaïro, essais Passport/Gallery
+et extensions
+G3 : bénéfice mesuré et capacité
+confirmée
+F4 option ultérieure
+Kits validés, visualisation enrichie, éventuelle app/AR
+GO spécifique pour chaque
+option
+La préparation éditoriale de Kaïro et la R&D produit peuvent progresser en parallèle du logiciel. La mise en
+vente du manga dépend des fichiers, de l’épreuve physique et du distributeur. L’ouverture de fonctions
+inachevées n’est pas nécessaire au respect d’une date indicative.
+Dépendances à respecter
+F0 précède toute transformation structurelle. F1 stabilise identité, commerce et contenu avant F2. Le
+stockage privé, les contrôles d’accès et le modèle de versions précèdent l’ouverture des uploads Custom.
+Le BAT et les conditions de commande précèdent tout lancement de production. La taxonomie du
+catalogue précède ses extensions ; les droits de publication et la modération précèdent World Gallery.
+Critères économiques des options
+Une option exige un problème observé, une hypothèse mesurable, un coût total incluant maintenance et
+travail humain, un responsable, un pilote et un critère d’arrêt. Passport et Gallery ne bloquent pas le MVP.
+Une app nécessite des usages importants mal servis par le Web et un gain démontré, puis réutilise
+compte, API et données. Aucun budget de développement natif obligatoire n’est inscrit pour 2027.
+Proposition de pilote F2. Faire réussir au minimum deux parcours complets de chaque segment, dont un
+scénario avec correction du BAT, et compléter ces exercices par les essais d’échec de la recette. Ces six
+dossiers de test ne prouvent pas la demande commerciale ; ils valident l’opérabilité. L’extension
+commerciale dépend ensuite des commandes et marges réellement observées.
+
+=== PAGE 9 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+9 / 33
+Partie B Cahier des charges directeur
+6 Audit profond obligatoire et reprise de l’existant
+AUD-01 • P0 • F0. GPT-6 commence impérativement par un audit profond du dépôt, du site et du travail de
+Claude. Il ne commence pas par une refonte, un changement de framework, de thème, de moteur de
+commerce ou une migration. Un correctif urgent de confinement, s’il devient nécessaire, est isolé,
+documenté et réversible.
+Informations de départ à vérifier
+La conversation mentionne KoinoboriHouse.com, WordPress/WooCommerce, Polylang, o2switch et le
+dépôt Ahlaoban/koinobori-house. Ce sont des références de recherche issues de l’échange, pas des
+constats techniques établis par ce document. Les versions, extensions, hébergement effectif,
+anomalies, branche déployée et fonctions réalisées par Claude restent à établir.
+Méthode attendue
+1. Identifier dépôt et accès autorisés ; lire les instructions du projet ; inventorier documents, demandes
+initiales, décisions et livrables Claude. Préserver branches, fichiers non suivis et changements locaux.
+2. Relever commit, branches, historique, dépendances, licences, scripts, configuration et procédure de
+déploiement. Comparer réellement dépôt et version en ligne, y compris code ajouté hors dépôt.
+3. Produire une sauvegarde cohérente base/fichiers/configuration et effectuer un test de restauration dans
+un environnement isolé. Masquer les données personnelles et désactiver paiements/envois réels en
+staging.
+4. Cartographier WordPress, thèmes, extensions, MU-plugins, snippets, hooks, shortcodes, types de
+contenus, API, cron, cache, base et services externes.
+5. Tester catalogue, variations, stocks, taxes, livraison, paiement, remboursement, comptes, commandes,
+e-mails, FR/EN, URLs et liens produits. Revérifier le sujet Polylang évoqué sans présumer d’une panne.
+6. Évaluer UX mobile, accessibilité, SEO, performances, sécurité, fichiers privés, sauvegardes, coût
+d’exploitation et capacité d’évolution.
+7. Relier chaque développement Claude à une demande, une preuve d’exécution et une limite observée.
+Distinguer défaut reproductible, préférence visuelle et fonctionnalité manquante.
+8. Produire la matrice de reprise, les risques, le plan de migration éventuel, le backlog priorisé, les
+estimations par fourchette et les décisions d’architecture.
+Acceptation G0
+Chaque constat comporte preuve, environnement, date, version et méthode de reproduction. Les zones
+inaccessibles sont déclarées non vérifiées. La matrice couvre tous les composants métier critiques et les
+changements Claude identifiés. Le commerce de référence est sauvegardé, les risques de perte de
+données sont explicités, et un plan de retour est vérifié. Alain valide le périmètre ; le responsable technique
+valide la faisabilité avant transformation.
+
+=== PAGE 10 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+10 / 33
+7 Matrice de reprise et gouvernance technique
+AUD-02 • P0 • F0. La matrice est un livrable autonome versionné. Aucun classement effectif n’est attribué
+dans ce référentiel sans audit.
+Classe
+Définition
+Preuve nécessaire
+KEEP
+Conserver en l’état
+Exigences couvertes et tests
+satisfaisants
+IMPROVE
+Améliorer localement un socle sain
+Écarts limités et changement
+circonscrit
+REFACTOR
+Préserver le comportement en corrigeant la structure
+Dette démontrée, tests de
+non-régression
+REPLACE
+Remplacer un composant
+Comparaison des options,
+migration et retour
+REMOVE
+Retirer un élément inutile ou nuisible
+Absence d’usage/dépendance
+ou retrait maîtrisé
+BUILD
+Construire une fonction absente
+Absence vérifiée et exigence
+justifiée
+Schéma d’une ligne de matrice
+ID composant ; chemin ou service ; version déployée ; fonction ; contribution Claude connue ; exigence liée
+; constat et preuve ; couverture des tests ; décision ; justification ; dépendances ; criticité ; données
+affectées ; risque ; charge basse/haute et hypothèses ; ordre ; responsable ; approbateur ; procédure de
+retour.
+Exemple de fiche à compléter : « Module de comptes — état à auditer — classe non attribuée — examiner
+identités, permissions, commandes historiques et scénario de récupération ». Une fonction inconnue n’est
+pas automatiquement BUILD ; un travail insatisfaisant n’est pas automatiquement REPLACE.
+Gouvernance de développement
+GOV-01 • P0. Un ticket décrit problème, périmètre, exigence, critères d’acceptation, données affectées et
+preuve de test. Chaque changement passe par une branche, une revue et un environnement de test. Les
+décisions structurantes font l’objet d’un ADR : contexte, options, choix, coût, conséquences et retour
+possible.
+Le code assisté par GPT-6 reste soumis à revue, tests et responsabilité humaine. Le dépôt contient le
+code, les migrations et la documentation utile ; les secrets restent dans un gestionnaire ou dans la
+configuration sécurisée de l’environnement. Les manipulations manuelles indispensables sont consignées
+et réconciliées avec le dépôt.
+GOV-02 • P0. Les déploiements sont identifiés par version et commit. Prévoir sauvegarde, tests
+avant/après, responsable de décision, arrêt et retour. Une restauration complète de base ne doit pas
+effacer des commandes reçues après le déploiement : préférer changements compatibles et retour
+applicatif ; tout retour de données exige un plan de réconciliation.
+Alain arbitre marque, offre et priorités. Le responsable technique désigné garantit architecture, sécurité et
+exploitation. Un opérateur commercial valide les parcours internes. Les validations juridique, comptable et
+produit sont attribuées aux personnes compétentes. Aucun nom de prestataire ou ressource disponible
+n’est présumé.
+
+=== PAGE 11 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+11 / 33
+8 Architecture fonctionnelle et expérience mobile
+UX-01 • P1 • F1/F2. Une plateforme responsive sert Safari sur iPhone, Chrome sur Android, tablette et
+ordinateur. Tous les parcours critiques sont réalisables sans application : découvrir, acheter, importer une
+photo, configurer, visualiser, enregistrer, demander un devis et approuver un BAT.
+Navigation cible
+Accueil → Collections / Kaïro / Custom / Projects ; accès Boutique et familles disponibles ; Maison et
+créateurs ; inspirations ; aide et contact ; panier ; Mon Koinobori House. Sur mobile, limiter les niveaux et
+conserver un accès visible à l’action principale. Éviter une double navigation qui confond univers créatif et
+famille produit.
+Accueil : promesse de création, accès aux cinq univers, exemples en mouvement, lien vers
+Custom/Projects, explication de Kaïro et éléments de confiance. L’action Projects explique la visualisation
+sur photo en termes simples. Les contenus commerciaux indiquent que KH ne réalise pas la pose au
+moment pertinent, notamment avant devis.
+États d’interface exigés
+Chargement, vide, succès, erreur, expiration de session, reprise, fichier refusé et indisponibilité d’un
+service sont prévus. Un traitement d’image affiche son avancement ou son statut sans inventer de temps
+restant. Une erreur n’efface pas silencieusement le travail. Les choix sont conservés lors de la création de
+compte ; une sauvegarde confirmée a réellement été reçue par le serveur.
+UX-02 • P1. Les gestes du configurateur disposent de commandes alternatives pour déplacer,
+redimensionner et annuler. Les champs ont des libellés, les erreurs sont annoncées et le focus est visible.
+Les textes importants et les quantités restent disponibles hors image. Le parcours s’utilise au clavier et
+avec un lecteur d’écran sur les fonctions critiques.
+Cibles de recette proposées. Tester de 360 à 1440 pixels de largeur, zoom texte 200 %, orientation
+portrait/paysage et réseau mobile dégradé. Aucune action essentielle ne dépend uniquement du survol,
+d’un glisser-déposer ou d’une vidéo automatique. Vérifier sur de vrais appareils iPhone et Android, pas
+seulement en émulation. Le parc de versions exact est fixé au démarrage puis maintenu.
+Limites MVP
+Configurateur produit 2D et composition sur photographie. Ni AR temps réel, ni mesure automatique fiable,
+ni calcul structurel, ni application native. Une PWA ou un fonctionnement hors ligne peuvent être étudiés
+ultérieurement ; le stockage local de documents sensibles ne doit pas être activé par défaut.
+
+=== PAGE 12 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+12 / 33
+9 Catalogue et cinq collections
+CAT-01 • P1 • F1. Le modèle comporte cinq collections originales, dont Kaïro. Les noms, palettes, textes et
+designs des quatre autres sont repris des actifs KH après inventaire et validation créative. Aucun nom
+commercial n’est créé arbitrairement dans le projet technique.
+Fiche collection
+Identifiant stable, nom et texte FR/EN, récit/inspiration, auteurs, palette, image principale, médias, ordre
+d’affichage, designs liés, statut de publication et métadonnées SEO. Chaque collection doit avoir une
+identité éditoriale propre sans imposer cinq systèmes techniques différents.
+Fiche design et produit
+Identifiant design distinct du SKU ; nom, collection, histoire, visuels authentiques, vidéo au vent si
+disponible, attributs et droits. Le produit vendable porte SKU, famille, taille, variantes, prix, stock ou délai de
+fabrication, poids et données d’expédition, matériau, entretien et précautions. Les valeurs viennent du
+dossier produit validé.
+Le design est réutilisable sur différents supports sans dupliquer son histoire ni ses droits. Une déclinaison
+textile est un nouveau produit lié au design, avec ses propres fichiers industriels et caractéristiques. Les
+tailles ne doivent pas créer autant de pages éditoriales concurrentes sans raison SEO.
+CAT-02 • P1. Choix de taille lisible, unités cm et inches lorsque pertinentes, composition du pack et
+disponibilité explicites. Les photos de mise en scène ne doivent pas laisser croire que supports ou
+accessoires sont inclus. Les images générées illustratives sont distinguées des photos réelles lorsqu’un
+risque de confusion existe.
+COM-01 • P0 • F1. Le commerce standard conserve panier, paiement, stock, confirmation, livraison, facture
+et service après-vente. Prix, taxes et transport sont déterminés par règles validées. Aucune commande
+payée ne peut être perdue lors d’un incident de retour navigateur. Les confirmations sont liées aux états
+vérifiés du paiement.
+L’achat standard peut rester accessible sans création préalable de compte si le fonctionnement retenu le
+permet ; le compte unique récupère ensuite la commande par vérification de l’identité. Les seuils Custom
+ne s’appliquent pas aux achats de collections ni aux compositions Projects constituées de références
+standard.
+Acceptation
+Les cinq collections sont éditables et correctement reliées à leurs produits ; une nouvelle taille n’efface pas
+les liens du design. Les fiches FR/EN, le stock, le panier et le prix final sont cohérents. Le scénario rupture,
+changement de langue, abandon et reprise du paiement est testé.
+
+=== PAGE 13 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+13 / 33
+10 Kaïro et les futures aventures
+KAI-01 • P1 • F1/F2. Kaïro est le premier univers narratif KH. Première aventure : 15 chapitres reliés aux
+15 koinobori correspondants ; 3 à 4 pages par chapitre ; 45 à 60 pages d’aventure ; noir et blanc ; lecture
+de droite à gauche ; éditions française et anglaise distinctes. Les incarnations ou étapes de Kaïro ne sont
+pas artificiellement transformées en quinze personnages si le récit ne le prévoit pas.
+Le prix public cible retenu est 6,90 €, sous réserve de validation des coûts, du format et des conditions de
+distribution. Des pages éditoriales supplémentaires peuvent porter l’objet vers 70 à 80 pages ; il s’agit
+d’une possibilité à arbitrer, pas d’un volume narratif imposé. Le choix de l’imprimeur/distributeur reste
+ouvert.
+Passerelles éditoriales
+Chaque chapitre comporte une URL durable et un QR discret vers sa page KH. La page présente le
+design, sa place dans le récit, médias et produit ; elle donne accès au manga selon l’offre éditoriale. Le
+produit ou son emballage renvoie inversement à l’univers. Aucun compte ni application n’est requis pour
+lire une page publique issue d’un QR.
+KAI-02 • P1. Le modèle sépare univers, aventure, édition linguistique, chapitre et design. L’identifiant d’une
+prochaine aventure ne réutilise pas les QR du premier tome. Le lien chapitre/design est explicite et
+extensible ; un design peut être associé à plusieurs contenus. Aucun verrou technique à « 15 chapitres
+pour toujours » n’est introduit.
+Les QR utilisent un domaine contrôlé par KH et des redirections maintenables, par exemple un chemin
+comportant aventure et chapitre. L’URL d’un livre imprimé ne dépend pas du slug commercial d’un produit.
+Une référence retirée mène à une page informative et aux alternatives, pas à une erreur.
+Fabrication du manga
+Avant mise en page définitive, confirmer ouverture droite à gauche, FR/EN, dimensions, fonds perdus,
+pagination, qualité des trames, couverture, épreuves et distribution. Ne pas déclarer artificiellement une
+édition française comme japonaise pour satisfaire une plateforme. La documentation KDP exige la
+cohérence langue/contenu/métadonnées et traite le sens de lecture selon les langues [S5]. La compatibilité
+effective du projet doit être confirmée avant engagement.
+Acceptation et suite
+Tester les 15 QR de chaque édition sur téléphone, leur destination et leur langue ; vérifier une épreuve
+papier et les droits des contenus. Les prochaines aventures sont décidées sur demande, coût et capacité
+créative. Ni manga interactif, ni chapitre payant débloqué, ni produit dérivé ne sont obligatoires au MVP.
+
+=== PAGE 14 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+14 / 33
+11 Compte unique et organisations
+ACC-01 • P0/P1 • F1/F2. Une identité KH unique dessert B2C/B2B/B2G, commandes, projets, designs,
+simulations, devis, BAT et documents. Ne pas créer un compte séparé pour Projects ni pour une future
+application. Le type de client est distinct des droits d’accès techniques.
+La découverte, la configuration et une première visualisation sont accessibles sans compte dans des
+limites de coût et d’abus. Les brouillons anonymes sont temporaires et privés. Pour enregistrer
+durablement ou transmettre à KH, l’utilisateur s’authentifie ; le brouillon est transféré une seule fois à son
+compte après vérification, sans perte ni accès au brouillon d’un autre visiteur.
+Espace Mon Koinobori House
+Profil et coordonnées ; adresses ; organisation éventuelle ; commandes et suivi ; projets avec versions ;
+fichiers ; devis ; BAT à examiner ; factures/documents ; préférences de contact ; export et demande de
+suppression. Les contenus optionnels Passport sont ajoutés à ce même espace plus tard.
+Organisations et permissions
+ACC-02 • P0. En MVP, un propriétaire et un contact de validation identifiés suffisent par dossier. Le modèle
+prévoit une organisation et des membres ; la collaboration avancée est P2. Un membre n’accède qu’aux
+projets autorisés. Le signataire/validateur d’un BAT est identifié et son habilitation est confirmée pour le
+dossier. Changer son profil en « particulier » ne doit pas contourner un seuil professionnel déjà applicable à
+un devis.
+Pour B2G : organisation, service, contact technique, contact administratif si distinct, référence de marché
+ou bon de commande si nécessaire, adresses de facturation/livraison et documents utiles. La validation
+artistique et l’engagement administratif sont deux informations distinctes. Les procédures de facturation
+publique sont vérifiées avant contractualisation selon la juridiction concernée.
+ACC-03 • P0. Récupération d’accès sûre, vérification de l’adresse électronique, protection contre
+l’énumération des comptes et révocation des sessions. Une fusion de comptes exige preuve de contrôle et
+journal d’opération ; l’adresse seule ne suffit pas à transférer une commande.
+Acceptation
+Commencer anonymement sur téléphone, créer le compte, enregistrer et reprendre sur ordinateur. Tester
+deux comptes, deux organisations et leurs URL de fichiers ; aucun accès croisé. Retirer un membre
+révoque immédiatement son accès. Les documents restent liés à l’identité qui a approuvé leur version
+historique.
+
+=== PAGE 15 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+15 / 33
+12 Custom et règles de quantité
+CUS-01 • P1 • F2. Trois niveaux : fichier client prêt à examiner ; adaptation par KH de
+logo/couleurs/éléments ; création originale KH à partir d’un brief. Les honoraires et livrables de chaque
+niveau sont présentés avant engagement.
+Configurateur V1 : choisir gabarit et taille ; importer ; déplacer, redimensionner et faire pivoter si utile ;
+visualiser zones imprimables et marges ; annuler/rétablir ; choisir quantité ; voir preview et minimum ;
+sauvegarder et demander un devis. Le contrôle industriel reste humain. Texte enrichi, bibliothèque
+avancée, préflight automatisé et assistance IA relèvent de P2.
+CUS-02 • P0. Les minimums initiaux sont 50 unités B2C et 150 B2B/B2G par design et par taille. Les
+lignes identiques sont regroupées pour le contrôle ; différents designs ou tailles ne se compensent pas.
+Toute modification de profil, taille, design ou quantité relance le contrôle. Les seuils sont paramétrés au
+back-office, versionnés et contrôlés côté serveur à l’envoi, au devis et à la commande.
+Cas de recette
+Résultat attendu
+B2C 49 d’un design/taille
+Demande de devis Custom bloquée avec explication
+B2C 50 ou 75 du même couple
+Quantité admissible
+B2C 25 petit + 25 grand
+Non admissible pour chaque couple
+B2B 149 puis 150 du même couple
+Refus puis admissibilité
+B2G 75 design A + 75 design B
+Non admissible pour les deux couples
+B2B 100 références de collection
+Pas de blocage Custom artificiel
+La visualisation peut explorer des compositions avant éligibilité, mais l’interface ne promet pas une
+production sous le minimum. Une configuration non admissible peut être réorientée vers une collection.
+Aucun contournement automatique par le panier ou l’API n’est permis.
+CUS-03 • P0. Conserver le fichier fourni, sa version, le gabarit, les transformations et la preview. Les
+conditions de droits distinguent fichier client, adaptation et création KH ; préciser reproduction, éventuelle
+exclusivité, remise de fichiers et portfolio. Une déclaration de droits ne remplace pas l’examen d’une
+anomalie manifeste.
+Acceptation
+Tester les six cas ci-dessus dans l’interface et par requête serveur, les doubles clics, les fichiers corrompus
+et la reprise après interruption. La preview n’est jamais étiquetée BAT ni envoyée automatiquement au
+fabricant. La version utilisée pour le devis est identifiable.
+
+=== PAGE 16 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+16 / 33
+13 Projects et visualisation environnementale
+PRJ-01 • P1 • F2. Projects permet aux trois segments de composer des collections, du Custom ou un
+mélange. Saisie du contexte, date souhaitée, budget indicatif facultatif, photos, dimensions déclarées et
+contraintes du lieu. Un projet peut posséder plusieurs variantes, sans multiplier les comptes ni les
+commandes.
+Parcours mobile
+Photographier ou choisir une image → décrire le lieu → choisir designs, tailles et quantités → positionner
+une composition → générer ou afficher une visualisation → comparer → enregistrer → demander un devis.
+La prise de photo dispose d’un repli par photothèque ; orientation, compression et formats issus des
+téléphones sont traités ou expliqués clairement.
+VIS-01 • P1. Deux objets distincts : preview du produit 2D et visualisation esthétique dans une
+photographie. Le MVP utilise un compositing ou un service de génération selon le choix issu d’un prototype
+technique ; l’utilisateur doit pouvoir comparer des variantes telles que 50, 75 et 100 pièces. La liste
+structurée de quantité/taille/design reste la référence, même si une image IA représente imparfaitement le
+compte ou les motifs.
+Une génération altérant fortement les designs, les quantités apparentes ou le lieu est signalée comme non
+exploitable, régénérée ou remplacée par une préparation manuelle. Ne pas faire croire que le rendu est à
+l’échelle si aucune calibration fiable n’existe. Une estimation géométrique future n’est pas une validation
+structurelle.
+VIS-02 • P0. Les simulations portent une mention durable : « Visualisation esthétique indicative.
+Dimensions, pose et sécurité à vérifier indépendamment. KH ne réalise pas l’installation. » Cette
+information accompagne aussi les exports et le devis lorsqu’un visuel est joint. Aucun calcul de tenue au
+vent ou choix d’ancrage certifié n’est produit par l’IA.
+VIS-03 • P1. Le traitement est asynchrone : file d’attente, statut, annulation logique, nombre limité de
+reprises, timeout, coût et identifiant de tâche. Un rechargement de page ne relance pas une génération
+payante. En panne, le brief et le devis restent possibles avec traitement manuel annoncé. Quotas
+anonymes, par compte et budget global sont réglables.
+Acceptation
+Sur iPhone et Android, créer trois variantes d’un même lieu puis les retrouver sur ordinateur. Vérifier
+correspondance entre données et fichiers, affichage des limites, échec du fournisseur, budget atteint et
+suppression. Sur des cas tests validés par Alain, les motifs sont reconnaissables et la comparaison de
+densité utile. L’exactitude industrielle ne dépend jamais de cette recette esthétique.
+
+=== PAGE 17 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+17 / 33
+14 Devis et validation du BAT
+QUO-01 • P0/P1 • F2. Le devis constitue une version figée : client/organisation, lignes
+design/taille/quantité, honoraires, accessoires, taxes, livraison, devise, validité, échéancier, hypothèses de
+délai, conditions et exclusion de la pose KH. Statuts : brouillon, envoyé, accepté, refusé, expiré, remplacé.
+Une modification d’un devis envoyé crée une nouvelle version ; une acceptation expirée demande
+réémission.
+BAT-01 • P0. Le BAT est préparé après contrôle technique KH. Il référence fichiers industriels, version
+design, taille, colorimétrie ou réserves applicables, zones et finitions nécessaires à la fabrication.
+L’approbation exige une action explicite sur le document présenté, avec identité, date, version, empreinte
+du fichier et texte d’acceptation versionné. Une consultation de fichier, une vidéo WhatsApp ou un
+paiement ne valent pas approbation de BAT dans l’application.
+Workflow normatif
+Brief → configuration/visualisation → demande → qualification KH → devis versionné → accord
+commercial → préparation industrielle → BAT → approbation client → conditions financières ou
+administratives satisfaites → libération KH → production → expédition.
+Le devis et le BAT peuvent être préparés de façon itérative, mais le passage en production vérifie
+simultanément la cohérence des versions. Un acompte éventuellement encaissé avant le BAT ne libère
+pas la production. Le coût d’une création nécessitant un engagement préalable est défini par les conditions
+commerciales.
+BAT-02 • P0. États : brouillon, envoyé, modifications demandées, approuvé, remplacé, annulé. Les fichiers
+envoyés sont immuables. Un changement de graphisme, taille ou paramètre industriel après approbation
+invalide l’accord correspondant et crée un nouveau BAT. Une nouvelle quantité exige une mise à jour
+commerciale et la vérification des impacts ; le système conserve la trace de la décision de revalidation.
+Verrou de production
+La commande de production est impossible sans : devis/commande valides, minimums satisfaits, fichier
+industriel contrôlé, BAT applicable approuvé, accord financier/administratif vérifié et responsable KH
+identifié. L’interface et le serveur appliquent le même verrou ; un administrateur ne dispose pas d’un simple
+bouton de contournement non tracé.
+Acceptation
+V1 approuvé puis V2 envoyé : V1 ne peut plus déclencher V2. Approbation simultanée d’une version
+remplacée : refus explicite. Double approbation : résultat unique. Document privé inaccessible à un autre
+client. Chaque production retrouve exactement le fichier et l’accord qui l’ont autorisée.
+
+=== PAGE 18 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+18 / 33
+15 Commande et production
+ORD-01 • P0 • F1/F2. Le moteur transactionnel de référence reste WooCommerce selon l’orientation de
+reprise, sous réserve des constats de F0 et d’une décision documentée contraire. Le module Projects crée
+ou associe une commande sans dupliquer stocks, taxes et paiements dans un second moteur.
+Le paiement provient du prestataire vérifié côté serveur. Les notifications sont authentifiées et
+idempotentes : la répétition d’un événement ne crée ni deuxième commande, ni deuxième acompte, ni
+deuxième production. Les états financiers distinguent impayé, acompte reçu, solde dû, payé, remboursé et
+litige selon le système retenu. Le retour navigateur est informatif, jamais source d’autorité.
+PRO-01 • P0/P1 • F2. Un dossier de production contient fournisseur, lot, quantités, tailles, version design,
+fichiers autorisés, BAT, échantillon éventuel, contrôle qualité, dates prévues/réelles et responsable. Statuts
+: à libérer, libéré, en fabrication, contrôle, prêt à expédier, expédié, livré, anomalie. Le statut client reste
+compréhensible et n’expose pas les informations fournisseur confidentielles.
+Un changement demandé après lancement ouvre une demande de modification avec estimation de
+faisabilité, coût et délai. L’ancien ordre n’est pas écrasé ; KH décide s’il peut être arrêté. Une date
+d’événement n’est pas automatiquement une promesse de livraison. La date confirmée est enregistrée au
+moment de l’engagement.
+Approvisionnement et logistique
+Lier achat fournisseur, commande client et réception selon les besoins sans construire un ERP complet au
+MVP. Conserver bordereaux, contrôle quantité/qualité, poids/colis, transporteur, numéro de suivi et
+éventuelles expéditions partielles. Les écarts, défauts, réimpressions et remboursements sont suivis avec
+un motif et un impact économique.
+Parcours B2G
+Prévoir dépôt de bon de commande, références administratives, interlocuteurs et échéancier approuvé. La
+méthode de facturation et les mentions requises doivent être validées avant vente aux organismes
+concernés. Une première gestion manuelle tracée peut suffire ; aucune intégration à une plateforme
+publique n’est présumée présente ou obligatoire au MVP logiciel.
+Acceptation
+Payer, échouer, reprendre, recevoir deux notifications identiques, rembourser et traiter un envoi partiel.
+Reconstituer un dossier de production à partir de la commande et inversement. Interdire tout envoi
+industriel d’un fichier obsolète. Le fournisseur reçoit uniquement les données nécessaires à fabriquer et
+expédier ce qui lui est confié.
+
+=== PAGE 19 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+19 / 33
+16 Suivi commercial personnalisé
+CRM-01 • P1 • F2. Chaque demande Custom/Projects devient un dossier assignable. Qualification :
+segment, quantité admissible, besoin compréhensible, date réaliste, budget lorsqu’il est communiqué,
+coordonnées, prochaine action et canal autorisé. Les données insuffisantes conduisent à une demande de
+précision, pas à une relance agressive automatique.
+Le back-office distingue nouveau, à qualifier, qualifié, devis en cours, devis envoyé, relance prévue, gagné,
+perdu et sans suite. Les raisons de perte et le temps passé alimentent le pilotage. Les statuts commerciaux
+ne remplacent pas les statuts de BAT, paiement et production.
+Vidéo personnelle WhatsApp
+CRM-02 • P1. Pour un lead qualifié, proposer une courte vidéo réellement personnalisée d’environ 20 à 40
+secondes : prénom ou destinataire, compréhension du projet, variante retenue et prochaine étape. Le
+créateur peut montrer un aperçu du projet. L’envoi est réalisé par une personne KH après contrôle du
+destinataire et de l’autorisation du canal. Le MVP peut être manuel avec journalisation, sans automatisation
+WhatsApp coûteuse.
+Enregistrer date, opérateur, canal, objet de contact et résultat utile. Un état « consulté » n’est affiché que
+s’il est techniquement disponible et légitimement collecté ; à défaut, rester sur « envoyé » ou « réponse
+reçue ». Ne pas envoyer de lien public permanent vers les fichiers privés ni joindre inutilement le fichier
+industriel.
+La préférence WhatsApp est distincte de l’abonnement marketing et de la création du compte. Un refus
+n’empêche pas devis et service ; proposer e-mail ou échange convenu. Retrait de la préférence et arrêt
+des relances sont immédiatement pris en compte. Les contenus sensibles, visages ou détails privés sont
+limités dans la vidéo.
+Organisation du service
+Proposition. Accusé de réception automatique immédiat ; premier examen humain sous deux jours
+ouvrés, à confirmer selon capacité avant affichage public. Un responsable et une date de prochaine action
+sont obligatoires pour tout lead qualifié ouvert. Les rappels internes sont possibles ; les messages externes
+restent conditionnés au canal et au contexte.
+Acceptation
+Créer un lead qualifié autorisant WhatsApp puis un autre le refusant. Vérifier que seul le premier peut faire
+l’objet de cette action, qu’un retrait bloque la prochaine relance et que l’historique est visible aux seuls
+intervenants habilités. Le commercial retrouve devis, simulation et prochaine action sans rechercher dans
+plusieurs boîtes personnelles.
+
+=== PAGE 20 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+20 / 33
+17 Back-office et responsabilités
+BO-01 • P1 • F2. Une fiche dossier regroupe client, segment, organisation, événement, date,
+configurations, versions, photos, simulations, devis, BAT, paiements, production, documents et historique
+commercial. Recherche par identifiant, nom, organisation et statut ; filtres par échéance, propriétaire et
+action attendue.
+Fonctions minimales
+Assigner et commenter ; demander un complément ; examiner les droits et fichiers ; préparer un devis ;
+publier un BAT ; recevoir une décision ; vérifier les conditions de lancement ; libérer la production ;
+enregistrer contrôle et expédition ; traiter une anomalie ; exporter les informations autorisées. Les notes
+internes ne sont jamais confondues avec les messages visibles au client.
+Rôle cible
+Pouvoir principal
+Limite
+Client / validateur
+Ses projets et approbations autorisées
+Aucun autre dossier
+Commercial KH
+Qualification, devis et suivi
+Pas d’administration système
+Créatif KH
+Designs, contrôles et préparation BAT
+Pas de modification des
+paiements
+Production/logistique
+Dossiers libérés, lots, expéditions
+Fichiers strictement nécessaires
+Éditeur contenu
+Pages, collections, Kaïro
+Aucun fichier client privé
+Administrateur
+technique
+Paramétrage et exploitation
+Accès métier exceptionnel tracé
+Une même personne peut cumuler des rôles dans la petite équipe, mais les capacités restent séparées
+dans le système. Toute action sensible conserve son auteur. Les fournisseurs n’ont pas un accès global au
+back-office.
+BO-02 • P0. Paramètres sensibles : minimums Custom, grilles et taxes, conditions de paiement, quotas de
+simulation, fournisseurs, délais de conservation et droits. Les changements sont versionnés ; ils n’altèrent
+pas rétroactivement les devis ou BAT acceptés. Une modification de seuil ne régularise pas
+silencieusement un dossier existant.
+BO-03 • P1. Tableaux d’attention : BAT en attente, devis expirant, paiement non rapproché, production en
+retard, génération échouée, fichiers à purger et demandes de droits. L’opérateur doit pouvoir résoudre ou
+escalader chaque état, avec preuve et commentaire.
+Acceptation
+Un opérateur réalise le parcours complet sans accès technique au serveur. Les droits de chaque rôle sont
+testés positivement et négativement. Une erreur d’envoi de BAT peut être corrigée par remplacement
+contrôlé sans effacer l’historique. Les exports excluent données inutiles et secrets techniques.
+
+=== PAGE 21 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+21 / 33
+18 Architecture technique cible et interfaces
+ARC-01 • P0/P1 • F0/F2. La stack définitive est arrêtée après audit. Orientation privilégiée : WordPress
+pour contenu, WooCommerce pour commerce, module KH pour Custom/Projects, stockage privé pour
+fichiers, traitements d’images asynchrones et API métier réutilisable. Cette séparation peut rester dans un
+déploiement simple ; elle n’impose ni microservices ni architecture headless.
+Autorités fonctionnelles
+Le moteur commerce fait autorité sur commandes, paiements, prix de vente appliqués et stocks. Le module
+KH fait autorité sur projets, configurations, versions de design, simulations, devis projet, BAT et libération
+de production. Une seule identité client relie ces ensembles. Les médias publics passent par une
+distribution optimisée ; les médias privés requièrent autorisation.
+ARC-02 • P1. Choisir entre extension métier WordPress et service séparé sur preuves : volume,
+maintenabilité, file de tâches, isolation, performances, exploitation disponible et coût total. Les tables métier
+dédiées sont une option à évaluer face aux capacités de l’existant. Aucun stockage massif de documents
+en champs de configuration n’est retenu sans justification.
+Contrats API cibles
+Domaine
+Opérations logiques
+Contrôle principal
+Projets
+Créer, lire, modifier, versionner
+Propriétaire et version attendue
+Fichiers
+Demander upload, finaliser, télécharger
+Type, quarantaine et autorisation
+Simulations
+Créer tâche, statut, résultat
+Quota, idempotence,
+dépendances figées
+Devis et BAT
+Publier version, accepter/refuser
+Autorité et version toujours active
+Commandes
+Associer et rapprocher paiement
+Identifiant unique et événement
+vérifié
+Les chemins d’URL sont définis dans un contrat documenté après F0. Prévoir validation de schéma, codes
+d’erreur stables, pagination, identifiants opaques et identifiant de corrélation. Les écritures sensibles
+utilisent clé d’idempotence et contrôle de concurrence. L’interface ne transmet jamais un prix « de
+confiance » directement à la production.
+ARC-03 • P0. Les intégrations externes utilisent clés serveur, limites, timeout et stratégie de reprise. Le
+fournisseur d’images est derrière une interface remplaçable ; tracer version/méthode/coût sans envoyer de
+données client non nécessaires. Les notifications sont traitées par une file ou mécanisme fiable, avec
+échec visible et relance contrôlée.
+Évolutivité
+Une future app, si décidée, consomme les mêmes services. Ne pas créer maintenant une infrastructure
+mobile inutilisée. L’architecture retenue, sa documentation et son coût doivent être exploitables par l’équipe
+réellement disponible.
+
+=== PAGE 22 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+22 / 33
+19 Modèle de données et versions
+DAT-01 • P0/P1. Les identifiants sont stables, les relations explicites et les données contractuelles figées.
+Les montants sont stockés en unité monétaire mineure avec devise ; les dates techniques en UTC avec
+affichage local ; les dimensions dans une unité canonique et converties pour l’affichage.
+Entité
+Données et relations essentielles
+User, Organization, Membership
+Identité, segment, rôles, appartenance, préférences
+Collection, Design, Product, Variant
+Univers, droits, support, SKU, taille et liens commerciaux
+Universe, Adventure, Edition,
+Chapter
+Kaïro, aventure, langue, ordre et liens vers designs
+Project, ProjectVersion
+Propriétaire/organisation, contexte, date, état, version
+ConfigurationLine
+Version design, taille, quantité, options, origine standard/Custom
+Environment, Asset, AssetVersion
+Photo, dimensions déclarées, fichier, empreinte, accès, conservation
+Simulation, SimulationJob
+Entrées figées, moteur, version, statut, coût, résultat
+Quote, QuoteVersion, QuoteLine
+Prix et conditions figés, statut, acceptation
+BAT, BATVersion, Approval
+Fichiers industriels, version, auteur, décision et preuve
+OrderLink, PaymentRecord
+Références commerce, montants et rapprochements
+ProductionBatch, Shipment
+Fournisseur, fichiers approuvés, lot, contrôle et livraison
+ContactEvent, Task, Consent,
+AuditEvent
+Suivi, action, préférence et événements sensibles
+PassportEntry, GallerySubmission
+Extensions P2, preuve/état et autorisation de publication
+Relations et invariants
+Un utilisateur possède plusieurs projets ; une organisation peut regrouper des membres autorisés. Un
+projet possède plusieurs versions et configurations. Une simulation référence précisément une version de
+configuration et un environnement. Un devis peut couvrir plusieurs lignes ; une ligne Custom doit référencer
+son design/taille. Un BAT peut couvrir plusieurs éléments si chacun est explicitement identifié. Une
+production référence les BAT applicables, le devis/commande et les fichiers approuvés.
+DAT-02 • P0. Ne jamais modifier en place le contenu d’un devis envoyé ou d’un BAT envoyé. Les versions
+remplacées restent consultables selon les droits. La commande conserve son instantané même si le
+catalogue change. Les contraintes de base empêchent références orphelines, quantités négatives et
+duplications de transactions.
+La suppression d’un compte lance une procédure de tri : effacement des données non requises,
+anonymisation si adaptée et archivage restreint des pièces à conserver. Elle n’efface pas aveuglément les
+preuves contractuelles. Les durées et motifs sont documentés.
+Migration et acceptation
+Pour toute migration : comptages avant/après, correspondance des identifiants, contrôles de totaux,
+fichiers et accès, essai à blanc, procédure de reprise et réconciliation. Tester simultanéité de deux
+modifications : la seconde reçoit un conflit explicite, pas un écrasement silencieux.
+
+=== PAGE 23 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+23 / 33
+20 Sécurité et protection des fichiers
+SEC-01 • P0. Contrôle d’accès côté serveur sur chaque projet, version et fichier ; privilèges minimaux ;
+MFA pour administration ; sessions sécurisées et révocables ; limitation des tentatives et actions
+coûteuses. Identifiants opaques et noindex ne remplacent pas une autorisation.
+SEC-02 • P0. Séparer stockage public et privé. Logos, photos de lieux, briefs, créations clients, devis et
+BAT ne sont jamais servis par une URL publique WordPress permanente. Utiliser accès authentifié ou lien
+signé court, limité à la ressource, avec cache privé approprié. Le partage éventuel d’un projet exige
+invitation ou droit explicite ; un lien divulgué peut être révoqué.
+Chaîne d’upload
+Contrôler extension, signature réelle, taille et dimensions ; renommer avec identifiant non exécutable ;
+placer en quarantaine ; vérifier fichiers malveillants ; convertir les previews en environnement isolé ;
+supprimer métadonnées inutiles telles que GPS ; interdire l’exécution. SVG/PDF et formats industriels
+demandent un traitement adapté ; un fichier accepté comme pièce de travail n’est pas nécessairement
+affichable directement dans le navigateur.
+Propositions de limites initiales à tester : photos jusqu’à 20 Mo et 40 mégapixels ; fichiers graphiques
+jusqu’à 50 Mo ; formats vectoriels complexes par canal de dépôt contrôlé. Les plafonds et conversions sont
+paramétrables selon coûts et appareils, avec message clair en cas de rejet.
+SEC-03 • P0. Prévenir injections, XSS, CSRF, accès direct à un objet tiers, SSRF des services de
+génération et abus de webhooks. Vérifier signatures, dates et répétitions des événements. Secrets hors
+dépôt et hors navigateur, rotation possible, logs sans clés ni documents privés. Les contenus d’un upload
+sont des données, jamais des instructions à exécuter par un agent IA.
+SEC-04 • P0. Sauvegardes chiffrées et isolées, restauration testée, dépendances inventoriées et mises à
+jour contrôlées. Journaliser changements de droits, téléchargement sensible pertinent, publication BAT,
+approbation, libération et opérations d’administration ; protéger les journaux contre modification non
+autorisée.
+Acceptation bloquante
+Tester accès croisé comptes/organisations, lien expiré/révoqué, fichier exécutable déguisé, document trop
+gros, requête non authentifiée, webhook forgé et double événement. Aucune faille critique connue non
+traitée sur les parcours exposés. Les risques résiduels sont consignés et attribués ; une simple mention
+légale ne corrige pas un accès privé ouvert.
+
+=== PAGE 24 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+24 / 33
+21 RGPD et cycle de vie des données
+PRV-01 • P0. KH désigne le responsable opérationnel de la protection des données et tient un registre des
+traitements. Documenter finalités, catégories, bases légales, destinataires, sous-traitants et transferts.
+Distinguer service demandé/contrat, obligations de conservation, sécurité et consentements facultatifs.
+Vérifier les contrats de sous-traitance, les transferts hors EEE et la nécessité d’une analyse d’impact selon
+les risques. Les droits et la gestion des violations sont organisés conformément au RGPD [S1].
+PRV-02 • P0. Au dépôt de photos et logos, informer de l’usage, des prestataires de visualisation éventuels
+et de la conservation. Ne pas réutiliser les fichiers clients pour entraîner un modèle, promouvoir KH ou
+publier en Gallery par défaut. Privilégier des images sans personnes identifiables et sans adresse précise
+inutile. Les fabricants reçoivent le strict nécessaire, sous engagements adaptés.
+Politique de conservation proposée
+Ces valeurs sont des réglages de conception à valider avant ouverture, et non des durées légales
+universelles. La CNIL recommande de définir les durées selon chaque finalité et de distinguer base active
+et archivage [S2].
+Catégorie
+Proposition initiale
+Action
+Brouillon anonyme et
+fichiers temporaires
+24 heures après inactivité
+Purge automatique et dérivés
+Projet non transmis
+90 jours après inactivité, rappel préalable
+Suppression ou conservation
+demandée
+Simulations d’un projet
+clos
+12 mois sauf besoin justifié
+Purge, y compris chez le
+prestataire
+Prospect, échanges et
+vidéos
+Durée justifiée dans la politique commerciale
+Revue périodique et retrait du
+canal
+Commandes, devis
+acceptés et BAT
+Calendrier juridique/contractuel à fixer
+Archive restreinte, échéance par
+catégorie
+Journaux de sécurité et
+sauvegardes
+Cible 6 mois de logs ; cycle backups défini
+Purge et contrôle des accès
+La tâche de purge couvre originaux, miniatures, conversions, résultats IA et caches. Les sauvegardes
+expirent selon leur cycle ; une restauration réapplique les suppressions nécessaires. Une conservation
+pour litige est documentée, limitée et revue.
+PRV-03 • P0. Export, rectification, opposition et suppression sont accessibles par une procédure
+d’identification proportionnée. Les demandes sont suivies avec échéance ; informer de ce qui est effacé ou
+conservé. La suppression ne retire pas les données d’un autre membre ni ne détruit sans examen une
+preuve de commande.
+PRV-04 • P0. Bloquer les traceurs soumis au consentement avant accord, permettre refus et retrait
+simples, et vérifier les conditions d’une éventuelle mesure exemptée. La preuve du choix est versionnée ;
+refus analytics n’empêche pas l’achat [S3]. Consentements newsletter, WhatsApp et Gallery sont séparés.
+Pour les usages liés à des mineurs, limiter la collecte et faire valider le dispositif avant activation [S4].
+
+=== PAGE 25 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+25 / 33
+22 SEO et international
+SEO-01 • P1 • F1. Le site public est bilingue FR/EN avec traductions éditoriales validées, URLs stables,
+liens linguistiques cohérents, canonical, hreflang, sitemap et redirections. L’implémentation et les
+extensions existantes sont évaluées en F0 ; ne pas imposer leur remplacement par principe.
+Les pages collection, design et Kaïro sont accessibles aux moteurs sans dépendre d’une interaction de
+configurateur. Les fiches produits utilisent des données structurées correspondant au prix et à la
+disponibilité visibles. Prévoir fil d’Ariane, titres spécifiques, texte utile, images nommées et alternatives
+descriptives.
+Intentions à couvrir
+Découverte du koinobori et des créations contemporaines ; décoration et cadeau ; mariage et fête privée ;
+personnalisation ; hôtels, restaurants, événements et collectivités ; Kaïro et son manga. Les mots-clés
+précis sont recherchés après accès aux données. Ne pas générer des centaines de pages villes ou
+variantes sans contenu réel.
+Les pages Projects expliquent l’accompagnement créatif et la fourniture des produits sans promettre
+l’installation. Les cas clients publiés nécessitent droits et validation ; les simulations ne sont pas présentées
+comme des réalisations livrées.
+SEO-02 • P0. Projets, photos clients, devis, BAT et comptes restent privés et hors index. Une interdiction
+robots ou un noindex ne protège pas un fichier. Le staging est protégé par authentification et exclu de
+l’indexation ; les e-mails et paiements de test restent neutralisés.
+Migration SEO
+Avant changement d’URL : inventorier pages indexables, liens entrants et QR imprimés ; définir
+correspondance ancienne/nouvelle ; conserver redirections pertinentes sans chaînes ni renvois
+systématiques à l’accueil. Après déploiement : crawl, codes de statut, sitemaps, langues, pages
+essentielles et erreurs de liens.
+INT-01 • P1. FR/EN dès le socle ; architecture compatible avec langues futures. EUR initialement selon
+orientation de la conversation, devises additionnelles après décision. Les prix, taxes, frais et délais affichés
+correspondent aux destinations réellement servies. Les conversions cm/inches sont cohérentes et les
+textes de livraison/retour localisés.
+Acceptation
+Échantillon de chaque gabarit dans les deux langues : titre, canonical, hreflang réciproque, liens, données
+produit et affichage mobile. Aucune URL privée dans le sitemap. Les QR Kaïro continuent de fonctionner
+après changement du slug produit. Les contenus bilingues ne cassent ni stock partagé ni panier.
+
+=== PAGE 26 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+26 / 33
+23 Analytics et indicateurs
+ANA-01 • P1. Un plan de marquage versionné définit événement, déclencheur, propriétés autorisées,
+finalité, système source, consentement et règle de déduplication. Les événements métier nécessaires au
+traitement des commandes sont distincts de l’analytics marketing. Ni e-mail, téléphone, adresse, nom de
+projet libre ni fichier client ne sont envoyés aux outils d’audience.
+Étape
+Événements cibles
+Découverte et achat
+collection_viewed, product_viewed, add_to_cart, checkout_started, purchase,
+refund
+Custom
+project_started, design_uploaded, design_previewed,
+custom_minimum_blocked
+Visualisation
+environment_uploaded, simulation_requested, simulation_generated,
+simulation_failed
+Conversion projet
+account_created, project_saved, quote_requested, quote_sent,
+quote_accepted
+Exécution
+bat_sent, bat_approved, production_released, order_created
+Kaïro
+kairo_chapter_viewed, kairo_qr_landed, kairo_product_clicked
+Options
+passport_registered, gallery_submitted, gallery_published
+Les propriétés utiles sont langue, segment, collection/design public, appareil, origine de canal, tranche de
+quantité, mode Custom et code d’erreur normalisé. Les identifiants métier utilisés en analyse restent
+pseudonymisés et limités. La version du plan permet de comparer les périodes sans confondre des
+définitions différentes.
+Sources de vérité et indicateurs
+CA et remboursements viennent du commerce ; progression et temps de traitement du module KH ; scans
+présumés des pages de redirection ; coûts de simulation du journal des tâches. Dédupliquer purchase par
+transaction et gérer les remboursements pour obtenir le CA net. Ne pas assimiler un retour navigateur à
+une vente.
+Taux de devis acceptés = devis gagnés / devis envoyés éligibles sur une cohorte définie. Taux BAT
+approuvés et temps jusqu’à approbation se calculent hors versions remplacées selon convention
+documentée. Réachat à 12 mois s’observe seulement sur les cohortes arrivées à maturité. Les délais de
+décision B2G justifient une lecture distincte du B2C.
+ANA-02 • P1. Les liens QR distinguent aventure, chapitre, langue et support lorsque possible. Une arrivée
+par URL QR est un proxy de scan, pas une preuve de lecture du livre ni un lecteur unique. Les ventes
+Amazon et les achats Web ne peuvent pas être reliés individuellement sans données appropriées ;
+annoncer les limites d’attribution et les effets du refus des traceurs.
+Acceptation
+Une commande test produit un seul purchase ; un remboursement diminue les agrégats appropriés.
+Vérifier les événements avec et sans consentement, sans fuite de données personnelles. Le tableau
+rapproche ses montants du moteur commerce et affiche les différences connues.
+
+=== PAGE 27 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+27 / 33
+24 Qualité de service et exploitation
+OPS-01 • P0/P1. Définir staging, production, déploiement, sauvegarde, restauration, surveillance et gestion
+des incidents. Les objectifs ci-dessous sont des cibles proposées à confirmer après audit de capacité ; ils
+ne décrivent pas les performances actuelles.
+Domaine
+Cible initiale proposée
+Vérification
+Pages publiques
+mobiles
+LCP ≤ 2,5 s ; INP ≤ 200 ms ; CLS ≤ 0,1 au 75e
+percentile
+Mesure terrain quand suffisante,
+tests labo avant lancement
+API courante hors
+images
+95 % des requêtes ≤ 1 s sous charge convenue
+Test représentatif après F0
+Visualisation
+Statut visible immédiatement ; cible 95 % ≤ 120 s
+Mesures fournisseur et test
+d’échec
+Disponibilité commerce
+99,5 % mensuel
+Sonde et incidents documentés
+Sauvegarde données
+métier
+RPO cible ≤ 1 h ; reprise RTO ≤ 4 h
+Exercice chronométré
+Médias et documents
+Politique cohérente avec données liées
+Restauration base et fichiers
+ensemble
+Si une cible exige un coût disproportionné, l’ADR expose compromis et mesure compensatoire avant
+lancement. Le volume d’utilisateurs simultanés et de générations est fixé après estimation du trafic ; un
+seuil non défini ne vaut pas test de charge réussi.
+Exploitation quotidienne
+Surveiller disponibilité, erreurs serveur, checkout, webhooks, queue de générations, e-mails non délivrés,
+sauvegardes, espace disque et dépenses des services. Alertes destinées à un responsable et
+accompagnées d’une procédure. Les plafonds de génération évitent un coût incontrôlé. Le panier et la
+demande de devis restent disponibles si le moteur d’images est arrêté.
+OPS-02 • P0. En incident : qualifier, contenir, préserver les preuves, informer l’équipe et les clients
+concernés si nécessaire, restaurer, réconcilier paiements/commandes et documenter la cause. Le
+processus de violation de données inclut l’examen des notifications réglementaires applicables. Une
+urgence ne justifie pas de copier la base client dans un outil non autorisé.
+Maintenance
+Calendrier de mise à jour, surveillance des vulnérabilités, revue des licences et prestataires, sauvegarde
+avant changement, vérification des parcours critiques. Documentation d’installation locale et de reprise
+accessible au mainteneur. Les propriétaires des domaines, comptes fournisseurs et clés de secours sont
+identifiés.
+Acceptation
+Simuler panne du fournisseur d’images, webhook retardé, base restaurée, clé révoquée et déploiement
+défectueux. Mesurer la restauration et vérifier qu’aucune commande récente n’a disparu. Les alertes
+arrivent au bon destinataire ; une génération bloquée dispose d’une issue exploitable.
+
+=== PAGE 28 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+28 / 33
+25 Passport et World Gallery
+FID-01 • P2 • F3. Passport/My Collection est une piste de fidélisation à tester. Chaque création peut
+posséder une carte ou un QR avec collection, design, auteurs et année. Le compte affiche les créations
+enregistrées et les liens vers leur histoire. Pour Kaïro, une progression par aventure peut être affichée sans
+imposer de jeu ni de récompense artificielle.
+Il faut distinguer le QR public de découverte et une preuve de possession. Un QR générique imprimé dans
+le manga ne suffit pas à certifier un achat. Une inscription peut provenir d’une commande rattachée, d’un
+code unique ou d’une déclaration explicitement étiquetée. Aucun certificat d’authenticité forte ni actif
+spéculatif n’est promis.
+Acceptation du pilote Passport
+Ajouter une création, empêcher le double comptage, gérer plusieurs exemplaires et une erreur
+d’enregistrement. Définir le traitement des cadeaux et transferts avant activation. Respecter confidentialité
+et suppression du compte ; ne pas publier automatiquement sa collection. Mesurer usage et réachat sur
+une période convenue avant généralisation.
+GAL-01 • P2 • F3. World Gallery permet à un client de proposer photo et légende de ses koinobori. Une
+galerie éditoriale simple précède éventuellement une carte. La localisation est approximative par défaut,
+par ville/région ou pays ; aucune adresse privée ou position GPS exacte n’est publiée automatiquement.
+Workflow Gallery
+Soumission → confirmation des droits et choix de publication → examen KH → corrections si nécessaire →
+publication → demande de retrait ou archivage. Le consentement ou l’autorisation applicable mentionne
+supports, usage de la photo et modalités de retrait. Les droits sur les personnes identifiables et lieux sont
+vérifiés selon le cas. La publication ne vaut pas validation technique de la pose représentée.
+GAL-02 • P0 lors de l’activation. Les médias soumis restent privés jusqu’à modération. Retirer
+métadonnées sensibles, disposer d’un signalement et d’un retrait, tracer l’autorisation et la version publiée.
+Une photo de projet fournie pour simulation ne passe jamais automatiquement en Gallery.
+Options de marque ultérieures
+Nouvelles créations, éditions, collaborations, coulisses des créateurs et éventuel Koinobori House Day
+peuvent nourrir notoriété et réachat. Ce sont des initiatives éditoriales/commerciales à planifier, pas des
+développements obligatoires. Chaque chiffre public de pays ou de participants doit provenir de données
+vérifiées.
+Acceptation du pilote Gallery
+Une soumission sans droits suffisants est refusée ; une image acceptée publie seulement les données
+autorisées ; un retrait fonctionne sur page, média public et carte éventuelle. Mesurer contributions, coût de
+modération et utilité commerciale avant extension.
+
+=== PAGE 29 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+29 / 33
+26 Extensions produit et kits DIY
+PRD-01 • P2. Les cinq familles sont prévues dans le catalogue dès la conception, mais leurs références
+sont activées selon le processus produit de la partie A. Sourcing d’accessoires, fabrication principalement
+chinoise et design KH sont compatibles, avec informations exactes sur chaque produit.
+Les packs standard possèdent une nomenclature explicite et une règle de stock. La compatibilité d’un
+accessoire dépend de caractéristiques validées, pas uniquement d’une famille ou d’un score IA. Un retrait
+de lot doit permettre d’identifier les commandes concernées.
+DIY-01 • P3 • F4. Les kits sont une option après R&D, essais physiques et validation de sécurité. Les
+appellations Balcony, Garden, Event ou les formats Kit 10/25/50 sont des pistes évoquées, non des
+spécifications définitives. Aucun kit universel, aucune hauteur, charge ou vitesse de vent maximale n’est
+inventé dans le site.
+Dossier de validation requis
+Usage visé et situations exclues ; matériaux et composants ; compatibilités ; résistance et tenue dans les
+conditions prévues ; comportement au vent ; vieillissement et réutilisation ; notice et précautions ;
+montage/démontage ; essais d’utilisabilité ; traçabilité ; contrôle de production ; vérification des obligations
+réglementaires applicables à la catégorie et aux marchés vendus ; gestion des défauts et rappels.
+La mise en vente nécessite un responsable produit et la validation par les compétences appropriées. Un
+test visuel ou un accord fournisseur ne suffit pas. Pour les installations complexes, hauteur, voie publique
+ou accueil du public, KH ne présente pas ces kits comme une alternative à l’étude du professionnel
+mandaté par le client.
+DIY-02 • P0 lors de l’activation. Le site ne recommande un kit que pour une configuration effectivement
+couverte par sa validation. Un cas hors domaine affiche une absence de recommandation adaptée ; il ne
+suggère pas une référence par défaut. Les limites figurent sur fiche, panier pertinent, notice et devis.
+Absence de prestation de pose
+L’offre et les documents décrivent fourniture des produits, visualisation et éventuel kit à monter par le client.
+Les CGV et devis ne créent pas une promesse de visite, de montage ou de validation des ancrages par
+KH. Cette limite de service ne supprime pas les responsabilités légales liées à la conception, à l’information
+et à la commercialisation des produits.
+Acceptation
+Pas d’activation de référence avant dossier approuvé et notice disponible ; correspondance démontrée
+entre kit et configuration ; test de commande hors périmètre ; retrait d’un lot et identification des clients
+concernés. Les extensions dépourvues de validation restent en préparation interne.
+
+=== PAGE 30 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+30 / 33
+27 Recette et critères de lancement
+REC-01 • P0. Chaque exigence livrée référence un test, son environnement, la version testée, le résultat et
+une preuve. La recette combine règles métier, intégrations, UX réelle et reprise d’incident. Les captures
+seules ne démontrent ni paiement fiable ni contrôle d’accès.
+Test bloquant
+Scénario
+Résultat requis
+T01 Audit
+Dépôt/site/Claude comparés
+Matrice et preuves G0, aucune conclusion
+inventée
+T02 Commerce
+Achat FR/EN sur iPhone et Android
+Prix/stock/commande corrects, confirmation
+fiable
+T03 Minimums
+49/50 B2C, 149/150 pro, mix designs/tailles
+Blocage/admission conformes côté serveur
+T04 Continuité
+Anonyme mobile puis compte et PC
+Travail repris sans perte ni fuite
+T05 Simulation
+Trois variantes, timeout, quota et nouvelle
+tentative
+Versions distinctes, coût maîtrisé, repli utile
+T06 BAT
+V1 approuvé, remplacé par V2
+Production V2 impossible sans accord V2
+T07 Paiement
+Webhook doublé et retour navigateur absent
+Une transaction, une commande, état
+cohérent
+T08 Production
+Paiement reçu mais BAT absent
+Libération bloquée ; trace des conditions
+T09 B2G
+BAT, bon de commande et règlement
+approuvé
+Circuits artistique/administratif distincts
+T10 Confidentialité
+Accès au projet/fichier d’un autre client
+Refus systématique, y compris URL signée
+expirée
+T11 Données
+Refus cookies, retrait WhatsApp, purge
+Service possible et choix appliqués
+T12 Kaïro
+Tous QR FR/EN et changement de slug
+produit
+Liens durables corrects
+T13 Reprise
+Restauration et retour de version
+Données/commandes réconciliées, délai
+mesuré
+T14 Rôles
+Éditeur, commercial, créatif et fournisseur
+Actions limitées aux droits attendus
+Définition de terminé
+Code revu, tests pertinents réussis, critères métier acceptés, données/migrations documentées, sécurité
+vérifiée, textes FR/EN validés, performance examinée, logs et alertes opérationnels, documentation et
+retour disponibles. Aucun défaut critique ni blocage de commande/accès privé non résolu ; les défauts
+mineurs résiduels ont responsable et échéance acceptés.
+G1 ouvre le socle marchand seulement si sa recette passe. G2 ouvre le MVP complet après pilote des trois
+segments et T03 à T11. Les fonctions P2/P3 activées plus tard ont leur propre recette et ne peuvent
+dégrader le socle. Alain donne l’accord métier ; le responsable technique donne l’accord d’exploitation et
+consigne la version mise en ligne.
+
+=== PAGE 31 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+31 / 33
+28 Livrables et décisions restant à instruire
+Livrables attendus par phase
+Phase
+Livrables de référence
+F0
+Rapport d’audit sourcé, inventaire, écarts Claude, matrice, baseline, risques,
+plan de reprise et estimations
+F1
+Architecture validée, parcours FR/EN, catalogue, commerce, comptes, SEO,
+exploitation et recette
+F2
+Contrats API, schéma de données, Custom/Projects, workflow
+devis/BAT/production, back-office, pilote et procédures
+F3
+Rapport d’usage et marge, améliorations, pilotes de différenciation et dossiers
+produit
+F4
+Dossier de GO par option, preuves de bénéfice/sécurité, budget complet et
+recette dédiée
+Le dossier de livraison technique comprend code et commit, instructions de démarrage, configuration sans
+secrets, migrations, tests, contrats d’intégration, données d’exemple anonymes, manuel opérateur,
+sauvegarde/restauration et registre des décisions. Les livrables doivent permettre la reprise par un
+mainteneur différent.
+Décisions à obtenir sans bloquer la rédaction du référentiel
+Décision
+Responsable
+Échéance
+Accès, dépôt officiel, version en production et
+documents Claude
+Alain et responsable
+technique
+Entrée F0
+Identité des quatre collections, actifs et droits
+Alain / direction créative
+Avant publication F1
+Tailles, matériaux, coûts, stocks et délais
+réellement validés
+KH / production
+Avant vente des références
+Prestataires, architecture, hébergement et budgets
+Technique puis Alain
+G0
+Prix Custom, honoraires, corrections, acomptes et
+B2G
+Alain / comptabilité
+Avant pilote commercial F2
+Politique contractuelle, RGPD et responsabilités
+produit
+KH et conseils compétents
+Avant ouverture concernée
+Imprimeur Kaïro, épreuve RTL FR/EN et prix final
+Alain / édition
+Avant édition définitive
+Quotas, SLO et capacité de support
+Technique et commercial
+Avant G2
+Passport, Gallery, extensions et kits
+Alain après résultats et
+validations
+G3/GO spécifique
+App iOS/Android et AR
+Alain après preuve d’usage
+Option sans date imposée
+Gestion des versions
+Version majeure pour changement de stratégie ou de périmètre ; version mineure pour précision
+fonctionnelle ; correctif pour erreur rédactionnelle sans impact métier. Conserver historique, auteur, date,
+motif et exigences affectées. Le présent référentiel 3.0 est la base consolidée ; les résultats d’audit feront
+l’objet d’un document distinct relié, puis d’une mise à jour approuvée si nécessaire.
+
+=== PAGE 32 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+32 / 33
+Annexes
+A Registre des décisions et traçabilité
+Décision consolidée
+Exigences et sections
+Traitement
+Maison contemporaine du koinobori et du vent
+1 à 3, CAT-01
+Décision ferme
+Cinq collections originales dont Kaïro
+CAT-01, KAI-01
+Noms et actifs à
+inventorier
+Kaïro et futures aventures
+KAI-01/02
+Modèle extensible, éditeur
+à choisir
+B2C/B2B/B2G sur une plateforme
+ACC-01/02, PRJ-01
+Compte unique et droits
+adaptés
+Custom 50/150 par design et taille
+CUS-02, T03
+Contrôle serveur et
+paramètres versionnés
+Projects photo mobile-first
+UX-01, VIS-01/03
+Web MVP, comparaison et
+reprise
+Devis et BAT avant production
+QUO-01, BAT-01/02, PRO-01
+Versions et verrou de
+lancement
+Aucune installation par KH
+1, VIS-02, DIY-02
+Offre, UI, devis et
+documentation
+Kits DIY conditionnels
+DIY-01/02
+R&D et validation avant
+commercialisation
+Vidéo WhatsApp sur leads qualifiés
+CRM-01/02
+Contact humain et canal
+accepté
+Passport et World Gallery
+FID-01, GAL-01/02
+Pilotes P2, non bloquants
+Cinq familles de catalogue
+3, PRD-01
+Déploiement progressif
+Design KH puis sourcing surtout Chine
+1, 3, PRD-01
+Pas de fabrication
+japonaise imposée
+App optionnelle et AR hors MVP
+5, 8, ARC-03
+GO séparé selon valeur
+démontrée
+Audit profond avant transformation
+AUD-01/02, GOV-01/02
+Première intervention
+obligatoire
+Ne pas inventer l’existant
+6 et 7
+Preuves requises, classes
+non préattribuées
+Arbitrages de consolidation
+Les anciennes expressions « vendre des installations » sont remplacées par fourniture de produits et
+accompagnement créatif, sans pose KH. Les exemples Projects de faible quantité restent possibles pour les
+collections ; ils ne dérogent pas aux minimums Custom. Les propositions d’artisanat japonais restent
+possibles mais ne conditionnent aucune famille. Les anciennes phases mobiles obligatoires sont retirées.
+L’achat d’un ordinateur ou d’équipement de développement n’est pas une exigence du projet Web.
+Les idées de gamme et de différenciation demeurent des options quand aucune décision de lancement n’a été
+prise. Les valeurs de performance, conservation, délais de réponse et calendrier introduites par ce document
+sont des propositions explicites à confirmer aux jalons, et non des engagements antérieurs attribués à Alain.
+
+=== PAGE 33 ===
+KOINOBORI HOUSE 2027  |  KH2027-REF  |  Version 3.0
+33 / 33
+B Sources et vocabulaire
+Sources de décision
+Demande de consolidation du 10 septembre 2026 et conversation « Créer des apps iPhone », identifiant
+6aa241fe-3284-83eb-9b39-21d66fcd17c7. Les décisions les plus récentes prévalent sur les premières
+recommandations. La conversation constitue une source d’orientations, pas une preuve de l’état technique
+du site. Les pièces vidéo/image de l’exemple commercial WhatsApp ne constituent pas des spécifications à
+reproduire.
+Références externes consultées le 10 septembre 2026
+Ces sources encadrent les points réglementaires et éditoriaux cités. Les obligations applicables sont à
+vérifier lors de la mise en œuvre, selon les traitements et pays concernés. Les exigences techniques de ce
+document sont des prescriptions de projet, pas une attestation de conformité juridique.
+• [S1] CNIL — Règlement général sur la protection des données. Bases légales, droits, sous-traitance,
+ sécurité, violations et transferts. https://www.cnil.fr/fr/reglement-europeen-protection-donnees
+• [S2] CNIL — Les durées de conservation des données. Définition des durées et cycle de vie.
+ https://www.cnil.fr/fr/passer-laction/les-durees-de-conservation-des-donnees
+• [S3] CNIL — Cookies et traceurs que dit la loi. Consentement aux traceurs et exemptions à vérifier.
+ https://www.cnil.fr/fr/cookies-et-autres-traceurs/que-dit-la-loi
+• [S4] CNIL — Comment recueillir le consentement des personnes. Consentements et cas des
+ mineurs. https://cnil.fr/fr/les-bases-legales/consentement
+• [S5] Amazon KDP — Langue et sens du tournage de page. Cohérence langue, contenu,
+ métadonnées et couverture. https://kdp.amazon.com/fr_FR/help/topic/GQSHRFWZ5CEY7XAC
+Vocabulaire de référence
+BAT : bon à tirer, version soumise à approbation avant fabrication. MVP : première version complète
+permettant de tester le service commercial dans un périmètre maîtrisé. ADR : décision d’architecture
+documentée. SKU : référence vendable d’un produit ou d’une variante. RPO : perte de données maximale
+visée dans le temps. RTO : durée de rétablissement visée. SLO : objectif de niveau de service.
+Idempotence : une action répétée ne produit pas plusieurs effets métier identiques. AR : réalité
+augmentée. DIY : montage réalisé par le client.
+KEEP / IMPROVE / REFACTOR / REPLACE / REMOVE / BUILD : conserver, améliorer localement,
+restructurer en préservant la logique, remplacer, retirer ou construire après preuve d’absence. Ces classes
+s’appliquent à l’existant seulement après F0.
+Fin du référentiel KH2027-REF version 3.0.

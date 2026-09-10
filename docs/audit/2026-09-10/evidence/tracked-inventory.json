@@ -1,0 +1,827 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 169,
+    "sha256": "a032c0db5f6c3e6b945878dd7c38422bddb8d9049b86533ac32053f1ee3e0984"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 2861,
+    "sha256": "c3a221373e91cc82c965c766ec6a5bd0383e14c18b1c57f6542c08796cb8f4f1"
+  },
+  {
+    "path": "CLAUDE.md",
+    "bytes": 30933,
+    "sha256": "24810c95076334bfc990d5d012cdd3ebdb63af334f9d54cd48d872f14e02c403"
+  },
+  {
+    "path": "README.md",
+    "bytes": 4825,
+    "sha256": "df6185b543c24125fbc54f3c97f4cf4797b790d8678c29e60538654108b7e60c"
+  },
+  {
+    "path": "brand/koinoborihouse/blue-night-texture-III.webp",
+    "bytes": 13838,
+    "sha256": "08c09974ad8a058da91aa229507f97ea52dc0f0d477d2f5bffe9439f5a690531"
+  },
+  {
+    "path": "brand/koinoborihouse/favicon-200.png",
+    "bytes": 28982,
+    "sha256": "2eb15b43c030beb5852b956aac428545401829fd9480b28ec05a3014555e282b"
+  },
+  {
+    "path": "brand/koinoborihouse/favicon-512.png",
+    "bytes": 164897,
+    "sha256": "e60135bda5b1d9d8d0ea19e765ebf322b5f99ca6b93c93c7b1dca01cbcea7d8f"
+  },
+  {
+    "path": "brand/koinoborihouse/logo-color-gold-II.png",
+    "bytes": 163505,
+    "sha256": "590a9d7999430795f8616207196ff2a299f622287352b288e92247a35190e5fc"
+  },
+  {
+    "path": "brand/koinoborihouse/logo-color-gold-III-cart.png",
+    "bytes": 133396,
+    "sha256": "495920a873c46f9f24f2e40c9da5f352f80b5288ce916113fd0d6902e37a434f"
+  },
+  {
+    "path": "brand/koinoborihouse/logo-color-gold-III.png",
+    "bytes": 120148,
+    "sha256": "e5f44c5d240fb227e80008708a6ec805d9885c080767ef1ef667096639f8a8a1"
+  },
+  {
+    "path": "brand/koinoborihouse/logo-color.png",
+    "bytes": 92246,
+    "sha256": "905ab66d55cfb3c611f86608fc7c5a3afed12e821b0c2aaee1f7f78a9b9628d0"
+  },
+  {
+    "path": "brand/koinoborihouse/shoji-center-texture-II.webp",
+    "bytes": 27170,
+    "sha256": "19935202aec00240f7d96b3673e56a6bf7b1a5cdf5ac9b1de1728d010ae9fcb8"
+  },
+  {
+    "path": "brand/koinoborihouse/shoji-center-texture.png",
+    "bytes": 49593,
+    "sha256": "7e18bd0077670ec2053ee40fa39f44b192a3589542a9273cd00a28d5c99e40bd"
+  },
+  {
+    "path": "catalog/README.md",
+    "bytes": 19402,
+    "sha256": "b5e4ad68d1e9af6f1cf8e398e3086c1f984f7a8438ace3ef51b1aff237d18bc8"
+  },
+  {
+    "path": "catalog/examples.csv",
+    "bytes": 3056,
+    "sha256": "1d329fd047fee3ad58f70478f1f6190b5016ae792bbab99fa0fd7ded57dd9d74"
+  },
+  {
+    "path": "catalog/images/eds/001-stars-stripes/main.jpg",
+    "bytes": 211884,
+    "sha256": "d2a445abda53f472b0870c12046b7db7316d15ae396043a9a60c2b61f6234497"
+  },
+  {
+    "path": "catalog/images/hanami/001-sakura-rouge/main.jpg",
+    "bytes": 226036,
+    "sha256": "d99d8ce02a1a0e3a776ff658175051bd5ccb86050a39a7cd2d00f9204c3d6559"
+  },
+  {
+    "path": "catalog/images/kairo/001-la-promesse-de-la-mer/main.jpg",
+    "bytes": 305912,
+    "sha256": "f7143a91c73d766c08e0133eba767dc899812f17e5d57d5e320434ba6c3537ff"
+  },
+  {
+    "path": "catalog/images/kairo/002-l-ombre-sur-les-flots/main.jpg",
+    "bytes": 235239,
+    "sha256": "69585effaa2f06c447fd7aa73fc95dac7f639f492131f61b5d965e73002e284e"
+  },
+  {
+    "path": "catalog/images/kairo/003-le-seuil-interdit/main.jpg",
+    "bytes": 381728,
+    "sha256": "af9dbeb185101efc0dec32119944c1970d62145a385be3439eff0e08ae828824"
+  },
+  {
+    "path": "catalog/images/kairo/004-les-voix-du-pont/main.jpg",
+    "bytes": 329723,
+    "sha256": "322e7f7918b5dc9bf00326a5851199b8340cf60fabf7c7a48650f4840783f2a8"
+  },
+  {
+    "path": "catalog/images/territoires/001-stars-stripes/main.jpg",
+    "bytes": 171542,
+    "sha256": "d722233d3f3be46a5bf575e69918c6715df27d88e95f9fd317fd9efc3bbb83eb"
+  },
+  {
+    "path": "catalog/images/territoires/002-breton/main.jpg",
+    "bytes": 91278,
+    "sha256": "89367c66853f9d651ce0750b982d6dff19ef4e954b6a1b3ad78f88983a79432d"
+  },
+  {
+    "path": "catalog/images/territoires/003-bigouden/main.jpg",
+    "bytes": 102853,
+    "sha256": "f9dbd7f525a559eacd67bced8dd3c7bffad5ea4b45cc09d8a22074485b358aaf"
+  },
+  {
+    "path": "catalog/master.csv",
+    "bytes": 10724,
+    "sha256": "0469c95a39173f55dc3561d9c82f073e87f9c70d73257e6caa383cfb5ab52aa2"
+  },
+  {
+    "path": "docs/charte-graphique/KH-000 — Koinobori House Design System.md",
+    "bytes": 42352,
+    "sha256": "b90cc2423ffa2f0e9cd2e071b759449f7bcce5ff5dffb54ec7a09aa044927874"
+  },
+  {
+    "path": "docs/charte-graphique/KH-000-Design-System.pdf",
+    "bytes": 156227,
+    "sha256": "5f01bdff9c6da4faf76ca56b405f62f1f796a19e17580326294cb938ec41cdc6"
+  },
+  {
+    "path": "docs/charte-graphique/KH-000b-charte-v2-Ma-Intervalle-enchante-CREATIVE.md",
+    "bytes": 20001,
+    "sha256": "254782e9aac836a0091370f5ba2dc6aecfaa281b5006322636fd8344e84662ad"
+  },
+  {
+    "path": "docs/charte-graphique/KH-000b-charte-v2-Ma-Intervalle-enchante-WORDPRESS.md",
+    "bytes": 21141,
+    "sha256": "c247403b24c1212ea370503e5d6d889f6762944784f67cb6b6db27745cccea52"
+  },
+  {
+    "path": "docs/charte-graphique/KH-000b-pack-assets-v3.1-README.md",
+    "bytes": 10086,
+    "sha256": "40667e9ac349504f2aa168e31420c1b0663216282209880cd014021f0003463a"
+  },
+  {
+    "path": "docs/charte-graphique/KH-001-Image-Map.md",
+    "bytes": 18515,
+    "sha256": "55314ef8cb7829a406fd6712baa14a71b4280d02c44fe8a0320db54552bce283"
+  },
+  {
+    "path": "docs/charte-graphique/KH-001-Image-Map.pdf",
+    "bytes": 111073,
+    "sha256": "d3c87acca22408a6c136f156f43a0e31e959b6de80c2ca1cbdce2943d0120273"
+  },
+  {
+    "path": "docs/charte-graphique/README.md",
+    "bytes": 5129,
+    "sha256": "95c35407b38650af411fda496464deac5897cebd2d3d09a41154c47ec346234f"
+  },
+  {
+    "path": "docs/charte-graphique/assets-manifest.md",
+    "bytes": 29334,
+    "sha256": "12fadc773e1cfa413181f291bd6421cd413d3e61fc01c5c749cefad41de3d88d"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/ASSETS_MANIFEST.md",
+    "bytes": 2052,
+    "sha256": "c57f42f1d20762ab81e3ba7533740b1d6eea899774b4c3bdea4c42c32362d2ae"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/DEMANDE_CLAUDE_SOURCE.txt",
+    "bytes": 3308,
+    "sha256": "011c6b488e958b26de5a5b1eb4017c868e21fa91a936b7c996ba80766ec0788b"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/INTEGRATION_KADENCE.md",
+    "bytes": 5932,
+    "sha256": "8206bcf716e02d5ce46edd35ef02b5e665c3fa2f33d8c92e24ed084b4f6794fc"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/NOTES-INTEGRATION-CLAUDE.md",
+    "bytes": 11617,
+    "sha256": "4da4017f554a14e80435df845120882481b209328ca11ff93ff832a093819ebf"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/README.md",
+    "bytes": 4822,
+    "sha256": "21f869a77134cfd6033a496c50088d25373487585018bce4a87642fbc595c146"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/VALIDATION_RESPONSIVE.md",
+    "bytes": 1823,
+    "sha256": "6c59e803bddb77b91c840bf46dd11919087e4ef1e837cedbe17fa78473ff2106"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/assets/produit-hanami-sakura.png",
+    "bytes": 68170,
+    "sha256": "d1bfab2c4cfe8c8a157e9b68de47dc776cdda01c25016ac8e3b0ad7abf9f0868"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/assets/produit-kairo-horizon.png",
+    "bytes": 205409,
+    "sha256": "c08c9db042cb75ac865b27ddafe51ec3d15165b884a0f8ce622b398c26dbe15d"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/assets/produit-mer-okusai.png",
+    "bytes": 251488,
+    "sha256": "6ff41d0bb985709f0d1b2f4197658a9b4fc00e9df04a50674fa2134bb2e41bb9"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/assets/produit-motifs-asanoha.png",
+    "bytes": 167607,
+    "sha256": "e20d6540a42616802a4811da1a59e6975592968ba38b72f0aa1fd370a21bd477"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/index.html",
+    "bytes": 23241,
+    "sha256": "483d85d9d91d53edfb0755ecb8a12d7e74c264ced4103ac80d72eca66287806f"
+  },
+  {
+    "path": "docs/charte-graphique/reference-v3/styles.css",
+    "bytes": 30587,
+    "sha256": "bbe94df53bd925602333fb2a150dd6c1838b667cb90b0b949d09d4d9f06a7745"
+  },
+  {
+    "path": "docs/handoff/BRIEF-MANUS-contraste-or.md",
+    "bytes": 7044,
+    "sha256": "441ed3e904463474bf38d30e58d7d24a420454ba00f280296aa7b3ad6d48e704"
+  },
+  {
+    "path": "docs/handoff/BRIEF-MANUS-page-reference.md",
+    "bytes": 6217,
+    "sha256": "06e5046bd2ef475d50aabf7f12acb65aaa20baa951e985e4ffcbf7ddcd9975aa"
+  },
+  {
+    "path": "docs/handoff/CODEX-HANDOFF.md",
+    "bytes": 11317,
+    "sha256": "7f5262cd7bcbd353ba8b8fdcdf665cae9a098f27531902cf1ecc87d5d0efd2f5"
+  },
+  {
+    "path": "docs/handoff/PASSATION-2026-07-27.md",
+    "bytes": 14380,
+    "sha256": "dd50f6d57855928f27ad85cd7d895838cba41c8e82e733cb57f6d49c17a60c41"
+  },
+  {
+    "path": "docs/handoff/PASSATION-CHATGPT-2026-09-10.md",
+    "bytes": 15840,
+    "sha256": "6ae0c88d63bacce2fbcad181bb72096e3c4238e8b2ff693f4bc825c53a35cf51"
+  },
+  {
+    "path": "docs/handoff/REPARTITION-MANUS-CLAUDE.md",
+    "bytes": 10690,
+    "sha256": "08c418c82b5a48be56fd231908b0b14c8bd760f009dbcb1ceb62be2bff900e5a"
+  },
+  {
+    "path": "docs/handoff/REPRISE-charte-graphique.md",
+    "bytes": 5514,
+    "sha256": "ec80a98ee38e0d3d99ded727f90e12a61ff5c94603803aa6c219c491e47ea841"
+  },
+  {
+    "path": "docs/kairo-bd-recit-et-produit.md",
+    "bytes": 5397,
+    "sha256": "eaa10f6f4bc0a8a1c0b9c4c0064db3329b7ea7e37c785594b4979712c807f85c"
+  },
+  {
+    "path": "docs/lot0/KH-005-brevo-smtp.md",
+    "bytes": 12000,
+    "sha256": "51e8d4d78d9451c1a1f7f639763f01e114d19af0b62c78f579280a58eb8b9dfe"
+  },
+  {
+    "path": "docs/lot0/KH-011-mediateur-consommation.md",
+    "bytes": 6018,
+    "sha256": "8fb340165c6442eca680a7a2063f609cb4e8094140ffe1b40cfd86fe543e4ce6"
+  },
+  {
+    "path": "docs/lot0/KH-012-KH-015-shipping-usa-seo.md",
+    "bytes": 48805,
+    "sha256": "66674a7dc7c359e0572f0f96d276ecc8e64eef688bb4e19d66c88753ffb4421e"
+  },
+  {
+    "path": "docs/lot0/KH-012-incentives-france-europe.md",
+    "bytes": 25380,
+    "sha256": "b449ac50aa8af51241c779c694c2891ae7f276a64a5a78335e707cdd13ec12ac"
+  },
+  {
+    "path": "docs/lot0/KH-012-shipping-data-template.csv",
+    "bytes": 7528,
+    "sha256": "4efd767e2b86e11c29a961251022d2beb333c6bee6cadd1c2bf7151529bbcadb"
+  },
+  {
+    "path": "docs/lot0/KH-012-shipping-data-template.md",
+    "bytes": 13007,
+    "sha256": "8a5d76e25cf391642fc848d686feffc2b58de427dd73d9d4dec8151ec8b0beed"
+  },
+  {
+    "path": "docs/lot0/KH-012-tarifs-collecte-prioritaire.csv",
+    "bytes": 1428,
+    "sha256": "74128075ce7e131ac35f45c6c4982aad2e9b0483566ac61bd40c7850d4b326fb"
+  },
+  {
+    "path": "docs/lot0/KH-012-tarifs-collecte-prioritaire.md",
+    "bytes": 3874,
+    "sha256": "7ff8717ec47c13b781b484ba42941cc99756ea1ccb9fa3d5d21f482a93f74c88"
+  },
+  {
+    "path": "docs/lot0/KH-012-transporteurs-devis-template.csv",
+    "bytes": 9671,
+    "sha256": "1d10d9149bf965f70bab4d3dbd8bf645ea893ffdabebf15eb03fdcd2f5fc39bb"
+  },
+  {
+    "path": "docs/lot0/KH-012-transporteurs-france-ue.md",
+    "bytes": 21284,
+    "sha256": "66c29648aac35dd2565d70cc4f27dbd0e34da66339f9e2b45a224e1439210381"
+  },
+  {
+    "path": "docs/lot0/KH-015-tests-colissimo-usa.csv",
+    "bytes": 594,
+    "sha256": "70c04dfab5cdb359c4db1189442e3fd35e6fb3c00a6dbfdca4ae22cf55554e85"
+  },
+  {
+    "path": "docs/lot0/KH-015-tests-colissimo-usa.md",
+    "bytes": 5328,
+    "sha256": "899286a5190071e0cb2b3bc9f029ee8b73dae3739fe4b096cfc25d197ad32c0d"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux.md",
+    "bytes": 14713,
+    "sha256": "1c4aa2541ff8fa58634936682321529f1c252950406d3a0ea519562d395df460"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/00-README-KH-017.md",
+    "bytes": 1991,
+    "sha256": "8b3685f76ae14e9a268d90125de3b8ae40cd3bbd61c15e0eba124ed465b49026"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/01-mentions-legales-FR.md",
+    "bytes": 2707,
+    "sha256": "917bd02604c20bf1af23afd24db650b5ad9ac4ddccf2f65eb26b429cc4cb1719"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/02-legal-notice-EN.md",
+    "bytes": 2762,
+    "sha256": "210d3ff35e9f65faad0e4227b65ef0723d040fd5d77ae7101506203f1b349766"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/03-CGV-B2C-FR.md",
+    "bytes": 35011,
+    "sha256": "d2b8281818bddfc63faf897ef83e2c61f1a9083e888d7e2330e99fb5ec14026a"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/04-terms-conditions-B2C-EN.md",
+    "bytes": 32296,
+    "sha256": "01f726da821e4c3e8d0d622ccf56c1db1acbc66769faaec2f68e2f942e36af0e"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/05-politique-confidentialite-RGPD-FR.md",
+    "bytes": 7991,
+    "sha256": "106fa1812ce1e1fe0c6fc14d222b2c8800028ac461a97ce4175f91dd1091d0b8"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/06-privacy-policy-GDPR-EN.md",
+    "bytes": 7186,
+    "sha256": "bf0ebdee1ec8ca3e1d222371e76c97f1a269794e711dcc9172b2e1ca4db5d4b9"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/07-politique-cookies-FR.md",
+    "bytes": 3923,
+    "sha256": "23a46464e9e5aeb35e2647abace40e2205c191914082d34138461deb6372bea5"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/08-cookie-policy-EN.md",
+    "bytes": 3395,
+    "sha256": "f1553847efdcbb41a19711ce50fe32dfe2d8b2df47e47563ebb0f1f833fda046"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/09-donnees-manquantes-et-checklist.md",
+    "bytes": 11400,
+    "sha256": "a5700e676aef0fcdf25ac69a68e05d51fb4fdd2b70ddb2b1fb4d772845114259"
+  },
+  {
+    "path": "docs/lot0/KH-017-documents-legaux/10-clauses-contenu-numerique-BD.md",
+    "bytes": 6239,
+    "sha256": "548f93b26c61e2d8ef6a3b5653b254bd1edf8c64651bfceb3b1545f8b50bfd72"
+  },
+  {
+    "path": "docs/lot1/KH-102-sauvegardes.md",
+    "bytes": 6013,
+    "sha256": "03e6539182640c15d49e82f691bf220068fec23f8899f698ea1c2425143d4451"
+  },
+  {
+    "path": "docs/lot1/KH-103-theme.md",
+    "bytes": 3172,
+    "sha256": "f313e6f5279733e5e8072762713a650ddf09d7c3987eab64c8c6c9a4a3d9914b"
+  },
+  {
+    "path": "docs/lot1/KH-104-polylang.md",
+    "bytes": 3429,
+    "sha256": "d2a9756f90841dea3e6ac6086777af54efe6830361bc6b0268d3f575170ebd42"
+  },
+  {
+    "path": "docs/lot1/KH-104b-full-plan.md",
+    "bytes": 10225,
+    "sha256": "a24d303fae144d5fda7c4fcac59bfc49ddd14c36d4444cf486ac4beba5db5e3c"
+  },
+  {
+    "path": "docs/lot1/KH-104b-full-tests.ps1",
+    "bytes": 10276,
+    "sha256": "c3716701a2e1e4b2d7cfbf96143396b9ac9d74fbb528bd3f0a9cf238aba8a4e3"
+  },
+  {
+    "path": "docs/lot1/KH-104b-pre-plan.md",
+    "bytes": 14889,
+    "sha256": "3a03f0403d56a2ffb3cfdc4685b20c7ba7719346e3fdc7f2031b2776a5a10a8c"
+  },
+  {
+    "path": "docs/lot1/KH-104b-pre-tests.ps1",
+    "bytes": 9390,
+    "sha256": "325f22815ec275e6ab087186194dba88bc45b385c988ee828c48fa115965083e"
+  },
+  {
+    "path": "docs/lot1/KH-104b-pre-tests.sh",
+    "bytes": 6639,
+    "sha256": "6f6b943111a28c2f4a0a58316d53c333816c1ffd6ad40ae7c5218f73ff91fc1f"
+  },
+  {
+    "path": "docs/lot1/KH-106-polylang-woocommerce.md",
+    "bytes": 9363,
+    "sha256": "f421bcaa23f48bf2a2ad55465347e55d2e4081d8247d3c10248790b783cb2e98"
+  },
+  {
+    "path": "docs/lot1/KH-106b-slugs-wc-bilingues.md",
+    "bytes": 11390,
+    "sha256": "a0540b2ed78a9548b673a0894ad10d8845d90696ef3affce0592071ffb736c9b"
+  },
+  {
+    "path": "docs/lot1/KH-107-redirection-racine.md",
+    "bytes": 5650,
+    "sha256": "f89d922adfecb8c97109f9a4400e591ba7977451ec2bcd575efc2faa2a14f41b"
+  },
+  {
+    "path": "docs/lot1/KH-109-seo-tests.ps1",
+    "bytes": 10464,
+    "sha256": "d584f9fdcabcf8330918aa6903d4d0ce34a54e808421919f3d501ba072ed2bdb"
+  },
+  {
+    "path": "docs/lot1/KH-109-seo-tests.sh",
+    "bytes": 8081,
+    "sha256": "6f7498b590cff269c26012963bfbf0600dfec313e336a90bb5f39f7b61773c26"
+  },
+  {
+    "path": "docs/lot1/KH-109-seopress-seo.md",
+    "bytes": 10334,
+    "sha256": "317f70123cd08f0f7df9f16870cabd708dc34e66f5a74f8bd46eded3896969b0"
+  },
+  {
+    "path": "docs/lot2/KH-201-202-prerequis-staging.md",
+    "bytes": 2463,
+    "sha256": "d597799f3ae37d7ade7131f5b07583f84c7e0d821b30815c9565e047dcebb1ec"
+  },
+  {
+    "path": "docs/lot2/KH-203-gabarit-fiche-produit.md",
+    "bytes": 6862,
+    "sha256": "6031b41bdc93243a166b3b1daf1b62c81997f356d939f5de169b700dcdb88d71"
+  },
+  {
+    "path": "docs/lot2/KH-204-schema-csv-bilingue.md",
+    "bytes": 7431,
+    "sha256": "ab38e9bdea122a085e2af594a768bc1728193e2d5e54cd06652dff5df9bf8eaa"
+  },
+  {
+    "path": "docs/lot2/kairo-collection-EN.md",
+    "bytes": 6662,
+    "sha256": "fc3cfa3cd6086325ad3b6ff50dc496c8b90d005f8f8ade7a469c3c90db838b9f"
+  },
+  {
+    "path": "docs/lot2/kairo-collection-FR.csv",
+    "bytes": 6739,
+    "sha256": "b8c292bad916f7e34d56216c47867b086db8feb5780b9439127ae178f64829cf"
+  },
+  {
+    "path": "docs/lot2/lot2-catalogue-plan.md",
+    "bytes": 6458,
+    "sha256": "7bacc965a6e1faa2c1e7af6e1478f27c29ede3c0e8e4768aa24ca2be04d36a79"
+  },
+  {
+    "path": "docs/lot2/mer-collection-EN.md",
+    "bytes": 5911,
+    "sha256": "a5ae5f87f6111dae03c0be3ba5facf6cf42e94f02c75d86c94d9c7749222b365"
+  },
+  {
+    "path": "docs/lot2/mer-collection-FR.csv",
+    "bytes": 7376,
+    "sha256": "4b7e4836a51b9cf6b2958b7081eb663dbcf2ce700791914b5bff847d0be16096"
+  },
+  {
+    "path": "docs/lot2/mer-vague-bleue-pilote-FR.csv",
+    "bytes": 1832,
+    "sha256": "7c574dceb2ae9db3274df0614f3b9f9ab9ebd2543161ca298a5859ff1480586f"
+  },
+  {
+    "path": "docs/lot2/motifs-collection-EN.md",
+    "bytes": 3869,
+    "sha256": "df74f65515d40c2d73fd7af10d8b73997363685db9f7b65a61ba4439f17d239a"
+  },
+  {
+    "path": "docs/lot2/motifs-collection-FR.csv",
+    "bytes": 4573,
+    "sha256": "b5c234de1a83f1746fbfb105578adc7c46d7573f56cdc32c035a7c9e9e7d1fd6"
+  },
+  {
+    "path": "docs/lot2/sakura-rouge-pilote-FR.csv",
+    "bytes": 1777,
+    "sha256": "e5aa69254a3ff194cd73f34af35459c0fcdc33be2da52a882121366ef054edf1"
+  },
+  {
+    "path": "docs/lot2/territoires-collection-EN.md",
+    "bytes": 4765,
+    "sha256": "bd79a38099a9d136f369baeac0bbf3b145fa8e1e52fb94ecf755e88be8c1dc39"
+  },
+  {
+    "path": "docs/lot2/territoires-collection-FR.csv",
+    "bytes": 4992,
+    "sha256": "4aaf021e947c42155c27ac7426a8c2cb8ee9e5cbb7b63d1aa30ed1e935965dbd"
+  },
+  {
+    "path": "docs/lot3/homepage-v1-FR-EN.md",
+    "bytes": 7798,
+    "sha256": "48d7d9ee48f17d483e1b0e4ed36d854732949314bcd0656c158de7a53ff1bfb5"
+  },
+  {
+    "path": "docs/lot3/homepage-v2-11-mouvements-FR-EN.md",
+    "bytes": 13541,
+    "sha256": "027d5a5a6491244c1d8cbd70215498b2fd42c8f1278db6422085ab9b709ffdd3"
+  },
+  {
+    "path": "docs/lot3/pages-confiance-FR-EN.md",
+    "bytes": 9962,
+    "sha256": "55b4026a69027f28fea9d68fbfaacd665b9ff6b563eca2a247913e1425b0f472"
+  },
+  {
+    "path": "docs/lot3/pages-professionnels-arts-de-vivre-FR-EN.md",
+    "bytes": 29782,
+    "sha256": "8819a73b5614e03a846add0328f63f645e2329766f7cfd8789a71178351c7d0a"
+  },
+  {
+    "path": "docs/lot3/staging-inventaire-2026-09-07.md",
+    "bytes": 23046,
+    "sha256": "1270c3b923531565ceab9501da9c44b691ec516c1442e4cec0d5bafb9c99fa29"
+  },
+  {
+    "path": "docs/lot6/KH-000-integration-plan.md",
+    "bytes": 9224,
+    "sha256": "7086327e1ef898ac7a28c27b22cfbf42686093565a39d56c1f59a9de8f771676"
+  },
+  {
+    "path": "docs/lot6/PR1-reglages-manuels.md",
+    "bytes": 2465,
+    "sha256": "3b58d5abd0074e4c8a21a43def514eb07abcf3cf715e2d19b0379007ec9e0938"
+  },
+  {
+    "path": "docs/lots2-8-decomposition.md",
+    "bytes": 12964,
+    "sha256": "44e5db48c23574c2680d62ae4cdf7296b673c93959654ccf40c6295fbef58e92"
+  },
+  {
+    "path": "docs/ux-architecture.md",
+    "bytes": 19643,
+    "sha256": "04427e70d2ee3e960bc5df046c31dbd0a56b78d5ce122ab248f918086be688dc"
+  },
+  {
+    "path": "docs/ux-backlog.md",
+    "bytes": 12811,
+    "sha256": "5ff9f25f2bbe5ceab41b947762d7171e03f0fda416fa93af0b9737c07d7b8a46"
+  },
+  {
+    "path": "header-shoji-koino-v1.html",
+    "bytes": 243860,
+    "sha256": "3b93613820d8d2ce774f4f05b8f71adaae9203ffe4eea737418c5915446b0d76"
+  },
+  {
+    "path": "header-shoji-koino-v1.src.html",
+    "bytes": 11394,
+    "sha256": "b38ad66d5bf2e96c5db06158ecd9619368efa11f4f8bcadce56b5bbd8f728da4"
+  },
+  {
+    "path": "tools/fetch-fonts.py",
+    "bytes": 3764,
+    "sha256": "0d85fcc1544b8d0bdf2c5a47ae9e2a0eb5608f1592230eb8eeb1cee37ab25513"
+  },
+  {
+    "path": "tools/package-lock.json",
+    "bytes": 18036,
+    "sha256": "ba6fa4ee0f146e703b45c942b0539f27d375bc0e9b87f93b071f79e263da1796"
+  },
+  {
+    "path": "tools/package.json",
+    "bytes": 204,
+    "sha256": "d446079694615f256002cd7dc5b4e243dfa56fc0c612deb9b289d2f78389e6e1"
+  },
+  {
+    "path": "tools/png-to-webp.js",
+    "bytes": 1628,
+    "sha256": "e4034972012dd6c2722d5d441a12bf199332bd76f7436b76cbf99e7fc75b6102"
+  },
+  {
+    "path": "wp/mu-plugins/koino-bcdg-hyphen.php",
+    "bytes": 5784,
+    "sha256": "e5d33a757f0925b2b82f00865876188168a4a13ff5c212ed95f417c07e6ae676"
+  },
+  {
+    "path": "wp/mu-plugins/koino-diag-frontpage.php",
+    "bytes": 8186,
+    "sha256": "297da5351be0deab53350d6966f0bfbb3e88cbb92f4f3ffd1beee1da660bc713"
+  },
+  {
+    "path": "wp/mu-plugins/koino-lang-redirect.php",
+    "bytes": 6088,
+    "sha256": "3e8c01db4e59a66f6eb1972673cf8b4d5c78e47afd51894cf2d30bb40839321c"
+  },
+  {
+    "path": "wp/plugins/kh-single-variation-display/kh-single-variation-display.php",
+    "bytes": 4472,
+    "sha256": "4609f5180902a0808a090d223a5a6550affb92a912d89d76d0d9babd3faba8f1"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/css/kh-charte-v3.css",
+    "bytes": 30611,
+    "sha256": "552a0117fa33da91db4fde052fff0636a30457afd60ce28ed6940e3b39e1b03a"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/css/kh-foundations.css",
+    "bytes": 11853,
+    "sha256": "60e4c7113e6e478ad0c9f3504b4931696ba5fa4ca0e4f103e94c8155c214b3f7"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-300-italic-latin-ext.woff2",
+    "bytes": 34392,
+    "sha256": "cd5bf126b2c84ab41b254a6a9a1ffb5c326a0f9f82c22fb4704daa31c9aaa415"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-300-italic-latin.woff2",
+    "bytes": 39260,
+    "sha256": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-300-normal-latin-ext.woff2",
+    "bytes": 33736,
+    "sha256": "cfa9a397d86f66c5c51775a2500a712d5f632a04f0c5eca6930dfaf612d4566d"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-300-normal-latin.woff2",
+    "bytes": 37640,
+    "sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-400-italic-latin-ext.woff2",
+    "bytes": 34392,
+    "sha256": "cd5bf126b2c84ab41b254a6a9a1ffb5c326a0f9f82c22fb4704daa31c9aaa415"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-400-italic-latin.woff2",
+    "bytes": 39260,
+    "sha256": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-400-normal-latin-ext.woff2",
+    "bytes": 33736,
+    "sha256": "cfa9a397d86f66c5c51775a2500a712d5f632a04f0c5eca6930dfaf612d4566d"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-400-normal-latin.woff2",
+    "bytes": 37640,
+    "sha256": "d80df8ff5aecd299a61549f9e29ab1ed0b9b05f4ea71d50fe978e07d5240b235"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-600-italic-latin-ext.woff2",
+    "bytes": 34392,
+    "sha256": "cd5bf126b2c84ab41b254a6a9a1ffb5c326a0f9f82c22fb4704daa31c9aaa415"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/cormorant-garamond-600-italic-latin.woff2",
+    "bytes": 39260,
+    "sha256": "6f2f5c3b1abc3d0bb035a927f66a90ca873f94fc31c4966c8d024142c2036e55"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/dm-sans-300-normal-latin-ext.woff2",
+    "bytes": 18228,
+    "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/dm-sans-300-normal-latin.woff2",
+    "bytes": 36932,
+    "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/dm-sans-400-normal-latin-ext.woff2",
+    "bytes": 18228,
+    "sha256": "a5d38fe99f930275684999b462c7123faa063d9e44e73b4b241723d884aa0f49"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/dm-sans-400-normal-latin.woff2",
+    "bytes": 36932,
+    "sha256": "9fea608a947e67020c33cad9a6fe3d60c54119dfb8cff87768a8117a15ed7543"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/lora-400-italic-latin-ext.woff2",
+    "bytes": 12460,
+    "sha256": "3bb65e234cd07a69127592cafd08ce4242a1a4ace24dcc4c466881693fc74867"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/lora-400-italic-latin.woff2",
+    "bytes": 22756,
+    "sha256": "723cc14fe86bc9fadb2f5f34efb421d246edb240a18d2a7828d2edc041d79996"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/lora-400-normal-latin-ext.woff2",
+    "bytes": 12016,
+    "sha256": "525551030c504c0eb42d71b48ce10027e4431bd405d6cd04c468a535ce8d961b"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/lora-400-normal-latin.woff2",
+    "bytes": 21148,
+    "sha256": "ac079950fd9885261c0f73d9e87233f31b5427333ce0eb20e26c119458493c40"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/noto-serif-jp-var-jp.woff2",
+    "bytes": 192644,
+    "sha256": "822e1b6840ade0476b02543fdeb277bac17723e81c49381e64dfa6849f30d146"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/shippori-mincho-400-jp.woff2",
+    "bytes": 55832,
+    "sha256": "ecabeebbea853736da7559d196fead52ae6e107d680688e338aa3a99e4d7b7d2"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/fonts/shippori-mincho-500-jp.woff2",
+    "bytes": 58140,
+    "sha256": "326c0577ea8442982b2b3ef248896aca017d83151a24cd4cbbc5860a5790eba0"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/arts-ceramique.webp",
+    "bytes": 304140,
+    "sha256": "16d5cf3a31b3bfab01a2196be0893609ae0a3ea061f4a098c2c4ca2c28af0df5"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/arts-lampe.webp",
+    "bytes": 405128,
+    "sha256": "b67810a3f8902df800518b232c7b565702739b216ac95eb08534cf56061aa8d1"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/arts-textile.webp",
+    "bytes": 734746,
+    "sha256": "b97c7816b679728963df899d42f1f01c16f874380f853055d95b6ef3763a91cf"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/cartouche-koi.webp",
+    "bytes": 9078,
+    "sha256": "5c1bc55ab0b6237c5f6182a3bf5b1ec7e7169c5e7b88c8683da65f3492b155b0"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/hero-koinobori.webp",
+    "bytes": 528152,
+    "sha256": "cb257744a092c29c02c523ea51916250345466fac77e0b83f1fc8850866de384"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/lifestyle-koi.webp",
+    "bytes": 478798,
+    "sha256": "4042fbb20862b26f18d556b642901b94ce65e73173c384043ecf512a5d07cb81"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/produit-hanami-sakura.webp",
+    "bytes": 4412,
+    "sha256": "4f1a7f138b38e4138c101ae5e61ad38a1bdcb17e9ba49045c0c375e6d1dd1200"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/produit-kairo-horizon.webp",
+    "bytes": 16576,
+    "sha256": "ad02282329ba456142d099da826d1bcefa13dd6b1f54ed0332600b6ae9898d5b"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/produit-mer-okusai.webp",
+    "bytes": 21002,
+    "sha256": "a18188601997ad94fd74de4c3cc741b8c78c237b958fd9619101bb54df2453cb"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/produit-motifs-asanoha.webp",
+    "bytes": 15334,
+    "sha256": "d3d310bec8bf66f65b9435eee6e8d0c0af28ef929913f0422d7af6aa5cab2b15"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/sceau-bcdg.webp",
+    "bytes": 6814,
+    "sha256": "48f2c8c6ab472430c4b65f5e46e4c0edf393699bef6cc853cf53c52e26b52292"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/texture-washi-v2.webp",
+    "bytes": 56864,
+    "sha256": "a10e4053972d4a1f0847cb89cf65d14d864e18c394068d5b93d91f41c209fb36"
+  },
+  {
+    "path": "wp/themes/koinobori-child/assets/images/trait-vermillon.webp",
+    "bytes": 11368,
+    "sha256": "992e8b72903a2bad153c9da3e27c5e2f9b551b3783af457d17c8803600a25efc"
+  },
+  {
+    "path": "wp/themes/koinobori-child/functions.php",
+    "bytes": 7661,
+    "sha256": "4e71e345a34644d3a4f6855eedcbc0defa069e048e9f438553c44075be0be8f1"
+  },
+  {
+    "path": "wp/themes/koinobori-child/style.css",
+    "bytes": 931,
+    "sha256": "5acc68116e31b96db0ea68a663ce0cadf8c234d5443340af50598066e60c3447"
+  },
+  {
+    "path": "wp/themes/koinobori-child/theme.json",
+    "bytes": 842,
+    "sha256": "efe9a6c4cd105641ccc6579f6be047330a535d72ff14ecd8e6dc4f3513fb9477"
+  }
+]

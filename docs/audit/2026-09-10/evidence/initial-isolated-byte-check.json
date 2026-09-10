@@ -1,0 +1,27 @@
+{
+  "at_utc": "2026-09-10T10:36:21.267917+00:00",
+  "baseline_files": 165,
+  "changed_baseline_files": [
+    "catalog/examples.csv",
+    "docs/lot0/KH-005-brevo-smtp.md",
+    "docs/lot0/KH-012-incentives-france-europe.md",
+    "docs/lot0/KH-012-shipping-data-template.csv",
+    "docs/lot0/KH-012-shipping-data-template.md",
+    "docs/lot0/KH-012-tarifs-collecte-prioritaire.csv",
+    "docs/lot0/KH-012-tarifs-collecte-prioritaire.md",
+    "docs/lot0/KH-012-transporteurs-devis-template.csv",
+    "docs/lot0/KH-012-transporteurs-france-ue.md",
+    "docs/lot0/KH-015-tests-colissimo-usa.csv",
+    "docs/lot0/KH-015-tests-colissimo-usa.md",
+    "docs/lot1/KH-103-theme.md",
+    "docs/lot1/KH-104-polylang.md"
+  ],
+  "head": "d3073dafb0b11c9866e23a02ecc357e0b7ca0cdd",
+  "git_status": "?? docs/audit/\n?? tools/recovery/",
+  "tracked_diff_empty": true,
+  "components": 57,
+  "requirements": 58,
+  "unmapped_requirements": [],
+  "broken_document_links": [],
+  "server_checks": "UI and server read-only inventory, SELECT aggregates, normalized hashes, PHP lint and core checksums; no transaction, restoration or deliberate application/configuration mutation"
+}

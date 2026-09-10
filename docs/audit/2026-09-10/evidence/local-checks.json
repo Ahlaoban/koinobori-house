@@ -1,0 +1,172 @@
+{
+  "utc": "2026-09-10T09:16:09.623335+00:00",
+  "tracked_count": 165,
+  "by_root": {
+    ".gitattributes": 1,
+    ".gitignore": 1,
+    "CLAUDE.md": 1,
+    "README.md": 1,
+    "brand": 9,
+    "catalog": 12,
+    "docs": 91,
+    "header-shoji-koino-v1.html": 1,
+    "header-shoji-koino-v1.src.html": 1,
+    "tools": 4,
+    "wp": 43
+  },
+  "php_files": [
+    "wp/mu-plugins/koino-bcdg-hyphen.php",
+    "wp/mu-plugins/koino-diag-frontpage.php",
+    "wp/mu-plugins/koino-lang-redirect.php",
+    "wp/plugins/kh-single-variation-display/kh-single-variation-display.php",
+    "wp/themes/koinobori-child/functions.php"
+  ],
+  "font_files": 21,
+  "font_bytes": 849024,
+  "theme_images": [
+    {
+      "path": "wp/themes/koinobori-child/assets/images/arts-ceramique.webp",
+      "bytes": 304140,
+      "sha256": "16d5cf3a31b3bfab01a2196be0893609ae0a3ea061f4a098c2c4ca2c28af0df5"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/arts-lampe.webp",
+      "bytes": 405128,
+      "sha256": "b67810a3f8902df800518b232c7b565702739b216ac95eb08534cf56061aa8d1"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/arts-textile.webp",
+      "bytes": 734746,
+      "sha256": "b97c7816b679728963df899d42f1f01c16f874380f853055d95b6ef3763a91cf"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/cartouche-koi.webp",
+      "bytes": 9078,
+      "sha256": "5c1bc55ab0b6237c5f6182a3bf5b1ec7e7169c5e7b88c8683da65f3492b155b0"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/hero-koinobori.webp",
+      "bytes": 528152,
+      "sha256": "cb257744a092c29c02c523ea51916250345466fac77e0b83f1fc8850866de384"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/lifestyle-koi.webp",
+      "bytes": 478798,
+      "sha256": "4042fbb20862b26f18d556b642901b94ce65e73173c384043ecf512a5d07cb81"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/produit-hanami-sakura.webp",
+      "bytes": 4412,
+      "sha256": "4f1a7f138b38e4138c101ae5e61ad38a1bdcb17e9ba49045c0c375e6d1dd1200"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/produit-kairo-horizon.webp",
+      "bytes": 16576,
+      "sha256": "ad02282329ba456142d099da826d1bcefa13dd6b1f54ed0332600b6ae9898d5b"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/produit-mer-okusai.webp",
+      "bytes": 21002,
+      "sha256": "a18188601997ad94fd74de4c3cc741b8c78c237b958fd9619101bb54df2453cb"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/produit-motifs-asanoha.webp",
+      "bytes": 15334,
+      "sha256": "d3d310bec8bf66f65b9435eee6e8d0c0af28ef929913f0422d7af6aa5cab2b15"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/sceau-bcdg.webp",
+      "bytes": 6814,
+      "sha256": "48f2c8c6ab472430c4b65f5e46e4c0edf393699bef6cc853cf53c52e26b52292"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/texture-washi-v2.webp",
+      "bytes": 56864,
+      "sha256": "a10e4053972d4a1f0847cb89cf65d14d864e18c394068d5b93d91f41c209fb36"
+    },
+    {
+      "path": "wp/themes/koinobori-child/assets/images/trait-vermillon.webp",
+      "bytes": 11368,
+      "sha256": "992e8b72903a2bad153c9da3e27c5e2f9b551b3783af457d17c8803600a25efc"
+    }
+  ],
+  "gold_contrast": {
+    "#F8F4EE": 2.9701,
+    "#2B3A6B": 3.3605,
+    "#FFFDFC": 3.209,
+    "#E8E4DC": 2.5666
+  },
+  "css_equal_ignoring_url": true,
+  "missing_css_assets": [],
+  "passation_equal_normalized": true,
+  "requirements": [
+    "ACC-01",
+    "ACC-02",
+    "ACC-03",
+    "ANA-01",
+    "ANA-02",
+    "ARC-01",
+    "ARC-02",
+    "ARC-03",
+    "AUD-01",
+    "AUD-02",
+    "BAT-01",
+    "BAT-02",
+    "BO-01",
+    "BO-02",
+    "BO-03",
+    "CAT-01",
+    "CAT-02",
+    "COM-01",
+    "CRM-01",
+    "CRM-02",
+    "CUS-01",
+    "CUS-02",
+    "CUS-03",
+    "DAT-01",
+    "DAT-02",
+    "DIY-01",
+    "DIY-02",
+    "FID-01",
+    "GAL-01",
+    "GAL-02",
+    "GOV-01",
+    "GOV-02",
+    "INT-01",
+    "KAI-01",
+    "KAI-02",
+    "OPS-01",
+    "OPS-02",
+    "ORD-01",
+    "PRD-01",
+    "PRJ-01",
+    "PRO-01",
+    "PRV-01",
+    "PRV-02",
+    "PRV-03",
+    "PRV-04",
+    "QUO-01",
+    "REC-01",
+    "SEC-01",
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEO-01",
+    "SEO-02",
+    "UX-01",
+    "UX-02",
+    "VIS-01",
+    "VIS-02",
+    "VIS-03"
+  ],
+  "theme_palette_slugs": [
+    "kh-washi",
+    "kh-sumi",
+    "kh-vermillon",
+    "kh-or",
+    "kh-brume",
+    "kh-indigo",
+    "kh-sakura",
+    "kh-foret"
+  ]
+}
