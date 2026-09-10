@@ -54,7 +54,16 @@
 - JetBackup couvre `wp354` à partir de son premier passage nocturne post-création (vérifier sous quelques jours que la base apparaît dans Restore → Databases).
 - Quota Drive : 15 Go ≫ besoin actuel ; le rapport email UpdraftPlus alertera en cas d'échec d'envoi.
 - Avec l'arrivée du catalogue (Lot 2), le volume des archives `uploads` grossira — rétention 4 hebdo à réévaluer si besoin.
-- Staging (`staging.koinoborihouse.com`) : **non couvert** par UpdraftPlus (environnement jetable, re-clonable depuis la prod via Softaculous). Choix assumé.
+- ~~Staging (`staging.koinoborihouse.com`) : **non couvert** par UpdraftPlus (environnement jetable, re-clonable depuis la prod via Softaculous). Choix assumé.~~
+
+  🔄 **Périmé, corrigé le 2026-09-09 après vérification sur le site.** Cette ligne datait du 2026-06-12, quand staging était vide. Elle est fausse aujourd'hui, et sur les deux plans :
+
+  - **Staging *est* couvert.** L'écran UpdraftPlus de staging montre 9 sauvegardes existantes, toutes envoyées vers Google Drive : base de données **quotidienne** les 04, 05, 06, 07, 08 et 09 septembre à 9h30, plus des sauvegardes complètes (base, extensions, thèmes, téléversements, mu-plugins) les 29/08, 03/09 et 05/09. Planification active : base le jeudi, fichiers le samedi.
+  - **Staging n'est plus jetable.** Il détient l'unique copie des 26 pages, 8 formulaires, 2 menus, métadonnées SEO et appariements Polylang du Lot 3. Le clonage prod vers staging, exécuté deux fois en juin, **détruirait tout** s'il était relancé par réflexe. Ne plus le faire sans sauvegarde préalable et sans décision explicite.
+
+  Une sauvegarde complète manuelle a été déclenchée le 2026-09-09 à 17h57, avec l'option de **rétention manuelle** pour qu'elle échappe à la rotation : c'est le point de restauration de référence de l'état Lot 3.
+
+  ⚠️ La revue de code du 2026-09-09 avait classé l'absence de sauvegarde de staging en risque le plus grave de la PR. Ce classement reposait sur cette ligne de documentation, pas sur le site. Le risque réel était documentaire : quelqu'un lisant ce ticket aurait pu conclure qu'un re-clonage était sans conséquence.
 
 ## 6. Liens
 

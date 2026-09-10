@@ -13,8 +13,8 @@ Identification vendeur acquise — formulation obligatoire intégrée dans tous 
 
 Restant :
 
-- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV §8.2** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV §8.2.
-- [x] Téléphone public : pas de numéro de téléphone, uniquement contact@koinoborihouse.com.
+- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV art. 11** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV art. 11.
+- [x] ✅ **Téléphone public : tranché le 2026-09-09, aucun numéro publié.** Alain confirme la décision du 2026-07-24 : « on ne garde que l'email dans les CGV comme partout ailleurs ». Les quatre occurrences de **+33 6 07 79 33 03** introduites par la CGV v2026-09-07 sont retirées des articles 1, 10.2, 15 et 22, en FR comme en EN. Le corpus légal est de nouveau homogène : `contact@koinoborihouse.com` est le seul canal publié, dans les CGV comme dans les mentions légales.
 
 ## B. CM2C
 
@@ -23,35 +23,44 @@ Coordonnées intégrées :
 - CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice
 - 49 rue de Ponthieu, 75008 Paris
 - Tél. : 01 89 47 00 14
-- Email : litiges@cm2c.net
+- Email : declarer-un-litige@cm2c.net (adresse publiée sur cm2c.net/comment-nous-saisir.php, vérifiée 2026-09-07 ; l'ancienne adresse « litiges@ » a été remplacée dans tous les documents)
 - Site de saisine : www.cm2c.net/declarer-un-litige.php
-- Validité : 29/05/2029
+- Validité : 29/05/2029 (donnée interne, ne figure plus dans les CGV publiques)
 
 À faire :
 
-- [ ] Coller dans les CGV FR la clause officielle exacte fournie par le dashboard CM2C si elle existe.
+- [x] Clause CM2C intégrée à l'article 23 des CGV v2026-09-07.
 - [ ] Garder la version EN comme traduction informative ; le FR fait foi.
 
 ## C. TVA / facturation
 
 - [x] Mention actuelle intégrée : `TVA non applicable, art. 293 B du CGI`.
-- [ ] Surveiller la bascule documentaire prévue à partir du 01/09/2026 vers la nouvelle référence CIBS : `TVA non applicable, art. L. 223 et s. du code des impositions sur les biens et services (CIBS)`.
+- [x] **Bascule CIBS reportée, aucune action avant 2027. Vérifié à la source le 2026-09-08.** La recodification de la TVA du CGI vers le CIBS devait entrer en vigueur le 01/09/2026 (ordonnance n° 2025-1247 du 17 décembre 2025). L'**ordonnance n° 2026-671 du 27 juillet 2026** l'a reportée au **1ᵉʳ janvier 2027** pour ne pas la faire coïncider avec la première échéance de la facturation électronique, et a repoussé la fin de la tolérance sur les anciennes références du CGI du 31/12/2027 au **30/06/2028**. Source : [Rapport au Président de la République, JORFTEXT000054497139](https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000054497139).
+  - **Conséquence pour le lancement** : `TVA non applicable, art. 293 B du CGI` reste la mention correcte aujourd'hui et le restera au 30/09/2026. Rien à modifier sur les mentions légales, les CGV ni les factures.
+  - ⚠️ **À rouvrir fin 2026** : le numéro d'article CIBS applicable au 01/01/2027 n'est pas stable dans les sources secondaires (`L. 223-3` contre `L. 233-3`). Ne pas retenir de numéro sans vérification Légifrance à ce moment-là, idéalement confirmée par l'expert-comptable.
 - [ ] Vérifier modèles de facture WooCommerce PDF si plugin utilisé.
 - [ ] Vérifier les mentions de facture B2B/B2G si devis/commandes hors checkout.
 
 ## D. Rétractation et retours
 
-- [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV §8.2 et §8.6 (international).
-- [x] Adresse de retour : **deux adresses listées publiquement CGV §8.2** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
-- [x] Mode de demande de rétractation : déclaration par email à contact@koinoborihouse.com, formulaire type fourni CGV §8.1.
-- [x] À partir du 19/06/2026 : fonctionnalité de rétractation en ligne. **Clause intégrée CGV §8.1 FR+EN (texte validé Alain 2026-07-24)** ; le formulaire en ligne lui-même (Fluent Forms, page Retours et rétractation) = **P0 Lot 5 avant lancement**.
-- [x] Exclusion produits personnalisés / sur mesure : intégrée CGV §8.4 avec mention « indiquée clairement avant la validation de toute commande personnalisée ».
+- [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV art. 11 et 13 (international).
+- [x] Adresse de retour : **deux adresses listées publiquement CGV art. 11** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
+- [x] Mode de demande de rétractation : fonctionnalité en ligne, formulaire type en annexe 1, ou déclaration claire (CGV v2026-09-07 art. 10.2).
+- [~] **Fonction de rétractation en ligne (obligatoire pour les contrats conclus depuis le 19/06/2026, art. L. 221-21 C. conso.)** : décrite à l'article 10.3 des CGV, qui l'affirment **au présent**. Les formulaires Fluent Forms **11 (FR) et 12 (EN) existent** et les pages 249 `/fr/retours/` et 263 `/en/returns/` sont en ligne depuis le 2026-09-07. La case n'est donc plus « à construire », mais elle n'est pas cochée pour autant : la conformité au **décret d'application, article D. 221-5**, n'est pas vérifiée. Ce texte exige davantage que ce que décrivent les CGV, et chaque point est à contrôler sur le formulaire réel :
+  - [ ] un libellé « **renoncer au contrat ici** » ou une formule analogue sans ambiguïté, clairement lisible ;
+  - [ ] la fonctionnalité **disponible pendant tout le délai** de rétractation ;
+  - [ ] des champs permettant de fournir **nom et prénom** ;
+  - [ ] des **coordonnées électroniques** pour recevoir l'accusé de réception ;
+  - [ ] un contrôle de confirmation « **confirmer la rétractation** » ou analogue ;
+  - [ ] un accusé de réception mentionnant le **contenu de la déclaration, la date et l'heure** de sa soumission.
+
+  ⚠️ Tant que ces six points ne sont pas vérifiés, l'article 10.3 des CGV affirme publiquement une conformité qui n'est pas établie. Source : article D. 221-5, en vigueur depuis le 19/06/2026, créé par le décret n° 2026-3 du 5 janvier 2026.
+- [x] Exclusion produits personnalisés / sur mesure : CGV art. 14, information avant confirmation de commande.
 
 ## E. Livraison
 
-- [x] Délais indicatifs France : 2 jours ouvrables / 48 h après expédition (Colissimo, estimation La Poste). Intégré CGV §7.
-- [x] Délais indicatifs UE / Europe : 3 à 8 jours ouvrés après expédition selon pays. Intégré CGV §7.
-- [x] Délais indicatifs USA : 5 à 10 jours ouvrés après expédition, hors traitement douanier. Intégré CGV §7. **Checkout USA non activable avant tests KH-015**.
+- [ ] Les délais indicatifs (France 2 jours ouvrables, UE 3 à 8 jours ouvrés, USA 5 à 10 jours ouvrés hors douane) **ne figurent plus dans les CGV v2026-09-07** (art. 8.4 renvoie à l'information donnée avant la commande). Ils doivent donc être affichés sur la **page Livraison** et au checkout (obligation d'information, art. L. 111-1 C. conso.). Texte prêt : `docs/lot3/pages-confiance-FR-EN.md` §1.
+- [x] **USA = « nous contacter » au lancement** (arbitrage Alain 2026-09-07). Zone USA désactivée dans WooCommerce, formulaire de contact dédié.
 - [ ] Délais indicatifs UK si activé.
 - [ ] Clarifier droits/taxes import : DAP transparence radicale ou landed cost si activé plus tard (Colissimo USA en ligne ⇒ duties payés upfront expéditeur, à confirmer avant activation checkout USA).
 - [ ] Transporteurs réellement activés : La Poste / Colissimo / Mondial Relay (à confirmer config WC Lot 1).
@@ -104,7 +113,32 @@ EN :
 - `/en/privacy-policy/`
 - `/en/cookie-policy/`
 
-## J. Verdict KH-017
+## J. CGV v2026-09-07 : ce qui a changé et ce qui reste
+
+La CGV FR de référence est désormais la **version du 7 septembre 2026** (26 articles + annexe, rédigée avec ChatGPT, adoptée par Alain le 2026-09-07). Le fichier `03-CGV-B2C-FR.md` la reprend **à l'identique**, avec deux insertions de Claude :
+
+- [x] **Encadré D. 211-2** inséré à l'article 15, texte officiel de l'annexe (version en vigueur depuis le 01/10/2022, relevé sur Légifrance le 2026-09-07). À afficher dans un cadre distinct dans WordPress.
+- [x] **« (RCS Quimper) »** ajouté après le SIREN à l'article 1, par cohérence avec les mentions légales.
+
+Retiré par rapport à la version du 03/08, volontairement :
+
+- [x] Clauses contenu numérique (BD Kaïro) → `10-clauses-contenu-numerique-BD.md`, à réinsérer à la sortie de la BD (automne 2026).
+- [x] Mention interne « Validité de l'adhésion communiquée : 29/05/2029 ».
+- [x] Le vendeur n'est plus désigné « BCDG » mais « Koinobori House / Alain Herbinière EI » : conforme à la doctrine (BCDG = signature, pas l'entité).
+
+Propositions **non intégrées**, à trancher par Alain, une phrase chacune :
+
+- [ ] Réintroduire « Les koinobori sont des objets décoratifs. Sauf indication contraire, ils ne sont pas des jouets » (art. 3 ou 17), utile face à un usage enfant.
+- [ ] Réintroduire le droit de refuser une commande en cas de fraude suspectée ou d'erreur manifeste de prix (art. 6).
+- [ ] Réintroduire une clause archivage / preuve (anciennement art. 16).
+
+À faire :
+
+- [x] **Version EN** `04-terms-conditions-B2C-EN.md` réalignée sur les 26 articles + annexe (commit `2f10e36`, 2026-09-07). Traduction informative, le FR fait foi, art. 25.
+- [x] Page 238 `/fr/conditions-generales-de-vente/` et page EN liée 276 `/en/terms-and-conditions/` en ligne sur staging, appariées Polylang (2026-09-07).
+- [ ] Contrôle avocat = complémentaire, non bloquant (décision Alain 2026-07-27).
+
+## K. Verdict KH-017
 
 Statut : **préparé mais non publiable tel quel**.
 

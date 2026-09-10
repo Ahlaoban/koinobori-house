@@ -80,10 +80,12 @@ Libellés courts obligatoires. La nav doit rester **utilisable sans animation** 
 | Accueil | `/fr/` | Home | `/en/` |
 | Boutique | `/fr/boutique/` | Shop | `/en/shop/` |
 | Arts de vivre | `/fr/arts-de-vivre/` | **Art de Vivre** | `/en/art-de-vivre/` |
-| Lifestyle | `/fr/lifestyle/` | Lifestyle | `/en/lifestyle/` |
+| Lifestyle | `/fr/lifestyle/` | Lifestyle | `/en/lifestyle-koi/` ⚠️ |
 | L'Atelier | `/fr/atelier/` | **The House** | `/en/the-house/` (O-7) |
 | Professionnels | `/fr/professionnels/` | **For Professionals** | `/en/professionals/` |
-| Contact | `/fr/contact/` | Contact | `/en/contact/` |
+| Contact | `/fr/contact/` | Contact | `/en/contact-us/` ⚠️ |
+
+⚠️ **Deux slugs EN corrigés le 2026-09-08 sur constat de terrain.** WordPress impose l'unicité des slugs entre langues sous Polylang Free : `/en/contact/` et `/en/lifestyle/` étaient impossibles, les slugs FR `contact` et `lifestyle` les occupant déjà. Les pages en ligne portent `contact-us` et `lifestyle-koi`. Cette table est alignée sur l'existant, il ne faut pas renommer les pages pour revenir à la version théorique.
 
 « Art de vivre » s'emploie tel quel en anglais : on le conserve, même logique que les noms d'œuvres gardés en FR avec gloss EN.
 

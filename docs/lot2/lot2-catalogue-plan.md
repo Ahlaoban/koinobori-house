@@ -26,7 +26,7 @@
 - **Amont** : Lot 1 GO (WP/WC/Polylang/SEOPress, KH-104b-full). Produit test supprimé.
 - **Environnement** : **staging uniquement** · pas de prod · PR #1 non mergée.
 - **Gouvernance** : structure + contenu seulement. **Présentation fiche = NEUTRE** (visuel réservé Alain/Manus → `ux-backlog.md`). Conventions WC/Kadence = défauts réversibles.
-- **Doctrine appliquée** : **2 blocs** long_desc (design/usage · signature BCDG) · short_desc **sans atelier** · jamais Chine/origine · jamais stock global · `- by BCDG` (tiret simple) · **aucune mention atelier/production sur les fiches** (FR+EN, rév. 2026-06-18).
+- **Doctrine appliquée** : **2 blocs** long_desc (design/usage · signature BCDG) · short_desc **sans atelier** · **jamais la Chine, dans aucun contexte** (cf. CLAUDE.md §Doctrine éditoriale impérative) · jamais origine · jamais stock global · `- by BCDG` (tiret simple) · **aucune mention atelier/production sur les fiches** (FR+EN, rév. 2026-06-18).
 
 ## Décomposition (tickets indicatifs KH-2xx)
 

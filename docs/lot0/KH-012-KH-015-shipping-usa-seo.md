@@ -600,7 +600,7 @@ Le client voit **un seul tarif consolidé**, jamais détaillé. Interdiction fig
 **Doctrine wording** :
 - **Aucune comparaison frontale avec Etsy** (cf §7 doctrine Etsy)
 - Voix éditoriale marque Koinobori House : honnêteté, transparence, soin
-- Pas de mention publique Chine production (cf doctrine éditoriale impérative, exception bornée B2G uniquement)
+- Pas de mention publique de la Chine, dans aucun contexte (cf doctrine éditoriale impérative ; l'exception bornée B2G est levée depuis le 2026-09-08)
 
 ## 7. Doctrine Etsy / SEO intégrée
 

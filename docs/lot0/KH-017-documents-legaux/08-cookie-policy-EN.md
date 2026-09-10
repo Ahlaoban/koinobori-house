@@ -56,7 +56,7 @@ This table is based on the tools used by the website. It is checked and updated 
 | `woocommerce_cart_hash`, `woocommerce_items_in_cart` | Cart | Session | Koinobori House / WooCommerce | Necessary |
 | `wp_woocommerce_session_*` | Shopping session | 2 days | Koinobori House / WooCommerce | Necessary |
 | `cmplz_*` | Storing consent preferences | 365 days | Koinobori House / Complianz | Necessary |
-| Audience measurement | Plausible Analytics: no cookies placed | — | Plausible | Exempt |
+| Audience measurement | Plausible Analytics: no cookies placed | none | Plausible | Exempt |
 | `__stripe_mid`, `__stripe_sid` | Payment and fraud prevention (payment pages) | 1 year / 30 min | Stripe | Necessary |
 
 ## 8. Changes

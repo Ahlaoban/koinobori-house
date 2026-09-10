@@ -4,11 +4,12 @@ Project context for Claude Code sessions on Koinobori House MVP.
 
 ## Projet
 
-E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : 15 août 2026** (repoussé depuis fin juillet, décision Alain 2026-07-24 — « le temps de faire les choses parfaitement »).
+E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : site opérationnel fin septembre 2026** (décision Alain 2026-09-07 ; le 15 août n'a pas été tenu, la prod est restée un WordPress nu).
 
 - **Démarrage** : 2026-05-27 (J1 Lot 0 — mercredi)
-- **Soft launch** : à recaler (ex ~15 juillet 2026 ; catalogue indexable, checkout off si juridique pas prêt)
-- **Lancement (hard launch)** : **15 août 2026** (remplace ~29 juillet)
+- **Reprise** : 2026-09-07, après un mois de détour (ChatGPT, mauvais répertoire). La liste de référence du reste à faire est [docs/handoff/PASSATION-2026-07-27.md](docs/handoff/PASSATION-2026-07-27.md) §3/§9 : rien n'y avait été coché. État mesuré ce jour : staging = WC 11.1 + PayPal, sans Stripe / SMTP / formulaires / cookies / cache / Wordfence, homepage vide, 0 menu, 20 fiches sans image ; prod = WordPress nu.
+- **Lancement (site opérationnel)** : **30 septembre 2026**. Chemin critique = socle transactionnel avant la charte.
+- **Arbitrages 2026-09-07** : **BD Kaïro = automne 2026, date à préciser, hors lancement** (clauses CGV mises de côté dans `docs/lot0/KH-017-documents-legaux/10-clauses-contenu-numerique-BD.md`) · **USA = « nous contacter »** au lancement.
 - ⚠️ **Pas de gate avocat** (confirmé Alain 2026-07-27, déjà tranché auparavant) : la validation des CGV par un avocat est un **contrôle complémentaire recommandé, non bloquant** pour la vente publique. Cette ligne portait auparavant « vente publique après avocat CGV », ce qui contredisait [docs/lots2-8-decomposition.md](docs/lots2-8-decomposition.md) §Juridique. La contradiction est levée en faveur de ce dernier.
 - **Durée** : 9 semaines × 6 jours/semaine × ~6h/jour = ~340h capacité
 - **Repo git** : à créer (suggestion `Ahlaoban/koinobori-house`)
@@ -18,7 +19,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 ## Cadrage stratégique
 
 - **Priorité absolue Koinobori jusqu'à J+63**. Bootstrap solo Alain.
-- **MaïJinn** peut glisser d'1 mois si nécessaire. Reprise focus principal post-lancement (15 août 2026).
+- **MaïJinn** peut glisser d'1 mois si nécessaire. Reprise focus principal post-lancement (fin septembre 2026).
 - **Pas de scope creep**. Aucune fonctionnalité phase 2 dans MVP sans validation explicite.
 - **Pas de multi-devise**. EUR only au MVP.
 - **Source de vérité ventes** : WooCommerce Orders (pas de webhook Stripe custom).
@@ -134,9 +135,9 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 
 ## Doctrine éditoriale impérative
 
-- ❌ **JAMAIS** mentionner Chine publiquement **dans tout contexte production / fournisseur / atelier / origine de fabrication / logistique interne / sourcing / formulation produit / fiches produits / transparence production**
-- ✅ **Exception bornée — B2G culturel uniquement** : mention de la Chine autorisée **comme pays / culture** dans contexte B2G institutionnel (coopération culturelle, jumelages, projets éducatifs ou patrimoniaux). Périmètre strict : pages `/fr/collectivites/` + `/en/institutions/` et formulaire B2G associé. Voir §Doctrine B2C / B2B / B2G.
-- ⚠️ **Garde-fou absolu** : la Chine peut être mentionnée uniquement comme pays/culture dans un contexte B2G culturel ou institutionnel. **Jamais** comme lieu de production, d'atelier, de fournisseur ou de fabrication, dans aucun contexte, B2C, B2B ou B2G.
+- ❌ **JAMAIS mentionner la Chine publiquement, dans aucun contexte, sans aucune exception** (arbitrage Alain 2026-09-08). Ni comme lieu de production, fournisseur, atelier, origine de fabrication, sourcing ou logistique interne ; ni comme pays ou culture, B2C, B2B et B2G compris.
+- ⚠️ **L'exception bornée « B2G culturel » du 2026-05-28 est LEVÉE.** Elle autorisait la Chine comme pays/culture sur `/fr/collectivites/` + `/en/institutions/` et leur formulaire. Elle ne s'applique plus nulle part. Tout texte qui s'en réclame est caduc.
+- ✅ **Référent culturel unique : le Japon.** C'est au Japon que la coutume du koinobori s'est popularisée, autour de la fête du 5 mai (Kodomo no Hi, héritière de la fête des garçons). Les projets de jumelage ou de coopération se formulent « avec le Japon, ou plus largement avec l'Asie ».
 - ❌ **JAMAIS** écrire "atelier chinois"
 - ❌ **Aucune mention d'atelier / de production sur les fiches produits** (FR + EN) — décision Alain 2026-06-18. Si une référence à l'atelier devait apparaître ailleurs : jamais "atelier chinois", utiliser "atelier partenaire" / "atelier confidentiel".
 - ❌ **JAMAIS** "fabriqué en France"
@@ -206,13 +207,13 @@ Slugs Polylang : créer pages en FR puis traduire via Polylang pour slug EN déd
 
 ### Wording B2G validé (corpus public)
 
-Wordings autorisés au titre de l'**exception bornée B2G culturel** (cf §Doctrine éditoriale impérative — garde-fou absolu) :
+Wordings autorisés, **sans mention de la Chine** (cf §Doctrine éditoriale impérative) :
 
 > *"Koinobori House accompagne les collectivités, écoles, médiathèques, festivals et institutions culturelles dans leurs projets visuels autour du Japon et de l'Asie : jumelages, semaines culturelles, événements pédagogiques, décorations urbaines ou installations temporaires."*
 
-> *"Collectivités engagées dans des jumelages ou coopérations culturelles avec le Japon, la Chine ou plus largement l'Asie."*
+> *"Collectivités engagées dans des jumelages ou coopérations culturelles avec le Japon, ou plus largement avec l'Asie."*
 
-Statut : arbitrage Alain rendu 2026-05-28, **option (a) retenue avec exception bornée**. Mention Chine = pays / culture uniquement, contexte B2G institutionnel. Jamais comme lieu de production / atelier / fournisseur / fabrication.
+Statut : arbitrage Alain 2026-05-28, option (a) retenue, **révisé le 2026-09-08**. La seconde citation portait « avec le Japon, la Chine ou plus largement l'Asie » : la mention de la Chine en est retirée. L'exception bornée B2G culturel qui la justifiait est levée, la Chine n'est plus citable dans aucun contexte.
 
 ### Champs formulaires (minimum MVP)
 
@@ -232,7 +233,7 @@ Statut : arbitrage Alain rendu 2026-05-28, **option (a) retenue avec exception b
 - Collectivité / institution
 - Pays / ville
 - Type de projet (select multi ou enum) : jumelage, école, médiathèque, festival, événement culturel, décoration urbaine, autre
-- Lien culturel avec le Japon, la Chine ou l'Asie, si pertinent *(exception bornée B2G culturel — cf §Doctrine éditoriale impérative garde-fou absolu)*
+- Lien culturel avec le Japon ou l'Asie, si pertinent *(rév. 2026-09-08 : mention de la Chine retirée du libellé, cf §Doctrine éditoriale impérative. ✅ Champ corrigé le même jour dans Fluent Forms 9 (FR) et 10 (EN) sur staging.)*
 - Quantité envisagée
 - Date souhaitée
 - Besoin de devis (oui/non)

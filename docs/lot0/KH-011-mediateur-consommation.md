@@ -27,7 +27,7 @@ CM2C
 75008 Paris
 Téléphone : 01 89 47 00 14
 Site internet : https://www.cm2c.net/declarer-un-litige.php
-Email : litiges@cm2c.net
+Email : declarer-un-litige@cm2c.net
 ```
 
 ## 3. Clause officielle CM2C (corpus public — FR fait foi)
@@ -47,7 +47,7 @@ Email : litiges@cm2c.net
 > *75 008 PARIS*
 > *Tel : 01 89 47 00 14*
 > *Site internet : https://www.cm2c.net/declarer-un-litige.php*
-> *Mail : litiges@cm2c.net »*
+> *Mail : declarer-un-litige@cm2c.net »*
 
 **Aucune autre clause à inventer.** Si besoin de reformulation, valider Alain + source CM2C officielle.
 
@@ -64,7 +64,7 @@ Email : litiges@cm2c.net
 > *75008 Paris, France*
 > *Phone: +33 1 89 47 00 14*
 > *Website: https://www.cm2c.net/declarer-un-litige.php*
-> *Email: litiges@cm2c.net*
+> *Email: declarer-un-litige@cm2c.net*
 >
 > *The French version of this clause prevails in case of discrepancy."*
 

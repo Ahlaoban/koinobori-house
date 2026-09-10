@@ -22,7 +22,7 @@ Résumé de reprise (20 lignes max) :
 8. KH-012 shipping = décision verrouillée ; KH-015 USA = checkout auto non activé.
 9. Secrets (Stripe/PayPal/Brevo) vivent **hors repo** (gestionnaire de mots de passe).
 10. **Règle d'or** : proposer un plan avant toute modification ; aucun secret dans le repo.
-11. Ne jamais mentionner la Chine publiquement (production/atelier/fournisseur/fabrication).
+11. Ne **jamais** mentionner la Chine publiquement, **dans aucun contexte, sans aucune exception** (arbitrage Alain 2026-09-08). Ni production, atelier, fournisseur ou fabrication, ni pays ou culture. Référent culturel unique : le Japon.
 12. **Aucune mention atelier/production sur les fiches** (FR+EN, rév. 2026-06-18). « atelier partenaire » autorisé seulement *hors fiches* ; jamais « atelier chinois ».
 13. Jamais de mention de stock global ; stock par SKU uniquement.
 14. « US Flag » = nom fournisseur interne ; public = « Stars & Stripes Koinobori — by BCDG ».
@@ -97,8 +97,8 @@ Résumé de reprise (20 lignes max) :
 
 ## 5. Doctrine éditoriale impérative
 
-- ❌ **Jamais** mentionner la Chine publiquement comme production / atelier / fournisseur / sourcing / fabrication / logistique interne.
-  - Exception bornée : Chine comme **pays / culture** uniquement, contexte **B2G culturel** (pages `/fr/collectivites/` + `/en/institutions/`). Jamais comme lieu de production.
+- ❌ **Jamais mentionner la Chine publiquement, dans aucun contexte, sans exception** (arbitrage Alain 2026-09-08). Ni production / atelier / fournisseur / sourcing / fabrication / logistique interne, ni comme pays ou culture.
+  - ⚠️ **L'exception bornée « B2G culturel » est levée** : elle autorisait la Chine sur `/fr/collectivites/` + `/en/institutions/`, elle ne s'applique plus. Référent culturel unique = le **Japon**.
 - ❌ Jamais « atelier chinois », « fabriqué en France », fabrication interne prétendue.
 - ❌ **Aucune mention d'atelier/production sur les fiches** (FR + EN, rév. 2026-06-18 ; remplace l'ancienne formule « atelier partenaire » bas de fiche). « atelier partenaire » / « atelier confidentiel » autorisé *uniquement hors fiches* ; jamais « atelier chinois ».
 - ❌ Jamais de mention de **volume global de stock** (stock par SKU uniquement).

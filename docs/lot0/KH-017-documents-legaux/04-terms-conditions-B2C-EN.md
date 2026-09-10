@@ -1,241 +1,753 @@
-# B2C Terms and Conditions of Sale
+# TERMS AND CONDITIONS OF SALE
+## Koinobori House
 
-Last updated: [DD/MM/YYYY]
+**Version of 7 September 2026**
 
-This English version is provided for international customers. The French version shall prevail in case of discrepancy.
+*This English version is provided for the convenience of international customers. In the event of any discrepancy, the French version prevails (Article 25).*
 
-These Terms and Conditions apply to sales made to consumers on `koinoborihouse.com`.
+These Terms and Conditions of Sale govern the sales made on the website **koinoborihouse.com**.
 
-Business, institutional, public-sector, school, event or custom-project requests are handled separately through contact, quote or specific terms, unless the order is placed directly through the B2C checkout flow.
+---
 
-## 1. Seller
+## Article 1 - Seller identity
 
-Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
+The website **koinoborihouse.com**, hereinafter referred to as "the Site", is operated under the trade name **Koinobori House** by:
 
-SIREN / RCS : 945 241 545 R.C.S. Quimper
+**Alain HERBINIÈRE, sole trader (entrepreneur individuel)**  
+1 rue du Marais  
+29730 Treffiagat  
+France
 
-SIRET (registered office): 945 241 545 00017
+SIREN: **945 241 545** (RCS Quimper)  
+SIRET: **945 241 545 00017**
 
-Address: 1 rue du marais, 29730 Treffiagat, France
+Email: **contact@koinoborihouse.com**
 
-Customer service email: contact@koinoborihouse.com
+**VAT not applicable, Article 293 B of the French General Tax Code.**
 
-## 2. Products
+Koinobori House is the selling house and the commercial identity of the Site.
 
-Koinobori House offers original koinobori designed by BCDG, the creative business founded by Alain Herbinière.
+**BCDG** is the creative signature associated with the creations sold by Koinobori House. BCDG does not constitute a legal entity separate from the seller in the context of sales governed by these Terms.
 
-The essential characteristics of each product are displayed on the relevant product page: model, collection, dimensions, visuals, price, availability, delivery conditions and, when available, material, use, care or installation information.
+---
 
-Images and visual presentations are prepared with care. Slight differences may occur due to screen display, lighting, textile printing or production variations.
+## Article 2 - Purpose and scope
 
-Koinobori are decorative objects. Unless explicitly stated otherwise, they are not toys, protective equipment, safety devices or food-contact products.
+These Terms and Conditions of Sale, hereinafter "the Terms", define the rights and obligations of Koinobori House and its consumer customers in the context of the distance selling of products offered on the Site.
 
-### 2.1 Digital content
+They mainly concern the sale of koinobori, decorative objects, textile creations and accessories offered by Koinobori House.
 
-Koinobori House also offers digital content supplied without a physical medium, made available for download after payment.
+A consumer is any natural person acting for purposes that are outside their trade, business, craft, liberal profession or agricultural activity.
 
-This content is delivered in PDF format. It can be read on computer, tablet and phone, with any application able to open a PDF file, without proprietary software or subscription. No technical protection measure restricts reading the file on the customer's devices.
+These Terms are accessible at any time on the Site.
 
-For each digital item, the product page states its format, page count and approximate file size.
+The Customer acknowledges having read them before confirming their order and accepts them without reservation.
 
-## 3. Prices
+The applicable version is the one in force at the time of the order.
 
-Prices are displayed in euros.
+### Professional customers
 
-At launch, the seller benefits from the French VAT exemption regime: **French VAT not applicable, Article 293 B of the French General Tax Code**. Displayed prices are net payable prices, excluding any shipping costs where applicable.
+Requests made by companies, local authorities, institutions or other professionals through the Business or Institutions pages do not automatically constitute orders subject to these B2C Terms.
 
-For deliveries in mainland France, shipping is free if this option is maintained at the time of ordering.
+Specific creations, customised series and professional projects that are the subject of a quotation or a specific contract are governed by the conditions set out in the quotation, purchase order or contract accepted by the parties.
 
-For international deliveries, shipping costs are displayed before order confirmation when the destination is enabled at checkout. For destinations not enabled, customers may be asked to request a quote or contact customer service.
+---
 
-For deliveries outside the European Union, customs duties, import taxes or administrative charges may be due upon arrival or collected upfront only if clearly stated at checkout. Unless expressly stated otherwise, such costs remain the customer’s responsibility.
+## Article 3 - Products
 
-## 4. Order
+The essential characteristics of the products are presented on their respective product pages.
 
-The customer selects products, checks the cart, provides billing and shipping details, chooses an available delivery method and confirms payment.
+Depending on the product, the following may in particular be indicated:
 
-Before final confirmation, the customer may correct the order. The order becomes firm after payment confirmation and receipt of the confirmation email.
+- the design;
+- the dimensions;
+- the materials;
+- the colours;
+- the available variants;
+- the usage characteristics;
+- the accessories included;
+- installation or care advice.
 
-The seller reserves the right to refuse or cancel an order in case of suspected fraud, obvious pricing error, product unavailability, payment issue or objective inability to deliver.
+The Customer must read this information before ordering.
 
-## 5. Payment
+Photographs and staged settings are intended to represent the products as faithfully as possible.
 
-Payments are made through the payment methods offered at checkout, including bank card via Stripe and/or PayPal when enabled.
+Minor differences in colour rendering may result in particular from screen settings, lighting conditions or photography.
 
-Full bank card details are not stored by Koinobori House. They are processed by the relevant payment providers according to their own security rules.
+However, such differences cannot have the effect of depriving the consumer of their rights where the product delivered does not correspond to the essential characteristics announced.
 
-## 6. Availability
+Products identified by the mention **"by BCDG"** are creations or designs signed BCDG and sold by Koinobori House.
 
-Products are offered subject to stock availability.
+---
 
-If a product becomes unavailable after an order has been placed, the customer will be informed as soon as possible and may choose, depending on the case, a refund, replacement or restocking delay if offered.
+## Article 4 - Availability
 
-## 7. Delivery
+Products are offered subject to available stock.
 
-Delivery zones, carriers, costs and indicative delivery times are displayed before order confirmation when available.
+The availability displayed on the Site is updated as regularly as possible.
 
-Carriers: La Poste, Colissimo where required, and Mondial Relay if enabled.
+If a product were to become exceptionally unavailable after an order has been confirmed, Koinobori House would inform the Customer as soon as possible.
 
-The digital content referred to in article 2.1 is not shipped and carries no delivery cost. It is made available for download under the conditions set out in article 8.4 bis.
+Depending on the situation and with the Customer's agreement, the following could then be offered:
 
-Delivery times shown are **estimated transit times after shipment**. They may vary depending on the destination, peak periods, customs formalities, carrier disruptions or any event external to BCDG.
+- waiting for the product to be restocked;
+- choosing another product;
+- cancelling all or part of the order concerned.
 
-Indicative transit times after shipment:
+In the event of cancellation due to unavailability, the sums paid for the cancelled items are refunded.
 
-- **Mainland France and Monaco**: indicative Colissimo transit time of 2 business days after shipment.
-- **European Union / Europe**: indicative Colissimo transit time of 3 to 8 business days after shipment, depending on destination country.
-- **United States**: indicative Colissimo transit time of 5 to 10 business days after shipment, excluding customs processing and subject to the formalities applicable to merchandise imported into the United States.
+No replacement product will be imposed on the Customer.
 
-For shipments to the United States, customs formalities and duties/taxes may apply. Delivery times may be extended by customs controls or processing. The exact terms for calculating and handling duties/taxes will be confirmed before the U.S. checkout is enabled.
+---
 
-The transit times above do not cover the order preparation time, which is separate from the carrier transit time.
+## Article 5 - Prices
 
-Risk transfers to the customer upon receipt of the product by the customer or by a third party designated by the customer.
+Prices are indicated in **euros**.
 
-Customers should check the package and products upon receipt. If the package is visibly damaged, customers are advised to make reservations with the carrier and contact customer service promptly with photos.
+Koinobori House currently benefits from the French VAT exemption scheme (franchise en base de TVA).
 
-## 8. Returns and Withdrawal
+**VAT not applicable, Article 293 B of the French General Tax Code.**
 
-### 8.1 Right of Withdrawal
+Product prices do not include shipping costs, unless otherwise indicated.
 
-In accordance with applicable law, consumers have a period of fourteen days to exercise their right of withdrawal, without having to give any reason and without incurring costs other than those provided for by the regulations. This period runs from the day after receipt of the order. Where the contract was concluded electronically through an online interface, an online withdrawal feature is made available to consumers, easily accessible, free of charge and functional.
+The applicable shipping costs are indicated to the Customer before the final confirmation of their order.
 
-To exercise this right, customers may:
+For mainland France, standard delivery is currently free for purchases of **55 € or more**, under the conditions indicated on the Site.
 
-- use the online withdrawal form available from the Returns and Withdrawal page of the website;
-- or inform BCDG of their decision by a clear statement, for example by email to: contact@koinoborihouse.com.
+Koinobori House may change its prices at any time.
 
-Simply returning the product without prior notice is not sufficient to exercise the right of withdrawal.
+However, a product is invoiced at the price displayed and accepted by the Customer at the time the order is confirmed.
 
-The customer may use the following withdrawal form:
+For certain deliveries outside the European Union, customs duties, import taxes or other charges may be levied by the authorities of the destination country. Unless expressly indicated otherwise before the order, these sums are not collected by Koinobori House and may remain payable by the recipient.
 
-> To BCDG — Koinobori House
-> I hereby give notice that I withdraw from my contract of sale of the following goods:
-> Ordered on: [date]
-> Received on: [date]
-> Order number: [number]
-> Consumer name: [name]
-> Consumer address: [address]
-> Date: [date]
+---
 
-### 8.2 Return Conditions
+## Article 6 - Ordering process
 
-Before any return, the customer must contact BCDG at contact@koinoborihouse.com to receive return instructions and the applicable return address.
+The Customer selects the products they wish to purchase and adds them to their cart.
 
-Returns may be directed, depending on the case, to one of the following addresses:
+Before the final confirmation of the order, the Customer may in particular:
 
-- 1 rue du Marais, 29730 Treffiagat, France;
-- 46 ruelle de l'Église, 69620 Ternand, France.
+- review the selected products;
+- change the quantities;
+- remove a product;
+- check the chosen variants;
+- check the total price;
+- see the shipping costs;
+- correct their contact details;
+- choose their delivery method where a choice is offered;
+- choose their payment method;
+- read and accept these Terms.
 
-The product must be returned to BCDG in a condition allowing resale: unused, clean, undamaged, complete, if possible in its original packaging or equivalent protective packaging.
+The Customer is responsible for the accuracy of the information provided, in particular their name, email address, telephone number and delivery address.
 
-The customer has 14 days after notifying the withdrawal request to return the product.
+Before placing the order, the Customer is clearly informed that it entails an obligation to pay.
 
-Return shipping costs are borne by the customer, except in case of error by BCDG, defective or non-conforming product.
+The final confirmation of the order and of the payment formalises the Customer's commitment.
 
-### 8.3 Refund
+An order confirmation is sent by email and sets out the essential information of the transaction.
 
-The refund is made through the payment method used at the time of the order.
+The Customer is invited to keep this confirmation.
 
-BCDG refunds the amounts due within a maximum of 14 days from receipt of the withdrawal request. The refund may however be deferred until receipt of the returned product or until receipt of proof of shipment.
+---
 
-### 8.4 Custom or Made-to-Order Products
+## Article 7 - Payment
 
-Custom products, made on request or adapted to the customer's specific requirements, cannot be returned under the legal right of withdrawal, except in case of defect or non-conformity.
+Payment is due at the time of the order, unless a specific condition is expressly offered on the Site.
 
-This exclusion concerns in particular custom creations, orders with logo, text, specific graphic adaptation or particular request approved by the customer.
+The available payment methods are indicated at checkout.
 
-The exclusion is clearly indicated before any personalized order is confirmed.
+They may in particular include:
 
-### 8.4 bis Downloadable Digital Content
+- major payment cards via Stripe;
+- PayPal.
 
-Under article L221-28, 13° of the French Consumer Code, the right of withdrawal cannot be exercised for the supply of digital content not supplied on a physical medium where performance has begun after the consumer's prior express consent and express waiver of the right of withdrawal.
+The availability of a payment method may change.
 
-Accordingly, before confirming an order for digital content, the customer must:
+Payment is processed by specialised providers using their own security systems.
 
-- give **express consent** for the download to be made available immediately, that is, before the fourteen-day period expires;
-- **expressly acknowledge** that they thereby lose their right of withdrawal on that content.
+Koinobori House does not store the Customer's full payment card details.
 
-Both confirmations are collected through two separate, non-pre-ticked checkboxes at the order confirmation step. The customer receives confirmation of them on the durable medium accompanying the order.
+The order can only be considered definitively paid once the payment has been confirmed by the provider concerned.
 
-Without these confirmations, the file is made available only after the fourteen-day withdrawal period has expired.
+If the payment is refused or fails, the order cannot be completed.
 
-This exclusion removes no legal guarantee: a corrupted or unreadable file, or one that does not match its description, gives rise to the remedies set out in articles 8.5 and 9.
+---
 
-### 8.4 ter Use of Digital Content
+## Article 8 - Delivery
 
-The file is intended for the customer's personal and private use. Its purchase confers no right of reproduction, distribution, public sharing, resale, lending, adaptation or commercial exploitation, in accordance with article 11.
+### 8.1 Destinations
 
-The download link is personal and attached to the customer's order.
+The destinations to which an order can be placed directly are those offered to the Customer at checkout.
 
-### 8.5 Defective or Non-Conforming Product
+Some destinations may require a prior request to Koinobori House.
 
-If the product received is defective, damaged or non-conforming to the order, the customer must contact BCDG at: contact@koinoborihouse.com, attaching if possible photos of the product, the package and the shipping label.
+Up-to-date information on the areas served and the shipping methods can be found on the **Shipping** page of the Site.
 
-After verification, BCDG will propose an appropriate solution: replacement, refund or other solution agreed with the customer.
+### 8.2 Delivery methods
 
-### 8.6 International Returns
+Depending on the destination, the format of the product and the available options, different carrier services may be offered.
 
-For orders delivered outside France, international return shipping costs are borne by the customer, except in case of error by BCDG or non-conforming product.
+The delivery method actually chosen and its cost are indicated before the final confirmation of the order.
 
-Customs duties, import taxes or administrative charges potentially billed by local authorities or carriers are not refunded by BCDG, unless these charges result from an error attributable to BCDG.
+### 8.3 Delivery address
 
-## 9. Legal Guarantees
+The Customer must provide a complete and accurate address.
 
-Customers benefit from applicable legal guarantees, including the legal guarantee of conformity and the guarantee against hidden defects.
+In the event of an address error attributable to the Customer resulting in the return or reshipment of a parcel, the additional costs actually incurred may be charged to the Customer before a new shipment.
 
-The legal guarantee of conformity covers defects of conformity existing at the time of delivery. The consumer has 2 years from delivery of the goods to act.
+### 8.4 Delivery times
 
-The hidden defects guarantee may apply if a hidden defect makes the product unfit for its intended use or reduces its use so much that the customer would not have purchased it, or would have paid a lower price, had the defect been known.
+The applicable delivery time or date is indicated to the Customer before the order is concluded.
 
-For any request, customers should contact: contact@koinoborihouse.com, including the order number, a description of the issue and, if possible, photos.
+Indicative times, counted in working days from dispatch and excluding order preparation time, are as follows:
 
-## 10. Custom Products and Visual Approval
+- Metropolitan France: 2 working days;
+- European Union: 3 to 8 working days depending on the country;
+- United States: 5 to 10 working days, excluding customs processing time.
 
-For custom projects, the quote, written exchanges, mockups, proof approvals or visual validations define the scope of the creation.
+Delivery times announced by carriers after shipment are estimates where they do not depend directly on Koinobori House.
 
-Once the final proof or validation has been confirmed in writing, production may begin. Corrections requested after validation may require a new quote or additional time.
+In the absence of an agreed date or time, Koinobori House delivers the order without undue delay and no later than thirty days after the conclusion of the contract, in accordance with Article L. 216-1 of the French Consumer Code.
 
-## 11. Intellectual Property
+### 8.5 Late delivery
 
-Products sold remain protected creations. Purchasing a product does not authorize reproduction, copying, printing, modification, resale of files, commercial exploitation of the design or creation of derivative products.
+In the event of a significant delay, the Customer is invited to contact Koinobori House.
 
-BCDG creations, characters, collections, narrative worlds, drawings, illustrations and designs remain the property of their respective rights holders.
+The consumer's rights in the event of late delivery or non-delivery remain those provided for by the French Consumer Code.
 
-## 12. Personal Data
+### 8.6 Transfer of risk
 
-Personal data collected during the order process is processed in accordance with the Privacy Policy available on the website.
+The risk of loss of or damage to the product passes to the consumer when they take physical possession of the goods, or when a third party designated by them, other than the carrier, takes possession of them.
 
-## 13. Consumer Mediation
+---
 
-In case of dispute, the customer must first submit a written complaint to customer service: contact@koinoborihouse.com.
+## Article 9 - Receipt of the order
 
-If no amicable solution is reached, the consumer may contact the seller’s appointed consumer mediator free of charge:
+The Customer is invited to check the condition of their parcel and of the products upon receipt.
 
-**CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice**  
-49 rue de Ponthieu, 75008 Paris, France  
-Phone: +33 1 89 47 00 14  
-Email: litiges@cm2c.net  
-Dispute submission page: www.cm2c.net/declarer-un-litige.php
+If a product is:
 
-Membership validity communicated: 29/05/2029.
+- damaged;
+- incomplete;
+- incorrect;
+- or manifestly non-conforming,
 
-**English version informative only — the French official CM2C wording prevails. See the French B2C Terms (§13) for the official CM2C clause.**
+the Customer is invited to contact Koinobori House promptly at:
 
-## 14. Force Majeure
+**contact@koinoborihouse.com**
 
-The seller shall not be liable for any failure or delay resulting from a force majeure event as defined under French law.
+It is advisable to include:
 
-## 15. Governing Law and Jurisdiction
+- the order number;
+- a description of the problem;
+- and, where useful, photographs to facilitate its handling.
+
+The absence of reservations made to the carrier upon receipt does not deprive the consumer of their legal rights and guarantees.
+
+---
+
+## Article 10 - Right of withdrawal
+
+### 10.1 Principle
+
+Subject to the exceptions provided for by law, the consumer has a period of **14 days** to exercise their right of withdrawal without having to give reasons for their decision.
+
+For a contract for the sale of goods, this period runs from the day on which the Customer, or a third party designated by them other than the carrier, takes physical possession of the goods.
+
+Where several goods from the same order are delivered separately, the applicable period is determined in accordance with the rules set out in the French Consumer Code.
+
+### 10.2 How to exercise the right of withdrawal
+
+The Customer may notify their decision to withdraw:
+
+- by means of the withdrawal feature accessible directly on the Site;
+- by using the model form at the end of these Terms;
+- or by means of any other clear and unambiguous statement expressing their wish to withdraw.
+
+The request may in particular be sent to:
+
+**Koinobori House**  
+Alain Herbinière EI  
+1 rue du Marais  
+29730 Treffiagat  
+France
+
+Email: **contact@koinoborihouse.com**
+
+
+Simply returning the product, without a prior statement clearly expressing the wish to withdraw, is not sufficient to exercise the right of withdrawal.
+
+### 10.3 Online withdrawal feature
+
+For orders concluded online and benefiting from the right of withdrawal, the Site provides a free, visible and easily accessible feature allowing this right to be exercised directly online.
+
+This feature makes it possible in particular to identify:
+
+- the Customer;
+- the order concerned;
+- the product(s) concerned;
+- the decision to withdraw.
+
+A step allows the Customer to explicitly confirm their request.
+
+Once it has been sent, Koinobori House promptly sends the Customer an acknowledgement of receipt on a durable medium.
+
+---
+
+## Article 11 - Return after withdrawal
+
+After notifying their decision to withdraw, the Customer has **14 days** to return the product.
+
+To ensure that the return is handled properly, Koinobori House informs the Customer, when acknowledging receipt of their request or immediately afterwards, of **the return address applicable to their order**.
+
+Depending on the circumstances, returns are handled at one of the following two addresses:
+
+#### Possible return address 1
+
+**Koinobori House**  
+1 rue du Marais  
+29730 Treffiagat  
+France
+
+#### Possible return address 2
+
+**Koinobori House**  
+46 ruelle de l'Église  
+69620 Ternand  
+France
+
+The Customer is invited to wait until the applicable address has been communicated before shipping their parcel, in order to avoid misrouting or a processing delay.
+
+**The communication of this address does not in any way constitute a prior authorisation for the exercise of the right of withdrawal.**
+
+The decision to withdraw is validly exercised as soon as it has been communicated within the period and in accordance with the legal procedures.
+
+The direct costs of returning the product are borne by the Customer, except in particular where:
+
+- Koinobori House agrees to bear them;
+- Koinobori House made an error in preparing the order;
+- the product is defective;
+- the product does not conform to the order;
+- or the regulations require the seller to bear them.
+
+The Customer must package the product appropriately so that it can be transported in good conditions.
+
+---
+
+## Article 12 - Condition of returned products
+
+The right of withdrawal allows the consumer to examine the product to an extent comparable to what would reasonably be necessary to establish its nature, characteristics and proper functioning.
+
+The Customer may therefore open the packaging and reasonably examine the product.
+
+However, the Customer may be held liable for any diminished value resulting from handling beyond what is necessary for this verification.
+
+It is recommended to return the product:
+
+- complete;
+- with any accessories;
+- properly protected;
+- and, where reasonably possible, in its original packaging.
+
+The absence of the original packaging cannot, on its own, remove a right of withdrawal that has been legally exercised.
+
+---
+
+## Article 13 - Refund after withdrawal
+
+Where the right of withdrawal is validly exercised, Koinobori House refunds the sums due to the Customer under the conditions provided for by law.
+
+The refund includes in particular the sums paid for the products concerned and, under the legal conditions, the initial shipping costs corresponding to the standard delivery method offered.
+
+If the Customer expressly chose a delivery method more expensive than the standard method offered, the corresponding additional cost is not refunded.
+
+The refund is made no later than within the legal period of 14 days from the date on which Koinobori House is informed of the decision to withdraw.
+
+In the context of a sale of goods, Koinobori House may defer the refund until:
+
+- the product has been recovered;
+- or Koinobori House has received proof that it has been shipped,
+
+whichever is the earlier.
+
+The refund is made using the same payment method as the one used for the order, unless the Customer expressly agrees to another method that does not incur any additional cost for them.
+
+Customs duties, import taxes or administrative charges levied by local authorities or carriers on deliveries outside the European Union are not refunded by Koinobori House, except where those charges result from an error attributable to it. Where such duties and taxes have been prepaid by Koinobori House and passed on to the Customer within the shipping costs, they do not constitute refundable delivery costs within the meaning of this article, since they cannot be recovered from the authorities concerned.
+
+---
+
+## Article 14 - Exceptions to the right of withdrawal
+
+The right of withdrawal does not apply in the cases provided for by the French Consumer Code.
+
+For the activity of Koinobori House, this exception may in particular concern products:
+
+- made to the Customer's specifications;
+- or clearly personalised.
+
+This may be, for example, a koinobori designed specially for the Customer based on:
+
+- a specific drawing;
+- a text;
+- a logo;
+- particular dimensions;
+- specially chosen colours;
+- or any combination of characteristics making the product clearly personalised and difficult to resell to another customer.
+
+On the other hand, the fact that a standard product is prepared or made after receipt of an order is not sufficient, on its own, to remove the right of withdrawal.
+
+Where a product is actually excluded from the right of withdrawal because of its personalisation, this information is clearly indicated to the Customer before they confirm their order.
+
+### 14.1 Visual approval of personalised products
+
+A personalised order is preceded by an exchange. Koinobori House sends the Customer a quotation and, where the project warrants it, one or more visual proposals.
+
+The scope of the order is defined by the accepted quotation and by the last visual proposal approved in writing by the Customer, hereinafter the proof.
+
+Production of the product begins only after the Customer has confirmed the proof in writing. That confirmation constitutes acceptance of the visual, the dimensions, the colours and the wording it contains.
+
+Any change requested after confirmation of the proof may give rise to a new quotation and a new lead time.
+
+It is from the confirmation of the proof that the product is deemed clearly personalised within the meaning of Article 14, and therefore excluded from the right of withdrawal. This consequence is restated to the Customer at the moment of confirmation.
+
+---
+
+## Article 15 - Legal guarantee of conformity
+
+Koinobori House is liable for any lack of conformity of the products under the conditions provided for by Articles L.217-3 and following of the French Consumer Code.
+
+For new goods sold on the Site, the consumer has in particular a period of **two years from the delivery of the goods** to invoke the legal guarantee of conformity.
+
+Where the legal conditions are met, the consumer may request that the product be brought into conformity, in particular by repair or replacement.
+
+Where repair or replacement is impossible or cannot be carried out under the conditions provided for by law, the consumer may benefit from the other remedies provided for by the French Consumer Code, in particular a price reduction or, in the situations provided for by law, the termination of the contract.
+
+The implementation of the legal guarantee of conformity is free of charge for the consumer.
+
+The trader liable under this guarantee is:
+
+**Alain Herbinière EI - Koinobori House**  
+1 rue du Marais  
+29730 Treffiagat  
+France
+
+Email: **contact@koinoborihouse.com**
+
+### Mandatory legal notice box
+
+*Box required by Article D. 211-2 of the French Consumer Code. The text below is an informative English translation of the statutory model annexed to that article (version in force since 1 October 2022); the official French wording applies.*
+
+> **The consumer has a period of two years from the delivery of the goods to obtain the implementation of the legal guarantee of conformity in the event of a lack of conformity. During this period, the consumer is only required to establish the existence of the lack of conformity and not the date on which it appeared.**
+>
+> **Where the contract for the sale of the goods provides for the continuous supply of digital content or a digital service for a period exceeding two years, the legal guarantee applies to that digital content or digital service throughout the intended supply period. During this period, the consumer is only required to establish the existence of the lack of conformity affecting the digital content or digital service and not the date on which it appeared.**
+>
+> **The legal guarantee of conformity requires the trader, where applicable, to provide all updates necessary to maintain the conformity of the goods.**
+>
+> **The legal guarantee of conformity entitles the consumer to the repair or replacement of the goods within thirty days of their request, free of charge and without major inconvenience to them.**
+>
+> **If the goods are repaired under the legal guarantee of conformity, the consumer benefits from a six-month extension of the initial guarantee.**
+>
+> **If the consumer requests the repair of the goods but the seller imposes replacement, the legal guarantee of conformity is renewed for a period of two years from the date of replacement of the goods.**
+>
+> **The consumer may obtain a reduction of the purchase price while keeping the goods, or terminate the contract and obtain a full refund in exchange for returning the goods, if:**
+>
+> **1° The trader refuses to repair or replace the goods;**
+>
+> **2° The repair or replacement of the goods takes place after a period of thirty days;**
+>
+> **3° The repair or replacement of the goods causes major inconvenience to the consumer, in particular where the consumer definitively bears the costs of taking back or removing the non-conforming goods, or bears the costs of installing the repaired or replacement goods;**
+>
+> **4° The non-conformity of the goods persists despite the seller's unsuccessful attempt to bring them into conformity.**
+>
+> **The consumer is also entitled to a reduction of the price of the goods or to the termination of the contract where the lack of conformity is so serious that it justifies an immediate price reduction or termination of the contract. In that case, the consumer is not required to request the repair or replacement of the goods beforehand.**
+>
+> **The consumer is not entitled to the termination of the sale if the lack of conformity is minor.**
+>
+> **Any period during which the goods are unavailable for the purpose of repair or replacement suspends the remaining guarantee period until the delivery of the repaired goods.**
+>
+> **The rights mentioned above result from the application of Articles L. 217-1 to L. 217-32 of the French Consumer Code.**
+>
+> **A seller who obstructs in bad faith the implementation of the legal guarantee of conformity is liable to a civil fine of up to 300,000 euros, which may be increased to up to 10% of average annual turnover (Article L. 241-5 of the French Consumer Code).**
+>
+> **The consumer also benefits from the legal guarantee against hidden defects under Articles 1641 to 1649 of the French Civil Code, for a period of two years from the discovery of the defect. This guarantee entitles the consumer to a price reduction if the goods are kept, or to a full refund in exchange for returning the goods.**
+
+This statutory box forms an integral part of these Terms.
+
+---
+
+## Article 16 - Guarantee against hidden defects
+
+Independently of the legal guarantee of conformity, the Customer benefits from the legal guarantee against hidden defects provided for by Articles 1641 and following of the French Civil Code.
+
+This guarantee concerns a hidden defect existing at the time of sale and serious enough to make the product unfit for its intended use or to greatly reduce that use.
+
+Where the legal conditions are met, the Customer benefits from the remedies provided for by the French Civil Code.
+
+The legal guarantee against hidden defects applies independently of any commercial guarantee.
+
+For any request:
+
+**contact@koinoborihouse.com**
+
+---
+
+## Article 17 - Use of the products
+
+Koinobori are objects designed to be hung and, depending on the models and uses indicated, exposed to the movement of the air.
+
+The Customer is invited to follow the information and instructions provided with the product or presented on its product page.
+
+It is in particular the Customer's responsibility to choose:
+
+- an appropriate attachment point;
+- a sufficiently sturdy installation;
+- a location compatible with the characteristics of the product;
+- and reasonable conditions of use with regard to the weather and the environment.
+
+The Customer must take appropriate precautions in the event of weather conditions likely to damage the product or its attachment system.
+
+Koinobori House cannot be held liable for damage resulting exclusively from:
+
+- a manifestly unsuitable installation;
+- a use contrary to the intended purpose of the product;
+- an alteration of the product by the Customer;
+- or a failure to follow a clearly communicated safety instruction.
+
+Nothing in this Article limits the consumer's legal guarantees or the seller's liability where it cannot legally be excluded.
+
+---
+
+## Article 18 - Liability
+
+Koinobori House is liable for the proper performance of its obligations in accordance with the applicable legal provisions.
+
+However, it cannot be held liable where the non-performance or improper performance of the contract results from:
+
+- an act attributable to the Customer;
+- the unforeseeable and insurmountable act of a third party to the contract;
+- or an event of force majeure meeting the legal criteria.
+
+No clause of these Terms has the effect of excluding or limiting the mandatory rights granted to the consumer.
+
+---
+
+## Article 19 - Force majeure
+
+A party cannot be held liable where the non-performance of its obligation results from an event meeting the legal criteria of force majeure.
+
+Where the impediment is temporary, the performance of the obligation may be suspended for its duration, unless the resulting delay justifies the termination of the contract under the conditions provided for by law.
+
+---
+
+## Article 20 - Intellectual property
+
+The Site, its art direction, texts, photographs, illustrations, drawings, graphics, logos, visual creations and other protected elements remain subject to the intellectual property rights of their respective holders.
+
+Creations and designs identified as signed **BCDG** remain protected by the applicable intellectual property rights.
+
+The purchase of a physical product does not entail any transfer of the intellectual property rights relating to its design.
+
+In particular, the purchase of a koinobori does not authorise the Customer to:
+
+- reproduce its design for commercial purposes;
+- have it reproduced;
+- commercially exploit its illustrations or patterns;
+- use the BCDG signature or the Koinobori House identity as their own.
+
+Uses permitted by law naturally remain reserved.
+
+---
+
+## Article 21 - Personal data
+
+Personal data collected during an order are used in particular to:
+
+- process the order;
+- collect the payment;
+- arrange the delivery;
+- provide after-sales service;
+- respond to the Customer's requests;
+- comply with accounting, tax and legal obligations.
+
+The detailed arrangements for the processing of personal data are set out in the Site's **Privacy Policy**.
+
+This policy specifies in particular:
+
+- the purposes of the processing;
+- their legal bases;
+- the recipients;
+- the retention periods;
+- the Customer's rights;
+- how to exercise them.
+
+Payment, delivery or technical service providers receive only the information necessary to perform the services they provide.
+
+---
+
+## Article 22 - Complaints
+
+For any question or complaint relating to a product or an order, the Customer may contact Koinobori House:
+
+**Koinobori House - Alain Herbinière EI**  
+1 rue du Marais  
+29730 Treffiagat  
+France
+
+
+Email: **contact@koinoborihouse.com**
+
+Koinobori House will endeavour to find an amicable solution.
+
+---
+
+## Article 23 - Consumer mediation
+
+In the event of a dispute, the consumer must first submit a complaint to Koinobori House in order to try to resolve the dispute directly.
+
+If this approach does not lead to an acceptable solution, and subject to the applicable admissibility conditions, the consumer may refer the matter free of charge to the consumer mediator to which Koinobori House belongs:
+
+**CM2C - Centre de la Médiation de la Consommation de Conciliateurs de Justice**
+
+49 rue de Ponthieu  
+75008 Paris  
+France
+
+Telephone: **01 89 47 00 14**
+
+Email to declare a dispute:  
+**declarer-un-litige@cm2c.net**
+
+Online referral:  
+**www.cm2c.net/declarer-un-litige.php**
+
+Recourse to mediation is free of charge for the consumer under the conditions provided for by the regulations and the mediator's rules of procedure.
+
+---
+
+## Article 24 - Governing law and disputes
 
 These Terms are governed by French law.
 
-In case of dispute, the parties shall first seek an amicable solution. Failing that, the dispute shall be brought before the competent courts in accordance with applicable rules, without depriving the consumer of any mandatory protections.
+For a consumer residing in another State, this choice cannot have the effect of depriving them of the protection afforded by any mandatory provisions applicable in their country of residence.
 
-## 16. Archiving and Evidence
+In the event of a dispute, the parties are invited to seek an amicable solution first.
 
-Orders, invoices and contractual exchanges may be retained for the applicable legal periods, including accounting, tax, commercial and warranty obligations.
+The consumer may then, where they meet the applicable conditions, refer the matter to the consumer mediator indicated in the previous Article.
 
-## 17. Changes to the Terms
+In the absence of an amicable resolution, the competent courts are those determined by the applicable legal rules.
 
-The seller may amend these Terms. The applicable Terms are those in force on the date of the order.
+Nothing in these Terms requires the consumer to bring proceedings exclusively before a court located at the registered office of Koinobori House where the law grants them other options.
+
+---
+
+## Article 25 - Language
+
+The Site is available in French and English.
+
+An English translation of these Terms may be provided to make them easier for international customers to understand.
+
+The French version is the reference version.
+
+However, this rule cannot deprive a consumer residing in another country of the mandatory protections they enjoy under the legislation applicable to them.
+
+---
+
+## Article 26 - Changes to these Terms
+
+Koinobori House may amend these Terms to take account in particular of:
+
+- a change in legislation or regulations;
+- a change in its services;
+- a change in its delivery or payment methods;
+- a change in its commercial organisation.
+
+Amendments do not apply retroactively to orders already concluded.
+
+The version applicable to an order is the one accepted by the Customer at the time of that order.
+
+Each published version is dated.
+
+---
+
+## ANNEX 1 - MODEL WITHDRAWAL FORM
+
+This form may be used to exercise the right of withdrawal where it applies.
+
+Using this form is not mandatory: any clear statement unambiguously expressing the wish to withdraw may also be used.
+
+### Addressee
+
+**Koinobori House**  
+Alain Herbinière EI  
+1 rue du Marais  
+29730 Treffiagat  
+France
+
+Email: **contact@koinoborihouse.com**
+
+---
+
+I hereby notify you of my decision to withdraw from the contract for the sale of the following product(s):
+
+**Product(s) concerned:**
+
+......................................................................................
+
+......................................................................................
+
+**Order number:**
+
+......................................................................................
+
+**Ordered on:**
+
+......................................................................................
+
+**Received on:**
+
+......................................................................................
+
+**Name and first name of the consumer(s):**
+
+......................................................................................
+
+**Address of the consumer(s):**
+
+......................................................................................
+
+......................................................................................
+
+**Email:**
+
+......................................................................................
+
+**Date:**
+
+......................................................................................
+
+**Signature:**
+
+......................................................................................
+
+Signature only if this form is sent on paper.
+
+---
+
+### Physical return of the product
+
+After receiving the withdrawal request, Koinobori House informs the Customer of **the return address to be used for the order concerned**.
+
+Depending on the circumstances, this address will be:
+
+**1 rue du Marais, 29730 Treffiagat, France**
+
+or
+
+**46 ruelle de l'Église, 69620 Ternand, France.**
+
+The choice of return address does not condition the exercise of the right of withdrawal.
+
+The Customer is simply invited to wait until it has been communicated before shipping the product, so that the return is handled at the right place.
+
+The online withdrawal feature available on koinoborihouse.com may also be used.
