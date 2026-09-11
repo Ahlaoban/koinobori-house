@@ -1,6 +1,12 @@
 # G0 — dossier de préparation d’une restauration isolée
 
-Statut actualisé après validation A01 : nouvelle capture privée et intégrité des archives vérifiées dans [S20](evidence/reprise-apres-validation.md) ; restauration non commencée. Auteur : Codex. Les tableaux préparatoires ci-dessous décrivent le point de départ ; S20 fait autorité pour l’avancement après validation. Ce document précise le protocole du [rapport §9](RAPPORT-AUDIT-KH2027.md#9-plan-de-reprise-et-de-retour--protocole-proposé-pas-exécuté) ; il ne déclare aucune restauration réussie.
+Statut actualisé après S21 : capture, transfert, extraction, import, rapprochement,
+retour SQL et démarrage privé du socle WordPress/WooCommerce réussis. Les preuves
+et limites sont dans [S20](evidence/reprise-apres-validation.md) puis
+[S21](evidence/reprise-restauration.md), qui font autorité sur l'avancement. La
+recette Web, l'anonymisation, l'écart d'un fichier source et la copie hors
+hébergement maintiennent G0 ouvert. Auteur : Codex. Ce document précise le
+protocole du [rapport §9](RAPPORT-AUDIT-KH2027.md#9-plan-de-reprise-et-de-retour--protocole-proposé-pas-exécuté).
 
 ## Résultat attendu
 
@@ -18,9 +24,9 @@ Le choix de destination sera arrêté après inventaire cPanel. Aucune URL de cl
 | Copie externe | Google Drive sélectionné et déclaré connecté | Présence, taille, intégrité et accès aux objets distants à vérifier |
 | JetBackup | S19 : 32 copies par base KH ; dernières affichées09/09 ; bases directement associées aux sites | Contenu, cohérence fichiers/base et restauration non vérifiés |
 | Ancien drill | Réussite déclarée en juin sur production alors vide | Ne démontre pas la reprise du staging actuel ; ne pas répéter sur les sites existants |
-| Destination isolée | S19 : six sous-comptes gratuits disponibles ; aucun activé | Candidat distinct ; droits, quota, accès privé et contrôle des sorties à établir avant copie |
+| Destination isolée | S21 : sous-compte `sc3heal3867`, racine privée hors Web, UID et base dédiés | Extraction, SQL et runtime privés vérifiés ; racine Web toujours fermée |
 | Runtime local | docker/php/wp/mysql/mariadb non trouvés dans PATH ; WSL indique ne pas être installé | Aucun environnement WordPress local prêt n’a été identifié ; aucun logiciel installé |
-| Sorties du clone | Paiements, webhooks, SMTP et tâches existent ou sont prévus | Blocage des sorties à mettre en place avant le premier démarrage PHP du clone |
+| Sorties du clone | S21 : garde MU, HTTP/courriel/paiement/Action Scheduler bloqués ; PHP CLI sans cURL, sockets, mail ni processus | Prouvé sur le socle commercial privé ; à maintenir et éprouver pendant la recette Web |
 
 Sources : [S19](evidence/serveur-cpanel.md), [S16](evidence/staging-authentifie.md), [S17](evidence/staging-complement.md), [KH-102 historique](../../lot1/KH-102-sauvegardes.md), [contrôle des fichiers](evidence/final-validation.json). Le précontrôle local du présent tour ne certifie pas l’absence de logiciels hors PATH.
 
@@ -67,16 +73,16 @@ La validation d’archive démontre son intégrité de lecture, pas la conformit
 
 | Champ | Valeur actuelle |
 |---|---|
-| Source / snapshot / opérateur | Racine staging et base heal3867_wp551 identifiées S19 ; snapshot cohérent à sélectionner |
-| Destination réelle / base indépendante | À identifier |
-| Manifestes et empreintes | Non recueillis |
-| Début de reprise / fin des vérifications | Non exécuté |
-| Durée mesurée de reprise | Non mesurée |
-| Point temporel récupéré / données postérieures à rapprocher | Non mesuré |
+| Source / snapshot / opérateur | Racine staging et capture privée cohérente du 10/09/2026 identifiées S20 |
+| Destination réelle / base indépendante | Sous-compte `sc3heal3867`, répertoires privés et base `sc3heal3867_kh2027drill` dédiés |
+| Manifestes et empreintes | 20598 fichiers, 378364732 octets ; empreintes transport/site/base consignées en S20/S21 |
+| Début de reprise / fin des vérifications | Capture 10/09/2026 10:33:11 UTC ; contrôles privés poursuivis le 11/09/2026 |
+| Durée mesurée de reprise | Retour SQL du clone : 16,850 s ; RTO complet non mesuré |
+| Point temporel récupéré / données postérieures à rapprocher | Capture cohérente S20 ; un fichier source courant modifié depuis, chemin à identifier |
 | Résultat archive locale / copie externe | 0 fichier direct backup_ dans updraft staging ; copies externes listées, intégrité non vérifiée |
-| Résultat pages, langues, produits, formulaires, comptes, commandes | Non exécuté |
-| Neutralisation des sorties / protection des données | Non démontrée |
-| Retour sur clone et intégrité des sources | Non exécuté |
-| Écarts restants / décision G0 | G0 ouvert |
+| Résultat pages, langues, produits, formulaires, comptes, commandes | 34 produits, 46 variations, 17 paires FR/EN et 5 commandes HPOS chargés ; pages Web, formulaires et comptes non recettés |
+| Neutralisation des sorties / protection des données | Garde applicative et restrictions PHP prouvées en CLI ; anonymisation et recette HTTP non réalisées |
+| Retour sur clone et intégrité des sources | Retour SQL fidèle sur 94 tables ; source : 20598 fichiers, 1 modifié à identifier |
+| Écarts restants / décision G0 | Copie hors hébergement, anonymisation, TLS et recette Web manquent ; G0 ouvert |
 
 Les propositions RPO ≤1h et RTO ≤4h du référentiel ne deviennent pas des engagements par ce document. Mesurer la fenêtre de perte et la durée réelle, puis décider si elles conviennent à l’activité. Une répétition sur clone ne prouve pas à elle seule le retour d’une production recevant des commandes : leur préservation et rapprochement devront être éprouvés avant toute future migration commerciale.

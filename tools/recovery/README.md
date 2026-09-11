@@ -33,3 +33,43 @@ Les tests couvrent lecture fidèle, contenu altéré, archive incomplète et che
 6. Tester les parcours et un retour sur le clone, puis contrôler l’intégrité des sources. Conserver dates, résultats et durée réelle.
 
 **Une archive lisible n’est pas une restauration réussie.** La copie hors hébergement, le drill et le retour restent des preuves distinctes. Ne pas utiliser ces outils pour une copie production vers staging ou un déploiement public.
+
+## Réception et extraction privée
+
+`receive_snapshot.py` reçoit un seul flux dans un fichier privé créé exclusivement,
+avec une limite de 256 MiB et un délai de 180 secondes au point d'entrée serveur.
+Les restrictions SSH et les permissions du compte sont des contrôles distincts à
+vérifier sur le serveur. L'autorisation de transfert figure dans
+`docs/audit/2026-09-10/TRANSFERT-ISOLE.md`.
+
+`stage_snapshot.stage(bundle, expected_hash, destination)` vérifie le SHA-256 de
+transport relevé sur la source, les cinq membres attendus, les empreintes des
+archives et l'identité des manifestes avant/après. Il relit entièrement le gzip
+SQL (limite décompressée : 1 GiB), puis extrait les fichiers dans une nouvelle
+destination privée hors Web. L'appelant doit vérifier cet emplacement sur le
+serveur ; la fonction n'inventorie pas les racines des domaines. Un dossier
+existant n'est jamais réutilisé. Un échec conserve les fichiers partiels, sans
+produire de `stage-result.json` de succès.
+
+Les tests locaux couvrent capture, réception et extraction, dont un transfert
+complet sur données fictives, la corruption du transport ou du SQL, les archives
+altérées, les manifestes divergents et la préservation d'une destination existante.
+Ils n'exécutent ni PHP ni import SQL. Les permissions POSIX, l'isolation réseau,
+MariaDB et les parcours WordPress restent à vérifier dans l'environnement cible.
+
+Les noms contenant un antislash littéral sont préservés sur POSIX uniquement.
+Ils sont refusés sur Windows, où leur interprétation comme séparateur modifierait
+le chemin. Deux fichiers de l'ancien dossier `wp-content/upgrade` ont révélé ce
+cas pendant le drill serveur.
+
+`dump_counts.py` compte les tuples du format INSERT émis par le dump du staging,
+y compris les valeurs sur plusieurs lignes et la ponctuation dans les chaînes.
+Il n'exécute pas de SQL et refuse les formes non prises en charge. Son résultat
+doit être comparé aux comptes SQL réels, pas interprété comme une validation des
+valeurs métier ou des relations. La suite locale comprend désormais **29 tests**.
+
+Le procès-verbal serveur, distinct des tests locaux, est conservé dans
+`docs/audit/2026-09-10/evidence/reprise-restauration.md`. Les scripts opérationnels,
+les archives, les identifiants et les journaux SQL détaillés restent dans le
+répertoire privé du compte de test. Aucun de ces secrets ou dumps ne doit être
+copié dans ce dépôt.

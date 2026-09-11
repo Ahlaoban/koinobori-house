@@ -15,9 +15,9 @@ Reprendre et développer Koinobori House selon KH2027-REF v3.0 jusqu’à ce que
 | Préservation locale | 165 fichiers initialement suivis inchangés, HEAD d3073da ; audit non commité |
 | Staging WordPress | Session inspectée en lecture seule ; faits S16–S18 |
 | Accès cPanel | Session ciblée exploitée ; inventaire serveur S19, sans URL de session dans les preuves |
-| Inventaire serveur, intégrité archives, restauration isolée | S19 inventaire ; S20 nouvelle capture privée et intégrité validée, restauration encore non exécutée |
-| Arbitrages définitifs d’architecture et de périmètre | Dossier DECISIONS-JALON.md disponible ; validation utilisateur non reçue |
-| Validation utilisateur du jalon | **Reçue le10/09/2026 : « je valide », en réponse à A01 ; portée et réserves dans DECISIONS-JALON.md** |
+| Inventaire serveur, intégrité archives, restauration isolée | S21 : 20598 fichiers extraits et vérifiés, 94 tables importées et rapprochées, retour SQL réussi ; cœur WP, 34 produits, 46 variations, 17 paires FR/EN et 5 commandes HPOS chargés sous garde hors ligne ; recette Web et copie hors hébergement encore à vérifier |
+| Arbitrages définitifs d’architecture et de périmètre | A01 approuvée ; portée et réserves dans DECISIONS-JALON.md |
+| Validation utilisateur du jalon | **Reçue le 10/09/2026 : « je valide », en réponse à A01 ; portée et réserves dans DECISIONS-JALON.md** |
 | Développement structurel | Autorisé dans le périmètre approuvé ; transformations dépendantes après isolement, préservation et preuves de restauration |
 
 ## Autonomie autorisée
@@ -45,7 +45,7 @@ Une décision utilisateur n’est requise que pour : modification significative 
 | Capacité et dépenses d’exploitation | Réutiliser les services existants lorsque leurs capacités sont prouvées ; plafonds explicites | Licences, quotas, stockage, service d’images éventuel, restauration, disponibilité humaine | Dépenses externes et compromis significatifs ; aucun achat automatique |
 | Étendue du pilote et calendrier | Livrer le périmètre F1/F2 demandé avec contrôle humain métier et recette sur les trois segments | Découpage après inventaire, dépendances de contenu et de tarification, capacité de test | Arbitrer uniquement si coût/capacité imposent une réduction, un report ou une modification de l’objectif |
 
-L’orientation module WP est maintenant proposée dans [DECISIONS-JALON.md](DECISIONS-JALON.md), sans être déjà approuvée. La possibilité de compositing est explicitement ouverte par VIS-01 p.16 ; le prototype est un choix technique ordinaire, aucun fournisseur payant n’est présumé nécessaire. Aucune promesse de rendu ni d’échelle n’est inventée.
+L’orientation module WP décrite dans [DECISIONS-JALON.md](DECISIONS-JALON.md) est approuvée par Alain. La possibilité de compositing est explicitement ouverte par VIS-01 p.16 ; le prototype est un choix technique ordinaire, aucun fournisseur payant n’est présumé nécessaire. Aucune promesse de rendu ni d’échelle n’est inventée.
 
 ## Coûts : discipline de présentation au jalon
 
@@ -56,3 +56,9 @@ Le dossier d’arbitrage distinguera charge, coût monétaire externe, coût ré
 ## Prochaine action
 
 La validation A01 est reçue. Achever les preuves de restauration et de réconciliation requises avant les transformations ; poursuivre ensuite les lots approuvés. Les URLs de session, clés et données clients restent hors des documents versionnés. Conserver les constats d’audit précédents et compléter leurs limites au fur et à mesure, sans déclarer G0 opérationnel acquis avant ses preuves.
+
+État détaillé de la reprise serveur : [S21 — restauration](evidence/reprise-restauration.md).
+L'accès opérationnel est la session Chrome du compte principal puis du sous-compte,
+pas la session non connectée du navigateur intégré. Ne pas répéter le transfert
+SSH déjà effectué ni les imports réussis sans nouveau motif ; les copies de travail
+et les essais interrompus sont conservés dans le compte isolé.
