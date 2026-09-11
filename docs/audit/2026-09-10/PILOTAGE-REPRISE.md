@@ -62,3 +62,12 @@ L'accès opérationnel est la session Chrome du compte principal puis du sous-co
 pas la session non connectée du navigateur intégré. Ne pas répéter le transfert
 SSH déjà effectué ni les imports réussis sans nouveau motif ; les copies de travail
 et les essais interrompus sont conservés dans le compte isolé.
+
+Le 11 septembre, l'envoi autorisé a publié la branche de reprise et ouvert la
+[PR 14 en brouillon](https://github.com/Ahlaoban/koinobori-house/pull/14).
+L'écart de fichier source a été identifié comme un journal WooCommerce Analytics.
+L'accueil vide a été reproduit puis corrigé sur le clone par le réglage d'URL
+Polylang `redirect_lang=true` et la purge du cache des langues. Les rendus PHP
+FR/EN retrouvent les pages 318/319, les canoniques et les alternatives correctes,
+sans erreur fatale ni redirection. L'anonymisation, TLS, la recette Web et la
+preuve de sauvegarde hors hébergement restent ouverts ; G0 n'est pas déclaré acquis.

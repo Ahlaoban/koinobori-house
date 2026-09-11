@@ -164,11 +164,75 @@ métier n'a été nécessaire pour ce défaut de test.
 
 Une comparaison en lecture seule avec le manifeste de capture retrouve 20598
 fichiers courants sur 20598 attendus, sans ajout ni suppression. Un fichier a
-changé depuis la capture ; son chemin exact n'a pas encore été récupéré avant
-l'expiration de la session cPanel source. Ce résultat ne prouve donc pas encore
-une identité complète des sources après drill. Aucune commande du drill n'avait
-de droit d'écriture sur la racine source, mais cette explication technique ne
-remplace pas l'identification de l'écart.
+changé depuis la capture. La lecture du rapport privé le 11 septembre identifie
+le journal `wp-content/uploads/wc-logs/wc-analytics-order-import-2026-09-10-*.log`.
+Les 20597 autres fichiers sont inchangés dans cette comparaison. Le contenu du
+journal n'a pas été extrait ; l'origine exacte de son écriture n'est pas attribuée.
+Ce constat porte sur la comparaison après drill enregistrée le 10 septembre,
+et ne constitue pas une nouvelle empreinte de la source au 11 septembre.
+
+## Reprise du 11 septembre : dépôt et diagnostic accueil
+
+Après autorisation explicite de l'envoi, les commits `e3243e0` et `1002681` sont
+publiés sur `codex/kh2027-reprise` ; la branche distante a été vérifiée au commit
+`1002681ced15f91f67cb1b753a77e347d2484418`. La [PR 14](https://github.com/Ahlaoban/koinobori-house/pull/14)
+est en brouillon, sans fusion ni déploiement.
+
+La sonde `probe_frontpage.php`, contrôlée par PHP puis exécutée dans le runtime
+privé, confirme les options brutes `show_on_front=page`, `page_on_front=318` et
+`page_for_posts=0`. Les pages 318 FR et 319 EN sont publiées, liées dans les deux
+sens ; le modèle Polylang calcule respectivement 318 et 319 comme accueils.
+
+Un premier rendu PHP des routes `/fr/` et `/en/`, avec le thème enfant restauré
+et une sélection réduite d'extensions, reproduit pourtant le blog vide :
+`front_page=true`, `blog_home=true`, `queried_id=0`, bonne langue courante,
+aucune redirection et aucune erreur fatale. HTML généré : 45884 et 45845 octets.
+Le rendu reste privé, sous PHP avec réseau/courriel désactivés. Ce test du
+bootstrap PHP ne valide ni le serveur HTTP, ni TLS, ni l'affichage navigateur.
+La trace relève `show_on_front=posts` après filtrage, avec le callback
+`PLL_Choose_Lang_Url::filter_option_show_on_front`. Dans le code installé de
+Polylang 3.8.7, `src/frontend/frontend-static-pages.php:173` réserve la résolution
+de l'accueil racine aux options `redirect_lang` ou `hide_default`. Ici,
+`force_lang=1`, `rewrite=true`, `hide_default=false`, `redirect_lang=false`.
+Les pages traduites existent ; c'est le choix d'URL qui laisse les racines sur le
+blog. Ce résultat remplace l'hypothèse précédente d'un défaut de traduction/cache.
+
+Le test limité à une requête avec `redirect_lang=true` retrouve les pages 318/319,
+mais réclame une redirection tant que les URLs de langues en cache ne sont pas
+recalculées. `set_clone_frontpage.php` a ensuite sauvegardé les options dans un
+fichier privé exclusif, modifié seulement `redirect_lang` de `false` à `true`,
+vérifié la valeur enregistrée puis vidé le cache par
+`PLL()->model->clean_languages_cache()`.
+
+La sonde `probe_render.php` versionnée a été transférée avec une empreinte SHA-256
+identique (`19d3731273052cbae7421964a69b9828f93b159941a72cefee4e78da6b0f9b11`),
+validée par `php -l`, puis exécutée sans forçage d'option :
+
+| Contrôle | FR | EN |
+|---|---|---|
+| Page interrogée | 318 | 319 |
+| Accueil statique / blog | vrai / faux | vrai / faux |
+| Langue | fr | en |
+| Erreur fatale / 404 / redirection | aucune / non / 0 | aucune / non / 0 |
+| HTML généré | 50009 octets | 49773 octets |
+| Classe de page attendue | `page-id-318` | `page-id-319` |
+| Message de blog vide | absent | absent |
+| Canonique sur l'hôte privé | `/fr/` | `/en/` |
+| Alternatives de langues sur l'hôte privé | fr `/fr/`, en `/en/`, x-default `/` | identiques |
+
+Les sondes de lecture et de correction ont également passé `php -l`. La correction
+concerne exclusivement le clone privé ; aucun réglage du staging ou de production
+n'a été changé. Le rendu avec les extensions écartées, les cookies, formulaires,
+paiements de test et parcours navigateur reste à recetter.
+
+La sonde commerciale relancée après correction retrouve 34 produits chargés,
+46 variations sans orphelin, 17 paires FR/EN complètes et 5 commandes HPOS chargées.
+Paiements disponibles : 0 ; HTTP : `kh2027_offline` ; courriel intercepté : vrai.
+La racine publique conserve `Require all denied` et le fichier de retour des
+options a les permissions `0600`. Les empreintes des deux autres scripts
+exécutés correspondent aussi aux fichiers locaux : lecture
+`9b089950afada0c2ffe4691d6921dcde317bf711e51f67c80f0a6592ff94ab45`, correction
+`6616fe87dfb1364f28a42c9339ea07345d3748c48a0a6f67fc10e5f84fde36ae`.
 
 L'anonymisation de la base de test, la recette HTTP/FR/EN/panier/formulaires, un
 certificat valide et la vérification d'une copie hors hébergement restent à

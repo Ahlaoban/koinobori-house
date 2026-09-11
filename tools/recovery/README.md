@@ -73,3 +73,30 @@ Le procès-verbal serveur, distinct des tests locaux, est conservé dans
 les archives, les identifiants et les journaux SQL détaillés restent dans le
 répertoire privé du compte de test. Aucun de ces secrets ou dumps ne doit être
 copié dans ce dépôt.
+
+## Diagnostic et correction de l'accueil privé
+
+`probe_frontpage.php` lit uniquement les trois options WordPress de lecture, les
+identifiants/statuts/langues de la paire d'accueil et les propriétés de pages
+statiques calculées par Polylang. Les gardes `KH2027_SANDBOX`, environnement
+`local` et hôte `.invalid` empêchent son emploi involontaire sur les sites source.
+Cette sonde permet de distinguer option incorrecte, liaison de traduction absente
+et cache de langues incohérent avant d'essayer une correction sur le clone.
+
+`probe_render.php` se lance directement avec le PHP restreint du runtime et
+un seul argument `/fr/` ou `/en/`. Il charge WordPress et le thème restauré,
+limite les extensions à WooCommerce/Polylang/PLLWC/variation KH, contrôle les
+gardes puis enregistre HTML et bilan dans le répertoire privé. Les redirections
+sont comptées et interceptées. La sonde n'ouvre aucun serveur Web : elle vérifie
+la requête PHP, pas TLS, JavaScript, les interactions ou l'affichage navigateur.
+
+`set_clone_frontpage.php` corrige uniquement `polylang.redirect_lang` de `false`
+à `true` dans la base isolée nommément contrôlée. Il vérifie la paire publiée
+318 FR / 319 EN et les protections HTTP/courriel, sauvegarde les options dans un
+fichier privé créé sans écrasement, puis vide le cache des langues. Le dump
+restaurable et ce fichier permettent le retour. Le script se lance par WP-CLI
+dans le runtime privé, sous le même PHP restreint que les sondes précédentes.
+
+Les scripts de cette section sont propres au clone du drill. Ils ne constituent
+pas une procédure de déploiement de staging ou production. L'anonymisation, TLS
+et la recette navigateur restent nécessaires avant de rendre le clone accessible.
