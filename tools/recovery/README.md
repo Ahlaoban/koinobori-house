@@ -137,3 +137,32 @@ et vérification des empreintes, puis les sondes WordPress ont été relancées.
 Le reçu, les rapports des transactions, la quarantaine, le scan et les résultats
 de recette du 12 septembre sont référencés dans le procès-verbal S21. Ils ne
 valident ni TLS, ni les parcours interactifs, ni la copie hors hébergement.
+
+## Contrôle PHP avant recette Web
+
+`probe_web_runtime.php` est une page temporaire de diagnostic autonome, à placer
+uniquement derrière une authentification Apache et HTTPS. Elle ne charge pas
+WordPress, ne lit aucun identifiant, ne contacte aucun service et ne tente aucun
+envoi. Elle contrôle les capacités PHP effectives plutôt que les seuls réglages
+affichés dans le panneau d'hébergement. Sans identité Apache ou HTTPS, elle refuse
+la requête Web. Les sorties sont non indexables, sans cache ni ressource externe.
+
+La sonde distingue mail, HTTP direct, sockets/FTP, exécution de commandes,
+lecture d'URL, restriction de chemins et affichage d'erreurs. Un chemin restreint
+non vide ne prouve pas que sa liste est correcte : la contrôler séparément. Ces
+contrôles ne constituent pas un pare-feu universel et ne couvrent pas toutes les
+extensions pouvant ouvrir une connexion. Les extensions autorisées, la base
+locale et les gardes WordPress restent des contrôles distincts.
+
+Vérification locale : syntaxe PHP valide ; configuration PHP sans restrictions
+refusée par le bilan ; mêmes vérifications satisfaites avec les fonctions
+désactivées et les options restrictives. Ces essais CLI n'attestent pas les
+réglages du PHP Web : le bilan du navigateur authentifié reste indispensable.
+
+Ne pas confondre l'ajout d'un `Require all denied` au même niveau que
+`Require valid-user` avec une interdiction absolue : les directives peuvent se
+combiner par un OU implicite. Limiter explicitement les fichiers accessibles
+pendant la préparation et tester les réponses sans authentification.
+Références : [autorisation Apache](https://httpd.apache.org/docs/2.4/mod/mod_authz_core.html),
+[HTTPS obligatoire](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslrequiressl).
+Retirer la sonde Web après la recette ; conserver son code dans les outils.
