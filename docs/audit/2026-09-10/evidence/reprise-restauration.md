@@ -321,20 +321,41 @@ Rapports conservés dans `kh2027-private/runtime-control` :
 
 ### Blocages encore ouverts
 
-La simulation Let's Encrypt `http-01`, limitée au seul domaine de test, échoue
-de nouveau sur `SERVFAIL looking up CAA for universe.wf`. Aucun certificat de
-production n'a été demandé et aucune alerte TLS n'a été contournée. La possibilité
-d'un CAA propre au sous-domaine reste à vérifier : la recherche CAA s'arrête au
-premier jeu d'enregistrements trouvé selon la
-[RFC 8659, section 3](https://www.rfc-editor.org/rfc/rfc8659.html#section-3).
-La session cPanel a expiré avant cette vérification ; aucune zone DNS n'a changé.
+Après reconnexion cPanel, la zone de `sc3heal3867.universe.wf` expose 25
+enregistrements, sans CAA. Les réponses SOA directes de `ns1.o2switch.net` et
+`ns2.o2switch.net` portent le drapeau autoritaire `aa`. Un enregistrement
+`sc3heal3867.universe.wf. 300 CAA 0 issue "letsencrypt.org"` a été ajouté dans
+l'éditeur ; cPanel confirme sa sauvegarde. Cette restriction s'applique au seul
+sous-domaine de test. La recherche CAA doit s'arrêter au premier jeu trouvé selon
+la [RFC 8659, section 3](https://www.rfc-editor.org/rfc/rfc8659.html#section-3).
 
-Le Google Drive connecté contient un dossier UpdraftPlus, mais sa liste de
-fichiers est vide. La recherche d'archives `backup_` et `KH2027` ne renvoie aucun
-résultat. La configuration copiée nomme bien le dossier UpdraftPlus et une
-instance activée, mais cela ne prouve ni la présence des archives dans le bon
-compte ni leur intégrité. Aucun jeton copié n'a été réutilisé pour contacter
-Google. Le compte destinataire doit être rapproché de la connexion disponible.
+Les contrôles successifs montrent des réponses divergentes des serveurs o2switch :
+initialement ns2 renvoie le CAA et ns1 une réponse vide ; au contrôle suivant,
+ns1 le renvoie et ns2 répond NOERROR sans CAA. 1.1.1.1 et 8.8.8.8 renvoient tous
+deux `0 issue "letsencrypt.org"`. La preuve datée est conservée dans le fichier
+privé `runtime-control/dns-caa-20260912.json`. La propagation n'est donc pas
+considérée comme terminée. La simulation `http-01`, sans alias, effectuée après
+l'ajout échoue encore sur `SERVFAIL looking up CAA for universe.wf`.
+Attendre la convergence avant une nouvelle simulation et solliciter o2switch si
+les réponses autoritaires restent incohérentes. Aucun certificat réel n'a été
+demandé et aucune alerte TLS n'a été contournée. Le clone reste privé.
+
+**Correction après vérification dans le navigateur :** le connecteur a renvoyé
+une liste vide, mais le dossier UpdraftPlus contient bien des archives. Le profil
+Google confirme que l'adresse Gmail indiquée par Alain est une adresse secondaire
+du compte déjà connecté ; aucune reconnexion Google n'est nécessaire. Le constat
+précédent de dossier vide est donc retiré.
+
+Le tri par date décroissante montre 10 fichiers libellés `Koinoboricom` : quatre
+archives `others/plugins/themes/uploads` du 1 mars 2026, quatre du 8 mars, puis
+deux dumps `db.gz` des 13 et 14 mars. Le plus récent est
+`backup_2026-03-14-0910_Koinoboricom_dd540fd6470c-db.gz` (4 Mo affichés).
+Ces éléments sont antérieurs à la capture KH de septembre ; leur libellé et leur
+présence ne prouvent ni leur correspondance au staging actuel, ni leur intégrité,
+ni une copie hors hébergement du snapshot restauré. Aucun jeton copié n'a été
+réutilisé pour contacter Google. La destination Google configurée dans le snapshot
+reste à vérifier, son compte propriétaire masqué ne correspondant pas à l'adresse
+Gmail fournie dans cette reprise.
 
 G0 reste ouvert pour TLS, l'accès de test protégé, la recette navigateur et la
 preuve hors hébergement. Les opérations privées de cette journée ne changent

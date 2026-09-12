@@ -82,15 +82,20 @@ La recette PHP après assainissement retrouve les 34 produits, 46 variations,
 neutralisés. Le scan final ne retrouve aucun des marqueurs personnels collectés ;
 les seuls courriels restants sont dans les pages publiques et leurs révisions.
 
-La simulation Let's Encrypt échoue encore sur le CAA du parent `universe.wf`.
-Vérifier, après reconnexion cPanel, si un CAA propre au sous-domaine de test est
-administrable et visible depuis les DNS publics avant de refaire une simulation.
-Ce réglage n'a pas été appliqué. Sinon, préparer un sous-domaine du domaine KH ou
-une demande à o2switch. La session Web cPanel a expiré pendant les contrôles ; le
-terminal déjà ouvert a permis de terminer les vérifications privées.
+Après reconnexion cPanel, un CAA `0 issue "letsencrypt.org"`, TTL 300, a été ajouté
+au seul `sc3heal3867.universe.wf`. Les deux serveurs o2switch font autorité pour
+cette zone ; leurs réponses CAA restent cependant intermittentes entre les
+contrôles. Les résolveurs 1.1.1.1 et 8.8.8.8 voient le nouvel enregistrement.
+La simulation Let's Encrypt effectuée après l'ajout échoue encore sur le CAA du
+parent `universe.wf`. Attendre la convergence DNS avant une nouvelle simulation ;
+si l'incohérence persiste, faire corriger la zone par o2switch. Aucun certificat
+réel n'a été demandé et l'accès public du clone reste interdit.
 
-Le dossier UpdraftPlus du Google Drive connecté est vide ; aucune archive
-`backup_` ou `KH2027` n'a été trouvée par les recherches effectuées. La destination
-Google configurée dans la copie source reste à rapprocher du compte connecté.
+Correction du contrôle Drive : le résultat vide du connecteur est contredit
+par le navigateur. L'adresse Gmail indiquée par Alain est une adresse secondaire
+du compte Google déjà connecté. Le dossier UpdraftPlus contient 10 archives
+libellées `Koinoboricom`, datées des 1, 8, 13 et 14 mars 2026. La plus récente
+est un dump de base du 14 mars ; ces archives ne prouvent pas une sauvegarde
+hors hébergement du staging Koinobori House capturé en septembre.
 La preuve hors hébergement et TLS/recette navigateur restent ouverts. Aucun
 changement de production ou fusion de PR n'a été réalisé.
