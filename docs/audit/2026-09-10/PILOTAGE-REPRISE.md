@@ -71,3 +71,26 @@ Polylang `redirect_lang=true` et la purge du cache des langues. Les rendus PHP
 FR/EN retrouvent les pages 318/319, les canoniques et les alternatives correctes,
 sans erreur fatale ni redirection. L'anonymisation, TLS, la recette Web et la
 preuve de sauvegarde hors hébergement restent ouverts ; G0 n'est pas déclaré acquis.
+
+Le 12 septembre, les profils/coordonnées du clone ont été remplacés par des
+données de test et les sessions, historiques privés et intégrations copiées
+retirés. Deux répétitions transactionnelles ont vérifié les 40 invariants et le
+retour exact des 94 tables avant les applications. Les 95 fichiers isolés en
+quarantaine et les 20501 fichiers conservés ont des empreintes vérifiées.
+La recette PHP après assainissement retrouve les 34 produits, 46 variations,
+17 paires FR/EN, 5 commandes et les deux accueils, avec HTTP/courriel/paiements
+neutralisés. Le scan final ne retrouve aucun des marqueurs personnels collectés ;
+les seuls courriels restants sont dans les pages publiques et leurs révisions.
+
+La simulation Let's Encrypt échoue encore sur le CAA du parent `universe.wf`.
+Vérifier, après reconnexion cPanel, si un CAA propre au sous-domaine de test est
+administrable et visible depuis les DNS publics avant de refaire une simulation.
+Ce réglage n'a pas été appliqué. Sinon, préparer un sous-domaine du domaine KH ou
+une demande à o2switch. La session Web cPanel a expiré pendant les contrôles ; le
+terminal déjà ouvert a permis de terminer les vérifications privées.
+
+Le dossier UpdraftPlus du Google Drive connecté est vide ; aucune archive
+`backup_` ou `KH2027` n'a été trouvée par les recherches effectuées. La destination
+Google configurée dans la copie source reste à rapprocher du compte connecté.
+La preuve hors hébergement et TLS/recette navigateur restent ouverts. Aucun
+changement de production ou fusion de PR n'a été réalisé.

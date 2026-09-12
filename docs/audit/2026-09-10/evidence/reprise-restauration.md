@@ -241,3 +241,101 @@ réaliser. G0 reste ouvert.
 Sources des opérations cPanel : [création de base](https://api.docs.cpanel.net/specifications/cpanel.openapi/database-management/mysql-create_database),
 [création d'utilisateur](https://api.docs.cpanel.net/specifications/cpanel.openapi/user-management/mysql-create_user),
 [droits sur une base](https://api.docs.cpanel.net/specifications/cpanel.openapi/user-management/mysql-set_privileges_on_database).
+
+## Reprise du 12 septembre : assainissement et contrôles
+
+L'autorisation de poursuivre a été suivie d'un inventaire des colonnes, clés de
+métadonnées et familles d'options, sans extraction des coordonnées dans les
+preuves publiques. Le premier prototype d'anonymisation reste désactivé. Le
+nouveau `tools/recovery/sanitize_clone_db.php` charge seulement mysqli sous PHP
+restreint, contrôle le compte/base/répertoire cible et refuse les tables absentes
+ou non transactionnelles. Les noms réels `fsmpt_email_logs` et
+`wc_email_unsubscribes` ont été rapprochés du schéma avant toute mutation.
+
+Une sauvegarde privée de l'état courant, incluant la correction Polylang, a été
+exportée et relue : 94 tables, 8099578 octets SQL, 1738844 octets gzip,
+SHA-256 `2944efcab4e1dae9829ea5482f365398e738c9dcd581cf29df9e58a915dcc24c`.
+L'empreinte de la base avant/après export est identique. Le nettoyage a d'abord
+été exécuté dans une transaction annulée : les 40 invariants métier passent,
+puis les empreintes des 94 tables correspondent exactement à l'état initial.
+L'application a ensuite réussi avec les mêmes invariants.
+
+Les contrôles résiduels ont identifié des familles supplémentaires, notamment
+`woocommerce-ppcp-*` (tirets), `wc_stripe*`, `cmplz_wsc*`, les réglages PDF et un
+historique de notification WordPress. La deuxième passe dispose de sa propre
+sauvegarde vérifiée de l'état intermédiaire et d'une répétition avec annulation
+exacte réussie. Elle retire 39 options supplémentaires et remplace une adresse
+de courriel de réglage. Le script final exécuté et local a le SHA-256
+`658fd64275991aab9e2a1c9c34e49e7f7d3755386f5802a0cb8093a5d27a5161`.
+
+Le traitement conserve les IDs et relations, les états/dates/montants des
+commandes, les produits et variations, les traductions et les réglages de
+livraison/taxe. Les profils, adresses et commentaires sont factices ; anciens
+mots de passe, sessions, données de formulaires, traces, clés et connexions
+d'intégration sont neutralisés dans le clone. Les archives et mappings privés
+permettent le retour : il s'agit d'une pseudonymisation de test, pas d'une
+affirmation d'anonymat irréversible.
+
+95 fichiers de logs, caches et anciennes configurations ont été déplacés vers
+`kh2027-private/quarantine-20260912`, hors runtime et hors Web. Le manifeste relu
+confirme leurs empreintes et celles des 20501 fichiers conservés. Cela comprend
+les traces Wordfence, Updraft, LiteSpeed, imports WooCommerce, caches PDF et
+anciens fichiers `.htaccess`/WAF. Le runtime reçoit une nouvelle interdiction
+Web ; la racine `public_html` reste elle aussi interdite. Aucun fichier source
+du staging ou de production n'est concerné.
+
+### Recette après assainissement
+
+| Contrôle | Résultat |
+|---|---|
+| Produits publiés chargés | 34/34 |
+| Variations chargées / orphelines | 46/46 ; 0 orpheline |
+| Paires de traductions | 17 complètes FR/EN |
+| Commandes HPOS chargées | 5/5 |
+| Paiements disponibles | 0 |
+| Requête HTTP / courriel de contrôle | `kh2027_offline` / intercepté |
+| Accueils FR / EN | pages 318 / 319 ; bonnes langues |
+| Erreurs fatales / 404 / redirections | aucune / aucune / 0 |
+| HTML FR / EN | 50009 / 49773 octets |
+
+La sonde de rendu est la version précédente avec seulement les noms de fichiers
+de sortie datés du 12 septembre. Les processus PHP ont tous terminé avec le
+code 0. Ces tests ne remplacent pas une recette navigateur avec JavaScript,
+formulaires, panier et cookies.
+
+Après cette recette, le scan des colonnes textuelles ne retrouve aucun des
+marqueurs personnels collectés avant nettoyage (valeurs de six caractères ou
+plus dans profils et coordonnées). Il retrouve seulement des courriels dans
+45 contenus : 23 pages publiées et 22 révisions, contacts professionnels KH et
+CN2C déjà présents dans le contenu public ; aucun marqueur client n'y apparaît.
+Ce scan par marqueurs et courriels ne constitue pas un détecteur universel de
+données personnelles ou de secrets inconnus.
+
+Rapports conservés dans `kh2027-private/runtime-control` :
+
+- reçus et dumps `before-sanitize-20260912*`, `before-sanitize-v2-20260912*` ;
+- plans et journaux `sanitize-plan*`, `sanitize-rehearse*`, `sanitize-apply*` ;
+- manifestes `quarantine-before-20260912.json`, `quarantine-result-20260912.json` ;
+- `commerce-after-sanitize-20260912.json`, `render-fr-20260912.json`, `render-en-20260912.json` ;
+- `scan-residuals-final-20260912.py`, `sanitize-residuals-final-20260912.json`.
+
+### Blocages encore ouverts
+
+La simulation Let's Encrypt `http-01`, limitée au seul domaine de test, échoue
+de nouveau sur `SERVFAIL looking up CAA for universe.wf`. Aucun certificat de
+production n'a été demandé et aucune alerte TLS n'a été contournée. La possibilité
+d'un CAA propre au sous-domaine reste à vérifier : la recherche CAA s'arrête au
+premier jeu d'enregistrements trouvé selon la
+[RFC 8659, section 3](https://www.rfc-editor.org/rfc/rfc8659.html#section-3).
+La session cPanel a expiré avant cette vérification ; aucune zone DNS n'a changé.
+
+Le Google Drive connecté contient un dossier UpdraftPlus, mais sa liste de
+fichiers est vide. La recherche d'archives `backup_` et `KH2027` ne renvoie aucun
+résultat. La configuration copiée nomme bien le dossier UpdraftPlus et une
+instance activée, mais cela ne prouve ni la présence des archives dans le bon
+compte ni leur intégrité. Aucun jeton copié n'a été réutilisé pour contacter
+Google. Le compte destinataire doit être rapproché de la connexion disponible.
+
+G0 reste ouvert pour TLS, l'accès de test protégé, la recette navigateur et la
+preuve hors hébergement. Les opérations privées de cette journée ne changent
+pas le staging ou la production. La PR 14 reste en brouillon, sans fusion.

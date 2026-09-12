@@ -87,8 +87,8 @@ function wipe(string $table): void {
 $empty = [
     'actionscheduler_logs','actionscheduler_actions','actionscheduler_claims',
     'ff_scheduled_actions','fluentform_entry_details','fluentform_form_analytics',
-    'fluentform_logs','fluentform_submissions','fluentform_submission_meta','fsmtp_email_logs',
-    'commentmeta','wc_download_log','wc_email_unsubscribers','wc_rate_limits','wc_reserved_stock',
+    'fluentform_logs','fluentform_submissions','fluentform_submission_meta','fsmpt_email_logs',
+    'commentmeta','wc_download_log','wc_email_unsubscribes','wc_rate_limits','wc_reserved_stock',
     'wc_webhooks','woocommerce_api_keys','woocommerce_downloadable_product_permissions',
     'woocommerce_log','woocommerce_payment_tokenmeta','woocommerce_payment_tokens','woocommerce_sessions',
     'wc_admin_note_actions','wc_admin_notes','litespeed_url_file','litespeed_url',
@@ -131,16 +131,16 @@ op('comments', 'comments', ['comment_ID','comment_author','comment_author_email'
 
 // Empty integration settings as complete serialized values; never regex-edit
 // serialized strings. Shipping/tax/theme/language configuration is preserved.
-$dropOptions = "option_name REGEXP '^(updraft|ppcp|wordfence|wfls|fsmtp|fluent_smtp|_fluentsmtp|litespeed|wpseo|softaculous)'"
-    . " OR option_name REGEXP '^woocommerce_(ppcp|paypal|stripe|pay-later)'"
+$dropOptions = "option_name REGEXP '^(updraft|ppcp|wordfence|wfls|fsmtp|fluent_smtp|_fluentsmtp|litespeed|wpseo|softaculous|wpo_wcpdf|wc_stripe|cmplz_wsc)'"
+    . " OR option_name REGEXP '^woocommerce[-_](ppcp|paypal|stripe|pay-later)'"
     . " OR option_name REGEXP '^(_transient_|_site_transient_)'"
-    . " OR option_name IN ('cron','recovery_keys','recently_edited','polylang_licenses','mailserver_login','mailserver_pass','mailserver_url','mailserver_port','cmplz_wsc_webhook_secret','cmplz_wsc_webhook','cmplz_wsc_scan_id','cmplz_wsc_scan','cmplz_wsc_scan_createdAt','_fluentform_global_form_settings','jetpack_options','jetpack_active_plugins','auto_update_plugins')"
+    . " OR option_name IN ('cron','recovery_keys','recently_edited','polylang_licenses','mailserver_login','mailserver_pass','mailserver_url','mailserver_port','cmplz_wsc_webhook_secret','cmplz_wsc_webhook','cmplz_wsc_scan_id','cmplz_wsc_scan','cmplz_wsc_scan_createdAt','_fluentform_global_form_settings','jetpack_options','jetpack_active_plugins','auto_update_plugins','auto_core_update_notified','woocommerce_share_key')"
     . " OR option_name REGEXP '^edd_sl_'";
 op('integration_options', 'options', ['option_name'],
     "DELETE FROM wprs_options WHERE $dropOptions", "SELECT COUNT(*) AS n FROM wprs_options WHERE $dropOptions");
 op('test_admin_email', 'options', ['option_name','option_value'],
-    "UPDATE wprs_options SET option_value='admin@example.invalid' WHERE option_name IN ('admin_email','new_admin_email','woocommerce_email_from_address','woocommerce_email_reply_to_address','woocommerce_stock_email_recipient')",
-    "SELECT COUNT(*) AS n FROM wprs_options WHERE option_name IN ('admin_email','new_admin_email','woocommerce_email_from_address','woocommerce_email_reply_to_address','woocommerce_stock_email_recipient') AND option_value<>'admin@example.invalid'");
+    "UPDATE wprs_options SET option_value='admin@example.invalid' WHERE option_name IN ('admin_email','new_admin_email','woocommerce_email_from_address','woocommerce_email_reply_to_address','woocommerce_stock_email_recipient','woocommerce_pos_store_email')",
+    "SELECT COUNT(*) AS n FROM wprs_options WHERE option_name IN ('admin_email','new_admin_email','woocommerce_email_from_address','woocommerce_email_reply_to_address','woocommerce_stock_email_recipient','woocommerce_pos_store_email') AND option_value<>'admin@example.invalid'");
 op('no_index', 'options', ['option_name','option_value'],
     "UPDATE wprs_options SET option_value='0' WHERE option_name='blog_public'",
     "SELECT COUNT(*) AS n FROM wprs_options WHERE option_name='blog_public' AND option_value<>'0'");

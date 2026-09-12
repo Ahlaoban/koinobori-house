@@ -100,3 +100,40 @@ dans le runtime privé, sous le même PHP restreint que les sondes précédentes
 Les scripts de cette section sont propres au clone du drill. Ils ne constituent
 pas une procédure de déploiement de staging ou production. L'anonymisation, TLS
 et la recette navigateur restent nécessaires avant de rendre le clone accessible.
+
+## Assainissement de la base privée
+
+`sanitize_clone_db.php` s'exécute directement avec le PHP restreint, sans charger
+WordPress ni les extensions. Il exige le répertoire de contrôle privé, la base
+`sc3heal3867_kh2027drill`, son utilisateur SQL dédié, 94 tables et une racine Web
+encore interdite. Chaque table modifiée doit être InnoDB ; une table ou colonne
+manquante arrête le traitement. La table MEMORY de compteurs de rôles reste intacte.
+
+Les modes sont `plan` (lecture seule), `rehearse` (modifications puis annulation
+vérifiée) et `apply` (validation de la transaction). Les deux derniers exigent en
+second argument un reçu JSON privé contenant `database`, `fingerprint`, `file`,
+`sha256` et `gzip_verified`. Le reçu est créé seulement après un export SQL du
+clone courant, la relecture intégrale du gzip et la comparaison des empreintes
+de la base avant/après export. Ne pas fabriquer ce reçu depuis un ancien dump.
+Les sauvegardes contiennent des données privées et restent hors Web et hors Git.
+
+Le script remplace les profils et coordonnées par des valeurs de test, invalide
+les anciens mots de passe, vide sessions, journaux, soumissions et clés copiées,
+retire les intégrations de paiement/courriel/sauvegarde et les notifications de
+formulaires. Les anciennes clés de commandes deviennent des clés de test ; elles
+ne constituent pas une protection d'accès. Les IDs, liens clients/commandes,
+montants, états, pays, produits, pages, traductions et configurations de
+livraison/taxe sont conservés par 40 contrôles d'empreintes. La répétition compare
+également les 94 tables après `ROLLBACK` à leur état initial.
+
+Ce traitement est spécifique au schéma inspecté, pas un anonymiseur universel.
+La conservation d'IDs, de dates et des archives de retour justifie le terme
+« données de test pseudonymisées ». Un contrôle des traces résiduelles et des
+fichiers reste nécessaire. Les contacts professionnels déjà présents dans les
+pages publiques ne sont pas remplacés. Les fichiers de logs, caches et anciennes
+configurations ont été déplacés séparément en quarantaine privée avec manifeste
+et vérification des empreintes, puis les sondes WordPress ont été relancées.
+
+Le reçu, les rapports des transactions, la quarantaine, le scan et les résultats
+de recette du 12 septembre sont référencés dans le procès-verbal S21. Ils ne
+valident ni TLS, ni les parcours interactifs, ni la copie hors hébergement.
