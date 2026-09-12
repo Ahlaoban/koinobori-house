@@ -166,3 +166,34 @@ pendant la préparation et tester les réponses sans authentification.
 Références : [autorisation Apache](https://httpd.apache.org/docs/2.4/mod/mod_authz_core.html),
 [HTTPS obligatoire](https://httpd.apache.org/docs/2.4/mod/mod_ssl.html#sslrequiressl).
 Retirer la sonde Web après la recette ; conserver son code dans les outils.
+
+## Garde de consultation privée
+
+`web_review_guard.php` est un MU-plugin temporaire d'exploitation, exclu du
+thème livrable. Il exige les constantes de revue, une base locale dédiée,
+un environnement `local`, le cron désactivé et les restrictions PHP attendues.
+En Web, il exige en plus l'identité Apache, HTTPS et l'hôte explicitement fixé.
+Il ferme la requête si ces préconditions ne sont pas satisfaites.
+
+La première revue autorise uniquement GET/HEAD, sans ajout au panier ou action
+WooCommerce AJAX. Les extensions sont limitées à quatre fichiers d'entrée
+connus ; HTTP externe, mail, paiements, REST et XML-RPC sont neutralisés.
+Les boutons de commande et avis sont retirés de la consultation. Cela ne remplace
+ni les règles Apache, ni l'inventaire des extensions PHP, ni la recette métier.
+
+Le garde sélectionne les deux accueils pilotes et la présentation produit sans
+modifier leurs métadonnées SQL. Il charge la dépendance CSS absente des versions
+anciennes du thème restauré. Les anciennes origines sont remplacées dans le HTML
+de la seule consultation ; les valeurs sérialisées originales restent intactes.
+Une migration durable des URLs sera une opération distincte avec son retour.
+
+Les règles Apache doivent couvrir aussi les fichiers statiques et refuser les
+points d'entrée PHP non nécessaires. Ne pas recopier les `.htaccess` des uploads
+sans inspection : une autorisation enfant peut remplacer celle du parent.
+Conserver sauvegarde SQL, manifestes, ancienne configuration Apache et scripts
+d'exploitation dans un répertoire privé, jamais dans le dépôt ou la racine Web.
+
+Vérifications locales du garde : sept assertions passent (liste exacte des
+extensions, redirections locales/externes, limite d'origine, sélection des seuls
+modèles pilotes). Une identité de base différente ferme correctement la revue.
+Le lien d'évitement du gabarit d'accueil cible désormais `#main`, comme Kadence.
