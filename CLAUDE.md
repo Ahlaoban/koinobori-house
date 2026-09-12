@@ -378,6 +378,11 @@ Noms corrigés 2026-07-27 : les skills sont installés sous le préfixe `addyosm
 
 Persistent memory : fichiers du dossier mémoire de la session Claude Code (`MEMORY.md` + notes, auto-injectés). Hors repo, machine locale.
 
+## Écosystème KH (post-lancement)
+
+- Agents séparés du site (repos, hébergement, bases propres), reliés par UTM / WooCommerce REST / Plausible / événements versionnés. Index : [docs/ecosystem/README.md](docs/ecosystem/README.md).
+- **KH Social Agent** : Phase 1 (architecture, APIs vérifiées, MVP, décisions) livrée le 2026-09-12 dans [docs/ecosystem/kh-social-agent/](docs/ecosystem/kh-social-agent/), **en attente de validation Alain**. Aucun code. Démarrage développement au plus tôt après le 30/09 (décision D2). La doctrine éditoriale ci-dessus s'applique à tout contenu social (Doctrine Gate).
+
 ## Liens projets associés
 
 - [[project_maijinn_saas_launch_strategy_2026-05-08]] (DEVCODE namespace) — MaïJinn protégé, focus principal post-29 juillet
