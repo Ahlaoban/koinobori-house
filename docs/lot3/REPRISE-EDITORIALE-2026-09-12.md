@@ -64,8 +64,21 @@ de l'hébergement. Source : https://www.php.net/downloads.php?os=windows
 - Inspection visuelle desktop/mobile du hero et de la fiche. Les anciens crops
   incomplets de la maquette ont été remplacés dans l'aperçu par les JPG complets
   du catalogue. Le fond washi a été atténué, y compris le mode de fusion hérité.
+- PHP 8.1 du clone : syntaxe du helper et du gabarit validée. Les fichiers ont été
+  placés dans `runtime-control/editorial-review-20260912`, hors du thème actif et
+  hors Web. La sonde de rendu existante a été adaptée pour sélectionner ce gabarit
+  dans le seul processus de test, sans attribuer le modèle aux pages en base.
+- WordPress réel, PHP restreint : accueils FR/EN de 66 769 / 66 462 octets,
+  retours 0, aucun fatal, 404 ou redirection ; pages 318/319 et langues correctes.
+  Un H1, cinq mondes avec cinq liens dans la bonne langue, quatre cartes produits
+  WooCommerce et cinq liens éditoriaux dans la bonne langue pour chaque rendu.
+  Le test a révélé puis vérifié la correction d'une recherche de catégorie
+  française effectuée à tort dans le contexte anglais. La recherche des slugs
+  sources impose désormais `lang=fr`, puis Polylang résout leur traduction.
+  Les preuves privées sont `editorial-render-{fr,en}-20260912.{html,json}` et
+  `editorial-semantic-20260912.json` dans `runtime-control`.
 
-À terminer : rendu et liens sur le vrai WordPress, sélection des pièces à mettre
+À terminer : recette navigateur sur le vrai WordPress, sélection des pièces à mettre
 en avant, photos manquantes, header/footer, newsletter, accessibilité complète,
 galerie/variations natives et parcours transactionnel. L'aperçu local ne valide
 ni une commande ni une conformité complète. Aucun de ces nouveaux fichiers n'est

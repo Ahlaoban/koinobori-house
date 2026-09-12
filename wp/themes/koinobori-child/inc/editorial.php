@@ -40,11 +40,15 @@ function koinobori_child_editorial_page_url( $fr_slug, $language ) {
 
 /** Keep category IDs and translated URLs under WooCommerce/Polylang authority. */
 function koinobori_child_editorial_world_url( $slug, $language ) {
-	$term = get_term_by( 'slug', $slug, 'product_cat' );
-	if ( ! $term || is_wp_error( $term ) ) {
+	// The canonical slugs are French. Query that language explicitly, even on /en/.
+	$terms = get_terms( array(
+		'taxonomy' => 'product_cat', 'slug' => $slug, 'lang' => 'fr',
+		'hide_empty' => false, 'number' => 1,
+	) );
+	if ( is_wp_error( $terms ) || empty( $terms ) ) {
 		return '';
 	}
-	$id = $term->term_id;
+	$id = $terms[0]->term_id;
 	if ( function_exists( 'pll_get_term' ) ) {
 		$id = pll_get_term( $id, $language );
 	}

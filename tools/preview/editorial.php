@@ -34,7 +34,7 @@ function get_page_by_path( $slug ) { return (object) array( 'ID' => $slug ); }
 function pll_get_post( $id, $lang ) { return $lang . '-' . $id; }
 function get_post_status( $id ) { return 'publish'; }
 function get_permalink( $id ) { return '#preview-footer'; }
-function get_term_by( $field, $slug, $taxonomy ) { return (object) array( 'term_id' => 1 ); }
+function get_terms( $args ) { return array( (object) array( 'term_id' => 1 ) ); }
 function pll_get_term( $id, $lang ) { return $id; }
 function get_term_link( $id, $taxonomy ) { global $language; return '/product/' . $language . '/'; }
 function is_wp_error( $value ) { return false; }
