@@ -50,6 +50,20 @@ add_filter('action_scheduler_allow_async_request_runner', '__return_false', PHP_
 add_filter('xmlrpc_enabled', '__return_false');
 add_filter('rest_authentication_errors', function () { return new WP_Error('kh2027_review', 'REST closed for visual review.', array('status' => 403)); }, PHP_INT_MAX);
 add_filter('pre_option_blog_public', function () { return '0'; });
+add_filter('comments_open', '__return_false');
+add_filter('woocommerce_loop_add_to_cart_link', function ($html, $product) {
+    $english = function_exists('pll_current_language') && pll_current_language() === 'en';
+    return '<a class="button" href="' . esc_url($product->get_permalink()) . '">'
+        . ($english ? 'View piece' : 'Voir la pièce') . '</a>';
+}, 10, 2);
+add_action('wp_enqueue_scripts', function () {
+    foreach (array('wc-add-to-cart', 'wc-cart-fragments', 'wc-order-attribution') as $script) {
+        wp_dequeue_script($script);
+    }
+}, 100);
+add_action('wp_head', function () {
+    echo '<style>.single-product .single_add_to_cart_button,.single-product form.cart .quantity{display:none!important}</style>';
+});
 
 // Select the trial layouts without changing page metadata or theme settings in SQL.
 add_action('after_setup_theme', function () {
@@ -103,5 +117,9 @@ add_action('wp_body_open', function () {
     $english = function_exists('pll_current_language') && pll_current_language() === 'en';
     echo '<div role="note" style="padding:9px 18px;background:#f8f4ee;color:#1a1410;text-align:center;font:13px/1.5 sans-serif;border-bottom:1px solid #d5cfc5">';
     echo $english ? 'Private preview · Work in progress · Browsing only' : 'Aperçu privé · Site en cours de réalisation · Consultation uniquement';
+    if (function_exists('pll_home_url')) {
+        echo ' · <a href="' . esc_url(pll_home_url('fr')) . '" lang="fr" aria-label="Accueil en français">FR</a>';
+        echo ' / <a href="' . esc_url(pll_home_url('en')) . '" lang="en" aria-label="Home in English">EN</a>';
+    }
     echo '</div>';
 });

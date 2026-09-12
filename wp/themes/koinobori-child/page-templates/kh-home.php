@@ -20,7 +20,7 @@ $worlds = array(
 );
 get_header();
 ?>
-<main id="primary" class="kh-home">
+<main id="main" class="kh-home">
 	<section class="kh-home-hero" aria-labelledby="kh-home-title">
 		<div class="kh-container kh-home-hero__inner">
 			<p class="kh-eyebrow">Koinobori House · <?php echo esc_html( $t( 'Créations BCDG', 'BCDG Creations' ) ); ?></p>
