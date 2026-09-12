@@ -55,6 +55,14 @@ add_filter('pre_option_blog_public', function () { return '0'; });
 add_action('after_setup_theme', function () {
     require_once get_stylesheet_directory() . '/inc/editorial.php';
 });
+add_action('wp_enqueue_scripts', function () {
+    // The restored theme may predate registration of the editorial dependency.
+    if (!wp_style_is('kh-charte-v3', 'registered')) {
+        $file = '/assets/css/kh-charte-v3.css';
+        wp_enqueue_style('kh-charte-v3', get_stylesheet_directory_uri() . $file,
+            array('kh-foundations'), filemtime(get_stylesheet_directory() . $file));
+    }
+}, 24);
 add_filter('get_post_metadata', function ($value, $id, $key) {
     if ($key === '_wp_page_template' && in_array((int) $id, array(318, 319), true)) {
         return array('page-templates/kh-home.php');
