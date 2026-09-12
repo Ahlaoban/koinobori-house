@@ -99,3 +99,18 @@ est un dump de base du 14 mars ; ces archives ne prouvent pas une sauvegarde
 hors hébergement du staging Koinobori House capturé en septembre.
 La preuve hors hébergement et TLS/recette navigateur restent ouverts. Aucun
 changement de production ou fusion de PR n'a été réalisé.
+
+### Complément du 12 septembre : certificat et premier lot visuel
+
+La nouvelle simulation Let's Encrypt a réussi après propagation du CAA. Le
+certificat réel du seul sous-domaine de test a ensuite été installé ; les alias
+mail/www ont été explicitement décochés. Le navigateur atteint le domaine en
+HTTPS sans alerte, avec un 403 conforme à l'interdiction d'accès encore en place.
+TLS est donc levé ; l'accès protégé, la preuve hors hébergement et la recette
+WordPress navigateur restent ouverts.
+
+Un modèle d'accueil FR/EN facultatif et une présentation produit facultative ont
+été ajoutés au thème dans la branche de travail. L'aperçu local a été contrôlé
+aux trois largeurs 360/768/1280 ; aucune page distante n'a reçu ce modèle.
+Voir [le lot éditorial](../../lot3/REPRISE-EDITORIALE-2026-09-12.md) pour les
+preuves, les limites des données de démonstration et les travaux restants.

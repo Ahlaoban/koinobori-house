@@ -360,3 +360,21 @@ Gmail fournie dans cette reprise.
 G0 reste ouvert pour TLS, l'accès de test protégé, la recette navigateur et la
 preuve hors hébergement. Les opérations privées de cette journée ne changent
 pas le staging ou la production. La PR 14 reste en brouillon, sans fusion.
+
+### Complément TLS après propagation
+
+La simulation suivante du 12 septembre réussit : cPanel indique qu'un certificat
+de test a été émis puis supprimé. Une demande réelle limitée à
+`sc3heal3867.universe.wf`, http-01, RSA 2048, sans mail/www/wildcard ni services
+cPanel, est ensuite acceptée. cPanel confirme l'installation sur l'hôte virtuel
+et son redémarrage. Le navigateur ouvre `https://sc3heal3867.universe.wf/` sans
+interstitiel de sécurité et reçoit 403 Forbidden. Le certificat est opérationnel,
+le refus d'accès demeure. Aucune copie du clone n'a été exposée sur le Web.
+
+Une tentative groupée avait été rejetée par le contrôle automatique, qui
+interprétait les clics sur les alias comme une inclusion. Les cases ont ensuite
+été décochées séparément et leur état 0 observé avant une nouvelle soumission,
+acceptée. Aucun changement de méthode ni contournement de ce contrôle.
+
+G0 n'est toujours pas déclaré acquis : accès de test protégé, copie récente hors
+hébergement et recette WordPress navigateur restent à terminer.
