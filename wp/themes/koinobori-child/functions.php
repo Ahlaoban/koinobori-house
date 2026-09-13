@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once get_stylesheet_directory() . '/inc/editorial.php';
+require_once get_stylesheet_directory() . '/inc/header.php';
 
 /**
  * Styles front : style.css (en-tête thème) puis kh-foundations.css (tokens, fonts, base).

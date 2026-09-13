@@ -8,7 +8,7 @@ if ( str_starts_with( $path, '/assets/' ) ) {
 	$asset = realpath( $theme . $path );
 	$allowed = realpath( $theme . '/assets' ) . DIRECTORY_SEPARATOR;
 	if ( ! $asset || ! str_starts_with( $asset, $allowed ) || ! is_file( $asset ) ) { http_response_code( 404 ); exit; }
-	$types = array( 'css' => 'text/css', 'webp' => 'image/webp', 'woff2' => 'font/woff2' );
+	$types = array( 'css' => 'text/css', 'js' => 'text/javascript', 'webp' => 'image/webp', 'woff2' => 'font/woff2' );
 	$ext = pathinfo( $asset, PATHINFO_EXTENSION );
 	if ( ! isset( $types[$ext] ) ) { http_response_code( 404 ); exit; }
 	header( 'Content-Type: ' . $types[$ext] ); readfile( $asset ); exit;
@@ -26,6 +26,21 @@ $language = str_contains( $path, '/en/' ) ? 'en' : 'fr';
 $product_view = str_starts_with( $path, '/product/' );
 function add_filter( ...$args ) {}
 function add_action( ...$args ) {}
+function get_stylesheet_directory() { global $theme; return $theme; }
+function is_page( $slug ) { return false; }
+function has_nav_menu( $location ) { return false; }
+function wp_strip_all_tags( $value ) { return strip_tags( $value ); }
+function pll_home_url( $lang = '' ) { global $language; return '/' . ( $lang ?: $language ) . '/'; }
+function pll_the_languages( $args ) {
+	global $language;
+	return array_map( static function ( $lang ) use ( $language ) { return array( 'slug' => $lang, 'url' => '/' . $lang . '/', 'current_lang' => $lang === $language ); }, array( 'fr', 'en' ) );
+}
+function wc_get_page_permalink( $page ) { global $language; return '/product/' . $language . '/'; }
+function wc_get_cart_url() { return '#preview-footer'; }
+function WC() { return (object) array( 'cart' => new class { function get_cart_contents_count() { return 0; } } ); }
+class Walker_Nav_Menu {
+	function walk( $items, $depth ) { $out = ''; foreach ( $items as $item ) { $this->start_el( $out, $item ); $this->end_el( $out, $item ); } return $out; }
+}
 function pll_current_language( $format = '' ) { global $language; return $language; }
 function esc_html( $v ) { return htmlspecialchars( (string) $v, ENT_QUOTES, 'UTF-8' ); }
 function esc_attr( $v ) { return esc_html( $v ); }
@@ -62,12 +77,15 @@ function get_header() {
 	header( 'Content-Type: text/html; charset=utf-8' );
 	$base = $product_view ? '/product/' : '/';
 	echo '<!doctype html><html lang="' . $language . '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Koinobori House · Aperçu éditorial</title>';
-	foreach ( array( 'kh-foundations', 'kh-charte-v3', 'kh-editorial' ) as $css ) { echo '<link rel="stylesheet" href="/assets/css/' . $css . '.css">'; }
+	foreach ( array( 'kh-foundations', 'kh-charte-v3', 'kh-editorial', 'header' ) as $css ) { echo '<link rel="stylesheet" href="/assets/css/' . $css . '.css">'; }
 	echo '<style>body{margin:0}.preview-note{padding:.6rem 1.25rem;background:#1a1410;color:#fffdfc;font:14px/1.5 Arial,sans-serif}.preview-header{display:flex;gap:2rem;align-items:center;justify-content:space-between;padding:1.4rem max(20px,calc((100vw - 1200px)/2));border-bottom:1px solid #d5cfc6}.preview-header img{width:230px;height:auto}.preview-header nav{display:flex;gap:1rem;flex-wrap:wrap;font:16px Arial}.preview-product{max-width:1200px;margin:4rem auto;padding:0 20px}.preview-product .product{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem}.preview-product img{width:100%;height:auto}.preview-product .price{margin:2rem 0}.preview-product label{display:block;margin:1.5rem 0 .5rem}.preview-product .single_add_to_cart_button{margin-top:1.5rem;padding:1rem 2rem;border:0}.preview-footer{border-top:1px solid #d5cfc6;padding:2rem 20px;text-align:center;font:14px Arial}@media(max-width:700px){.preview-header{gap:1rem;flex-wrap:wrap}.preview-header img{width:190px}.preview-product .product{grid-template-columns:1fr;gap:2rem}.preview-product{margin:2rem auto}}</style></head>';
-	echo '<body class="kh-page kh-editorial' . ( $product_view ? ' single-product woocommerce' : '' ) . '"><div class="preview-note">Aperçu local · Composition en cours · Visuels de référence · Aucun achat ni envoi</div><header class="preview-header"><a href="/' . $language . '/"><img src="/logo.png" alt="Koinobori House" width="1172" height="213"></a><nav aria-label="Aperçu"><a href="/' . $language . '/">' . ( 'en' === $language ? 'Home' : 'Accueil' ) . '</a><a href="/product/' . $language . '/">' . ( 'en' === $language ? 'Product' : 'Produit' ) . '</a><a href="' . $base . 'fr/" lang="fr">FR</a><a href="' . $base . 'en/" lang="en">EN</a></nav></header>';
+	echo '<body class="kh-page kh-editorial' . ( $product_view ? ' single-product woocommerce' : '' ) . '">';
+	koinobori_child_header_render();
+	echo '<div class="preview-note">Aperçu local · Visuels de référence · Aucun achat ni envoi</div>';
 }
-function get_footer() { echo '<footer id="preview-footer" class="preview-footer">Koinobori House · Créations BCDG</footer></body></html>'; }
+function get_footer() { echo '<footer id="preview-footer" class="preview-footer">Koinobori House · Créations BCDG</footer><script src="/assets/js/header.js" defer></script></body></html>'; }
 require $theme . '/inc/editorial.php';
+require $theme . '/inc/header.php';
 if ( ! $product_view ) { require $theme . '/page-templates/kh-home.php'; exit; }
 get_header();
 ?>
