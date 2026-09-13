@@ -14,13 +14,23 @@ visite de la session de l’onglet, mémorisée dans sessionStorage et partagée
 FR/EN. Navigation interne, rechargement et retour arrière ne la relancent pas.
 Si le stockage est bloqué, l’introduction est omise. Survol et focus clavier
 restent disponibles. Compte et Panier sont espacés de 24 px (18 px en mode compact).
-Trois autres propositions d’icônes sont soumises à Alain, sans remplacement avant
-son choix.
+Choix d’Alain : série A, avec Contact de B et Professionnels de C.
 
 Washi #F8F4EE, sumi #1A1410, vermillon #C8311A ; Cormorant Garamond 400 et DM Sans
-hébergées localement. Quatre tracés proviennent du header HTML Manus fourni
-(sac, journal, personne, enveloppe). Le groupe Professionnels reprend le tracé
-au trait du prototype Shoji existant. Les actions restent distinctes du menu.
+hébergées localement. Les sept tracés Lucide 1.17.0 sélectionnés sont intégrés en
+SVG inline, sans charger la bibliothèque dans le site :
+
+| Rubrique / action | Icône choisie |
+|---|---|
+| Boutique | `store` — devanture |
+| Lifestyle | `wind` — souffle de vent |
+| L’Atelier | `brush` — pinceau |
+| Professionnels | `handshake` — poignée de main |
+| Contact | `send` — avion en papier |
+| Compte | `user-round` — silhouette |
+| Panier | `shopping-bag` — sac |
+
+Licences conservées dans `licenses/lucide.txt`. Les actions restent distinctes du menu.
 
 ## Fichiers
 
