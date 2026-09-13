@@ -9,6 +9,14 @@ mots s’écartent pour révéler les icônes. BY BCDG disparaît à l’ouvertu
 à la fermeture. Un seul libellé apparaît sous l’icône survolée ou au focus clavier,
 sans attribut title et sans label permanent de la page active.
 
+Amendement du 13 septembre : l’introduction automatique ne joue qu’à la première
+visite de la session de l’onglet, mémorisée dans sessionStorage et partagée entre
+FR/EN. Navigation interne, rechargement et retour arrière ne la relancent pas.
+Si le stockage est bloqué, l’introduction est omise. Survol et focus clavier
+restent disponibles. Compte et Panier sont espacés de 24 px (18 px en mode compact).
+Trois autres propositions d’icônes sont soumises à Alain, sans remplacement avant
+son choix.
+
 Washi #F8F4EE, sumi #1A1410, vermillon #C8311A ; Cormorant Garamond 400 et DM Sans
 hébergées localement. Quatre tracés proviennent du header HTML Manus fourni
 (sac, journal, personne, enveloppe). Le groupe Professionnels reprend le tracé

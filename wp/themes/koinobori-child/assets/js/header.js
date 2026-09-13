@@ -1,8 +1,23 @@
+// Shared by FR/EN and all pages in this tab; no visitor identifier or cookie.
+function khHeaderClaimFirstVisit() {
+  try {
+    const storage = window.sessionStorage;
+    const key = 'kh-header-visited';
+    if (storage.getItem(key)) return false;
+    storage.setItem(key, '1');
+    return true;
+  } catch {
+    // If storage is unavailable, omit the introduction instead of repeating it.
+    return false;
+  }
+}
+
 (() => {
   'use strict';
   const header = document.getElementById('kh-header');
   const dialog = document.getElementById('kh-menu-dialog');
   if (!header || !dialog || typeof dialog.showModal !== 'function') return;
+  const firstVisit = khHeaderClaimFirstVisit();
   const left = header.querySelector('.kh-word-left');
   const right = header.querySelector('.kh-word-right');
   const center = header.querySelector('.kh-header-center');
@@ -31,7 +46,7 @@
     const gap = Math.min(32, Math.max(12, innerWidth * .02));
     const count = nav.children.length;
     const actions = center.querySelector('.kh-header-actions');
-    const menuWidth = count * 44 + Math.max(0, count - 1) * gap + 24 + Math.max(184, actions.scrollWidth);
+    const menuWidth = count * 44 + Math.max(0, count - 1) * gap + 24 + Math.max(208, actions.scrollWidth);
     const compact = innerWidth < 1024 || touch.matches || (menuWidth / 2 + 28 + Math.max(a,b) + 24 > innerWidth / 2);
     header.classList.toggle('is-compact', compact);
     const width = center.getBoundingClientRect().width;
@@ -71,10 +86,10 @@
     else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   });
   dialog.addEventListener('click', event => { if (event.target.closest('a')) dialog.close(); });
-  window.addEventListener('pagehide', () => { if (dialog.open) dialog.close(); });
+  window.addEventListener('pagehide', () => { stopIntro(); if (dialog.open) dialog.close(); });
   layout();
   document.fonts?.ready.then(layout);
-  if (!reduce.matches && !header.matches(':hover,:focus-within') && !header.classList.contains('is-compact')) {
+  if (firstVisit && !reduce.matches && !header.matches(':hover,:focus-within') && !header.classList.contains('is-compact')) {
     introStart = setTimeout(() => {
       header.classList.add('header-onboarding');
       introEnd = setTimeout(stopIntro, 700);
