@@ -115,7 +115,7 @@ add_action('template_redirect', function () {
         return $html;
     });
 }, 0);
-add_action('wp_body_open', function () {
+add_action('kadence_after_header', function () {
     $english = function_exists('pll_current_language') && pll_current_language() === 'en';
     echo '<div role="note" style="padding:9px 18px;background:#f8f4ee;color:#1a1410;text-align:center;font:13px/1.5 sans-serif;border-bottom:1px solid #d5cfc5">';
     echo $english ? 'Private preview · Work in progress · Browsing only' : 'Aperçu privé · Site en cours de réalisation · Consultation uniquement';

@@ -9,9 +9,9 @@ function koinobori_child_header_text( $fr, $en ) {
 }
 
 function koinobori_child_header_enabled() { return (bool) get_theme_mod( 'kh_split_header', true ); }
-add_action( 'after_setup_theme', function () {
+add_action( 'init', function () {
 	register_nav_menus( array( 'kh_header' => 'KH — Navigation à cinq icônes' ) );
-} );
+}, 5 );
 add_action( 'wp', function () {
 	if ( ! koinobori_child_header_enabled() ) { return; }
 	// Kadence 1.5.2 inc/template-hooks.php: keep the parent document and wrappers.
