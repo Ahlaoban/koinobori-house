@@ -41,9 +41,12 @@ function koinobori_child_header_defaults() {
 		$url = koinobori_child_editorial_page_url( $entry[0], $lang );
 		if ( 'shop' === $entry[3] && function_exists( 'wc_get_page_permalink' ) ) { $url = wc_get_page_permalink( 'shop' ); }
 		if ( ! $url ) { continue; }
+		$current = function_exists( 'get_queried_object_id' ) && is_page()
+			&& get_permalink( get_queried_object_id() ) === $url;
+		$current = $current || ( 'shop' === $entry[3] && function_exists( 'is_woocommerce' ) && is_woocommerce() );
 		$items[] = (object) array( 'ID' => 0, 'db_id' => 0, 'menu_item_parent' => 0, 'object_id' => 0,
 			'url' => $url, 'title' => 'en' === $lang ? $entry[2] : $entry[1], 'classes' => array( 'icon-' . $entry[3] ),
-			'current' => ( 'shop' === $entry[3] && function_exists( 'is_shop' ) && is_shop() ) || is_page( $entry[0] ), 'target' => '', 'xfn' => '' );
+			'current' => $current, 'target' => '', 'xfn' => '' );
 	}
 	return $items;
 }
