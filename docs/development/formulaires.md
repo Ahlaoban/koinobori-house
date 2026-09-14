@@ -97,17 +97,94 @@ lors du contrôle complet ; aucune traduction de ces libellés n’a été néce
 - Les dimensions temporaires du navigateur ont été réinitialisées.
 
 Ces vérifications ne constituent pas un audit complet d’accessibilité ni un
-test de validation serveur. Les indications clavier du calendrier restent en
-anglais sur les pages françaises : à traiter avec sa recette fonctionnelle.
+test de soumission. Les indications clavier et la locale du calendrier français
+ont ensuite été corrigées ; voir le contrôle serveur ci-dessous.
+
+## Validations et antispam du 14 septembre
+
+Le module `inc/enquiries.php` active le honeypot natif uniquement pour les
+formulaires associés aux six pages. Il résout les associations enregistrées
+plutôt que de dépendre de `is_page()` pendant une requête AJAX. Les réglages des
+autres formulaires ne changent pas. Aucun service antispam externe n’est ajouté.
+
+La date souhaitée reste facultative. Si elle est renseignée, le serveur exige
+une date réelle dans le format enregistré par Fluent Forms. Les dates impossibles,
+valeurs non textuelles et caractères nuls sont rejetés. Les règles de calendrier
+ne limitent pas arbitrairement la demande à une date future.
+
+`tools/recovery/check_enquiry_validation.php` a été exécuté dans le clone avec
+le code déployé : **124 contrôles, zéro échec**. Il utilise les validateurs de
+champs et le honeypot natifs de Fluent Forms, sans insertion de soumission :
+
+- valeurs valides et date facultative vide ; chaque champ obligatoire absent ;
+- email invalide, quantité nulle, négative ou non numérique, choix inconnu ;
+- jour bissextile valide, date impossible, texte invalide, tableau et caractère nul ;
+- honeypot présent/vide accepté ; absent, rempli ou rempli avec un indicateur
+  conversationnel falsifié rejeté.
+
+Le script intercepte la terminaison JSON du honeypot uniquement dans son processus
+CLI. Il ne teste ni le nonce ni une soumission HTTP de bout en bout. Il ne change
+aucune protection du site web et n’envoie aucun email.
+
+Le rendu serveur Entreprises/Business confirme : instructions de calendrier FR/EN,
+année « Année »/« Year », début de semaine lundi en français, format accessible
+français et présence du honeypot. La vérification du calendrier interactif dans
+Chrome reste à faire après renouvellement de l’authentification privée.
+
+## Emails préparés, non activés
+
+`tools/recovery/enquiry_notification_drafts.php` retourne des données sans écrire
+en base ni envoyer de message. Les six parcours disposent de deux modèles natifs
+Fluent Forms chacun : notification à l’équipe et accusé de réception dans la
+langue du formulaire. Les **12 modèles sont désactivés** par défaut. Le fichier
+propose aussi les six textes de confirmation à l’écran.
+
+Expéditeur : `Koinobori House <contact@koinoborihouse.com>`. La notification équipe
+contient les champs de la demande et utilise l’email du demandeur en Reply-To.
+L’accusé de réception reste sobre, sans reproduire un message libre fourni par
+le visiteur. Il annonce une réponse sous 1 à 2 jours ouvrés, délai déjà affiché
+sur Contact. Aucun destinataire en copie, aucune pièce jointe, aucune newsletter.
+
+La structure suit `NotificationTools.php`, `EmailNotification.php` et les
+shortcodes natifs de Fluent Forms 6.2.13. Ces modèles sont préparés localement,
+pas importés en base et pas encore rendus par le moteur de notification distant.
+
+### Protocole du premier test de réception
+
+1. Préparer un processus de recette distinct du runtime web de consultation,
+   à partir des données assainies. Maintenir l’authentification HTTP, le blocage
+   des achats, des tâches planifiées et des intégrations tierces du clone.
+2. Installer FluentSMTP depuis WordPress.org. Choisir la connexion SMTP pour
+   réutiliser la clé SMTP Brevo existante, stockée hors dépôt. Le login SMTP et
+   la clé doivent être renseignés directement dans la configuration privée ;
+   ne pas les demander dans la conversation. Vérifier l’expéditeur côté Brevo.
+3. Préparer l’exception réseau limitée au relais Brevo et le filtrage final des
+   destinataires vers la seule adresse de test autorisée, conservée hors dépôt.
+   Faire approuver cette configuration concrète avant d’assouplir l’isolation.
+4. Premier lot : un message de transport, puis deux accusés FR/EN portant un
+   préfixe de recette. Aucun destinataire réel provenant d’une demande client.
+5. Contrôler l’acceptation par Brevo et la réception réelle, puis le dossier spam
+   et les résultats d’authentification dans les en-têtes. Un retour PHP positif
+   ne suffit pas : le garde actuel intercepte `wp_mail()` et renvoie volontairement
+   `true` sans délivrer le message.
+6. Préparer ensuite la recette HTTP complète avec nonce, validations, enregistrement,
+   messages de succès et notifications. Les brouillons ne seront activés que
+   dans le périmètre de test prévu avant leur mise en service définitive.
+
+Références : [SMTP Brevo](https://help.brevo.com/hc/en-us/articles/7924908994450-Send-transactional-emails-using-Brevo-SMTP),
+[connexion SMTP FluentSMTP](https://fluentsmtp.com/docs/set-up-fluent-smtp-with-any-host-or-mailer/),
+[commandes de test FluentSMTP](https://docs.fluentsmtp.com/wp-cli-commands).
+
+État mesuré du clone : FluentSMTP absent, aucune définition de notification
+pour les six formulaires. L’envoi réel reste donc à configurer et à vérifier.
 
 ## Travail restant avant recette fonctionnelle
 
 - Compléter les contrôles du calendrier, de ses textes accessibles FR/EN et
   des interactions clavier du formulaire complet.
-- Vérifier les champs obligatoires et dates facultatives dans le parcours complet.
-- Vérifier l’antispam, les validations serveur et les messages de succès/erreur.
-- Préparer les notifications administrateur et les accusés de réception FR/EN
-  avec FluentSMTP/Brevo. Aucun envoi réel n’est validé à ce stade.
+- Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
+- Importer et recetter les notifications administrateur et accusés FR/EN préparés,
+  puis raccorder FluentSMTP/Brevo. Aucun envoi réel n’est validé à ce stade.
 - Préparer un environnement de recette d’envoi distinct de la consultation
   seule, avec un destinataire de test autorisé, avant de modifier les protections.
 
@@ -115,5 +192,6 @@ anglais sur les pages françaises : à traiter avec sa recette fonctionnelle.
 
 Syntaxe PHP locale et serveur, contrôle du diff, simulation du script, relecture
 après application et rendu WordPress des six formulaires réussis. Contrôles visuels
-et clavier détaillés ci-dessus. Soumission, validation serveur et réception email
-restent à effectuer ; les protections de consultation seule restent actives.
+et clavier détaillés ci-dessus ; 124 contrôles des validateurs de champs et du
+honeypot réussis. Soumission HTTP et réception email restent à effectuer ; les
+protections de consultation seule restent actives.
