@@ -69,6 +69,7 @@ add_action('wp_head', function () {
 add_action('after_setup_theme', function () {
     require_once get_stylesheet_directory() . '/inc/editorial.php';
     require_once get_stylesheet_directory() . '/inc/header.php';
+    require_once get_stylesheet_directory() . '/inc/footer.php';
     require_once WP_PLUGIN_DIR . '/kh-product-media/kh-product-media.php';
 });
 add_action('wp_enqueue_scripts', function () {
