@@ -38,6 +38,10 @@ function koinobori_child_enquiry_autocomplete( $data, $form ) {
 	if ( isset( $tokens[ $name ] ) ) {
 		$data['attributes']['autocomplete'] = $tokens[ $name ];
 	}
+	// Country is a free-text field: its former select prompt is misleading.
+	if ( in_array( $name, array( 'pays', 'country' ), true ) ) {
+		$data['attributes']['placeholder'] = '';
+	}
 	return $data;
 }
 add_filter( 'fluentform/rendering_field_data_input_text', 'koinobori_child_enquiry_autocomplete', 10, 2 );

@@ -3,8 +3,9 @@
 ## État au 14 septembre 2026
 
 Intégration déployée dans le clone privé et rendu des six formulaires contrôlé
-dans WordPress via WP-CLI. La recette visuelle dans le navigateur reste à faire :
-l’accès HTTP privé doit être rétabli. Les parcours Entreprises et Collectivités
+dans WordPress via WP-CLI et dans Chrome après rétablissement de l’accès privé.
+Les six pages ont été vérifiées à 360 px ; les trois familles de formulaires ont
+aussi été examinées sur ordinateur. Les parcours Entreprises et Collectivités
 restent distincts. Aucun test d’envoi ni déploiement en production n’a été réalisé.
 
 | Parcours | FR | EN | Formulaires relevés dans le clone |
@@ -24,7 +25,10 @@ de cette modification.
   organisation et pays. Aucun champ ni envoi n’est remplacé par un moteur maison.
 - `assets/css/enquiries.css` : papier washi, titres Cormorant Garamond, interface
   DM Sans à 16 px, champs et boutons rectangulaires, focus visible, champs empilés
-  sous 768 px. Pas de nouvelle police ni de script tiers.
+  sous 768 px. Marges de 20 px sur mobile, y compris avec les marges négatives
+  appliquées par Kadence aux articles. Le sélecteur multiple Choices reprend
+  le contraste, la hauteur et le focus des autres champs. Pas de nouvelle police
+  ni de script tiers.
 - `functions.php` : charge le module après le header et le footer.
 
 Les hooks et classes ont été vérifiés dans le code officiel de Fluent Forms
@@ -79,11 +83,27 @@ dans la bonne langue, champs pays texte et minima attendus. Aucun avertissement
 ou erreur PHP lors de ce contrôle. Les libellés de projet EN étaient déjà corrects
 lors du contrôle complet ; aucune traduction de ces libellés n’a été nécessaire.
 
+## Recette navigateur du 14 septembre
+
+- Six formulaires présents, chacun dans la langue de la page, avec le lien de
+  confidentialité correspondant et sans bouton d’envoi dans l’aperçu.
+- À 360 px réels : aucun champ visible hors du contenu, formulaire à 20 px du
+  bord, saisies à 16 px. Contrôles desktop sur Contact, Business et Collectivités.
+- Navigation Tab entre prénom et nom vérifiée sur Contact FR/EN ; focus visible.
+- Institutions EN : liste multiple ouverte, navigation avec flèche puis Entrée
+  sélectionnant « School », sans soumission. Sélection de test abandonnée en
+  quittant la page. Contraste et rendu de la liste vérifiés après correction.
+- Le pays en saisie libre n’affiche plus l’ancienne invite de sélection.
+- Les dimensions temporaires du navigateur ont été réinitialisées.
+
+Ces vérifications ne constituent pas un audit complet d’accessibilité ni un
+test de validation serveur. Les indications clavier du calendrier restent en
+anglais sur les pages françaises : à traiter avec sa recette fonctionnelle.
+
 ## Travail restant avant recette fonctionnelle
 
-- Terminer la recette visuelle FR/EN, clavier et mobile, après reconnexion HTTP
-  au site privé. Les chemins réécrits peuvent répondre 403 avant l’invite de
-  connexion ; l’entrée directe `/index.php` déclenche l’authentification.
+- Compléter les contrôles du calendrier, de ses textes accessibles FR/EN et
+  des interactions clavier du formulaire complet.
 - Vérifier les champs obligatoires et dates facultatives dans le parcours complet.
 - Vérifier l’antispam, les validations serveur et les messages de succès/erreur.
 - Préparer les notifications administrateur et les accusés de réception FR/EN
@@ -94,6 +114,6 @@ lors du contrôle complet ; aucune traduction de ces libellés n’a été néce
 ## Vérifications
 
 Syntaxe PHP locale et serveur, contrôle du diff, simulation du script, relecture
-après application et rendu WordPress des six formulaires réussis. Recette visuelle
-FR/EN, clavier, largeur 360 px et soumission/réception email restent à effectuer.
-Le contrôle de rendu ne constitue pas un test de soumission.
+après application et rendu WordPress des six formulaires réussis. Contrôles visuels
+et clavier détaillés ci-dessus. Soumission, validation serveur et réception email
+restent à effectuer ; les protections de consultation seule restent actives.
