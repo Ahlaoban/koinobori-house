@@ -40,7 +40,8 @@ if (PHP_SAPI !== 'cli' && (!in_array($_SERVER['REQUEST_METHOD'] ?? '', array('GE
 add_filter('option_active_plugins', function ($plugins) {
     return array_values(array_filter($plugins, function ($plugin) {
         return in_array($plugin, array('woocommerce/woocommerce.php', 'polylang/polylang.php',
-            'polylang-wc/polylang-wc.php', 'kh-single-variation-display/kh-single-variation-display.php'), true);
+            'polylang-wc/polylang-wc.php', 'kh-single-variation-display/kh-single-variation-display.php',
+            'fluentform/fluentform.php'), true);
     }));
 });
 add_filter('pre_http_request', function () { return new WP_Error('kh2027_offline', 'External requests disabled for review.'); }, PHP_INT_MAX);
@@ -70,7 +71,21 @@ add_action('after_setup_theme', function () {
     require_once get_stylesheet_directory() . '/inc/editorial.php';
     require_once get_stylesheet_directory() . '/inc/header.php';
     require_once get_stylesheet_directory() . '/inc/footer.php';
+    require_once get_stylesheet_directory() . '/inc/enquiries.php';
     require_once WP_PLUGIN_DIR . '/kh-product-media/kh-product-media.php';
+});
+// Render the existing enquiry forms for review without presenting a working send action.
+// Fluent Forms 6.2.13 Components/SubmitButton.php and FormBuilder.php.
+foreach (array(5, 6, 7, 8, 9, 10) as $kh_review_form_id) {
+    add_filter('fluentform/is_hide_submit_btn_' . $kh_review_form_id, '__return_true');
+}
+unset($kh_review_form_id);
+add_action('fluentform/before_form_render', function ($form) {
+    if (!in_array((int) $form->id, array(5, 6, 7, 8, 9, 10), true)) { return; }
+    $english = in_array((int) $form->id, array(6, 8, 10), true);
+    echo '<p class="kh-enquiry-preview-note" role="note">' . esc_html($english
+        ? 'Form preview. Sending is disabled in this private environment.'
+        : 'Aperçu du formulaire. L’envoi est désactivé dans cet environnement privé.') . '</p>';
 });
 add_action('wp_enqueue_scripts', function () {
     // The restored theme may predate registration of the editorial dependency.
