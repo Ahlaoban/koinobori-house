@@ -2,6 +2,14 @@
 
 Project context for Claude Code sessions on Koinobori House MVP.
 
+**Amendement Alain du 13 septembre 2026** : le header comporte désormais cinq
+rubriques (Boutique, Lifestyle, L’Atelier, Professionnels, Contact), sans Accueil
+ni Arts de vivre. Logo textuel KoinoboriHouse centré, deux mots coulissants,
+signature BY BCDG en fondu, icônes et infobulle unique. Cette décision remplace
+les anciennes mentions de navigation à sept entrées et de logo image verrouillé
+pour le header ci-dessous. Galeries WooCommerce extensibles et vidéo facultative
+par produit : [implémentation et utilisation](docs/development/header-et-medias.md).
+
 ## Projet
 
 E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : site opérationnel fin septembre 2026** (décision Alain 2026-09-07 ; le 15 août n'a pas été tenu, la prod est restée un WordPress nu).

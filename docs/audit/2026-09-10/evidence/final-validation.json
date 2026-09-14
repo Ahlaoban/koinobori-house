@@ -1,0 +1,14 @@
+{
+  "at_utc": "2026-09-10T10:36:00.784614+00:00",
+  "baseline_files": 165,
+  "changed_baseline_files": [],
+  "head": "d3073dafb0b11c9866e23a02ecc357e0b7ca0cdd",
+  "git_status": "?? .worktrees/\n?? docs/audit/",
+  "tracked_diff_empty": true,
+  "components": 57,
+  "requirements": 58,
+  "unmapped_requirements": [],
+  "broken_document_links": [],
+  "server_checks": "UI and server read-only inventory, SELECT aggregates, normalized hashes, PHP lint and core checksums; no transaction, restoration or deliberate application/configuration mutation",
+  "checked_repository": "C:\\dev\\Koinobori"
+}
