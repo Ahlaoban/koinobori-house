@@ -10,11 +10,24 @@ $kh_review_valid = defined('KH2027_WEB_REVIEW') && KH2027_WEB_REVIEW === true
     && DB_HOST === 'localhost' && WP_HOME === 'https://' . KH2027_REVIEW_HOST
     && WP_SITEURL === WP_HOME && DISABLE_WP_CRON === true
     && !ini_get('allow_url_fopen') && !ini_get('allow_url_include');
-foreach (array('mail', 'curl_exec', 'curl_multi_exec', 'fsockopen', 'pfsockopen',
-    'stream_socket_client', 'socket_create', 'ftp_connect', 'ftp_ssl_connect',
-    'exec', 'shell_exec', 'system', 'passthru', 'popen', 'proc_open', 'pcntl_exec', 'dl') as $function) {
+$kh_review_mail_test = PHP_SAPI === 'cli'
+    && defined('KH2027_MAIL_TEST') && KH2027_MAIL_TEST === true
+    && defined('KH2027_MAIL_TEST_RECIPIENT')
+    && is_string(KH2027_MAIL_TEST_RECIPIENT)
+    && filter_var(KH2027_MAIL_TEST_RECIPIENT, FILTER_VALIDATE_EMAIL);
+$kh_review_disabled_functions = array('mail', 'curl_exec', 'curl_multi_exec', 'pfsockopen',
+    'socket_create', 'ftp_connect', 'ftp_ssl_connect',
+    'exec', 'shell_exec', 'system', 'passthru', 'popen', 'proc_open', 'pcntl_exec', 'dl');
+if (!$kh_review_mail_test) {
+    $kh_review_disabled_functions[] = 'fsockopen';
+    $kh_review_disabled_functions[] = 'stream_socket_client';
+} elseif (!function_exists('fsockopen') || !function_exists('stream_socket_client')) {
+    $kh_review_valid = false;
+}
+foreach ($kh_review_disabled_functions as $function) {
     if (function_exists($function)) { $kh_review_valid = false; }
 }
+unset($kh_review_disabled_functions);
 foreach (array('ffi', 'imap', 'ldap', 'memcached', 'redis', 'soap', 'sockets', 'pgsql', 'pdo_pgsql', 'pdo_mysql', 'imagick') as $extension) {
     if (extension_loaded($extension)) { $kh_review_valid = false; }
 }
@@ -45,7 +58,45 @@ add_filter('option_active_plugins', function ($plugins) {
     }));
 });
 add_filter('pre_http_request', function () { return new WP_Error('kh2027_offline', 'External requests disabled for review.'); }, PHP_INT_MAX);
-add_filter('pre_wp_mail', '__return_true', PHP_INT_MAX);
+if ($kh_review_mail_test) {
+    function kh_review_mail_test_subject() {
+        return '[KH2027 SMTP TEST] Koinobori House';
+    }
+    function kh_review_mail_test_message() {
+        return "Test technique du transport SMTP Brevo.\nAucune demande client n'est jointe a ce message.";
+    }
+    function kh_review_mail_test_wp_mail($atts) {
+        $headers = $atts['headers'] ?? array();
+        if (!is_array($headers)) {
+            $headers = preg_split('/\r?\n/', (string) $headers);
+        }
+        $atts['headers'] = array_values(array_filter($headers, function ($header) {
+            return !preg_match('/^\s*(Cc|Bcc)\s*:/i', (string) $header);
+        }));
+        $atts['to'] = array(KH2027_MAIL_TEST_RECIPIENT);
+        $atts['attachments'] = array();
+        return $atts;
+    }
+    function kh_review_mail_test_pre_wp_mail($return, $atts) {
+        $to = $atts['to'] ?? array();
+        $headers = $atts['headers'] ?? array();
+        if (!is_array($to)) { $to = array($to); }
+        if (!is_array($headers)) { $headers = array($headers); }
+        $has_copy = array_filter($headers, function ($header) {
+            return preg_match('/^\s*(Cc|Bcc)\s*:/i', (string) $header);
+        });
+        $valid = $to === array(KH2027_MAIL_TEST_RECIPIENT)
+            && ($atts['subject'] ?? '') === kh_review_mail_test_subject()
+            && ($atts['message'] ?? '') === kh_review_mail_test_message()
+            && empty($atts['attachments']) && !$has_copy;
+        return $valid ? $return : new WP_Error('kh2027_mail_blocked', 'Mail outside the isolated transport test was blocked.');
+    }
+    add_filter('wp_mail', 'kh_review_mail_test_wp_mail', PHP_INT_MAX);
+    add_filter('pre_wp_mail', 'kh_review_mail_test_pre_wp_mail', -PHP_INT_MAX, 2);
+} else {
+    add_filter('pre_wp_mail', '__return_true', PHP_INT_MAX);
+}
+unset($kh_review_mail_test);
 add_filter('woocommerce_available_payment_gateways', '__return_empty_array', PHP_INT_MAX);
 add_filter('action_scheduler_allow_async_request_runner', '__return_false', PHP_INT_MAX);
 add_filter('xmlrpc_enabled', '__return_false');

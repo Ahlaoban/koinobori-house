@@ -157,17 +157,16 @@ sur Contact. Aucun destinataire en copie, aucune pièce jointe, aucune newslette
 La structure suit `NotificationTools.php`, `EmailNotification.php` et les
 shortcodes natifs de Fluent Forms 6.2.13. La simulation, l’import transactionnel
 et le second passage sans réécriture ont réussi dans le clone : 12 notifications
-désactivées et 6 confirmations. Aucun envoi n’a été tenté.
+désactivées et 6 confirmations. Cet import n’a déclenché aucun envoi.
 
 ### Protocole du premier test de réception
 
 1. Préparer un processus de recette distinct du runtime web de consultation,
    à partir des données assainies. Maintenir l’authentification HTTP, le blocage
    des achats, des tâches planifiées et des intégrations tierces du clone.
-2. Installer FluentSMTP depuis WordPress.org. Choisir la connexion SMTP pour
-   réutiliser la clé SMTP Brevo existante, stockée hors dépôt. Le login SMTP et
-   la clé doivent être renseignés directement dans la configuration privée ;
-   ne pas les demander dans la conversation. Vérifier l’expéditeur côté Brevo.
+2. Installer FluentSMTP depuis WordPress.org. Choisir la connexion SMTP Brevo et
+   stocker le login et la clé directement dans la configuration privée, hors du
+   dépôt et de la base WordPress. Vérifier l’expéditeur côté Brevo.
 3. Préparer l’exception réseau limitée au relais Brevo et le filtrage final des
    destinataires vers la seule adresse de test autorisée, conservée hors dépôt.
    Faire approuver cette configuration concrète avant d’assouplir l’isolation.
@@ -175,8 +174,7 @@ désactivées et 6 confirmations. Aucun envoi n’a été tenté.
    préfixe de recette. Aucun destinataire réel provenant d’une demande client.
 5. Contrôler l’acceptation par Brevo et la réception réelle, puis le dossier spam
    et les résultats d’authentification dans les en-têtes. Un retour PHP positif
-   ne suffit pas : le garde actuel intercepte `wp_mail()` et renvoie volontairement
-   `true` sans délivrer le message.
+   ne suffit pas pour conclure à la délivrabilité.
 6. Préparer ensuite la recette HTTP complète avec nonce, validations, enregistrement,
    messages de succès et notifications. Les brouillons ne seront activés que
    dans le périmètre de test prévu avant leur mise en service définitive.
@@ -192,27 +190,40 @@ installation : SHA-256
 `ded5a19a40bfbff92e5caf2fe41d236a02892b7cd2252a436e766ed7450d609a`,
 archive ZIP valide. Le clone utilise WordPress 7.1 et PHP 8.1, versions compatibles
 avec les prérequis publiés pour FluentSMTP 2.4.0. L’extension est installée et
-active. Un contrôle CLI isolé confirme sa version, son chargement et son état
-d’activation, ainsi que le maintien des interceptions de `wp_mail()` et des
-requêtes HTTP externes. Aucun identifiant SMTP n’est configuré et aucun email
-n’a été envoyé ; le transport réel reste à configurer et à vérifier.
+active. Le clone possède une connexion SMTP Brevo sur le port 587 avec TLS et
+un expéditeur déjà vérifié dans Brevo. Le login et la clé dédiée restent dans un
+fichier privé de mode `0600`, hors racine web ; les champs correspondants sont
+vides dans la base WordPress.
+
+Un runtime CLI séparé conserve le blocage HTTP externe et n’autorise les sockets
+SMTP que pour le test. Son garde force l’adresse de test définie dans la
+configuration privée, supprime les copies et pièces jointes, et n’accepte qu’un
+sujet et un corps fixes. Le contrôle
+d’isolation et l’authentification SMTP sans commande `MAIL FROM`, `RCPT TO` ou
+`DATA` ont réussi. Le 15 septembre 2026 à 21:54, un unique message de transport
+portant le sujet `[KH2027 SMTP TEST] Koinobori House` a été accepté, puis marqué
+**Delivered** dans les journaux transactionnels Brevo. La réception n’a pas été
+contrôlée dans la boîte cible : la session de messagerie disponible correspondait
+à une autre adresse. La première clé créée pour le clone, inutilisable après une
+saisie erronée, a ensuite été désactivée ; seule la clé corrigée reste active.
 
 ## Travail restant avant recette fonctionnelle
 
 - Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
+- Contrôler le message dans la boîte cible et examiner SPF, DKIM et DMARC dans
+  ses en-têtes, puis vérifier l’expéditeur définitif `contact@koinoborihouse.com`.
 - Recetter les notifications administrateur et accusés FR/EN déjà importés mais
-  désactivés, puis raccorder FluentSMTP/Brevo. Aucun envoi réel n’est validé.
-- Préparer un environnement de recette d’envoi distinct de la consultation
-  seule, avec un destinataire de test autorisé, avant de modifier les protections.
+  désactivés, avec des demandes synthétiques et le même destinataire autorisé.
 
 ## Vérifications
 
 Syntaxe PHP serveur, contrôle du diff, simulation du script, relecture
 après application et rendu WordPress des six formulaires réussis. Contrôles visuels
 et clavier détaillés ci-dessus ; 124 contrôles des validateurs de champs et du
-honeypot réussis. Installation isolée de FluentSMTP 2.4.0 vérifiée sans envoi.
+honeypot réussis. Installation et configuration isolées de FluentSMTP 2.4.0,
+authentification Brevo et délivraison du message de transport vérifiées.
 Le sélecteur multiple Institutions annonce son libellé FR/EN et reste utilisable
 avec flèches et Entrée. L’import des 12 notifications désactivées et des six
 confirmations est vérifié et idempotent ; une sauvegarde privée le précède.
-Soumission HTTP et réception email restent à effectuer ; les
-protections de consultation seule restent actives.
+La soumission HTTP, les notifications FR/EN et la réception dans la boîte cible
+restent à effectuer ; les protections de consultation seule restent actives.
