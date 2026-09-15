@@ -1,6 +1,6 @@
 # Formulaires Contact, Entreprises et Collectivités
 
-## État au 14 septembre 2026
+## État au 15 septembre 2026
 
 Intégration déployée dans le clone privé et rendu des six formulaires contrôlé
 dans WordPress via WP-CLI et dans Chrome après rétablissement de l’accès privé.
@@ -29,6 +29,8 @@ de cette modification.
   appliquées par Kadence aux articles. Le sélecteur multiple Choices reprend
   le contraste, la hauteur et le focus des autres champs. Pas de nouvelle police
   ni de script tiers.
+- `assets/js/enquiries.js` : reporte le libellé natif du champ sur le contrôle
+  multiple créé par Choices.js et relie ce contrôle à sa liste d’options.
 - `functions.php` : charge le module après le header et le footer.
 
 Les hooks et classes ont été vérifiés dans le code officiel de Fluent Forms
@@ -83,7 +85,7 @@ dans la bonne langue, champs pays texte et minima attendus. Aucun avertissement
 ou erreur PHP lors de ce contrôle. Les libellés de projet EN étaient déjà corrects
 lors du contrôle complet ; aucune traduction de ces libellés n’a été nécessaire.
 
-## Recette navigateur du 14 septembre
+## Recette navigateur des 14 et 15 septembre
 
 - Six formulaires présents, chacun dans la langue de la page, avec le lien de
   confidentialité correspondant et sans bouton d’envoi dans l’aperçu.
@@ -94,6 +96,9 @@ lors du contrôle complet ; aucune traduction de ces libellés n’a été néce
   sélectionnant « School », sans soumission. Sélection de test abandonnée en
   quittant la page. Contraste et rendu de la liste vérifiés après correction.
 - Le pays en saisie libre n’affiche plus l’ancienne invite de sélection.
+- Calendriers Entreprises FR/EN : mois, jours, année, aide accessible et ordre
+  lundi-dimanche contrôlés dans les deux langues. Navigation par flèches et
+  sélection par Entrée réussies sans soumission.
 - Les dimensions temporaires du navigateur ont été réinitialisées.
 
 Ces vérifications ne constituent pas un audit complet d’accessibilité ni un
@@ -128,13 +133,17 @@ aucune protection du site web et n’envoie aucun email.
 
 Le rendu serveur Entreprises/Business confirme : instructions de calendrier FR/EN,
 année « Année »/« Year », début de semaine lundi en français, format accessible
-français et présence du honeypot. La vérification du calendrier interactif dans
-Chrome reste à faire après renouvellement de l’authentification privée.
+français et présence du honeypot. Le calendrier interactif a ensuite été contrôlé
+dans Chrome en français et en anglais, au clavier, sans soumettre de formulaire.
 
 ## Emails préparés, non activés
 
 `tools/recovery/enquiry_notification_drafts.php` retourne des données sans écrire
-en base ni envoyer de message. Les six parcours disposent de deux modèles natifs
+en base ni envoyer de message. `import_enquiry_notification_drafts.php` contrôle
+les associations page/formulaire, la table InnoDB et l’absence de notifications
+existantes, sauvegarde les réglages hors de la racine web, puis utilise le service
+natif de Fluent Forms. Il fonctionne en simulation par défaut et refuse d’écraser
+une configuration différente. Les six parcours disposent de deux modèles natifs
 Fluent Forms chacun : notification à l’équipe et accusé de réception dans la
 langue du formulaire. Les **12 modèles sont désactivés** par défaut. Le fichier
 propose aussi les six textes de confirmation à l’écran.
@@ -146,8 +155,9 @@ le visiteur. Il annonce une réponse sous 1 à 2 jours ouvrés, délai déjà af
 sur Contact. Aucun destinataire en copie, aucune pièce jointe, aucune newsletter.
 
 La structure suit `NotificationTools.php`, `EmailNotification.php` et les
-shortcodes natifs de Fluent Forms 6.2.13. Ces modèles sont préparés localement,
-pas importés en base et pas encore rendus par le moteur de notification distant.
+shortcodes natifs de Fluent Forms 6.2.13. La simulation, l’import transactionnel
+et le second passage sans réécriture ont réussi dans le clone : 12 notifications
+désactivées et 6 confirmations. Aucun envoi n’a été tenté.
 
 ### Protocole du premier test de réception
 
@@ -175,23 +185,34 @@ Références : [SMTP Brevo](https://help.brevo.com/hc/en-us/articles/79249089944
 [connexion SMTP FluentSMTP](https://fluentsmtp.com/docs/set-up-fluent-smtp-with-any-host-or-mailer/),
 [commandes de test FluentSMTP](https://docs.fluentsmtp.com/wp-cli-commands).
 
-État mesuré du clone : FluentSMTP absent, aucune définition de notification
-pour les six formulaires. L’envoi réel reste donc à configurer et à vérifier.
+État mesuré avant intervention : aucune définition de notification pour les six
+formulaires. L’archive officielle FluentSMTP 2.4.0 a été téléchargée
+hors de la racine web dans le dossier privé de recette, puis contrôlée avant toute
+installation : SHA-256
+`ded5a19a40bfbff92e5caf2fe41d236a02892b7cd2252a436e766ed7450d609a`,
+archive ZIP valide. Le clone utilise WordPress 7.1 et PHP 8.1, versions compatibles
+avec les prérequis publiés pour FluentSMTP 2.4.0. L’extension est installée et
+active. Un contrôle CLI isolé confirme sa version, son chargement et son état
+d’activation, ainsi que le maintien des interceptions de `wp_mail()` et des
+requêtes HTTP externes. Aucun identifiant SMTP n’est configuré et aucun email
+n’a été envoyé ; le transport réel reste à configurer et à vérifier.
 
 ## Travail restant avant recette fonctionnelle
 
-- Compléter les contrôles du calendrier, de ses textes accessibles FR/EN et
-  des interactions clavier du formulaire complet.
 - Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
-- Importer et recetter les notifications administrateur et accusés FR/EN préparés,
-  puis raccorder FluentSMTP/Brevo. Aucun envoi réel n’est validé à ce stade.
+- Recetter les notifications administrateur et accusés FR/EN déjà importés mais
+  désactivés, puis raccorder FluentSMTP/Brevo. Aucun envoi réel n’est validé.
 - Préparer un environnement de recette d’envoi distinct de la consultation
   seule, avec un destinataire de test autorisé, avant de modifier les protections.
 
 ## Vérifications
 
-Syntaxe PHP locale et serveur, contrôle du diff, simulation du script, relecture
+Syntaxe PHP serveur, contrôle du diff, simulation du script, relecture
 après application et rendu WordPress des six formulaires réussis. Contrôles visuels
 et clavier détaillés ci-dessus ; 124 contrôles des validateurs de champs et du
-honeypot réussis. Soumission HTTP et réception email restent à effectuer ; les
+honeypot réussis. Installation isolée de FluentSMTP 2.4.0 vérifiée sans envoi.
+Le sélecteur multiple Institutions annonce son libellé FR/EN et reste utilisable
+avec flèches et Entrée. L’import des 12 notifications désactivées et des six
+confirmations est vérifié et idempotent ; une sauvegarde privée le précède.
+Soumission HTTP et réception email restent à effectuer ; les
 protections de consultation seule restent actives.

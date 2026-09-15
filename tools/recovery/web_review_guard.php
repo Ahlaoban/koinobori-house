@@ -41,7 +41,7 @@ add_filter('option_active_plugins', function ($plugins) {
     return array_values(array_filter($plugins, function ($plugin) {
         return in_array($plugin, array('woocommerce/woocommerce.php', 'polylang/polylang.php',
             'polylang-wc/polylang-wc.php', 'kh-single-variation-display/kh-single-variation-display.php',
-            'fluentform/fluentform.php'), true);
+            'fluentform/fluentform.php', 'fluent-smtp/fluent-smtp.php'), true);
     }));
 });
 add_filter('pre_http_request', function () { return new WP_Error('kh2027_offline', 'External requests disabled for review.'); }, PHP_INT_MAX);
