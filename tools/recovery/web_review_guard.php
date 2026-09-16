@@ -15,6 +15,23 @@ $kh_review_mail_test = PHP_SAPI === 'cli'
     && defined('KH2027_MAIL_TEST_RECIPIENT')
     && is_string(KH2027_MAIL_TEST_RECIPIENT)
     && filter_var(KH2027_MAIL_TEST_RECIPIENT, FILTER_VALIDATE_EMAIL);
+$kh_review_form_ids = array(5, 6, 7, 8, 9, 10);
+$kh_review_form_test_until = false;
+if (defined('KH2027_FORM_TEST_UNTIL') && is_string(KH2027_FORM_TEST_UNTIL)) {
+    $kh_review_form_test_date = DateTimeImmutable::createFromFormat('!Y-m-d\TH:i:sP', KH2027_FORM_TEST_UNTIL);
+    $kh_review_form_test_issues = DateTimeImmutable::getLastErrors();
+    if ($kh_review_form_test_date
+        && (!$kh_review_form_test_issues
+            || (!$kh_review_form_test_issues['warning_count'] && !$kh_review_form_test_issues['error_count']))
+        && $kh_review_form_test_date->format('Y-m-d\TH:i:sP') === KH2027_FORM_TEST_UNTIL) {
+        $kh_review_form_test_until = $kh_review_form_test_date->getTimestamp();
+    }
+}
+unset($kh_review_form_test_date, $kh_review_form_test_issues);
+$kh_review_form_test = PHP_SAPI !== 'cli'
+    && $kh_review_form_test_until !== false
+    && $kh_review_form_test_until >= time()
+    && $kh_review_form_test_until <= time() + 2 * HOUR_IN_SECONDS;
 $kh_review_disabled_functions = array('mail', 'curl_exec', 'curl_multi_exec', 'pfsockopen',
     'socket_create', 'ftp_connect', 'ftp_ssl_connect',
     'exec', 'shell_exec', 'system', 'passthru', 'popen', 'proc_open', 'pcntl_exec', 'dl');
@@ -43,12 +60,54 @@ if (!$kh_review_valid) {
 }
 unset($kh_review_valid);
 
-if (PHP_SAPI !== 'cli' && (!in_array($_SERVER['REQUEST_METHOD'] ?? '', array('GET', 'HEAD'), true)
+function kh_review_form_notifications_are_inert($form_id) {
+    global $wpdb;
+    $rows = $wpdb->get_col($wpdb->prepare(
+        "SELECT value FROM {$wpdb->prefix}fluentform_form_meta WHERE form_id = %d AND meta_key = 'notifications'",
+        $form_id
+    ));
+    if (count($rows) !== 2) { return false; }
+    foreach ($rows as $row) {
+        $notification = json_decode($row, true);
+        if (!is_array($notification) || ($notification['enabled'] ?? null) !== false
+            || !empty($notification['cc']) || !empty($notification['bcc'])
+            || !empty($notification['attachments'])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+$kh_review_form_test_request = false;
+if (PHP_SAPI !== 'cli' && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && $kh_review_form_test) {
+    $kh_review_request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    $kh_review_form_id = filter_input(INPUT_POST, 'form_id', FILTER_VALIDATE_INT);
+    $kh_review_form_data = isset($_POST['data']) && is_string($_POST['data']) ? $_POST['data'] : '';
+    $kh_review_form_values = array();
+    if ($kh_review_form_data !== '' && strlen($kh_review_form_data) <= 16384) {
+        parse_str($kh_review_form_data, $kh_review_form_values);
+    }
+    $kh_review_nonce_key = '_fluentform_' . (int) $kh_review_form_id . '_fluentformnonce';
+    $kh_review_test_email = $kh_review_form_values['email'] ?? '';
+    $kh_review_form_test_request = $kh_review_request_path === '/wp-admin/admin-ajax.php'
+        && ($_POST['action'] ?? '') === 'fluentform_submit'
+        && in_array((int) $kh_review_form_id, $kh_review_form_ids, true)
+        && kh_review_form_notifications_are_inert((int) $kh_review_form_id)
+        && empty($_FILES)
+        && is_string($kh_review_test_email)
+        && preg_match('/^kh2027-http-[a-z0-9-]+@example\.invalid$/', $kh_review_test_email)
+        && isset($kh_review_form_values[$kh_review_nonce_key])
+        && is_string($kh_review_form_values[$kh_review_nonce_key]);
+}
+if (PHP_SAPI !== 'cli' && ((!in_array($_SERVER['REQUEST_METHOD'] ?? '', array('GET', 'HEAD'), true)
+        && !$kh_review_form_test_request)
     || isset($_GET['add-to-cart']) || isset($_GET['wc-ajax']) || isset($_GET['wc-api']))) {
     http_response_code(405);
     header('Allow: GET, HEAD');
     exit('La première visite du site de test est en lecture seule.');
 }
+unset($kh_review_form_test_request, $kh_review_request_path, $kh_review_form_id,
+    $kh_review_form_data, $kh_review_form_values, $kh_review_nonce_key, $kh_review_test_email);
 
 add_filter('option_active_plugins', function ($plugins) {
     return array_values(array_filter($plugins, function ($plugin) {
@@ -127,16 +186,27 @@ add_action('after_setup_theme', function () {
 });
 // Render the existing enquiry forms for review without presenting a working send action.
 // Fluent Forms 6.2.13 Components/SubmitButton.php and FormBuilder.php.
-foreach (array(5, 6, 7, 8, 9, 10) as $kh_review_form_id) {
-    add_filter('fluentform/is_hide_submit_btn_' . $kh_review_form_id, '__return_true');
+if (!$kh_review_form_test) {
+    foreach ($kh_review_form_ids as $kh_review_form_id) {
+        add_filter('fluentform/is_hide_submit_btn_' . $kh_review_form_id, '__return_true');
+    }
 }
 unset($kh_review_form_id);
-add_action('fluentform/before_form_render', function ($form) {
-    if (!in_array((int) $form->id, array(5, 6, 7, 8, 9, 10), true)) { return; }
+add_filter('fluentform/nonce_verify', function ($enabled, $form_id) use ($kh_review_form_test, $kh_review_form_ids) {
+    return $kh_review_form_test && in_array((int) $form_id, $kh_review_form_ids, true) ? true : $enabled;
+}, PHP_INT_MAX, 2);
+add_action('fluentform/before_form_render', function ($form) use ($kh_review_form_test, $kh_review_form_ids) {
+    if (!in_array((int) $form->id, $kh_review_form_ids, true)) { return; }
     $english = in_array((int) $form->id, array(6, 8, 10), true);
-    echo '<p class="kh-enquiry-preview-note" role="note">' . esc_html($english
-        ? 'Form preview. Sending is disabled in this private environment.'
-        : 'Aperçu du formulaire. L’envoi est désactivé dans cet environnement privé.') . '</p>';
+    if ($kh_review_form_test) {
+        echo '<p class="kh-enquiry-preview-note" role="note">' . esc_html($english
+            ? 'Isolated test mode. Use synthetic data only; email delivery is disabled.'
+            : 'Mode de recette isolé. Utilisez uniquement des données fictives ; les emails sont désactivés.') . '</p>';
+    } else {
+        echo '<p class="kh-enquiry-preview-note" role="note">' . esc_html($english
+            ? 'Form preview. Sending is disabled in this private environment.'
+            : 'Aperçu du formulaire. L’envoi est désactivé dans cet environnement privé.') . '</p>';
+    }
 });
 add_action('wp_enqueue_scripts', function () {
     // The restored theme may predate registration of the editorial dependency.

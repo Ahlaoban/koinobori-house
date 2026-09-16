@@ -178,6 +178,18 @@ Il ferme la requête si ces préconditions ne sont pas satisfaites.
 La première revue autorise uniquement GET/HEAD, sans ajout au panier ou action
 WooCommerce AJAX. Les extensions sont limitées à quatre fichiers d'entrée
 connus ; HTTP externe, mail, paiements, REST et XML-RPC sont neutralisés.
+
+Pour la recette HTTP des six formulaires, le garde accepte une fenêtre temporaire
+définie par `KH2027_FORM_TEST_UNTIL`. La valeur doit être une date ISO 8601 future
+et distante de deux heures au maximum ; hors de cette fenêtre, le mode reste en
+lecture seule. Pendant la fenêtre, le seul POST autorisé est
+`/wp-admin/admin-ajax.php` avec l'action native `fluentform_submit`, un formulaire
+5 à 10, son nonce, aucun fichier et une adresse synthétique de la forme
+`kh2027-http-…@example.invalid`. Les deux notifications du formulaire doivent
+toujours être présentes et désactivées, sans copie ni pièce jointe. Le garde force
+la vérification du nonce. Les emails, appels HTTP externes, paiements et autres
+POST restent neutralisés. Après l'heure limite, le bouton d'envoi disparaît sans
+intervention supplémentaire.
 Les boutons de commande et avis sont retirés de la consultation. Cela ne remplace
 ni les règles Apache, ni l'inventaire des extensions PHP, ni la recette métier.
 
