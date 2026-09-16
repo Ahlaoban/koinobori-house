@@ -259,11 +259,22 @@ a été alignée sur `contact@koinoborihouse.com`, puis le contrôle a été rel
 le runtime restreint. Tous les garde-fous annoncés passent désormais ; le contrôle
 confirme explicitement qu’aucun email n’a été envoyé.
 
+Après autorisation explicite, un unique message a été envoyé le 16 septembre 2026
+à 12:37 vers le destinataire de test. Le runtime a confirmé un destinataire dans
+la liste d’autorisation, aucune copie et aucune pièce jointe. Brevo l’a enregistré
+successivement **Sent** puis **Delivered** à 12:37, avec une première ouverture à
+12:39. Gmail l’a reçu directement en boîte de réception sous l’identité
+`Koinobori House <contact@koinoborihouse.com>`.
+
+Les en-têtes du nouvel envoi confirment **SPF PASS**, **DKIM PASS** avec la
+signature `koinoborihouse.com` et le sélecteur `brevo2`, ainsi que **DMARC PASS**
+pour `koinoborihouse.com`. Le transport jusqu’à Gmail utilise TLS 1.3. Ce second
+test valide donc le transport, l’identité de marque et le placement en boîte de
+réception sur le destinataire contrôlé.
+
 ## Travail restant avant recette fonctionnelle
 
 - Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
-- Vérifier l’expéditeur définitif, ses en-têtes et son placement dans la boîte
-  cible sur un nouvel envoi autorisé.
 - Recetter les notifications administrateur et accusés FR/EN déjà importés mais
   désactivés, avec des demandes synthétiques et le même destinataire autorisé.
 
@@ -278,8 +289,8 @@ Le sélecteur multiple Institutions annonce son libellé FR/EN et reste utilisab
 avec flèches et Entrée. L’import des 12 notifications désactivées et des six
 confirmations est vérifié et idempotent ; une sauvegarde privée le précède.
 La réception du premier message est vérifiée, dans Spam avec une identité Brevo
-technique. Le domaine de marque et son expéditeur sont maintenant authentifiés
-dans Brevo, et la configuration du clone utilise l’expéditeur définitif sans
-conserver les identifiants SMTP en base. La soumission HTTP, les notifications
-FR/EN et un envoi avec l’identité de marque restent à effectuer ; les protections
+technique. Le second message est arrivé en boîte de réception avec l’identité de
+marque, et ses contrôles SPF, DKIM et DMARC passent. La configuration du clone
+utilise l’expéditeur définitif sans conserver les identifiants SMTP en base. La
+soumission HTTP et les notifications FR/EN restent à recetter ; les protections
 de consultation seule restent actives.
