@@ -26,8 +26,8 @@ if ( ! defined( 'FLUENTMAIL_SMTP_USERNAME' ) || ! FLUENTMAIL_SMTP_USERNAME
 	WP_CLI::error( 'Private SMTP credentials are incomplete.' );
 }
 
-$sender = 'kaeljin@koi-nobori.com';
-$legacy_sender = 'contact@koinoborihouse.com';
+$sender = 'contact@koinoborihouse.com';
+$legacy_sender = 'kaeljin@koi-nobori.com';
 $key = md5( $sender );
 $connection = array(
 	'provider'         => 'smtp',

@@ -59,7 +59,7 @@ $checks = array(
 	'one_connection'          => count( $connections ) === 1,
 	'provider_is_smtp'        => ( $stored['provider'] ?? '' ) === 'smtp',
 	'host_is_brevo'           => ( $stored['host'] ?? '' ) === 'smtp-relay.brevo.com',
-	'sender_is_verified'      => ( $stored['sender_email'] ?? '' ) === 'kaeljin@koi-nobori.com',
+	'sender_is_verified'      => ( $stored['sender_email'] ?? '' ) === 'contact@koinoborihouse.com',
 	'username_not_in_database' => ( $stored['username'] ?? null ) === '',
 	'password_not_in_database' => ( $stored['password'] ?? null ) === '',
 	'private_username_loaded' => defined( 'FLUENTMAIL_SMTP_USERNAME' )

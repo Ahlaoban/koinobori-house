@@ -1,12 +1,14 @@
 # Formulaires Contact, Entreprises et Collectivités
 
-## État au 15 septembre 2026
+## État au 16 septembre 2026
 
 Intégration déployée dans le clone privé et rendu des six formulaires contrôlé
 dans WordPress via WP-CLI et dans Chrome après rétablissement de l’accès privé.
 Les six pages ont été vérifiées à 360 px ; les trois familles de formulaires ont
 aussi été examinées sur ordinateur. Les parcours Entreprises et Collectivités
-restent distincts. Aucun test d’envoi ni déploiement en production n’a été réalisé.
+restent distincts. Un test du transport SMTP a été reçu, mais aucun formulaire
+n’a encore été soumis de bout en bout. Aucun déploiement du site en production
+n’a été réalisé.
 
 | Parcours | FR | EN | Formulaires relevés dans le clone |
 |---|---|---|---|
@@ -202,16 +204,51 @@ sujet et un corps fixes. Le contrôle
 d’isolation et l’authentification SMTP sans commande `MAIL FROM`, `RCPT TO` ou
 `DATA` ont réussi. Le 15 septembre 2026 à 21:54, un unique message de transport
 portant le sujet `[KH2027 SMTP TEST] Koinobori House` a été accepté, puis marqué
-**Delivered** dans les journaux transactionnels Brevo. La réception n’a pas été
-contrôlée dans la boîte cible : la session de messagerie disponible correspondait
-à une autre adresse. La première clé créée pour le clone, inutilisable après une
+**Delivered** dans les journaux transactionnels Brevo. La réception a ensuite été
+contrôlée le 16 septembre ; voir le diagnostic ci-dessous. La première clé créée pour le clone, inutilisable après une
 saisie erronée, a ensuite été désactivée ; seule la clé corrigée reste active.
+
+### Réception et authentification du domaine, 16 septembre
+
+Le message de transport a été retrouvé dans le dossier Spam de la boîte Gmail
+accessible. Ses détails confirment le destinataire de test autorisé. L’affichage
+de cette boîte sous une autre adresse ne signifiait donc pas que le message était
+inaccessible. Le contenu reçu correspond au test technique, sans donnée client.
+
+Les en-têtes indiquent SPF, DKIM et DMARC **PASS**, mais la signature DKIM porte
+sur le domaine technique Brevo et l’adresse d’expéditeur a été réécrite en
+`brevosend.com`. Le Reply-To conserve l’adresse provisoire. Ces résultats valident
+le transport, pas encore l’identité de marque ni le placement en boîte de réception.
+L’authentification du domaine de marque doit être contrôlée sur un nouvel envoi ;
+elle ne garantit pas à elle seule l’absence de classement en spam.
+
+Le compte Brevo actuellement connecté ne contenait que le domaine non authentifié
+de l’expéditeur provisoire. `koinoborihouse.com` y a été ajouté. La documentation
+historique KH-005 décrivait une autre configuration déjà validée en mai ; ses
+enregistrements DNS étaient toujours présents. Le compte principal o2switch gère
+la zone de marque, alors que le compte du clone ne gère que son domaine de test.
+
+Les deux CNAME DKIM et l’unique TXT DMARC correspondent déjà aux valeurs demandées
+par Brevo. Un TXT supplémentaire de preuve de domaine a été enregistré pour le
+compte Brevo courant, en conservant l’ancien TXT. Aucun A, MX, SPF, DKIM ou DMARC
+existant n’a été modifié. Les valeurs de preuve restent dans les consoles concernées.
+
+Le contrôle Brevo confirme la correspondance des **quatre enregistrements**. Après
+propagation du nouveau TXT sur les deux serveurs o2switch, Brevo a confirmé
+« Your domain has been authenticated » pour `koinoborihouse.com`.
+
+La boîte `contact@koinoborihouse.com` existe chez o2switch, sans restriction et
+avec de l’espace disponible. L’expéditeur `Koinobori House
+<contact@koinoborihouse.com>` a été ajouté au compte Brevo courant et validé par
+le code à usage unique reçu dans cette boîte. Le changement d’expéditeur du clone
+reste à appliquer. Aucun nouvel email de test n’a été envoyé pendant ce diagnostic.
 
 ## Travail restant avant recette fonctionnelle
 
 - Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
-- Contrôler le message dans la boîte cible et examiner SPF, DKIM et DMARC dans
-  ses en-têtes, puis vérifier l’expéditeur définitif `contact@koinoborihouse.com`.
+- Basculer le clone vers l’expéditeur définitif `contact@koinoborihouse.com`,
+  puis vérifier ses en-têtes et son placement dans la boîte cible sur un nouvel
+  envoi autorisé.
 - Recetter les notifications administrateur et accusés FR/EN déjà importés mais
   désactivés, avec des demandes synthétiques et le même destinataire autorisé.
 
@@ -225,5 +262,8 @@ authentification Brevo et délivraison du message de transport vérifiées.
 Le sélecteur multiple Institutions annonce son libellé FR/EN et reste utilisable
 avec flèches et Entrée. L’import des 12 notifications désactivées et des six
 confirmations est vérifié et idempotent ; une sauvegarde privée le précède.
-La soumission HTTP, les notifications FR/EN et la réception dans la boîte cible
-restent à effectuer ; les protections de consultation seule restent actives.
+La réception du premier message est vérifiée, dans Spam avec une identité Brevo
+technique. Le domaine de marque et son expéditeur sont maintenant authentifiés
+dans Brevo. La bascule du clone, la soumission HTTP, les notifications FR/EN et
+un envoi avec l’identité de marque restent à effectuer ; les protections de
+consultation seule restent actives.
