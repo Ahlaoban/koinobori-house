@@ -253,6 +253,12 @@ d’identifiants vides en base et `key_store=wp_config` sont inchangés. La sauv
 conserve ses 978 octets et son empreinte d’origine. Aucun nouvel email de test n’a
 été envoyé pendant cette bascule.
 
+La copie serveur du contrôle préalable attendait encore l’ancien expéditeur alors
+que la configuration active contenait déjà l’adresse authentifiée. Cette valeur
+a été alignée sur `contact@koinoborihouse.com`, puis le contrôle a été relancé dans
+le runtime restreint. Tous les garde-fous annoncés passent désormais ; le contrôle
+confirme explicitement qu’aucun email n’a été envoyé.
+
 ## Travail restant avant recette fonctionnelle
 
 - Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
