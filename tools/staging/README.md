@@ -17,7 +17,17 @@ Déposer `inventory.php` dans `~/kh2027-private/tools/` via le gestionnaire cPan
 sha256sum ~/kh2027-private/tools/inventory.php
 ```
 
-avec `git hash-object` local n'étant pas SHA-256, utiliser `sha256sum tools/staging/inventory.php` sur le poste. Les deux valeurs doivent être identiques.
+avec l'empreinte du fichier **tel que committé** (fins de ligne LF, indépendantes de l'autocrlf du poste Windows) :
+
+```
+git show <sha du commit>:tools/staging/inventory.php | sha256sum
+```
+
+Les deux valeurs doivent être identiques. Le poste de développement n'a pas d'interpréteur PHP : la vérification syntaxique se fait sur le serveur, en lecture seule, avant toute exécution :
+
+```
+php -l ~/kh2027-private/tools/inventory.php
+```
 
 ## Pré-vol (lecture seule)
 
