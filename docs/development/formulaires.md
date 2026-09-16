@@ -6,8 +6,8 @@ Intégration déployée dans le clone privé et rendu des six formulaires contr�
 dans WordPress via WP-CLI et dans Chrome après rétablissement de l’accès privé.
 Les six pages ont été vérifiées à 360 px ; les trois familles de formulaires ont
 aussi été examinées sur ordinateur. Les parcours Entreprises et Collectivités
-restent distincts. Un test du transport SMTP a été reçu, mais aucun formulaire
-n’a encore été soumis de bout en bout. Aucun déploiement du site en production
+restent distincts. Le transport SMTP et les six soumissions HTTP synthétiques
+ont été vérifiés dans le clone privé. Aucun déploiement du site en production
 n’a été réalisé.
 
 | Parcours | FR | EN | Formulaires relevés dans le clone |
@@ -272,9 +272,36 @@ pour `koinoborihouse.com`. Le transport jusqu’à Gmail utilise TLS 1.3. Ce sec
 test valide donc le transport, l’identité de marque et le placement en boîte de
 réception sur le destinataire contrôlé.
 
+## Recette HTTP isolée du 16 septembre
+
+Le garde de revue peut ouvrir une fenêtre de test courte, fermée par défaut et
+limitée à deux heures. Pendant cette fenêtre, il n’accepte que les requêtes POST
+Fluent Forms vers `wp-admin/admin-ajax.php`, les formulaires 5 à 10, un nonce
+valide et des adresses synthétiques du domaine `example.invalid`. Il exige deux
+notifications désactivées par formulaire, sans copie ni pièce jointe. Les emails
+restent interceptés par `pre_wp_mail` et les autres sorties réseau demeurent
+bloquées.
+
+La recette navigateur a couvert les six parcours : Contact FR/EN, Entreprises
+FR/EN et Collectivités/Institutions FR/EN. Une soumission vide a affiché les six
+erreurs de champ obligatoire attendues. Une adresse invalide a été refusée par
+la validation du navigateur. Les six jeux de données synthétiques valides ont
+ensuite affiché leur confirmation dans la bonne langue.
+
+La base contient exactement une soumission synthétique pour chacun des formulaires
+5, 6, 7, 8, 9 et 10. Le journal FluentSMTP contient zéro entrée pendant la plage
+de ces essais : aucun email n’a été déclenché. Les notifications sont restées
+désactivées pendant toute la recette.
+
+L’accès Apache temporaire à `admin-ajax.php`, nécessaire pour atteindre le garde
+WordPress depuis les pages protégées, a été retiré après le contrôle. La constante
+temporaire de `wp-config.php` a également été supprimée. Les sauvegardes antérieures
+restent hors de la racine web dans `kh2027-private/web-control`. Le formulaire
+Contact affiche de nouveau la note d’aperçu et aucun bouton d’envoi. Le garde
+renforcé demeure déployé, fermé par défaut.
+
 ## Travail restant avant recette fonctionnelle
 
-- Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
 - Recetter les notifications administrateur et accusés FR/EN déjà importés mais
   désactivés, avec des demandes synthétiques et le même destinataire autorisé.
 
@@ -292,5 +319,6 @@ La réception du premier message est vérifiée, dans Spam avec une identité Br
 technique. Le second message est arrivé en boîte de réception avec l’identité de
 marque, et ses contrôles SPF, DKIM et DMARC passent. La configuration du clone
 utilise l’expéditeur définitif sans conserver les identifiants SMTP en base. La
-soumission HTTP et les notifications FR/EN restent à recetter ; les protections
-de consultation seule restent actives.
+soumission HTTP isolée est vérifiée pour les six formulaires, sans journal SMTP.
+Les notifications FR/EN restent à recetter ; les protections de consultation seule
+sont de nouveau actives.
