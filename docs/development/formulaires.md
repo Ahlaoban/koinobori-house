@@ -240,15 +240,24 @@ propagation du nouveau TXT sur les deux serveurs o2switch, Brevo a confirmé
 La boîte `contact@koinoborihouse.com` existe chez o2switch, sans restriction et
 avec de l’espace disponible. L’expéditeur `Koinobori House
 <contact@koinoborihouse.com>` a été ajouté au compte Brevo courant et validé par
-le code à usage unique reçu dans cette boîte. Le changement d’expéditeur du clone
-reste à appliquer. Aucun nouvel email de test n’a été envoyé pendant ce diagnostic.
+le code à usage unique reçu dans cette boîte.
+
+La connexion FluentSMTP du clone privé utilise maintenant cet expéditeur. Avant
+la modification, l’option sérialisée a été copiée dans
+`kh_backup_fluentmail_settings_20260916_brand_sender`, sans chargement automatique,
+et son empreinte MD5 a été comparée à l’original. La mise à jour conditionnelle
+n’a touché qu’une ligne. Le contrôle après application confirme une structure de
+986 octets, deux occurrences de l’adresse définitive, trois occurrences de sa clé
+de connexion et aucune occurrence des anciennes valeurs. L’hôte Brevo, les champs
+d’identifiants vides en base et `key_store=wp_config` sont inchangés. La sauvegarde
+conserve ses 978 octets et son empreinte d’origine. Aucun nouvel email de test n’a
+été envoyé pendant cette bascule.
 
 ## Travail restant avant recette fonctionnelle
 
 - Vérifier le parcours HTTP complet : nonce, insertion, erreurs et confirmation.
-- Basculer le clone vers l’expéditeur définitif `contact@koinoborihouse.com`,
-  puis vérifier ses en-têtes et son placement dans la boîte cible sur un nouvel
-  envoi autorisé.
+- Vérifier l’expéditeur définitif, ses en-têtes et son placement dans la boîte
+  cible sur un nouvel envoi autorisé.
 - Recetter les notifications administrateur et accusés FR/EN déjà importés mais
   désactivés, avec des demandes synthétiques et le même destinataire autorisé.
 
@@ -264,6 +273,7 @@ avec flèches et Entrée. L’import des 12 notifications désactivées et des s
 confirmations est vérifié et idempotent ; une sauvegarde privée le précède.
 La réception du premier message est vérifiée, dans Spam avec une identité Brevo
 technique. Le domaine de marque et son expéditeur sont maintenant authentifiés
-dans Brevo. La bascule du clone, la soumission HTTP, les notifications FR/EN et
-un envoi avec l’identité de marque restent à effectuer ; les protections de
-consultation seule restent actives.
+dans Brevo, et la configuration du clone utilise l’expéditeur définitif sans
+conserver les identifiants SMTP en base. La soumission HTTP, les notifications
+FR/EN et un envoi avec l’identité de marque restent à effectuer ; les protections
+de consultation seule restent actives.
