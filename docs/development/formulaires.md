@@ -300,10 +300,22 @@ restent hors de la racine web dans `kh2027-private/web-control`. Le formulaire
 Contact affiche de nouveau la note d’aperçu et aucun bouton d’envoi. Le garde
 renforcé demeure déployé, fermé par défaut.
 
-## Travail restant avant recette fonctionnelle
+## Recette fonctionnelle des notifications
 
-- Recetter les notifications administrateur et accusés FR/EN déjà importés mais
-  désactivés, avec des demandes synthétiques et le même destinataire autorisé.
+Le lot préparé pour cette étape reste limité à douze messages : les deux modèles
+de chacun des six formulaires, rendus par le service natif de Fluent Forms à
+partir des six soumissions synthétiques déjà contrôlées. Le runtime CLI force
+tous les destinataires vers l'adresse de recette privée, supprime copies et
+pièces jointes, préfixe les sujets et tient un registre anti double-envoi. Les
+modèles restent désactivés en base et le runtime web conserve ses sockets SMTP
+bloqués. Le script lance un contrôle à blanc avant l'envoi et s'arrête au premier
+écart de version, de configuration, de modèle ou de donnée.
+
+Le 16 septembre 2026, les douze rendus ont passé le garde avant transport. Les
+douze messages ont ensuite été acceptés par FluentSMTP, sans copie ni pièce
+jointe, puis les journaux Brevo ont confirmé exactement douze événements
+`Delivered` vers l'unique adresse de recette autorisée. Les six notifications
+équipe et les six accusés FR/EN sont donc validés sur le clone privé.
 
 ## Vérifications
 
@@ -319,6 +331,7 @@ La réception du premier message est vérifiée, dans Spam avec une identité Br
 technique. Le second message est arrivé en boîte de réception avec l’identité de
 marque, et ses contrôles SPF, DKIM et DMARC passent. La configuration du clone
 utilise l’expéditeur définitif sans conserver les identifiants SMTP en base. La
-soumission HTTP isolée est vérifiée pour les six formulaires, sans journal SMTP.
-Les notifications FR/EN restent à recetter ; les protections de consultation seule
-sont de nouveau actives.
+soumission HTTP isolée est vérifiée pour les six formulaires. La recette des
+notifications FR/EN a ensuite confirmé douze livraisons Brevo, avec destinataire
+forcé, sans copie ni pièce jointe. Les protections de consultation seule sont de
+nouveau actives.

@@ -10,11 +10,18 @@ $kh_review_valid = defined('KH2027_WEB_REVIEW') && KH2027_WEB_REVIEW === true
     && DB_HOST === 'localhost' && WP_HOME === 'https://' . KH2027_REVIEW_HOST
     && WP_SITEURL === WP_HOME && DISABLE_WP_CRON === true
     && !ini_get('allow_url_fopen') && !ini_get('allow_url_include');
-$kh_review_mail_test = PHP_SAPI === 'cli'
+$kh_review_notification_test = PHP_SAPI === 'cli'
+    && getenv('KH2027_NOTIFICATION_TEST_APPROVED') === 'twelve-notifications-once'
     && defined('KH2027_MAIL_TEST') && KH2027_MAIL_TEST === true
     && defined('KH2027_MAIL_TEST_RECIPIENT')
     && is_string(KH2027_MAIL_TEST_RECIPIENT)
     && filter_var(KH2027_MAIL_TEST_RECIPIENT, FILTER_VALIDATE_EMAIL);
+$kh_review_mail_test = !$kh_review_notification_test && PHP_SAPI === 'cli'
+    && defined('KH2027_MAIL_TEST') && KH2027_MAIL_TEST === true
+    && defined('KH2027_MAIL_TEST_RECIPIENT')
+    && is_string(KH2027_MAIL_TEST_RECIPIENT)
+    && filter_var(KH2027_MAIL_TEST_RECIPIENT, FILTER_VALIDATE_EMAIL);
+$kh_review_smtp_test = $kh_review_mail_test || $kh_review_notification_test;
 $kh_review_form_ids = array(5, 6, 7, 8, 9, 10);
 $kh_review_form_test_until = false;
 if (defined('KH2027_FORM_TEST_UNTIL') && is_string(KH2027_FORM_TEST_UNTIL)) {
@@ -35,7 +42,7 @@ $kh_review_form_test = PHP_SAPI !== 'cli'
 $kh_review_disabled_functions = array('mail', 'curl_exec', 'curl_multi_exec', 'pfsockopen',
     'socket_create', 'ftp_connect', 'ftp_ssl_connect',
     'exec', 'shell_exec', 'system', 'passthru', 'popen', 'proc_open', 'pcntl_exec', 'dl');
-if (!$kh_review_mail_test) {
+if (!$kh_review_smtp_test) {
     $kh_review_disabled_functions[] = 'fsockopen';
     $kh_review_disabled_functions[] = 'stream_socket_client';
 } elseif (!function_exists('fsockopen') || !function_exists('stream_socket_client')) {
@@ -117,7 +124,145 @@ add_filter('option_active_plugins', function ($plugins) {
     }));
 });
 add_filter('pre_http_request', function () { return new WP_Error('kh2027_offline', 'External requests disabled for review.'); }, PHP_INT_MAX);
-if ($kh_review_mail_test) {
+if ($kh_review_notification_test) {
+    function kh_review_notification_test_limits() {
+        return array(
+            '[Koinobori House] Nouvelle demande — Contact' => 1,
+            '[Koinobori House] New enquiry — Contact' => 1,
+            '[Koinobori House] Nouvelle demande — Entreprises' => 1,
+            '[Koinobori House] New enquiry — Business' => 1,
+            '[Koinobori House] Nouvelle demande — Collectivités' => 1,
+            '[Koinobori House] New enquiry — Institutions' => 1,
+            'Koinobori House — Nous avons reçu votre demande' => 3,
+            'Koinobori House — We have received your enquiry' => 3,
+        );
+    }
+    function kh_review_notification_test_headers($headers) {
+        if (!is_array($headers)) {
+            $headers = preg_split('/\r?\n/', (string) $headers);
+        }
+        return array_values(array_filter(array_map('trim', $headers), 'strlen'));
+    }
+    function kh_review_notification_test_header_values($headers, $name) {
+        $values = array();
+        foreach (kh_review_notification_test_headers($headers) as $header) {
+            if (preg_match('/^' . preg_quote($name, '/') . '\s*:\s*(.+)$/i', $header, $match)) {
+                $values[] = trim($match[1]);
+            }
+        }
+        return $values;
+    }
+    function kh_review_notification_test_message_is_synthetic($message) {
+        $string = is_string($message);
+        $length = $string ? strlen($message) : -1;
+        $addresses_allowed = true;
+        $address_count = 0;
+        if ($string) {
+            preg_match_all('/[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}/i', $message, $matches);
+            $addresses = array_unique($matches[0]);
+            $address_count = count($addresses);
+            foreach ($addresses as $address) {
+                if (strcasecmp($address, 'contact@koinoborihouse.com') !== 0
+                    && !preg_match('/^kh2027-http-[a-z0-9-]+@example\.invalid$/i', $address)) {
+                    $addresses_allowed = false;
+                }
+            }
+        }
+        $checks = array(
+            'is_string' => $string,
+            'length_min' => $length >= 40,
+            'length_max' => $length <= 50000,
+            'html_present' => $string && strpos($message, '<') !== false,
+            'addresses_allowed' => $addresses_allowed,
+            'length' => $length,
+            'address_count' => $address_count,
+        );
+        $GLOBALS['kh_review_notification_test_message_checks'] = $checks;
+        return $checks['is_string'] && $checks['length_min'] && $checks['length_max']
+            && $checks['html_present'] && $checks['addresses_allowed'];
+    }
+    function kh_review_notification_test_wp_mail($atts) {
+        $limits = kh_review_notification_test_limits();
+        $subject = isset($atts['subject']) && is_string($atts['subject']) ? $atts['subject'] : '';
+        $headers = kh_review_notification_test_headers($atts['headers'] ?? array());
+        $from = kh_review_notification_test_header_values($headers, 'From');
+        $reply_to = kh_review_notification_test_header_values($headers, 'Reply-To');
+        $copies = array_merge(
+            kh_review_notification_test_header_values($headers, 'Cc'),
+            kh_review_notification_test_header_values($headers, 'Bcc')
+        );
+        $reply_valid = count($reply_to) <= 1;
+        if ($reply_to) {
+            $reply_value = preg_replace('/^.*<([^>]+)>.*$/', '$1', $reply_to[0]);
+            $reply_valid = strcasecmp($reply_value, 'contact@koinoborihouse.com') === 0
+                || preg_match('/^kh2027-http-[a-z0-9-]+@example\.invalid$/i', $reply_value);
+        }
+        $checks = array(
+            'subject_allowed' => isset($limits[$subject]),
+            'subject_below_limit' => isset($limits[$subject])
+                && ($GLOBALS['kh_review_notification_test_counts'][$subject] ?? 0) < $limits[$subject],
+            'from_valid' => $from === array('Koinobori House <contact@koinoborihouse.com>'),
+            'reply_to_valid' => $reply_valid,
+            'copies_absent' => !$copies,
+            'attachments_absent' => empty($atts['attachments']),
+            'message_synthetic' => kh_review_notification_test_message_is_synthetic($atts['message'] ?? null),
+        );
+        if (in_array(false, $checks, true)) {
+            $GLOBALS['kh_review_notification_test_last_block'] = $checks;
+            $atts['subject'] = '[KH2027 BLOCKED]';
+            return $atts;
+        }
+        ++$GLOBALS['kh_review_notification_test_counts'][$subject];
+        $atts['to'] = array(KH2027_MAIL_TEST_RECIPIENT);
+        $atts['subject'] = '[KH2027 NOTIFICATION TEST] ' . $subject;
+        $atts['headers'] = array(
+            'Content-Type: text/html; charset=UTF-8',
+            'From: Koinobori House <contact@koinoborihouse.com>',
+            'Reply-To: Koinobori House <contact@koinoborihouse.com>',
+        );
+        $atts['attachments'] = array();
+        return $atts;
+    }
+    function kh_review_notification_test_pre_wp_mail($return, $atts) {
+        $subject = isset($atts['subject']) && is_string($atts['subject']) ? $atts['subject'] : '';
+        $prefix = '[KH2027 NOTIFICATION TEST] ';
+        $original_subject = 0 === strpos($subject, $prefix) ? substr($subject, strlen($prefix)) : '';
+        $limits = kh_review_notification_test_limits();
+        $to = $atts['to'] ?? array();
+        if (!is_array($to)) { $to = array($to); }
+        $headers = kh_review_notification_test_headers($atts['headers'] ?? array());
+        $reply_to = kh_review_notification_test_header_values($headers, 'Reply-To');
+        $reply_value = $reply_to
+            ? preg_replace('/^.*<([^>]+)>.*$/', '$1', $reply_to[0])
+            : '';
+        $observed = $GLOBALS['kh_review_notification_test_counts'][$original_subject] ?? 0;
+        $valid = isset($limits[$original_subject])
+            && $observed >= 1 && $observed <= $limits[$original_subject]
+            && $to === array(KH2027_MAIL_TEST_RECIPIENT)
+            && kh_review_notification_test_header_values($headers, 'From')
+                === array('Koinobori House <contact@koinoborihouse.com>')
+            && count($reply_to) <= 1
+            && (!$reply_to || strcasecmp($reply_value, 'contact@koinoborihouse.com') === 0
+                || preg_match('/^kh2027-http-[a-z0-9-]+@example\.invalid$/i', $reply_value))
+            && !kh_review_notification_test_header_values($headers, 'Cc')
+            && !kh_review_notification_test_header_values($headers, 'Bcc')
+            && empty($atts['attachments'])
+            && kh_review_notification_test_message_is_synthetic($atts['message'] ?? null);
+        return $valid ? $return : new WP_Error(
+            'kh2027_notification_mail_blocked',
+            'Mail outside the isolated notification test was blocked.'
+        );
+    }
+    $GLOBALS['kh_review_notification_test_counts'] = array_fill_keys(
+        array_keys(kh_review_notification_test_limits()),
+        0
+    );
+    add_filter('wp_mail', 'kh_review_notification_test_wp_mail', PHP_INT_MAX);
+    add_filter('pre_wp_mail', 'kh_review_notification_test_pre_wp_mail', -PHP_INT_MAX, 2);
+    add_filter('fluentform/email_to', function () {
+        return KH2027_MAIL_TEST_RECIPIENT;
+    }, PHP_INT_MAX, 4);
+} elseif ($kh_review_mail_test) {
     function kh_review_mail_test_subject() {
         return '[KH2027 SMTP TEST] Koinobori House';
     }
@@ -155,7 +300,7 @@ if ($kh_review_mail_test) {
 } else {
     add_filter('pre_wp_mail', '__return_true', PHP_INT_MAX);
 }
-unset($kh_review_mail_test);
+unset($kh_review_mail_test, $kh_review_notification_test, $kh_review_smtp_test);
 add_filter('woocommerce_available_payment_gateways', '__return_empty_array', PHP_INT_MAX);
 add_filter('action_scheduler_allow_async_request_runner', '__return_false', PHP_INT_MAX);
 add_filter('xmlrpc_enabled', '__return_false');

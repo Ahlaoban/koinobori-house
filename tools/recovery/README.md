@@ -193,6 +193,34 @@ intervention supplémentaire.
 Les boutons de commande et avis sont retirés de la consultation. Cela ne remplace
 ni les règles Apache, ni l'inventaire des extensions PHP, ni la recette métier.
 
+La recette des notifications utilise un second mode, exclusivement CLI, activé
+par `KH2027_NOTIFICATION_TEST_APPROVED=twelve-notifications-once` dans le même
+runtime SMTP privé. Le garde autorise exactement les huit sujets attendus, avec
+des plafonds totalisant douze messages, puis force chaque destinataire vers
+`KH2027_MAIL_TEST_RECIPIENT`. Il retire les copies et pièces jointes, remplace le
+Reply-To par l'adresse de marque et ajoute le préfixe
+`[KH2027 NOTIFICATION TEST]`. Le corps ne peut contenir que l'adresse de marque
+et une adresse synthétique `kh2027-http-…@example.invalid`.
+
+`enquiry_notification_test_runtime.php` vérifie les versions, la connexion Brevo,
+les identifiants privés, les douze modèles toujours désactivés et la dernière
+soumission synthétique de chaque formulaire. Le contrôle à blanc
+`check_enquiry_notification_test_runtime.php` n'appelle jamais `wp_mail()`.
+`check_rendered_enquiry_notifications.php` fait ensuite rendre les douze modèles
+par Fluent Forms tout en interceptant le transport, afin de contrôler les corps
+HTML et les enveloppes réellement produits sans envoyer de message.
+`send_enquiry_notification_tests.php` appelle le service natif de Fluent Forms
+pour les douze modèles sans les activer en base. Un registre privé créé en mode
+exclusif interdit de relancer le même lot, y compris après un arrêt partiel.
+`run_enquiry_notification_tests.sh` exécute d'abord le contrôle à blanc, puis le
+lot autorisé, dans le runtime qui conserve HTTP externe, cron et fonctions système
+bloqués. Le runtime web ne reçoit aucune exception SMTP.
+
+Le lot du 16 septembre 2026 a passé les contrôles statiques et les douze rendus.
+FluentSMTP a accepté exactement douze messages, sans copie ni pièce jointe, et
+les journaux Brevo ont confirmé douze événements `Delivered` vers l'unique
+adresse de recette autorisée.
+
 Le garde sélectionne les deux accueils pilotes et la présentation produit sans
 modifier leurs métadonnées SQL. Il charge la dépendance CSS absente des versions
 anciennes du thème restauré. Les anciennes origines sont remplacées dans le HTML
