@@ -83,11 +83,44 @@ if ( file_exists( $out_path ) ) {
 }
 
 // ---------------------------------------------------------------------------
-// Helpers (read only)
+// Helpers (read only). Every SQL read goes through a wrapper that fails the
+// whole run on the first database error: a failed query must never surface as
+// an empty section in an inventory presented as complete.
 // ---------------------------------------------------------------------------
+function kh_inv_db_check( $sql ) {
+	global $wpdb;
+	if ( '' !== (string) $wpdb->last_error ) {
+		throw new RuntimeException( 'Database error on: ' . substr( preg_replace( '/\s+/', ' ', $sql ), 0, 120 ) . ' -> ' . $wpdb->last_error );
+	}
+}
+
+function kh_inv_results( $sql, $output = OBJECT ) {
+	global $wpdb;
+	$wpdb->last_error = '';
+	$rows = $wpdb->get_results( $sql, $output ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	kh_inv_db_check( $sql );
+	return $rows;
+}
+
+function kh_inv_col( $sql ) {
+	global $wpdb;
+	$wpdb->last_error = '';
+	$col = $wpdb->get_col( $sql ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	kh_inv_db_check( $sql );
+	return $col;
+}
+
+function kh_inv_var( $sql ) {
+	global $wpdb;
+	$wpdb->last_error = '';
+	$var = $wpdb->get_var( $sql ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+	kh_inv_db_check( $sql );
+	return $var;
+}
+
 function kh_inv_table_exists( $table ) {
 	global $wpdb;
-	return $table === $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table ) ) );
+	return $table === kh_inv_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table ) ) );
 }
 
 function kh_inv_unserialize( $value ) {
@@ -110,7 +143,7 @@ function kh_inv_text( $value ) {
 /** Map post ID => language slug from Polylang's `language` taxonomy. */
 function kh_inv_post_languages() {
 	global $wpdb;
-	$rows = $wpdb->get_results(
+	$rows = kh_inv_results(
 		"SELECT tr.object_id, t.slug FROM {$wpdb->term_relationships} tr
 		 JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
 		 JOIN {$wpdb->terms} t ON t.term_id = tt.term_id
@@ -126,7 +159,7 @@ function kh_inv_post_languages() {
 /** Map post ID => array( lang => id ) from Polylang's `post_translations` taxonomy. */
 function kh_inv_post_translations() {
 	global $wpdb;
-	$rows = $wpdb->get_results(
+	$rows = kh_inv_results(
 		"SELECT tr.object_id, tt.description FROM {$wpdb->term_relationships} tr
 		 JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
 		 WHERE tt.taxonomy = 'post_translations'"
@@ -149,7 +182,7 @@ function kh_inv_meta_map( $post_ids, $meta_key ) {
 		return array();
 	}
 	$ids  = implode( ',', array_map( 'intval', $post_ids ) );
-	$rows = $wpdb->get_results( $wpdb->prepare( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = %s AND post_id IN ($ids)", $meta_key ) ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$rows = kh_inv_results( $wpdb->prepare( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE meta_key = %s AND post_id IN ($ids)", $meta_key ) ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 	$map  = array();
 	foreach ( (array) $rows as $row ) {
 		$map[ (int) $row->post_id ] = (string) $row->meta_value;
@@ -159,7 +192,7 @@ function kh_inv_meta_map( $post_ids, $meta_key ) {
 
 function kh_inv_posts( $post_type, $languages, $translations ) {
 	global $wpdb;
-	$rows = $wpdb->get_results( $wpdb->prepare(
+	$rows = kh_inv_results( $wpdb->prepare(
 		"SELECT ID, post_status, post_name, post_title, post_parent, post_modified_gmt FROM {$wpdb->posts}
 		 WHERE post_type = %s AND post_status IN ('publish','draft','pending','private','future') ORDER BY ID",
 		$post_type
@@ -258,11 +291,12 @@ try {
 	$litespeed = get_option( 'litespeed.conf.cache' );
 	$options['litespeed.conf.cache'] = null === $litespeed || false === $litespeed ? null : (bool) $litespeed;
 	$seopress = kh_inv_unserialize( get_option( 'seopress_xml_sitemap_option_name' ) );
-	$options['seopress_xml_sitemap_general_enable'] = isset( $seopress['xml_sitemap_general_enable'] ) ? (bool) $seopress['xml_sitemap_general_enable'] : null;
+	// Key name per SEOPress src/Services/Options/SitemapOption.php (prefixed inside the option array).
+	$options['seopress_xml_sitemap_general_enable'] = isset( $seopress['seopress_xml_sitemap_general_enable'] ) ? (bool) $seopress['seopress_xml_sitemap_general_enable'] : null;
 	$options['cmplz_wizard_completed'] = (bool) get_option( 'cmplz_wizard_completed' );
 	$data['options'] = $options;
 
-	$lang_rows = $wpdb->get_results(
+	$lang_rows = kh_inv_results(
 		"SELECT t.slug, tt.description FROM {$wpdb->term_taxonomy} tt JOIN {$wpdb->terms} t ON t.term_id = tt.term_id WHERE tt.taxonomy = 'language'"
 	);
 	$languages = array();
@@ -280,13 +314,13 @@ try {
 
 	$theme_mods = kh_inv_unserialize( get_option( 'theme_mods_' . get_option( 'stylesheet' ) ) );
 	$locations  = (array) ( $theme_mods['nav_menu_locations'] ?? array() );
-	$menu_terms = $wpdb->get_results(
+	$menu_terms = kh_inv_results(
 		"SELECT t.term_id, t.name FROM {$wpdb->term_taxonomy} tt JOIN {$wpdb->terms} t ON t.term_id = tt.term_id WHERE tt.taxonomy = 'nav_menu' ORDER BY t.term_id"
 	);
 	$menus = array();
 	foreach ( (array) $menu_terms as $term ) {
 		$term_id  = (int) $term->term_id;
-		$item_ids = $wpdb->get_col( $wpdb->prepare(
+		$item_ids = kh_inv_col( $wpdb->prepare(
 			"SELECT p.ID FROM {$wpdb->posts} p JOIN {$wpdb->term_relationships} tr ON tr.object_id = p.ID
 			 JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
 			 WHERE tt.taxonomy = 'nav_menu' AND tt.term_id = %d AND p.post_type = 'nav_menu_item' AND p.post_status = 'publish' ORDER BY p.menu_order",
@@ -299,9 +333,9 @@ try {
 		$urls     = kh_inv_meta_map( $item_ids, '_menu_item_url' );
 		$items    = array();
 		foreach ( $item_ids as $order => $id ) {
-			$title = kh_inv_text( $wpdb->get_var( $wpdb->prepare( "SELECT post_title FROM {$wpdb->posts} WHERE ID = %d", $id ) ) );
+			$title = kh_inv_text( kh_inv_var( $wpdb->prepare( "SELECT post_title FROM {$wpdb->posts} WHERE ID = %d", $id ) ) );
 			if ( '' === $title && ( $types[ $id ] ?? '' ) === 'post_type' ) {
-				$title = kh_inv_text( $wpdb->get_var( $wpdb->prepare( "SELECT post_title FROM {$wpdb->posts} WHERE ID = %d", (int) ( $obj_ids[ $id ] ?? 0 ) ) ) );
+				$title = kh_inv_text( kh_inv_var( $wpdb->prepare( "SELECT post_title FROM {$wpdb->posts} WHERE ID = %d", (int) ( $obj_ids[ $id ] ?? 0 ) ) ) );
 			}
 			$items[] = array(
 				'order'     => $order + 1,
@@ -321,14 +355,14 @@ try {
 	}
 	$data['menus'] = $menus;
 
-	$product_rows = $wpdb->get_results(
+	$product_rows = kh_inv_results(
 		"SELECT ID, post_status FROM {$wpdb->posts} WHERE post_type = 'product' AND post_status IN ('publish','draft','pending','private','future') ORDER BY ID"
 	);
 	$product_ids = array_map( static function ( $r ) { return (int) $r->ID; }, (array) $product_rows );
 	$skus        = kh_inv_meta_map( $product_ids, '_sku' );
 	$thumbs      = kh_inv_meta_map( $product_ids, '_thumbnail_id' );
 	$galleries   = kh_inv_meta_map( $product_ids, '_product_image_gallery' );
-	$type_rows   = $wpdb->get_results(
+	$type_rows   = kh_inv_results(
 		"SELECT tr.object_id, t.slug FROM {$wpdb->term_relationships} tr JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
 		 JOIN {$wpdb->terms} t ON t.term_id = tt.term_id WHERE tt.taxonomy = 'product_type'"
 	);
@@ -336,7 +370,7 @@ try {
 	foreach ( (array) $type_rows as $row ) {
 		$types[ (int) $row->object_id ] = (string) $row->slug;
 	}
-	$var_rows = $wpdb->get_results(
+	$var_rows = kh_inv_results(
 		"SELECT ID, post_parent FROM {$wpdb->posts} WHERE post_type = 'product_variation' AND post_status IN ('publish','private') ORDER BY ID"
 	);
 	$var_ids   = array_map( static function ( $r ) { return (int) $r->ID; }, (array) $var_rows );
@@ -367,7 +401,7 @@ try {
 
 	$forms = array();
 	if ( kh_inv_table_exists( $prefix . 'fluentform_forms' ) ) {
-		$form_rows = $wpdb->get_results( "SELECT id, title, status, form_fields FROM {$prefix}fluentform_forms ORDER BY id" );
+		$form_rows = kh_inv_results( "SELECT id, title, status, form_fields FROM {$prefix}fluentform_forms ORDER BY id" );
 		foreach ( (array) $form_rows as $row ) {
 			$form_id = (int) $row->id;
 			$fields  = array();
@@ -375,7 +409,7 @@ try {
 			kh_inv_form_fields( $decoded['fields'] ?? array(), $fields );
 			$notifications = array();
 			if ( kh_inv_table_exists( $prefix . 'fluentform_form_meta' ) ) {
-				$meta_rows = $wpdb->get_col( $wpdb->prepare( "SELECT value FROM {$prefix}fluentform_form_meta WHERE form_id = %d AND meta_key = 'notifications'", $form_id ) );
+				$meta_rows = kh_inv_col( $wpdb->prepare( "SELECT value FROM {$prefix}fluentform_form_meta WHERE form_id = %d AND meta_key = 'notifications'", $form_id ) );
 				foreach ( (array) $meta_rows as $value ) {
 					$n = json_decode( (string) $value, true );
 					if ( ! is_array( $n ) ) {
@@ -391,7 +425,7 @@ try {
 				}
 			}
 			$submissions = kh_inv_table_exists( $prefix . 'fluentform_submissions' )
-				? (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$prefix}fluentform_submissions WHERE form_id = %d", $form_id ) )
+				? (int) kh_inv_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$prefix}fluentform_submissions WHERE form_id = %d", $form_id ) )
 				: 0;
 			$forms[] = array(
 				'id'                        => $form_id,
@@ -409,12 +443,12 @@ try {
 
 	$zones = array();
 	if ( kh_inv_table_exists( $prefix . 'woocommerce_shipping_zones' ) ) {
-		$zone_rows = $wpdb->get_results( "SELECT zone_id, zone_name FROM {$prefix}woocommerce_shipping_zones ORDER BY zone_order, zone_id" );
+		$zone_rows = kh_inv_results( "SELECT zone_id, zone_name FROM {$prefix}woocommerce_shipping_zones ORDER BY zone_order, zone_id" );
 		$zone_rows[] = (object) array( 'zone_id' => 0, 'zone_name' => 'Rest of the world' );
 		foreach ( $zone_rows as $zone ) {
 			$zone_id   = (int) $zone->zone_id;
-			$locs      = $wpdb->get_results( $wpdb->prepare( "SELECT location_code, location_type FROM {$prefix}woocommerce_shipping_zone_locations WHERE zone_id = %d", $zone_id ) );
-			$methods   = $wpdb->get_results( $wpdb->prepare( "SELECT instance_id, method_id, is_enabled FROM {$prefix}woocommerce_shipping_zone_methods WHERE zone_id = %d ORDER BY method_order", $zone_id ) );
+			$locs      = kh_inv_results( $wpdb->prepare( "SELECT location_code, location_type FROM {$prefix}woocommerce_shipping_zone_locations WHERE zone_id = %d", $zone_id ) );
+			$methods   = kh_inv_results( $wpdb->prepare( "SELECT instance_id, method_id, is_enabled FROM {$prefix}woocommerce_shipping_zone_methods WHERE zone_id = %d ORDER BY method_order", $zone_id ) );
 			$locations = array();
 			foreach ( (array) $locs as $loc ) {
 				$locations[] = array( 'type' => (string) $loc->location_type, 'code' => (string) $loc->location_code );
@@ -431,17 +465,17 @@ try {
 
 	$orders = array();
 	if ( kh_inv_table_exists( $prefix . 'wc_orders' ) ) {
-		foreach ( (array) $wpdb->get_results( "SELECT status, COUNT(*) AS n FROM {$prefix}wc_orders WHERE type = 'shop_order' GROUP BY status" ) as $row ) {
+		foreach ( (array) kh_inv_results( "SELECT status, COUNT(*) AS n FROM {$prefix}wc_orders WHERE type = 'shop_order' GROUP BY status" ) as $row ) {
 			$orders[ (string) $row->status ] = (int) $row->n;
 		}
 	}
-	foreach ( (array) $wpdb->get_results( "SELECT post_status, COUNT(*) AS n FROM {$wpdb->posts} WHERE post_type = 'shop_order' GROUP BY post_status" ) as $row ) {
+	foreach ( (array) kh_inv_results( "SELECT post_status, COUNT(*) AS n FROM {$wpdb->posts} WHERE post_type = 'shop_order' GROUP BY post_status" ) as $row ) {
 		$orders[ 'legacy:' . $row->post_status ] = (int) $row->n;
 	}
 	$data['orders_by_status'] = $orders;
 
 	$roles = array();
-	foreach ( (array) $wpdb->get_col( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = %s", $prefix . 'capabilities' ) ) as $caps ) {
+	foreach ( (array) kh_inv_col( $wpdb->prepare( "SELECT meta_value FROM {$wpdb->usermeta} WHERE meta_key = %s", $prefix . 'capabilities' ) ) as $caps ) {
 		foreach ( array_keys( array_filter( kh_inv_unserialize( $caps ) ) ) as $role ) {
 			$roles[ (string) $role ] = ( $roles[ (string) $role ] ?? 0 ) + 1;
 		}
@@ -450,7 +484,7 @@ try {
 
 	$failed = array();
 	if ( kh_inv_table_exists( $prefix . 'actionscheduler_actions' ) ) {
-		foreach ( (array) $wpdb->get_results( "SELECT hook, COUNT(*) AS n FROM {$prefix}actionscheduler_actions WHERE status = 'failed' GROUP BY hook" ) as $row ) {
+		foreach ( (array) kh_inv_results( "SELECT hook, COUNT(*) AS n FROM {$prefix}actionscheduler_actions WHERE status = 'failed' GROUP BY hook" ) as $row ) {
 			$failed[ (string) $row->hook ] = (int) $row->n;
 		}
 	}
@@ -475,8 +509,8 @@ $manifest = array(
 	'guards'            => $guards,
 	'sections_included' => array_keys( $data ),
 	'sections_omitted'  => array( 'page_content', 'post_content', 'order_content', 'submissions_content', 'users', 'payment_settings', 'smtp_settings', 'wordfence', 'stock_quantities' ),
-	'sha256_private'    => '',
-	'sha256_public'     => '',
+	// File checksums live in the external .sha256 files only: a checksum embedded
+	// in the file it describes can never match that file.
 );
 $output = array( 'manifest' => $manifest ) + $data;
 

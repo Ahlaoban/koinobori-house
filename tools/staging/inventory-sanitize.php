@@ -42,8 +42,9 @@ function kh_san_url( string $url ): string {
 	return ( $parts['scheme'] ?? 'https' ) . '://' . $parts['host'] . ( $parts['path'] ?? '/' );
 }
 
-// 1. Drop private keys.
-unset( $data['paths'], $data['orders_by_status'], $data['users_by_role'], $data['manifest']['sha256_private'] );
+// 1. Drop private keys. Embedded checksums (legacy exports) are dropped too:
+// the external .sha256 file is the only reference for the final file.
+unset( $data['paths'], $data['orders_by_status'], $data['users_by_role'], $data['manifest']['sha256_private'], $data['manifest']['sha256_public'] );
 foreach ( $data['forms'] ?? array() as $i => $form ) {
 	unset( $data['forms'][ $i ]['notifications'], $data['forms'][ $i ]['submissions_count'] );
 }
@@ -65,8 +66,6 @@ $data['manifest']['sections_omitted']  = array_values( array_unique( array_merge
 	(array) ( $data['manifest']['sections_omitted'] ?? array() ),
 	array( 'paths', 'orders_by_status', 'users_by_role', 'forms.notifications', 'forms.submissions_count' )
 ) ) );
-$data['manifest']['sha256_public'] = '';
-
 $public = json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR ) . "\n";
 
 // 3. Blocking scans on the serialized output.
@@ -98,9 +97,8 @@ if ( file_exists( $out_path ) ) {
 	fwrite( STDERR, "Output exists, refusing to overwrite.\n" );
 	exit( 1 );
 }
-$data['manifest']['sha256_public'] = hash( 'sha256', $public );
-$public = json_encode( $data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR ) . "\n";
 file_put_contents( $out_path, $public );
+chmod( $out_path, 0600 );
 $sha = hash_file( 'sha256', $out_path );
 file_put_contents( $out_path . '.sha256', $sha . '  ' . basename( $out_path ) . "\n" );
 
