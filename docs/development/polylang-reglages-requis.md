@@ -14,10 +14,21 @@ Réglage constaté faux sur le staging source le 2026-09-10 et corrigé uniqueme
 wp option pluck polylang redirect_lang
 wp option pluck polylang hide_default
 wp option pluck polylang force_lang
-curl -sI https://staging.koinoborihouse.com/fr/ | grep -i -E "^HTTP|^link"
 ```
 
-`/fr/` doit renvoyer `200` et le HTML doit contenir `id="kh-home-title"` (gabarit `kh-home.php`) et non la liste des articles.
+Contrôle HTTP, en deux temps par langue (le staging est derrière une authentification basique : passer `-u` avec les identifiants saisis au clavier, jamais dans un script) :
+
+```
+# En-têtes seuls : statut attendu 200, aucune redirection
+curl -sS -I -u "$KH_BASIC_USER" https://staging.koinoborihouse.com/fr/ | grep -i -E "^HTTP|^location"
+curl -sS -I -u "$KH_BASIC_USER" https://staging.koinoborihouse.com/en/ | grep -i -E "^HTTP|^location"
+
+# Corps : le gabarit d'accueil doit être rendu (1 occurrence attendue), pas l'index du blog
+curl -sS -u "$KH_BASIC_USER" https://staging.koinoborihouse.com/fr/ | grep -c 'id="kh-home-title"'
+curl -sS -u "$KH_BASIC_USER" https://staging.koinoborihouse.com/en/ | grep -c 'id="kh-home-title"'
+```
+
+Attendu : `HTTP/2 200` sans `location` pour `/fr/` et `/en/`, et `1` aux deux comptages. Un `0` signifie que la racine de langue sert encore l'archive des articles.
 
 ## Correction (point de contrôle 4, après sauvegarde vérifiée)
 

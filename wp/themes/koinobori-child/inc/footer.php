@@ -26,10 +26,10 @@ add_action( 'wp_enqueue_scripts', function () {
 }, 30 );
 
 /** Keep missing/unpublished translations out of navigation, as in the header. */
-function koinobori_child_footer_links( $entries, $language, $require_published = true ) {
+function koinobori_child_footer_links( $entries, $language ) {
 	$links = array();
 	foreach ( $entries as $entry ) {
-		$url = koinobori_child_editorial_page_url( $entry[0], $language, $require_published );
+		$url = koinobori_child_editorial_page_url( $entry[0], $language );
 		if ( $url ) {
 			$links[] = array( 'url' => $url, 'label' => 'en' === $language ? $entry[2] : $entry[1] );
 		}
@@ -48,19 +48,47 @@ function koinobori_child_footer_legal_entries() {
 	);
 }
 
-add_action( 'admin_notices', function () {
-	if ( ! current_user_can( 'manage_options' ) || ! koinobori_child_footer_enabled() ) { return; }
-	$missing = array();
+/**
+ * Legal link: the published translation, else the published French page, else nothing.
+ * A draft is never linked; a missing published French page is blocking before launch.
+ */
+function koinobori_child_footer_legal_url( $fr_slug, $language ) {
+	$url = koinobori_child_editorial_page_url( $fr_slug, $language );
+	if ( '' === $url && 'fr' !== $language ) {
+		$url = koinobori_child_editorial_page_url( $fr_slug, 'fr' );
+	}
+	return $url;
+}
+
+function koinobori_child_footer_legal_links( $language ) {
+	$links = array();
 	foreach ( koinobori_child_footer_legal_entries() as $entry ) {
-		foreach ( array( 'fr', 'en' ) as $language ) {
-			if ( ! koinobori_child_editorial_page_url( $entry[0], $language ) ) {
-				$missing[] = $entry[0] . ' (' . $language . ')';
-			}
+		$url = koinobori_child_footer_legal_url( $entry[0], $language );
+		if ( $url ) {
+			$links[] = array( 'url' => $url, 'label' => 'en' === $language ? $entry[2] : $entry[1] );
 		}
 	}
-	if ( $missing ) {
-		echo '<div class="notice notice-error"><p>Koinobori House : page légale absente ou non publiée, le lien du footer ne mène pas à une page publique : '
-			. esc_html( implode( ', ', $missing ) ) . '.</p></div>';
+	return $links;
+}
+
+add_action( 'admin_notices', function () {
+	if ( ! current_user_can( 'manage_options' ) || ! koinobori_child_footer_enabled() ) { return; }
+	$blocking = array();
+	$fallback = array();
+	foreach ( koinobori_child_footer_legal_entries() as $entry ) {
+		if ( ! koinobori_child_editorial_page_url( $entry[0], 'fr' ) ) {
+			$blocking[] = $entry[0];
+		} elseif ( ! koinobori_child_editorial_page_url( $entry[0], 'en' ) ) {
+			$fallback[] = $entry[0];
+		}
+	}
+	if ( $blocking ) {
+		echo '<div class="notice notice-error"><p><strong>Koinobori House, bloquant avant mise en ligne :</strong> page légale française absente ou non publiée, aucun lien légal possible dans le footer : '
+			. esc_html( implode( ', ', $blocking ) ) . '.</p></div>';
+	}
+	if ( $fallback ) {
+		echo '<div class="notice notice-warning"><p>Koinobori House : traduction anglaise absente ou non publiée, le footer EN renvoie vers la page française : '
+			. esc_html( implode( ', ', $fallback ) ) . '.</p></div>';
 	}
 } );
 
@@ -82,7 +110,7 @@ function koinobori_child_footer_render() {
 			array( 'collectivites', 'Collectivités', 'Institutions' ),
 		) ),
 	);
-	$legal = koinobori_child_footer_links( koinobori_child_footer_legal_entries(), $language, false );
+	$legal = koinobori_child_footer_legal_links( $language );
 	// Polylang owns translated URLs, including product/category translations.
 	// https://polylang.pro/documentation/support/developers/function-reference/#pll_the_languages
 	$languages = function_exists( 'pll_the_languages' ) ? pll_the_languages( array(

@@ -25,32 +25,17 @@ add_action( 'wp_enqueue_scripts', function () {
 	}
 }, 25 );
 
-/**
- * Resolve a page in the requested language; never invent a destination.
- * Strict mode returns '' unless the translation is published. Lenient mode
- * (legal links) falls back to the French page and keeps the link even while
- * the page is temporarily unpublished, so mandatory links never vanish.
- */
-function koinobori_child_editorial_page_url( $fr_slug, $language, $require_published = true ) {
+/** Resolve a published page in the requested language; never invent a destination. */
+function koinobori_child_editorial_page_url( $fr_slug, $language ) {
 	$page = get_page_by_path( $fr_slug );
 	if ( ! $page ) {
 		return '';
 	}
-	$fr_id = $page->ID;
-	$id    = $fr_id;
+	$id = $page->ID;
 	if ( function_exists( 'pll_get_post' ) ) {
-		$id = pll_get_post( $fr_id, $language );
+		$id = pll_get_post( $id, $language );
 	}
-	if ( $id && 'publish' === get_post_status( $id ) ) {
-		return get_permalink( $id );
-	}
-	if ( $require_published ) {
-		return '';
-	}
-	if ( 'publish' === get_post_status( $fr_id ) ) {
-		return get_permalink( $fr_id );
-	}
-	return get_permalink( $id ? $id : $fr_id );
+	return $id && 'publish' === get_post_status( $id ) ? get_permalink( $id ) : '';
 }
 
 /** Keep category IDs and translated URLs under WooCommerce/Polylang authority. */
