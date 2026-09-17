@@ -4,9 +4,9 @@ Lecture seule. Session cPanel ouverte par Alain, terminal cPanel. Aucune clé SS
 
 ## Prérequis (Alain)
 
-1. Renseigner `KH_STAGING_ROOT` dans `inventory.php` avec le chemin réel du docroot staging (gestionnaire de fichiers cPanel). Tant qu'il est vide, le script refuse de tourner.
-2. Confirmer `heal3867_wp320` et le préfixe `wprs_`.
-3. Poser `define( 'WP_ENVIRONMENT_TYPE', 'staging' );` dans le `wp-config.php` du staging (une ligne, capture avant/après). Sans elle, la garde `environment_staging` échoue.
+1. `KH_STAGING_ROOT` = `/home3/heal3867/staging.koinoborihouse.com`, `KH_STAGING_DB` = `heal3867_wp551`, préfixe `wprs_` (relevés en session cPanel le 2026-09-17 ; la base `wp320` de juin est périmée).
+2. La production est `heal3867_wp354` sur le même compte : le script la refuse explicitement.
+3. `WP_ENVIRONMENT_TYPE` vaut déjà `staging` sur le staging (vérifié le 2026-09-17) : rien à poser.
 4. Créer hors racine web : `~/kh2027-private/tools/` et `~/kh2027-private/inventory/` (`chmod 700`).
 
 ## Dépôt du script
@@ -40,7 +40,7 @@ wp eval 'echo wp_get_environment_type(), PHP_EOL;'
 wp eval 'echo realpath( ABSPATH ), PHP_EOL;'
 ```
 
-Attendus : `heal3867_wp320`, `wprs_`, `staging`, chemin = `KH_STAGING_ROOT`.
+Attendus : `heal3867_wp551`, `wprs_`, `staging`, chemin = `KH_STAGING_ROOT`.
 
 ## Exécution
 

@@ -21,11 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 // the real document root: an empty value makes the realpath guard fail.
 // ---------------------------------------------------------------------------
 const KH_STAGING_HOST   = 'staging.koinoborihouse.com';
-const KH_STAGING_DB     = 'heal3867_wp320';
+const KH_STAGING_DB     = 'heal3867_wp551';
 const KH_FORBIDDEN_DB   = 'wp354';
 const KH_STAGING_PREFIX = 'wprs_';
-const KH_STAGING_ROOT   = '';
-const KH_PRIVATE_ROOT   = '/home/heal3867/kh2027-private';
+const KH_STAGING_ROOT   = '/home3/heal3867/staging.koinoborihouse.com';
+const KH_PRIVATE_ROOT   = '/home3/heal3867/kh2027-private';
 
 const KH_OPTION_ALLOWLIST = array(
 	'siteurl', 'home', 'blogname', 'show_on_front', 'page_on_front', 'page_for_posts',
