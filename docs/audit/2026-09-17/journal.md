@@ -17,3 +17,4 @@ Session cPanel ouverte par Alain (`cow.o2switch.net:2083`, compte `heal3867`), t
 Fichiers serveur laissés en place (hors racine web, `0600`/`0700`) : `~/kh2027-private/tools/inventory.php`, `inventory-sanitize.php`, `~/kh2027-private/inventory/*.private.json`, `*.public.json`, `*.sha256`.
 
 Écarts par rapport à la procédure prévue : aucun. Correction préalable : constantes `KH_STAGING_DB` / `KH_STAGING_ROOT` / `KH_PRIVATE_ROOT` mises à jour depuis les valeurs relevées (commit `85b4030`) avant dépôt.
+| 09:47 | privé → poste | autorisation Alain (« OK ») ; `zip -j public-20260917.zip <public.json> <.sha256>` (SHA-256 zip `190f4674d678dc4cf2e4e5a65d20e1b8095501a54a687d96b35720595729896e`) ; téléchargement cPanel ; extraction locale | SHA-256 du JSON public recontrôlé en local = `8be47d89…d038` ; `JSON.parse` OK ; grep `heal3867|/home3|xkeysib|@domaine` = 0 ; fichiers committés dans `docs/audit/2026-09-17/` |
