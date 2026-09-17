@@ -26,16 +26,43 @@ add_action( 'wp_enqueue_scripts', function () {
 }, 30 );
 
 /** Keep missing/unpublished translations out of navigation, as in the header. */
-function koinobori_child_footer_links( $entries, $language ) {
+function koinobori_child_footer_links( $entries, $language, $require_published = true ) {
 	$links = array();
 	foreach ( $entries as $entry ) {
-		$url = koinobori_child_editorial_page_url( $entry[0], $language );
+		$url = koinobori_child_editorial_page_url( $entry[0], $language, $require_published );
 		if ( $url ) {
 			$links[] = array( 'url' => $url, 'label' => 'en' === $language ? $entry[2] : $entry[1] );
 		}
 	}
 	return $links;
 }
+
+/** Mandatory legal pages: LCEN identification, terms of sale, privacy, cookies. */
+function koinobori_child_footer_legal_entries() {
+	return array(
+		array( 'mentions-legales', 'Mentions légales', 'Legal notice' ),
+		array( 'conditions-generales-de-vente', 'CGV', 'Terms of sale' ),
+		array( 'politique-de-confidentialite', 'Confidentialité', 'Privacy' ),
+		// Link to the real policy; consent management is provided by Complianz separately.
+		array( 'politique-cookies', 'Cookies', 'Cookies' ),
+	);
+}
+
+add_action( 'admin_notices', function () {
+	if ( ! current_user_can( 'manage_options' ) || ! koinobori_child_footer_enabled() ) { return; }
+	$missing = array();
+	foreach ( koinobori_child_footer_legal_entries() as $entry ) {
+		foreach ( array( 'fr', 'en' ) as $language ) {
+			if ( ! koinobori_child_editorial_page_url( $entry[0], $language ) ) {
+				$missing[] = $entry[0] . ' (' . $language . ')';
+			}
+		}
+	}
+	if ( $missing ) {
+		echo '<div class="notice notice-error"><p>Koinobori House : page légale absente ou non publiée, le lien du footer ne mène pas à une page publique : '
+			. esc_html( implode( ', ', $missing ) ) . '.</p></div>';
+	}
+} );
 
 function koinobori_child_footer_render() {
 	$language = koinobori_child_header_text( 'fr', 'en' );
@@ -55,13 +82,7 @@ function koinobori_child_footer_render() {
 			array( 'collectivites', 'Collectivités', 'Institutions' ),
 		) ),
 	);
-	$legal = koinobori_child_footer_links( array(
-		array( 'mentions-legales', 'Mentions légales', 'Legal notice' ),
-		array( 'conditions-generales-de-vente', 'CGV', 'Terms of sale' ),
-		array( 'politique-de-confidentialite', 'Confidentialité', 'Privacy' ),
-		// Link to the real policy; consent management is provided by Complianz separately.
-		array( 'politique-cookies', 'Cookies', 'Cookies' ),
-	), $language );
+	$legal = koinobori_child_footer_links( koinobori_child_footer_legal_entries(), $language, false );
 	// Polylang owns translated URLs, including product/category translations.
 	// https://polylang.pro/documentation/support/developers/function-reference/#pll_the_languages
 	$languages = function_exists( 'pll_the_languages' ) ? pll_the_languages( array(

@@ -62,9 +62,22 @@ foreach ( $expected as $slug => $form_id ) {
 		$expected_names[] = $notification['name'];
 	}
 
-	$form_settings = \FluentForm\App\Models\Form::getFormsDefaultSettings( $form_id );
+	$form_settings = kh2027_stored_form_settings( $form_id, $table, $wpdb );
 	$form_settings['confirmation']['messageToShow'] = $drafts[ $slug ]['confirmation_message'];
 	\FluentForm\App\Services\Settings\Validator::validate( 'confirmations', $form_settings['confirmation'] );
+}
+
+/** The stored formSettings row, never the plugin defaults: only the confirmation message changes. */
+function kh2027_stored_form_settings( $form_id, $table, $wpdb ) {
+	$value = $wpdb->get_var( $wpdb->prepare(
+		"SELECT value FROM {$table} WHERE meta_key = 'formSettings' AND form_id = %d",
+		$form_id
+	) );
+	$settings = json_decode( (string) $value, true );
+	if ( ! is_array( $settings ) || ! isset( $settings['confirmation'] ) || ! is_array( $settings['confirmation'] ) ) {
+		WP_CLI::error( 'Stored formSettings for form ' . $form_id . ' are missing or unreadable; refusing to guess.' );
+	}
+	return $settings;
 }
 
 sort( $expected_names );
@@ -162,7 +175,8 @@ try {
 			) );
 		}
 
-		$form_settings = \FluentForm\App\Models\Form::getFormsDefaultSettings( $form_id );
+		$before = kh2027_stored_form_settings( $form_id, $table, $wpdb );
+		$form_settings = $before;
 		$form_settings['confirmation']['messageToShow'] = $drafts[ $slug ]['confirmation_message'];
 		$meta_id = (int) $wpdb->get_var( $wpdb->prepare(
 			"SELECT id FROM {$table} WHERE meta_key = 'formSettings' AND form_id = %d",
@@ -174,6 +188,14 @@ try {
 			'meta_key' => 'formSettings',
 			'value' => wp_json_encode( $form_settings ),
 		) );
+
+		// Every key other than the confirmation message must survive the write.
+		$after = kh2027_stored_form_settings( $form_id, $table, $wpdb );
+		$expected_after = $before;
+		$expected_after['confirmation']['messageToShow'] = $drafts[ $slug ]['confirmation_message'];
+		if ( $after != $expected_after ) { // phpcs:ignore Universal.Operators.StrictComparisons.LooseNotEqual -- JSON round trip.
+			throw new RuntimeException( 'formSettings for form ' . $form_id . ' changed beyond the confirmation message; rolled back.' );
+		}
 	}
 
 	$installed_rows = $wpdb->get_results(

@@ -44,9 +44,9 @@ function khHeaderClaimFirstVisit() {
     // The full menu uses wider spacing; avoid measuring a compact menu as full.
     const nav = center.querySelector('.kh-nav-list');
     const gap = Math.min(32, Math.max(12, innerWidth * .02));
-    const count = nav.children.length;
+    const count = nav ? nav.children.length : 0;
     const actions = center.querySelector('.kh-header-actions');
-    const menuWidth = count * 44 + Math.max(0, count - 1) * gap + 24 + Math.max(208, actions.scrollWidth);
+    const menuWidth = count * 44 + Math.max(0, count - 1) * gap + 24 + Math.max(208, actions ? actions.scrollWidth : 0);
     const compact = innerWidth < 1024 || touch.matches || (menuWidth / 2 + 28 + Math.max(a,b) + 24 > innerWidth / 2);
     header.classList.toggle('is-compact', compact);
     const width = center.getBoundingClientRect().width;
