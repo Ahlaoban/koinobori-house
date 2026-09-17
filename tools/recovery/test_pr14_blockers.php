@@ -39,9 +39,11 @@ if ( ! class_exists( 'Koinobori_Icon_Walker' ) ) {
 	WP_CLI::error( 'Koinobori_Icon_Walker missing.' );
 }
 
-$results = array();
+// wp eval-file includes this file inside a method: file-scope variables are not
+// globals, so results are collected explicitly in $GLOBALS.
+$GLOBALS['kh_pr14_results'] = array();
 function kh_t( $name, $condition, $detail = '' ) {
-	$GLOBALS['results'][ $name ] = array( 'pass' => (bool) $condition, 'detail' => $detail );
+	$GLOBALS['kh_pr14_results'][ $name ] = array( 'pass' => (bool) $condition, 'detail' => $detail );
 }
 function kh_page_id( $slug ) {
 	$page = get_page_by_path( $slug );
@@ -135,8 +137,9 @@ try {
 	$wpdb->query( 'ROLLBACK' );
 }
 
-$failed = array_keys( array_filter( $results, static function ( $r ) { return ! $r['pass']; } ) );
-echo wp_json_encode( array( 'rolled_back' => true, 'failed' => $failed, 'results' => $results ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL;
+$results = $GLOBALS['kh_pr14_results'];
+$failed  = array_keys( array_filter( $results, static function ( $r ) { return ! $r['pass']; } ) );
+echo wp_json_encode( array( 'rolled_back' => true, 'total' => count( $results ), 'failed' => $failed, 'results' => $results ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . PHP_EOL;
 if ( $failed ) {
 	WP_CLI::halt( 1 );
 }
