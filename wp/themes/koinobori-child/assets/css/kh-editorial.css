@@ -1,0 +1,82 @@
+/* Opt-in editorial pages. Commerce markup and behaviours remain WooCommerce's. */
+.kh-editorial {
+  --kh-editorial-muted: #625b54;
+  background-image: linear-gradient(rgb(248 244 238 / .92), rgb(248 244 238 / .92)), url('../images/texture-washi-v2.webp');
+  background-blend-mode: normal;
+}
+.kh-editorial .kh-home { min-width: 0; }
+.kh-editorial .kh-home h1,
+.kh-editorial .kh-home h2,
+.kh-editorial .kh-home h3 { font-family: var(--kh-font-display); font-weight: 400; color: var(--kh-sumi); }
+.kh-editorial .kh-home h1 { max-width: 14ch; margin: 1.5rem 0; font-size: clamp(3rem, 5.8vw, 5.5rem); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
+.kh-editorial .kh-home h3 { font-size: 2rem; line-height: 1.15; }
+.kh-editorial .kh-home .kh-eyebrow { color: var(--kh-editorial-muted); font-size: .875rem; }
+.kh-editorial .kh-home .kh-button--primary { color: var(--kh-white); }
+.kh-editorial .kh-home .kh-button { font-size: .875rem; letter-spacing: .04em; }
+.kh-editorial .kh-home :focus-visible { outline: 2px solid var(--kh-vermillon); outline-offset: 5px; }
+.kh-home-hero { display: grid; grid-template-columns: 1fr 1fr; background: var(--kh-washi); }
+.kh-home-hero__inner { width: auto; margin: 0; padding: clamp(3rem, 6vw, 6rem) max(1.25rem, calc((100vw - 75rem) / 2)); padding-right: 2rem; }
+.kh-home-hero__inner .kh-lead { max-width: 35ch; margin-bottom: 2rem; }
+.kh-home-hero__art { min-height: 34rem; background: url('../images/hero-koinobori.webp') center / contain no-repeat; }
+.kh-home-worlds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 3rem; border-top: 1px solid var(--kh-sumi-20); }
+.kh-home-world { padding: 2rem 1.5rem 2rem 0; border-bottom: 1px solid var(--kh-sumi-20); }
+.kh-home-world:nth-child(3n + 2) { padding-top: 3.5rem; }
+.kh-home-world h3 { margin: 1rem 0; }
+.kh-home-world a { text-decoration: none; }
+.kh-home-world a:hover { color: var(--kh-vermillon); }
+.kh-home-world p { max-width: 25ch; }
+.kh-home-creations { padding-top: 0; }
+.kh-home-creations > .kh-container > .kh-lead { max-width: 50ch; margin: 2rem 0 3rem; }
+.kh-home .woocommerce ul.products { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; list-style: none; padding: 0; }
+.kh-home .woocommerce ul.products::before,
+.kh-home .woocommerce ul.products::after { display: none; }
+.kh-home .woocommerce ul.products li.product { width: auto; float: none; margin: 0; padding: 0; box-shadow: none; border: 0; background: transparent; }
+.kh-home .woocommerce ul.products li.product a img { width: 100%; aspect-ratio: 4/5; object-fit: contain; background: var(--kh-white); }
+.kh-home .woocommerce ul.products li.product .woocommerce-loop-product__title { font-size: 1.7rem; line-height: 1.15; }
+.kh-home .woocommerce ul.products li.product .price { color: var(--kh-sumi); font-family: var(--kh-font-ui); font-size: 1rem; }
+.kh-home .woocommerce ul.products li.product .button { border-radius: 0; font-family: var(--kh-font-ui); }
+.kh-home-kairo { margin-top: 5rem; max-width: 42rem; padding-left: 2rem; border-left: 1px solid var(--kh-or); }
+.kh-home-split { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5rem; }
+.kh-home-split .kh-text-link { margin-top: 2rem; }
+.kh-home-house { border-top: 1px solid var(--kh-sumi-20); }
+.kh-home-living { background: #eeece7; }
+.kh-home-living .kh-title { color: var(--kh-indigo); }
+.kh-home-journal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 3rem; }
+.kh-home-journal img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.kh-home-manifesto { text-align: center; }
+.kh-home-manifesto h2 { font-size: clamp(3rem, 6vw, 6rem); font-style: italic; line-height: 1.05; margin: 2rem 0; }
+.kh-home-manifesto .kh-lead { max-width: 54ch; margin-inline: auto; }
+.kh-home-professionals { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+.kh-home-professionals article { border-top: 1px solid var(--kh-sumi-20); padding-top: 2rem; }
+/* Opt-in product skin: no template override, stock/variation/checkout logic untouched. */
+.kh-editorial.single-product .product_title { font: 400 clamp(2.5rem, 4vw, 4.5rem)/1.05 var(--kh-font-display); text-wrap: balance; }
+.kh-editorial.single-product div.product .price { color: var(--kh-sumi); font-family: var(--kh-font-ui); font-size: 1.375rem; }
+.kh-editorial.single-product div.product .woocommerce-product-gallery img { aspect-ratio: 4/3; object-fit: contain; background: var(--kh-white); }
+.kh-editorial.single-product .woocommerce-product-details__short-description { max-width: 48ch; line-height: 1.75; }
+.kh-editorial.single-product .variations select { min-height: 3rem; border: 1px solid var(--kh-sumi-70); border-radius: 0; font-size: 1rem; background: var(--kh-white); }
+.kh-editorial.single-product .quantity input { min-height: 3rem; font-size: 1rem; }
+.kh-editorial.single-product .single_add_to_cart_button { min-height: 3rem; border-radius: 0; background: var(--kh-vermillon); color: var(--kh-white); font-family: var(--kh-font-ui); }
+.kh-editorial.single-product .single_add_to_cart_button:hover { background: var(--kh-sumi); }
+.kh-editorial.single-product .woocommerce-tabs { padding-top: 4rem; }
+.kh-editorial.single-product .woocommerce-tabs .panel { max-width: 65ch; }
+@media (min-width: 1600px) { .kh-home-hero__inner { padding-right: 2rem; } }
+@media (max-width: 1024px) {
+  .kh-home-hero { grid-template-columns: 1fr; }
+  .kh-home-hero__inner { padding: 3rem var(--kh-gutter); }
+  .kh-home-hero__art { min-height: 0; aspect-ratio: 16/9; }
+  .kh-home .woocommerce ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kh-home-split { gap: 2rem; }
+}
+@media (max-width: 600px) {
+  .kh-home-worlds, .kh-home-split, .kh-home-journal, .kh-home-professionals { grid-template-columns: 1fr; }
+  .kh-home-world:nth-child(3n + 2) { padding-top: 2rem; }
+  .kh-home-world p { max-width: none; }
+  .kh-home .woocommerce ul.products { gap: 1rem; }
+  .kh-home .woocommerce ul.products li.product .woocommerce-loop-product__title { font-size: 1.4rem; }
+  .kh-home-kairo { padding-left: 1rem; }
+  .kh-home-professionals { gap: 2rem; }
+  .kh-home .kh-button { width: 100%; white-space: normal; line-height: 1.4; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kh-editorial *, .kh-editorial *::before, .kh-editorial *::after { scroll-behavior: auto; animation: none; transition: none; }
+}

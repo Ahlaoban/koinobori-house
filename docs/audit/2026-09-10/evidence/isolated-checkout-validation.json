@@ -1,0 +1,59 @@
+{
+  "source_files_unchanged": 165,
+  "different_checkout_bytes": [
+    {
+      "path": "catalog/examples.csv",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-005-brevo-smtp.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-incentives-france-europe.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-shipping-data-template.csv",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-shipping-data-template.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-tarifs-collecte-prioritaire.csv",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-tarifs-collecte-prioritaire.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-transporteurs-devis-template.csv",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-012-transporteurs-france-ue.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-015-tests-colissimo-usa.csv",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot0/KH-015-tests-colissimo-usa.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot1/KH-103-theme.md",
+      "line_endings_only": true
+    },
+    {
+      "path": "docs/lot1/KH-104-polylang.md",
+      "line_endings_only": true
+    }
+  ],
+  "source": "original checkout compared to initial SHA-256 manifest",
+  "result": "all 165 contents preserved; 13 checkout line-ending conversions"
+}

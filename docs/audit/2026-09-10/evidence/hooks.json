@@ -1,0 +1,63 @@
+{
+  "wp/mu-plugins/koino-bcdg-hyphen.php": [
+    {
+      "line": 116,
+      "text": "add_filter( 'the_title', 'koino_bcdg_restore_hyphen', 20 );"
+    },
+    {
+      "line": 117,
+      "text": "add_filter( 'single_post_title', 'koino_bcdg_restore_hyphen', 20 );"
+    },
+    {
+      "line": 118,
+      "text": "add_filter( 'document_title', 'koino_bcdg_restore_hyphen', 20 );"
+    },
+    {
+      "line": 119,
+      "text": "add_filter( 'the_content', 'koino_bcdg_restore_hyphen', 20 );"
+    },
+    {
+      "line": 120,
+      "text": "add_filter( 'woocommerce_short_description', 'koino_bcdg_restore_hyphen', 20 );"
+    }
+  ],
+  "wp/mu-plugins/koino-diag-frontpage.php": [
+    {
+      "line": 100,
+      "text": "add_action("
+    }
+  ],
+  "wp/mu-plugins/koino-lang-redirect.php": [],
+  "wp/plugins/kh-single-variation-display/kh-single-variation-display.php": [
+    {
+      "line": 63,
+      "text": "add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'kh_single_variation_as_text', 20, 2 );"
+    },
+    {
+      "line": 108,
+      "text": "add_action( 'wp_footer', 'kh_single_variation_assets', 99 );"
+    }
+  ],
+  "wp/themes/koinobori-child/functions.php": [
+    {
+      "line": 20,
+      "text": "add_action("
+    },
+    {
+      "line": 60,
+      "text": "add_action("
+    },
+    {
+      "line": 86,
+      "text": "add_action("
+    },
+    {
+      "line": 170,
+      "text": "add_filter("
+    },
+    {
+      "line": 188,
+      "text": "add_filter("
+    }
+  ]
+}
