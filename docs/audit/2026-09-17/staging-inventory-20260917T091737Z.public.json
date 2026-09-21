@@ -1,0 +1,2158 @@
+{
+    "manifest": {
+        "generated_utc": "2026-09-17T09:17:37+00:00",
+        "host": "staging.koinoborihouse.com",
+        "git_sha": "85b4030",
+        "script_sha256": "e294756cdbb797b9f0731b3269abaea22ffb78de17d334fd88d2317ab0974561",
+        "wp_cli_version": "2.12.0",
+        "php_version": "8.3.33",
+        "wp_version": "7.1",
+        "guards": {
+            "php_sapi_cli": true,
+            "wp_cli": true,
+            "environment_staging": true,
+            "home_host": true,
+            "siteurl_host": true,
+            "db_name_constant": true,
+            "db_name_connection": true,
+            "db_not_production": true,
+            "table_prefix": true,
+            "abspath_realpath": true,
+            "not_multisite": true,
+            "out_dir_private": true,
+            "out_dir_outside_web": true
+        },
+        "sections_included": [
+            "versions",
+            "plugins",
+            "mu_plugins",
+            "options",
+            "languages",
+            "pages",
+            "posts",
+            "menus",
+            "products",
+            "forms",
+            "shipping_zones",
+            "action_scheduler"
+        ],
+        "sections_omitted": [
+            "page_content",
+            "post_content",
+            "order_content",
+            "submissions_content",
+            "users",
+            "payment_settings",
+            "smtp_settings",
+            "wordfence",
+            "stock_quantities",
+            "paths",
+            "orders_by_status",
+            "users_by_role",
+            "forms.notifications",
+            "forms.submissions_count"
+        ],
+        "sha256_public": "6c54feb163a9879599f699fb1f4792de611749e75cda37679b093da949d4df8f"
+    },
+    "versions": {
+        "wp": "7.1",
+        "php": "8.3.33",
+        "mysql_server": "11.4.13-MariaDB",
+        "theme_template": "kadence",
+        "theme_stylesheet": "koinobori-child",
+        "child_version": "1.1.0"
+    },
+    "plugins": [
+        {
+            "slug": "complianz-gdpr",
+            "name": "Complianz | GDPR/CCPA Cookie Consent",
+            "version": "7.5.4",
+            "active": true
+        },
+        {
+            "slug": "fluentform",
+            "name": "Fluent Forms",
+            "version": "6.2.13",
+            "active": true
+        },
+        {
+            "slug": "fluent-smtp",
+            "name": "FluentSMTP",
+            "version": "2.3.1",
+            "active": true
+        },
+        {
+            "slug": "kh-single-variation-display",
+            "name": "Koinobori — affichage taille unique",
+            "version": "1.0.0",
+            "active": true
+        },
+        {
+            "slug": "litespeed-cache",
+            "name": "LiteSpeed Cache",
+            "version": "7.9.1",
+            "active": true
+        },
+        {
+            "slug": "woocommerce-pdf-invoices-packing-slips",
+            "name": "PDF Invoices & Packing Slips for WooCommerce",
+            "version": "5.16.1",
+            "active": true
+        },
+        {
+            "slug": "polylang",
+            "name": "Polylang",
+            "version": "3.8.7",
+            "active": true
+        },
+        {
+            "slug": "polylang-wc",
+            "name": "Polylang for WooCommerce",
+            "version": "2.2.4",
+            "active": true
+        },
+        {
+            "slug": "wp-seopress",
+            "name": "SEOPress",
+            "version": "10.2",
+            "active": true
+        },
+        {
+            "slug": "updraftplus",
+            "name": "UpdraftPlus - Backup/Restore",
+            "version": "1.26.7",
+            "active": true
+        },
+        {
+            "slug": "woocommerce",
+            "name": "WooCommerce",
+            "version": "11.1.0",
+            "active": true
+        },
+        {
+            "slug": "woocommerce-paypal-payments",
+            "name": "WooCommerce PayPal Payments",
+            "version": "4.1.2",
+            "active": true
+        },
+        {
+            "slug": "woocommerce-gateway-stripe",
+            "name": "WooCommerce Stripe Gateway",
+            "version": "10.9.1",
+            "active": true
+        },
+        {
+            "slug": "wordfence",
+            "name": "Wordfence Security",
+            "version": "9.0.1",
+            "active": true
+        }
+    ],
+    "mu_plugins": [
+        {
+            "file": "koino-lang-redirect.php",
+            "name": "Koinobori — redirection racine i18n",
+            "version": "1.1.0"
+        }
+    ],
+    "options": {
+        "siteurl": "https://staging.koinoborihouse.com/",
+        "home": "https://staging.koinoborihouse.com/",
+        "blogname": "",
+        "show_on_front": "page",
+        "page_on_front": "318",
+        "page_for_posts": "0",
+        "permalink_structure": "/%postname%/",
+        "WPLANG": "fr_FR",
+        "timezone_string": "Europe/Paris",
+        "template": "kadence",
+        "stylesheet": "koinobori-child",
+        "active_plugins": [
+            "fluent-smtp/fluent-smtp.php",
+            "polylang/polylang.php",
+            "complianz-gdpr/complianz-gpdr.php",
+            "fluentform/fluentform.php",
+            "kh-single-variation-display/kh-single-variation-display.php",
+            "litespeed-cache/litespeed-cache.php",
+            "polylang-wc/polylang-wc.php",
+            "updraftplus/updraftplus.php",
+            "woocommerce-gateway-stripe/woocommerce-gateway-stripe.php",
+            "woocommerce-paypal-payments/woocommerce-paypal-payments.php",
+            "woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php",
+            "woocommerce/woocommerce.php",
+            "wordfence/wordfence.php",
+            "wp-seopress/seopress.php"
+        ],
+        "wp_page_for_privacy_policy": "252",
+        "woocommerce_currency": "EUR",
+        "woocommerce_default_country": "FR",
+        "woocommerce_allowed_countries": "all",
+        "woocommerce_specific_allowed_countries": [],
+        "woocommerce_ship_to_countries": "",
+        "woocommerce_specific_ship_to_countries": [],
+        "woocommerce_calc_taxes": "no",
+        "woocommerce_shop_page_id": "74",
+        "woocommerce_cart_page_id": "75",
+        "woocommerce_checkout_page_id": "76",
+        "woocommerce_myaccount_page_id": "77",
+        "woocommerce_version": "11.1.0",
+        "polylang": {
+            "force_lang": 1,
+            "hide_default": false,
+            "rewrite": true,
+            "redirect_lang": false,
+            "browser": false,
+            "media_support": false,
+            "default_lang": "fr"
+        },
+        "litespeed.conf.cache": false,
+        "seopress_xml_sitemap_general_enable": null,
+        "cmplz_wizard_completed": false
+    },
+    "languages": [
+        {
+            "slug": "fr",
+            "locale": "fr_FR",
+            "is_default": true
+        },
+        {
+            "slug": "en",
+            "locale": "en_US",
+            "is_default": false
+        }
+    ],
+    "pages": [
+        {
+            "id": 74,
+            "status": "publish",
+            "slug": "boutique",
+            "title": "Boutique",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "fr": 74,
+                "en": 81
+            },
+            "modified_utc": "2026-06-13 12:45:09"
+        },
+        {
+            "id": 75,
+            "status": "publish",
+            "slug": "panier",
+            "title": "Panier",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "fr": 75,
+                "en": 83
+            },
+            "modified_utc": "2026-06-13 12:56:45"
+        },
+        {
+            "id": 76,
+            "status": "publish",
+            "slug": "commande",
+            "title": "Validation de la commande",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "fr": 76,
+                "en": 85
+            },
+            "modified_utc": "2026-06-13 16:37:31"
+        },
+        {
+            "id": 77,
+            "status": "publish",
+            "slug": "mon-compte",
+            "title": "Mon compte",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "fr": 77,
+                "en": 87
+            },
+            "modified_utc": "2026-06-13 12:45:09"
+        },
+        {
+            "id": 78,
+            "status": "draft",
+            "slug": "remboursements_retours",
+            "title": "Politique en matière de remboursements et de retours",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": [],
+            "modified_utc": "0000-00-00 00:00:00"
+        },
+        {
+            "id": 81,
+            "status": "publish",
+            "slug": "shop",
+            "title": "Shop",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "fr": 74,
+                "en": 81
+            },
+            "modified_utc": "2026-06-13 13:25:14"
+        },
+        {
+            "id": 83,
+            "status": "publish",
+            "slug": "cart",
+            "title": "Cart",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "fr": 75,
+                "en": 83
+            },
+            "modified_utc": "2026-06-13 13:25:14"
+        },
+        {
+            "id": 85,
+            "status": "publish",
+            "slug": "checkout",
+            "title": "Checkout",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "fr": 76,
+                "en": 85
+            },
+            "modified_utc": "2026-06-13 13:25:14"
+        },
+        {
+            "id": 87,
+            "status": "publish",
+            "slug": "my-account",
+            "title": "My account",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "fr": 77,
+                "en": 87
+            },
+            "modified_utc": "2026-06-13 13:25:14"
+        },
+        {
+            "id": 182,
+            "status": "draft",
+            "slug": "",
+            "title": "Validation du code PR1",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": [],
+            "modified_utc": "2026-07-01 09:11:15"
+        },
+        {
+            "id": 184,
+            "status": "draft",
+            "slug": "",
+            "title": "",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": [],
+            "modified_utc": "2026-07-01 09:32:59"
+        },
+        {
+            "id": 230,
+            "status": "publish",
+            "slug": "livraison-usa",
+            "title": "Livraison USA",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": [],
+            "modified_utc": "2026-08-03 09:55:08"
+        },
+        {
+            "id": 231,
+            "status": "publish",
+            "slug": "shipping-to-usa",
+            "title": "Shipping to USA",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": [],
+            "modified_utc": "2026-08-03 09:55:08"
+        },
+        {
+            "id": 232,
+            "status": "publish",
+            "slug": "mentions-legales",
+            "title": "Mentions légales",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": [],
+            "modified_utc": "2026-09-07 18:19:11"
+        },
+        {
+            "id": 234,
+            "status": "publish",
+            "slug": "legal-notice",
+            "title": "Legal Notice",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": [],
+            "modified_utc": "2026-09-07 18:19:12"
+        },
+        {
+            "id": 235,
+            "status": "publish",
+            "slug": "politique-cookies",
+            "title": "Politique de cookies",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": [],
+            "modified_utc": "2026-09-07 18:20:37"
+        },
+        {
+            "id": 236,
+            "status": "publish",
+            "slug": "cookie-policy",
+            "title": "Cookie Policy",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": [],
+            "modified_utc": "2026-09-07 18:20:38"
+        },
+        {
+            "id": 238,
+            "status": "publish",
+            "slug": "conditions-generales-de-vente",
+            "title": "Conditions générales de vente",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 276,
+                "fr": 238
+            },
+            "modified_utc": "2026-09-09 16:17:35"
+        },
+        {
+            "id": 248,
+            "status": "publish",
+            "slug": "livraison",
+            "title": "Livraison",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 258,
+                "fr": 248
+            },
+            "modified_utc": "2026-09-07 18:19:07"
+        },
+        {
+            "id": 249,
+            "status": "publish",
+            "slug": "retours",
+            "title": "Retours et rétractation",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 263,
+                "fr": 249
+            },
+            "modified_utc": "2026-09-07 18:19:08"
+        },
+        {
+            "id": 250,
+            "status": "publish",
+            "slug": "contact",
+            "title": "Contact",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 266,
+                "fr": 250
+            },
+            "modified_utc": "2026-09-07 18:19:09"
+        },
+        {
+            "id": 251,
+            "status": "publish",
+            "slug": "sur-mesure",
+            "title": "Sur-mesure",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 269,
+                "fr": 251
+            },
+            "modified_utc": "2026-09-07 18:19:09"
+        },
+        {
+            "id": 252,
+            "status": "publish",
+            "slug": "politique-de-confidentialite",
+            "title": "Politique de confidentialité",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 272,
+                "fr": 252
+            },
+            "modified_utc": "2026-09-07 18:19:10"
+        },
+        {
+            "id": 258,
+            "status": "publish",
+            "slug": "shipping",
+            "title": "Shipping",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 258,
+                "fr": 248
+            },
+            "modified_utc": "2026-09-07 18:26:44"
+        },
+        {
+            "id": 263,
+            "status": "publish",
+            "slug": "returns",
+            "title": "Returns and Withdrawal",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 263,
+                "fr": 249
+            },
+            "modified_utc": "2026-09-07 18:28:03"
+        },
+        {
+            "id": 266,
+            "status": "publish",
+            "slug": "contact-us",
+            "title": "Contact",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 266,
+                "fr": 250
+            },
+            "modified_utc": "2026-09-07 18:29:42"
+        },
+        {
+            "id": 269,
+            "status": "publish",
+            "slug": "custom",
+            "title": "Custom Projects",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 269,
+                "fr": 251
+            },
+            "modified_utc": "2026-09-07 18:30:03"
+        },
+        {
+            "id": 272,
+            "status": "publish",
+            "slug": "privacy-policy",
+            "title": "Privacy Policy",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 272,
+                "fr": 252
+            },
+            "modified_utc": "2026-09-07 18:32:15"
+        },
+        {
+            "id": 276,
+            "status": "publish",
+            "slug": "terms-and-conditions",
+            "title": "Terms and Conditions of Sale",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 276,
+                "fr": 238
+            },
+            "modified_utc": "2026-09-09 16:18:29"
+        },
+        {
+            "id": 279,
+            "status": "publish",
+            "slug": "professionnels",
+            "title": "Professionnels",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 285,
+                "fr": 279
+            },
+            "modified_utc": "2026-09-08 10:57:32"
+        },
+        {
+            "id": 280,
+            "status": "publish",
+            "slug": "entreprises",
+            "title": "Entreprises",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 287,
+                "fr": 280
+            },
+            "modified_utc": "2026-09-08 10:57:46"
+        },
+        {
+            "id": 281,
+            "status": "publish",
+            "slug": "collectivites",
+            "title": "Collectivités et institutions",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 289,
+                "fr": 281
+            },
+            "modified_utc": "2026-09-08 10:58:04"
+        },
+        {
+            "id": 282,
+            "status": "publish",
+            "slug": "arts-de-vivre",
+            "title": "Arts de vivre",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 291,
+                "fr": 282
+            },
+            "modified_utc": "2026-09-08 10:58:06"
+        },
+        {
+            "id": 283,
+            "status": "publish",
+            "slug": "atelier",
+            "title": "L'Atelier",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 293,
+                "fr": 283
+            },
+            "modified_utc": "2026-09-08 10:59:01"
+        },
+        {
+            "id": 284,
+            "status": "publish",
+            "slug": "lifestyle",
+            "title": "Lifestyle & Koi",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 295,
+                "fr": 284
+            },
+            "modified_utc": "2026-09-08 10:59:21"
+        },
+        {
+            "id": 285,
+            "status": "publish",
+            "slug": "professionals",
+            "title": "For Professionals",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 285,
+                "fr": 279
+            },
+            "modified_utc": "2026-09-08 10:57:45"
+        },
+        {
+            "id": 287,
+            "status": "publish",
+            "slug": "business",
+            "title": "Business",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 287,
+                "fr": 280
+            },
+            "modified_utc": "2026-09-08 10:57:47"
+        },
+        {
+            "id": 289,
+            "status": "publish",
+            "slug": "institutions",
+            "title": "Institutions",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 289,
+                "fr": 281
+            },
+            "modified_utc": "2026-09-08 10:58:05"
+        },
+        {
+            "id": 291,
+            "status": "publish",
+            "slug": "art-de-vivre",
+            "title": "Art de Vivre",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 291,
+                "fr": 282
+            },
+            "modified_utc": "2026-09-08 10:59:00"
+        },
+        {
+            "id": 293,
+            "status": "publish",
+            "slug": "the-house",
+            "title": "The House",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 293,
+                "fr": 283
+            },
+            "modified_utc": "2026-09-08 10:59:19"
+        },
+        {
+            "id": 295,
+            "status": "publish",
+            "slug": "lifestyle-koi",
+            "title": "Lifestyle & Koi",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 295,
+                "fr": 284
+            },
+            "modified_utc": "2026-09-08 10:59:35"
+        },
+        {
+            "id": 318,
+            "status": "publish",
+            "slug": "accueil",
+            "title": "Des carpes de vent originales, signées BCDG",
+            "template": "",
+            "parent": 0,
+            "lang": "fr",
+            "translations": {
+                "en": 319,
+                "fr": 318
+            },
+            "modified_utc": "2026-09-08 14:50:17"
+        },
+        {
+            "id": 319,
+            "status": "publish",
+            "slug": "home",
+            "title": "Original wind carps, signed by BCDG",
+            "template": "",
+            "parent": 0,
+            "lang": "en",
+            "translations": {
+                "en": 319,
+                "fr": 318
+            },
+            "modified_utc": "2026-09-08 14:50:18"
+        }
+    ],
+    "posts": {
+        "count": 0,
+        "items": []
+    },
+    "menus": [
+        {
+            "id": 144,
+            "name": "Principal FR",
+            "locations": [
+                "primary",
+                "mobile"
+            ],
+            "items": [
+                {
+                    "order": 1,
+                    "title": "Accueil",
+                    "type": "custom",
+                    "object": "custom",
+                    "object_id": 297,
+                    "url": "/fr/"
+                },
+                {
+                    "order": 2,
+                    "title": "Boutique",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 74,
+                    "url": ""
+                },
+                {
+                    "order": 3,
+                    "title": "Arts de vivre",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 282,
+                    "url": ""
+                },
+                {
+                    "order": 4,
+                    "title": "Lifestyle",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 284,
+                    "url": ""
+                },
+                {
+                    "order": 5,
+                    "title": "L&rsquo;Atelier",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 283,
+                    "url": ""
+                },
+                {
+                    "order": 6,
+                    "title": "Professionnels",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 279,
+                    "url": ""
+                },
+                {
+                    "order": 7,
+                    "title": "Contact",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 250,
+                    "url": ""
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "name": "Principal EN",
+            "locations": [],
+            "items": [
+                {
+                    "order": 1,
+                    "title": "Home",
+                    "type": "custom",
+                    "object": "custom",
+                    "object_id": 304,
+                    "url": "/en/"
+                },
+                {
+                    "order": 2,
+                    "title": "Shop",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 81,
+                    "url": ""
+                },
+                {
+                    "order": 3,
+                    "title": "Art de Vivre",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 291,
+                    "url": ""
+                },
+                {
+                    "order": 4,
+                    "title": "Lifestyle",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 295,
+                    "url": ""
+                },
+                {
+                    "order": 5,
+                    "title": "The House",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 293,
+                    "url": ""
+                },
+                {
+                    "order": 6,
+                    "title": "For Professionals",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 285,
+                    "url": ""
+                },
+                {
+                    "order": 7,
+                    "title": "Contact",
+                    "type": "post_type",
+                    "object": "page",
+                    "object_id": 266,
+                    "url": ""
+                }
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": 111,
+            "sku": "KH-HAN-001-075",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 113,
+                "fr": 111
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 112,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "sku": "KH-HAN-001-075",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 113,
+                "fr": 111
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 114,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "sku": "KH-MER-001",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 119,
+                "fr": 116
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 123,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 125,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "sku": "KH-MER-001",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 119,
+                "fr": 116
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 122,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 124,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 127,
+            "sku": "KH-MER-002",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 142,
+                "fr": 127
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 140,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 141,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "sku": "KH-MER-003",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 145,
+                "fr": 128
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 132,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 133,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 129,
+            "sku": "KH-MER-004",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 148,
+                "fr": 129
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 134,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 135,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 130,
+            "sku": "KH-MER-005",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 151,
+                "fr": 130
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 136,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 137,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 131,
+            "sku": "KH-MER-006",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 154,
+                "fr": 131
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 138,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 139,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "sku": "KH-MER-002",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 142,
+                "fr": 127
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 143,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 144,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "sku": "KH-MER-003",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 145,
+                "fr": 128
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 146,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 147,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "sku": "KH-MER-004",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 148,
+                "fr": 129
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 149,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 150,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "sku": "KH-MER-005",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 151,
+                "fr": 130
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 152,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 153,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 154,
+            "sku": "KH-MER-006",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 154,
+                "fr": 131
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 155,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 156,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "sku": "KH-MOT-001",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 175,
+                "fr": 158
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 173,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 174,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "sku": "KH-MOT-002",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 170,
+                "fr": 159
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 168,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 169,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "sku": "KH-MOT-003",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 167,
+                "fr": 160
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 161,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 162,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 167,
+            "sku": "KH-MOT-003",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 167,
+                "fr": 160
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 164,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 165,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 170,
+            "sku": "KH-MOT-002",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 170,
+                "fr": 159
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 171,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 172,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 175,
+            "sku": "KH-MOT-001",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 175,
+                "fr": 158
+            },
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 176,
+                    "sku": "",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 177,
+                    "sku": "",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "sku": "KH-KAI-001-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "fr",
+            "translations": {
+                "en": 220,
+                "fr": 186
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 195,
+            "sku": "KH-KAI-002-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "fr",
+            "translations": {
+                "en": 221,
+                "fr": 195
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 196,
+            "sku": "KH-KAI-003-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "fr",
+            "translations": {
+                "en": 222,
+                "fr": 196
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 197,
+            "sku": "KH-KAI-004-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "fr",
+            "translations": {
+                "en": 223,
+                "fr": 197
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 198,
+            "sku": "KH-TER-001-100",
+            "status": "publish",
+            "type": "simple",
+            "lang": "fr",
+            "translations": {
+                "en": 224,
+                "fr": 198
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 199,
+            "sku": "KH-TER-002",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 225,
+                "fr": 199
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 201,
+                    "sku": "KH-TER-002-050",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 203,
+                    "sku": "KH-TER-002-075",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "sku": "KH-MOT-4",
+            "status": "draft",
+            "type": "variable",
+            "lang": "en",
+            "translations": [],
+            "has_thumbnail": false,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 205,
+            "sku": "KH-TER-003",
+            "status": "publish",
+            "type": "variable",
+            "lang": "fr",
+            "translations": {
+                "en": 226,
+                "fr": 205
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 206,
+                    "sku": "KH-TER-003-050",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 208,
+                    "sku": "KH-TER-003-075",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 220,
+            "sku": "KH-KAI-001-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "en",
+            "translations": {
+                "en": 220,
+                "fr": 186
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 221,
+            "sku": "KH-KAI-002-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "en",
+            "translations": {
+                "en": 221,
+                "fr": 195
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 222,
+            "sku": "KH-KAI-003-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "en",
+            "translations": {
+                "en": 222,
+                "fr": 196
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 223,
+            "sku": "KH-KAI-004-075",
+            "status": "publish",
+            "type": "simple",
+            "lang": "en",
+            "translations": {
+                "en": 223,
+                "fr": 197
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 224,
+            "sku": "KH-TER-001-100",
+            "status": "publish",
+            "type": "simple",
+            "lang": "en",
+            "translations": {
+                "en": 224,
+                "fr": 198
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": []
+        },
+        {
+            "id": 225,
+            "sku": "KH-TER-002",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 225,
+                "fr": 199
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 202,
+                    "sku": "KH-TER-002-050",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 204,
+                    "sku": "KH-TER-002-075",
+                    "stock_status": "instock"
+                }
+            ]
+        },
+        {
+            "id": 226,
+            "sku": "KH-TER-003",
+            "status": "publish",
+            "type": "variable",
+            "lang": "en",
+            "translations": {
+                "en": 226,
+                "fr": 205
+            },
+            "has_thumbnail": true,
+            "gallery_count": 0,
+            "variations": [
+                {
+                    "id": 207,
+                    "sku": "KH-TER-003-050",
+                    "stock_status": "instock"
+                },
+                {
+                    "id": 209,
+                    "sku": "KH-TER-003-075",
+                    "stock_status": "instock"
+                }
+            ]
+        }
+    ],
+    "forms": [
+        {
+            "id": 5,
+            "title": "Contact FR",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "prenom",
+                    "element": "input_text",
+                    "label": "Prénom"
+                },
+                {
+                    "name": "nom",
+                    "element": "input_text",
+                    "label": "Nom"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "sujet",
+                    "element": "input_text",
+                    "label": "Sujet"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Message"
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 6,
+            "title": "Contact EN",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "first_name",
+                    "element": "input_text",
+                    "label": "First name"
+                },
+                {
+                    "name": "last_name",
+                    "element": "input_text",
+                    "label": "Last name"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "subject",
+                    "element": "input_text",
+                    "label": "Subject"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Message"
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 7,
+            "title": "Entreprises FR",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "prenom",
+                    "element": "input_text",
+                    "label": "Prénom"
+                },
+                {
+                    "name": "nom",
+                    "element": "input_text",
+                    "label": "Nom"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "organisation",
+                    "element": "input_text",
+                    "label": "Organisation"
+                },
+                {
+                    "name": "pays",
+                    "element": "select_country",
+                    "label": "Pays"
+                },
+                {
+                    "name": "type_projet",
+                    "element": "select",
+                    "label": "Type de projet"
+                },
+                {
+                    "name": "quantite",
+                    "element": "input_number",
+                    "label": "Quantité envisagée"
+                },
+                {
+                    "name": "date_souhaitee",
+                    "element": "input_date",
+                    "label": "Date souhaitée"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Votre projet"
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 8,
+            "title": "Business EN",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "first_name",
+                    "element": "input_text",
+                    "label": "First name"
+                },
+                {
+                    "name": "last_name",
+                    "element": "input_text",
+                    "label": "Last name"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "organisation",
+                    "element": "input_text",
+                    "label": "Organisation"
+                },
+                {
+                    "name": "country",
+                    "element": "select_country",
+                    "label": "Country"
+                },
+                {
+                    "name": "project_type",
+                    "element": "select",
+                    "label": "Type of project"
+                },
+                {
+                    "name": "quantity",
+                    "element": "input_number",
+                    "label": "Estimated quantity"
+                },
+                {
+                    "name": "preferred_date",
+                    "element": "input_date",
+                    "label": "Preferred date"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Your project"
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 9,
+            "title": "Collectivités FR",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "prenom",
+                    "element": "input_text",
+                    "label": "Prénom"
+                },
+                {
+                    "name": "nom",
+                    "element": "input_text",
+                    "label": "Nom"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "collectivite",
+                    "element": "input_text",
+                    "label": "Collectivité / institution"
+                },
+                {
+                    "name": "pays_ville",
+                    "element": "input_text",
+                    "label": "Pays / ville"
+                },
+                {
+                    "name": "type_projet",
+                    "element": "select",
+                    "label": "Type de projet"
+                },
+                {
+                    "name": "lien_culturel",
+                    "element": "textarea",
+                    "label": "Lien culturel avec le Japon ou l'Asie, si pertinent"
+                },
+                {
+                    "name": "quantite",
+                    "element": "input_number",
+                    "label": "Quantité envisagée"
+                },
+                {
+                    "name": "date_souhaitee",
+                    "element": "input_date",
+                    "label": "Date souhaitée"
+                },
+                {
+                    "name": "devis",
+                    "element": "input_radio",
+                    "label": "Besoin d'un devis"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Votre projet"
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 10,
+            "title": "Institutions EN",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "first_name",
+                    "element": "input_text",
+                    "label": "First name"
+                },
+                {
+                    "name": "last_name",
+                    "element": "input_text",
+                    "label": "Last name"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "institution",
+                    "element": "input_text",
+                    "label": "Institution / local authority"
+                },
+                {
+                    "name": "country_city",
+                    "element": "input_text",
+                    "label": "Country / city"
+                },
+                {
+                    "name": "project_type",
+                    "element": "select",
+                    "label": "Type of project"
+                },
+                {
+                    "name": "cultural_link",
+                    "element": "textarea",
+                    "label": "Cultural link with Japan or Asia, if relevant"
+                },
+                {
+                    "name": "quantity",
+                    "element": "input_number",
+                    "label": "Estimated quantity"
+                },
+                {
+                    "name": "preferred_date",
+                    "element": "input_date",
+                    "label": "Preferred date"
+                },
+                {
+                    "name": "quote",
+                    "element": "input_radio",
+                    "label": "Do you need a quote?"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Your project"
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 11,
+            "title": "Rétractation FR",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "prenom",
+                    "element": "input_text",
+                    "label": "Prénom"
+                },
+                {
+                    "name": "nom",
+                    "element": "input_text",
+                    "label": "Nom"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "numero_commande",
+                    "element": "input_text",
+                    "label": "Numéro de commande"
+                },
+                {
+                    "name": "date_reception",
+                    "element": "input_date",
+                    "label": "Date de réception de la commande"
+                },
+                {
+                    "name": "produits",
+                    "element": "textarea",
+                    "label": "Produit(s) concerné(s)"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Précisions (facultatif)"
+                },
+                {
+                    "name": "decision",
+                    "element": "terms_and_condition",
+                    "label": ""
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        },
+        {
+            "id": 12,
+            "title": "Withdrawal EN",
+            "status": "published",
+            "fields": [
+                {
+                    "name": "first_name",
+                    "element": "input_text",
+                    "label": "First name"
+                },
+                {
+                    "name": "last_name",
+                    "element": "input_text",
+                    "label": "Last name"
+                },
+                {
+                    "name": "email",
+                    "element": "input_email",
+                    "label": "Email"
+                },
+                {
+                    "name": "order_number",
+                    "element": "input_text",
+                    "label": "Order number"
+                },
+                {
+                    "name": "date_received",
+                    "element": "input_date",
+                    "label": "Date the order was received"
+                },
+                {
+                    "name": "products",
+                    "element": "textarea",
+                    "label": "Product(s) concerned"
+                },
+                {
+                    "name": "message",
+                    "element": "textarea",
+                    "label": "Additional details (optional)"
+                },
+                {
+                    "name": "decision",
+                    "element": "terms_and_condition",
+                    "label": ""
+                },
+                {
+                    "name": "consent",
+                    "element": "terms_and_condition",
+                    "label": ""
+                }
+            ],
+            "notifications_count": 2,
+            "notifications_enabled_any": true
+        }
+    ],
+    "shipping_zones": [
+        {
+            "id": 1,
+            "name": "France métropolitaine",
+            "locations": [
+                {
+                    "type": "country",
+                    "code": "FR"
+                }
+            ],
+            "methods": [
+                {
+                    "type": "flat_rate",
+                    "title": "Forfait",
+                    "enabled": true
+                },
+                {
+                    "type": "free_shipping",
+                    "title": "Livraison gratuite",
+                    "enabled": true
+                }
+            ]
+        },
+        {
+            "id": 0,
+            "name": "Rest of the world",
+            "locations": [],
+            "methods": []
+        }
+    ],
+    "action_scheduler": {
+        "failed_by_hook": {
+            "fetch_patterns": 14
+        }
+    }
+}
