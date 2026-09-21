@@ -27,7 +27,12 @@ add_filter( 'fluentform/form_class', function ( $class, $form ) {
 	return koinobori_child_is_enquiry_page() ? $class . ' kh-enquiry-form' : $class;
 }, 10, 2 );
 
-/** Resolve saved form associations for AJAX, where is_page() is not available. */
+/**
+ * Resolve saved form associations for AJAX, where is_page() is not available.
+ * Every form embedded in an enquiry page counts, as a shortcode (any attribute order,
+ * quoted or not) or as the Fluent Forms block; the language is the host page's Polylang
+ * language, the slug table being the fallback only.
+ */
 function koinobori_child_enquiry_form_language( $form_id ) {
 	static $languages = null;
 	if ( $languages === null ) {
@@ -35,17 +40,22 @@ function koinobori_child_enquiry_form_language( $form_id ) {
 		foreach ( array( 'contact' => 'fr', 'contact-us' => 'en', 'entreprises' => 'fr',
 			'business' => 'en', 'collectivites' => 'fr', 'institutions' => 'en' ) as $slug => $language ) {
 			$page = get_page_by_path( $slug );
-			if ( $page && preg_match( '/\[fluentform\s+id=["\x27](\d+)["\x27]\s*\]/', $page->post_content, $match ) ) {
-				$languages[ (int) $match[1] ] = $language;
+			if ( ! $page ) { continue; }
+			if ( function_exists( 'pll_get_post_language' ) ) {
+				$page_language = pll_get_post_language( $page->ID );
+				if ( in_array( $page_language, array( 'fr', 'en' ), true ) ) { $language = $page_language; }
+			}
+			preg_match_all( '/\[fluentform\b[^\]]*?\bid\s*=\s*["\x27]?(\d+)|"formId"\s*:\s*"?(\d+)/', $page->post_content, $matches, PREG_SET_ORDER );
+			foreach ( $matches as $match ) {
+				$languages[ (int) ( $match[1] ?: $match[2] ) ] = $language;
 			}
 		}
 	}
 	return $languages[ (int) $form_id ] ?? null;
 }
 
-add_filter( 'fluentform/honeypot_status', function ( $enabled, $form_id ) {
-	return koinobori_child_enquiry_form_language( $form_id ) ? true : $enabled;
-}, 10, 2 );
+// The honeypot is enabled globally in Fluent Forms (Global Settings), not forced here:
+// a cached page rendered without the field would have every submission rejected.
 
 add_filter( 'fluentform/honeypot_spam_message', function ( $message, $form_id ) {
 	$language = koinobori_child_enquiry_form_language( $form_id );

@@ -12,7 +12,8 @@ global $wpdb;
 $engine = $wpdb->get_var( $wpdb->prepare( 'SELECT ENGINE FROM information_schema.TABLES WHERE TABLE_SCHEMA=%s AND TABLE_NAME=%s', DB_NAME, $wpdb->prefix . 'fluentform_forms' ) );
 if ( strtoupper( (string) $engine ) !== 'INNODB' ) { throw new RuntimeException( 'Transactional table required.' ); }
 $apply = ( $args[0] ?? '' ) === 'apply';
-$backup_dir = $apply ? realpath( $args[1] ?? '' ) : false;
+// realpath( '' ) is the current directory: an empty argument must never pass the guard.
+$backup_dir = ( $apply && '' !== trim( (string) ( $args[1] ?? '' ) ) ) ? realpath( $args[1] ) : false;
 $public_root = rtrim( wp_normalize_path( realpath( ABSPATH ) ), '/' ) . '/';
 if ( $apply && ( ! $backup_dir || ! is_writable( $backup_dir )
 	|| str_starts_with( rtrim( wp_normalize_path( $backup_dir ), '/' ) . '/', $public_root ) ) ) {

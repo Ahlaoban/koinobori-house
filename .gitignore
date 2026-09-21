@@ -118,3 +118,6 @@ tools/node_modules/
 
 # Backups locaux prototypes (source = .src.html, autonome = .html)
 header-shoji-koino-v1.bak.html
+
+# Worktrees locaux (une branche par tâche)
+.worktrees/
