@@ -1,0 +1,479 @@
+[
+  {
+    "id": "prod-root-fr",
+    "url": "https://koinoborihouse.com/",
+    "method": "GET",
+    "accept_language": "fr-FR,fr;q=0.9,en;q=0.5",
+    "utc": "2026-09-10T09:12:10.440030+00:00",
+    "status": 200,
+    "elapsed_seconds": 0.574,
+    "bytes": 49320,
+    "sha256": "0ac0d9fb5235b6ff8f6fb77f12357851da68874466c630a48aba9c615766fd9d",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:12 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "Koinobori originaux signés BCDG",
+      "Ouvrir/fermer le menu",
+      "Rechercher"
+    ],
+    "generator": [
+      "<meta name=\"generator\" content=\"WordPress 7.1\" />"
+    ],
+    "body_class": [
+      "home blog wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-koinobori-child hfeed footer-on-bottom hide-focus-outline link-style-standard content-title-style-hide content-width-normal content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"
+    ],
+    "assets": [
+      "https://koinoborihouse.com/wp-content/fonts/478a319e410f82de460809bcf729d803.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/content.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/footer.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/global.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/header.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/js/navigation.min.js?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css?ver=1.0.1"
+    ],
+    "seo_tags": [
+      "<meta name='robots' content='noindex, nofollow' />"
+    ]
+  },
+  {
+    "id": "prod-root-en",
+    "url": "https://koinoborihouse.com/",
+    "method": "GET",
+    "accept_language": "en-US,en;q=0.9",
+    "utc": "2026-09-10T09:12:11.016937+00:00",
+    "status": 200,
+    "elapsed_seconds": 0.466,
+    "bytes": 49320,
+    "sha256": "0ac0d9fb5235b6ff8f6fb77f12357851da68874466c630a48aba9c615766fd9d",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:12 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "Koinobori originaux signés BCDG",
+      "Ouvrir/fermer le menu",
+      "Rechercher"
+    ],
+    "generator": [
+      "<meta name=\"generator\" content=\"WordPress 7.1\" />"
+    ],
+    "body_class": [
+      "home blog wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-koinobori-child hfeed footer-on-bottom hide-focus-outline link-style-standard content-title-style-hide content-width-normal content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"
+    ],
+    "assets": [
+      "https://koinoborihouse.com/wp-content/fonts/478a319e410f82de460809bcf729d803.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/content.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/footer.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/global.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/header.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/js/navigation.min.js?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css?ver=1.0.1"
+    ],
+    "seo_tags": [
+      "<meta name='robots' content='noindex, nofollow' />"
+    ]
+  },
+  {
+    "id": "prod-fr",
+    "url": "https://koinoborihouse.com/fr/",
+    "method": "GET",
+    "accept_language": "fr",
+    "utc": "2026-09-10T09:12:11.488610+00:00",
+    "status": 404,
+    "elapsed_seconds": 0.439,
+    "bytes": 49591,
+    "sha256": "de2e9f2061998c0b939a0c1f3c6c92232a548e3da87bb5438e21a82858b10370",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:13 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+      "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "Page non trouvée",
+      "Ouvrir/fermer le menu",
+      "Rechercher"
+    ],
+    "generator": [
+      "<meta name=\"generator\" content=\"WordPress 7.1\" />"
+    ],
+    "body_class": [
+      "error404 wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-koinobori-child hfeed footer-on-bottom hide-focus-outline link-style-standard content-title-style-normal content-width-normal content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"
+    ],
+    "assets": [
+      "https://koinoborihouse.com/wp-content/fonts/478a319e410f82de460809bcf729d803.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/content.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/footer.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/global.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/header.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/js/navigation.min.js?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css?ver=1.0.1"
+    ],
+    "seo_tags": [
+      "<meta name='robots' content='noindex, nofollow' />"
+    ]
+  },
+  {
+    "id": "prod-en",
+    "url": "https://koinoborihouse.com/en/",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:11.931008+00:00",
+    "status": 404,
+    "elapsed_seconds": 0.476,
+    "bytes": 49591,
+    "sha256": "de2e9f2061998c0b939a0c1f3c6c92232a548e3da87bb5438e21a82858b10370",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:13 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+      "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "Page non trouvée",
+      "Ouvrir/fermer le menu",
+      "Rechercher"
+    ],
+    "generator": [
+      "<meta name=\"generator\" content=\"WordPress 7.1\" />"
+    ],
+    "body_class": [
+      "error404 wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-koinobori-child hfeed footer-on-bottom hide-focus-outline link-style-standard content-title-style-normal content-width-normal content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"
+    ],
+    "assets": [
+      "https://koinoborihouse.com/wp-content/fonts/478a319e410f82de460809bcf729d803.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/content.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/footer.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/global.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/header.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/js/navigation.min.js?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css?ver=1.0.1"
+    ],
+    "seo_tags": [
+      "<meta name='robots' content='noindex, nofollow' />"
+    ]
+  },
+  {
+    "id": "prod-robots",
+    "url": "https://koinoborihouse.com/robots.txt",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:12.408571+00:00",
+    "status": 200,
+    "elapsed_seconds": 0.302,
+    "bytes": 67,
+    "sha256": "9311bab30d8b5d05f5fa5563a251b8c96b8470873bb77c62d3d17c146d7acab7",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:13 GMT",
+      "Content-Type": "text/plain; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": []
+  },
+  {
+    "id": "prod-rest",
+    "url": "https://koinoborihouse.com/wp-json/",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:12.711657+00:00",
+    "status": 200,
+    "elapsed_seconds": 0.63,
+    "bytes": 241938,
+    "sha256": "0bc8e9bccdfed47882b34977109d26d766e02896e16e426f8cc23c3acb676de8",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:14 GMT",
+      "Content-Type": "application/json; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "X-Robots-Tag": "noindex",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "X-Content-Type-Options": "nosniff",
+      "Access-Control-Expose-Headers": "X-WP-Total, X-WP-TotalPages, Link",
+      "Access-Control-Allow-Headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type",
+      "Allow": "GET",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": [],
+    "namespaces": [
+      "oembed/1.0",
+      "wordfence/v1",
+      "wp/v2",
+      "wp-site-health/v1",
+      "wp-block-editor/v1",
+      "wp-abilities/v1"
+    ],
+    "route_count": 142
+  },
+  {
+    "id": "prod-pages",
+    "url": "https://koinoborihouse.com/wp-json/wp/v2/pages?per_page=1&_fields=id,slug,status",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:13.358124+00:00",
+    "status": 200,
+    "elapsed_seconds": 0.35,
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:14 GMT",
+      "Content-Type": "application/json; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "X-Robots-Tag": "noindex",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "X-Content-Type-Options": "nosniff",
+      "Access-Control-Expose-Headers": "X-WP-Total, X-WP-TotalPages, Link",
+      "Access-Control-Allow-Headers": "Authorization, X-WP-Nonce, Content-Disposition, Content-MD5, Content-Type",
+      "X-WP-Total": "0",
+      "X-WP-TotalPages": "0",
+      "Allow": "GET",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": []
+  },
+  {
+    "id": "prod-theme-style",
+    "url": "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:13.708150+00:00",
+    "status": 200,
+    "elapsed_seconds": 0.186,
+    "bytes": 1480,
+    "sha256": "c252393565ba68181aadc491488a270c44690f2b8f7c5bf8760857ccacf274c0",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:15 GMT",
+      "Content-Type": "text/css",
+      "Content-Length": "1480",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Last-Modified": "Fri, 12 Jun 2026 20:13:14 GMT",
+      "Server": "o2switch-PowerBoost-v3",
+      "Accept-Ranges": "bytes"
+    },
+    "sets_cookie": false,
+    "title": [],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": []
+  },
+  {
+    "id": "prod-theme-foundations",
+    "url": "https://koinoborihouse.com/wp-content/themes/koinobori-child/assets/css/kh-foundations.css",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:13.895590+00:00",
+    "status": 404,
+    "elapsed_seconds": 0.495,
+    "bytes": 49591,
+    "sha256": "de2e9f2061998c0b939a0c1f3c6c92232a548e3da87bb5438e21a82858b10370",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:15 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+      "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "Page non trouvée",
+      "Ouvrir/fermer le menu",
+      "Rechercher"
+    ],
+    "generator": [
+      "<meta name=\"generator\" content=\"WordPress 7.1\" />"
+    ],
+    "body_class": [
+      "error404 wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-koinobori-child hfeed footer-on-bottom hide-focus-outline link-style-standard content-title-style-normal content-width-normal content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"
+    ],
+    "assets": [
+      "https://koinoborihouse.com/wp-content/fonts/478a319e410f82de460809bcf729d803.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/content.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/footer.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/global.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/header.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/js/navigation.min.js?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css?ver=1.0.1"
+    ],
+    "seo_tags": [
+      "<meta name='robots' content='noindex, nofollow' />"
+    ]
+  },
+  {
+    "id": "prod-theme-charte",
+    "url": "https://koinoborihouse.com/wp-content/themes/koinobori-child/assets/css/kh-charte-v3.css",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:14.392956+00:00",
+    "status": 404,
+    "elapsed_seconds": 0.45,
+    "bytes": 49591,
+    "sha256": "de2e9f2061998c0b939a0c1f3c6c92232a548e3da87bb5438e21a82858b10370",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:15 GMT",
+      "Content-Type": "text/html; charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Vary": "Accept-Encoding",
+      "Expires": "Wed, 11 Jan 1984 05:00:00 GMT",
+      "Cache-Control": "no-cache, must-revalidate, max-age=0, no-store, private",
+      "Link": "<https://koinoborihouse.com/wp-json/>; rel=\"https://api.w.org/\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "Page non trouvée",
+      "Ouvrir/fermer le menu",
+      "Rechercher"
+    ],
+    "generator": [
+      "<meta name=\"generator\" content=\"WordPress 7.1\" />"
+    ],
+    "body_class": [
+      "error404 wp-custom-logo wp-embed-responsive wp-theme-kadence wp-child-theme-koinobori-child hfeed footer-on-bottom hide-focus-outline link-style-standard content-title-style-normal content-width-normal content-style-boxed content-vertical-padding-show non-transparent-header mobile-non-transparent-header"
+    ],
+    "assets": [
+      "https://koinoborihouse.com/wp-content/fonts/478a319e410f82de460809bcf729d803.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/content.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/footer.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/global.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/css/header.min.css?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/kadence/assets/js/navigation.min.js?ver=1.5.0",
+      "https://koinoborihouse.com/wp-content/themes/koinobori-child/style.css?ver=1.0.1"
+    ],
+    "seo_tags": [
+      "<meta name='robots' content='noindex, nofollow' />"
+    ]
+  },
+  {
+    "id": "staging-root",
+    "url": "https://staging.koinoborihouse.com/",
+    "method": "GET",
+    "accept_language": "fr",
+    "utc": "2026-09-10T09:12:14.845927+00:00",
+    "status": 401,
+    "elapsed_seconds": 0.213,
+    "bytes": 543,
+    "sha256": "30fe9c4a1ab18b051b0fa152bfca786e5101d182c14d3ffed4969738d9ec60ca",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:16 GMT",
+      "Content-Type": "text/html; charset=iso-8859-1",
+      "Content-Length": "543",
+      "Connection": "close",
+      "WWW-Authenticate": "Basic realm=\"Staging koinobori\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "401 Unauthorized"
+    ],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": []
+  },
+  {
+    "id": "staging-fr",
+    "url": "https://staging.koinoborihouse.com/fr/",
+    "method": "GET",
+    "accept_language": "fr",
+    "utc": "2026-09-10T09:12:15.060080+00:00",
+    "status": 401,
+    "elapsed_seconds": 0.15,
+    "bytes": 543,
+    "sha256": "30fe9c4a1ab18b051b0fa152bfca786e5101d182c14d3ffed4969738d9ec60ca",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:16 GMT",
+      "Content-Type": "text/html; charset=iso-8859-1",
+      "Content-Length": "543",
+      "Connection": "close",
+      "WWW-Authenticate": "Basic realm=\"Staging koinobori\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "401 Unauthorized"
+    ],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": []
+  },
+  {
+    "id": "staging-en",
+    "url": "https://staging.koinoborihouse.com/en/",
+    "method": "GET",
+    "accept_language": "en",
+    "utc": "2026-09-10T09:12:15.210833+00:00",
+    "status": 401,
+    "elapsed_seconds": 0.16,
+    "bytes": 543,
+    "sha256": "30fe9c4a1ab18b051b0fa152bfca786e5101d182c14d3ffed4969738d9ec60ca",
+    "headers": {
+      "Date": "Thu, 10 Sep 2026 09:12:16 GMT",
+      "Content-Type": "text/html; charset=iso-8859-1",
+      "Content-Length": "543",
+      "Connection": "close",
+      "WWW-Authenticate": "Basic realm=\"Staging koinobori\"",
+      "Server": "o2switch-PowerBoost-v3"
+    },
+    "sets_cookie": false,
+    "title": [
+      "401 Unauthorized"
+    ],
+    "generator": [],
+    "body_class": [],
+    "assets": [],
+    "seo_tags": []
+  }
+]

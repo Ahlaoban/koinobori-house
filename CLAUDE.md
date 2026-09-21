@@ -2,6 +2,36 @@
 
 Project context for Claude Code sessions on Koinobori House MVP.
 
+**Amendement Alain du 13 septembre 2026** : le header comporte désormais cinq
+rubriques (Boutique, Lifestyle, L’Atelier, Professionnels, Contact), sans Accueil
+ni Arts de vivre. Logo textuel KoinoboriHouse centré, deux mots coulissants,
+signature BY BCDG en fondu, icônes et infobulle unique. Cette décision remplace
+les anciennes mentions de navigation à sept entrées et de logo image verrouillé
+pour le header ci-dessous. Galeries WooCommerce extensibles et vidéo facultative
+par produit : [implémentation et utilisation](docs/development/header-et-medias.md).
+Périmètre de l'amendement : le **header uniquement**. « Accueil » reste joignable par le logo.
+
+**Arbitrage Alain du 16 septembre 2026 — « Arts de vivre » = « Lifestyle »** : les deux ne
+sont pas des rubriques distinctes. Lifestyle est l'espace éditorial qui accueille les articles,
+dont ceux relevant de l'art de vivre. Conséquences : le header conserve uniquement Lifestyle ;
+Arts de vivre **n'est pas réintroduit au footer**, qui propose **Lifestyle & Koi** ; destination
+canonique `/fr/lifestyle/` + `/en/lifestyle-koi/` ; les anciennes pages `/fr/arts-de-vivre/`
+(ID 282) et `/en/art-de-vivre/` (ID 291) sont **auditées avant toute action**, leur contenu utile
+transféré vers Lifestyle ou une page pertinente, puis **redirigées** vers les pages Lifestyle ;
+**aucune suppression sans sauvegarde** ; les mouvements homepage « Lifestyle & Koi » et
+« Arts de vivre » sont **consolidés** ; « Arts de vivre » peut devenir un thème ou une catégorie
+d'articles, jamais une rubrique principale autonome. **Remplace C6** et toute prescription
+imposant Arts de vivre comme page ou lien séparé. Aucun changement WordPress exécuté à ce jour.
+Détail et suites : [docs/handoff/RECONCILIATION-2026-09-16.md](docs/handoff/RECONCILIATION-2026-09-16.md) §9.
+
+**Arbitrages Alain du 21 septembre 2026** (défauts de la revue de la PR #14 validés, cf
+[docs/handoff/REVUE-PR14-2026-09-16.md](docs/handoff/REVUE-PR14-2026-09-16.md)) : la homepage
+codée en PHP (`kh-home.php`) est **acceptée pour le lancement**, migration en blocs après le 30/09 ;
+le groupe du footer s'appelle **« Navigation »** (jamais « La maison / The house », qui entre en
+collision avec « The House ») ; **pas de recherche au lancement** ; les vrais menus FR/EN à
+5 entrées sont créés au déploiement du thème sur le staging. Restent à Alain : textes des emails
+de notification et délai annoncé, tarifs et périmètre des zones d'expédition UE.
+
 ## Projet
 
 E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B/B2G simples. Hébergé o2switch. **Lancement : site opérationnel fin septembre 2026** (décision Alain 2026-09-07 ; le 15 août n'a pas été tenu, la prod est restée un WordPress nu).
@@ -15,6 +45,17 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 - **Repo git** : à créer (suggestion `Ahlaoban/koinobori-house`)
 - **Domaine principal** : `koinoborihouse.com` (canonique)
 - **Cible commerciale 12 mois** : 3000-5000 koi B2C + 5 projets B2B + 5 projets B2G
+
+## 🔒 Règles de sécurité technique — priorité absolue
+
+Ajoutées le 2026-09-19. Ce sont des consignes données au modèle, pas des verrous techniques : le vrai verrou est de ne jamais fournir à une session de travail les identifiants du site en ligne.
+
+- **JAMAIS toucher la production.** Aucune écriture, aucun déploiement, aucune commande `wp-cli`, aucune requête SQL contre le site en ligne ou sa base. Travail en local ou sur la préproduction (staging) uniquement. Toute mise en production est faite par Alain, ou sur sa demande explicite, étape par étape.
+- **JAMAIS lire ni afficher un secret** : `wp-config.php`, fichiers `.env`, clés Stripe, PayPal, Brevo, identifiants de base de données, accès o2switch. Ne pas ouvrir ces fichiers, ne pas recopier leur contenu dans une réponse, un journal ou un document.
+- **JAMAIS enregistrer un secret dans git.** Relire `git diff` avant toute validation.
+- **Une branche par tâche** (`feat/…`, `fix/…`, `i18n/…`). Aucune validation directe sur la branche principale.
+- **Ne jamais modifier le cœur** de WordPress, de WooCommerce ni des plugins tiers. Étendre uniquement par hooks, filtres et surcharges de gabarits dans le thème enfant.
+- **Lecture seule par défaut.** Écriture seulement sur demande explicite d'Alain.
 
 ## Cadrage stratégique
 
@@ -77,7 +118,7 @@ Adoptée par Alain le **2026-07-27** (arbitrages C1-C6). Elle **supersède l'app
 | `--kh-sumi` | `#1A1410` | Texte, navigation, traits structurants |
 | `--kh-vermillon` | `#C8311A` | Actions principales, cartouches, accents |
 | `--kh-gold` | `#B8860B` | Détails précieux et citations |
-| `--kh-indigo` | `#2B3A6B` | Profondeur, Arts de vivre, univers nocturnes |
+| `--kh-indigo` | `#2B3A6B` | Profondeur, Lifestyle, univers nocturnes |
 | `--kh-white` | `#FFFDFC` | Cartes produits et surfaces très claires |
 
 Le vermillon reste **rare** : il porte l'action prioritaire, jamais la décoration.
@@ -105,21 +146,23 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 | C1 | 2ᵉ mouvement éditorial fiche produit | « **Détails et matières** » — remplace « Détails et fabrication » (v2.0 §10.2). Doctrine : jamais *fabrication* |
 | C2 | Rubrique éditoriale | « **L'Atelier** ». Garde-fou : son contenu ne parle jamais de production, fabrication ni origine |
 | C3 | Palette | Valeurs v2.0 §5.1 partout, tokens déployés migrés |
-| C4 | Navigation | v2.0 §3 confirmée. **Annule A-1, A-2, A-4** de [docs/ux-architecture.md](docs/ux-architecture.md) |
-| C5 | Header | Shoji V2 verrouillé = réalisation du principe Fusuma (v2.0 §6) + exigences clavier / mobile simplifié / `prefers-reduced-motion` |
-| C6 | Arts de vivre | Page « manifeste / bientôt » au MVP. **Aucune 6ᵉ catégorie WooCommerce** |
+| C4 | Navigation | v2.0 §3 confirmée. **Annule A-1, A-2, A-4** de [docs/ux-architecture.md](docs/ux-architecture.md). ⚠️ **Révisé 2026-09-13** : 7 → 5 entrées (amendement en tête de fichier) |
+| C5 | Header | Shoji V2 verrouillé = réalisation du principe Fusuma (v2.0 §6) + exigences clavier / mobile simplifié / `prefers-reduced-motion`. ⚠️ **Révisé 2026-09-13** : logo textuel coulissant + icônes remplacent le logo image (amendement en tête de fichier) |
+| C6 | Arts de vivre | **Remplacé le 2026-09-16** : Arts de vivre = Lifestyle, pas de page ni de lien autonome (arbitrage en tête de fichier). Reste valide : **aucune 6ᵉ catégorie WooCommerce** |
 
-**Navigation MVP (7 entrées)** : Accueil · Boutique · Arts de vivre · Lifestyle · L'Atelier · Professionnels · Contact. Compte / recherche / panier regroupés à droite en icônes au trait fin. Libellés et slugs EN : [docs/ux-architecture.md](docs/ux-architecture.md) §3.1 — Home · Shop · **Art de Vivre** · Lifestyle · **The House** · **For Professionals** · Contact.
+**Navigation MVP (5 entrées, amendement Alain 2026-09-13)** : Boutique · Lifestyle · L'Atelier · Professionnels · Contact. EN : Shop · Lifestyle · **The House** · **For Professionals** · Contact. Compte / panier / FR-EN regroupés à droite en icônes au trait fin.
+
+La navigation à 7 entrées du 2026-07-27 est abrogée depuis le 2026-09-13 (historique : Git et [docs/handoff/RECONCILIATION-2026-09-16.md](docs/handoff/RECONCILIATION-2026-09-16.md)). La page « Accueil » existe toujours, joignable par le logo. Les pages « Arts de vivre » (282/291) existent encore en base et sont vouées à l'audit, au transfert vers Lifestyle et à la redirection (arbitrage 2026-09-16).
 
 **Défauts posés le 2026-07-27** (révisables, GO Alain « il faut avancer ») : 4 polices self-host avec mesure perf à G4 · **portrait Alain-Catherine non publié** tant que Catherine n'a pas validé · **pas de liens sociaux** au lancement · Kaïro dans le mouvement 4 « Créations BCDG ». Détail et porte de sortie de chacun : [docs/ux-architecture.md](docs/ux-architecture.md) §9.
 
 **A-6 reste en vigueur** : l'entrée « Professionnels » est une **page d'aiguillage** vers `/fr/entreprises/` et `/fr/collectivites/`, qui conservent leurs formulaires distincts (doctrine B2B/B2G). Jamais de fusion des deux.
 
-**Pas d'entrée Kaïro dans le header** : la nav reste à 7 entrées (critère de sortie v2.0 §14). Kaïro conserve une présence spécifique sur la homepage et sa page Monde ; il est joignable par la Boutique et les autres parcours.
+**Pas d'entrée Kaïro dans le header** : la nav reste à 5 entrées (amendement 2026-09-13 ; le critère de sortie v2.0 §14 parlait de 7, à lire comme « pas d'entrée supplémentaire »). Kaïro conserve une présence spécifique sur la homepage et sa page Monde ; il est joignable par la Boutique et les autres parcours.
 
-**Footer, 2 étages** (arbitrages O-1 et O-2, 2026-07-27) : une **bande services** en groupes courts — Navigation (Boutique · Arts de vivre · L'Atelier · Lifestyle & Koi) · Informations (Livraison · Retours · Contact) · Professionnels (Entreprises · Collectivités) — au-dessus d'une **ligne d'horizon stricte** §11 : fond washi, trait fin, 72-96 px, une seule ligne desktop, `© 2026 Koinobori House · Créations BCDG` à gauche, les 4 liens légaux au centre, réseaux et retour en haut à droite. Newsletter au mouvement 10, **jamais dans le footer**. Détail : [docs/ux-architecture.md](docs/ux-architecture.md) §8.
+**Footer, 2 étages** (arbitrages O-1 et O-2, 2026-07-27) : une **bande services** en groupes courts — Navigation (Boutique · L'Atelier · Lifestyle & Koi) · Informations (Livraison · Retours · Contact) · Professionnels (Entreprises · Collectivités) — au-dessus d'une **ligne d'horizon stricte** §11 : fond washi, trait fin, 72-96 px, une seule ligne desktop, `© 2026 Koinobori House · Créations BCDG` à gauche, les 4 liens légaux au centre, réseaux et retour en haut à droite. Newsletter au mouvement 9, **jamais dans le footer**. Détail : [docs/ux-architecture.md](docs/ux-architecture.md) §8.
 
-**Homepage = 11 mouvements** (v2.0 §4) : Header Fusuma · Hero · Les cinq mondes · Créations BCDG · L'Atelier · Lifestyle & Koi · Arts de vivre · Le Manifeste · Professionnels · Newsletter · Footer ligne d'horizon.
+**Homepage = 10 mouvements** (v2.0 §4 en comptait 11 ; consolidation du 2026-09-16) : Header Fusuma · Hero · Les cinq mondes · Créations BCDG · L'Atelier · Lifestyle & Koi (absorbe l'ancien mouvement « Arts de vivre ») · Le Manifeste · Professionnels · Newsletter · Footer ligne d'horizon. ⚠️ **La composition du mouvement consolidé « Lifestyle & Koi » reste à valider par Alain** ; le gabarit `kh-home.php` porte encore les deux sections séparées.
 
 **Renommages publics** : « Journal » → « **Lifestyle & Koi** ». Le label « Collections » disparaît de la nav (A-2 annulé) ; les 5 collections WooCommerce restent inchangées et sont présentées comme « **les cinq mondes** ».
 
@@ -162,7 +205,7 @@ Reste à porter : le header Shoji V2 utilise encore corail `#E05A5A` sur « Mon 
 
 - ~17 produits au lancement (composition réelle relevée 2026-06-18 : Mer 6, Motifs 3, Hanami 1, Kaïro 4, Territoires 3), structure extensible
 - **5 collections (taxonomie figée 2026-06-18)** FR/EN : Mer/Sea · Motifs/Patterns · Hanami/Hanami · Kaïro/Kaïro · Territoires/Lands. Codes SKU : MER · MOT · HAN · KAI · TER. « Territoires » regroupe régions + drapeaux (USA, Bretagne). **Pas de sous-catégories** ; thèmes transverses = tags ; « série limitée » = mention bloc 2 BCDG, pas une collection. (Remplace l'ancienne structure 6 collections Kaïro/La Mer/OKUSAI/Bretagne/Éditions spéciales/Hanami.)
-- **« Arts de vivre » n'est PAS une 6ᵉ collection** (arbitrage C6, 2026-07-27) : c'est une **page éditoriale** « manifeste / bientôt » + une entrée de navigation. Aucune catégorie WooCommerce créée au MVP, la taxonomie reste figée à 5.
+- **« Arts de vivre » n'est PAS une 6ᵉ collection** (arbitrage C6, 2026-07-27) : depuis l'arbitrage du 2026-09-16 ce n'est plus une page autonome mais un **thème ou une catégorie d'articles de Lifestyle** (`/fr/lifestyle/`, `/en/lifestyle-koi/`). Aucune catégorie WooCommerce créée au MVP, la taxonomie reste figée à 5.
 - Tailles variables : attribut global `Taille` (50/75/100 cm extensible)
 - Produit spécial validé : **Stars & Stripes Koinobori - by BCDG** (Territoires/Lands · USA · 100 cm · série limitée · SKU `KH-TER-001-100`)
 - Nom interne fournisseur "US FLAG" jamais public
@@ -381,7 +424,7 @@ Persistent memory : fichiers du dossier mémoire de la session Claude Code (`MEM
 ## Écosystème KH (post-lancement)
 
 - Agents séparés du site (repos, hébergement, bases propres), reliés par UTM / WooCommerce REST / Plausible / événements versionnés. Index : [docs/ecosystem/README.md](docs/ecosystem/README.md).
-- **KH Social Agent** : Phase 1 (architecture, APIs vérifiées, MVP, décisions) livrée le 2026-09-12 dans [docs/ecosystem/kh-social-agent/](docs/ecosystem/kh-social-agent/), **en attente de validation Alain**. Aucun code. Démarrage développement au plus tôt après le 30/09 (décision D2). La doctrine éditoriale ci-dessus s'applique à tout contenu social (Doctrine Gate).
+- **KH Social Agent** : Phase 1 (architecture, APIs vérifiées, MVP, décisions) livrée le 2026-09-12 dans [docs/ecosystem/kh-social-agent/](docs/ecosystem/kh-social-agent/), **en attente de validation Alain**. Aucun code. **Développement DIFFÉRÉ : hors périmètre du lancement du 30/09, aucune ligne de code avant (a) validation Alain des décisions D1-D3 et (b) site lancé** (décision D2). Ces documents sont intégrés à `main` par le squash-merge de la PR #15 sous `23fc05b` ; ils ne touchent ni le thème, ni le staging. La doctrine éditoriale ci-dessus s'applique à tout contenu social (Doctrine Gate).
 
 ## Liens projets associés
 
