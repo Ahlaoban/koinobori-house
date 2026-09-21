@@ -23,6 +23,14 @@ if ( $argc < 3 ) {
 
 $input_path = $argv[1];
 $out_dir    = rtrim( $argv[2], "/\\" );
+if ( 1 !== preg_match( '/\.private\.json$/', $input_path ) ) {
+	fwrite( STDERR, "Input must be a *.private.json inventory.\n" );
+	exit( 2 );
+}
+if ( ! is_dir( $out_dir ) || ! is_writable( $out_dir ) ) {
+	fwrite( STDERR, "Output directory missing or not writable.\n" );
+	exit( 2 );
+}
 $raw        = file_get_contents( $input_path );
 if ( false === $raw ) {
 	fwrite( STDERR, "Cannot read input.\n" );
@@ -97,9 +105,15 @@ if ( file_exists( $out_path ) ) {
 	fwrite( STDERR, "Output exists, refusing to overwrite.\n" );
 	exit( 1 );
 }
-file_put_contents( $out_path, $public );
+if ( strlen( $public ) !== file_put_contents( $out_path, $public ) ) {
+	fwrite( STDERR, "Incomplete write of the public file.\n" );
+	exit( 1 );
+}
 chmod( $out_path, 0600 );
 $sha = hash_file( 'sha256', $out_path );
-file_put_contents( $out_path . '.sha256', $sha . '  ' . basename( $out_path ) . "\n" );
+if ( false === $sha || false === file_put_contents( $out_path . '.sha256', $sha . '  ' . basename( $out_path ) . "\n" ) ) {
+	fwrite( STDERR, "Cannot write the checksum file.\n" );
+	exit( 1 );
+}
 
 echo json_encode( array( 'written' => $out_path, 'sha256' => $sha, 'private_sha256_local_log_only' => hash( 'sha256', $raw ) ), JSON_PRETTY_PRINT ) . "\n";

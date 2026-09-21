@@ -51,15 +51,18 @@ wp eval-file ~/kh2027-private/tools/inventory.php --skip-plugins --skip-themes -
 sha256sum ~/kh2027-private/inventory/staging-inventory-*.private.json
 ```
 
-Le script affiche sur stderr le résultat de chaque garde, puis sur stdout le nom du fichier, son SHA-256 et les compteurs par section. Le JSON privé reste sur le serveur (0600) ; une copie est rapatriée par le gestionnaire cPanel dans `C:\dev\_koinobori-safety-<date>\` (hors dépôt).
+Le script affiche sur stderr le résultat de chaque garde, puis sur stdout le nom du fichier, son SHA-256 et les compteurs par section. Le JSON privé reste sur le serveur (0600) : il n'est jamais rapatrié.
 
-## Assainissement (poste local)
+## Assainissement (serveur, hors racine web)
+
+Le poste de développement n'ayant pas de PHP, l'assainissement se fait sur le serveur, dans `~/kh2027-private/`. Déposer `inventory-sanitize.php` dans `tools/`, comparer son empreinte à celle de Git et passer `php -l` comme pour `inventory.php`, puis :
 
 ```
-php tools/staging/inventory-sanitize.php C:\dev\_koinobori-safety-<date>\staging-inventory-<UTC>.private.json docs/audit/<date>
+cd ~/kh2027-private
+php tools/inventory-sanitize.php inventory/staging-inventory-<UTC>.private.json inventory
 ```
 
-Refus si un secret, un email, un chemin serveur, un nom de base ou une query string subsiste. Produit `…public.json` + `.sha256`. Revue humaine (Alain ou Codex) avant `git add`. Le SHA-256 du privé est consigné dans le journal local, jamais dans Git.
+L'entrée doit se terminer par `.private.json` et le dossier de sortie doit exister. Refus si un secret, un email, un chemin serveur, un nom de base ou une query string subsiste. Produit `…public.json` + `.sha256`. Seuls ces deux fichiers sont rapatriés (gestionnaire cPanel), leur SHA-256 recontrôlé en local, puis revue humaine (Alain ou Codex) avant `git add` dans `docs/audit/<date>/`. Le SHA-256 du privé est consigné dans le journal, le fichier privé jamais dans Git.
 
 ## Journal
 

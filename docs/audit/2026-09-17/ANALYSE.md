@@ -39,7 +39,7 @@ Source : `staging-inventory-20260917T091737Z.public.json` (SHA-256 `8be47d89…d
 |---|---|---|
 | K1 | `litespeed.conf.cache = false` : cache page désactivé (cohérent avec l'interface du 10/09 « LSCache indisponible ») | `options` |
 | K2 | Sitemaps SEOPress : **état indéterminé, relevé à refaire**. Le script du 17/09 lisait la clé `xml_sitemap_general_enable` alors que SEOPress stocke `seopress_xml_sitemap_general_enable` dans l'option (corrigé après revue Codex) ; le `null` du JSON du 17/09 n'est pas une mesure. Ne rien activer sur cette base | `options` |
-| K3 | `cmplz_wizard_completed = false` | `options` |
+| K3 | Complianz : **état indéterminé, relevé à refaire**. Le script du 17/09 lisait `cmplz_wizard_completed`, option que Complianz n'écrit pas (la vraie est `cmplz_wizard_completed_once`, cf `settings/settings.php` du plugin) ; le `false` du JSON du 17/09 n'est pas une mesure (corrigé après revue du 21/09, une option absente vaut désormais `null`) | `options` |
 | K4 | `woocommerce_calc_taxes = no` (franchise TVA, conforme) ; `EUR` ; pays par défaut `FR` | `options` |
 | K5 | Action Scheduler : `fetch_patterns` **14 échecs** (WooCommerce patterns, réseau sortant bloqué ?) | `action_scheduler` |
 | K6 | `posts.count = 0` : Lifestyle vide | `posts` |

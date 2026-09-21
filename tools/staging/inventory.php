@@ -62,7 +62,7 @@ $guards = array(
 	'siteurl_host'        => KH_STAGING_HOST === $site_host && 'https' === $site_scheme,
 	'db_name_constant'    => defined( 'DB_NAME' ) && KH_STAGING_DB === DB_NAME,
 	'db_name_connection'  => KH_STAGING_DB === $wpdb->dbname,
-	'db_not_production'   => ! defined( 'DB_NAME' ) || false === strpos( DB_NAME, KH_FORBIDDEN_DB ),
+	'db_not_production'   => defined( 'DB_NAME' ) && false === strpos( DB_NAME, KH_FORBIDDEN_DB ) && false === strpos( (string) $wpdb->dbname, KH_FORBIDDEN_DB ),
 	'table_prefix'        => KH_STAGING_PREFIX === $wpdb->prefix,
 	'abspath_realpath'    => '' !== KH_STAGING_ROOT && $abspath_real === KH_STAGING_ROOT,
 	'not_multisite'       => ! is_multisite(),
@@ -169,6 +169,10 @@ function kh_inv_post_translations() {
 		$group = kh_inv_unserialize( $row->description );
 		$clean = array();
 		foreach ( $group as $lang => $id ) {
+			// Language => post ID pairs only: skip any non-scalar bookkeeping key (e.g. `sync`).
+			if ( ! is_scalar( $id ) || (int) $id <= 0 ) {
+				continue;
+			}
 			$clean[ (string) $lang ] = (int) $id;
 		}
 		$map[ (int) $row->object_id ] = $clean;
@@ -186,6 +190,22 @@ function kh_inv_meta_map( $post_ids, $meta_key ) {
 	$map  = array();
 	foreach ( (array) $rows as $row ) {
 		$map[ (int) $row->post_id ] = (string) $row->meta_value;
+	}
+	return $map;
+}
+
+/** Map post ID => post_title in one query. */
+function kh_inv_titles( $post_ids ) {
+	global $wpdb;
+	$post_ids = array_filter( array_unique( array_map( 'intval', (array) $post_ids ) ) );
+	if ( ! $post_ids ) {
+		return array();
+	}
+	$ids  = implode( ',', $post_ids );
+	$rows = kh_inv_results( "SELECT ID, post_title FROM {$wpdb->posts} WHERE ID IN ($ids)" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+	$map  = array();
+	foreach ( (array) $rows as $row ) {
+		$map[ (int) $row->ID ] = (string) $row->post_title;
 	}
 	return $map;
 }
@@ -293,7 +313,9 @@ try {
 	$seopress = kh_inv_unserialize( get_option( 'seopress_xml_sitemap_option_name' ) );
 	// Key name per SEOPress src/Services/Options/SitemapOption.php (prefixed inside the option array).
 	$options['seopress_xml_sitemap_general_enable'] = isset( $seopress['seopress_xml_sitemap_general_enable'] ) ? (bool) $seopress['seopress_xml_sitemap_general_enable'] : null;
-	$options['cmplz_wizard_completed'] = (bool) get_option( 'cmplz_wizard_completed' );
+	// Option name per Complianz settings/settings.php. Absent option = not measured (null), never false.
+	$cmplz = get_option( 'cmplz_wizard_completed_once', null );
+	$options['cmplz_wizard_completed_once'] = null === $cmplz ? null : (bool) $cmplz;
 	$data['options'] = $options;
 
 	$lang_rows = kh_inv_results(
@@ -331,11 +353,12 @@ try {
 		$objects  = kh_inv_meta_map( $item_ids, '_menu_item_object' );
 		$obj_ids  = kh_inv_meta_map( $item_ids, '_menu_item_object_id' );
 		$urls     = kh_inv_meta_map( $item_ids, '_menu_item_url' );
+		$titles   = kh_inv_titles( array_merge( $item_ids, array_values( $obj_ids ) ) );
 		$items    = array();
 		foreach ( $item_ids as $order => $id ) {
-			$title = kh_inv_text( kh_inv_var( $wpdb->prepare( "SELECT post_title FROM {$wpdb->posts} WHERE ID = %d", $id ) ) );
+			$title = kh_inv_text( $titles[ $id ] ?? '' );
 			if ( '' === $title && ( $types[ $id ] ?? '' ) === 'post_type' ) {
-				$title = kh_inv_text( kh_inv_var( $wpdb->prepare( "SELECT post_title FROM {$wpdb->posts} WHERE ID = %d", (int) ( $obj_ids[ $id ] ?? 0 ) ) ) );
+				$title = kh_inv_text( $titles[ (int) ( $obj_ids[ $id ] ?? 0 ) ] ?? '' );
 			}
 			$items[] = array(
 				'order'     => $order + 1,
@@ -401,14 +424,16 @@ try {
 
 	$forms = array();
 	if ( kh_inv_table_exists( $prefix . 'fluentform_forms' ) ) {
-		$form_rows = kh_inv_results( "SELECT id, title, status, form_fields FROM {$prefix}fluentform_forms ORDER BY id" );
+		$has_form_meta   = kh_inv_table_exists( $prefix . 'fluentform_form_meta' );
+		$has_submissions = kh_inv_table_exists( $prefix . 'fluentform_submissions' );
+		$form_rows       = kh_inv_results( "SELECT id, title, status, form_fields FROM {$prefix}fluentform_forms ORDER BY id" );
 		foreach ( (array) $form_rows as $row ) {
 			$form_id = (int) $row->id;
 			$fields  = array();
 			$decoded = json_decode( (string) $row->form_fields, true );
 			kh_inv_form_fields( $decoded['fields'] ?? array(), $fields );
 			$notifications = array();
-			if ( kh_inv_table_exists( $prefix . 'fluentform_form_meta' ) ) {
+			if ( $has_form_meta ) {
 				$meta_rows = kh_inv_col( $wpdb->prepare( "SELECT value FROM {$prefix}fluentform_form_meta WHERE form_id = %d AND meta_key = 'notifications'", $form_id ) );
 				foreach ( (array) $meta_rows as $value ) {
 					$n = json_decode( (string) $value, true );
@@ -424,7 +449,7 @@ try {
 					);
 				}
 			}
-			$submissions = kh_inv_table_exists( $prefix . 'fluentform_submissions' )
+			$submissions = $has_submissions
 				? (int) kh_inv_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$prefix}fluentform_submissions WHERE form_id = %d", $form_id ) )
 				: 0;
 			$forms[] = array(
@@ -522,9 +547,13 @@ $handle = fopen( $out_path, 'x' );
 if ( false === $handle ) {
 	throw new RuntimeException( 'Cannot create output file.' );
 }
-fwrite( $handle, $json . PHP_EOL );
-fclose( $handle );
+$payload = $json . PHP_EOL;
+$written = fwrite( $handle, $payload );
+$closed  = fclose( $handle );
 chmod( $out_path, 0600 );
+if ( strlen( $payload ) !== $written || ! $closed ) {
+	throw new RuntimeException( 'Incomplete write: ' . basename( $out_path ) . ' is not a valid inventory.' );
+}
 
 $summary = array();
 foreach ( $data as $section => $value ) {
