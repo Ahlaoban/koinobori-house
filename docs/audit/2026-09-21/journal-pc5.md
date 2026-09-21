@@ -32,7 +32,7 @@ Thème : remettre `backups/theme-dir-1.1.0-20260921T163100Z` à la place de `wp-
 - 284 `lifestyle` et 295 `lifestyle-koi` : texte d'attente (« Les premiers articles arrivent »).
 - Liens entrants : le contenu des pages 318 / 319 (plus rendu depuis que le gabarit d'accueil est posé, il n'appelle pas `the_content()`) et les éléments de menu 299 / 306 des menus 144 / 145 (plus affichés par le nouveau header). Aucun lien visible ne subsiste vers ces pages.
 - Doctrine : « objets décoratifs japonais et asiatiques », aucune mention interdite.
-- À décider par Alain : reprendre ou non une phrase de l'intention dans la page Lifestyle, puis déposer le mu-plugin (301 vers Lifestyle, même langue).
+- **Décision Alain (21/09, soir) : « Supprimer Arts de vivre, redondant avec Lifestyle ».** 16:42:17 UTC : `koino-arts-de-vivre-redirect.php` déposé dans `wp-content/mu-plugins/` (SHA-256 `b82c42cf31ae24b54dea0eaee06e7db3d9d1b7c27160ca99ba2d7c89d9d89894` = `main`), WordPress charge avec 3 mu-plugins ; cibles résolues : 282 → `/fr/lifestyle/` (publiée), 291 → `/en/lifestyle-koi/` (publiée). Les deux pages restent publiées (la redirection repose sur `is_page`) ; rien n'est supprimé. Code HTTP 301 non observé (navigateur de Claude bloqué par le certificat du staging).
 
 ## Non vérifié
 
