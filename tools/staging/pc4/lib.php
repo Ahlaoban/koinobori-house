@@ -28,11 +28,13 @@ function kh_pc4_boot( $script, $confirm_token ) {
 		'php_sapi_cli'        => 'cli' === PHP_SAPI,
 		'wp_cli'              => defined( 'WP_CLI' ) && WP_CLI,
 		'environment_staging' => 'staging' === wp_get_environment_type(),
-		'home_host'           => KH_PC4_HOST === (string) wp_parse_url( (string) get_option( 'home' ), PHP_URL_HOST ),
-		'siteurl_host'        => KH_PC4_HOST === (string) wp_parse_url( (string) get_option( 'siteurl' ), PHP_URL_HOST ),
+		'home_host'           => KH_PC4_HOST === (string) wp_parse_url( (string) get_option( 'home' ), PHP_URL_HOST )
+			&& 'https' === (string) wp_parse_url( (string) get_option( 'home' ), PHP_URL_SCHEME ),
+		'siteurl_host'        => KH_PC4_HOST === (string) wp_parse_url( (string) get_option( 'siteurl' ), PHP_URL_HOST )
+			&& 'https' === (string) wp_parse_url( (string) get_option( 'siteurl' ), PHP_URL_SCHEME ),
 		'db_name_constant'    => defined( 'DB_NAME' ) && KH_PC4_DB === DB_NAME,
 		'db_name_connection'  => KH_PC4_DB === $wpdb->dbname,
-		'db_not_production'   => ! defined( 'DB_NAME' ) || false === strpos( DB_NAME, KH_PC4_FORBIDDEN ),
+		'db_not_production'   => defined( 'DB_NAME' ) && false === strpos( DB_NAME, KH_PC4_FORBIDDEN ) && false === strpos( (string) $wpdb->dbname, KH_PC4_FORBIDDEN ),
 		'table_prefix'        => KH_PC4_PREFIX === $wpdb->prefix,
 		'abspath_realpath'    => $abspath === KH_PC4_ROOT,
 		'not_multisite'       => ! is_multisite(),
@@ -98,6 +100,10 @@ function kh_pc4_backup( $ctx, $label, array $restore, array $extra = array() ) {
 		'restore'     => $restore,
 		'extra'       => $extra,
 	), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
+	// An unencodable value must never produce an empty backup followed by a write.
+	if ( false === $json || null === json_decode( $json, true ) ) {
+		WP_CLI::error( 'Backup cannot be encoded; nothing written to the database.' );
+	}
 	$handle = fopen( $path, 'x' );
 	if ( false === $handle ) {
 		WP_CLI::error( 'Cannot create backup: ' . $path );
