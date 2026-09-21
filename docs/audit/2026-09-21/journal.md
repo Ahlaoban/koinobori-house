@@ -21,6 +21,21 @@ Session cPanel ouverte par Alain (`cow.o2switch.net:2083`, compte `heal3867`) da
 
 `~/kh2027-private/tools/b-8e66680/{pc4,inv,lint}`, `tools/kh-pc4-8e66680.tar`, `tools/pc4/lib.php`, `tools/inv-8e66680/inventory.php`, `inventory/staging-inventory-20260921T101119Z.{private,public}.json` + `.sha256`, `pc4-preflight.txt`, `pc4-deposit.txt`, `pc4-deposit2.txt`, `pc4-dryrun.txt`, `pc4-inventory.txt`, dossier `backups/` vide.
 
-## Écritures
+## Écritures (GO Alain « GO tout », 2026-09-21)
 
-Aucune à ce stade. Sauvegarde puis application : après feu vert d'Alain, script par script.
+| UTC | Action | Résultat |
+|---|---|---|
+| 10:13:07 | **Sauvegarde complète** : `wp db export` → `~/kh2027-private/backups/staging-db-20260921T101307Z.sql.gz` | 94 tables, « Dump completed », 1 509 674 octets, `0600`, `gzip -t` OK, SHA-256 `4e1581ad7287c38ac4fdafb1416673640a26a53a1338859819c642e698aa6b04` |
+| 10:13:47 | **I1** `KH_APPLY=1 KH_CONFIRM=i1-country-free-text` | formulaires 7 `pays` et 8 `country` : `select_country` → `input_text`, libellé / obligatoire / règles inchangés ; sauvegarde `i1-fluentform-forms-20260921T101348Z.json` SHA-256 `d13b7e9d…56ef` ; second passage : « Nothing to change » |
+| 10:14:11 | **I2** `KH_CONFIRM=i2-redirect-lang` | `polylang.redirect_lang` `false` → `true`, autres clés inchangées (`force_lang=1`, `hide_default=false`, `rewrite=true`, `browser=false`, `default_lang=fr`) ; sauvegarde `i2-option-polylang-20260921T101412Z.json` SHA-256 `4f605e3d…742f` ; second passage : « already true » |
+| 10:14:16 | **I3** `KH_CONFIRM=i3-polylang-pairs` (plugins chargés) | 232↔234, 235↔236, 230↔231 liées, vérification après écriture passée ; sauvegarde `i3-polylang-groups-20260921T101416Z.json` SHA-256 `249442cf…85d6` ; second passage : 3 × « already paired » |
+| 10:14:19 | **I5** `KH_CONFIRM=i5-blogname` | `blogname` `""` → `"Koinobori House"` ; sauvegarde `i5-option-blogname-20260921T101419Z.json` SHA-256 `e1a633c6…59d4` ; second passage : « already set » |
+
+Chaîne I2 → I3 → I5 : `chain_exit=0`. I6 non appliqué (rapport seul, tarifs et périmètre UE à approuver par Alain). Cache LiteSpeed à `false` : pas de purge nécessaire. Retour arrière : `restore.php <sauvegarde>` (dry-run puis `KH_APPLY=1 KH_CONFIRM=restore`), ou le dump complet.
+
+## Non vérifié
+
+- **Rendu HTTP de `/fr/` et `/en/` après I2**, formulaires 7 / 8 côté public, `hreflang` des 3 paires, `<title>` après I5 : Chrome refuse la page du staging (certificat auto-signé, puis authentification basique). Non contourné. À contrôler par Alain dans le navigateur.
+- K3 Complianz : à confirmer dans l'admin (cf ci-dessus).
+
+Sorties brutes sur le serveur : `pc4-backup.txt`, `pc4-apply-i1.txt`, `pc4-apply-i2-i3-i5.txt` dans `~/kh2027-private/`.
