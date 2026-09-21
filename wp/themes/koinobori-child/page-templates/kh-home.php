@@ -20,7 +20,8 @@ $worlds = array(
 );
 get_header();
 ?>
-<main id="main" class="kh-home">
+<?php // Kadence 1.5.2 header.php already opens <main id="inner-wrap">: no nested landmark, no Kadence title hook (kadence_single is not fired here). ?>
+<div id="main" class="kh-home">
 	<section class="kh-home-hero" aria-labelledby="kh-home-title">
 		<div class="kh-container kh-home-hero__inner">
 			<p class="kh-eyebrow">Koinobori House · <?php echo esc_html( $t( 'Créations BCDG', 'BCDG Creations' ) ); ?></p>
@@ -69,7 +70,7 @@ get_header();
 		</div>
 	</section>
 	<?php
-	$journal = new WP_Query( array( 'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 3, 'lang' => $language, 'no_found_rows' => true ) );
+	$journal = new WP_Query( array( 'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 3, 'lang' => $language, 'no_found_rows' => true, 'ignore_sticky_posts' => true ) );
 	if ( $journal->have_posts() ) : ?>
 	<section class="kh-movement" aria-labelledby="kh-journal-title"><div class="kh-container">
 		<h2 id="kh-journal-title" class="kh-title">Lifestyle &amp; Koi</h2>
@@ -109,5 +110,5 @@ get_header();
 		<?php echo $newsletter; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- trusted plugin form rendering. ?>
 	</div></section>
 	<?php endif; ?>
-</main>
+</div>
 <?php get_footer(); ?>

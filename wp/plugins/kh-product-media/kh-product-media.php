@@ -2,7 +2,7 @@
 /**
  * Plugin Name: KH — Vidéo produit
  * Description: Une vidéo de la médiathèque par fiche WooCommerce, sans modifier les galeries photo.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires PHP: 8.1
  * Requires Plugins: woocommerce
  */
@@ -98,7 +98,7 @@ function khpm_render() {
 	if ( ! $data ) { return; }
 	$label = khpm_text( 'Le koi en mouvement', 'The koi in motion' );
 	echo '<section class="khpm-film" aria-label="' . esc_attr( $label ) . '"><h2>' . esc_html( $label ) . '</h2>';
-	echo '<video controls playsinline preload="none" aria-label="' . esc_attr( $product->get_name() . ' — ' . $label ) . '"';
+	echo '<video controls playsinline preload="none" aria-label="' . esc_attr( $product->get_name() . ', ' . $label ) . '"';
 	if ( $data['poster'] ) { echo ' poster="' . esc_url( $data['poster'] ) . '"'; }
 	echo '><source src="' . esc_url( $data['url'] ) . '" type="' . esc_attr( $data['type'] ) . '">';
 	echo '<a href="' . esc_url( $data['url'] ) . '">' . esc_html( khpm_text( 'Ouvrir la vidéo', 'Open video' ) ) . '</a></video></section>';

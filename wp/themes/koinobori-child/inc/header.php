@@ -5,6 +5,11 @@ require_once __DIR__ . '/class-icon-walker.php';
 
 function koinobori_child_header_text( $fr, $en ) {
 	$lang = function_exists( 'pll_current_language' ) ? pll_current_language() : substr( get_locale(), 0, 2 );
+	// wc-ajax fragments are rebuilt outside the page: the page that asked is the reference.
+	if ( isset( $_GET['wc-ajax'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$path = (string) wp_parse_url( (string) wp_get_raw_referer(), PHP_URL_PATH );
+		if ( preg_match( '#^/(fr|en)(/|$)#', $path, $match ) ) { $lang = $match[1]; }
+	}
 	return 'en' === $lang ? $en : $fr;
 }
 
@@ -82,7 +87,7 @@ function koinobori_child_header_actions( $mobile = false ) {
 
 	echo koinobori_child_header_cart( $mobile ); // Escaped at construction.
 	if ( function_exists( 'pll_the_languages' ) ) {
-		$languages = pll_the_languages( array( 'raw' => 1, 'hide_if_empty' => 0, 'hide_if_no_translation' => 1 ) );
+		$languages = pll_the_languages( array( 'raw' => 1, 'hide_if_empty' => 0, 'hide_if_no_translation' => 0 ) );
 		echo '<div class="kh-header-languages" aria-label="' . esc_attr( koinobori_child_header_text( 'Langue', 'Language' ) ) . '">';
 		foreach ( $languages as $language ) {
 			echo '<a href="' . esc_url( $language['url'] ) . '" lang="' . esc_attr( $language['slug'] ) . '" hreflang="' . esc_attr( $language['slug'] ) . '"'

@@ -1,6 +1,6 @@
 /* Opt-in editorial pages. Commerce markup and behaviours remain WooCommerce's. */
 .kh-editorial {
-  --kh-editorial-muted: #625b54;
+  --kh-editorial-muted: var(--kh-sumi-70);
   background-image: linear-gradient(rgb(248 244 238 / .92), rgb(248 244 238 / .92)), url('../images/texture-washi-v2.webp');
   background-blend-mode: normal;
 }
@@ -39,7 +39,7 @@
 .kh-home-split { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5rem; }
 .kh-home-split .kh-text-link { margin-top: 2rem; }
 .kh-home-house { border-top: 1px solid var(--kh-sumi-20); }
-.kh-home-living { background: #eeece7; }
+.kh-home-living { background: var(--kh-white); }
 .kh-home-living .kh-title { color: var(--kh-indigo); }
 .kh-home-journal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 3rem; }
 .kh-home-journal img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }

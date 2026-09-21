@@ -95,7 +95,7 @@ add_action( 'admin_notices', function () {
 function koinobori_child_footer_render() {
 	$language = koinobori_child_header_text( 'fr', 'en' );
 	$groups = array(
-		array( 'title' => koinobori_child_header_text( 'La maison', 'The house' ), 'entries' => array(
+		array( 'title' => 'Navigation', 'entries' => array(
 			array( 'boutique', 'Boutique', 'Shop' ),
 			array( 'atelier', 'L’Atelier', 'The House' ),
 			array( 'lifestyle', 'Lifestyle & Koi', 'Lifestyle & Koi' ),
@@ -114,7 +114,7 @@ function koinobori_child_footer_render() {
 	// Polylang owns translated URLs, including product/category translations.
 	// https://polylang.pro/documentation/support/developers/function-reference/#pll_the_languages
 	$languages = function_exists( 'pll_the_languages' ) ? pll_the_languages( array(
-		'raw' => 1, 'hide_if_empty' => 0, 'hide_if_no_translation' => 1,
+		'raw' => 1, 'hide_if_empty' => 0, 'hide_if_no_translation' => 0,
 	) ) : array();
 	include get_stylesheet_directory() . '/template-parts/footer-horizon.php';
 }

@@ -1,7 +1,7 @@
 /* Scope: Contact, Business and Institutions, in both languages. */
 .kh-enquiry-page {
-  --kh-form-line: #a69d91;
-  --kh-form-muted: #655c52;
+  --kh-form-line: var(--kh-sumi-52, rgb(26 20 16 / 0.52));
+  --kh-form-muted: var(--kh-sumi-70, rgb(26 20 16 / 0.7));
   background: var(--kh-washi, #f8f4ee);
 }
 .kh-enquiry-page .content-area { margin-block: clamp(32px, 5vw, 72px); }
@@ -89,10 +89,10 @@
   font: 400 16px/1.4 var(--kh-font-ui, "DM Sans", sans-serif);
   box-shadow: none;
 }
-.kh-enquiry-page .kh-enquiry-form .ff-btn-submit:hover { background: #a72715; border-color: #a72715; }
+.kh-enquiry-page .kh-enquiry-form .ff-btn-submit:hover { background: var(--kh-sumi, #1a1410); border-color: var(--kh-sumi, #1a1410); }
 .kh-enquiry-page .kh-enquiry-form :is(.error, .text-danger),
-.kh-enquiry-page .ff-errors-in-stack { color: #a72715; }
-.kh-enquiry-page .kh-enquiry-form .ff-el-is-error .ff-el-form-control { border-color: #a72715; }
+.kh-enquiry-page .ff-errors-in-stack { color: var(--kh-vermillon, #c8311a); }
+.kh-enquiry-page .kh-enquiry-form .ff-el-is-error .ff-el-form-control { border-color: var(--kh-vermillon, #c8311a); }
 .kh-enquiry-page .ff-message-success {
   padding: 20px;
   border: 1px solid var(--kh-form-line);
@@ -103,7 +103,7 @@
 .kh-enquiry-preview-note {
   margin-block: 0 24px;
   padding: 16px 20px;
-  border-inline-start: 2px solid var(--kh-form-line, #a69d91);
+  border-inline-start: 2px solid var(--kh-form-line, rgb(26 20 16 / 0.52));
   font: 400 16px/1.6 var(--kh-font-ui, "DM Sans", sans-serif);
 }
 @media (max-width: 767px) {

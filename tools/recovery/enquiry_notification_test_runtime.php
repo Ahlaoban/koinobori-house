@@ -95,8 +95,8 @@ foreach ( $forms as $slug => $form_id ) {
 		if ( ! is_array( $actual ) ) {
 			WP_CLI::error( 'A stored notification is missing for form ' . $form_id . '.' );
 		}
-		$comparable = $actual;
-		unset( $comparable['id'] );
+		// SettingsService::store may add normalised keys: every drafted key must match, extra keys are tolerated.
+		$comparable = array_intersect_key( $actual, $expected_notification );
 		if ( $comparable != $expected_notification || false !== ( $actual['enabled'] ?? null )
 			|| ! empty( $actual['cc'] ) || ! empty( $actual['bcc'] ) || ! empty( $actual['attachments'] ) ) {
 			WP_CLI::error( 'A stored notification differs from its disabled draft for form ' . $form_id . '.' );

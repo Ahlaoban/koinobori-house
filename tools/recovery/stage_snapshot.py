@@ -89,7 +89,7 @@ def stage(bundle, expected_hash, destination):
             with tf.extractfile(item) as src, (destination / item.name).open('xb') as dst:
                 for block in iter(lambda: src.read(1048576), b''):
                     dst.write(block)
-    summary = json.loads((destination / 'capture-summary.json').read_text())
+    summary = json.loads((destination / 'capture-summary.json').read_text(encoding='utf-8'))
     for name in ('database.sql.gz', 'site.tar.gz'):
         part = destination / name
         expected = summary['archives'][name]
@@ -104,8 +104,8 @@ def stage(bundle, expected_hash, destination):
                 raise ValueError('Database exceeds uncompressed size limit')
     if not sql_bytes:
         raise ValueError('Empty database dump')
-    before = json.loads((destination / 'source-before.json').read_text())
-    after = json.loads((destination / 'source-after.json').read_text())
+    before = json.loads((destination / 'source-before.json').read_text(encoding='utf-8'))
+    after = json.loads((destination / 'source-after.json').read_text(encoding='utf-8'))
     if before != after:
         raise ValueError('Unstable source manifest')
     count, size = unpack_site(destination / 'site.tar.gz', before, destination / 'site')
