@@ -69,22 +69,21 @@ get_header();
 			<?php $url = $page_url( 'atelier' ); if ( $url ) : ?><a class="kh-text-link" href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $t( "Entrer dans L’Atelier", 'Step into The House' ) ); ?> <span aria-hidden="true">→</span></a><?php endif; ?></div>
 		</div>
 	</section>
-	<?php
-	$journal = new WP_Query( array( 'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 3, 'lang' => $language, 'no_found_rows' => true, 'ignore_sticky_posts' => true ) );
-	if ( $journal->have_posts() ) : ?>
-	<section class="kh-movement" aria-labelledby="kh-journal-title"><div class="kh-container">
-		<h2 id="kh-journal-title" class="kh-title">Lifestyle &amp; Koi</h2>
+	<?php // Single Lifestyle & Koi movement (arbitrage 2026-09-16): the former separate living-arts section is absorbed here.
+	$journal = new WP_Query( array( 'post_type' => 'post', 'post_status' => 'publish', 'posts_per_page' => 3, 'lang' => $language, 'no_found_rows' => true, 'ignore_sticky_posts' => true ) ); ?>
+	<section class="kh-movement kh-home-living" aria-labelledby="kh-journal-title"><div class="kh-container">
+		<div class="kh-home-split">
+			<div><p class="kh-eyebrow">04 · <?php echo esc_html( $t( 'Art de vivre', 'Art of living' ) ); ?></p><h2 id="kh-journal-title" class="kh-title">Lifestyle &amp; Koi</h2></div>
+			<div><p class="kh-lead"><?php echo esc_html( $t( 'Des récits, des gestes et des objets autour du koi et de l’art de vivre japonais. Pour installer, offrir et regarder vivre une carpe de vent.', 'Stories, gestures and objects around koi and the Japanese art of living. How to hang, give and watch a wind carp come alive.' ) ); ?></p>
+			<?php $url = $page_url( 'lifestyle' ); if ( $url ) : ?><a class="kh-text-link" href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $t( 'Lire Lifestyle & Koi', 'Read Lifestyle & Koi' ) ); ?> <span aria-hidden="true">→</span></a><?php endif; ?></div>
+		</div>
+		<?php if ( $journal->have_posts() ) : ?>
 		<div class="kh-home-journal">
 		<?php while ( $journal->have_posts() ) : $journal->the_post(); ?>
 			<article><a href="<?php the_permalink(); ?>"><?php if ( has_post_thumbnail() ) { the_post_thumbnail( 'medium_large', array( 'loading' => 'lazy' ) ); } ?><h3><?php the_title(); ?></h3></a><p><?php echo esc_html( wp_trim_words( get_the_excerpt(), 24 ) ); ?></p></article>
 		<?php endwhile; ?>
 		</div>
-	</div></section>
-	<?php endif; wp_reset_postdata(); ?>
-	<section class="kh-movement kh-home-living" aria-labelledby="kh-living-title"><div class="kh-container kh-home-split">
-		<div><p class="kh-eyebrow"><?php echo esc_html( $t( 'Bientôt', 'Coming soon' ) ); ?></p><h2 id="kh-living-title" class="kh-title"><?php echo esc_html( $t( 'Arts de vivre', 'Art de Vivre' ) ); ?></h2></div>
-		<div><p class="kh-lead"><?php echo esc_html( $t( 'Une sélection d’objets décoratifs japonais et asiatiques, choisis avec la même exigence que nos créations. Peu de pièces, organisées par usage et par atmosphère plutôt que par rayon.', 'A selection of Japanese and Asian decorative objects, chosen with the same demands we place on our own creations. Few pieces, organised by use and atmosphere rather than by department.' ) ); ?></p>
-		<?php $url = $page_url( 'arts-de-vivre' ); if ( $url ) : ?><a class="kh-text-link" href="<?php echo esc_url( $url ); ?>"><?php echo esc_html( $t( 'Découvrir l’intention', 'Discover the intention' ) ); ?> <span aria-hidden="true">→</span></a><?php endif; ?></div>
+		<?php endif; wp_reset_postdata(); ?>
 	</div></section>
 	<section class="kh-movement kh-home-manifesto" aria-labelledby="kh-manifesto-title"><div class="kh-container">
 		<p class="kh-eyebrow"><?php echo esc_html( $t( 'Le manifeste', 'The manifesto' ) ); ?></p>
