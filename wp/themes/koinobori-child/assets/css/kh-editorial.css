@@ -1,8 +1,6 @@
 /* Opt-in editorial pages. Commerce markup and behaviours remain WooCommerce's. */
 .kh-editorial {
   --kh-editorial-muted: var(--kh-sumi-70);
-  background-image: linear-gradient(rgb(248 244 238 / .92), rgb(248 244 238 / .92)), url('../images/texture-washi-v2.webp');
-  background-blend-mode: normal;
 }
 .kh-editorial .kh-home { min-width: 0; }
 .kh-editorial .kh-home h1,
@@ -14,7 +12,7 @@
 .kh-editorial .kh-home .kh-button--primary { color: var(--kh-white); }
 .kh-editorial .kh-home .kh-button { font-size: .875rem; letter-spacing: .04em; }
 .kh-editorial .kh-home :focus-visible { outline: 2px solid var(--kh-vermillon); outline-offset: 5px; }
-.kh-home-hero { display: grid; grid-template-columns: 1fr 1fr; background: var(--kh-washi); }
+.kh-home-hero { display: grid; grid-template-columns: 1fr 1fr; }
 .kh-home-hero__inner { width: auto; margin: 0; padding: clamp(3rem, 6vw, 6rem) max(1.25rem, calc((100vw - 75rem) / 2)); padding-right: 2rem; }
 .kh-home-hero__inner .kh-lead { max-width: 35ch; margin-bottom: 2rem; }
 .kh-home-hero__art { display: flex; min-height: 34rem; margin: 0; align-items: center; justify-content: center; }
@@ -47,7 +45,7 @@
 .kh-home .kh-link a:hover, .kh-home .kh-link a:focus-visible { gap: var(--kh-space-5); color: var(--kh-vermillon); }
 .kh-home-world h3 a::after { content: " 97"; }
 .kh-home-house { border-top: 1px solid var(--kh-sumi-20); }
-.kh-home-living { background: var(--kh-white); }
+.kh-home-living { background: var(--kh-white-88); }
 .kh-home-living .kh-title { color: var(--kh-indigo); }
 .kh-home-journal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 3rem; }
 .kh-home-journal img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
