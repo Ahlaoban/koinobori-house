@@ -76,3 +76,19 @@ Remarque d'Alain : « on ne doit pas du tout voir l'arrière-plan à travers le 
 Retour arrière : images = `restore.php` avec `pc8-product-cutouts-20260925T185728Z.json` (remet les anciens `_thumbnail_id`) ; thème = `backups/theme-dir-1.3.19-20260925T185752Z`. **Les deux ensemble** : le thème 1.3.21 sur les anciennes photos montrerait leurs rectangles blancs.
 
 Note : la règle `.gitignore` `*stripe*` (clés Stripe) écarte aussi `…stars-stripes…` ; l'image détourée a été ajoutée explicitement (`git add -f`).
+
+## Soir — PC9 ordre Kaïro + thème 1.3.22, déployés par Alain à 19:09 UTC
+
+Remarques d'Alain : (1) au survol, le dernier koi d'une page monde envahissait l'écran ; (2) Kaïro doit suivre l'ordre des épisodes.
+
+- Cause (1) : la dernière image, chargée en différé, reçoit `sizes="auto"` ; WordPress y associe une réserve `contain-intrinsic-size: 3000px 1500px` : boîte de 581 × 1500 px au lieu de 581 × 286, et fond du survol agrandi d'autant. Correctif 1.3.22 : filtre `wp_img_tag_add_auto_sizes` à `false` sur les galeries des mondes et de la home (simulation navigateur : 581 × 286).
+- (2) Tri par défaut « ordre du menu puis titre », tous à 0 : « L'Ombre » avant « La Promesse ». PC9 `tools/staging/pc9/kairo-order.php` : ordre du menu 1 à 4 en FR et EN (modifiable ensuite dans l'admin, Produits › Trier).
+
+| Heure (UTC) | Action | Résultat |
+|---|---|---|
+| ~19:07 | Alain dépose `kh-w1322.tar` (4 fichiers) dans `~/kh2027-private/tools/w1322/` | extraction vérifiée (tailles) |
+| 19:09:36 | PC9 appliqué | sauvegarde `pc9-kairo-order-20260925T190936Z.json` ; 186/220 → 1, 195/221 → 2, 196/222 → 3, 197/223 → 4 |
+| 19:09:37 | Bascule 1.3.21 → **1.3.22** (ancien dossier : `backups/theme-dir-1.3.21-20260925T190937Z`) | `wp eval` : `1.3.22` (thème chargé sans erreur) |
+| ~19:12 | Contrôle Claude | serveur OK (HTTP 401 d'authentification basique, `error_log` inchangé depuis le 28/08) ; rendu navigateur **non vérifié** : l'onglet de Claude a perdu l'authentification basique du staging → recette Alain |
+
+Retour arrière : ordre = `restore.php` avec `pc9-kairo-order-20260925T190936Z.json` ; thème = `backups/theme-dir-1.3.21-20260925T190937Z`.
