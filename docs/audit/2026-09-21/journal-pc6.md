@@ -22,3 +22,16 @@ Contenu des pages : `restore.php` (PC4) avec `pc6-home-post-content-20260921T182
 ## Non vérifié
 
 Rendu dans un navigateur (espacements des blocs, bouton, image du hero, mobile) et **validité des blocs dans l'éditeur** (aucun bloc ne doit être signalé « contenu inattendu ») : le Chrome de Claude ne passe pas le certificat du staging. Recette par Alain.
+
+## 2026-09-25 — fond washi Manus (thème 1.3.1)
+
+Recette Alain du 24/09 : home OK, **fond blanc** au lieu du papier washi. Causes : voile ivoire à 92 % dans `kh-editorial.css` + fond blanc Kadence (`.site` / `.content-bg`, palette9) par-dessus le fond du `body`. Correctif PR #25 (`b730eb4`) : `fond_washi_koinobori_house.png` du pack Manus (consigne README_assets.md : arrière-plan global, secours ivoire) converti en WebP 2560×1440 de 90 874 octets, posé en calque fixe couvrant l'écran (`body::before`, image non répétable), voile retiré, conteneurs Kadence transparents, hero transparent, Lifestyle en `--kh-white-88`.
+
+| UTC | Action | Résultat |
+|---|---|---|
+| 08:39:28 | Dépôt `kh-fond-b730eb4.tar` (SHA-256 `1d5a5b47…95b7`), extraction `~/kh2027-private/tools/f-b730eb4/` | 56 / 56 conformes |
+| 08:39 | Sauvegarde `theme-koinobori-child-1.3.0-20260925T083928Z.tar.gz` SHA-256 `acb89b1a…1ef1` + dossier `theme-dir-1.3.0-20260925T083928Z` | `0600` |
+| 08:39 | Bascule 1.3.0 → **1.3.1**, test de chargement | `SWAPPED`, `boot-ok 1.3.1`, image présente, règle CSS présente |
+| 08:39 | `wp litespeed-purge all` | 401 (auth basique), sans effet : cache LiteSpeed désactivé |
+
+CSS et image seulement, aucun PHP ni base. Retour arrière : remettre `theme-dir-1.3.0-…`. Rendu (papier, nuages, hero, mobile, autres pages) : recette Alain.
