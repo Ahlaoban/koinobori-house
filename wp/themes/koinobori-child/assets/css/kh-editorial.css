@@ -6,7 +6,7 @@
 .kh-editorial .kh-home h1,
 .kh-editorial .kh-home h2,
 .kh-editorial .kh-home h3 { font-family: var(--kh-font-display); font-weight: 400; color: var(--kh-sumi); }
-.kh-editorial .kh-home h1 { max-width: 19ch; margin: 1.5rem 0; font-size: clamp(2.75rem, 3.7vw, 4.6rem); line-height: 1.04; letter-spacing: -.03em; text-wrap: balance; }
+.kh-editorial .kh-home h1 { max-width: 14ch; margin: 1.5rem 0; font-size: clamp(3rem, 5.8vw, 5.5rem); line-height: 1.02; letter-spacing: -.035em; text-wrap: balance; }
 .kh-editorial .kh-home h3 { font-size: 2rem; line-height: 1.15; }
 .kh-editorial .kh-home .kh-eyebrow { color: var(--kh-editorial-muted); font-size: .875rem; }
 .kh-editorial .kh-home .kh-button--primary { color: var(--kh-white); }
@@ -18,7 +18,9 @@
 .kh-home-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: url('../images/hero-washi-manus.webp') center / cover no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); }
 .kh-home-hero > * { position: relative; z-index: 1; }
 .kh-home-hero__inner { width: auto; margin: 0; padding: clamp(3rem, 6vw, 6rem) max(1.25rem, calc((100vw - 75rem) / 2)); padding-right: 2rem; }
-.kh-home-hero__inner { max-width: 60rem; }
+/* Cadrage validé par Alain (25/09) : bloc de texte dans la moitié gauche, comme l'ancienne colonne. */
+.kh-home-hero__inner { max-width: 50%; }
+.kh-home-hero .kh-eyebrow { color: var(--kh-vermillon); }
 .kh-home-hero__inner .kh-lead { max-width: 35ch; margin-bottom: 2rem; }
 .kh-home-hero__art { display: flex; min-height: 34rem; margin: 0; align-items: center; justify-content: center; }
 .kh-home-hero__art img { width: 100%; height: 100%; max-height: 40rem; object-fit: contain; }
@@ -74,6 +76,7 @@
 @media (min-width: 1600px) { .kh-home-hero__inner { padding-right: 2rem; } }
 @media (max-width: 1024px) {
   .kh-home-hero { min-height: min(40rem, 90svh); }
+  .kh-home-hero__inner { max-width: none; }
   .kh-home-hero::before { background-position: 72% center; }
   .kh-home-hero__inner { padding: 3rem var(--kh-gutter); }
   .kh-home-hero__art { min-height: 0; aspect-ratio: 16/9; }
