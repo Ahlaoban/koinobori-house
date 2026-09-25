@@ -66,6 +66,20 @@ add_filter( 'kadence_post_layout', function ( $layout ) {
 	return $layout;
 } );
 
+/*
+ * Products as a gallery (Alain, 2026-09-25): the koinobori photos are about 2:1, the square
+ * woocommerce_thumbnail crops head and tail. On the five worlds only: two per row, and the
+ * uncropped woocommerce_single size (its srcset serves the larger derivatives WordPress already made).
+ * Kadence builds its grid classes from the loop "columns" prop, i.e. from loop_shop_columns.
+ */
+add_filter( 'loop_shop_columns', function ( $columns ) {
+	return koinobori_child_world_key() ? 2 : $columns;
+}, 20 );
+
+add_filter( 'single_product_archive_thumbnail_size', function ( $size ) {
+	return koinobori_child_world_key() ? 'woocommerce_single' : $size;
+}, 20 );
+
 add_filter( 'body_class', function ( $classes ) {
 	$key = koinobori_child_world_key();
 	if ( $key ) {

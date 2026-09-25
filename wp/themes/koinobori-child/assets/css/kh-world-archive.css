@@ -18,6 +18,14 @@
    se fond dans le papier (multiply), comme le koi du hero de la home. */
 .kh-world-archive ul.products li.product.loop-entry { background: transparent; box-shadow: none; }
 .kh-world-archive ul.products li.product img { background: transparent; mix-blend-mode: multiply; }
+/* Galerie deux par rangée (loop_shop_columns = 2) : koi entiers, colonne de droite décalée vers le bas
+   comme les cartes des cinq mondes de la home ; une seule colonne sur mobile. */
+.kh-world-archive ul.products.grid-cols { column-gap: clamp(2rem, 5vw, 5rem); row-gap: clamp(2rem, 4vw, 3.5rem); }
+.kh-world-archive ul.products li.product img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+.kh-world-archive ul.products li.product .woocommerce-loop-product__title { font-size: clamp(1.25rem, 1.6vw, 1.6rem); }
+@media (min-width: 768px) {
+  .kh-world-archive ul.products li.product:nth-child(2n) { margin-top: clamp(2rem, 5vw, 4.5rem); }
+}
 @media (max-width: 767px) {
   .kh-world-hero { --kh-world-banner-w: 100%; }
 }
