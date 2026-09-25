@@ -97,6 +97,25 @@ h1,h2,h3{font-family:var(--kh-font-display);}
 .woocommerce button.button,.woocommerce a.button,.woocommerce #respond input#submit,
 .woocommerce .button,button,input[type="submit"],input[type="button"]{border-radius:0 !important;}
 
+/* ---- 7bis. Koi au vent (Alain, 2026-09-25) ---- */
+/* Les photos produits des cinq mondes et de la home flottent : balancement lent, tenu par la bouche
+   (origine à gauche, la queue bouge plus que la tête), rythme propre à chaque koi. Coupé si
+   « réduire les animations » (règle §8 ci-dessous). */
+@keyframes kh-koi-wind{
+  0%{transform:rotate(-1.2deg) skewY(0deg) translateY(0);}
+  20%{transform:rotate(.6deg) skewY(.8deg) translateY(-4px);}
+  45%{transform:rotate(1.4deg) skewY(-.4deg) translateY(-7px);}
+  70%{transform:rotate(-.2deg) skewY(.6deg) translateY(-3px);}
+  100%{transform:rotate(-1.2deg) skewY(0deg) translateY(0);}
+}
+.kh-home .woocommerce ul.products li.product img,
+.kh-world-archive ul.products li.product img{transform-origin:6% 50%;animation:kh-koi-wind 6.5s ease-in-out infinite;}
+.kh-home .woocommerce ul.products li.product:nth-child(2n) img,
+.kh-world-archive ul.products li.product:nth-child(2n) img{animation-duration:7.3s;animation-delay:-2.1s;}
+.kh-home .woocommerce ul.products li.product:nth-child(3n) img,
+.kh-world-archive ul.products li.product:nth-child(3n) img{animation-duration:5.9s;animation-delay:-3.7s;}
+@media (prefers-reduced-motion:reduce){.kh-home .woocommerce ul.products li.product img,.kh-world-archive ul.products li.product img{animation:none;}}
+
 /* ---- 8. Mouvement réduit (§8) ---- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}

@@ -76,8 +76,9 @@ add_filter( 'loop_shop_columns', function ( $columns ) {
 	return koinobori_child_world_key() ? 2 : $columns;
 }, 20 );
 
+// Also on the home's "Créations BCDG" (Alain, 2026-09-25): whole koi there too.
 add_filter( 'single_product_archive_thumbnail_size', function ( $size ) {
-	return koinobori_child_world_key() ? 'woocommerce_single' : $size;
+	return koinobori_child_world_key() || is_page_template( 'page-templates/kh-home.php' ) ? 'woocommerce_single' : $size;
 }, 20 );
 
 add_filter( 'body_class', function ( $classes ) {

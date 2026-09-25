@@ -83,7 +83,8 @@
 .kh-home .woocommerce ul.products::before,
 .kh-home .woocommerce ul.products::after { display: none; }
 .kh-home .woocommerce ul.products li.product { width: auto; float: none; margin: 0; padding: 0; box-shadow: none; border: 0; background: transparent; }
-.kh-home .woocommerce ul.products li.product a img { width: 100%; aspect-ratio: 4/5; object-fit: contain; background: var(--kh-white); }
+/* Sans fond blanc (Alain, 2026-09-25) : koi entier (taille non recadrée, inc/world-archive.php), fondu dans le papier. */
+.kh-home .woocommerce ul.products li.product a img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; background: transparent; mix-blend-mode: multiply; }
 .kh-home .woocommerce ul.products li.product .woocommerce-loop-product__title { font-size: 1.7rem; line-height: 1.15; }
 .kh-home .woocommerce ul.products li.product .price { color: var(--kh-sumi); font-family: var(--kh-font-ui); font-size: 1rem; }
 .kh-home .woocommerce ul.products li.product .button { border-radius: 0; font-family: var(--kh-font-ui); }
