@@ -20,7 +20,7 @@ function koinobori_child_worlds() {
 	return array(
 		'mer'         => 'collection-mer',
 		'motifs'      => 'collection-motifs',
-		'hanami'      => 'collection-hanami',
+		'hanami'      => 'collection-hanami-v2', // v2 = bannière « Hanami » du 2026-09-25 (remplace « Floral »).
 		'kairo'       => 'collection-kairo',
 		'territoires' => 'collection-territoires',
 	);
