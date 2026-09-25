@@ -51,3 +51,15 @@ Demande Alain : l'image du koi doit faire partie du fond, sans cadre. Essais suc
 | 09:11 | 1.3.7 | surtitre du hero en vermillon (spécificité corrigée) | **« OK ! c'est joli maintenant » (Alain)** |
 
 État final : `.kh-home-hero::before` = `hero-washi-manus.webp` en cover, `mix-blend-mode: multiply`, fondu vers le bas ; texte dans `.kh-home-hero__inner` (50 % à gauche) ; l'image du hero n'est plus un contenu de page mais un fond du thème (mobile : cadrage 72 % pour garder le koi). Un bloc image ajouté depuis l'éditeur reste possible sous le texte.
+
+## 2026-09-25 — visuels Manus de la home (thème 1.3.8 → 1.3.11), validés par Alain
+
+| UTC | Thème | Changement | Résultat |
+|---|---|---|---|
+| 09:17 | 1.3.8 | trait de pinceau vermillon Manus (`05_ornements`) sous les titres de section ; `lifestyle_koi_hero` (Manus) importée dans la médiathèque (attachment 328, meta `_kh_asset`) et insérée en bloc image sous le titre Lifestyle & Koi des pages 318/319 par `tools/staging/pc6/home-lifestyle-image.php` (sauvegarde `pc6-lifestyle-post-content-20260925T091804Z.json`, contenu stocké identique) | déployé |
+| 09:32 | — | **incident cache** : l'archive fixait la date des fichiers (`mtime` constant) ; WordPress versionne le CSS par cette date, le navigateur d'Alain a resservi l'ancien CSS du hero. Corrigé : `touch` des fichiers du thème sur le serveur, archives désormais datées de l'heure réelle, images modifiées renommées | hero rétabli |
+| 09:36 | 1.3.9 | **les cinq mondes** en cartes illustrées, choix A d'Alain : fichiers Manus `0N_<monde>_1024x1792` (WebP 640 px) en fond de carte ; `tools/staging/pc6/home-worlds-cards.php` ajoute à chaque carte sa classe `kh-world--<monde>` (reconnue par le lien de catégorie FR/EN) et son nom japonais (海 文様 花見 回廊 地域, paragraphe modifiable) ; sauvegarde `pc6-worlds-post-content-20260925T093641Z.json` | lisibilité insuffisante, kanji sur le titre |
+| 09:56 | 1.3.10 | cause du chevauchement : `.kh-world__kanji` de la charte v3 (absolu, vermillon, 60 %) ; règles préfixées `.kh-home-world`, voiles renforcés, ombres de texte, Hanami en encre sombre ; image Motifs remplacée par `04_motifs_coherent` | — |
+| 10:05 | 1.3.11 | image Kaïro remplacée par `02_kairo_hero` (`monde-kairo-hero.webp`) | **« OK merge » (Alain)** |
+
+Légendes de la maquette Manus citant des œuvres protégées (Princesse Mononoké, Voyage de Chihiro, RAN, Kaguya-hime, NHK Japanology) **non reprises** : remplacées par nos accroches.
