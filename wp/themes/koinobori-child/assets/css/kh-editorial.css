@@ -58,7 +58,13 @@
 .kh-home-world[class*="kh-world--"] .kh-world__kanji { position: static; inset: auto; margin: .5rem 0 0; opacity: 1; color: var(--kh-world-accent); font-family: var(--kh-font-kanji); font-size: clamp(1.6rem, 2vw, 2rem); line-height: 1.1; letter-spacing: .12em; text-shadow: 0 1px 10px rgb(0 0 0 / .5); }
 .kh-home-world[class*="kh-world--"] p:last-child { max-width: none; margin: auto 0 0; color: var(--kh-world-ink); font-family: var(--kh-font-body); font-size: 1rem; font-style: italic; line-height: 1.4; text-shadow: 0 1px 8px rgb(0 0 0 / .6); }
 .kh-home-world[class*="kh-world--"] p:last-child::after { content: " \2192"; font-style: normal; }
-.kh-home-world[class*="kh-world--"]:hover, .kh-home-world[class*="kh-world--"]:focus-within { outline: 2px solid var(--kh-vermillon); outline-offset: 3px; }
+/* Survol (Alain 25/09) : la carte visée s'agrandit, les quatre autres s'estompent. Même effet au clavier. */
+.kh-home-world[class*="kh-world--"] { transition: transform 450ms cubic-bezier(.2,.7,.2,1), opacity 450ms ease, filter 450ms ease, box-shadow 450ms ease; }
+.kh-home-worlds:has(.kh-home-world:hover, .kh-home-world:focus-within) .kh-home-world[class*="kh-world--"] { opacity: .45; filter: saturate(.6); }
+.kh-home-worlds .kh-home-world[class*="kh-world--"]:is(:hover, :focus-within) { z-index: 2; opacity: 1; filter: none; transform: scale(1.08); box-shadow: 0 18px 40px rgb(26 20 16 / .28); }
+.kh-home-world[class*="kh-world--"]:focus-within { outline: 2px solid var(--kh-vermillon); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .kh-home-worlds .kh-home-world[class*="kh-world--"]:is(:hover, :focus-within) { transform: none; } }
+@media (hover: none) { .kh-home-worlds:has(.kh-home-world:hover) .kh-home-world[class*="kh-world--"] { opacity: 1; filter: none; } .kh-home-worlds .kh-home-world[class*="kh-world--"]:hover { transform: none; } }
 .kh-home-world.kh-world--mer { background-image: var(--kh-world-shade), url('../images/monde-mer.webp'); }
 .kh-home-world.kh-world--motifs { background-image: var(--kh-world-shade), url('../images/monde-motifs.webp'); --kh-world-accent: #e3c27a; }
 .kh-home-world.kh-world--kairo { background-image: var(--kh-world-shade), url('../images/monde-kairo-hero.webp'); --kh-world-accent: #e3c27a; }
