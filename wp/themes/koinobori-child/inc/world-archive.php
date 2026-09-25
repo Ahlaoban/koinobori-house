@@ -95,6 +95,15 @@ add_action( 'wp_footer', function () {
 		. '</filter></svg>';
 } );
 
+/*
+ * No sizes="auto" on these galleries: WordPress pairs it with a 3000x1500 placeholder box
+ * (contain-intrinsic-size) for lazy images, which made the last koi of a world page 1500 px tall,
+ * and its hover background filled the screen (Alain, 2026-09-25).
+ */
+add_filter( 'wp_img_tag_add_auto_sizes', function ( $add ) {
+	return koinobori_child_world_key() || is_page_template( 'page-templates/kh-home.php' ) ? false : $add;
+} );
+
 add_filter( 'body_class', function ( $classes ) {
 	$key = koinobori_child_world_key();
 	if ( $key ) {
