@@ -99,7 +99,7 @@ h1,h2,h3{font-family:var(--kh-font-display);}
 
 /* ---- 7bis. Koi au vent, au survol (Alain, 2026-09-25) ---- */
 /* Galeries produits des cinq mondes et de la home. Au repos : koi immobiles, sans fond, fondus dans le
-   papier (multiply). Survol ou clavier : le koi grandit et flotte au vent (balancement + ondulation, filtre
+   papier (photos détourées, fond transparent). Survol ou clavier : le koi grandit et flotte au vent (balancement + ondulation, filtre
    SVG #kh-wind imprimé par inc/world-archive.php) sur la bannière voilée de SA collection (classe
    product_cat-<slug> posée par WooCommerce, slugs FR et EN) ; les autres koi s'estompent. Tout revient
    quand la souris part. Écrans à souris seulement ; pas d'animation si « réduire les animations ».
@@ -107,8 +107,7 @@ h1,h2,h3{font-family:var(--kh-font-display);}
    isolerait l'image du papier et ferait réapparaître le fond blanc des photos.
    Remarques d'Alain (2026-09-25, soir) : koi entièrement visible, même s'il déborde sur les voisins
    estompés (fond plus grand que le koi agrandi, marge pour le balancement) ; koi net, sans effet de
-   transparence : la bannière est voilée à 80 % de papier, le multiply ne change presque plus ses couleurs
-   (les photos ont un fond blanc, un koi opaque montrerait un rectangle blanc). */
+   transparence : photos détourées (tools/staging/pc8), koi opaque sans mode de fusion ; bannière voilée à 80 %. */
 .kh-home .woocommerce ul.products,
 .kh-world-archive ul.products{--kh-koi-zoom:1.45;--kh-koi-bleed:-34% -30%;}
 .kh-home .woocommerce ul.products{--kh-koi-zoom:1.8;--kh-koi-bleed:-52% -48%;}
