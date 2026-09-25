@@ -148,7 +148,7 @@ add_action( 'init', function () {
 } );
 
 function koinobori_child_kanji_help() {
-	return 'Affiché sous le titre de la page du monde (ex. 海). Laissez vide sur la catégorie anglaise : elle reprend celui de la catégorie française. / Shown under the world page title. Leave empty on the English category: it uses the French one.';
+	return 'Nom japonais du monde (ex. 海). Pas affiché pour l’instant : chaque bannière le porte déjà. Laissez vide sur la catégorie anglaise : elle reprend celui de la catégorie française. / Not shown for now: each banner already carries it. Leave empty on the English category: it uses the French one.';
 }
 
 add_action( 'product_cat_add_form_fields', function () {
