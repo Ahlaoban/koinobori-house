@@ -1,0 +1,20 @@
+/* Pages des cinq mondes (archives product_cat) : bannière de la collection en tête (images
+   koinobori-house-images/collections, choix d'Alain du 2026-09-25), sur le papier washi global
+   (kh-foundations.css, body::before). Les bannières portent leur propre lettrage : affichées entières,
+   jamais recadrées, et limitées en hauteur pour tenir dans l'écran. Textes = nom, nom japonais et
+   description de la catégorie, modifiables dans l'admin (inc/world-archive.php). */
+.kh-world-hero { --kh-world-banner-w: min(100%, 118svh); position: relative; padding: clamp(1.5rem, 3vw, 3rem) 0 clamp(1rem, 2vw, 2rem); }
+.kh-world-hero__art { width: var(--kh-world-banner-w); margin: 0 auto; }
+.kh-world-hero__art img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: var(--kh-sumi); box-shadow: 0 18px 40px rgb(26 20 16 / .2), 0 1px 2px rgb(26 20 16 / .12); }
+.kh-world-hero__text { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "title lead" "kanji lead"; column-gap: clamp(2rem, 5vw, 5rem); align-items: start; width: var(--kh-world-banner-w); margin: clamp(2rem, 4vw, 3.5rem) auto 0; }
+.kh-world-hero__title { grid-area: title; margin: 0; color: var(--kh-sumi); font-family: var(--kh-font-display); font-size: clamp(2.6rem, 5vw, 4.5rem); font-style: italic; font-weight: 400; line-height: 1.02; letter-spacing: -.03em; text-wrap: balance; }
+/* Trait de pinceau vermillon (Manus, 05_ornements), comme sous les titres de la home. */
+.kh-world-hero__title::after { content: ""; display: block; width: min(14rem, 70%); height: 1rem; margin-top: 1rem; background: url('../images/trait-pinceau-vermillon.webp') left center / contain no-repeat; }
+.kh-world-hero__kanji { grid-area: kanji; margin: 1rem 0 0; color: var(--kh-vermillon); font-family: var(--kh-font-kanji); font-size: clamp(1.6rem, 2.2vw, 2.1rem); line-height: 1.1; letter-spacing: .12em; }
+.kh-world-hero__lead { grid-area: lead; max-width: 42ch; padding-top: .6rem; color: var(--kh-sumi-70); font-family: var(--kh-font-body); font-size: clamp(1.05rem, 1.3vw, 1.2rem); font-style: italic; line-height: 1.7; }
+.kh-world-hero__lead > :last-child { margin-bottom: 0; }
+@media (max-width: 767px) {
+  .kh-world-hero { --kh-world-banner-w: 100%; }
+  .kh-world-hero__text { grid-template-columns: 1fr; grid-template-areas: "title" "kanji" "lead"; }
+  .kh-world-hero__lead { padding-top: 1.25rem; }
+}
