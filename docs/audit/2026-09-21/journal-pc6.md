@@ -63,3 +63,12 @@ Demande Alain : l'image du koi doit faire partie du fond, sans cadre. Essais suc
 | 10:05 | 1.3.11 | image Kaïro remplacée par `02_kairo_hero` (`monde-kairo-hero.webp`) | **« OK merge » (Alain)** |
 
 Légendes de la maquette Manus citant des œuvres protégées (Princesse Mononoké, Voyage de Chihiro, RAN, Kaguya-hime, NHK Japanology) **non reprises** : remplacées par nos accroches.
+
+## 2026-09-25 — survol des cinq mondes (1.3.12 → 1.3.13), validé par Alain
+
+| UTC | Thème | Changement | Résultat |
+|---|---|---|---|
+| 10:18 | 1.3.12 | carte survolée agrandie (×1,08, ombre), les quatre autres estompées (opacité 45 %, saturation 60 %) ; même effet au clavier ; rien sur écrans tactiles ; pas d'agrandissement si « réduire les animations » | la carte survolée s'estompait aussi (règle d'estompage plus prioritaire) |
+| 10:21 | 1.3.13 | estompage limité aux cartes `:not(:hover):not(:focus-within)` | **« OK merge » (Alain)** |
+
+Note : la PR #27 (visuels 1.3.8 à 1.3.11) a été mergée juste avant la demande d'Alain de patienter ; la commande était déjà partie. Version mergée = version validée ; le survol est livré à part (PR suivante).
