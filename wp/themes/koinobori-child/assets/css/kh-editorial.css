@@ -12,11 +12,19 @@
 .kh-editorial .kh-home .kh-button--primary { color: var(--kh-white); }
 .kh-editorial .kh-home .kh-button { font-size: .875rem; letter-spacing: .04em; }
 .kh-editorial .kh-home :focus-visible { outline: 2px solid var(--kh-vermillon); outline-offset: 5px; }
-.kh-home-hero { display: grid; grid-template-columns: 1fr 1fr; }
+/* Hero Manus : fond_hero_washi_koinobori_house (Manus, 2026-09-25) en fond de toute la section, texte dans la zone libre à gauche.
+   L'image se fond dans le papier washi (multiply) et s'efface vers le bas : elle fait partie du fond, pas de cadre. */
+.kh-home-hero { position: relative; display: grid; grid-template-columns: 1fr; min-height: min(56rem, 100svh); align-items: center; overflow: hidden; }
+.kh-home-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: url('../images/hero-washi-manus.webp') center / cover no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); }
+.kh-home-hero > * { position: relative; z-index: 1; }
 .kh-home-hero__inner { width: auto; margin: 0; padding: clamp(3rem, 6vw, 6rem) max(1.25rem, calc((100vw - 75rem) / 2)); padding-right: 2rem; }
+/* Cadrage validé par Alain (25/09) : bloc de texte dans la moitié gauche, comme l'ancienne colonne. */
+.kh-home-hero__inner { max-width: 50%; }
+.kh-editorial .kh-home .kh-home-hero .kh-eyebrow { color: var(--kh-vermillon); }
 .kh-home-hero__inner .kh-lead { max-width: 35ch; margin-bottom: 2rem; }
 .kh-home-hero__art { display: flex; min-height: 34rem; margin: 0; align-items: center; justify-content: center; }
 .kh-home-hero__art img { width: 100%; height: 100%; max-height: 40rem; object-fit: contain; }
+/* Un bloc image ajouté dans le hero depuis l'éditeur reste possible ; il s'affiche sous le texte. */
 .kh-home-worlds { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 3rem; border-top: 1px solid var(--kh-sumi-20); }
 .kh-home-world { padding: 2rem 1.5rem 2rem 0; border-bottom: 1px solid var(--kh-sumi-20); }
 .kh-home-world:nth-child(3n + 2) { padding-top: 3.5rem; }
@@ -67,7 +75,9 @@
 .kh-editorial.single-product .woocommerce-tabs .panel { max-width: 65ch; }
 @media (min-width: 1600px) { .kh-home-hero__inner { padding-right: 2rem; } }
 @media (max-width: 1024px) {
-  .kh-home-hero { grid-template-columns: 1fr; }
+  .kh-home-hero { min-height: min(40rem, 90svh); }
+  .kh-home-hero__inner { max-width: none; }
+  .kh-home-hero::before { background-position: 72% center; }
   .kh-home-hero__inner { padding: 3rem var(--kh-gutter); }
   .kh-home-hero__art { min-height: 0; aspect-ratio: 16/9; }
   .kh-home .woocommerce ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }

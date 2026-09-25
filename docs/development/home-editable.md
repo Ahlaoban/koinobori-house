@@ -7,7 +7,7 @@ Cap Alain du 2026-09-21 : tout texte public se modifie dans l'admin WordPress. L
 | Élément | Où |
 |---|---|
 | Tous les textes de la home (titres, chapôs, libellés des boutons et des liens, les cinq mondes, Kaïro, L'Atelier, Lifestyle & Koi, manifeste, Professionnels) | Pages → « Accueil » (FR, 318) et « Home » (EN, 319), éditeur de blocs |
-| Image du hero et son texte alternatif | Même page, bloc Image en haut à droite |
+| Image du hero | Fond du thème (`assets/images/hero-washi-manus.webp`, fichier Manus), pas un bloc : changer l'image = remplacer ce fichier. Depuis le 25/09 (Alain) |
 | Liens des cinq mondes et des boutons | Même page, lien du titre ou du paragraphe concerné |
 | Les 4 produits affichés | Automatique (ordre du catalogue). Bloc « Code court » `[kh_creations]` : le déplacer ou le supprimer, ne pas le modifier |
 | Les 3 derniers articles | Automatique. Bloc « Code court » `[kh_journal]` : rien ne s'affiche tant qu'aucun article n'est publié |
