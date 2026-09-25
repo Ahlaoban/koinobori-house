@@ -55,3 +55,24 @@ Demandes d'Alain au fil de la recette, regroupées dans une seule archive `kh-w1
 Retour arrière : remettre `backups/theme-dir-1.3.14-20260925T182937Z`.
 
 Reste : photos à fond non blanc (« Les Voix du Pont » gris clair, Stars & Stripes avec la mention « 100 cm » dans l'image) ; produits sans photo (Mer, Motifs) ; prototype « papier teinté par monde » en attente ; idée d'Alain : remplacer la simulation par une vraie vidéo du koi au vent (champ vidéo déjà présent via `kh-product-media`, à brancher au survol).
+
+## Soir — PC8 photos détourées + thème 1.3.21, déployés par Alain à 18:57 UTC
+
+Remarque d'Alain : « on ne doit pas du tout voir l'arrière-plan à travers le koi ». Le fond blanc des photos n'était masqué que par un mode de fusion (multiply), qui laissait voir le papier et la bannière à travers le koi. Solution : photos détourées (fond transparent) et plus aucun mode de fusion sur les photos produits.
+
+- 1.3.20 (jamais déposée seule, incluse) : bannière entière fondue dans le papier (multiply, effacement bas et bords, sans cadre) ; papier de toute la page teinté à la couleur du monde (voile `color` sur le washi) ; articles remontés (bannière limitée à la hauteur d'écran, marges Kadence réduites : galerie à 789 px au lieu de 1 016 sur un écran de 935 px).
+- 1.3.21 : photos produits sans mode de fusion (home et mondes).
+- `tools/images/koi-cutout.py` : détourage des originaux `catalog/images/*/main.jpg` (fond clair relié aux bords rendu transparent, blancs intérieurs conservés, petits éléments retirés dont la mention « 100 cm », bord adouci et décontaminé).
+- `tools/staging/pc8/product-cutouts.php` : pose des 8 photos détourées comme image principale des produits FR et de leurs traductions EN.
+
+| Heure (UTC) | Action | Résultat |
+|---|---|---|
+| ~18:55 | Alain dépose `kh-w1321.tar` (14 fichiers) dans `~/kh2027-private/tools/w1321/` | `sha256sum -c` 14 / 14, `php -l` sans erreur |
+| ~18:56 | PC8 essai à blanc | gardes vraies ; 8 produits, paires FR/EN 111↔113, 186↔220, 195↔221, 196↔222, 197↔223, 198↔224, 199↔225, 205↔226 |
+| 18:57:28 | PC8 appliqué | sauvegarde `pc8-product-cutouts-20260925T185728Z.json` ; pièces jointes 333 à 340 ; 16 × `stored=true` ; anciennes images conservées |
+| 18:57:52 | Bascule 1.3.19 → **1.3.21** (ancien dossier : `backups/theme-dir-1.3.19-20260925T185752Z`) | `wp eval` : `1.3.21` |
+| ~19:00 | Contrôle Claude, lecture seule | photos `-detoure` servies sur home, mondes FR/EN et Boutique ; `mix-blend-mode: normal` ; survol vérifié à l'écran sur Kaïro : koi opaque, entier, bannière en filigrane |
+
+Retour arrière : images = `restore.php` avec `pc8-product-cutouts-20260925T185728Z.json` (remet les anciens `_thumbnail_id`) ; thème = `backups/theme-dir-1.3.19-20260925T185752Z`. **Les deux ensemble** : le thème 1.3.21 sur les anciennes photos montrerait leurs rectangles blancs.
+
+Note : la règle `.gitignore` `*stripe*` (clés Stripe) écarte aussi `…stars-stripes…` ; l'image détourée a été ajoutée explicitement (`git add -f`).
