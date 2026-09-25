@@ -61,7 +61,7 @@
 .kh-home-world[class*="kh-world--"]:hover, .kh-home-world[class*="kh-world--"]:focus-within { outline: 2px solid var(--kh-vermillon); outline-offset: 3px; }
 .kh-home-world.kh-world--mer { background-image: var(--kh-world-shade), url('../images/monde-mer.webp'); }
 .kh-home-world.kh-world--motifs { background-image: var(--kh-world-shade), url('../images/monde-motifs.webp'); --kh-world-accent: #e3c27a; }
-.kh-home-world.kh-world--kairo { background-image: var(--kh-world-shade), url('../images/monde-kairo.webp'); --kh-world-accent: #e3c27a; }
+.kh-home-world.kh-world--kairo { background-image: var(--kh-world-shade), url('../images/monde-kairo-hero.webp'); --kh-world-accent: #e3c27a; }
 .kh-home-world.kh-world--territoires { background-image: var(--kh-world-shade), url('../images/monde-territoires.webp'); }
 /* Hanami : seule carte claire, encre sombre sur voile de papier. */
 .kh-home-world.kh-world--hanami {
