@@ -35,3 +35,19 @@ Recette Alain du 24/09 : home OK, **fond blanc** au lieu du papier washi. Causes
 | 08:39 | `wp litespeed-purge all` | 401 (auth basique), sans effet : cache LiteSpeed désactivé |
 
 CSS et image seulement, aucun PHP ni base. Retour arrière : remettre `theme-dir-1.3.0-…`. Rendu (papier, nuages, hero, mobile, autres pages) : recette Alain.
+
+## 2026-09-25 — hero Manus fondu dans le papier (thème 1.3.3 → 1.3.7), validé par Alain
+
+Demande Alain : l'image du koi doit faire partie du fond, sans cadre. Essais successifs sur le staging, chacun avec sauvegarde (`~/kh2027-private/backups/`) et contrôle d'empreinte :
+
+| UTC | Thème | Changement | Résultat |
+|---|---|---|---|
+| 08:44 | 1.3.2 | multiply + masque radial sur le bloc image | bords encore visibles (image plus foncée que le papier) |
+| 08:51 | 1.3.3 | conception Manus (README_HERO.md) : `hero_fond_web_16x9` en fond de toute la section (`::before`, cover, multiply, fondu vers le bas) ; bloc image retiré des pages 318/319 par `tools/staging/pc6/home-hero-remove-image.php` (dry-run puis apply, sauvegarde `pc6-hero-post-content-20260925T085134Z.json`, contenu stocké identique) | plus de cadre |
+| 08:59 | 1.3.4 | nouveau fichier Manus `fond_hero_washi_koinobori_house.webp` (2048×1152, 321 Ko, déposé par Alain dans le pack `03_fonds_et_textures`) à la place | retenu |
+| 09:03 | 1.3.5 | titre plus petit sur 3 lignes | Alain préfère le grand titre |
+| 09:04 | — | **incident** : le chargeur cPanel n'avait pas écrasé les fichiers, l'ancien CSS 1.3.2 a été recopié une minute ; corrigé en renvoyant les fichiers sous des noms uniques + contrôle d'empreinte avant copie (règle adoptée) |
+| 09:08 | 1.3.6 | cadrage validé : bloc de texte dans la moitié gauche, grand titre 3 lignes | — |
+| 09:11 | 1.3.7 | surtitre du hero en vermillon (spécificité corrigée) | **« OK ! c'est joli maintenant » (Alain)** |
+
+État final : `.kh-home-hero::before` = `hero-washi-manus.webp` en cover, `mix-blend-mode: multiply`, fondu vers le bas ; texte dans `.kh-home-hero__inner` (50 % à gauche) ; l'image du hero n'est plus un contenu de page mais un fond du thème (mobile : cadrage 72 % pour garder le koi). Un bloc image ajouté depuis l'éditeur reste possible sous le texte.
