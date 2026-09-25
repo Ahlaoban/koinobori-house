@@ -89,7 +89,7 @@ add_action( 'wp_footer', function () {
 	if ( ! koinobori_child_world_key() && ! is_page_template( 'page-templates/kh-home.php' ) ) {
 		return;
 	}
-	echo '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="kh-wind" x="-5%" y="-10%" width="110%" height="120%">'
+	echo '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="kh-wind" x="-10%" y="-20%" width="120%" height="140%">'
 		. '<feTurbulence type="fractalNoise" baseFrequency="0.006 0.02" numOctaves="1" seed="3" result="n"><animate attributeName="baseFrequency" dur="7s" values="0.006 0.02;0.008 0.026;0.006 0.02" repeatCount="indefinite"/></feTurbulence>'
 		. '<feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="5s" values="6;14;6" repeatCount="indefinite"/></feDisplacementMap>'
 		. '</filter></svg>';

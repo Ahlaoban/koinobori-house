@@ -104,10 +104,14 @@ h1,h2,h3{font-family:var(--kh-font-display);}
    product_cat-<slug> posée par WooCommerce, slugs FR et EN) ; les autres koi s'estompent. Tout revient
    quand la souris part. Écrans à souris seulement ; pas d'animation si « réduire les animations ».
    L'estompage porte sur l'image et le texte, jamais sur la carte : une carte transparente (opacity)
-   isolerait l'image du papier et ferait réapparaître le fond blanc des photos. */
+   isolerait l'image du papier et ferait réapparaître le fond blanc des photos.
+   Remarques d'Alain (2026-09-25, soir) : koi entièrement visible, même s'il déborde sur les voisins
+   estompés (fond plus grand que le koi agrandi, marge pour le balancement) ; koi net, sans effet de
+   transparence : la bannière est voilée à 80 % de papier, le multiply ne change presque plus ses couleurs
+   (les photos ont un fond blanc, un koi opaque montrerait un rectangle blanc). */
 .kh-home .woocommerce ul.products,
-.kh-world-archive ul.products{--kh-koi-zoom:1.45;--kh-koi-bleed:-24% -26%;}
-.kh-home .woocommerce ul.products{--kh-koi-zoom:1.8;--kh-koi-bleed:-42% -44%;}
+.kh-world-archive ul.products{--kh-koi-zoom:1.45;--kh-koi-bleed:-34% -30%;}
+.kh-home .woocommerce ul.products{--kh-koi-zoom:1.8;--kh-koi-bleed:-52% -48%;}
 .kh-home .woocommerce ul.products li.product.loop-entry,
 .kh-world-archive ul.products li.product.loop-entry{overflow:visible !important;} /* Kadence rognait le koi agrandi. */
 .kh-home .woocommerce ul.products .woocommerce-loop-image-link,
@@ -115,7 +119,7 @@ h1,h2,h3{font-family:var(--kh-font-display);}
 .kh-home .woocommerce ul.products .woocommerce-loop-image-link::before,
 .kh-world-archive ul.products .woocommerce-loop-image-link::before{
   content:"";position:absolute;inset:-6% -3%;z-index:-1;pointer-events:none;opacity:0;
-  background:linear-gradient(rgb(248 244 238 / .45),rgb(248 244 238 / .45)),var(--kh-koi-bg,none) center / cover no-repeat;
+  background:linear-gradient(rgb(248 244 238 / .8),rgb(248 244 238 / .8)),var(--kh-koi-bg,none) center / cover no-repeat;
   box-shadow:0 24px 50px rgb(26 20 16 / .28);transition:opacity 450ms ease,inset 500ms cubic-bezier(.2,.7,.2,1);
 }
 .kh-home .woocommerce ul.products li.product img,
