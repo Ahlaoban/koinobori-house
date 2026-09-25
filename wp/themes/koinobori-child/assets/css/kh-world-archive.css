@@ -3,17 +3,37 @@
    (kh-foundations.css, body::before). Les bannières portent leur propre lettrage : affichées entières,
    jamais recadrées, et limitées en hauteur pour tenir dans l'écran. Textes = nom, nom japonais et
    description de la catégorie, modifiables dans l'admin (inc/world-archive.php). */
-.kh-world-hero { --kh-world-banner-w: min(100%, 118svh); position: relative; padding: clamp(1.5rem, 3vw, 3rem) 0 clamp(1rem, 2vw, 2rem); }
+.kh-world-hero { --kh-world-banner-w: min(100%, 100svh); position: relative; padding: clamp(1rem, 2vw, 2rem) 0 .5rem; }
 .kh-world-hero__art { width: var(--kh-world-banner-w); margin: 0 auto; }
-/* Pas d'aplat pendant le chargement : le papier reste visible jusqu'à l'arrivée de l'image. */
-.kh-world-hero__art img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: transparent; box-shadow: 0 18px 40px rgb(26 20 16 / .2), 0 1px 2px rgb(26 20 16 / .12); }
+/* Bannière entière fondue dans le papier (Alain, 2026-09-25) : ni cadre ni ombre ; multiply, comme le hero de la
+   home, et effacement doux vers le bas et sur les bords. Jamais recadrée : le texte incrusté reste lisible.
+   Pas d'aplat pendant le chargement : le papier reste visible jusqu'à l'arrivée de l'image. */
+.kh-world-hero__art img {
+  display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: transparent; mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%), linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to bottom, #000 72%, transparent 100%), linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%);
+  mask-composite: intersect;
+}
+/* Papier teinté aux couleurs du monde (Alain, 2026-09-25) : un voile en mode « color » par-dessus le washi global
+   (kh-foundations.css, body::before) garde la matière du papier et lui donne la teinte dominante de la bannière. */
+body.kh-world-archive::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--kh-world-tint, transparent); mix-blend-mode: color; opacity: .55; }
+body.kh-world-archive--mer { --kh-world-tint: #2b3b51; }
+body.kh-world-archive--motifs { --kh-world-tint: #ae8461; }
+body.kh-world-archive--hanami { --kh-world-tint: #d6a29e; }
+body.kh-world-archive--kairo { --kh-world-tint: #9d8b75; }
+body.kh-world-archive--territoires { --kh-world-tint: #b27a4c; }
 /* Chaque bannière porte déjà le nom de sa collection (Alain, 2026-09-25) : le titre et le nom japonais
    ne sont plus affichés sous l'image. Le H1 reste dans la page pour les lecteurs d'écran et le référencement. */
 .kh-world-hero__title { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 .kh-world-hero__kanji { display: none; }
-.kh-world-hero__text { width: var(--kh-world-banner-w); margin: clamp(1.5rem, 3vw, 2.5rem) auto 0; text-align: center; }
+.kh-world-hero__text { width: var(--kh-world-banner-w); margin: clamp(.5rem, 1.5vw, 1.25rem) auto 0; text-align: center; }
 .kh-world-hero__lead { max-width: 60ch; margin: 0 auto; color: var(--kh-sumi-70); font-family: var(--kh-font-body); font-size: clamp(1.05rem, 1.3vw, 1.2rem); font-style: italic; line-height: 1.7; }
 .kh-world-hero__lead > :last-child { margin-bottom: 0; }
+/* Articles remontés (Alain, 2026-09-25) : bannière limitée à la hauteur de l'écran moins le header, marges Kadence
+   réduites entre l'accroche, la barre « résultats / tri » et la galerie. */
+.kh-world-archive #primary { margin-top: clamp(1rem, 2vw, 1.5rem); }
+.kh-world-archive .kadence-shop-top-row { padding-bottom: 1rem; }
 /* Cartes produits sans cadre (Alain, 2026-09-25) : ni fond blanc ni ombre Kadence ; le fond blanc des photos
    se fond dans le papier (multiply), comme le koi du hero de la home. */
 .kh-world-archive ul.products li.product.loop-entry { background: transparent; box-shadow: none; }
