@@ -33,3 +33,25 @@ Thème : remettre `backups/theme-dir-1.3.13-20260925T141441Z` à la place de `wp
 - Mer : 海 figure deux fois (bannière et champ « Nom japonais ») ; vider le champ pour n'en garder qu'un.
 - Pendant le chargement, la bannière montre un aplat noir un instant : proposer la couleur du papier au prochain déploiement.
 - Descriptions = accroches courtes de la home, à réécrire au besoin dans l'admin.
+
+## Soir — thème 1.3.15 → 1.3.19, déployé par Alain à 18:29 UTC
+
+Demandes d'Alain au fil de la recette, regroupées dans une seule archive `kh-w1319.tar` (7 fichiers ; 1.3.15 à 1.3.18 jamais déposées) :
+
+| Version | Changement |
+|---|---|
+| 1.3.15 | Bannière Hanami remplacée par `cat-hanami-hero.webp` (titre « Hanami » au lieu de « Floral »), sous un nouveau nom `collection-hanami-v2-*` |
+| 1.3.16 | Plus de titre ni de nom japonais sous la bannière (H1 gardé pour lecteurs d'écran et référencement), accroche centrée ; cartes produits sans fond blanc ni ombre, photos fondues au papier (multiply) ; plus d'aplat noir au chargement ; galerie **2 par rangée**, koi entiers (taille `woocommerce_single` non recadrée), colonne de droite décalée |
+| 1.3.17 | Home « Créations BCDG » : fond blanc retiré, koi entiers |
+| 1.3.18 | **Koi au survol** : immobiles au repos ; survol ou clavier = le koi grandit (×1,45 mondes, ×1,8 home) et flotte au vent (balancement + ondulation SVG `#kh-wind`) sur la bannière voilée de sa collection ; les autres s'estompent ; tout revient quand la souris part. Écrans à souris seulement, sans animation si « réduire les animations » |
+| 1.3.19 | Koi agrandi entier et net : fond plus grand que le koi, bannière voilée à 80 %, zone d'ondulation élargie |
+
+| Heure (UTC) | Action | Résultat |
+|---|---|---|
+| ~18:25 | Alain dépose `kh-w1319.tar` (SHA-256 `236af4a5…`) et l'extrait dans `~/kh2027-private/tools/w1319/` | `sha256sum -c` 7 / 7 « Réussi », `php -l` sans erreur |
+| 18:29:37 | Bascule 1.3.14 → **1.3.19** (ancien dossier : `backups/theme-dir-1.3.14-20260925T182937Z`) | `wp eval` : `1.3.19` |
+| ~18:32 | Contrôle Claude, lecture seule : home FR/EN + 10 pages mondes + Boutique | 200 ; bannières (Hanami v2) ; grille 2 colonnes et vignettes non recadrées sur les mondes, 4 colonnes non recadrées sur la home ; filtre `#kh-wind` présent ; un seul H1 ; **Boutique inchangée** (4 colonnes, vignettes carrées, pas d'effet) ; survol vérifié à l'écran sur Territoires |
+
+Retour arrière : remettre `backups/theme-dir-1.3.14-20260925T182937Z`.
+
+Reste : photos à fond non blanc (« Les Voix du Pont » gris clair, Stars & Stripes avec la mention « 100 cm » dans l'image) ; produits sans photo (Mer, Motifs) ; prototype « papier teinté par monde » en attente ; idée d'Alain : remplacer la simulation par une vraie vidéo du koi au vent (champ vidéo déjà présent via `kh-product-media`, à brancher au survol).
