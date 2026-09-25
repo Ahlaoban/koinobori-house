@@ -60,7 +60,7 @@
 .kh-home-world[class*="kh-world--"] p:last-child::after { content: " \2192"; font-style: normal; }
 /* Survol (Alain 25/09) : la carte visée s'agrandit, les quatre autres s'estompent. Même effet au clavier. */
 .kh-home-world[class*="kh-world--"] { transition: transform 450ms cubic-bezier(.2,.7,.2,1), opacity 450ms ease, filter 450ms ease, box-shadow 450ms ease; }
-.kh-home-worlds:has(.kh-home-world:hover, .kh-home-world:focus-within) .kh-home-world[class*="kh-world--"] { opacity: .45; filter: saturate(.6); }
+.kh-home-worlds:has(.kh-home-world:hover, .kh-home-world:focus-within) .kh-home-world[class*="kh-world--"]:not(:hover):not(:focus-within) { opacity: .45; filter: saturate(.6); }
 .kh-home-worlds .kh-home-world[class*="kh-world--"]:is(:hover, :focus-within) { z-index: 2; opacity: 1; filter: none; transform: scale(1.08); box-shadow: 0 18px 40px rgb(26 20 16 / .28); }
 .kh-home-world[class*="kh-world--"]:focus-within { outline: 2px solid var(--kh-vermillon); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { .kh-home-worlds .kh-home-world[class*="kh-world--"]:is(:hover, :focus-within) { transform: none; } }
