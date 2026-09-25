@@ -99,9 +99,7 @@ html {
 .kh-page {
   min-width: 20rem;
   margin: 0;
-  background-color: var(--kh-washi);
-  background-image: url("../images/texture-washi-v2.webp");
-  background-size: 160rem auto;
+  /* Le fond washi est posé globalement par kh-foundations.css (body::before) : rien à repeindre ici. */
   color: var(--kh-sumi);
   font-family: var(--kh-font-body);
   font-size: var(--kh-type-body-size);
