@@ -12,10 +12,10 @@
 .kh-editorial .kh-home .kh-button--primary { color: var(--kh-white); }
 .kh-editorial .kh-home .kh-button { font-size: .875rem; letter-spacing: .04em; }
 .kh-editorial .kh-home :focus-visible { outline: 2px solid var(--kh-vermillon); outline-offset: 5px; }
-/* Hero Manus (README_HERO.md) : hero_fond_web_16x9 en fond de toute la section, texte dans la zone libre à gauche.
+/* Hero Manus : fond_hero_washi_koinobori_house (Manus, 2026-09-25) en fond de toute la section, texte dans la zone libre à gauche.
    L'image se fond dans le papier washi (multiply) et s'efface vers le bas : elle fait partie du fond, pas de cadre. */
 .kh-home-hero { position: relative; display: grid; grid-template-columns: 1fr; min-height: min(56rem, 100svh); align-items: center; overflow: hidden; }
-.kh-home-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: url('../images/hero-manus.webp') center / cover no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); }
+.kh-home-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: url('../images/hero-washi-manus.webp') center / cover no-repeat; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); mask-image: linear-gradient(to bottom, #000 78%, transparent 100%); }
 .kh-home-hero > * { position: relative; z-index: 1; }
 .kh-home-hero__inner { width: auto; margin: 0; padding: clamp(3rem, 6vw, 6rem) max(1.25rem, calc((100vw - 75rem) / 2)); padding-right: 2rem; }
 .kh-home-hero__inner { max-width: 48rem; }
