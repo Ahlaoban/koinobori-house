@@ -97,24 +97,53 @@ h1,h2,h3{font-family:var(--kh-font-display);}
 .woocommerce button.button,.woocommerce a.button,.woocommerce #respond input#submit,
 .woocommerce .button,button,input[type="submit"],input[type="button"]{border-radius:0 !important;}
 
-/* ---- 7bis. Koi au vent (Alain, 2026-09-25) ---- */
-/* Les photos produits des cinq mondes et de la home flottent : balancement lent, tenu par la bouche
-   (origine à gauche, la queue bouge plus que la tête), rythme propre à chaque koi. Coupé si
-   « réduire les animations » (règle §8 ci-dessous). */
-@keyframes kh-koi-wind{
-  0%{transform:rotate(-1.2deg) skewY(0deg) translateY(0);}
-  20%{transform:rotate(.6deg) skewY(.8deg) translateY(-4px);}
-  45%{transform:rotate(1.4deg) skewY(-.4deg) translateY(-7px);}
-  70%{transform:rotate(-.2deg) skewY(.6deg) translateY(-3px);}
-  100%{transform:rotate(-1.2deg) skewY(0deg) translateY(0);}
+/* ---- 7bis. Koi au vent, au survol (Alain, 2026-09-25) ---- */
+/* Galeries produits des cinq mondes et de la home. Au repos : koi immobiles, sans fond, fondus dans le
+   papier (multiply). Survol ou clavier : le koi grandit et flotte au vent (balancement + ondulation, filtre
+   SVG #kh-wind imprimé par inc/world-archive.php) sur la bannière voilée de SA collection (classe
+   product_cat-<slug> posée par WooCommerce, slugs FR et EN) ; les autres koi s'estompent. Tout revient
+   quand la souris part. Écrans à souris seulement ; pas d'animation si « réduire les animations ».
+   L'estompage porte sur l'image et le texte, jamais sur la carte : une carte transparente (opacity)
+   isolerait l'image du papier et ferait réapparaître le fond blanc des photos. */
+.kh-home .woocommerce ul.products,
+.kh-world-archive ul.products{--kh-koi-zoom:1.45;--kh-koi-bleed:-24% -26%;}
+.kh-home .woocommerce ul.products{--kh-koi-zoom:1.8;--kh-koi-bleed:-42% -44%;}
+.kh-home .woocommerce ul.products li.product.loop-entry,
+.kh-world-archive ul.products li.product.loop-entry{overflow:visible !important;} /* Kadence rognait le koi agrandi. */
+.kh-home .woocommerce ul.products .woocommerce-loop-image-link,
+.kh-world-archive ul.products .woocommerce-loop-image-link{position:relative;display:block;}
+.kh-home .woocommerce ul.products .woocommerce-loop-image-link::before,
+.kh-world-archive ul.products .woocommerce-loop-image-link::before{
+  content:"";position:absolute;inset:-6% -3%;z-index:-1;pointer-events:none;opacity:0;
+  background:linear-gradient(rgb(248 244 238 / .45),rgb(248 244 238 / .45)),var(--kh-koi-bg,none) center / cover no-repeat;
+  box-shadow:0 24px 50px rgb(26 20 16 / .28);transition:opacity 450ms ease,inset 500ms cubic-bezier(.2,.7,.2,1);
 }
 .kh-home .woocommerce ul.products li.product img,
-.kh-world-archive ul.products li.product img{transform-origin:6% 50%;animation:kh-koi-wind 6.5s ease-in-out infinite;}
-.kh-home .woocommerce ul.products li.product:nth-child(2n) img,
-.kh-world-archive ul.products li.product:nth-child(2n) img{animation-duration:7.3s;animation-delay:-2.1s;}
-.kh-home .woocommerce ul.products li.product:nth-child(3n) img,
-.kh-world-archive ul.products li.product:nth-child(3n) img{animation-duration:5.9s;animation-delay:-3.7s;}
-@media (prefers-reduced-motion:reduce){.kh-home .woocommerce ul.products li.product img,.kh-world-archive ul.products li.product img{animation:none;}}
+.kh-world-archive ul.products li.product img{scale:1;transition:scale 500ms cubic-bezier(.2,.7,.2,1),opacity 450ms ease,filter 450ms ease;}
+.kh-home .woocommerce ul.products .product-details,
+.kh-world-archive ul.products .product-details{transition:opacity 350ms ease;}
+li.product.product_cat-mer,li.product.product_cat-sea{--kh-koi-bg:url("../images/collection-mer-960.webp");}
+li.product.product_cat-motifs,li.product.product_cat-patterns{--kh-koi-bg:url("../images/collection-motifs-960.webp");}
+li.product.product_cat-hanami,li.product.product_cat-hanami-en{--kh-koi-bg:url("../images/collection-hanami-v2-960.webp");}
+li.product.product_cat-kairo,li.product.product_cat-kairo-en{--kh-koi-bg:url("../images/collection-kairo-960.webp");}
+li.product.product_cat-territoires,li.product.product_cat-lands{--kh-koi-bg:url("../images/collection-territoires-960.webp");}
+@keyframes kh-koi-wind{
+  0%{transform:rotate(-1.5deg) skewY(0deg) translateY(0);}
+  20%{transform:rotate(.8deg) skewY(1deg) translateY(-5px);}
+  45%{transform:rotate(2deg) skewY(-.6deg) translateY(-9px);}
+  70%{transform:rotate(-.3deg) skewY(.8deg) translateY(-4px);}
+  100%{transform:rotate(-1.5deg) skewY(0deg) translateY(0);}
+}
+@media (hover:hover) and (pointer:fine){
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products:has(.woocommerce-loop-image-link:is(:hover,:focus-visible)) li.product:not(:has(.woocommerce-loop-image-link:is(:hover,:focus-visible))) :is(img,.product-details){opacity:.3;filter:saturate(.5);}
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products li.product:has(.woocommerce-loop-image-link:is(:hover,:focus-visible)){position:relative;z-index:5;}
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products li.product:has(.woocommerce-loop-image-link:is(:hover,:focus-visible)) .product-details{opacity:0;}
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products .woocommerce-loop-image-link:is(:hover,:focus-visible)::before{opacity:1;inset:var(--kh-koi-bleed);}
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products .woocommerce-loop-image-link:is(:hover,:focus-visible) img{scale:var(--kh-koi-zoom);animation:kh-koi-wind 4.5s ease-in-out infinite;filter:url(#kh-wind);}
+}
+@media (prefers-reduced-motion:reduce){
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products .woocommerce-loop-image-link:is(:hover,:focus-visible) img{animation:none;filter:none;}
+}
 
 /* ---- 8. Mouvement réduit (§8) ---- */
 @media (prefers-reduced-motion:reduce){

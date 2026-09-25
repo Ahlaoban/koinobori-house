@@ -81,6 +81,20 @@ add_filter( 'single_product_archive_thumbnail_size', function ( $size ) {
 	return koinobori_child_world_key() || is_page_template( 'page-templates/kh-home.php' ) ? 'woocommerce_single' : $size;
 }, 20 );
 
+/*
+ * "Koi au vent" filter used on hover by kh-foundations.css (section 7bis): an animated turbulence
+ * that makes the enlarged koi ripple like cloth. Decorative markup only, printed where the galleries are.
+ */
+add_action( 'wp_footer', function () {
+	if ( ! koinobori_child_world_key() && ! is_page_template( 'page-templates/kh-home.php' ) ) {
+		return;
+	}
+	echo '<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="kh-wind" x="-5%" y="-10%" width="110%" height="120%">'
+		. '<feTurbulence type="fractalNoise" baseFrequency="0.006 0.02" numOctaves="1" seed="3" result="n"><animate attributeName="baseFrequency" dur="7s" values="0.006 0.02;0.008 0.026;0.006 0.02" repeatCount="indefinite"/></feTurbulence>'
+		. '<feDisplacementMap in="SourceGraphic" in2="n" scale="10" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="5s" values="6;14;6" repeatCount="indefinite"/></feDisplacementMap>'
+		. '</filter></svg>';
+} );
+
 add_filter( 'body_class', function ( $classes ) {
 	$key = koinobori_child_world_key();
 	if ( $key ) {
