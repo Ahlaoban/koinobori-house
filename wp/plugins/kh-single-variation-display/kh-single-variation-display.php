@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Koinobori — affichage taille unique
  * Description: Sur un produit variable n'exposant qu'UNE seule taille, masque le menu déroulant d'attribut ("Choose an option") et affiche la taille en texte, avec auto-sélection (bouton "Ajouter au panier" actif). Réaffiche le menu déroulant automatiquement dès qu'une 2e taille vivante existe.
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Koinobori House
  *
  * Chantier UX catalogue (2026-06-25).
@@ -39,14 +39,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function kh_single_variation_as_text( $html, $args ) {
 	$options = isset( $args['options'] ) ? $args['options'] : array();
+	$attribute = isset( $args['attribute'] ) ? sanitize_title( $args['attribute'] ) : '';
 
-	// 0 ou >= 2 valeurs -> on laisse le menu déroulant natif WooCommerce intact.
-	if ( ! is_array( $options ) || 1 !== count( $options ) ) {
+	// Le composant ne concerne que l'attribut Taille prévu par la doctrine catalogue.
+	// Un autre attribut mono-valeur (couleur, finition...) reste un select WooCommerce.
+	if ( ! in_array( $attribute, array( 'pa_taille', 'taille' ), true )
+		|| ! is_array( $options ) || 1 !== count( $options ) ) {
 		return $html;
 	}
 
-	$attribute = isset( $args['attribute'] ) ? $args['attribute'] : '';
-	$value     = (string) reset( $options );
+	$value = (string) reset( $options );
 
 	// Libellé lisible : terme (traduit Polylang) si attribut global, sinon valeur brute.
 	$label = $value;
@@ -58,7 +60,7 @@ function kh_single_variation_as_text( $html, $args ) {
 	}
 
 	return '<span class="kh-size-single">' . esc_html( $label ) . '</span>'
-		. '<span class="kh-size-hidden">' . $html . '</span>';
+		. '<span class="kh-size-control kh-size-hidden">' . $html . '</span>';
 }
 add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'kh_single_variation_as_text', 20, 2 );
 
@@ -76,30 +78,54 @@ function kh_single_variation_assets() {
 	<style id="kh-single-variation-css">
 		.kh-size-hidden { display: none !important; }
 		.kh-size-single { font-weight: 600; }
-		.variations_form.kh-single-size .reset_variations { display: none !important; }
+		.variations_form.kh-all-attributes-single .reset_variations { display: none !important; }
 	</style>
 	<script id="kh-single-variation-js">
 	( function ( $ ) {
 		if ( ! $ ) { return; }
 		$( function () {
+			function applyForm( $form ) {
+				$form.find( '.kh-size-control select' ).each( function () {
+					var $select = $( this );
+					var $control = $select.closest( '.kh-size-control' );
+					var $label = $control.prev( '.kh-size-single' );
+					var $real = $select.find( 'option' ).filter( function () {
+						return '' !== this.value;
+					} );
+
+					// Si WooCommerce retire l'option du DOM, rendre le contrôle natif.
+					if ( 1 !== $real.length ) {
+						$control.removeClass( 'kh-size-hidden' );
+						$label.hide();
+						return;
+					}
+					$control.addClass( 'kh-size-hidden' );
+					$label.show();
+
+					if ( ! $select.val() ) {
+						$select.val( $real.val() ).trigger( 'change' );
+					}
+				} );
+
+				var total = $form.find( '.variations select' ).length;
+				var hidden = $form.find( '.kh-size-control.kh-size-hidden select' ).length;
+				$form.toggleClass( 'kh-all-attributes-single', total > 0 && total === hidden );
+			}
+
 			function applySingle() {
 				$( '.variations_form' ).each( function () {
-					var $form = $( this );
-					$form.find( '.kh-size-hidden select' ).each( function () {
-						var $select = $( this );
-						if ( $select.val() ) { return; } // déjà résolu.
-						var $real = $select.find( 'option' ).filter( function () {
-							return '' !== this.value;
-						} );
-						if ( 1 === $real.length ) {
-							$select.val( $real.val() ).trigger( 'change' );
-							$form.addClass( 'kh-single-size' );
-						}
-					} );
+					applyForm( $( this ) );
 				} );
 			}
 			applySingle();
 			setTimeout( applySingle, 60 ); // après l'init WooCommerce des variations.
+
+			// Le lien Effacer vide aussi le select Taille masqué. Le resélectionner
+			// après le reset laisse les attributs visibles réellement réinitialisés.
+			$( document.body ).on( 'reset_data', '.variations_form', function () {
+				var $form = $( this );
+				setTimeout( function () { applyForm( $form ); }, 0 );
+			} );
 		} );
 	} )( window.jQuery );
 	</script>
