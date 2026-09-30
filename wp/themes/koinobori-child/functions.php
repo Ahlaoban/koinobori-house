@@ -18,6 +18,7 @@ require_once get_stylesheet_directory() . '/inc/header.php';
 require_once get_stylesheet_directory() . '/inc/footer.php';
 require_once get_stylesheet_directory() . '/inc/enquiries.php';
 require_once get_stylesheet_directory() . '/inc/home-blocks.php';
+require_once get_stylesheet_directory() . '/inc/world-archive.php';
 
 /**
  * Styles front : style.css (en-tête thème) puis kh-foundations.css (tokens, fonts, base).

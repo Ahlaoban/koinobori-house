@@ -40,7 +40,7 @@ E-commerce bilingue FR+EN pour vente koinobori originaux signés BCDG. B2C + B2B
 
 - **Démarrage** : 2026-05-27 (J1 Lot 0 — mercredi)
 - **Reprise** : 2026-09-07, après un mois de détour (ChatGPT, mauvais répertoire). La liste de référence du reste à faire est [docs/handoff/PASSATION-2026-07-27.md](docs/handoff/PASSATION-2026-07-27.md) §3/§9 : rien n'y avait été coché. État mesuré ce jour : staging = WC 11.1 + PayPal, sans Stripe / SMTP / formulaires / cookies / cache / Wordfence, homepage vide, 0 menu, 20 fiches sans image ; prod = WordPress nu.
-- **Lancement (site opérationnel)** : **30 septembre 2026**. Chemin critique = socle transactionnel avant la charte.
+- **Lancement (site opérationnel)** : **15 octobre 2026** (décision Alain du 2026-09-30 ; le 30 septembre n'a pas été tenu : habillage des pages terminé sur le staging, socle transactionnel non commencé, prod toujours nue). Chemin critique = socle transactionnel (Stripe, PayPal, emails, cookies, expédition), puis mise en production par Alain.
 - **Arbitrages 2026-09-07** : **BD Kaïro = automne 2026, date à préciser, hors lancement** (clauses CGV mises de côté dans `docs/lot0/KH-017-documents-legaux/10-clauses-contenu-numerique-BD.md`) · **USA = « nous contacter »** au lancement.
 - ⚠️ **Pas de gate avocat** (confirmé Alain 2026-07-27, déjà tranché auparavant) : la validation des CGV par un avocat est un **contrôle complémentaire recommandé, non bloquant** pour la vente publique. Cette ligne portait auparavant « vente publique après avocat CGV », ce qui contredisait [docs/lots2-8-decomposition.md](docs/lots2-8-decomposition.md) §Juridique. La contradiction est levée en faveur de ce dernier.
 - **Durée** : 9 semaines × 6 jours/semaine × ~6h/jour = ~340h capacité
