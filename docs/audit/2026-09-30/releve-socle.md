@@ -41,3 +41,9 @@ Alain avait d'abord connecté le compte Stripe **réel** au staging (passerelle 
 Points ouverts : retirer les clés réelles du staging (déconnexion du compte réel) ; deux moyens de paiement par carte proposés (carte via PayPal et carte via Stripe) : en garder un seul (décision Alain) ; commandes d'essai carte et PayPal, FR et EN.
 
 Relevé n°4 (17:33 UTC), après déconnexion du compte réel et reconnexion de l'environnement de test par Alain : Stripe activé, mode test, clés de test et webhook de test renseignés, **clés réelles vides**. Le staging ne porte plus aucune clé Stripe réelle.
+
+## Suivi — moyens de paiement épurés (2026-09-30, soir, par Alain dans l'admin)
+
+Décisions d'Alain, appliquées par lui : carte bancaire par **Stripe** seul (« Bouton de carte standard » PayPal désactivé, Stripe placé en premier) ; paiement express Stripe : **Link et Amazon Pay retirés**, Apple Pay / Google Pay gardés et retirés de la page produit ; PayPal Payments : boutons retirés de la page produit, du panier et du mini-panier (gardés au paiement), bannières « Paiement en 4X » retirées. Résultat vérifié sur la fiche Bigouden (capture d'Alain) : seul « Ajouter au panier ». Non vérifié par relevé (réglages PayPal hors du périmètre du script).
+
+Relevés visuels à corriger dans le thème : métadonnées produit (UGS, catégorie) quasi invisibles sous le bouton ; rond bleu flottant en bas à gauche d'origine inconnue.
