@@ -33,3 +33,9 @@ Lecture seule (`tools/staging/pc10/socle-report.php`, déposé sur le serveur da
 Alain a relié FluentSMTP à Brevo dans l'admin du staging (fournisseur Brevo, expéditeur `contact@koinoborihouse.com`, nom « Koinobori House », clé API saisie par lui, stockée chiffrée). Compte Brevo vérifié par lui : expéditeur vérifié, DKIM `koinoborihouse.com` valide, DMARC configuré. Premier essai en échec (« Key not found » : clé non reconnue par Brevo), second essai réussi avec une clé API : email reçu en boîte de réception Gmail. Second relevé en lecture seule : 1 connexion, fournisseur `sendinblue`, clé renseignée, journal = 1 échec (13:09) puis 1 envoi réussi (13:15, heure de Paris).
 
 Conséquence : les 18 emails de commande actifs et les 16 notifications de formulaires partent désormais par Brevo (plan gratuit, 300 emails par jour). À faire à la mise en production : refaire ce réglage sur le site en ligne (clé dédiée).
+
+## Suivi — Stripe en mode test (2026-09-30, 17:19 UTC)
+
+Alain avait d'abord connecté le compte Stripe **réel** au staging (passerelle activée, mode test impossible) : signalé comme risque de vrai débit. Il a ensuite connecté l'« environnement de test » de son compte et coché le mode test. Relevé n°3 : Stripe activé, `testmode = yes`, clés de test et webhook de test renseignés ; **les clés réelles de la première connexion restent aussi enregistrées** sur le staging (non utilisées tant que le mode test est coché). PayPal inchangé (bac à sable).
+
+Points ouverts : retirer les clés réelles du staging (déconnexion du compte réel) ; deux moyens de paiement par carte proposés (carte via PayPal et carte via Stripe) : en garder un seul (décision Alain) ; commandes d'essai carte et PayPal, FR et EN.
