@@ -85,7 +85,7 @@
 .kh-home .woocommerce ul.products li.product { width: auto; float: none; margin: 0; padding: 0; box-shadow: none; border: 0; background: transparent; }
 /* Sans fond blanc (Alain, 2026-09-25) : koi entier (taille non recadrée, inc/world-archive.php) ; photos détourées
    (fond transparent, tools/staging/pc8), donc koi opaque posé sur le papier, sans mode de fusion. */
-.kh-home .woocommerce ul.products li.product a img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; background: transparent; }
+.kh-home .woocommerce ul.products li.product a img { width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: contain; background: transparent; } /* cadre commun 2:1 : titres et prix alignés, quelle que soit la photo */
 .kh-home .woocommerce ul.products li.product .woocommerce-loop-product__title { font-size: 1.7rem; line-height: 1.15; }
 .kh-home .woocommerce ul.products li.product .price { color: var(--kh-sumi); font-family: var(--kh-font-ui); font-size: 1rem; }
 .kh-home .woocommerce ul.products li.product .button { border-radius: 0; font-family: var(--kh-font-ui); }

@@ -109,22 +109,42 @@ h1,h2,h3{font-family:var(--kh-font-display);}
    estompés (fond plus grand que le koi agrandi, marge pour le balancement) ; koi net, sans effet de
    transparence : photos détourées (tools/staging/pc8), koi opaque sans mode de fusion ; bannière voilée à 80 %. */
 .kh-home .woocommerce ul.products,
-.kh-world-archive ul.products{--kh-koi-zoom:1.45;--kh-koi-bleed:-34% -30%;}
-.kh-home .woocommerce ul.products{--kh-koi-zoom:1.8;--kh-koi-bleed:-52% -48%;}
+.kh-world-archive ul.products{--kh-koi-zoom:1.45;}
+.kh-home .woocommerce ul.products{--kh-koi-zoom:1.8;}
+/* Revue PR #29 : agrandi depuis son centre, le koi des colonnes de bord sortait de l'écran sous ~1550 px de large
+   (tête ou queue rognée par .site{overflow:clip} de Kadence). L'agrandissement part donc du bord extérieur :
+   colonne de gauche vers la droite, colonne de droite vers la gauche ; le fond suit avec la même origine. */
+@media (min-width:576px){
+  .kh-world-archive ul.products li.product:nth-child(odd){--kh-koi-origin:left center;}
+  .kh-world-archive ul.products li.product:nth-child(even){--kh-koi-origin:right center;}
+}
+@media (min-width:1025px){
+  .kh-home .woocommerce ul.products li.product:nth-child(4n+1){--kh-koi-origin:left center;}
+  .kh-home .woocommerce ul.products li.product:nth-child(4n){--kh-koi-origin:right center;}
+}
+@media (max-width:1024px){
+  .kh-home .woocommerce ul.products li.product:nth-child(odd){--kh-koi-origin:left center;}
+  .kh-home .woocommerce ul.products li.product:nth-child(even){--kh-koi-origin:right center;}
+}
 .kh-home .woocommerce ul.products li.product.loop-entry,
 .kh-world-archive ul.products li.product.loop-entry{overflow:visible !important;} /* Kadence rognait le koi agrandi. */
 .kh-home .woocommerce ul.products .woocommerce-loop-image-link,
 .kh-world-archive ul.products .woocommerce-loop-image-link{position:relative;display:block;}
 .kh-home .woocommerce ul.products .woocommerce-loop-image-link::before,
 .kh-world-archive ul.products .woocommerce-loop-image-link::before{
-  content:"";position:absolute;inset:-6% -3%;z-index:-1;pointer-events:none;opacity:0;
+  content:"";position:absolute;inset:-12% -4%;z-index:-1;pointer-events:none;opacity:0;scale:1;transform-origin:var(--kh-koi-origin,center);
   background:linear-gradient(rgb(248 244 238 / .8),rgb(248 244 238 / .8)),var(--kh-koi-bg,none) center / cover no-repeat;
-  box-shadow:0 24px 50px rgb(26 20 16 / .28);transition:opacity 450ms ease,inset 500ms cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 24px 50px rgb(26 20 16 / .28);transition:opacity 450ms ease,scale 500ms cubic-bezier(.2,.7,.2,1);
 }
 .kh-home .woocommerce ul.products li.product img,
-.kh-world-archive ul.products li.product img{scale:1;transition:scale 500ms cubic-bezier(.2,.7,.2,1),opacity 450ms ease,filter 450ms ease;}
+.kh-world-archive ul.products li.product img{scale:1;transform-origin:var(--kh-koi-origin,center);transition:scale 500ms cubic-bezier(.2,.7,.2,1),opacity 450ms ease,filter 450ms ease;}
 .kh-home .woocommerce ul.products .product-details,
 .kh-world-archive ul.products .product-details{transition:opacity 350ms ease;}
+/* Revue PR #29 : une photo non détourée (nom de fichier sans « -detoure » : ajout depuis l'admin, import du
+   catalogue, image d'attente) garde son fond blanc ; il est fondu dans le papier (multiply) en attendant son
+   détourage (tools/images/koi-cutout.py, docs/development/photos-produits.md). Les photos détourées restent opaques. */
+.kh-home .woocommerce ul.products li.product img:not([src*="-detoure"]),
+.kh-world-archive ul.products li.product img:not([src*="-detoure"]){mix-blend-mode:multiply;}
 li.product.product_cat-mer,li.product.product_cat-sea{--kh-koi-bg:url("../images/collection-mer-960.webp");}
 li.product.product_cat-motifs,li.product.product_cat-patterns{--kh-koi-bg:url("../images/collection-motifs-960.webp");}
 li.product.product_cat-hanami,li.product.product_cat-hanami-en{--kh-koi-bg:url("../images/collection-hanami-v2-960.webp");}
@@ -141,7 +161,7 @@ li.product.product_cat-territoires,li.product.product_cat-lands{--kh-koi-bg:url(
   :is(.kh-home .woocommerce,.kh-world-archive) ul.products:has(.woocommerce-loop-image-link:is(:hover,:focus-visible)) li.product:not(:has(.woocommerce-loop-image-link:is(:hover,:focus-visible))) :is(img,.product-details){opacity:.3;filter:saturate(.5);}
   :is(.kh-home .woocommerce,.kh-world-archive) ul.products li.product:has(.woocommerce-loop-image-link:is(:hover,:focus-visible)){position:relative;z-index:5;}
   :is(.kh-home .woocommerce,.kh-world-archive) ul.products li.product:has(.woocommerce-loop-image-link:is(:hover,:focus-visible)) .product-details{opacity:0;}
-  :is(.kh-home .woocommerce,.kh-world-archive) ul.products .woocommerce-loop-image-link:is(:hover,:focus-visible)::before{opacity:1;inset:var(--kh-koi-bleed);}
+  :is(.kh-home .woocommerce,.kh-world-archive) ul.products .woocommerce-loop-image-link:is(:hover,:focus-visible)::before{opacity:1;scale:var(--kh-koi-zoom);}
   :is(.kh-home .woocommerce,.kh-world-archive) ul.products .woocommerce-loop-image-link:is(:hover,:focus-visible) img{scale:var(--kh-koi-zoom);animation:kh-koi-wind 4.5s ease-in-out infinite;filter:url(#kh-wind);}
 }
 @media (prefers-reduced-motion:reduce){
