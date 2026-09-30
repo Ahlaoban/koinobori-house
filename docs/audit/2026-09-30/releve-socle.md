@@ -56,3 +56,10 @@ Commande par carte de test Stripe, page « Merci » affichée, **aucun email re�
 2. **Bigouden FR (205) : variations non reliées à une taille** (`pa_taille` vide sur 206 `KH-TER-003-050` 20 € et 208 `KH-TER-003-075` 25 €). Toute taille choisie tombe sur la première variation : la commande porte « 75 cm » mais le 50 cm à 20 €. Seul produit touché sur 25 produits variables (FR et EN).
 
 Corrections : exception de la protection par mot de passe pour les deux adresses de notification (édition du `.htaccess` du staging, par Alain) ; Bigouden : relier 206 à « 50 cm » et 208 à « 75 cm » dans l'admin (par Alain) ; puis nouvelle commande d'essai.
+
+## Suivi — corrections du soir (2026-09-30, ~21:00 heure de Paris)
+
+- **Bigouden corrigé par Alain** : variations 206 → 50 cm, 208 → 75 cm. Contrôle : 25 produits à tailles sur 25 correctement reliés.
+- **Exception de la protection par mot de passe pour Stripe et PayPal : sans effet.** Le serveur est LiteSpeed. Deux essais dans la section du `.htaccess` gérée par cPanel (« Password Protected Directories », marquée *Do not edit*) : syntaxe `RequireAny` + `Require env`, puis `SetEnvIf` + `Order/Deny/Allow from env=` + `Satisfy Any`. Dans les deux cas, `/?wc-api=wc_stripe`, `/wp-json/paypal/v1/incoming` et `/fr/` répondent HTTP 401. La section est en outre réécrite par cPanel si la protection est modifiée depuis son interface.
+
+**Pour la prochaine session** : remplacer la protection par mot de passe de cPanel par une barrière côté WordPress (mu-plugin : mot de passe ou connexion obligatoire sur le staging, **sauf** les adresses de notification Stripe et PayPal, WP-Cron et l'API REST nécessaire), retirer la protection cPanel, puis rejouer les commandes d'essai carte et PayPal, FR et EN. Solution de repli pour tester tout de suite : lever la protection cPanel le temps des essais (le staging reste en `noindex`).
