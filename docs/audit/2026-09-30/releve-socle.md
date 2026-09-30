@@ -39,3 +39,5 @@ Conséquence : les 18 emails de commande actifs et les 16 notifications de formu
 Alain avait d'abord connecté le compte Stripe **réel** au staging (passerelle activée, mode test impossible) : signalé comme risque de vrai débit. Il a ensuite connecté l'« environnement de test » de son compte et coché le mode test. Relevé n°3 : Stripe activé, `testmode = yes`, clés de test et webhook de test renseignés ; **les clés réelles de la première connexion restent aussi enregistrées** sur le staging (non utilisées tant que le mode test est coché). PayPal inchangé (bac à sable).
 
 Points ouverts : retirer les clés réelles du staging (déconnexion du compte réel) ; deux moyens de paiement par carte proposés (carte via PayPal et carte via Stripe) : en garder un seul (décision Alain) ; commandes d'essai carte et PayPal, FR et EN.
+
+Relevé n°4 (17:33 UTC), après déconnexion du compte réel et reconnexion de l'environnement de test par Alain : Stripe activé, mode test, clés de test et webhook de test renseignés, **clés réelles vides**. Le staging ne porte plus aucune clé Stripe réelle.
