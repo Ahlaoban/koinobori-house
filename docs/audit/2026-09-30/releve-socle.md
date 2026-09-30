@@ -47,3 +47,12 @@ Relevé n°4 (17:33 UTC), après déconnexion du compte réel et reconnexion de 
 Décisions d'Alain, appliquées par lui : carte bancaire par **Stripe** seul (« Bouton de carte standard » PayPal désactivé, Stripe placé en premier) ; paiement express Stripe : **Link et Amazon Pay retirés**, Apple Pay / Google Pay gardés et retirés de la page produit ; PayPal Payments : boutons retirés de la page produit, du panier et du mini-panier (gardés au paiement), bannières « Paiement en 4X » retirées. Résultat vérifié sur la fiche Bigouden (capture d'Alain) : seul « Ajouter au panier ». Non vérifié par relevé (réglages PayPal hors du périmètre du script).
 
 Relevés visuels à corriger dans le thème : métadonnées produit (UGS, catégorie) quasi invisibles sous le bouton ; rond bleu flottant en bas à gauche d'origine inconnue.
+
+## Suivi — première commande d'essai (n°343, 2026-09-30 20:09 heure de Paris)
+
+Commande par carte de test Stripe, page « Merci » affichée, **aucun email reçu** (client ni boutique). Diagnostic en lecture seule (`diag-343*.php`, `diag-variations.php` dans `~/kh2027-private/tools/`) :
+
+1. **Commande restée « En attente de paiement »** : WooCommerce n'envoie les emails qu'au passage « En cours ». Brevo fonctionne (avis « Passerelle Stripe activée » envoyés à 19:10, 19:15, 19:31). Identifiant de paiement Stripe absent de la commande. **L'adresse de notification Stripe (`/?wc-api=wc_stripe`) répond HTTP 401 sans mot de passe** : la protection par mot de passe du staging bloque Stripe, qui ne peut pas confirmer le paiement. Même risque pour PayPal (`/wp-json/paypal/v1/incoming`). WP-Cron et Action Scheduler tournent (tâches à venir seulement).
+2. **Bigouden FR (205) : variations non reliées à une taille** (`pa_taille` vide sur 206 `KH-TER-003-050` 20 € et 208 `KH-TER-003-075` 25 €). Toute taille choisie tombe sur la première variation : la commande porte « 75 cm » mais le 50 cm à 20 €. Seul produit touché sur 25 produits variables (FR et EN).
+
+Corrections : exception de la protection par mot de passe pour les deux adresses de notification (édition du `.htaccess` du staging, par Alain) ; Bigouden : relier 206 à « 50 cm » et 208 à « 75 cm » dans l'admin (par Alain) ; puis nouvelle commande d'essai.
