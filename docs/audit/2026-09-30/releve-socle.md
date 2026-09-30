@@ -27,3 +27,9 @@ Lecture seule (`tools/staging/pc10/socle-report.php`, déposé sur le serveur da
 4. Assistant Complianz.
 5. Cache LiteSpeed, puis recette complète.
 6. Procédure de mise en production (clés réelles, indexation, domaines).
+
+## Suivi — envoi des emails relié à Brevo (2026-09-30, 11:17 UTC)
+
+Alain a relié FluentSMTP à Brevo dans l'admin du staging (fournisseur Brevo, expéditeur `contact@koinoborihouse.com`, nom « Koinobori House », clé API saisie par lui, stockée chiffrée). Compte Brevo vérifié par lui : expéditeur vérifié, DKIM `koinoborihouse.com` valide, DMARC configuré. Premier essai en échec (« Key not found » : clé non reconnue par Brevo), second essai réussi avec une clé API : email reçu en boîte de réception Gmail. Second relevé en lecture seule : 1 connexion, fournisseur `sendinblue`, clé renseignée, journal = 1 échec (13:09) puis 1 envoi réussi (13:15, heure de Paris).
+
+Conséquence : les 18 emails de commande actifs et les 16 notifications de formulaires partent désormais par Brevo (plan gratuit, 300 emails par jour). À faire à la mise en production : refaire ce réglage sur le site en ligne (clé dédiée).
