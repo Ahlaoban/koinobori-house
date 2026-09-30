@@ -92,3 +92,11 @@ Remarques d'Alain : (1) au survol, le dernier koi d'une page monde envahissait l
 | ~19:12 | Contrôle Claude | serveur OK (HTTP 401 d'authentification basique, `error_log` inchangé depuis le 28/08) ; rendu navigateur **non vérifié** : l'onglet de Claude a perdu l'authentification basique du staging → recette Alain |
 
 Retour arrière : ordre = `restore.php` avec `pc9-kairo-order-20260925T190936Z.json` ; thème = `backups/theme-dir-1.3.21-20260925T190937Z`.
+
+## 2026-09-30 — revue de code de la PR #29, thème 1.3.23 déployé par Alain
+
+Revue `/code-review` (10 points, aucun de sécurité). Corrigés à la demande d'Alain (1.3.23, feuilles de style seulement) : koi agrandi ancré au bord extérieur de sa colonne (entier sur les écrans étroits) ; repli `multiply` pour les photos non détourées (`docs/development/photos-produits.md`) ; cadre commun 2:1 des vignettes (titres et prix alignés). Testé sur une page d'essai locale (fenêtre simulée de 1366 px). Déploiement par Alain (`kh-w1323.tar`, sauvegarde `backups/theme-dir-1.3.22-…`), **confirmé par Alain, non contrôlé par Claude** (plus d'accès navigateur au cPanel ni au staging ce jour).
+
+Non traités, à reprendre : détourage qui retire les morceaux de moins de 2 % ; ondulation SVG non testée sur Safari et Firefox ; nom et prix masqués au focus clavier ; `sizes` de la bannière surestimé ; voile de teinte en `mix-blend-mode` (défilement mobile) ; ombre du fond au survol trop épaisse pour la charte ; champ « Nom japonais » sans effet.
+
+Lancement reporté au **15 octobre 2026** (décision Alain du 30/09).
