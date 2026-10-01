@@ -37,4 +37,21 @@ puis suppression par Alain dans le gestionnaire de fichiers. Restent seulement l
 `<Files ".user.ini">` (`Require all denied` / `Deny from all`), à garder. Contrôles extérieurs refaits :
 résultats identiques au tableau ci-dessus.
 
-Reste : commandes d'essai carte et PayPal, FR et EN.
+## Commande d'essai 344 (carte Stripe test, FR, invité, 2026-10-01 12:21)
+
+Fenêtre privée, mot de passe partagé, non connecté. Bigouden 75 cm (variation 208, `KH-TER-003-075`) à
+**25,00 €** : la correction des variations du 30/09 est confirmée. Expédition forfait 5 €, total 30 €.
+
+- Statut **En cours**, payé par carte, identifiant de paiement Stripe enregistré (`ch_…`) : la notification
+  Stripe a été reçue.
+- Email client « Votre commande sur Koinobori House a été reçue » arrivé en boîte de réception Gmail
+  (expéditeur `contact@koinoborihouse.com`, via Brevo).
+- Email boutique « Vous avez une nouvelle commande n°344 » arrivé sur `admin@koinoborihouse.com`.
+- Commandes 342 et 343, restées en attente, annulées automatiquement le 30/09 à 21:35 (emails d'annulation
+  reçus côté boutique).
+
+Remarques pour la relecture des emails (Alain, Catherine) : textes WooCommerce par défaut (« Pour information –
+nous avons reçu votre commande… »), couleur de base violette de WooCommerce au lieu de la charte, date au
+format « octobre 1, 2026 » (Réglages → Général → Format de date `j F Y`).
+
+Reste : commande d'essai PayPal (bac à sable) en FR, puis carte et PayPal en EN.
