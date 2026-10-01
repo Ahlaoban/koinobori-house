@@ -27,5 +27,14 @@ Procédure : `docs/development/barriere-staging.md`. Exécutée par Alain, contr
 En-têtes de la page 403 : `X-LiteSpeed-Cache-Control: no-cache`, `X-Robots-Tag: noindex, nofollow`,
 `Cache-Control: no-store`.
 
-Reste : vérifier le `.htaccess` (plus de directives d'authentification), puis commandes d'essai carte et
-PayPal, FR et EN.
+## Nettoyage du `.htaccess`
+
+Après le retrait de la protection, le `.htaccess` gardait les 6 lignes d'essai du 30/09, hors de tout bloc,
+sous `# END Wordfence WAF` : deux `SetEnvIf … KH_WEBHOOK`, `Order Deny,Allow`, `Deny from all`,
+`Allow from env=KH_WEBHOOK`, `Satisfy Any`. Ignorées par LiteSpeed, mais susceptibles de fermer le site si
+elles étaient un jour appliquées. Sauvegarde `~/kh2027-private/backups/htaccess-staging-20261001-avant-nettoyage`,
+puis suppression par Alain dans le gestionnaire de fichiers. Restent seulement les lignes du bloc Wordfence
+`<Files ".user.ini">` (`Require all denied` / `Deny from all`), à garder. Contrôles extérieurs refaits :
+résultats identiques au tableau ci-dessus.
+
+Reste : commandes d'essai carte et PayPal, FR et EN.
