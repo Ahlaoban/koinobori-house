@@ -25,7 +25,7 @@ Périmètre : site e-commerce WordPress + WooCommerce, bilingue FR/EN, B2C trans
   > Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
   > SIREN / RCS : 945 241 545 R.C.S. Quimper
   > SIRET (siège) : 945 241 545 00017
-  > Adresse : 1 rue du marais, 29730 Treffiagat
+  > Adresse : 34 quater rue de la Marine, 29730 Le Guilvinec
   > Email : contact@koinoborihouse.com
 - Directrice de la publication : Else Smakalova
 - TVA au lancement : franchise en base, mention `TVA non applicable, art. 293 B du CGI`.

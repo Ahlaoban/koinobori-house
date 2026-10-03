@@ -12,7 +12,7 @@ SIREN / RCS : 945 241 545 R.C.S. Quimper
 
 SIRET (siège) : 945 241 545 00017
 
-Adresse : 1 rue du marais, 29730 Treffiagat
+Adresse : 34 quater rue de la Marine, 29730 Le Guilvinec
 
 Email de contact données personnelles : contact@koinoborihouse.com
 

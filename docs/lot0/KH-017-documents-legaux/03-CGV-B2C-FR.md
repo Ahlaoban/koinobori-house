@@ -1,7 +1,7 @@
 # CONDITIONS GÉNÉRALES DE VENTE
 ## Koinobori House
 
-**Version du 7 septembre 2026**
+**Version du 3 octobre 2026**
 
 Les présentes Conditions générales de vente régissent les ventes réalisées sur le site **koinoborihouse.com**.
 
@@ -12,8 +12,8 @@ Les présentes Conditions générales de vente régissent les ventes réalisées
 Le site **koinoborihouse.com**, ci-après dénommé « le Site », est exploité sous le nom commercial **Koinobori House** par :
 
 **Alain HERBINIÈRE, entrepreneur individuel**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 SIREN : **945 241 545** (RCS Quimper)  
@@ -267,8 +267,8 @@ La demande peut notamment être adressée à :
 
 **Koinobori House**  
 Alain Herbinière EI  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 Email : **contact@koinoborihouse.com**
@@ -304,8 +304,8 @@ Selon les circonstances, les retours sont traités à l'une des deux adresses su
 #### Adresse de retour possible 1
 
 **Koinobori House**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 #### Adresse de retour possible 2
@@ -426,8 +426,8 @@ La mise en œuvre de la garantie légale de conformité est sans frais pour le c
 Le professionnel répondant de cette garantie est :
 
 **Alain Herbinière EI - Koinobori House**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 Email : **contact@koinoborihouse.com**
@@ -588,8 +588,8 @@ Les prestataires de paiement, de livraison ou techniques ne reçoivent que les i
 Pour toute question ou réclamation relative à un produit ou à une commande, le Client peut contacter Koinobori House :
 
 **Koinobori House - Alain Herbinière EI**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 
@@ -678,8 +678,8 @@ Il n'est pas obligatoire d'utiliser ce formulaire : toute déclaration claire ex
 
 **Koinobori House**  
 Alain Herbinière EI  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 Email : **contact@koinoborihouse.com**
@@ -738,7 +738,7 @@ Après réception de la demande de rétractation, Koinobori House communique au 
 
 Cette adresse sera, selon les circonstances :
 
-**1 rue du Marais, 29730 Treffiagat, France**
+**34 quater rue de la Marine, 29730 Le Guilvinec, France**
 
 ou
 

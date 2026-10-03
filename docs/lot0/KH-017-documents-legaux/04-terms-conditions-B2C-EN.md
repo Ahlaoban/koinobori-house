@@ -1,7 +1,7 @@
 # TERMS AND CONDITIONS OF SALE
 ## Koinobori House
 
-**Version of 7 September 2026**
+**Version of 3 October 2026**
 
 *This English version is provided for the convenience of international customers. In the event of any discrepancy, the French version prevails (Article 25).*
 
@@ -14,8 +14,8 @@ These Terms and Conditions of Sale govern the sales made on the website **koinob
 The website **koinoborihouse.com**, hereinafter referred to as "the Site", is operated under the trade name **Koinobori House** by:
 
 **Alain HERBINIÈRE, sole trader (entrepreneur individuel)**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 SIREN: **945 241 545** (RCS Quimper)  
@@ -269,8 +269,8 @@ The request may in particular be sent to:
 
 **Koinobori House**  
 Alain Herbinière EI  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 Email: **contact@koinoborihouse.com**
@@ -306,8 +306,8 @@ Depending on the circumstances, returns are handled at one of the following two 
 #### Possible return address 1
 
 **Koinobori House**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 #### Possible return address 2
@@ -428,8 +428,8 @@ The implementation of the legal guarantee of conformity is free of charge for th
 The trader liable under this guarantee is:
 
 **Alain Herbinière EI - Koinobori House**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 Email: **contact@koinoborihouse.com**
@@ -590,8 +590,8 @@ Payment, delivery or technical service providers receive only the information ne
 For any question or complaint relating to a product or an order, the Customer may contact Koinobori House:
 
 **Koinobori House - Alain Herbinière EI**  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 
@@ -680,8 +680,8 @@ Using this form is not mandatory: any clear statement unambiguously expressing t
 
 **Koinobori House**  
 Alain Herbinière EI  
-1 rue du Marais  
-29730 Treffiagat  
+34 quater rue de la Marine  
+29730 Le Guilvinec  
 France
 
 Email: **contact@koinoborihouse.com**
@@ -740,7 +740,7 @@ After receiving the withdrawal request, Koinobori House informs the Customer of 
 
 Depending on the circumstances, this address will be:
 
-**1 rue du Marais, 29730 Treffiagat, France**
+**34 quater rue de la Marine, 29730 Le Guilvinec, France**
 
 or
 
