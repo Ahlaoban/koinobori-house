@@ -7,13 +7,13 @@ Identification vendeur acquise — formulation obligatoire intégrée dans tous 
 > Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
 > SIREN / RCS : 945 241 545 R.C.S. Quimper
 > SIRET (siège) : 945 241 545 00017
-> Adresse : 1 rue du marais, 29730 Treffiagat
+> Adresse : 34 quater rue de la Marine, 29730 Le Guilvinec
 > Email : contact@koinoborihouse.com
 > Directrice de la publication : Else Smakalova
 
 Restant :
 
-- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV art. 11** (1 rue du Marais, 29730 Treffiagat ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV art. 11.
+- [x] Adresse de retour produits : **deux adresses listées publiquement dans la CGV art. 11** (34 quater rue de la Marine, 29730 Le Guilvinec ; 46 ruelle de l'Église, 69620 Ternand). Le client contacte BCDG au préalable par email pour recevoir l'adresse applicable, choisie au cas par cas. Politique intégrée CGV art. 11.
 - [x] ✅ **Téléphone public : tranché le 2026-09-09, aucun numéro publié.** Alain confirme la décision du 2026-07-24 : « on ne garde que l'email dans les CGV comme partout ailleurs ». Les quatre occurrences de **+33 6 07 79 33 03** introduites par la CGV v2026-09-07 sont retirées des articles 1, 10.2, 15 et 22, en FR comme en EN. Le corpus légal est de nouveau homogène : `contact@koinoborihouse.com` est le seul canal publié, dans les CGV comme dans les mentions légales.
 
 ## B. CM2C
@@ -44,7 +44,7 @@ Coordonnées intégrées :
 ## D. Rétractation et retours
 
 - [x] Frais de retour à la charge du client sauf erreur de BCDG / produit défectueux ou non conforme. Intégré CGV art. 11 et 13 (international).
-- [x] Adresse de retour : **deux adresses listées publiquement CGV art. 11** (Treffiagat ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
+- [x] Adresse de retour : **deux adresses listées publiquement CGV art. 11** (Le Guilvinec ou Ternand) ; le client contacte BCDG au préalable pour recevoir l'adresse applicable, choisie au cas par cas.
 - [x] Mode de demande de rétractation : fonctionnalité en ligne, formulaire type en annexe 1, ou déclaration claire (CGV v2026-09-07 art. 10.2).
 - [~] **Fonction de rétractation en ligne (obligatoire pour les contrats conclus depuis le 19/06/2026, art. L. 221-21 C. conso.)** : décrite à l'article 10.3 des CGV, qui l'affirment **au présent**. Les formulaires Fluent Forms **11 (FR) et 12 (EN) existent** et les pages 249 `/fr/retours/` et 263 `/en/returns/` sont en ligne depuis le 2026-09-07. La case n'est donc plus « à construire », mais elle n'est pas cochée pour autant : la conformité au **décret d'application, article D. 221-5**, n'est pas vérifiée. Ce texte exige davantage que ce que décrivent les CGV, et chaque point est à contrôler sur le formulaire réel :
   - [ ] un libellé « **renoncer au contrat ici** » ou une formule analogue sans ambiguïté, clairement lisible ;

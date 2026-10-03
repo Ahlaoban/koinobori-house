@@ -31,8 +31,10 @@ Fiche synthèse du chantier documentaire légal Koinobori House.
 > Koinobori House propose des koinobori originaux conçus par BCDG, l'entreprise créative créée par Alain Herbinière.
 > SIREN / RCS : 945 241 545 R.C.S. Quimper
 > SIRET (siège) : 945 241 545 00017
-> Adresse : 1 rue du marais, 29730 Treffiagat
+> Adresse : 34 quater rue de la Marine, 29730 Le Guilvinec
 > Email : contact@koinoborihouse.com
+
+**Décision Alain du 2026-10-03** : l'adresse publique du vendeur (site, CGV, mentions légales, confidentialité, factures, emails) est celle de la boutique, 34 quater rue de la Marine, 29730 Le Guilvinec, à la place de 1 rue du Marais, 29730 Treffiagat. Adresses de **retour** (CGV art. 11 et annexe 1) : Le Guilvinec ou Ternand, communiquée au client au cas par cas. Signalé à Alain : le registre (SIRET 945 241 545 00017) ne déclare à ce jour que l'adresse de Treffiagat, la boutique n'y figure pas comme établissement.
 
 Directrice de la publication : Else Smakalova (mentions légales + legal notice).
 
@@ -77,7 +79,7 @@ Cette formulation **remplace toutes les occurrences antérieures** d'identificat
 - 14 jours rétractation à compter du lendemain réception
 - Déclaration claire par email à contact@koinoborihouse.com (simple renvoi sans déclaration ≠ rétractation)
 - Formulaire type "À l'attention de BCDG — Koinobori House" (CGV art. 10.2 + annexe 1)
-- Conditions retour : email préalable obligatoire à contact@koinoborihouse.com pour recevoir instructions + adresse de retour applicable. Les **deux adresses possibles sont listées publiquement CGV art. 11** : (a) 1 rue du Marais 29730 Treffiagat ou (b) 46 ruelle de l'Église 69620 Ternand. Choix par BCDG au cas par cas. Produit remis-en-vente compatible, 14 j post-demande.
+- Conditions retour : email préalable obligatoire à contact@koinoborihouse.com pour recevoir instructions + adresse de retour applicable. Les **deux adresses possibles sont listées publiquement CGV art. 11** : (a) 34 quater rue de la Marine 29730 Le Guilvinec ou (b) 46 ruelle de l'Église 69620 Ternand. Choix par BCDG au cas par cas. Produit remis-en-vente compatible, 14 j post-demande.
 - Frais retour à charge client, sauf erreur BCDG / défaut / non-conformité
 - Remboursement : moyen original, 14 j max, différable jusqu'à réception ou preuve expédition
 - Exclusion produits personnalisés / sur mesure (CGV art. 14)
@@ -95,9 +97,9 @@ Cette formulation **remplace toutes les occurrences antérieures** d'identificat
 ## 3. Données encore manquantes (placeholders)
 
 Acquis :
-- Identification vendeur (formulation obligatoire) + SIREN/RCS 945 241 545 R.C.S. Quimper + SIRET siège 945 241 545 00017 + adresse siège 1 rue du marais 29730 Treffiagat + email contact@koinoborihouse.com + Directrice publication Else Smakalova
+- Identification vendeur (formulation obligatoire) + SIREN/RCS 945 241 545 R.C.S. Quimper + SIRET siège 945 241 545 00017 + adresse 34 quater rue de la Marine 29730 Le Guilvinec (décision 2026-10-03) + email contact@koinoborihouse.com + Directrice publication Else Smakalova
 - Politique retours/rétractation validée (CGV art. 10 à 13 réécrit, BCDG = interlocuteur post-commande)
-- 2 adresses retour listées publiquement CGV art. 11 (Treffiagat ou Ternand), email préalable obligatoire
+- 2 adresses retour listées publiquement CGV art. 11 (Le Guilvinec ou Ternand), email préalable obligatoire
 - Téléphone : pas de téléphone public, contact@koinoborihouse.com uniquement
 - CM2C clause officielle intégrée
 - **Délais livraison estimés intégrés CGV art. 8** : France 2 j ouvrables / UE 3-8 j ouvrés / USA 5-10 j ouvrés hors douane. Formulation prudente "délais estimés d'acheminement après expédition", pas de garantie.
@@ -176,7 +178,7 @@ Actions ouvertes (cf 09 §H) :
 
 Liste minimum à boucler avant rendre pages publiques (cf 09 §A à §J) :
 
-Acquis : formulation obligatoire + SIRET 945 241 545 R.C.S. Quimper + adresse siège 1 rue du marais 29730 Treffiagat + email contact@koinoborihouse.com + Directrice publication Else Smakalova + CM2C clause officielle + politique retours/rétractation validée + pas de téléphone.
+Acquis : formulation obligatoire + SIRET 945 241 545 R.C.S. Quimper + adresse 34 quater rue de la Marine 29730 Le Guilvinec (décision 2026-10-03) + email contact@koinoborihouse.com + Directrice publication Else Smakalova + CM2C clause officielle + politique retours/rétractation validée + pas de téléphone.
 
 1. Compléter **délais indicatifs livraison** par zone (post-devis KH-012)
 2. Lister **transporteurs réellement activés** (post-decision KH-012)
