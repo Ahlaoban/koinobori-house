@@ -65,12 +65,13 @@ foreach ( $posts as $p ) {
 	};
 }
 
-/* ---- Options (transients excluded) ---- */
+/* ---- Options (transients and Stripe checkout caches, which hold customer data, excluded) ---- */
 $options = $wpdb->get_col( $wpdb->prepare(
 	"SELECT option_name FROM {$wpdb->options}
 	 WHERE ( LOWER(option_value) LIKE %s OR LOWER(option_value) LIKE %s )
-	   AND option_name NOT LIKE %s AND option_name NOT LIKE %s",
-	$like, $like2, $wpdb->esc_like( '_transient_' ) . '%', $wpdb->esc_like( '_site_transient_' ) . '%'
+	   AND option_name NOT LIKE %s AND option_name NOT LIKE %s AND option_name NOT LIKE %s",
+	$like, $like2, $wpdb->esc_like( '_transient_' ) . '%', $wpdb->esc_like( '_site_transient_' ) . '%',
+	$wpdb->esc_like( 'wcstripe_cache_' ) . '%'
 ) );
 kh_pc4_db_check( 'options' );
 foreach ( $options as $name ) {
